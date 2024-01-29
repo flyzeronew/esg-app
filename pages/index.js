@@ -74,6 +74,53 @@ export default function Home(props) {
                 <div className="txt">TVBS ESG永續倡議大使 <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
               </div>
             </div>
+            
+            <div className="secret">
+              <div className="subtitle">
+                <p>永續生活小撇步</p>
+                <div className="line"></div>
+                <div className="tag">衣</div>
+              </div>
+              <div className="title">
+                <p>吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</p>
+                <div className="img">
+                  <img src="images/esg03.jpg" alt="img" width={640} height={360}/>
+                </div>
+              </div>
+              <div className="txt">嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡</div>
+              <div className="point"></div>
+            </div> 
+
+            <div className="partner">
+              <div className="titleBox">
+                <div className="title">Who’s doing ESG?</div>
+                <div className="txt">落實ESG的夥伴 <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+              </div>
+              <div className="list">
+                <div className="box">
+                    <a href='##'>
+                      <div className="img">
+                        <img src="images/partner01.jpg" alt="img" width={640} height={360}/>
+                      </div>
+                      <div className="txt">台灣雀巢 Nestlé Taiwan</div>
+                    </a>
+
+                    <a href='##'>
+                      <div className="img">
+                        <img src="images/partner01.jpg" alt="img" width={640} height={360}/>
+                      </div>
+                      <div className="txt">台灣雀巢 Nestlé Taiwan</div>
+                    </a>
+
+                    <a href='##'>
+                      <div className="img">
+                        <img src="images/partner01.jpg" alt="img" width={640} height={360}/>
+                      </div>
+                      <div className="txt">台灣雀巢 Nestlé Taiwan</div>
+                    </a>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </main>
