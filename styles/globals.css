@@ -168,6 +168,9 @@ footer{
     line-height: normal;
     padding:10px 15px 32px;
 }
+footer br{
+    display: none;
+}
 .footerLine{
     width: 100%;
     padding:0 30px;
@@ -176,6 +179,11 @@ footer{
     width: 100%;
     height:1px;
     background-color: #dadada;
+}
+@media (max-width:1023px) {
+    footer br{
+        display: block;
+    }
 }
 header .menuMo{
     position:relative;
