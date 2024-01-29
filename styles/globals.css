@@ -229,17 +229,18 @@ header .burgerIcon{
 }
 /* 主視覺 */
 .indexPage .mainVision{
-    width: 100%;
-    overflow: hidden;
-    border-radius: 30px;
-    aspect-ratio: 16/9;
+    width: 100%;    
     margin-bottom: 15px;
+    overflow: hidden;
 }
 .indexPage .mainVision .box{  
-    width: 100%;
     position: relative;  
-    aspect-ratio: 16/9;
+}
+.indexPage .mainVision .box .img{
+    border-radius: 30px;  
     overflow: hidden;
+    aspect-ratio: 16/9;
+    line-height: 0;
 }
 .indexPage .mainVision .txtBox{
     width: 55%;
@@ -251,7 +252,7 @@ header .burgerIcon{
     bottom:20px;
     left:20px;
     padding:20px;
-    display:block;
+    z-index: 1;
 }
 .indexPage .mainVision .txtBox .object{
     display:flex;
@@ -259,6 +260,7 @@ header .burgerIcon{
     justify-content: space-between;
 }
 .indexPage .mainVision .title{
+    width: 100%;
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
@@ -266,11 +268,35 @@ header .burgerIcon{
     letter-spacing: 1.2px;
 }
 .indexPage .mainVision .txt{
+    width: 100%;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 1.2px;
+}
+.indexPage .slick-dots{
+    position:absolute;
+    bottom:40px;
+    left: 40px;
+    text-align: left;
+}
+.indexPage .slick-dots li{
+    width: 40px;
+    height: 6px;
+    margin-right: 5px;    
+}
+.indexPage .slick-dots li button:before{
+    width: 40px;
+    height: 6px;
+    background-color: #D4D4D4;
+    font-size: 0;
+    content:'';
+    opacity: 1;
+}
+.slick-dots li.slick-active button:before{
+    background-color:#68E3BC;
+    opacity:10;
 }
 /* 主視覺 ed*/
 .indexPage .other{
