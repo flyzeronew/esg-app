@@ -1,6 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html::-webkit-scrollbar {
+    width: 5px;
+    background: 68E3BC;
+}
+
+html::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0;
+    background-color: rgb(255, 248, 237,1);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #89EC54;
+}
+
 .ligthBox{width: 100%; height: 100vh;background-color: #ccc;position: absolute;z-index: 100;top:0;overflow: hidden;}
 .container{
     width: 100%; 
@@ -15,8 +32,187 @@ img{
     width: 100%;
     height: auto;
 }
-main{}
-header{}
+.arraw{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+/* 首頁 內容*/
+.indexPage{
+    display:flex;
+    column-gap: 20px;
+    padding:30px;
+}
+.indexPage section:nth-child(1){
+    width: 60%;
+}
+.indexPage section:nth-child(2){
+    width: 40%;
+}
+.indexPage .mainVision{
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    aspect-ratio: 16/9;
+    margin-bottom: 15px;
+}
+.indexPage .mainVision .box{    
+    overflow: hidden;
+    border-radius: 30px;
+    height:auto;
+}
+.indexPage .mainVision .txtBox{
+    width: 55%;
+    position:absolute;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    bottom:20px;
+    left:20px;
+    padding:20px;
+}
+.indexPage .mainVision .txtBox .object{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.indexPage .mainVision .title{
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+.indexPage .mainVision .txt{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+.indexPage .other{
+    display:flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.indexPage .whatEsg .txtBox{    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+.indexPage .whatEsg{
+    width:45%;
+    padding: 24px;
+    border-radius: 180px;
+    border: 2px solid #DDD;
+    background: #FFF;
+}
+.indexPage .whatEsg .title{
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 1.44px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.indexPage .whatEsg .txt{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.44px;
+    line-height: normal;
+    text-align: center;
+}
+.indexPage .view{
+    width:30%;
+    border-radius: 30px;
+    background: #D0FF90;
+    padding: 24px;
+}
+.indexPage .view .img{
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.indexPage .view .txt{
+    overflow: hidden;
+    color: #226158;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    height: 80px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;    
+}
+.indexPage .action{
+    width:20%;
+    border-radius: 180px;
+    background: #FFDC34;
+    overflow: hidden;
+}
+.indexPage .action .title{
+    text-align: center;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom:10px;
+    margin-top: 50px;
+}
+.indexPage .action .txt{
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom:10px;
+}
+.indexPage .action .arraw{
+    margin:0 auto 40px;
+}
+.indexPage .ourMission{
+    border-radius: 190px;
+    background: #89EC54;
+    overflow: hidden;
+    padding: 24px 24px 24px 31px;
+    color: #226158;
+    display:flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.indexPage .ourMission .title{
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.44px;
+}
+.indexPage .ourMission .txt{
+    display:flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.48px;
+}
+.indexPage .ourMission .img{
+    width: 135px;
+    height: 135px;
+    overflow: hidden;
+    border-radius: 80px;
+}
+.indexPage .ourMission .txt img{
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+/* 首頁 ed*/
 header nav{
     position: relative; 
 }
@@ -24,13 +220,13 @@ header nav .mainMenu{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    padding:24px 32px;
+    padding:24px 30px;
     background-color: #fff;     
 }
 header .menu ul,header .object{
     display:flex;
     align-items: center;
-    column-gap: 32px;
+    column-gap: 30px;
 }
 header .menu li{
     font-weight: 400;
