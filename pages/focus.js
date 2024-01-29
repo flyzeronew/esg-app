@@ -35,8 +35,8 @@ return (
                         <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
-                                    <div className="title">台灣剩食危機</div>
-                                    <div className="txt">每人每天浪費一個便當！</div>
+                                    <div className="title"><p>台灣剩食危機</p></div>
+                                    <div className="txt"><p>每人每天浪費一個便當！</p></div>
                                 </div>
                                 <div className="arraw">
                                     <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
@@ -50,8 +50,8 @@ return (
                         <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
-                                    <div className="title">碳排放</div>
-                                    <div className="txt">碳排放之重，大地喘息之聲。攜手減碳，寶島綠意永續。</div>
+                                    <div className="title"><p>碳排放</p></div>
+                                    <div className="txt"><p>碳排放之重，大地喘息之聲。攜手減碳，寶島綠意永續。</p></div>
                                 </div>
                                 <div className="arraw">
                                     <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
@@ -65,8 +65,8 @@ return (
                         <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
-                                    <div className="title">氣候變遷</div>
-                                    <div className="txt">大地呼籲，氣候變遷警世，太陽炙烤，風雨無常，為環保，緩解氣候危機。</div>
+                                    <div className="title"><p>氣候變遷</p></div>
+                                    <div className="txt"><p>大地呼籲，氣候變遷警世，太陽炙烤，風雨無常，為環保，緩解氣候危機。</p></div>
                                 </div>
                                 <div className="arraw">
                                     <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>

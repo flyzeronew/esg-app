@@ -630,7 +630,7 @@ header .burgerIcon{
         padding:15px;
     }  
 }
-.focusPage .list .titleBox{
+.focusPage .list .titleBox{    
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -642,10 +642,6 @@ header .burgerIcon{
 }
 
 .focusPage .list .titleBox .title{
-    width: max-content;
-    border-radius: 20px;
-    background: #FFF;
-    padding: 8px 16px;
     font-size: 48px;
     font-style: normal;
     font-weight: 600;
@@ -654,15 +650,23 @@ header .burgerIcon{
     margin-bottom: 15px;
 }
 .focusPage .list .titleBox .txt{
-    width: max-content;
-    border-radius: 10px;
-    background: #FFF;
-    padding: 4px 16px;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     letter-spacing: 0.4px;
+}
+.focusPage .list .title p{
+    display: inline-block;
+    border-radius: 20px;
+    background: #FFF;
+    padding: 8px 16px;
+}
+.focusPage .list .txt p{
+    display: inline-block;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 4px 16px;
 }
 .focusPage .list .titleDiv {
     width: 90%;
@@ -681,12 +685,14 @@ header .burgerIcon{
     margin-bottom: 20px;
     border-radius: 30px;
 }
-@media (max-width:767px) {
-    .focusPage .list .titleBox .txt{
-        width: auto;
+@media (max-width:1023px) {
+    .focusPage .list .titleDiv {        
+        width: 80%;
     }
+}
+@media (max-width:767px) {    
     .focusPage .list .titleBox{
-        padding:24px; 
+        padding:20px; 
     }
     .focusPage .list .titleBox .title{
         font-size: 32px;
@@ -695,11 +701,23 @@ header .burgerIcon{
         font-size: 18px;
     }
     .focusPage .list .titleBox .arraw{
-        width: 36px;
-        height: 36px;
+        width: 50px;
+        height: 50px;
     }
     .focusPage .list li{
         aspect-ratio: 1/1;
+    }
+}
+@media (max-width:414px) { 
+    .focusPage .list .titleBox .arraw{
+        width: 36px;
+        height: 36px;
+    }
+    .focusPage .list .titleBox .txt p{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
     }
 }
 /* 未來焦點頁面 ed */
