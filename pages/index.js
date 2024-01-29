@@ -2,13 +2,15 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
-const inter = Inter({ subsets: ['latin'] })
+import MainVision from '../comps/index/MainVision'
 
+const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
+
   // 頁面識別
   const thisPage='home';
   return (
-    <div className={`container ${inter.className}`}>
+    <div className={`container ${inter.className}`}>    
       <Head>
         <title>{"esg | TVBS 官網"}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -19,23 +21,7 @@ export default function Home(props) {
       <main>
         <div className="indexPage">
           <section>
-
-            <div className="mainVision">
-              <div className="box">
-                <img src="images/esg01.jpg" alt="img" width={1029} height={579}/>  
-                <div className="txtBox">
-                  <div className="title">台灣剩食危機</div>
-                  <div className="txt">每人每天浪費一個便當！</div>
-                  <div className="object">
-                    <div className="point"></div>
-                    <div className="arraw">
-                      <img src="images/icon_arraw02.svg" alt="arraw" width={50} height={50}/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <MainVision/>
             <div className="other">
               <div className="whatEsg">
                 <div className="title">What is ESG?</div>

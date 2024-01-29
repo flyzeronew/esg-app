@@ -5,6 +5,7 @@ function Navber(props) {
     const thisPage = props.thisPage;
     console.log(menu);    
     // 變數宣告
+    const [hamBurger, setHamBurger] = useState(false);
     const [showChildMenu, setShowChildMenu] = useState(false);
     // 變數宣告 ed
 
@@ -16,6 +17,9 @@ function Navber(props) {
             setShowChildMenu(false);
         }
     }
+    function hamBurgerClick(e) {
+        setHamBurger(!hamBurger);
+    }
     function childMenuMouseLeave() {
         setShowChildMenu(false);
     };
@@ -23,13 +27,29 @@ function Navber(props) {
 
     return (
             <header>
-                <nav>                
+                { hamBurger ?  
+                    <style>
+                        {`
+                            html {
+                                overflow: hidden;
+                            }
+                        `}
+                    </style>
+                :''}
+                <nav className={hamBurger ? 'act':''}>
                     <div className="mainMenu">
                         <div className="logo">
                             <a href="/">
                                 <img src="images/esg-logo.png" alt="logo" width={187} height={48}/>
                             </a>
                         </div>
+
+                        {/* 手機板漢堡 */}
+                        <div className="burgerIcon" onClick={hamBurgerClick}>
+                            <img src="images/icon-burger.svg" alt="img" width={50} height={50}/>
+                        </div>                        
+
+                        {/* 手機板漢堡 ed*/}
                         <div className="object">
                             {/* 主選單 */}
                             <div className="menu">
@@ -49,8 +69,8 @@ function Navber(props) {
                                 <img src="images/icon_search.svg" alt="icon" width={30} height={30}/>
                             </div>
                         </div>
-                    </div> 
-                    {/* 子選單 */}
+                    </div>
+                    {/* pc子選單 */}
                     <div className={`childMenu ${showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}>
                         <ul>
                             {menu.map((item, index) => (
@@ -64,8 +84,22 @@ function Navber(props) {
                             ))}                           
                         </ul>
                     </div>   
-                </nav>               
+                    {/* pc子選單 ed*/}
 
+                    {
+                        hamBurger ? 
+                            <div className="menuMo">
+                                <div className="list">                                
+                                    <ul>
+                                        <li>
+                                            1
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        :''
+                    }
+                </nav>
             </header>
         )
 }

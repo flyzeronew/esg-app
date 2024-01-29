@@ -3,8 +3,8 @@ export default function handler(req, res) {
         data:[
             {
                 'title':'未來焦點',
-                'url':'/',
-                'page_name':'home',
+                'url':'/focus',
+                'page_name':'focus',
                 'child':[]
             },
             {

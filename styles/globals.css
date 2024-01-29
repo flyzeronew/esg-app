@@ -18,6 +18,24 @@ html::-webkit-scrollbar-thumb {
     background: #89EC54;
 }
 
+.pc {
+    display: block;
+}
+
+.mo {
+    display: none;
+}
+
+@media (max-width:767px) {
+    .pc {
+        display: none;
+    }
+
+    .mo {
+        display: block;
+    }
+}
+
 .ligthBox{width: 100%; height: 100vh;background-color: #ccc;position: absolute;z-index: 100;top:0;overflow: hidden;}
 .container{
     width: 100%; 
@@ -37,6 +55,158 @@ img{
     height: 40px;
     cursor: pointer;
 }
+header nav{
+    position: relative; 
+}
+header nav.act{
+    width: 100%;
+    position: fixed; 
+    z-index: 10;
+}
+header nav .mainMenu{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:24px 30px;
+    background-color: #fff;
+}
+@media (max-width:1023px) {
+    header nav .mainMenu{
+        padding:24px;
+    }
+}
+@media (max-width:767px) {
+    header nav .mainMenu{
+        padding:16px;
+    }
+}
+header .menu ul,header .object{
+    display:flex;
+    align-items: center;
+    column-gap: 30px;
+}
+@media (max-width:1023px) {
+    header .menu ul,header .object{
+        display:none;
+    }
+}
+header .menu li{
+    font-weight: 400;
+    transition: 0.3s;
+}
+header .menu li a{
+    display:flex;
+    align-items: center;
+    column-gap: 5px;
+    padding-bottom: 3px;
+    border-bottom: 3px solid rgba(255,255,255,0);
+}
+header .menu li a img{
+    width: 8px;
+    height: 5px;
+    transition: transform 0.5s ease;
+}
+header .menu li a img.act{
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+header .childMenu{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 0px 0px 20px 20px;
+    background-color: #fff;
+}
+@media (max-width:1023px) {
+    header .childMenu{
+        display:none;
+    }
+}
+header .childMenu.act{ 
+    max-height: 500px;
+    transition: 0.8s ease-in-out;    
+}
+header .childMenu ul{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 32px;    
+    padding:24px 32px;     
+    border-top: 1px solid #DDD;    
+}
+header .menu li a.act,header .menu li a:hover{
+    border-bottom: 3px solid #89EC54;
+    transition: 0.3s;
+}
+header .logo{
+    width: 187px;
+}
+@media (max-width:1023px) {
+    header .logo{
+        width: 150px;
+    }
+}
+@media (max-width:767px) {
+    header .logo{
+        width: 100px;
+    }
+}
+.iconSearch{
+    width: 30px;
+    height: 30px;
+}
+footer{
+    color: #636363;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding:10px 15px 32px;
+}
+.footerLine{
+    width: 100%;
+    padding:0 30px;
+}
+.footerLine .box{
+    width: 100%;
+    height:1px;
+    background-color: #dadada;
+}
+header .menuMo{
+    position:relative;
+    width: 100%;    
+}
+header .menuMo .list{
+    position:absolute;
+    width: 100%;
+    height: 93vh;
+    overflow-y: auto;
+    background-color: #fff;
+    z-index: 1;
+    left: 0;
+    padding:24px 32px;
+}
+
+header .burgerIcon{
+    display:none;
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    line-height: 0;
+}
+@media (max-width:1023px) {
+    header .burgerIcon{
+        display:block;
+        width: 20px;
+        height: 20px;
+    }
+}
 /* 首頁 內容*/
 .indexPage{
     display:flex;
@@ -51,19 +221,21 @@ img{
 }
 /* 主視覺 */
 .indexPage .mainVision{
-    position: relative;
+    width: 100%;
     overflow: hidden;
     border-radius: 30px;
     aspect-ratio: 16/9;
     margin-bottom: 15px;
 }
-.indexPage .mainVision .box{    
+.indexPage .mainVision .box{  
+    width: 100%;
+    position: relative;  
+    aspect-ratio: 16/9;
     overflow: hidden;
-    border-radius: 30px;
-    height:auto;
 }
 .indexPage .mainVision .txtBox{
     width: 55%;
+    overflow: hidden;
     position:absolute;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.8);
@@ -71,6 +243,7 @@ img{
     bottom:20px;
     left:20px;
     padding:20px;
+    display:block;
 }
 .indexPage .mainVision .txtBox .object{
     display:flex;
@@ -354,82 +527,172 @@ img{
 /* 共好夥伴 ed*/
 
 /* 首頁 ed*/
-header nav{
-    position: relative; 
+
+/* 共用大標 */
+.sharedBanner{
+    position: relative;
 }
-header nav .mainMenu{
+.sharedBanner .box{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    padding:24px 30px;
-    background-color: #fff;     
-}
-header .menu ul,header .object{
-    display:flex;
-    align-items: center;
-    column-gap: 30px;
-}
-header .menu li{
-    font-weight: 400;
-    transition: 0.3s;
-}
-header .menu li a{
-    display:flex;
-    align-items: center;
-    column-gap: 5px;
-    padding-bottom: 3px;
-    border-bottom: 3px solid rgba(255,255,255,0);
-}
-header .menu li a img{
-    width: 8px;
-    height: 5px;
-    transition: transform 0.5s ease;
-}
-header .menu li a img.act{
-    transform: rotate(180deg);
-    transition: transform 0.5s ease;
-}
-header .childMenu{
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    max-height: 0;
+    border-radius: 60px 60px 0px 0px;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    background-color: #fff;  
+    padding:56px 40px;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
-    border-radius: 0px 0px 20px 20px;
-    background-color: #fff;
 }
-header .childMenu.act{ 
-    max-height: 500px;
-    transition: 0.8s ease-in-out;    
+.sharedBanner .mask{
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    left:0 ;
+    bottom:0;
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
-header .childMenu ul{
-    display:flex;
-    align-items: center;
-    justify-content: flex-end;
-    column-gap: 32px;    
-    padding:24px 32px;     
-    border-top: 1px solid #DDD;    
+.sharedBanner .title{
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.44px;
 }
-header .menu li a.act,header .menu li a:hover{
-    border-bottom: 3px solid #89EC54;
-    transition: 0.3s;
-}
-header .logo{
-    width: 187px;
-    height: 48px;
-}
-.iconSearch{
-    width: 30px;
-    height: 30px;
-}
-footer{
-    color: #636363;
-    text-align: center;
-    font-size: 14px;
+.sharedBanner .txt{
+    width: 40%;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding:10px 15px;
+    letter-spacing: 0.48px;
+    margin-bottom: 15px;
+    z-index: 2;
 }
+@media (max-width:767px) {
+    .sharedBanner .mask{
+        height: 40px;    
+    }
+    .sharedBanner .box{
+        display: block;
+        border-radius: 50px 50px 0px 0px;
+        padding: 40px 24px 30px;
+        overflow: hidden;
+    }
+    .sharedBanner .title{
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.72px;
+        margin-bottom: 30px;
+    }
+    .sharedBanner .txt{
+        width: 100%;
+        font-size: 18px;
+        letter-spacing: 0.36px;
+    }
+}
+.sharedBanner .txt p{
+    margin-bottom: 15px;
+}
+.sharedBanner .line{
+    background: #89EC54;
+    width: 28px;
+    height: 1px;
+}
+/* 共用大標 ed*/
+
+/* 未來焦點頁面 */
+.focusPage{
+    padding:24px 32px;
+}
+.focusPage .list{
+    width: 1130px;
+    margin: 0 auto;
+}
+@media (max-width:1279px) {
+    .focusPage .list{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+@media (max-width:767px) {
+    .focusPage{
+        padding:15px;
+    }  
+}
+.focusPage .list .titleBox{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display:flex;
+    align-items: flex-end;
+    justify-content:space-between;
+    padding:32px; 
+    column-gap: 20px;
+}
+
+.focusPage .list .titleBox .title{
+    width: max-content;
+    border-radius: 20px;
+    background: #FFF;
+    padding: 8px 16px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.92px;
+    margin-bottom: 15px;
+}
+.focusPage .list .titleBox .txt{
+    width: max-content;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 4px 16px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+.focusPage .list .titleDiv {
+    width: 90%;
+}
+.focusPage .list .titleBox .arraw{
+    width: 72px;
+    height: 72px;
+    overflow: hidden;
+    line-height: 0;
+}
+.focusPage .list li{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 113/52;
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+@media (max-width:767px) {
+    .focusPage .list .titleBox .txt{
+        width: auto;
+    }
+    .focusPage .list .titleBox{
+        padding:24px; 
+    }
+    .focusPage .list .titleBox .title{
+        font-size: 32px;
+    }
+    .focusPage .list .titleBox .txt{
+        font-size: 18px;
+    }
+    .focusPage .list .titleBox .arraw{
+        width: 36px;
+        height: 36px;
+    }
+    .focusPage .list li{
+        aspect-ratio: 1/1;
+    }
+}
+/* 未來焦點頁面 ed */
+
