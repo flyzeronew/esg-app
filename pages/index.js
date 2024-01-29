@@ -10,7 +10,7 @@ export default function Home(props) {
   // 頁面識別
   const thisPage='home';
   return (
-    <div className={`container1 ${inter.className}`}>    
+    <div id='wrapper' className={inter.className}>      
       <Head>
         <title>{"esg | TVBS 官網"}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
