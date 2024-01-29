@@ -9,7 +9,7 @@ export default function Focus(props) {
 // 頁面識別
 const thisPage='focus';
 return (
-<div className={`container ${inter.className}`}>    
+<div className={`container1 ${inter.className}`}>    
     <Head>
     <title>{"esg | TVBS 官網"}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
