@@ -14,19 +14,19 @@ export default function handler(req, res) {
                 'child':[
                     {
                         'title':'新趨勢',
-                        'url':'',
+                        'url':'javascript:void(0)',
                     },
                     {
                         'title':'永續環境',
-                        'url':'',
+                        'url':'javascript:void(0)',
                     },
                     {
                         'title':'共好社會',
-                        'url':'',
+                        'url':'javascript:void(0)',
                     },
                     {
                         'title':'綠色生活',
-                        'url':'',
+                        'url':'javascript:void(0)',
                     },
                 ]
             },

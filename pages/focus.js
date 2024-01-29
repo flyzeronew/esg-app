@@ -32,7 +32,7 @@ return (
             <div className="list">
                 <ul>
                     <li>
-                        <a href='##'>
+                        <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
                                     <div className="title">台灣剩食危機</div>
@@ -47,7 +47,7 @@ return (
                         </a>
                     </li>
                     <li>
-                        <a href='##'>
+                        <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
                                     <div className="title">碳排放</div>
@@ -62,7 +62,7 @@ return (
                         </a>
                     </li>
                     <li>
-                        <a href='##'>
+                        <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
                                     <div className="title">氣候變遷</div>
