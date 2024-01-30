@@ -37,7 +37,7 @@ export default function Home(props) {
               <div className="view">
                 <div className="box">
                   <div className="img">
-                  <Image src="/images/esg02.jpg" alt="img" width={1920} height={1080}/>  
+                    <Image src="/images/esg02.jpg" alt="img" width={1920} height={1080}/>  
                   </div>
                   <div className="txt">一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地</div>
                   <div className="point"></div>
@@ -71,7 +71,7 @@ export default function Home(props) {
               <div className="title">
                 <p>吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</p>
                 <div className="img">
-                <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
+                  <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
                 </div>
               </div>
               <div className="txt">嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡</div>
