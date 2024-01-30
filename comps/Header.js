@@ -54,7 +54,7 @@ function Navber(props) {
 
                         {/* 手機板漢堡 */}
                         <div className="burgerIcon" onClick={hamBurgerClick}>
-                            <img src="images/icon-burger.svg" alt="img" width={50} height={50}/>
+                            <Image src="/images/icon-burger.svg" alt="img" width={187} height={48} />
                         </div>                        
 
                         {/* 手機板漢堡 ed*/}
@@ -66,7 +66,7 @@ function Navber(props) {
                                         <li key={index} >
                                             <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick}>
                                                 {item.title}
-                                                {item.child.length>0 ? <img className={showChildMenu ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
+                                                {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
                                             </a>
                                         </li>
                                     ))}                                
@@ -74,7 +74,7 @@ function Navber(props) {
                             </div>
                             {/* 搜尋 */}
                             <div className="iconSearch">
-                                <img src="images/icon_search.svg" alt="icon" width={30} height={30}/>
+                                <Image src="images/icon_search.svg" alt="icon" width={30} height={30}/>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ function Navber(props) {
                         hamBurger ? 
                             <div className="menuMo">                                
                                 <div className="search">
-                                    <img src="images/icon_search.svg" alt="icon" width={30} height={30}/>
+                                    <Image src="images/icon_search.svg" alt="icon" width={30} height={30}/>
                                     <input id="searchInput" type="text" placeholder="搜尋"  />
                                 </div>
                                 <div className="list">
@@ -108,7 +108,7 @@ function Navber(props) {
                                             <li key={index} >
                                                 <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={childMenuClickMo}>
                                                     {item.title}
-                                                    {item.child.length>0 ? <img className={showChildMenuMo ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
+                                                    {item.child.length>0 ? <Image className={showChildMenuMo ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
                                                 </a>
 
                                                 {
