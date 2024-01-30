@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
@@ -28,7 +29,7 @@ export default function Home(props) {
                 <div className="txtBox">
                   <div className="txt">什麼是ESG?</div>
                   <div className="arraw">
-                    <img src="images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                    <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
                   </div>
                 </div>
 
@@ -36,7 +37,7 @@ export default function Home(props) {
               <div className="view">
                 <div className="box">
                   <div className="img">
-                    <img src="images/esg02.jpg" alt="img" width={1920} height={1080}/>  
+                  <Image src="/images/esg02.jpg" alt="img" width={1920} height={1080}/>  
                   </div>
                   <div className="txt">一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地</div>
                   <div className="point"></div>
@@ -46,7 +47,7 @@ export default function Home(props) {
                 <div className="title">參加活動GO!</div>
                 <div className="txt">一起實踐永續</div>
                 <div className="arraw">
-                    <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                  <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                 </div>
               </div>
             </div>
@@ -54,10 +55,10 @@ export default function Home(props) {
           </section>
           <section>
             <div className="ourMission">
-              <div className="img"><img src="images/our-mission01.jpg" alt="img"  width={300} height={300}/></div>
+              <div className="img"><Image src="/images/our-mission01.jpg" alt="img"  width={300} height={300}/></div>
               <div className="txtBox">
                 <div className="title">Our Mission</div>
-                <div className="txt">TVBS ESG永續倡議大使 <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+                <div className="txt">TVBS ESG永續倡議大使 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
               </div>
             </div>
             
@@ -70,7 +71,7 @@ export default function Home(props) {
               <div className="title">
                 <p>吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</p>
                 <div className="img">
-                  <img src="images/esg03.jpg" alt="img" width={640} height={360}/>
+                <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
                 </div>
               </div>
               <div className="txt">嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡</div>
@@ -80,27 +81,27 @@ export default function Home(props) {
             <div className="partner">
               <div className="titleBox">
                 <div className="title">Who’s doing ESG?</div>
-                <div className="txt">落實ESG的夥伴 <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+                <div className="txt">落實ESG的夥伴 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
               </div>
               <div className="list">
                 <div className="box">
                     <a href='##'>
                       <div className="img">
-                        <img src="images/partner01.jpg" alt="img" width={640} height={360}/>
+                        <Image src="/images/partner01.jpg" alt="img" width={640} height={360}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
                     </a>
 
                     <a href='##'>
                       <div className="img">
-                        <img src="images/partner01.jpg" alt="img" width={640} height={360}/>
+                        <Image src="/images/partner01.jpg" alt="img" width={640} height={360}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
                     </a>
 
                     <a href='##'>
                       <div className="img">
-                        <img src="images/partner01.jpg" alt="img" width={640} height={360}/>
+                        <Image src="/images/partner01.jpg" alt="img" width={640} height={360}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
                     </a>
