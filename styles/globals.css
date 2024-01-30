@@ -13,7 +13,9 @@ html::-webkit-scrollbar-track {
     margin: 0;
     background-color: rgb(255, 248, 237,1);
 }
-
+input:focus {
+    outline: 0;
+}
 html::-webkit-scrollbar-thumb {
     background: #89EC54;
 }
@@ -185,11 +187,12 @@ footer br{
         display: block;
     }
 }
+/* 手機板導覽列 */
 header .menuMo{
     position:relative;
     width: 100%;    
 }
-header .menuMo .list{
+header .menuMo{
     position:absolute;
     width: 100%;
     height: 93vh;
@@ -199,7 +202,6 @@ header .menuMo .list{
     left: 0;
     padding:24px 32px;
 }
-
 header .burgerIcon{
     display:none;
     width: 30px;
@@ -208,6 +210,79 @@ header .burgerIcon{
     overflow: hidden;
     line-height: 0;
 }
+
+header .menuMo .search{
+    width: 100%;
+    padding: 8px 40px 8px 20px;
+    border-radius: 22px;
+    background: #F2F2F2;  
+    position: relative;
+    margin-bottom: 20px;
+}
+header .menuMo .search img{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top:5px;
+    right:10px;
+    cursor: pointer;
+}
+header .menuMo .search input{
+    width: 100%;
+    font-size: 16px;
+    background-color: rgba(0,0,0,0);
+}
+header .menuMo .list li{
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 32px;
+}
+header .menuMo .list li .child{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+header .menuMo .list li .child.act{ 
+    margin-top: 20px;
+    max-height: 500px;
+    transition: 0.8s ease-in-out;    
+}
+header .menuMo .list li .child a{
+    display:block;
+    margin-bottom: 20px;
+    color: #666;
+}
+header .menuMo .list li .child a .line{
+    width: 12px;
+    height: 1px;
+    background: #23E888;
+    margin: 15px auto 0;
+}
+header .menuMo .list li .child a:last-child{
+    margin-bottom: 0px;
+}
+
+header .menuMo .list li a{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+}
+header .menuMo .list li a img{
+    width: 10px;
+    height: 10px;
+    transition: transform 0.5s ease;
+}
+header .menuMo .list li a img.act{
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+header .menuMo .list li:last-child{
+    margin-bottom: 0;
+}
 @media (max-width:1023px) {
     header .burgerIcon{
         display:block;
@@ -215,6 +290,7 @@ header .burgerIcon{
         height: 20px;
     }
 }
+/* 手機板導覽列 ed*/
 /* 首頁 內容*/
 .indexPage{
     display:flex;
@@ -284,7 +360,8 @@ header .burgerIcon{
 .indexPage .slick-dots li{
     width: 40px;
     height: 6px;
-    margin-right: 5px;    
+    margin-right: 5px;
+    border-radius: 30px;
 }
 .indexPage .slick-dots li button:before{
     width: 40px;
@@ -293,10 +370,12 @@ header .burgerIcon{
     font-size: 0;
     content:'';
     opacity: 1;
+    border-radius: 30px;
 }
 .slick-dots li.slick-active button:before{
     background-color:#68E3BC;
     opacity:10;
+    border-radius: 30px;
 }
 /* 主視覺 ed*/
 .indexPage .other{

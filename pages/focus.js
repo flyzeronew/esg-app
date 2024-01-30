@@ -9,7 +9,7 @@ export default function Focus(props) {
 // 頁面識別
 const thisPage='focus';
 return (
-<div id='wrapper' className={inter.className}>    
+<div id='wrapper' className={inter.className}> 
     <Head>
     <title>{"esg | TVBS 官網"}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -31,7 +31,10 @@ return (
             </div>     
             <div className="list">
                 <ul>
-                    <li>
+                    <li style={{ 
+                            background: `url(images/food01.jpg) no-repeat center center`,
+                            backgroundSize: `cover`
+                        }}>
                         <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
@@ -41,12 +44,13 @@ return (
                                 <div className="arraw">
                                     <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                                 </div>
-                            </div>
-                            <img className='pc' src="images/food01.jpg" alt="arraw" width={1130} height={520}/>
-                            <img className='mo' src="images/food01-m.jpg" alt="arraw" width={500} height={500}/>
+                            </div>                           
                         </a>
                     </li>
-                    <li>
+                    <li style={{ 
+                            background: `url(images/food02.jpg) no-repeat center center`,
+                            backgroundSize: `cover`
+                        }}>
                         <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
@@ -56,12 +60,13 @@ return (
                                 <div className="arraw">
                                     <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                                 </div>
-                            </div>
-                            <img className='pc' src="images/food02.jpg" alt="arraw" width={1130} height={520}/>
-                            <img className='mo' src="images/food02-m.jpg" alt="arraw" width={500} height={500}/>
+                            </div>                           
                         </a>
                     </li>
-                    <li>
+                    <li style={{ 
+                            background: `url(images/food03.jpg) no-repeat center center`,
+                            backgroundSize: `cover` 
+                        }}>
                         <a href='javascript:void(0)'>
                             <div className="titleBox">
                                 <div className="titleDiv">
@@ -71,9 +76,7 @@ return (
                                 <div className="arraw">
                                     <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                                 </div>
-                            </div>
-                            <img className='pc' src="images/food03.jpg" alt="arraw" width={1130} height={520}/>
-                            <img className='mo' src="images/food03-m.jpg" alt="arraw" width={500} height={500}/>
+                            </div>                            
                         </a>
                     </li>
                 </ul>

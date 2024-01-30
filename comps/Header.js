@@ -7,6 +7,7 @@ function Navber(props) {
     // 變數宣告
     const [hamBurger, setHamBurger] = useState(false);
     const [showChildMenu, setShowChildMenu] = useState(false);
+    const [showChildMenuMo, setShowChildMenuMo] = useState(false);
     // 變數宣告 ed
 
     // 事件動作
@@ -15,6 +16,13 @@ function Navber(props) {
             setShowChildMenu(true);
         }else{
             setShowChildMenu(false);
+        }
+    }
+    function childMenuClickMo(e) {
+        if (e.currentTarget.querySelector('img')) {
+            setShowChildMenuMo(!showChildMenuMo)
+        }else{
+            setShowChildMenuMo(false);
         }
     }
     function hamBurgerClick(e) {
@@ -86,19 +94,40 @@ function Navber(props) {
                     </div>   
                     {/* pc子選單 ed*/}
 
+                    {/* 手機板導覽列 */}
                     {
                         hamBurger ? 
-                            <div className="menuMo">
-                                <div className="list">                                
+                            <div className="menuMo">                                
+                                <div className="search">
+                                    <img src="images/icon_search.svg" alt="icon" width={30} height={30}/>
+                                    <input id="searchInput" type="text" placeholder="搜尋"  />
+                                </div>
+                                <div className="list">
                                     <ul>
-                                        <li>
-                                            1
-                                        </li>
+                                        {menu.map((item, index) => (
+                                            <li key={index} >
+                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={childMenuClickMo}>
+                                                    {item.title}
+                                                    {item.child.length>0 ? <img className={showChildMenuMo ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
+                                                </a>
+                                                <div className={`child ${showChildMenuMo ? 'act':''}`}>
+                                                    {
+                                                        item.child.map((item2, index2) => (
+                                                            <a key={index2} href={item2.url}>
+                                                                {item2.title}
+                                                                <div className="line"></div>
+                                                            </a>
+                                                        )) 
+                                                    }
+                                                </div>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
                         :''
                     }
+                    {/* 手機板導覽列 ed*/}
                 </nav>
             </header>
         )
