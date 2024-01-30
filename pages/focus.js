@@ -38,7 +38,7 @@ return (
                                     background: `url(${item.img}) no-repeat center center`,
                                     backgroundSize: `cover`
                                 }}>
-                                    <a href='javascript:void(0)'>
+                                    <a href={item.url}>
                                         <div className="titleBox">
                                             <div className="titleDiv">
                                                 <div className="title"><p>{item.title}</p></div>
