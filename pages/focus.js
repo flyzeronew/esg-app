@@ -22,9 +22,9 @@ return (
             <div className="sharedBanner">
                 <div className="mask"></div>
                 <div className="box">
-                    <div className="title">{props.focus.title}</div>
+                    <div className="title">未來焦點</div>
                     <div className="txt">
-                        <p>{props.focus.txt}</p>
+                        <p>綠能發展、資源再生，海洋保護與氣候因應，都成為社會訴求，企業以綠色思維，創新技術，營造永續商業新模式。</p>
                         <div className="line"></div>
                     </div>
                 </div>

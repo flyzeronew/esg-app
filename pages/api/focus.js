@@ -1,7 +1,5 @@
 export default function handler(req, res) {
     const data = {
-            'title':'未來焦點',
-            'txt':'綠能發展、資源再生，海洋保護與氣候因應，都成為社會訴求，企業以綠色思維，創新技術，營造永續商業新模式。',
             'list':[
                 {
                     'title':'台灣剩食危機',
