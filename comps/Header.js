@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 
 function Navber(props) {
@@ -47,7 +48,7 @@ function Navber(props) {
                     <div className="mainMenu">
                         <div className="logo">
                             <a href="/">
-                                <img src="images/esg-logo.png" alt="logo" width={187} height={48}/>
+                                <Image src="/images/esg-logo.png" alt="logo" width={187} height={48} />
                             </a>
                         </div>
 
