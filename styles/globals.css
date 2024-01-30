@@ -301,11 +301,23 @@ header .menuMo .list li:last-child{
     column-gap: 20px;
     padding:30px;
 }
+
 .indexPage section:nth-child(1){
     width: 60%;
 }
 .indexPage section:nth-child(2){
     width: 40%;
+}
+@media (max-width:767px) {
+    .indexPage{
+        display:block;
+        column-gap: 20px;
+        padding:30px;
+    }
+    .indexPage section:nth-child(1),
+    .indexPage section:nth-child(2){
+        width: 100%;
+    }
 }
 /* 主視覺 */
 .indexPage .mainVision{
@@ -416,6 +428,15 @@ header .menuMo .list li:last-child{
     line-height: normal;
     text-align: center;
 }
+@media (max-width:767px) {
+    .indexPage .other{
+        display:block;
+    }
+    .indexPage .whatEsg {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
 /* What is ESG? ed*/
 /* 永續觀點 */
 .indexPage .view{
@@ -442,6 +463,12 @@ header .menuMo .list li:last-child{
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;    
+}
+@media (max-width:767px) {
+    .indexPage .view{
+        width:100%;
+        margin-bottom: 20px;
+    }
 }
 /* 永續觀點 ed*/
 /* 參加活動 */
@@ -470,6 +497,12 @@ header .menuMo .list li:last-child{
 }
 .indexPage .action .arraw{
     margin:0 auto 40px;
+}
+@media (max-width:767px) {
+    .indexPage .action{
+        width:100%;
+        margin-bottom: 20px;
+    }
 }
 /* 參加活動 ed*/
 /* Our Mission */
