@@ -87,21 +87,21 @@ export default function Home(props) {
                 <div className="box">
                     <a href='##'>
                       <div className="img">
-                        <Image src="/images/partner01.jpg" alt="img" width={640} height={360}/>
+                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
                     </a>
 
                     <a href='##'>
                       <div className="img">
-                        <Image src="/images/partner01.jpg" alt="img" width={640} height={360}/>
+                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
                     </a>
 
                     <a href='##'>
                       <div className="img">
-                        <Image src="/images/partner01.jpg" alt="img" width={640} height={360}/>
+                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
                     </a>
