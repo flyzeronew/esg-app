@@ -10,6 +10,19 @@ function Navber(props) {
     const [showChildMenuMo, setShowChildMenuMo] = useState(false);
     // 變數宣告 ed
 
+    // resize 監聽事件
+    useEffect(() => {
+        const handleResize = () => {
+            setHamBurger(false);
+            setShowChildMenu(false);
+        };    
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []); 
+    // resize 監聽事件 ed
+
     // 事件動作
     function childMenuClick(e) {
         if (e.currentTarget.querySelector('img')) {
