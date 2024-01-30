@@ -240,15 +240,16 @@ header .menuMo .list li{
     line-height: normal;
     margin-bottom: 32px;
 }
-header .menuMo .list li .child{
+header .menuMo .list li .child{  
+    margin-top: 0px;  
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: 0.3s ease-out;
 }
-header .menuMo .list li .child.act{ 
+header .menuMo .list li .child.act{
     margin-top: 20px;
     max-height: 500px;
-    transition: 0.8s ease-in-out;    
+    transition: 0.3s ease-in-out;    
 }
 header .menuMo .list li .child a{
     display:block;
@@ -260,6 +261,9 @@ header .menuMo .list li .child a .line{
     height: 1px;
     background: #23E888;
     margin: 15px auto 0;
+}
+header .menuMo .list li .child a:last-child .line{
+    display: none;
 }
 header .menuMo .list li .child a:last-child{
     margin-bottom: 0px;

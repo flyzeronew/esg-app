@@ -1,6 +1,5 @@
 export default function handler(req, res) {
-    const data = { 
-        data:[
+    const data = [ 
             {
                 'title':'未來焦點',
                 'url':'/focus',
@@ -54,7 +53,6 @@ export default function handler(req, res) {
                 'page_name':'responsibility',
                 'child':[]
             },
-        ]
-    };
+    ];
     res.status(200).json(data);
 }

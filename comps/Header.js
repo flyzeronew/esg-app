@@ -1,9 +1,8 @@
 import { useState ,useEffect } from 'react'
 
 function Navber(props) {
-    const menu = props.menuData.data;
-    const thisPage = props.thisPage;
-    console.log(menu);    
+    const menu = props.menuData;
+    const thisPage = props.thisPage;     
     // 變數宣告
     const [hamBurger, setHamBurger] = useState(false);
     const [showChildMenu, setShowChildMenu] = useState(false);
@@ -110,16 +109,21 @@ function Navber(props) {
                                                     {item.title}
                                                     {item.child.length>0 ? <img className={showChildMenuMo ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
                                                 </a>
-                                                <div className={`child ${showChildMenuMo ? 'act':''}`}>
-                                                    {
-                                                        item.child.map((item2, index2) => (
-                                                            <a key={index2} href={item2.url}>
-                                                                {item2.title}
-                                                                <div className="line"></div>
-                                                            </a>
-                                                        )) 
-                                                    }
-                                                </div>
+
+                                                {
+                                                    item.child.length>0 ? 
+                                                        <div className={`child ${showChildMenuMo ? 'act':''}`}>
+                                                            {
+                                                                item.child.map((item2, index2) => (
+                                                                    <a key={index2} href={item2.url}>
+                                                                        {item2.title}
+                                                                        <div className="line"></div>
+                                                                    </a>
+                                                                )) 
+                                                            }
+                                                        </div>
+                                                    :''
+                                                }                                                
                                             </li>
                                         ))}
                                     </ul>
