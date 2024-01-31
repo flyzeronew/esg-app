@@ -85,7 +85,7 @@ export default function Home(props) {
               </div>
               <div className="list">
                 <div className="box">
-                    <a href='##'>
+                   <a href='##'>
                       <div className="img">
                         <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                       </div>
