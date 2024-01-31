@@ -301,6 +301,12 @@ header .menuMo .list li:last-child{
     column-gap: 20px;
     margin:30px;
 }
+.indexPage section:nth-child(1){
+    width: 60%;
+}
+.indexPage section:nth-child(2){
+    width: 40%;
+}
 @media (max-width:1919px) {
     .indexPage{
         width: 1540px;
@@ -317,21 +323,21 @@ header .menuMo .list li:last-child{
         width: 960px;
     }
 }
-.indexPage section:nth-child(1){
-    width: 60%;
-}
-.indexPage section:nth-child(2){
-    width: 40%;
-}
-@media (max-width:767px) {
+@media (max-width:1023px) {
     .indexPage{
-        display:block;
-        column-gap: 20px;
+        width: 728px;
         padding:30px;
+        display:block;
     }
     .indexPage section:nth-child(1),
     .indexPage section:nth-child(2){
         width: 100%;
+    }
+}
+@media (max-width:1023px) {
+    .indexPage{
+        width: 100%;
+        padding:30px;
     }
 }
 /* 主視覺 */
@@ -408,6 +414,21 @@ header .menuMo .list li:last-child{
     opacity:10;
     border-radius: 30px;
 }
+@media (max-width:1279px) {
+    .indexPage .mainVision .title {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    .indexPage .slick-dots li{
+        width: 30px;
+        height: 6px;
+   }
+    .indexPage .slick-dots li button:before{
+        width: 30px;
+        height: 6px;
+    }
+}
 /* 主視覺 ed*/
 .indexPage .other{
     display:flex;
@@ -463,7 +484,27 @@ header .menuMo .list li:last-child{
         padding: 30px;
     }
 }
-@media (max-width:767px) {
+@media (max-width:1279px) {
+    .indexPage .whatEsg{
+        width:50%;
+        padding:35px;
+        border-radius: 100px;
+        border: 2px solid #DDD;
+        background: #FFF;
+    }
+    .indexPage .whatEsg .title {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+    .indexPage .whatEsg .txt {
+        font-size: 18px;
+    }
+    .indexPage .whatEsg {
+        width: 45%;
+        padding: 30px;
+    }
+}
+@media (max-width:1023px) {
     .indexPage .other{
         display:block;
     }
@@ -499,7 +540,20 @@ header .menuMo .list li:last-child{
     text-overflow: ellipsis;
     display: -webkit-box;    
 }
-@media (max-width:767px) {
+@media (max-width:1279px) {
+    .indexPage .view {
+        width: 30%;
+        border-radius: 30px;
+        background: #D0FF90;
+        padding:20px 16px;
+    }
+    .indexPage .view .txt{
+        font-size: 18px;
+        height: 75px;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width:1023px) {
     .indexPage .view{
         width:100%;
         margin-bottom: 20px;
@@ -554,9 +608,25 @@ header .menuMo .list li:last-child{
         margin: 0 auto 30px;
     }
 }
-
-@media (max-width:767px) {
+@media (max-width:1279px) {
+    .indexPage .action .title {      
+        font-size: 24px;
+    }
+    .indexPage .action .title {
+        margin-bottom: 10px;
+    }
+    .indexPage .action .txt {
+        font-size: 16px;
+    }
+    .indexPage .action .arraw {
+        width: 25px;
+        height: 25px;
+        margin: 0 auto 30px;
+    }
+}
+@media (max-width:1023px) {
     .indexPage .action{
+        width: 100%;
         margin-bottom: 20px;
     }
 }
@@ -639,7 +709,33 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:1279px) {
-
+    .indexPage .ourMission {
+        padding: 12px;
+        color: #226158;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-bottom: 15px;
+    }
+    .indexPage .ourMission .img {
+        width: 80px;
+        height: 80px;
+    }
+    .indexPage .ourMission .img img{
+        height: 100%;
+    }
+    .indexPage .ourMission .title {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+    .indexPage .ourMission .txt {
+        font-size: 16px;
+        
+    }
+    .indexPage .ourMission .txt img {
+        width: 28px;
+        height: 28px;
+    }
 }
 /* Our Mission ed*/
 /* 永續生活小撇步 */
@@ -757,7 +853,35 @@ header .menuMo .list li:last-child{
         height: 25px;
     }
 }
-
+@media (max-width:1279px) {
+    .indexPage .secret {
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+    .indexPage .secret .title {
+        font-size: 20px;
+    }
+    .indexPage .secret .title p {
+        width: 60%;
+        height: 50px;
+    }
+    .indexPage .secret .img{ 
+        width: 40%;   
+    }
+    .indexPage .secret .txt {
+        font-size: 16px;
+        height: auto;
+        -webkit-line-clamp: 1;
+        margin-bottom: 25px;
+    }
+    .indexPage .secret .subtitle {
+        font-size: 18px;
+    }
+    .indexPage .secret .subtitle .tag {
+        width: 25px;
+        height: 25px;
+    }
+}
 /* 永續生活小撇步 ed*/
 
 /* 共好夥伴 */
@@ -874,6 +998,39 @@ header .menuMo .list li:last-child{
         width: 55%;
     }
 }
+@media (max-width:1279px) {
+    .indexPage .partner {
+        padding: 24px 16px 24px 60px;
+        column-gap: 5px;
+    }
+    .indexPage .partner .title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .indexPage .partner .txt {
+        font-size: 16px;
+    }
+    .indexPage .partner .txt img {
+        width: 25px;
+        height: 25px;
+    }
+    .indexPage .partner .list a .img {
+        width: 40px;
+        height:auto;
+        aspect-ratio: 1/1;
+    }
+    .indexPage .partner .list .box a {
+        margin-bottom: 10px;
+        column-gap: 5px;
+    }
+    .indexPage .partner .titleBox {
+        width: 45%;
+    }
+    .indexPage .partner .list {
+        width: 55%;
+    }
+}
+
 /* 共好夥伴 ed*/
 
 /* 首頁 ed*/
