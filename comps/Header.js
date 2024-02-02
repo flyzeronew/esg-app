@@ -18,9 +18,9 @@ function Navber(props) {
         };    
         window.addEventListener('resize', handleResize);
         return () => {
-          window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize);
         };
-      }, []); 
+    }, []); 
     // resize 監聽事件 ed
 
     // 事件動作

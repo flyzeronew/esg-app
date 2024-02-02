@@ -1,13 +1,49 @@
+import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
+
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
     console.log(props);
 // 頁面識別
 const thisPage='focus';
+const [imgHover, setImgHover] = useState(null);
+const [bgSize, setBgSize] = useState();
+const [hoverBgSize, setHoverBgSize] = useState();
+
+const imgMouseOver = (e) => {
+    if(window.innerWidth > 767){
+        setHoverBgSize(120);
+    }else{
+        setHoverBgSize(280);
+    }
+    setImgHover(e);
+};
+
+const imgMouseOut = (e) => {
+    setImgHover(null);
+};
+// resize 監聽事件
+useEffect(() => {
+    function handleResize () {
+        if(window.innerWidth > 767){
+            setBgSize(100);
+            setHoverBgSize(100);
+        }else{
+            setBgSize(250);
+            setHoverBgSize(250);
+        }   
+    };    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, []); 
+// resize 監聽事件 ed
 return (
 <div id='wrapper' className={inter.className}> 
     <Head>
@@ -36,15 +72,16 @@ return (
                             props.focus.list.map((item, index) => (
                                 <li key={index} style={{ 
                                     background: `url(${item.img}) no-repeat center center`,
-                                    backgroundSize: `cover`
-                                }}>
-                                    <a href={item.url}>
-                                        <div className="titleBox">
-                                            <div className="titleDiv">
-                                                <div className="title"><p>{item.title}</p></div>
+                                    backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                    transition: 'background-size 0.3s',
+                                }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
+                                    <a href={item.url}>                                        
+                                        <div className="titleBox">                                        
+                                            <div className="titleDiv">                                            
+                                                <div className="title"><p>{index}{item.title}</p></div>
                                                 <div className="txt"><p>{item.txt}</p></div>
                                             </div>
-                                            <div className="arraw">
+                                            <div className= {`arraw ${index === imgHover ? 'act':''}`}>
                                                 <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                                             </div>
                                         </div>                           
@@ -53,6 +90,7 @@ return (
                             ))
                         :''
                     }
+                    
                 </ul>
             </div>       
         </div>

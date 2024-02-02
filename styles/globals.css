@@ -1173,13 +1173,13 @@ header .menuMo .list li:last-child{
     width: 72px;
     height: 72px;
     overflow: hidden;
-    line-height: 0;    
-    transform: rotate(0);
-    transition: transform 0.2s;
+    line-height: 0;   
+    transform:rotate(0);
+    transition: 0.3s; 
 }
-.focusPage .list .titleBox .arraw:hover{
-    transform: rotate(-45deg);
-    transition: transform 0.3s;
+.focusPage .list .titleBox .arraw.act{
+    transform:rotate(-45deg);
+    transition: 0.3s;
 }
 .focusPage .list li{
     position: relative;
@@ -1188,6 +1188,13 @@ header .menuMo .list li:last-child{
     aspect-ratio: 113/52;
     margin-bottom: 20px;
     border-radius: 30px;
+    background-size: 200%;
+}
+
+.focusPage .list li a{
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 @media (max-width:1023px) {
     .focusPage .list .titleDiv {        
