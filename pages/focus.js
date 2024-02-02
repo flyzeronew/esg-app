@@ -32,9 +32,11 @@ useEffect(() => {
         if(window.innerWidth > 767){
             setBgSize(100);
             setHoverBgSize(100);
+            setImgHover(null);
         }else{
             setBgSize(250);
             setHoverBgSize(250);
+            setImgHover(null);
         }   
     };    
     handleResize();
