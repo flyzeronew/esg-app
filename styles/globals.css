@@ -1041,14 +1041,13 @@ header .menuMo .list li:last-child{
 }
 .sharedBanner .box{
     display:flex;
-    align-items: center;
     justify-content: space-between;
     border-radius: 60px 60px 0px 0px;
     border-top: 1px solid #DDD;
     border-left: 1px solid #DDD;
     border-right: 1px solid #DDD;
     background-color: #fff;  
-    padding:56px 40px;
+    padding:40px;
     overflow: hidden;
 }
 .sharedBanner .mask{
@@ -1060,7 +1059,7 @@ header .menuMo .list li:last-child{
     background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .sharedBanner .title{
-    font-size: 72px;
+    font-size: 48px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -1068,7 +1067,7 @@ header .menuMo .list li:last-child{
 }
 .sharedBanner .txt{
     width: 40%;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -1157,7 +1156,7 @@ header .menuMo .list li:last-child{
 }
 .focusPage .list .title p{
     display: inline-block;
-    border-radius: 20px;
+    border-radius: 10px;
     background: #FFF;
     padding: 8px 16px;
 }
@@ -1174,7 +1173,13 @@ header .menuMo .list li:last-child{
     width: 72px;
     height: 72px;
     overflow: hidden;
-    line-height: 0;
+    line-height: 0;    
+    transform: rotate(0);
+    transition: transform 0.2s;
+}
+.focusPage .list .titleBox .arraw:hover{
+    transform: rotate(-45deg);
+    transition: transform 0.3s;
 }
 .focusPage .list li{
     position: relative;
