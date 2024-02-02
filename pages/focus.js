@@ -78,7 +78,7 @@ return (
                                     <a href={item.url}>                                        
                                         <div className="titleBox">                                        
                                             <div className="titleDiv">                                            
-                                                <div className="title"><p>{index}{item.title}</p></div>
+                                                <div className="title"><p>{item.title}</p></div>
                                                 <div className="txt"><p>{item.txt}</p></div>
                                             </div>
                                             <div className= {`arraw ${index === imgHover ? 'act':''}`}>
