@@ -8,6 +8,7 @@ function Navber(props) {
     const [hamBurger, setHamBurger] = useState(false);
     const [showChildMenu, setShowChildMenu] = useState(false);
     const [showChildMenuMo, setShowChildMenuMo] = useState(false);
+    const [navScroll, setNavScroll] = useState(false);
     // 變數宣告 ed
 
     // resize 監聽事件
@@ -17,13 +18,23 @@ function Navber(props) {
             setShowChildMenu(false);
         };    
         window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', navScrollStart);
         return () => {
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', navScrollStart);
         };
     }, []); 
     // resize 監聽事件 ed
 
     // 事件動作
+    const navScrollStart = () => {
+        if (window.scrollY > 0) {
+            setNavScroll(true);
+        } else {
+            setNavScroll(false);
+        }
+    };
+
     function childMenuClick(e) {
         if (e.currentTarget.querySelector('img')) {
             setShowChildMenu(true);
@@ -57,7 +68,7 @@ function Navber(props) {
                         `}
                     </style>
                 :''}
-                <nav className={hamBurger ? 'act':''}>
+                <nav className={hamBurger ? 'act': (navScroll ? 'act' : '')}>
                     <div className="mainMenu">
                         <div className="logo">
                             <a href="/">

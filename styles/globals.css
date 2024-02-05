@@ -63,7 +63,9 @@ header nav{
 header nav.act{
     width: 100%;
     position: fixed; 
-    z-index: 10;
+    z-index: 20;
+    top:0;
+    box-shadow: 0px 4px 12px rgba(0,0,0, 0.1);
 }
 header nav .mainMenu{
     display:flex;
