@@ -20,6 +20,12 @@ export default function Home(props) {
       </Head>
       <Header thisPage={thisPage} menuData={props.menu}/>
       <main>
+        <div className="gg">
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+        </div>
         <div className="indexPage">
           <section>
             <MainVision/>
@@ -45,9 +51,11 @@ export default function Home(props) {
               </div>
               <div className="action">
                 <div className="title">參加活動GO!</div>
-                <div className="txt">一起實踐永續</div>
-                <div className="arraw">
-                  <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                <div className="txtBox">
+                  <div className="txt">一起實踐永續</div>
+                  <div className="arraw">
+                    <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                  </div>
                 </div>
               </div>
             </div>
