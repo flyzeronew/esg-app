@@ -1,3 +1,4 @@
+
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
@@ -13,7 +14,15 @@ const thisPage='focus';
 const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
-
+//圖片網址切換
+const imgUrlChang = (url) => {
+    const newUrl = "https://staging-esg-statics.tvbs.com.tw";
+    const originalUrlPrefix = "https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com";
+    const url2 = url;
+    const updatedUrl2 = url2.replace(originalUrlPrefix, newUrl);
+    return updatedUrl2;
+};
+console.log(imgUrlChang('https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com/focus-news/img/OnqcislmJFB85BhhsApnRZ1HxXCv3dFnLTpOXgbJ.jpg'));
 const imgMouseOver = (e) => {
     if(window.innerWidth > 767){
         setHoverBgSize(120);
@@ -70,18 +79,18 @@ return (
             <div className="list">
                 <ul>
                     {
-                        props.focus.list.length > 0 ?
-                            props.focus.list.map((item, index) => (
+                        props.focus.length > 0 ?
+                            props.focus.map((item, index) => (
                                 <li key={index} style={{ 
-                                    background: `url(${item.img}) no-repeat center center`,
+                                    background: `url(${imgUrlChang(item.cover_img)}) no-repeat center center`,
                                     backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                     transition: 'background-size 0.3s',
                                 }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                    <a href={item.url}>                                        
+                                    <a href={item.url} target={item.is_blank == 1 ? '_blank' :'' } >                                        
                                         <div className="titleBox">                                        
                                             <div className="titleDiv">                                            
                                                 <div className="title"><p>{item.title}</p></div>
-                                                <div className="txt"><p>{item.txt}</p></div>
+                                                <div className="txt"><p>{item.description}</p></div>
                                             </div>
                                             <div className= {`arraw ${index === imgHover ? 'act':''}`}>
                                                 <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
@@ -111,8 +120,11 @@ export async function getServerSideProps() {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
-
-    const focusUrl = new URL('/api/focus', process.env.APP_URL);
+    // const focusUrl = new URL('/api/focus', process.env.APP_URL);
+    // const focusRes = await fetch(focusUrl);    
+    // const focus = await focusRes.json();
+    // 線上資料
+    const focusUrl = new URL('/api/focus-news', 'https://esg-api-staging.tvbs.com.tw');
     const focusRes = await fetch(focusUrl);    
     const focus = await focusRes.json();
     
