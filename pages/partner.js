@@ -11,23 +11,23 @@ export default function Partner(props) {
 const thisPage='partner';
 
 return (
-<div id='wrapper' className={inter.className}> 
-    <Head>
-    <title>{"esg | 共好夥伴"}</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <meta name="Keywords" content="esg,esg2,esg3" />
-    <meta name="description" content="esg description" />        
-    </Head>
-    <Header thisPage={thisPage} menuData={props.menu}/>
-    <main>
-        
-    </main>
-    <div className="footerLine">
-        <div className="box"></div>
+    <div id='wrapper' className={inter.className}> 
+        <Head>
+            <title>{"esg | 共好夥伴"}</title>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            <meta name="Keywords" content="esg,esg2,esg3" />
+            <meta name="description" content="esg description" />        
+        </Head>
+        <Header thisPage={thisPage} menuData={props.menu}/>
+        <main>
+            
+        </main>
+        <div className="footerLine">
+            <div className="box"></div>
+        </div>
+        <Footer />
     </div>
-    <Footer />
-</div>
-);
+    );
 }
 
 export async function getServerSideProps() {
