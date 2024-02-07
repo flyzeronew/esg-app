@@ -2,9 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
    // 自訂服務器配置
-   server: {
+  server: {
     host: '0.0.0.0',
     port: process.env.PORT || 3000,
+  },
+  env: {
+    IMG_URL: process.env.IMG_URL,
   },
 };
 

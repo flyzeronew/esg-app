@@ -16,12 +16,11 @@ const [hoverBgSize, setHoverBgSize] = useState();
 //圖片網址切換
 const imgUrlChang = (url) => {
     const originalUrl = "https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com";
-    const newUrl = "https://staging-esg-statics.tvbs.com.tw";   
-    const imgUrl = url;
-    const updateUrl = imgUrl.replace(originalUrl, newUrl);
+    const imgUrl = process.env.IMG_URL;   
+    const newUrl = url;
+    const updateUrl = newUrl.replace(originalUrl, imgUrl);
     return updateUrl;
 };
-console.log(imgUrlChang('https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com/focus-news/img/OnqcislmJFB85BhhsApnRZ1HxXCv3dFnLTpOXgbJ.jpg'));
 const imgMouseOver = (e) => {
     if(window.innerWidth > 767){
         setHoverBgSize(120);
