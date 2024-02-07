@@ -1164,6 +1164,9 @@ header .menuMo .list li:last-child{
         .indexPage .partner .list a .img{
             width: 68px;
         }
+        .indexPage .partner .list .box a{
+            column-gap: 10px;
+        }
     }
 }
 
