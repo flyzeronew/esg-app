@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
 
-
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
     console.log(props);
@@ -16,11 +15,11 @@ const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
 //圖片網址切換
 const imgUrlChang = (url) => {
-    const newUrl = "https://staging-esg-statics.tvbs.com.tw";
-    const originalUrlPrefix = "https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com";
-    const url2 = url;
-    const updatedUrl2 = url2.replace(originalUrlPrefix, newUrl);
-    return updatedUrl2;
+    const originalUrl = "https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com";
+    const newUrl = "https://staging-esg-statics.tvbs.com.tw";   
+    const imgUrl = url;
+    const updateUrl = imgUrl.replace(originalUrl, newUrl);
+    return updateUrl;
 };
 console.log(imgUrlChang('https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com/focus-news/img/OnqcislmJFB85BhhsApnRZ1HxXCv3dFnLTpOXgbJ.jpg'));
 const imgMouseOver = (e) => {
@@ -116,13 +115,9 @@ return (
 }
 
 export async function getServerSideProps() {
-
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
-    // const focusUrl = new URL('/api/focus', process.env.APP_URL);
-    // const focusRes = await fetch(focusUrl);    
-    // const focus = await focusRes.json();
     // 線上資料
     const focusUrl = new URL('/api/focus-news', process.env.API_URL);
     const focusRes = await fetch(focusUrl);    
