@@ -22,11 +22,8 @@ export default function Focus(props) {
         return updateUrl;
     };
     const imgMouseOver = (e) => {
-        if(window.innerWidth > 767){
-            setHoverBgSize(120);
-        }else{
-            setHoverBgSize(280);
-        }
+        const isLargeScreen = window.innerWidth > 767;
+        setHoverBgSize(isLargeScreen ? 120 : 280);
         setImgHover(e);
     };
 
@@ -34,18 +31,13 @@ export default function Focus(props) {
         setImgHover(null);
     };
     // resize 監聽事件
-    useEffect(() => {
-        function handleResize () {
-            if(window.innerWidth > 767){
-                setBgSize(100);
-                setHoverBgSize(100);
-                setImgHover(null);
-            }else{
-                setBgSize(250);
-                setHoverBgSize(250);
-                setImgHover(null);
-            }   
-        };    
+    useEffect(() => { 
+        const handleResize = (e) => {
+            const newSize = window.innerWidth > 767 ? 100 : 250;
+            setBgSize(newSize);
+            setHoverBgSize(newSize);
+            setImgHover(null);
+        };  
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => {

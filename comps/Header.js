@@ -28,26 +28,14 @@ function Navber(props) {
 
     // 事件動作
     const navScrollStart = () => {
-        if (window.scrollY > 0) {
-            setNavScroll(true);
-        } else {
-            setNavScroll(false);
-        }
+        setNavScroll(window.scrollY > 0 ? true : false);
     };
 
     function childMenuClick(e) {
-        if (e.currentTarget.querySelector('img')) {
-            setShowChildMenu(true);
-        }else{
-            setShowChildMenu(false);
-        }
+        setShowChildMenu(!!e.currentTarget.querySelector('img'));
     }
     function childMenuClickMo(e) {
-        if (e.currentTarget.querySelector('img')) {
-            setShowChildMenuMo(!showChildMenuMo)
-        }else{
-            setShowChildMenuMo(false);
-        }
+        setShowChildMenuMo(!!e.currentTarget.querySelector('img'));
     }
     function hamBurgerClick(e) {
         setHamBurger(!hamBurger);
