@@ -124,7 +124,7 @@ export async function getServerSideProps() {
     // const focusRes = await fetch(focusUrl);    
     // const focus = await focusRes.json();
     // 線上資料
-    const focusUrl = new URL('/api/focus-news', 'https://esg-api-staging.tvbs.com.tw');
+    const focusUrl = new URL('/api/focus-news', process.env.API_URL);
     const focusRes = await fetch(focusUrl);    
     const focus = await focusRes.json();
     
