@@ -20,12 +20,6 @@ export default function Home(props) {
       </Head>
       <Header thisPage={thisPage} menuData={props.menu}/>
       <main>
-        <div className="gg">
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-          <p>4</p>
-        </div>
         <div className="indexPage">
           <section>
             <MainVision/>
@@ -71,6 +65,9 @@ export default function Home(props) {
             </div>
             
             <div className="secret">
+                <div className="img mo">
+                  <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
+                </div>
               <div className="subtitle">
                 <p>永續生活小撇步</p>
                 <div className="line"></div>
@@ -78,7 +75,7 @@ export default function Home(props) {
               </div>
               <div className="title">
                 <p>吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</p>
-                <div className="img">
+                <div className="img pc">
                   <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
                 </div>
               </div>

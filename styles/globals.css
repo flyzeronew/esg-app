@@ -328,7 +328,7 @@ header .menuMo .list li:last-child{
 @media (max-width:1023px) {
     .indexPage{
         width: 728px;
-        padding:30px;
+        padding:20px;
         display:block;
     }
     .indexPage section:nth-child(1),
@@ -588,10 +588,18 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:1023px) {
+    .indexPage .view .img{
+        margin-bottom: 20px;
+    }
+    .indexPage .view .txt{
+        font-size: 24px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
     .indexPage .view{
         width:100%;
         margin-bottom: 20px;
-        padding:20px;
+        padding:30px;
     }
 }
 /* 永續觀點 ed*/
@@ -960,8 +968,29 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:1023px) {
-    .indexPage .secret .title {
+    .indexPage .secret .title p {
+        width: 100%;
+        height: auto;
         display: block;
+    }
+    .indexPage .secret .txt {
+        font-size: 18px;
+        height: auto;
+        display: block;
+    }
+    .indexPage .secret .img{ 
+        width: 100%;   
+    }
+    .indexPage .secret {
+        padding: 30px;
+    }
+    .indexPage .secret .img.pc{ 
+        display: none;  
+    }
+    .indexPage .secret .img.mo{
+        width: 100%;
+        display: block;  
+        margin-bottom: 20px;
     }
 }
 /* 永續生活小撇步 ed*/
@@ -1110,6 +1139,31 @@ header .menuMo .list li:last-child{
     }
     .indexPage .partner .list {
         width: 55%;
+    }
+    @media (max-width:1023px) {
+        .indexPage .partner{
+            display:block;
+            padding: 45px 20px 20px 20px;
+            border-radius: 100px 100px 30px 30px;
+        }
+        .indexPage .partner .titleBox{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .indexPage .partner .titleBox .title{
+            font-size: 36px;
+            margin: 0 auto 15px;
+        }
+        .indexPage .partner .txt{
+            font-size: 18px;
+            justify-content: center;
+        }
+        .indexPage .partner .list,.indexPage .partner .titleBox{
+            width: 100%;
+        }
+        .indexPage .partner .list a .img{
+            width: 68px;
+        }
     }
 }
 
