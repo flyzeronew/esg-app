@@ -328,7 +328,7 @@ header .menuMo .list li:last-child{
 @media (max-width:1023px) {
     .indexPage{
         width: 728px;
-        padding:30px;
+        padding:20px;
         display:block;
     }
     .indexPage section:nth-child(1),
@@ -336,12 +336,17 @@ header .menuMo .list li:last-child{
         width: 100%;
     }
 }
-@media (max-width:1023px) {
+@media (max-width:767px) {
     .indexPage{
         width: 100%;
-        padding:30px;
     }
 }
+/* @media (max-width:1023px) {
+    .indexPage{
+        width: 100%;
+        padding:15px;
+    }
+} */
 /* 主視覺 */
 .indexPage .mainVision{
     width: 100%;    
@@ -357,17 +362,28 @@ header .menuMo .list li:last-child{
     aspect-ratio: 16/9;
     line-height: 0;
 }
-.indexPage .mainVision .txtBox{
+.indexPage .mainVision .txtAbsolute{
     width: 55%;
+    position:absolute;    
+    bottom:0;
     overflow: hidden;
-    position:absolute;
+    padding: 20px;
+}
+.indexPage .mainVision .txtBox{
+    width: 100%;
+    overflow: hidden;    
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
-    bottom:20px;
-    left:20px;
-    padding:20px;
-    z-index: 1;
+    padding: 20px;
+}
+@media (max-width:767px) {
+    .indexPage .mainVision .txtAbsolute{
+        width: 100%;
+    }
+    .indexPage .mainVision .box .img{
+        aspect-ratio: 1/1;
+    }
 }
 .indexPage .mainVision .txtBox .object{
     display:flex;
@@ -440,7 +456,7 @@ header .menuMo .list li:last-child{
 /* What is ESG? */
 .indexPage .whatEsg{
     width:50%;
-    padding:35px;
+    padding:52px 35px;
     border-radius: 180px;
     border: 2px solid #DDD;
     background: #FFF;
@@ -466,14 +482,14 @@ header .menuMo .list li:last-child{
     line-height: normal;
     text-align: center;
 }
+
 @media (max-width:1919px) {
     .indexPage .whatEsg .title {
         font-size: 62px;
         margin-bottom: 10px;
     }
     .indexPage .whatEsg {
-        width: 45%;
-        padding: 30px;
+        padding: 42px 35px;
     }
 }
 @media (max-width:1599px) {
@@ -503,7 +519,7 @@ header .menuMo .list li:last-child{
     }
     .indexPage .whatEsg {
         width: 45%;
-        padding: 30px;
+        padding: 25px 30px;
     }
 }
 @media (max-width:1023px) {
@@ -519,7 +535,7 @@ header .menuMo .list li:last-child{
 /* 永續觀點 */
 .indexPage .view{
     width:30%;
-    border-radius: 30px;
+    border-radius: 20px;
     background: #D0FF90;
     padding: 24px;
 }
@@ -527,11 +543,12 @@ header .menuMo .list li:last-child{
     aspect-ratio: 16/9;
     overflow: hidden;
     margin-bottom: 5px;
+    border-radius: 20px;
 }
 .indexPage .view .txt{
     overflow: hidden;
     color: #226158;
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -540,7 +557,22 @@ header .menuMo .list li:last-child{
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    display: -webkit-box;    
+    display: -webkit-box; 
+    height: 120px;  
+}
+@media (max-width:1919px) {
+    .indexPage .view .txt {
+        font-size: 24px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:1599px) {
+    .indexPage .view .txt {
+        font-size: 20px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
 }
 @media (max-width:1279px) {
     .indexPage .view {
@@ -556,9 +588,18 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:1023px) {
+    .indexPage .view .img{
+        margin-bottom: 20px;
+    }
+    .indexPage .view .txt{
+        font-size: 24px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
     .indexPage .view{
         width:100%;
         margin-bottom: 20px;
+        padding:30px;
     }
 }
 /* 永續觀點 ed*/
@@ -576,7 +617,7 @@ header .menuMo .list li:last-child{
     font-weight: 600;
     line-height: normal;
     margin-bottom:10px;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .indexPage .action .txt{
     text-align: center;
@@ -587,16 +628,18 @@ header .menuMo .list li:last-child{
     margin-bottom:10px;
 }
 .indexPage .action .arraw{
-    margin:0 auto 40px;
+    margin:0 auto 50px;
 }
 @media (max-width:1919px) {
     .indexPage .action .title {      
         font-size: 35px;
+        margin-top: 60px;
     }
 }
 @media (max-width:1599px) {
     .indexPage .action .title {      
         font-size: 30px;
+        margin-top: 60px;
     }
     .indexPage .action .title {
         margin-bottom: 10px;
@@ -607,14 +650,13 @@ header .menuMo .list li:last-child{
     .indexPage .action .arraw {
         width: 30px;
         height: 30px;
-        margin: 0 auto 30px;
+        margin: 0 auto 40px;
     }
 }
 @media (max-width:1279px) {
     .indexPage .action .title {      
         font-size: 24px;
-    }
-    .indexPage .action .title {
+        margin-top: 50px;
         margin-bottom: 10px;
     }
     .indexPage .action .txt {
@@ -627,6 +669,24 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:1023px) {
+    .indexPage .action{
+        padding: 24px;
+    }
+    .indexPage .action .title {      
+        font-size: 36px;
+        margin-top: 0px;
+    }
+    .indexPage .action .txtBox {
+        display: flex;
+        justify-content:center ;
+        column-gap: 10px;
+    }
+    .indexPage .action .arraw {
+        margin: 0;
+    }
+    .indexPage .action .txt {
+        font-size: 18px;
+    }
     .indexPage .action{
         width: 100%;
         margin-bottom: 20px;
@@ -738,6 +798,29 @@ header .menuMo .list li:last-child{
         width: 28px;
         height: 28px;
     }
+}
+@media (max-width:1023px) {
+    .indexPage .ourMission {
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+    .indexPage .ourMission .title {
+        font-size: 36px;
+        letter-spacing: 0.72;
+        margin-bottom: 10px;
+    }
+    .indexPage .ourMission .txt {
+        font-size: 18px;        
+    }
+    .indexPage .ourMission .img {
+        display:none;
+    }
+    .indexPage .ourMission {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }
 /* Our Mission ed*/
 /* 永續生活小撇步 */
@@ -884,12 +967,38 @@ header .menuMo .list li:last-child{
         height: 25px;
     }
 }
+@media (max-width:1023px) {
+    .indexPage .secret .title p {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .indexPage .secret .txt {
+        font-size: 18px;
+        height: auto;
+        display: block;
+    }
+    .indexPage .secret .img{ 
+        width: 100%;   
+    }
+    .indexPage .secret {
+        padding: 30px;
+    }
+    .indexPage .secret .img.pc{ 
+        display: none;  
+    }
+    .indexPage .secret .img.mo{
+        width: 100%;
+        display: block;  
+        margin-bottom: 20px;
+    }
+}
 /* 永續生活小撇步 ed*/
 
 /* 共好夥伴 */
 .indexPage .partner{
     overflow: hidden;
-    padding: 24px 24px 24px 96px;
+    padding: 40px 24px 40px 96px;
     background-color:#d7f2dd;
     border-radius: 190px 30px 30px 190px;
     display:flex;
@@ -946,7 +1055,7 @@ header .menuMo .list li:last-child{
 @media (max-width:1919px) {
     .indexPage .partner {
         overflow: hidden;
-        padding: 20px 20px 20px 96px;
+        padding: 40px 24px 40px 96px;
         background-color: #d7f2dd;
         border-radius: 190px 30px 30px 190px;
         display: flex;
@@ -971,7 +1080,7 @@ header .menuMo .list li:last-child{
 }
 @media (max-width:1599px) {
     .indexPage .partner {
-        padding: 20px 16px 20px 70px;
+        padding: 32px 16px 32px 70px;
     }
     .indexPage .partner .title {
         font-size: 40px;
@@ -1030,6 +1139,34 @@ header .menuMo .list li:last-child{
     }
     .indexPage .partner .list {
         width: 55%;
+    }
+    @media (max-width:1023px) {
+        .indexPage .partner{
+            display:block;
+            padding: 45px 20px 20px 20px;
+            border-radius: 100px 100px 30px 30px;
+        }
+        .indexPage .partner .titleBox{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .indexPage .partner .titleBox .title{
+            font-size: 36px;
+            margin: 0 auto 15px;
+        }
+        .indexPage .partner .txt{
+            font-size: 18px;
+            justify-content: center;
+        }
+        .indexPage .partner .list,.indexPage .partner .titleBox{
+            width: 100%;
+        }
+        .indexPage .partner .list a .img{
+            width: 68px;
+        }
+        .indexPage .partner .list .box a{
+            column-gap: 10px;
+        }
     }
 }
 
@@ -1234,4 +1371,3 @@ header .menuMo .list li:last-child{
     }
 }
 /* 未來焦點頁面 ed */
-

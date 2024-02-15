@@ -45,9 +45,11 @@ export default function Home(props) {
               </div>
               <div className="action">
                 <div className="title">參加活動GO!</div>
-                <div className="txt">一起實踐永續</div>
-                <div className="arraw">
-                  <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                <div className="txtBox">
+                  <div className="txt">一起實踐永續</div>
+                  <div className="arraw">
+                    <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                  </div>
                 </div>
               </div>
             </div>
@@ -63,6 +65,9 @@ export default function Home(props) {
             </div>
             
             <div className="secret">
+                <div className="img mo">
+                  <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
+                </div>
               <div className="subtitle">
                 <p>永續生活小撇步</p>
                 <div className="line"></div>
@@ -70,7 +75,7 @@ export default function Home(props) {
               </div>
               <div className="title">
                 <p>吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</p>
-                <div className="img">
+                <div className="img pc">
                   <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
                 </div>
               </div>
