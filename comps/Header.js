@@ -13,6 +13,9 @@ function Navber(props) {
 
     // resize 監聽事件
     useEffect(() => {
+        const mainMenuHeight = document.querySelector('.mainMenu').clientHeight;
+        const mainMenuBox = document.querySelector('.mainMenuBox');
+        mainMenuBox.style.height = `${mainMenuHeight}px`;
         const handleResize = () => {
             setHamBurger(false);
             setShowChildMenu(false);
@@ -28,10 +31,7 @@ function Navber(props) {
 
     // 事件動作
     const navScrollStart = () => {
-        const mainMenuHeight = document.querySelector('.mainMenu').clientHeight;
-        const mainMenuBox = document.querySelector('.mainMenuBox');
         setNavScroll(window.scrollY > 0 ? true : false);
-        setNavScroll(window.scrollY > 0 ? mainMenuBox.style.height = `${mainMenuHeight}px` : mainMenuBox.style.height = 0);
     };
 
     function childMenuClick(e) {

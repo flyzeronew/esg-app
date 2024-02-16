@@ -58,15 +58,14 @@ img{
     cursor: pointer;
 }
 header nav{
-    position: relative; 
-    background-color: #fff;
-}
-header nav.act{
     width: 100%;
     position: fixed; 
     z-index: 20;
     top:0;
-    left:0;
+    left:0; 
+    background-color: #fff;
+}
+header nav.act{
     box-shadow: 0px 4px 12px rgba(0,0,0, 0.1);
 }
 header nav .mainMenu{
