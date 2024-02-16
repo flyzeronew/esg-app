@@ -1383,7 +1383,7 @@ header .menuMo .list li:last-child{
 /* 共好夥伴頁面 */
 .partnerPage .submenu{
     margin: 32px 40px;
- 
+    white-space:nowrap;
 }
 .partnerPage .submenu a{
     margin-right:16px;
@@ -1391,8 +1391,8 @@ header .menuMo .list li:last-child{
     border-radius: 50px;
     background-color: #F2F2F2;
 }
-.partnerPage .list{
-    width: 1855px;
+.partnerPage .submenu a.act{
+    background-color: #89EC54;
 }
 @media (max-width:1855px) { 
     .partnerPage .list{
@@ -1402,21 +1402,33 @@ header .menuMo .list li:last-child{
 }
 .partnerPage .list ul{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     column-gap: 32px;
-    margin-bottom: 32px;
+    row-gap: 32px;
 }
 .partnerPage .list ul:last-child{
     margin-bottom: 80px;
 }
 .partnerPage .list ul li{
+    width: calc((100vw - 128px) / 3);
     aspect-ratio: 16/9;
-    position: relative;
     display: flex;
     align-items: flex-end;
     padding: 24px;
     border-radius: 20px;
 }
+@media (max-width:1208px) {
+    .partnerPage .list ul li{
+        width: calc((100vw - 128px) / 2);
+    }
+}
+@media (max-width:894px) {
+    .partnerPage .list ul li{
+        width: 767px;
+    }
+}
+
 
 .partnerPage .list .profileCard{
     width: 50%;
@@ -1437,9 +1449,15 @@ header .menuMo .list li:last-child{
     line-height: normal;
 }
 .partnerPage .list .profileCard .txt{
+    font-size: 18px;
     color: #FFF;
-    border-left: 4px solid white;
+    border-left: 4px solid #FFFFFF;
     padding-left: 12px;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
 
 }
 .partnerPage .list .profileCard .txt span{
@@ -1467,8 +1485,42 @@ header .menuMo .list li:last-child{
         height: 60px;
     }
     .partnerPage .list .profileCard .name{
-        margin: 12px 0;
         font-size: 20px;
+    }
+}
+@media (max-width:767px) { 
+    .partnerPage .mask{
+        height: 0;
+    }
+}
+@media (max-width:441px) { 
+
+    .partnerPage .submenu{
+
+        padding: 0;
+        padding-top: 10px;
+        margin: 0px 40px;
+        margin-bottom: 32px;
+        height: 40px;
+        overflow-x: auto;
+        white-space:nowrap;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+     
+    }
+    .partnerPage .submenu::-webkit-scrollbar {
+        display: none; /* 隱藏滾動條 */
+      }
+    .partnerPage .list .profileCard .name{
+        font-size: 18px;
+    }
+    .partnerPage .list .profileCard .txt{
+        font-size: 18px;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
     }
 }
 /* 共好夥伴頁面 ed*/
