@@ -65,6 +65,7 @@ header nav.act{
     position: fixed; 
     z-index: 20;
     top:0;
+    left:0;
     box-shadow: 0px 4px 12px rgba(0,0,0, 0.1);
 }
 header nav .mainMenu{
