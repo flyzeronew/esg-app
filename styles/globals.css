@@ -59,6 +59,7 @@ img{
 }
 header nav{
     position: relative; 
+    background-color: #fff;
 }
 header nav.act{
     width: 100%;
@@ -69,11 +70,17 @@ header nav.act{
     box-shadow: 0px 4px 12px rgba(0,0,0, 0.1);
 }
 header nav .mainMenu{
+    width: 1920px;
     display:flex;
     align-items: center;
     justify-content: space-between;
     padding:24px 30px;
-    background-color: #fff;
+    margin: 0 auto;    
+}
+@media (max-width:1919px) {
+    header nav .mainMenu{
+        width:100%;
+    }
 }
 @media (max-width:1023px) {
     header nav .mainMenu{
