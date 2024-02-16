@@ -28,7 +28,10 @@ function Navber(props) {
 
     // 事件動作
     const navScrollStart = () => {
+        const mainMenuHeight = document.querySelector('.mainMenu').clientHeight;
+        const mainMenuBox = document.querySelector('.mainMenuBox');
         setNavScroll(window.scrollY > 0 ? true : false);
+        setNavScroll(window.scrollY > 0 ? mainMenuBox.style.height = `${mainMenuHeight}px` : mainMenuBox.style.height = 0);
     };
 
     function childMenuClick(e) {
@@ -56,7 +59,8 @@ function Navber(props) {
                         `}
                     </style>
                 :''}
-                <nav className={hamBurger ? 'act': (navScroll ? 'act' : '')}>
+                <div className="mainMenuBox"></div>
+                <nav className={hamBurger ? 'act': (navScroll ? 'act' : '')}>                    
                     <div className="mainMenu">
                         <div className="logo">
                             <a href="/">
