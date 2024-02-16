@@ -35,7 +35,12 @@ const [hoverBgSize, setHoverBgSize] = useState();
     // resize 監聽事件
     useEffect(() => { 
         const handleResize = (e) => {
-            const newSize = window.innerWidth > 767 ? 100 : 250;
+            let newSize = 100 ;
+            if(window.innerWidth < 1609 && window.innerWidth > 1208){
+                newSize = 135;
+            }else if(window.innerWidth < 403){
+                newSize = 125;
+            }
             setBgSize(newSize);
             setHoverBgSize(newSize);
             setImgHover(null);
@@ -68,7 +73,7 @@ return (
                     </div>
                 </div>   
                 <div className='submenu'>
-                    <a href="##">全部</a>
+                    <a href="##" className='act'>全部</a>
                     <a href="##">永續企業</a>
                     <a href="##">永續城市</a>
                     <a href="##">團體與個人</a>
@@ -91,8 +96,11 @@ return (
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
                                     <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
                                     </div>
+                                    {/* <div className='txt'>
+                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
+                                    </div> */}
                                 </div> 
                             </a>
                         </li>
@@ -138,8 +146,6 @@ return (
                                 </div> 
                             </a>
                         </li>
-                    </ul>
-                    <ul>
                         <li key={4} style={{ 
                                         background: `url("/images/partner-bg01.jpg") no-repeat center center`,
                                         backgroundSize: 4 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
