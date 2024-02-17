@@ -85,6 +85,7 @@ return (
                                         backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}>
+                            <div class="itemMask"></div>
                             <a href='##'>
                                 <div className="profileCard">
                                     <div className="profileImg">
@@ -98,9 +99,6 @@ return (
                                     <div className='txt'>
                                         追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
                                     </div>
-                                    {/* <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
-                                    </div> */}
                                 </div> 
                             </a>
                         </li>
@@ -109,6 +107,7 @@ return (
                                         backgroundSize: 2 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(2)} onMouseOut={imgMouseOut}>
+                            <div class="itemMask"></div>
                             <a href='##'>
                                 <div className="profileCard">
                                     <div className="profileImg">
@@ -130,6 +129,7 @@ return (
                                         backgroundSize: 3 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(3)} onMouseOut={imgMouseOut}>
+                            <div class="itemMask"></div>
                             <a href='##'>
                                 <div className="profileCard">
                                     <div className="profileImg">
@@ -151,6 +151,7 @@ return (
                                         backgroundSize: 4 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(4)} onMouseOut={imgMouseOut}>
+                            <div class="itemMask"></div>
                             <a href='##'>
                                 <div className="profileCard">
                                     <div className="profileImg">
@@ -172,6 +173,7 @@ return (
                                         backgroundSize: 5 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(5)} onMouseOut={imgMouseOut}>
+                            <div class="itemMask"></div>
                             <a href='##'>
                                 <div className="profileCard">
                                     <div className="profileImg">
@@ -193,6 +195,7 @@ return (
                                         backgroundSize: 6 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(6)} onMouseOut={imgMouseOut}>
+                            <div class="itemMask"></div>
                             <a href='##'>
                                 <div className="profileCard">
                                     <div className="profileImg">

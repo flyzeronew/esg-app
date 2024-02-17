@@ -1410,11 +1410,22 @@ header .menuMo .list li:last-child{
     margin-bottom: 80px;
 }
 .partnerPage .list ul li{
-    width: calc((100vw - 128px) / 3);
+    width: calc((100% - 128px) / 3);
     aspect-ratio: 16/9;
     display: flex;
     align-items: flex-end;
     padding: 24px;
+    border-radius: 20px;
+    position: relative;
+}
+.partnerPage .list ul li .itemMask{
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 85%,rgba(0,0,0,1) 100%);
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
     border-radius: 20px;
 }
 @media (max-width:1208px) {
@@ -1426,10 +1437,14 @@ header .menuMo .list li:last-child{
     .partnerPage .list ul li{
         width: 767px;
     }
+    .partnerPage .list ul li .itemMask{
+        width: 100%;
+    }
 }
 
 
 .partnerPage .list .profileCard{
+    position: relative;
     width: 50%;
 }
 .partnerPage .list .profileCard .profileImg{
@@ -1457,10 +1472,6 @@ header .menuMo .list li:last-child{
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
-
-}
-.partnerPage .list .profileCard .txt span{
-  /* padding: 12px; */
 
 }
 @media (max-width:1855px) { 
