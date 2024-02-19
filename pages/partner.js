@@ -71,12 +71,16 @@ return (
                             <div className="line"></div>
                         </div>
                     </div>
-                </div>   
-                <div className='submenu'>
-                    <a href="##" className='act'>全部</a>
-                    <a href="##">永續企業</a>
-                    <a href="##">永續城市</a>
-                    <a href="##">團體與個人</a>
+                </div> 
+                <div className='submenuArea'>
+                    
+                    <div className='submenu'> 
+                        <div className='submenuMask'></div>  
+                        <a href="##" className='act'>全部</a>
+                        <a href="##">永續企業</a>
+                        <a href="##">永續城市</a>
+                        <a href="##">團體與個人</a>
+                    </div>  
                 </div>  
                 <div className="list">
                     <ul>
