@@ -96,8 +96,10 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
+                                        </div>
                                     </div>
                                 </div> 
                             </a>
@@ -118,8 +120,10 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
                             </a>
@@ -140,8 +144,10 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        <span>追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設</span>
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
                             </a>
@@ -162,8 +168,10 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
                             </a>
@@ -184,8 +192,10 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
                             </a>
@@ -206,8 +216,10 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        <span>追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設</span>
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
                             </a>
