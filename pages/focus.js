@@ -72,7 +72,7 @@ export default function Focus(props) {
                             props.focus.length > 0 ?
                                 props.focus.map((item, index) => (
                                     <li key={index} style={{ 
-                                        background: `url(${imgUrlChang(item.cover_img)}) no-repeat center center`,
+                                        background: `url(${item.cover_img}) no-repeat center center`,
                                         backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
