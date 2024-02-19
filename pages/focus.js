@@ -63,23 +63,25 @@ export default function Focus(props) {
                         {
                             props.focus.length > 0 ?
                                 props.focus.map((item, index) => (
-                                    <li key={index} style={{ 
-                                        background: `url(${item.cover_img}) no-repeat center center`,
-                                        backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                        transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                        <a href={item.url} target={item.is_blank == 1 ? '_blank' :'' } >                                        
-                                            <div className="titleBox">                                        
-                                                <div className="titleDiv">                                            
-                                                    <div className="title"><p>{item.title}</p></div>
-                                                    <div className="txt"><p>{item.description}</p></div>
-                                                </div>
-                                                <div className= {`arraw ${index === imgHover ? 'act':''}`}>
-                                                    <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
-                                                </div>
-                                            </div>                           
-                                        </a>
-                                    </li>
+                                    item.status === 1 ?
+                                        <li key={index} style={{ 
+                                            background: `url(${item.cover_img}) no-repeat center center`,
+                                            backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                            transition: 'background-size 0.3s',
+                                        }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
+                                            <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >                                        
+                                                <div className="titleBox">                                        
+                                                    <div className="titleDiv">                                            
+                                                        <div className="title"><p>{item.title}</p></div>
+                                                        <div className="txt"><p>{item.description}</p></div>
+                                                    </div>
+                                                    <div className= {`arraw ${index === imgHover ? 'act':''}`}>
+                                                        <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                                                    </div>
+                                                </div>                           
+                                            </a>
+                                        </li>
+                                    :''
                                 ))
                             :''
                         }
