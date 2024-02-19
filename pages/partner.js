@@ -62,12 +62,16 @@ return (
                             <div className="line"></div>
                         </div>
                     </div>
-                </div>   
-                <div className='submenu'>
-                    <a href="##" className='act'>全部</a>
-                    <a href="##">永續企業</a>
-                    <a href="##">永續城市</a>
-                    <a href="##">團體與個人</a>
+                </div> 
+                <div className='submenuArea'>
+                    
+                    <div className='submenu'> 
+                        <div className='submenuMask'></div>  
+                        <a href="##" className='act'>全部</a>
+                        <a href="##">永續企業</a>
+                        <a href="##">永續城市</a>
+                        <a href="##">團體與個人</a>
+                    </div>  
                 </div>  
                 <div className="list">
                     <ul>
@@ -87,10 +91,15 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
+                                        </div>
                                     </div>
                                 </div> 
+                                <div className= {`arraw ${1 === imgHover ? 'act':''}`}>
+                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
+                                </div>
                             </a>
                         </li>
                         <li  key={2} style={{ 
@@ -109,10 +118,15 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
+                                <div className= {`arraw ${2 === imgHover ? 'act':''}`}>
+                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
+                                </div>
                             </a>
                         </li>
                         <li key={3} style={{ 
@@ -131,10 +145,15 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        <span>追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設</span>
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
+                                <div className= {`arraw ${3 === imgHover ? 'act':''}`}>
+                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
+                                </div>
                             </a>
                         </li>
                         <li key={4} style={{ 
@@ -153,10 +172,15 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
+                                <div className= {`arraw ${4 === imgHover ? 'act':''}`}>
+                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
+                                </div>
                             </a>
                         </li>
                         <li  key={5} style={{ 
@@ -175,10 +199,15 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
+                                <div className= {`arraw ${5 === imgHover ? 'act':''}`}>
+                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
+                                </div>
                             </a>
                         </li>
                         <li key={6} style={{ 
@@ -197,10 +226,15 @@ return (
                                     <div className='name'>
                                         台灣雀巢 Nestlé Taiwan
                                     </div>
-                                    <div className='txt'>
-                                        <span>追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設</span>
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                        </div>
                                     </div>
                                 </div> 
+                                <div className= {`arraw ${6 === imgHover ? 'act':''}`}>
+                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
+                                </div>
                             </a>
                         </li>
                     </ul>
