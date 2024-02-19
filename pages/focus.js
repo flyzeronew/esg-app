@@ -13,14 +13,6 @@ export default function Focus(props) {
     const [imgHover, setImgHover] = useState(null);
     const [bgSize, setBgSize] = useState();
     const [hoverBgSize, setHoverBgSize] = useState();
-    //圖片網址切換
-    const imgUrlChang = (url) => {
-        const originalUrl = "https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com";
-        const imgUrl = process.env.IMG_URL;   
-        const newUrl = url;
-        const updateUrl = newUrl.replace(originalUrl, imgUrl);
-        return updateUrl;
-    };
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
