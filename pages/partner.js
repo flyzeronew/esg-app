@@ -106,9 +106,6 @@ return (
                                         </div>
                                     </div>
                                 </div> 
-                                <div className= {`arraw ${1 === imgHover ? 'act':''}`}>
-                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
-                                </div>
                             </a>
                         </li>
                         <li  key={2} style={{ 
@@ -133,9 +130,6 @@ return (
                                         </div>
                                     </div>
                                 </div> 
-                                <div className= {`arraw ${2 === imgHover ? 'act':''}`}>
-                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
-                                </div>
                             </a>
                         </li>
                         <li key={3} style={{ 
@@ -160,9 +154,6 @@ return (
                                         </div>
                                     </div>
                                 </div> 
-                                <div className= {`arraw ${3 === imgHover ? 'act':''}`}>
-                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
-                                </div>
                             </a>
                         </li>
                         <li key={4} style={{ 
@@ -187,9 +178,6 @@ return (
                                         </div>
                                     </div>
                                 </div> 
-                                <div className= {`arraw ${4 === imgHover ? 'act':''}`}>
-                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
-                                </div>
                             </a>
                         </li>
                         <li  key={5} style={{ 
@@ -214,9 +202,6 @@ return (
                                         </div>
                                     </div>
                                 </div> 
-                                <div className= {`arraw ${5 === imgHover ? 'act':''}`}>
-                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
-                                </div>
                             </a>
                         </li>
                         <li key={6} style={{ 
@@ -241,9 +226,6 @@ return (
                                         </div>
                                     </div>
                                 </div> 
-                                <div className= {`arraw ${6 === imgHover ? 'act':''}`}>
-                                    <Image src="images/icon_arraw04.svg" alt="arraw" width={42} height={42} />
-                                </div>
                             </a>
                         </li>
                     </ul>
