@@ -1432,6 +1432,7 @@ header .menuMo .list li:last-child{
 }
 /* 未來焦點頁面 ed */
 
+
 /* 共好夥伴頁面 */
 .partnerPage .submenu{
     margin: 32px 40px;
@@ -1450,6 +1451,12 @@ header .menuMo .list li:last-child{
     .partnerPage .list{
         width: 100%;
         padding: 15px;
+    }  
+}
+@media (max-width:767px) { 
+    .partnerPage .list{
+        width: 100%;
+        padding: 15px 0 15px 0;
     }  
 }
 .partnerPage .list ul{
@@ -1472,7 +1479,7 @@ header .menuMo .list li:last-child{
     position: relative;
 }
 .partnerPage .list ul li .itemMask{
-    background: linear-gradient(to bottom, rgba(51,51,3,0) 0%,rgba(51,51,3,0.6) 85%,rgba(51,51,3,1) 100%);
+    background: linear-gradient(to bottom, rgba(51,51,51,0) 0%,rgba(51,51,51,0.6) 85%,rgba(51,51,51,1) 100%);
     position: absolute;
     top:0;
     left: 0;
@@ -1481,6 +1488,11 @@ header .menuMo .list li:last-child{
     aspect-ratio: 16/9;
     border-radius: 20px;
 }
+/* .partnerPage .list ul li a{
+    width: 100%;
+    height: 100%;
+    display:block;
+} */
 
 @media (max-width:1208px) {
     .partnerPage .list ul li{
@@ -1552,18 +1564,6 @@ header .menuMo .list li:last-child{
     display: -webkit-box;
 
 }
-.partnerPage .list .profileCard .txt:before{
-    /* content: "";
-    position: absolute;
-    top: -5px; 
-    left: -5px;
-    left: 2px;
-    width: 10px; 
-    height: 10px; 
-    border-radius: 50%; 
-    background-color: #FFFFFF;  */
-
-}
 @media (max-width:1855px) { 
     .partnerPage .list .profileCard{
         width: 100%;
@@ -1592,9 +1592,6 @@ header .menuMo .list li:last-child{
     .partnerPage {
         padding: 15px;
     }
-    .partnerPage .mask{
-        height: 0;
-    }
 }
 @media (max-width:452px) { 
     .submenuArea{
@@ -1603,8 +1600,7 @@ header .menuMo .list li:last-child{
     .partnerPage .submenu{
         padding: 0;
         padding-top: 10px;
-        margin: 0px 40px;
-        margin-bottom: 32px;
+        margin: 0 0 32px 40px;
         height: 40px;
         overflow-x: auto;
         white-space:nowrap;
@@ -1614,7 +1610,7 @@ header .menuMo .list li:last-child{
     .partnerPage .submenuMask{
         position: absolute;
         top:0;
-        right:30px;
+        right:0px;
         width: 10%;
         height: 40px;
         background: linear-gradient(to right, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.8) 45%,rgba(255,255,255,1) 100%);
