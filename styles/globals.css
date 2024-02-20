@@ -1428,6 +1428,12 @@ header .menuMo .list li:last-child{
     aspect-ratio: 16/9;
     border-radius: 20px;
 }
+/* .partnerPage .list ul li a{
+    width: 100%;
+    height: 100%;
+    display:block;
+} */
+
 @media (max-width:1208px) {
     .partnerPage .list ul li{
         width: calc((100vw - 128px) / 2);
