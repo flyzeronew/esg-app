@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 
@@ -63,9 +64,9 @@ function Navber(props) {
                 <nav className={hamBurger ? 'act': (navScroll ? 'act' : '')}>                    
                     <div className="mainMenu">
                         <div className="logo">
-                            <a href="/">
+                            <Link href="/">
                                 <Image src="/images/esg-logo.png" alt="logo" width={187} height={48} />
-                            </a>
+                            </Link>
                         </div>
 
                         {/* 手機板漢堡 */}
@@ -80,10 +81,10 @@ function Navber(props) {
                                 <ul>
                                     {menu.map((item, index) => (
                                         <li key={index} >
-                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick}>
+                                            <Link className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick}>
                                                 {item.title}
                                                 {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}                                
                                 </ul>
@@ -100,9 +101,9 @@ function Navber(props) {
                             {menu.map((item, index) => (
                                 item.child.map((item2, index2) => (
                                     <li key={index2}>
-                                        <a href={item2.url} onClick={childMenuMouseLeave}>
+                                        <Link href={item2.url} onClick={childMenuMouseLeave}>
                                             {item2.title}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))
                             ))}                           
@@ -122,20 +123,20 @@ function Navber(props) {
                                     <ul>
                                         {menu.map((item, index) => (
                                             <li key={index} >
-                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={childMenuClickMo}>
+                                                <Link className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={childMenuClickMo}>
                                                     {item.title}
                                                     {item.child.length>0 ? <Image className={showChildMenuMo ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
-                                                </a>
+                                                </Link>
 
                                                 {
                                                     item.child.length>0 ? 
                                                         <div className={`child ${showChildMenuMo ? 'act':''}`}>
                                                             {
                                                                 item.child.map((item2, index2) => (
-                                                                    <a key={index2} href={item2.url}>
+                                                                    <Link key={index2} href={item2.url}>
                                                                         {item2.title}
                                                                         <div className="line"></div>
-                                                                    </a>
+                                                                    </Link>
                                                                 )) 
                                                             }
                                                         </div>
