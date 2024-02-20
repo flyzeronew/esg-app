@@ -414,7 +414,7 @@ header .menuMo .list li:last-child{
     text-align: left;
 }
 .indexPage .slick-dots li{
-    width: 40px;
+    width: 50px;
     height: 5px;
     margin-right:0px;
     border-radius: 30px;
@@ -438,15 +438,6 @@ header .menuMo .list li:last-child{
     .indexPage .mainVision .title {
         font-size: 30px;
         letter-spacing: 1px;
-    }
-
-    .indexPage .slick-dots li{
-        width: 30px;
-        height: 6px;
-   }
-    .indexPage .slick-dots li button:before{
-        width: 30px;
-        height: 6px;
     }
 }
 /* 主視覺 ed*/
@@ -1092,9 +1083,8 @@ header .menuMo .list li:last-child{
     aspect-ratio: 1/1;
 }
 .indexPage .partner .slick-dots{
-    position:relative;
-    bottom:auto;
-    left:auto;
+    bottom:-25px;
+    left:0;
     text-align:center;
 }
 .indexPage .partner .slick-dots li button:before{
@@ -1226,6 +1216,11 @@ header .menuMo .list li:last-child{
         }
         .indexPage .partner .list .box a{
             column-gap: 10px;
+        }
+        .indexPage .partner .slick-dots{
+            position: relative;
+            bottom:auto;
+            left:auto;
         }
     }
 }
