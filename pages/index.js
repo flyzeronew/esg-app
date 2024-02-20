@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
@@ -90,26 +91,26 @@ export default function Home(props) {
               </div>
               <div className="list">
                 <div className="box">
-                   <a href='##'>
+                   <Link href='##'>
                       <div className="img">
                         <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                    </a>
+                    </Link>
 
-                    <a href='##'>
+                    <Link href='##'>
                       <div className="img">
                         <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                    </a>
+                    </Link>
 
-                    <a href='##'>
+                    <Link href='##'>
                       <div className="img">
                         <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                       </div>
                       <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                    </a>
+                    </Link>
                 </div>
               </div>
             </div>
