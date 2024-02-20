@@ -89,8 +89,8 @@ return (
                                         backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}>
-                            <div class="itemMask"></div>
-                            <a href='##'>
+                            <a href="##">
+                                <div class="itemMask"></div>
                                 <div className="profileCard">
                                     <div className="profileImg">
                                         <div className="img">
@@ -113,8 +113,8 @@ return (
                                         backgroundSize: 2 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(2)} onMouseOut={imgMouseOut}>
-                            <div class="itemMask"></div>
                             <a href='##'>
+                                <div class="itemMask"></div>
                                 <div className="profileCard">
                                     <div className="profileImg">
                                         <div className="img">
@@ -137,8 +137,8 @@ return (
                                         backgroundSize: 3 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(3)} onMouseOut={imgMouseOut}>
-                            <div class="itemMask"></div>
-                            <a href='##'>
+                             <a href='##'>
+                                <div class="itemMask"></div>
                                 <div className="profileCard">
                                     <div className="profileImg">
                                         <div className="img">
@@ -160,9 +160,9 @@ return (
                                         background: `url("/images/partner-bg01.jpg") no-repeat center center`,
                                         backgroundSize: 4 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(4)} onMouseOut={imgMouseOut}>
-                            <div class="itemMask"></div>
+                                    }} onMouseOver={() => imgMouseOver(4)} onMouseOut={imgMouseOut}>  
                             <a href='##'>
+                                <div class="itemMask"></div>
                                 <div className="profileCard">
                                     <div className="profileImg">
                                         <div className="img">
@@ -185,8 +185,8 @@ return (
                                         backgroundSize: 5 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(5)} onMouseOut={imgMouseOut}>
-                            <div class="itemMask"></div>
                             <a href='##'>
+                                <div class="itemMask"></div>
                                 <div className="profileCard">
                                     <div className="profileImg">
                                         <div className="img">
@@ -209,8 +209,8 @@ return (
                                         backgroundSize: 6 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(6)} onMouseOut={imgMouseOut}>
-                            <div class="itemMask"></div>
                             <a href='##'>
+                                <div class="itemMask"></div>
                                 <div className="profileCard">
                                     <div className="profileImg">
                                         <div className="img">
