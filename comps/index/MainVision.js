@@ -19,7 +19,7 @@ function MainVision(props) {
     return (
         <div className="mainVision">
             <Slider {...settings}>                
-                <div className="box" >
+                <Link href='javascript:void(0)'>
                     <div className="img" style={{ 
                         background: `url(/images/esg01.jpg) no-repeat center center`,
                         backgroundSize:`cover`,
@@ -38,8 +38,8 @@ function MainVision(props) {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="box">
+                </Link>
+                <Link href='javascript:void(0)'>
                     <div className="img" style={{ 
                         background: `url(/images/esg04.jpg) no-repeat center center`,
                         backgroundSize:`cover`,
@@ -57,7 +57,7 @@ function MainVision(props) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Link>
             </Slider>
         </div>
     )

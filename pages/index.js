@@ -5,6 +5,9 @@ import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
 import MainVision from '../comps/index/MainVision'
+import SecretList from '../comps/index/SecretList'
+import ViewList from '../comps/index/ViewList'
+import PartnerList from '../comps/index/PartnerList'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
@@ -24,6 +27,7 @@ export default function Home(props) {
         <div className="indexPage">
           <section>
             <MainVision/>
+
             <div className="other">
               <div className="whatEsg">
                 <div className="title">What is ESG?</div>
@@ -33,17 +37,10 @@ export default function Home(props) {
                     <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
                   </div>
                 </div>
+              </div>
 
-              </div>
-              <div className="view">
-                <div className="box">
-                  <div className="img">
-                    <Image src="/images/esg02.jpg" alt="img" width={1920} height={1080}/>  
-                  </div>
-                  <div className="txt">一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地</div>
-                  <div className="point"></div>
-                </div>
-              </div>
+              <ViewList/>
+
               <div className="action">
                 <div className="title">參加活動GO!</div>
                 <div className="txtBox">
@@ -65,55 +62,9 @@ export default function Home(props) {
               </div>
             </div>
             
-            <div className="secret">
-                <div className="img mo">
-                  <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
-                </div>
-              <div className="subtitle">
-                <p>永續生活小撇步</p>
-                <div className="line"></div>
-                <div className="tag">衣</div>
-              </div>
-              <div className="title">
-                <p>吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</p>
-                <div className="img pc">
-                  <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
-                </div>
-              </div>
-              <div className="txt">嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡</div>
-              <div className="point"></div>
-            </div> 
-
-            <div className="partner">
-              <div className="titleBox">
-                <div className="title">Who’s doing ESG?</div>
-                <div className="txt">落實ESG的夥伴 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
-              </div>
-              <div className="list">
-                <div className="box">
-                   <Link href='##'>
-                      <div className="img">
-                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                      </div>
-                      <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                    </Link>
-
-                    <Link href='##'>
-                      <div className="img">
-                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                      </div>
-                      <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                    </Link>
-
-                    <Link href='##'>
-                      <div className="img">
-                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                      </div>
-                      <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                    </Link>
-                </div>
-              </div>
-            </div>
+            <SecretList/>
+            <PartnerList/>
+            
           </section>
         </div>
       </main>
