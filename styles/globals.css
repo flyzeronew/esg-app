@@ -1393,22 +1393,27 @@ header .menuMo .list li:last-child{
 .partnerPage .submenu a.act{
     background-color: #89EC54;
 }
-@media (max-width:1855px) { 
-    .partnerPage .list{
-        width: 100%;
-        padding: 15px;
-    }  
+.partnerPage .list{
+    width: 100%;
+    padding: 15px;
 }
+ 
+.partnerPage .list{
+    width: 100%;
+    padding: 15px;
+}  
+
 @media (max-width:767px) { 
     .partnerPage .list{
         width: 100%;
-        padding: 15px 0 15px 0;
+        padding: 0 15px 15px 15px;
     }  
 }
 .partnerPage .list ul{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    margin: 0 auto;
     column-gap: 32px;
     row-gap: 32px;
 }
@@ -1416,7 +1421,7 @@ header .menuMo .list li:last-child{
     margin-bottom: 80px;
 }
 .partnerPage .list ul li{
-    width: calc((100% - 128px) / 3);
+    width: calc((100% - 64px) / 3);
     aspect-ratio: 16/9;
     display: flex;
     align-items: flex-end;
@@ -1434,26 +1439,23 @@ header .menuMo .list li:last-child{
     aspect-ratio: 16/9;
     border-radius: 20px;
 }
-/* .partnerPage .list ul li a{
-    width: 100%;
-    height: 100%;
-    display:block;
-} */
 
 @media (max-width:1208px) {
     .partnerPage .list ul li{
-        width: calc((100vw - 128px) / 2);
+        width: calc((100vw - 64px) / 2);
     }
 }
 @media (max-width:894px) {
+    .partnerPage .list ul{
+        justify-content: center;
+    }
     .partnerPage .list ul li{
-        width: 767px;
+        width: 100%;
     }
     .partnerPage .list ul li .itemMask{
         width: 100%;
     }
 }
-
 
 .partnerPage .list .profileCard{
     position: relative;
@@ -1510,11 +1512,10 @@ header .menuMo .list li:last-child{
     display: -webkit-box;
 
 }
-@media (max-width:1855px) { 
-    .partnerPage .list .profileCard{
-        width: 100%;
-    } 
-}
+
+.partnerPage .list .profileCard{
+    width: 100%;
+} 
 @media (max-width:1432px) { 
     .partnerPage .list .profileCard .profileImg{
         width: 60px;
@@ -1537,9 +1538,6 @@ header .menuMo .list li:last-child{
 @media (max-width:767px) { 
     .partnerPage .sharedBanner{
         padding: 15px 15px 0px 15px;
-    }
-    .partnerPage .list{
-        padding: 0 15px 15px 15px;
     }
 }
 @media (max-width:452px) { 

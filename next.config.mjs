@@ -6,8 +6,8 @@ const nextConfig = {
     host: '0.0.0.0',
     port: process.env.PORT || 3000,
   },
-  env: {
-    IMG_URL: process.env.IMG_URL,
+  images: {
+    domains: ['esg-statics-staging.tvbs.com.tw'],
   },
 };
 

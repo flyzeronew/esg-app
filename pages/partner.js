@@ -83,6 +83,36 @@ return (
                 </div>  
                 <div className="list">
                     <ul>
+                    {
+                    props.partnerData.length > 0 ?
+                        props.partnerData.map((item, index) => (
+                            <li key={index} style={{ 
+                                background: `url(${item.cover_img}) no-repeat center center`,
+                                backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                transition: 'background-size 0.3s',
+                            }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
+                                <a href={item.url}>
+                                <div class="itemMask"></div>
+                                <div className="profileCard">
+                                    <div className="profileImg">
+                                        <div className="img">
+                                            <Image src={item.avatar} alt="img" width={50} height={50}/> 
+                                        </div>
+                                    </div>
+                                    <div className='name'>
+                                        {item.name}
+                                    </div>
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            {item.brief}
+                                        </div>
+                                    </div>
+                                </div> 
+                            </a>
+                                    </li>
+                                ))
+                            :''
+                        }
                         <li key={1} style={{ 
                                         background: `url("/images/partner-bg01.jpg") no-repeat center center`,
                                         backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
@@ -125,7 +155,7 @@ return (
                                     </div>
                                     <div className='outBorder'>
                                         <div className='txt'>
-                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                            追求
                                         </div>
                                     </div>
                                 </div> 
@@ -245,11 +275,15 @@ export async function getServerSideProps() {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
+    // 線上資料
+    const focusUrl = new URL('/api/partners', process.env.API_URL);
+    const focusRes = await fetch(focusUrl);    
+    const partnerData = await focusRes.json();
 
     
     return {
         props: {
-            menu,
+            menu,partnerData
         },
     };
 }
