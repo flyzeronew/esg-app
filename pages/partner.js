@@ -1,5 +1,3 @@
-
-
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
@@ -15,14 +13,7 @@ const thisPage='partner';
 const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
-    //圖片網址切換
-    const imgUrlChang = (url) => {
-        const originalUrl = "https://staging-esg-statics.s3.ap-northeast-1.amazonaws.com";
-        const imgUrl = process.env.IMG_URL;   
-        const newUrl = url;
-        const updateUrl = newUrl.replace(originalUrl, imgUrl);
-        return updateUrl;
-    };
+const [showList, setShowList] = useState(props.partnerData);
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
@@ -32,6 +23,17 @@ const [hoverBgSize, setHoverBgSize] = useState();
     const imgMouseOut = (e) => {
         setImgHover(null);
     };
+
+    // 处理点击事件的函数
+    const handleClick = (id) => {
+        if(id === 0){
+            return setShowList(props.partnerData);
+        }
+        // 筛选出partner_genre_id等于2的数据
+        const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
+        setShowList(filteredData);
+    };
+
     // resize 監聽事件
     useEffect(() => { 
         const handleResize = (e) => {
@@ -75,14 +77,47 @@ return (
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>  
-                        <a href="##" className='act'>全部</a>
-                        <a href="##">永續企業</a>
-                        <a href="##">永續城市</a>
-                        <a href="##">團體與個人</a>
+                        <a  onClick={() => handleClick(0)}  href="##" className='act'>全部</a>
+                        {
+                    props.submenuData.length > 0 ?
+                        props.submenuData.map((item, index) => (
+                            <a onClick={() => handleClick(item.id)} href="##">{item.name}</a>
+                        )):''
+                        }
                     </div>  
                 </div>  
                 <div className="list">
                     <ul>
+                    {
+                    showList.length > 0 ?
+                    showList.map((item, index) => (
+                            <li key={index} style={{ 
+                                background: `url(${item.cover_img}) no-repeat center center`,
+                                backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                transition: 'background-size 0.3s',
+                            }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
+                                <a href={item.url}>
+                                <div class="itemMask"></div>
+                                <div className="profileCard">
+                                    <div className="profileImg">
+                                        <div className="img">
+                                            <Image src={item.avatar} alt="img" width={50} height={50}/> 
+                                        </div>
+                                    </div>
+                                    <div className='name'>
+                                        {item.name}
+                                    </div>
+                                    <div className='outBorder'>
+                                        <div className='txt'>
+                                            {item.brief}
+                                        </div>
+                                    </div>
+                                </div> 
+                            </a>
+                                    </li>
+                                ))
+                            :''
+                        }
                         <li key={1} style={{ 
                                         background: `url("/images/partner-bg01.jpg") no-repeat center center`,
                                         backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
@@ -125,7 +160,7 @@ return (
                                     </div>
                                     <div className='outBorder'>
                                         <div className='txt'>
-                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
+                                            追求
                                         </div>
                                     </div>
                                 </div> 
@@ -245,11 +280,20 @@ export async function getServerSideProps() {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
+    // 線上資料
+    // submenu
+    const submenuUrl = new URL('/api/partner-genres', process.env.API_URL);
+    const submenuRes = await fetch(submenuUrl);    
+    const submenuData = await submenuRes.json();
+    // list
+    const partnerUrl = new URL('/api/partners', process.env.API_URL);
+    const partnerRes = await fetch(partnerUrl);    
+    const partnerData = await partnerRes.json();
 
     
     return {
         props: {
-            menu,
+            menu,partnerData,submenuData
         },
     };
 }
