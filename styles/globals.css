@@ -1549,7 +1549,9 @@ header .menuMo .list li:last-child{
     .partnerPage .submenu{
         padding: 0;
         padding-top: 10px;
-        margin: 0 0 32px 0px;
+        margin: 0;
+        margin-left: 15px;
+        margin-bottom: 30px;
         height: 40px;
         overflow-x: auto;
         white-space:nowrap;
