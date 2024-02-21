@@ -1535,8 +1535,11 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:767px) { 
-    .partnerPage {
-        padding: 15px;
+    .partnerPage .sharedBanner{
+        padding: 15px 15px 0px 15px;
+    }
+    .partnerPage .list{
+        padding: 0 15px 15px 15px;
     }
 }
 @media (max-width:452px) { 
