@@ -70,7 +70,7 @@ return (
                 <div className="sharedBanner">
                     <div className="mask"></div>
                     <div className="box">
-                        <div className="title">2023 共好夥伴</div>
+                        <div className="title">2024 共好夥伴</div>
                         <div className="txt">
                             <p>城市街頭盛開綠意，企業在環保徽章下環繞，共同編織著永續的未來。讓城市與企業一同前行，共創可持續的明日。</p>
                             <div className="line"></div>
