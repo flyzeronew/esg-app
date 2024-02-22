@@ -63,6 +63,8 @@ export default function Focus(props) {
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>
+                        <Link className="act" href={`javascript:void(0)`}>即將開始</Link>
+                        <Link href={`javascript:void(0)`}>過去活動</Link>
                     </div>
                 </div>     
             </div>
