@@ -8,19 +8,21 @@ import MainVision from '../comps/index/MainVision'
 import SecretList from '../comps/index/SecretList'
 import ViewList from '../comps/index/ViewList'
 import PartnerList from '../comps/index/PartnerList'
+import Gtm from '../comps/Gtm'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
   // 頁面識別
   const thisPage='home';
   return (
-    <div id='wrapper' className={inter.className}>      
+    <div id='wrapper' className={inter.className}>  
       <Head>
         <title>{"esg | TVBS 官網"}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="Keywords" content="esg,esg2,esg3" />
-        <meta name="description" content="esg description" />        
+        <meta name="description" content="esg description" />  \      
       </Head>
+      <Gtm/>      
       <Header thisPage={thisPage} menuData={props.menu}/>
       <main>
         <div className="indexPage">
