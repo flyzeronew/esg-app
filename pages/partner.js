@@ -80,11 +80,11 @@ return (
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>  
-                        <Link onClick={() => handleClick(0)}  href="##" className={submenuActive === 0 ? "act" : ""}>全部</Link>
+                        <Link onClick={() => handleClick(0)}  href='javascript:void(0)' className={submenuActive === 0 ? "act" : ""}>全部</Link>
                         {
                             props.submenuData.length > 0 ?
                                 props.submenuData.map((item, index) => (
-                                    <Link onClick={() => handleClick(item.id)} href="##" className={submenuActive === item.id ? "act" : ""}>{item.name}</Link>
+                                    <Link onClick={() => handleClick(item.id)} href='javascript:void(0)' className={submenuActive === item.id ? "act" : ""}>{item.name}</Link>
                                 )):''
                         }
                     </div>  
