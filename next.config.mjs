@@ -9,8 +9,8 @@ const nextConfig = {
       'esg-statics-staging.tvbs.com.tw',
       'esg-statics.tvbs.com.tw',
       'cc.tvbs.com.tw',
-      'esg-frontend-staging.tvbs.com.tw/focus',
-      'esg-frontend.tvbs.com.tw/focus',
+      'esg-frontend-staging.tvbs.com.tw',
+      'esg-frontend.tvbs.com.tw',
       'esg-app-alpha.vercel.app'
     ],   
   }, 
