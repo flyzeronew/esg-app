@@ -4,7 +4,15 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['esg-statics-staging.tvbs.com.tw','esg-statics.tvbs.com.tw','cc.tvbs.com.tw','localhost'],   
+    domains: [
+      'localhost',
+      'esg-statics-staging.tvbs.com.tw',
+      'esg-statics.tvbs.com.tw',
+      'cc.tvbs.com.tw',
+      'esg-frontend-staging.tvbs.com.tw/focus',
+      'esg-frontend.tvbs.com.tw/focus',
+      'esg-app-alpha.vercel.app'
+    ],   
   }, 
    // 自訂服務器配置
   server: {
