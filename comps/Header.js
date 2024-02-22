@@ -84,7 +84,7 @@ function Navber(props) {
                                         <li key={index} >
                                             <Link className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick}>
                                                 {item.title}
-                                                {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src="images/icon_arraw01.svg" alt="arraw" width={8} height={5}/> : ''}
+                                                {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </Link>
                                         </li>
                                     ))}                                
