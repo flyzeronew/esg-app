@@ -14,6 +14,7 @@ const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
 const [showList, setShowList] = useState(props.partnerData);
+const [submenuActive, setSubmenuActive] = useState(0);
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
@@ -26,7 +27,9 @@ const [showList, setShowList] = useState(props.partnerData);
 
     // 处理点击事件的函数
     const handleClick = (id) => {
+        setSubmenuActive(id);
         if(id === 0){
+            // 全部
             return setShowList(props.partnerData);
         }
         // 筛选出partner_genre_id等于2的数据
@@ -77,12 +80,12 @@ return (
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>  
-                        <a  onClick={() => handleClick(0)}  href="##" className='act'>全部</a>
+                        <a  onClick={() => handleClick(0)}  href="##" className={submenuActive === 0 ? "act" : ""}>全部</a>
                         {
-                    props.submenuData.length > 0 ?
-                        props.submenuData.map((item, index) => (
-                            <a onClick={() => handleClick(item.id)} href="##">{item.name}</a>
-                        )):''
+                            props.submenuData.length > 0 ?
+                                props.submenuData.map((item, index) => (
+                                    <a onClick={() => handleClick(item.id)} href="##" className={submenuActive === item.id ? "act" : ""}>{item.name}</a>
+                                )):''
                         }
                     </div>  
                 </div>  
