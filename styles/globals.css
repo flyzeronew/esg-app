@@ -57,6 +57,52 @@ img{
     height: 40px;
     cursor: pointer;
 }
+
+/* 共用標籤 */
+.submenu{
+    margin: 32px 40px;
+    white-space:nowrap;
+}
+.submenu a{
+    margin-right:16px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    background-color: #F2F2F2;
+}
+.submenu a.act{
+    background-color: #89EC54;
+}
+@media (max-width:452px) { 
+    .submenuArea{
+        position: relative;
+    }
+    .submenu{
+        padding: 0;
+        padding-top: 10px;
+        margin: 0;
+        padding-left: 15px;
+        margin-bottom: 30px;
+        height: 40px;
+        overflow-x: auto;
+        white-space:nowrap;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+    .submenuMask{
+        position: absolute;
+        top:0;
+        right:0px;
+        width: 10%;
+        height: 40px;
+        background: linear-gradient(to right, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.8) 45%,rgba(255,255,255,1) 100%);
+    }
+    .submenu::-webkit-scrollbar {
+        display: none; 
+      }
+}
+/* 共用標籤 ed*/
+
+
 header nav{
     width: 100%;
     position: fixed; 
@@ -1429,19 +1475,6 @@ header .menuMo .list li:last-child{
 
 
 /* 共好夥伴頁面 */
-.partnerPage .submenu{
-    margin: 32px 40px;
-    white-space:nowrap;
-}
-.partnerPage .submenu a{
-    margin-right:16px;
-    padding: 8px 12px;
-    border-radius: 50px;
-    background-color: #F2F2F2;
-}
-.partnerPage .submenu a.act{
-    background-color: #89EC54;
-}
 .partnerPage .list{
     width: 100%;
     padding: 15px;
@@ -1589,33 +1622,7 @@ header .menuMo .list li:last-child{
         padding: 15px 15px 0px 15px;
     }
 }
-@media (max-width:452px) { 
-    .submenuArea{
-        position: relative;
-    }
-    .partnerPage .submenu{
-        padding: 0;
-        padding-top: 10px;
-        margin: 0;
-        padding-left: 15px;
-        margin-bottom: 30px;
-        height: 40px;
-        overflow-x: auto;
-        white-space:nowrap;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-    }
-    .partnerPage .submenuMask{
-        position: absolute;
-        top:0;
-        right:0px;
-        width: 10%;
-        height: 40px;
-        background: linear-gradient(to right, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.8) 45%,rgba(255,255,255,1) 100%);
-    }
-    .partnerPage .submenu::-webkit-scrollbar {
-        display: none; /* 隱藏滾動條 */
-      }
+@media (max-width:452px) {     
     .partnerPage .list .profileCard .name{
         font-size: 18px;
     }
@@ -1629,3 +1636,10 @@ header .menuMo .list li:last-child{
     }
 }
 /* 共好夥伴頁面 ed*/
+
+/* 永續行動頁面 */
+
+/* 永續行動頁面 ed*/
+
+
+
