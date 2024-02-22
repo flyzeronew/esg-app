@@ -80,11 +80,11 @@ return (
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>  
-                        <Link onClick={() => handleClick(0)}  href='javascript:void(0)' className={submenuActive === 0 ? "act" : ""}>全部</Link>
+                        <Link onClick={() => handleClick(0)}  href="javascript:void(0)" className={submenuActive === 0 ? "act" : ""}>全部</Link>
                         {
                             props.submenuData.length > 0 ?
                                 props.submenuData.map((item, index) => (
-                                    <Link onClick={() => handleClick(item.id)} href='javascript:void(0)' className={submenuActive === item.id ? "act" : ""}>{item.name}</Link>
+                                    <Link onClick={() => handleClick(item.id)} href="javascript:void(0)" className={submenuActive === item.id ? "act" : ""}>{item.name}</Link>
                                 )):''
                         }
                     </div>  
@@ -99,7 +99,7 @@ return (
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                <Link  href={item.url}>
+                                <Link  href={`/partner/`+item.id}>
                                     <div class="itemMask"></div>
                                     <div className="profileCard">
                                         <div className="profileImg">
