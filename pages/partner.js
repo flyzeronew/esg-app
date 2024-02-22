@@ -1,5 +1,6 @@
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
@@ -79,11 +80,11 @@ return (
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>  
-                        <a  onClick={() => handleClick(0)}  href="##" className={submenuActive === 0 ? "act" : ""}>全部</a>
+                        <Link onClick={() => handleClick(0)}  href="##" className={submenuActive === 0 ? "act" : ""}>全部</Link>
                         {
                             props.submenuData.length > 0 ?
                                 props.submenuData.map((item, index) => (
-                                    <a onClick={() => handleClick(item.id)} href="##" className={submenuActive === item.id ? "act" : ""}>{item.name}</a>
+                                    <Link onClick={() => handleClick(item.id)} href="##" className={submenuActive === item.id ? "act" : ""}>{item.name}</Link>
                                 )):''
                         }
                     </div>  
@@ -98,24 +99,24 @@ return (
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                <a href={item.url}>
-                                <div class="itemMask"></div>
-                                <div className="profileCard">
-                                    <div className="profileImg">
-                                        <div className="img">
-                                            <Image src={item.avatar} alt="img" width={50} height={50}/> 
+                                <Link  href={item.url}>
+                                    <div class="itemMask"></div>
+                                    <div className="profileCard">
+                                        <div className="profileImg">
+                                            <div className="img">
+                                                <Image src={item.avatar} alt="img" width={50} height={50}/> 
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className='name'>
-                                        {item.name}
-                                    </div>
-                                    <div className='outBorder'>
-                                        <div className='txt'>
-                                            {item.brief}
+                                        <div className='name'>
+                                            {item.name}
                                         </div>
-                                    </div>
-                                </div> 
-                            </a>
+                                        <div className='outBorder'>
+                                            <div className='txt'>
+                                                {item.brief}
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </Link>
                                     </li>
                                 ))
                             :''
@@ -138,7 +139,6 @@ export async function getServerSideProps() {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
-    // 線上資料
     // submenu
     const submenuUrl = new URL('/api/partner-genres', process.env.API_URL);
     const submenuRes = await fetch(submenuUrl);    
