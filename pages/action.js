@@ -54,12 +54,17 @@ export default function Focus(props) {
                     <div className="box">
                         <div className="title">永續行動</div>
                         <div className="txt">
-                            <p>綠能發展、資源再生，海洋保護與氣候因應，都成為社會訴求，企業以綠色思維，創新技術，營造永續商業新模式。</p>
+                            <p>成為悉心栽培社會福祉的一份子，傳承文化，關懷弱勢，燃起社會的溫暖火光，照顧在地環境。</p>
                             <div className="line"></div>
                         </div>
                     </div>
+                </div>
+
+                <div className='submenuArea'>
+                    <div className='submenu'> 
+                        <div className='submenuMask'></div>
+                    </div>
                 </div>     
-     
             </div>
             
         </main>
