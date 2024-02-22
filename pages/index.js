@@ -11,7 +11,6 @@ import PartnerList from '../comps/index/PartnerList'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
-
   // 頁面識別
   const thisPage='home';
   return (
