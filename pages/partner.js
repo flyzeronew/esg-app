@@ -14,6 +14,7 @@ const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
 const [showList, setShowList] = useState(props.partnerData);
+const [submenuActive, setSubmenuActive] = useState(0);
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
@@ -24,12 +25,13 @@ const [showList, setShowList] = useState(props.partnerData);
         setImgHover(null);
     };
 
-    // 处理点击事件的函数
+    // 處理點擊事件
     const handleClick = (id) => {
+        setSubmenuActive(id);
         if(id === 0){
+            // 全部
             return setShowList(props.partnerData);
         }
-        // 筛选出partner_genre_id等于2的数据
         const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
         setShowList(filteredData);
     };
@@ -77,12 +79,12 @@ return (
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>  
-                        <a  onClick={() => handleClick(0)}  href="##" className='act'>全部</a>
+                        <a  onClick={() => handleClick(0)}  href="##" className={submenuActive === 0 ? "act" : ""}>全部</a>
                         {
-                    props.submenuData.length > 0 ?
-                        props.submenuData.map((item, index) => (
-                            <a onClick={() => handleClick(item.id)} href="##">{item.name}</a>
-                        )):''
+                            props.submenuData.length > 0 ?
+                                props.submenuData.map((item, index) => (
+                                    <a onClick={() => handleClick(item.id)} href="##" className={submenuActive === item.id ? "act" : ""}>{item.name}</a>
+                                )):''
                         }
                     </div>  
                 </div>  
@@ -118,150 +120,6 @@ return (
                                 ))
                             :''
                         }
-                        <li key={1} style={{ 
-                                        background: `url("/images/partner-bg01.jpg") no-repeat center center`,
-                                        backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                        transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}>
-                            <a href="##">
-                                <div class="itemMask"></div>
-                                <div className="profileCard">
-                                    <div className="profileImg">
-                                        <div className="img">
-                                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/> 
-                                        </div>
-                                    </div>
-                                    <div className='name'>
-                                        台灣雀巢 Nestlé Taiwan
-                                    </div>
-                                    <div className='outBorder'>
-                                        <div className='txt'>
-                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。 追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設。
-                                        </div>
-                                    </div>
-                                </div> 
-                            </a>
-                        </li>
-                        <li  key={2} style={{ 
-                                        background: `url("/images/partner-bg01.jpg") no-repeat center center`,
-                                        backgroundSize: 2 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                        transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(2)} onMouseOut={imgMouseOut}>
-                            <a href='##'>
-                                <div class="itemMask"></div>
-                                <div className="profileCard">
-                                    <div className="profileImg">
-                                        <div className="img">
-                                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/> 
-                                        </div>
-                                    </div>
-                                    <div className='name'>
-                                        台灣雀巢 Nestlé Taiwan
-                                    </div>
-                                    <div className='outBorder'>
-                                        <div className='txt'>
-                                            追求
-                                        </div>
-                                    </div>
-                                </div> 
-                            </a>
-                        </li>
-                        <li key={3} style={{ 
-                                        background: `url("/images/partner-bg01.jpg") no-repeat center center`,
-                                        backgroundSize: 3 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                        transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(3)} onMouseOut={imgMouseOut}>
-                             <a href='##'>
-                                <div class="itemMask"></div>
-                                <div className="profileCard">
-                                    <div className="profileImg">
-                                        <div className="img">
-                                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/> 
-                                        </div>
-                                    </div>
-                                    <div className='name'>
-                                        台灣雀巢 Nestlé Taiwan
-                                    </div>
-                                    <div className='outBorder'>
-                                        <div className='txt'>
-                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
-                                        </div>
-                                    </div>
-                                </div> 
-                            </a>
-                        </li>
-                        <li key={4} style={{ 
-                                        background: `url("/images/partner-bg01.jpg") no-repeat center center`,
-                                        backgroundSize: 4 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                        transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(4)} onMouseOut={imgMouseOut}>  
-                            <a href='##'>
-                                <div class="itemMask"></div>
-                                <div className="profileCard">
-                                    <div className="profileImg">
-                                        <div className="img">
-                                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/> 
-                                        </div>
-                                    </div>
-                                    <div className='name'>
-                                        台灣雀巢 Nestlé Taiwan
-                                    </div>
-                                    <div className='outBorder'>
-                                        <div className='txt'>
-                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
-                                        </div>
-                                    </div>
-                                </div> 
-                            </a>
-                        </li>
-                        <li  key={5} style={{ 
-                                        background: `url("/images/partner-bg01.jpg") no-repeat center center`,
-                                        backgroundSize: 5 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                        transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(5)} onMouseOut={imgMouseOut}>
-                            <a href='##'>
-                                <div class="itemMask"></div>
-                                <div className="profileCard">
-                                    <div className="profileImg">
-                                        <div className="img">
-                                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/> 
-                                        </div>
-                                    </div>
-                                    <div className='name'>
-                                        台灣雀巢 Nestlé Taiwan
-                                    </div>
-                                    <div className='outBorder'>
-                                        <div className='txt'>
-                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
-                                        </div>
-                                    </div>
-                                </div> 
-                            </a>
-                        </li>
-                        <li key={6} style={{ 
-                                        background: `url("/images/partner-bg01.jpg") no-repeat center center`,
-                                        backgroundSize: 6 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                        transition: 'background-size 0.3s',
-                                    }} onMouseOver={() => imgMouseOver(6)} onMouseOut={imgMouseOut}>
-                            <a href='##'>
-                                <div class="itemMask"></div>
-                                <div className="profileCard">
-                                    <div className="profileImg">
-                                        <div className="img">
-                                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/> 
-                                        </div>
-                                    </div>
-                                    <div className='name'>
-                                        台灣雀巢 Nestlé Taiwan
-                                    </div>
-                                    <div className='outBorder'>
-                                        <div className='txt'>
-                                            追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設
-                                        </div>
-                                    </div>
-                                </div> 
-                            </a>
-                        </li>
                     </ul>
 
                 </div>       
