@@ -67,11 +67,11 @@ return (
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
             <div className="partnerDetailPage">
-                <div className="coverImgBanner">
-                    {/* <Image src={"/images/partner-bg01.jpg"} alt="img" width={"100%"} height={9}/>  */}
-                    <img src={"/images/partner-bg01.jpg"} />
+                <div className="bannerArea">
+                    <div className="coverImgBanner">
+                        <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
+                    </div>
                 </div>
-                
 
             </div>
         </main>

@@ -1637,11 +1637,21 @@ header .menuMo .list li:last-child{
 }
 /* 共好夥伴頁面 ed*/
 /* 共好夥伴內頁 */
-.partnerDetailPage .coverImgBanner img{
+.partnerDetailPage .coverImgBanner{
     width: 100%;
-    aspect-ratio: 16/9;
-
+    height: 830px;
+    overflow: hidden;
+    position: relative;
+} 
+@media (max-width:1476px) {   
+    .partnerDetailPage .coverImgBanner{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        overflow: visible;
+    }
 }
+
 /* 共好夥伴內頁 ed*/
 
 /* 永續行動頁面 */
