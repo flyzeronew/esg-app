@@ -81,10 +81,31 @@ return (
                             <div className="detail">
                                 普希金講過，生活多美好，所以我希望諸位也能好好地體會這句話。
                             </div>
+                            <div className="leftPic">
+                                <Image src={"/images/Rectangle-left.svg"} alt="img" width={30} height={30}/> 
+                            </div>
+                            <div className="rightPic">
+                                <Image src={"/images/Rectangle-right.svg"} alt="img" width={30} height={30}/> 
+                            </div>
                         </div>
                     </div>
                 </div>
-
+                
+                <div className="linksArea">
+                        <div className="first items">
+                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
+                        </div>
+                        <div className="second items">
+                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        </div>
+                        <div className="third items">
+                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        </div>
+                        <div className="fourth items">
+                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/>
+                        </div>
+                    </div>
+                   
             </div>
         </main>
         <div className="footerLine">

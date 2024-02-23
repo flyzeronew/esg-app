@@ -1678,20 +1678,24 @@ header .menuMo .list li:last-child{
     justify-content: center;
 }
 .partnerDetailPage .bannerArea .introduceArea .introduceCard{
-    /* margin-top: -176px; */
-    margin-top: -10%;
-    /* position: absolute; */
+    border-radius: 30px 30px 0px 0px;
+    margin-top: -176px;
+    /* margin-top: -10%; */
     width: 710px;
     height: 378px;
-    /* bottom:-176px;
-    bottom:0;
-    left: calc((100% - 710px) / 2); */
     background-color: white;
-    border: 1px solid black;
-    /* display: flex; */
-    margin-left: auto;
-    margin-right: auto;
-    
+    /* border: 1px solid black; */
+    position: relative;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+    position: absolute;
+    top:146px;
+    left: -30px;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+    position: absolute;
+    top:146px;
+    right: -30px;
 }
 .partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar{
     padding: 36px 36px 0 36px;
@@ -1734,6 +1738,43 @@ header .menuMo .list li:last-child{
     height: 1px; /* 设置边框的高度 */
     width: 28px; /* 设置边框的宽度 */
     background-color: #333; /* 设置边框的颜色 */
+}
+/* .partnerDetailPage .linksOuter{
+    width: 1244px;
+    margin: 0 auto;
+} */
+.partnerDetailPage .linksArea{
+
+    width: 1244px;
+    margin: 0 auto;
+    /* width: 1244px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 24px;
+    /* row-gap: 61px; */
+}
+.partnerDetailPage .linksArea .items img{
+    border-radius: 30px;
+    border: 1px solid black;
+}
+.partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
+    width: 768px;
+    height: auto;
+    aspect-ratio: 16/9;
+
+}
+.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third{
+    width: 452px;
+    height: auto;
+    aspect-ratio: 1/1;
+
+}
+.partnerDetailPage .linksArea .second{
+    margin-top: 56px;
+}
+.partnerDetailPage .linksArea .fourth{
+    margin-top: 61px;
 }
 /* 共好夥伴內頁 ed*/
 
