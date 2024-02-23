@@ -47,7 +47,7 @@ export default function Focus(props) {
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
-            <div className="actionPage">
+            <div className="viewPage">
                 <div className="sharedBanner">
                     <div className="mask"></div>
                     <div className="box">
