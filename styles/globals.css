@@ -1697,6 +1697,49 @@ header .menuMo .list li:last-child{
     top:146px;
     right: -30px;
 }
+@media (max-width:767px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 36px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard{
+        margin-top: -86px;
+        /* margin-top: -10%; */
+        width: 331px;
+        height: 460px;
+        /* border: 1px solid black; */
+    } 
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+        top:56px;
+        left: -30px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+        top:56px;
+        right: -30px;
+    }
+}
+@media (max-width:565px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 24px;
+    }
+}
+@media (max-width:414px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 20px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard{
+        margin-top: -66px;
+        width: 250px;
+        height: 460px;
+    } 
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+        top:36px;
+        left: -30px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+        top:36px;
+        right: -30px;
+    }
+}
 .partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar{
     padding: 36px 36px 0 36px;
     width: 100%;
@@ -1739,15 +1782,9 @@ header .menuMo .list li:last-child{
     width: 28px; /* 设置边框的宽度 */
     background-color: #333; /* 设置边框的颜色 */
 }
-/* .partnerDetailPage .linksOuter{
-    width: 1244px;
-    margin: 0 auto;
-} */
 .partnerDetailPage .linksArea{
-
     width: 1244px;
     margin: 0 auto;
-    /* width: 1244px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1775,6 +1812,41 @@ header .menuMo .list li:last-child{
 }
 .partnerDetailPage .linksArea .fourth{
     margin-top: 61px;
+}
+
+@media (max-width:1245px) {
+    .partnerDetailPage .linksArea{
+        width: 767px;
+    }
+    .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
+        width: 468px;
+        height: auto;
+        aspect-ratio: 16/9;
+    
+    }
+    .partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third{
+        width: 275px;
+        height: auto;
+        aspect-ratio: 1/1;
+    
+    }
+}
+@media (max-width:767px) {
+    .partnerDetailPage .linksArea{
+        width:100%;
+        display: flex;
+        padding: 15px;
+        row-gap: 24px;
+    }
+    .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third,.partnerDetailPage .linksArea .fourth{
+        width: 100%;
+    }
+    .partnerDetailPage .linksArea .second{
+        margin-top: 0px;
+    }
+    .partnerDetailPage .linksArea .fourth{
+        margin-top: 0px;
+    }
 }
 /* 共好夥伴內頁 ed*/
 

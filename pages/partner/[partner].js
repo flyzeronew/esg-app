@@ -70,7 +70,7 @@ return (
                 <div className="bannerArea">
                     <div className="coverImgBanner" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                         <div className="partnerName">
-                            台灣雀巢Nestlé Taiwan
+                            夥伴名稱寬度不能超過 16 個字
                         </div>
                     </div>
                     <div className="introduceArea">
