@@ -1642,8 +1642,17 @@ header .menuMo .list li:last-child{
 /* 共好夥伴頁面 ed*/
 /* 共好夥伴內頁 */
 .partnerDetailPage .bannerArea{
-    /* position: relative; */
-    /* display: flex; */
+    margin-bottom: 48px;
+}
+@media (max-width:767px) {  
+    .partnerDetailPage .bannerArea{
+        margin-bottom: 0;
+    }
+}
+@media (max-width:414px) {  
+    .partnerDetailPage .bannerArea{
+        margin-bottom: 48px;
+    }
 }
 .partnerDetailPage .coverImgBanner{
     width: 100%;
@@ -1803,9 +1812,25 @@ header .menuMo .list li:last-child{
     justify-content: center;
     align-items: center;
 }
+.partnerDetailPage .linksArea .items .linkArea .title{
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
 .partnerDetailPage .linksArea .items .linkArea .linkIcon{
     width: 36px;
     height: 36px;
+    margin: 0 auto;
 }
 .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
     width: 768px;
@@ -1828,18 +1853,6 @@ header .menuMo .list li:last-child{
 .partnerDetailPage .linksArea .fourth{
     margin-top: 61px;
 } 
-/* .partnerDetailPage .linksArea .first{
-    margin-bottom: 61px;
-}
-.partnerDetailPage .linksArea .second{
-    margin-top: 56px;
-}
-.partnerDetailPage .linksArea .third{
-    margin-top: -20px;
-}
-.partnerDetailPage .linksArea .fourth{
-    margin-top: 61px;
-} */
 .partnerDetailPage .linksArea .pc{
     display: block;
 }
