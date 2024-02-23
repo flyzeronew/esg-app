@@ -60,7 +60,7 @@ img{
 
 /* 共用標籤 */
 .submenu{
-    margin:0 32px 24px;
+    margin:0 32px 50px;
     padding:10px 32px;
     white-space:nowrap;
 }
@@ -79,7 +79,7 @@ img{
     }
     .submenu{
         height: 40px;
-        margin:0 15px 24px;
+        margin:0 15px 40px;
         padding:10px;
         overflow-x: auto;
         white-space:nowrap;
