@@ -1351,6 +1351,7 @@ header .menuMo .list li:last-child{
 
 /* 未來焦點頁面 */
 .focusPage{
+    position: relative;
     padding:24px 32px;
 }
 .focusPage .list{
@@ -1475,11 +1476,13 @@ header .menuMo .list li:last-child{
 
 
 /* 共好夥伴頁面 */
+.partnerPage{
+    position: relative;
+}
 .partnerPage .list{
     width: 100%;
     padding: 15px;
 }
- 
 .partnerPage .list{
     width: 100%;
     padding: 15px;
@@ -1638,11 +1641,15 @@ header .menuMo .list li:last-child{
 /* 共好夥伴頁面 ed*/
 
 /* 永續觀點頁面 */
-
+.viewPage{
+    position: relative;
+}
 /* 永續觀點頁面 ed*/
 
 /* 永續行動頁面 */
-
+.actionPage{
+    position: relative;
+}
 /* 永續行動頁面 ed*/
 
 
