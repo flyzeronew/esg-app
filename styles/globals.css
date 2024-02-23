@@ -1641,13 +1641,24 @@ header .menuMo .list li:last-child{
 }
 /* 共好夥伴頁面 ed*/
 /* 共好夥伴內頁 */
+.partnerDetailPage .bannerArea{
+    position: relative;
+}
 .partnerDetailPage .coverImgBanner{
     width: 100%;
     height: 830px;
     overflow: hidden;
-    position: relative;
+    /* position: relative; */
     display: flex;
     border-radius: 0px 0px 30px 30px;
+} 
+@media (max-width:1476px) {   
+    .partnerDetailPage .coverImgBanner{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        overflow: visible;
+    }
 } 
 .partnerDetailPage .coverImgBanner .partnerName{
     width: 100%;
@@ -1661,20 +1672,16 @@ header .menuMo .list li:last-child{
     line-height: normal;
     letter-spacing: 2.56px;
 }
-/* .partnerDetailPage .coverImgBanner{
-    width: 100%;
-    height: 830px;
-    overflow: hidden;
-    position: relative;
-} 
-@media (max-width:1476px) {   
-    .partnerDetailPage .coverImgBanner{
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-        overflow: visible;
-    }
-} */
+.partnerDetailPage .bannerArea .introduceArea{
+    position: absolute;
+    width: 710px;
+    height: 378px;
+    bottom:-176px;
+    bottom:0;
+    left: calc((100% - 710px) / 2);
+    background-color: white;
+    border: 1px solid black;
+}
 
 /* 共好夥伴內頁 ed*/
 
