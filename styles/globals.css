@@ -1792,30 +1792,20 @@ header .menuMo .list li:last-child{
     /* row-gap: 61px; */
 }
 .partnerDetailPage .linksArea .items{
-    position: relative;
-}
-.partnerDetailPage .linksArea .items.first .itemMask,.partnerDetailPage .linksArea .items.fourth .itemMask{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    border-radius: 30px;
-}
-.partnerDetailPage .linksArea .items.second .itemMask,.partnerDetailPage .linksArea .items.third .itemMask{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
     border-radius: 30px;
 }
 .partnerDetailPage .linksArea .items img{
     border-radius: 30px;
+}
+.partnerDetailPage .linksArea .items .linkArea{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.partnerDetailPage .linksArea .items .linkArea .linkIcon{
+    width: 36px;
+    height: 36px;
 }
 .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
     width: 768px;
@@ -1828,6 +1818,9 @@ header .menuMo .list li:last-child{
     height: auto;
     aspect-ratio: 1/1;
 
+}
+.partnerDetailPage .linksArea .first{
+    margin-bottom: 61px;
 }
 .partnerDetailPage .linksArea .second{
     margin-top: 56px;

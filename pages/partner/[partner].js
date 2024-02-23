@@ -99,38 +99,102 @@ return (
                 
                 <div className="linksArea">
                         {/* pc */}
-                        <div className="first items pc">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
+                        <div className="first items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="second items pc">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        <div className="second items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/images/partner01.jpg")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="third items pc">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        <div className="third items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="fourth items pc">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/>
+                        <div className="fourth items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         {/* mobile */}
-                        <div className="first items mo">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
+                        <div className="first items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="second items mo">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        <div className="second items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/images/partner01.jpg")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="fourth items mo">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/>
+                        <div className="fourth items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="third items mo">
-                            <div class="itemMask"></div>
-                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        <div className="third items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        台灣雀巢獲食創獎最高榮譽肯定
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                 </div>
                    
