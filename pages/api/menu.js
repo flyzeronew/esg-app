@@ -8,7 +8,7 @@ export default function handler(req, res) {
             },
             {
                 'title':'永續觀點',
-                'url':'javascript:void(0)',
+                'url':'/view',
                 'page_name':'view',
                 'child':[
                     {
