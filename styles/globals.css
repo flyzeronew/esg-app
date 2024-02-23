@@ -1478,7 +1478,7 @@ header .menuMo .list li:last-child{
     position: relative;
 }
 .partnerPage .sharedBanner{
-    padding:0 32px;
+    padding:24px 32px;
 }
 .partnerPage .list{
     width: 100%;
