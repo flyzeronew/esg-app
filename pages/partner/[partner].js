@@ -100,28 +100,36 @@ return (
                 <div className="linksArea">
                         {/* pc */}
                         <div className="first items pc">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
                         </div>
                         <div className="second items pc">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
                         </div>
                         <div className="third items pc">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
                         </div>
                         <div className="fourth items pc">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/>
                         </div>
                         {/* mobile */}
                         <div className="first items mo">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
                         </div>
                         <div className="second items mo">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
                         </div>
                         <div className="fourth items mo">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/>
                         </div>
                         <div className="third items mo">
+                            <div class="itemMask"></div>
                             <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
                         </div>
                 </div>
