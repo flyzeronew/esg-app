@@ -94,7 +94,7 @@ return (
                     showList.length > 0 ?
                     showList.map((item, index) => (
                             <li key={index} style={{ 
-                                background: `url(${item.cover_img}) no-repeat center center`,
+                                background: `url(${item.cover_img}) no-repeat center center / 100%`,
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
