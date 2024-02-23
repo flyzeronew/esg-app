@@ -57,7 +57,34 @@ img{
     height: 40px;
     cursor: pointer;
 }
-
+/* 跳頁按鈕 */
+.pageJump{
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: 50px;
+}
+.pageJump .box{
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    column-gap: 15px;
+}
+.pageJump .box a{
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    border-radius: 60px;
+    background-color: #89EC54;
+    font-size: 18px;
+    font-weight: 600;
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.pageJump .next{}
+/* 跳頁按鈕 ed*/
 /* 共用標籤 */
 .submenu{
     margin:0 32px 50px;
@@ -1642,6 +1669,91 @@ header .menuMo .list li:last-child{
 /* 共好夥伴頁面 ed*/
 
 /* 永續觀點頁面 */
+.viewPage .mainView{
+    width: 100%;
+    position: relative;
+    display:block;
+    padding:0 64px 64px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.viewPage .mainView .img{
+    width: 62%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.viewPage .mainView .txtBox{
+    width: 60%;
+    position: absolute;
+    background-color: #fff;
+    right:0;
+    bottom:0;
+    border-radius: 30px 0 0 0;
+    box-sizing: border-box;
+    padding:56px 0 0 56px;
+    margin-right:64px;
+}
+.viewPage .mainView .txtBox .title{
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+.viewPage .mainView .txtBox .txt{
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #999999;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+.viewPage .list{
+    width: 1280px;
+    margin: 0 auto 50px;
+}
+.viewPage .list ul{
+    display:flex;
+    flex-wrap: wrap;
+    column-gap: 60px;   
+}
+.viewPage .list ul li{
+    width: calc((100% - 60px) / 2);
+}
+.viewPage .list ul li:nth-child(even){
+    padding-top: 0px;
+}
+.viewPage .list .img{
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 30px;
+}
+.viewPage .list .txt{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+.viewPage .list .name{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: #666666;
+}
 .viewPage .sharedBanner{
     padding:24px 32px 0;
 }
@@ -1649,6 +1761,9 @@ header .menuMo .list li:last-child{
     .viewPage .sharedBanner{
         padding: 15px 15px 0px 15px;
     }  
+    .viewPage .mainView{
+        padding:0 30px 30px;
+    }
 }
 /* 永續觀點頁面 ed*/
 
