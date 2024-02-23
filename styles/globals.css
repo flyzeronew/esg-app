@@ -1636,6 +1636,13 @@ header .menuMo .list li:last-child{
     }
 }
 /* 共好夥伴頁面 ed*/
+/* 共好夥伴內頁 */
+.partnerDetailPage .coverImgBanner img{
+    width: 100%;
+    aspect-ratio: 16/9;
+
+}
+/* 共好夥伴內頁 ed*/
 
 /* 永續行動頁面 */
 
