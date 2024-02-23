@@ -62,7 +62,7 @@ img{
     display:flex; 
     justify-content: center; 
     align-items: center;
-    column-gap: 15px;
+    column-gap: 10px;
     margin-bottom: 50px;
 }
 .pageJump .box{
@@ -76,14 +76,32 @@ img{
     height: 42px;
     overflow: hidden;
     border-radius: 60px;
-    background-color: #89EC54;
     font-size: 18px;
     font-weight: 600;
     display:flex; 
     justify-content: center; 
     align-items: center;
+    transition: 0.3s;
 }
-.pageJump .next{}
+.pageJump .box a.act,.pageJump .box a:hover{
+    background-color: #89EC54;
+    transition: 0.3s;
+}
+.pageJump .next a{
+    overflow: hidden;
+    border-radius: 60px;
+    font-size: 18px;
+    font-weight: 600;
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    transition: 0.3s;
+    padding: 10px 15px;
+}
+.pageJump .next a.act,.pageJump .next a:hover{
+    background-color: #89EC54;
+    transition: 0.3s;    
+}
 /* 跳頁按鈕 ed*/
 /* 共用標籤 */
 .submenu{

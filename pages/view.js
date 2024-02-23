@@ -203,7 +203,7 @@ export default function Focus(props) {
 
                 <div className='pageJump'>
                     <div className='box'>
-                        <Link href={`javascript:void(0)`}>1</Link>
+                        <Link className='act' href={`javascript:void(0)`}>1</Link>
                         <Link href={`javascript:void(0)`}>2</Link>
                         <Link href={`javascript:void(0)`}>3</Link>
                     </div>
