@@ -68,7 +68,11 @@ export default function Focus(props) {
                         <Link href={`javascript:void(0)`}>共好社會</Link>
                         <Link href={`javascript:void(0)`}>綠色生活</Link>
                     </div>
-                </div>     
+                </div>
+
+                <div className='list'>
+
+                </div>
             </div>
             
         </main>
