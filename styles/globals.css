@@ -1643,15 +1643,20 @@ header .menuMo .list li:last-child{
     padding:24px 32px 0;
 }
 @media (max-width:767px) {
-    .viewPage{
-        padding:15px;
+    .viewPage .sharedBanner{
+        padding: 15px 15px 0px 15px;
     }  
 }
 /* 永續觀點頁面 ed*/
 
 /* 永續行動頁面 */
-.actionPage{
-    position: relative;
+.actionPage .sharedBanner{
+    padding:24px 32px 0;
+}
+@media (max-width:767px) {
+    .actionPage .sharedBanner{
+        padding: 15px 15px 0px 15px;
+    }  
 }
 /* 永續行動頁面 ed*/
 
