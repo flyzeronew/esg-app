@@ -79,8 +79,8 @@ img{
     }
     .submenu{
         height: 40px;
-        margin:0 15px 40px;
-        padding:10px;
+        margin:0 0 40px;
+        padding:10px 30px;
         overflow-x: auto;
         white-space:nowrap;
         scroll-snap-type: x mandatory;
