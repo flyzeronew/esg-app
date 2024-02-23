@@ -1861,6 +1861,9 @@ header .menuMo .list li:last-child{
     .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third,.partnerDetailPage .linksArea .fourth{
         width: 100%;
     }
+    .partnerDetailPage .linksArea .first{
+        margin-bottom: 0px;
+    }
     .partnerDetailPage .linksArea .second{
         margin-top: 0px;
     }
