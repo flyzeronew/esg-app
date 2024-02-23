@@ -8,7 +8,6 @@ import MainVision from '../comps/index/MainVision'
 import SecretList from '../comps/index/SecretList'
 import ViewList from '../comps/index/ViewList'
 import PartnerList from '../comps/index/PartnerList'
-import GtmNoScript from '../comps/GtmNoScript'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
@@ -22,7 +21,6 @@ export default function Home(props) {
         <meta name="Keywords" content="esg,esg2,esg3" />
         <meta name="description" content="esg description" />  \      
       </Head>
-      <GtmNoScript/>
       <Header thisPage={thisPage} menuData={props.menu}/>
       <main>
         <div className="indexPage">

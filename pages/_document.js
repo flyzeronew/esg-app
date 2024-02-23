@@ -1,11 +1,12 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
+
 export default function Document() {
   const gtmId="'" + process.env.GTM_ID + "'";
   return (
     <Html lang='zh-Hant-TW'>
       <Head>
-          {/* Google Tag Manager */}
-          <script
+        <script
             dangerouslySetInnerHTML={{
               __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -16,11 +17,18 @@ export default function Document() {
               `,
             }}
           />
-          {/* End Google Tag Manager */}
-        </Head>      
+      </Head>      
       <body>
         <Main />
         <NextScript />
+        <noscript>
+            <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+            />
+        </noscript>
       </body>
     </Html>
   );
