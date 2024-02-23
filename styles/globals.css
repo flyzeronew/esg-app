@@ -60,7 +60,8 @@ img{
 
 /* 共用標籤 */
 .submenu{
-    margin: 32px 40px;
+    margin:0 32px 24px;
+    padding:10px 32px;
     white-space:nowrap;
 }
 .submenu a{
@@ -72,17 +73,14 @@ img{
 .submenu a.act{
     background-color: #89EC54;
 }
-@media (max-width:452px) { 
+@media (max-width:767px) { 
     .submenuArea{
         position: relative;
     }
     .submenu{
-        padding: 0;
-        padding-top: 10px;
-        margin: 0;
-        padding-left: 15px;
-        margin-bottom: 30px;
         height: 40px;
+        margin:0 15px 24px;
+        padding:10px;
         overflow-x: auto;
         white-space:nowrap;
         scroll-snap-type: x mandatory;
@@ -1479,22 +1477,15 @@ header .menuMo .list li:last-child{
 .partnerPage{
     position: relative;
 }
-.partnerPage .list{
-    width: 100%;
-    padding: 15px;
+.partnerPage .sharedBanner{
+    padding:0 32px;
 }
 .partnerPage .list{
     width: 100%;
-    padding: 15px;
-}  
-
-@media (max-width:767px) { 
-    .partnerPage .list{
-        width: 100%;
-        padding: 0 15px 15px 15px;
-    }  
+    padding:0 32px;
 }
 .partnerPage .list ul{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -1525,9 +1516,9 @@ header .menuMo .list li:last-child{
     border-radius: 20px;
 }
 
-@media (max-width:1208px) {
+@media (max-width:1279px) {
     .partnerPage .list ul li{
-        width: calc((100vw - 64px) / 2);
+        width: calc((100% - 32px) / 2);
     }
 }
 @media (max-width:894px) {
@@ -1541,6 +1532,13 @@ header .menuMo .list li:last-child{
         width: 100%;
     }
 }
+@media (max-width:767px) { 
+    .partnerPage .list{
+        width: 100%;
+        padding:0 15px;
+    }
+}
+
 
 .partnerPage .list .profileCard{
     position: relative;
@@ -1641,9 +1639,8 @@ header .menuMo .list li:last-child{
 /* 共好夥伴頁面 ed*/
 
 /* 永續觀點頁面 */
-.viewPage{
-    position: relative;
-    padding:24px 32px;
+.viewPage .sharedBanner{
+    padding:24px 32px 0;
 }
 @media (max-width:767px) {
     .viewPage{
