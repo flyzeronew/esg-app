@@ -143,7 +143,6 @@ export default function Focus(props) {
                                 <div className='name'>劉俐均</div>
                             </Link>
                         </li>
-
                         <li>
                             <Link href={`javascript:void(0)`}>
                                 <div className='img'>

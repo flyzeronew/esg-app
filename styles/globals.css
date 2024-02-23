@@ -1735,24 +1735,27 @@ header .menuMo .list li:last-child{
     display: -webkit-box;
 }
 .viewPage .list{
-    width: 1280px;
+    width: 1220px;
     margin: 0 auto 50px;
 }
 .viewPage .list ul{
     display:flex;
     flex-wrap: wrap;
-    column-gap: 60px;   
+    column-gap: 60px;  
+    row-gap: 60px; 
 }
 .viewPage .list ul li{
     width: calc((100% - 60px) / 2);
 }
 .viewPage .list ul li:nth-child(even){
-    padding-top: 0px;
+    padding-top: 30px;
 }
 .viewPage .list .img{
     overflow: hidden;
     margin-bottom: 15px;
     border-radius: 30px;
+    aspect-ratio: 16/9;
+    line-height: 0;
 }
 .viewPage .list .txt{
     font-size: 32px;
