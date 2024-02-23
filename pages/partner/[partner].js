@@ -74,7 +74,14 @@ return (
                         </div>
                     </div>
                     <div className="introduceArea">
-
+                        <div className="introduceCard">
+                            <div className="avatar">
+                                <Image src={"/images/partner01.jpg"} alt="img" width={140} height={140}/> 
+                            </div>
+                            <div className="detail">
+                                普希金講過，生活多美好，所以我希望諸位也能好好地體會這句話。
+                            </div>
+                        </div>
                     </div>
                 </div>
 

@@ -1642,7 +1642,8 @@ header .menuMo .list li:last-child{
 /* 共好夥伴頁面 ed*/
 /* 共好夥伴內頁 */
 .partnerDetailPage .bannerArea{
-    position: relative;
+    /* position: relative; */
+    /* display: flex; */
 }
 .partnerDetailPage .coverImgBanner{
     width: 100%;
@@ -1673,16 +1674,67 @@ header .menuMo .list li:last-child{
     letter-spacing: 2.56px;
 }
 .partnerDetailPage .bannerArea .introduceArea{
-    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard{
+    /* margin-top: -176px; */
+    margin-top: -10%;
+    /* position: absolute; */
     width: 710px;
     height: 378px;
-    bottom:-176px;
+    /* bottom:-176px;
     bottom:0;
-    left: calc((100% - 710px) / 2);
+    left: calc((100% - 710px) / 2); */
     background-color: white;
     border: 1px solid black;
+    /* display: flex; */
+    margin-left: auto;
+    margin-right: auto;
+    
 }
-
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar{
+    padding: 36px 36px 0 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar img{
+    width: 140px;
+    height: 140px;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail{
+    margin-top: 36px;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    padding: 32px 36px;
+    position: relative;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: black; /* 设置边框的颜色 */
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: #333; /* 设置边框的颜色 */
+}
 /* 共好夥伴內頁 ed*/
 
 /* 永續觀點頁面 */
