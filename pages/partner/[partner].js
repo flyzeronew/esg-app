@@ -5,12 +5,18 @@ import { Inter } from 'next/font/google'
 import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
 import Image from 'next/image'
+import { useRouter } from 'next/router';
+
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
     console.log(props);
+    console.log("單獨資料");
+    console.log(props.detailData.partner_links[0].image_url);
 // 頁面識別
-const thisPage='partner';
+const thisPage='partnerDetail';
+const router = useRouter();
+const { partner } = router.query;
 const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
@@ -92,19 +98,33 @@ return (
                 </div>
                 
                 <div className="linksArea">
-                        <div className="first items">
+                        {/* pc */}
+                        <div className="first items pc">
                             <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
                         </div>
-                        <div className="second items">
+                        <div className="second items pc">
                             <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
                         </div>
-                        <div className="third items">
+                        <div className="third items pc">
                             <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
                         </div>
-                        <div className="fourth items">
+                        <div className="fourth items pc">
                             <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/>
                         </div>
-                    </div>
+                        {/* mobile */}
+                        <div className="first items mo">
+                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/> 
+                        </div>
+                        <div className="second items mo">
+                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        </div>
+                        <div className="fourth items mo">
+                            <Image src={"/images/partner-bg01.jpg"} alt="img" width={1060} height={596}/>
+                        </div>
+                        <div className="third items mo">
+                            <Image src={"/images/partner01.jpg"} alt="img" width={452} height={452}/> 
+                        </div>
+                </div>
                    
             </div>
         </main>
@@ -116,24 +136,28 @@ return (
     );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+    const { params } = context;
+    const { partner } = params;
+        // console.log("裏面id");
+        // console.log(partner);
+        // detail
+        // const router = useRouter();
+        // const { partner } = router.query;
+        // console.log("頁面id");
+        // console.log(partner);
 
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
-    // submenu
-    const submenuUrl = new URL('/api/partner-genres', process.env.API_URL);
-    const submenuRes = await fetch(submenuUrl);    
-    const submenuData = await submenuRes.json();
-    // list
-    const partnerUrl = new URL('/api/partners', process.env.API_URL);
-    const partnerRes = await fetch(partnerUrl);    
-    const partnerData = await partnerRes.json();
-
+    // detail
+    const detailUrl = new URL(`/api/partners/${partner}`, process.env.API_URL);
+    const detaulRes = await fetch(detailUrl);    
+    const detailData = await detaulRes.json();
     
     return {
         props: {
-            menu,partnerData,submenuData
+            menu,detailData
         },
     };
 }

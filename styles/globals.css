@@ -1813,7 +1813,12 @@ header .menuMo .list li:last-child{
 .partnerDetailPage .linksArea .fourth{
     margin-top: 61px;
 }
-
+.partnerDetailPage .linksArea .pc{
+    display: block;
+}
+.partnerDetailPage .linksArea .mo{
+    display: none;
+}
 @media (max-width:1245px) {
     .partnerDetailPage .linksArea{
         width: 767px;
@@ -1846,6 +1851,12 @@ header .menuMo .list li:last-child{
     }
     .partnerDetailPage .linksArea .fourth{
         margin-top: 0px;
+    }
+    .partnerDetailPage .linksArea .pc{
+        display: none;
+    }
+    .partnerDetailPage .linksArea .mo{
+        display: block;
     }
 }
 /* 共好夥伴內頁 ed*/
