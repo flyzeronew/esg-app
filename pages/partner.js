@@ -6,8 +6,7 @@ import Footer from '../comps/Footer'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
-export default function Partner(props) {
-    console.log(props);
+export default function Partner(props) {    
 // 頁面識別
 const thisPage='partner';
 const [imgHover, setImgHover] = useState(null);

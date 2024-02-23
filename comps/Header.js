@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 
 function Navber(props) {  
+    console.log(props);
     const appUrl = process.env.APP_URL;    
     const menu = props.menuData;
     const thisPage = props.thisPage;     

@@ -5,10 +5,10 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
+import GtmNoScript from '../comps/GtmNoScript'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
-    console.log(props);
     // 頁面識別
     const thisPage='action';
     const [imgHover, setImgHover] = useState(null);
@@ -46,6 +46,7 @@ export default function Focus(props) {
             <meta name="Keywords" content="esg,esg2,esg3" />
             <meta name="description" content="esg description" />        
         </Head>
+        <GtmNoScript/>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
             <div className="actionPage">
