@@ -1643,6 +1643,12 @@ header .menuMo .list li:last-child{
 /* 永續觀點頁面 */
 .viewPage{
     position: relative;
+    padding:24px 32px;
+}
+@media (max-width:767px) {
+    .viewPage{
+        padding:15px;
+    }  
 }
 /* 永續觀點頁面 ed*/
 
