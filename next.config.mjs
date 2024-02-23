@@ -11,7 +11,7 @@ const nextConfig = {
       'cc.tvbs.com.tw',
       'esg-frontend-staging.tvbs.com.tw',
       'esg-frontend.tvbs.com.tw',
-      'esg-app-alpha.vercel.app'
+      'esg-app-alpha.vercel.app',
     ],   
   }, 
    // 自訂服務器配置
@@ -20,7 +20,8 @@ const nextConfig = {
     port: process.env.PORT || 3000,
   },
   env: {
-    APP_URL: process.env.APP_URL
+    APP_URL: process.env.APP_URL,
+    GTM_ID: process.env.GTM_ID,
   },
   
 };

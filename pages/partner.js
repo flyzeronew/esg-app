@@ -7,8 +7,7 @@ import Footer from '../comps/Footer'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
-export default function Partner(props) {
-    console.log(props);
+export default function Partner(props) {    
 // 頁面識別
 const thisPage='partner';
 const [imgHover, setImgHover] = useState(null);
@@ -95,7 +94,7 @@ return (
                     showList.length > 0 ?
                     showList.map((item, index) => (
                             <li key={index} style={{ 
-                                background: `url(${item.cover_img}) no-repeat center center`,
+                                background: `url(${item.cover_img}) no-repeat center center / 100%`,
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>

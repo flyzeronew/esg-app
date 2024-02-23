@@ -1,4 +1,5 @@
 export default function handler(req, res) {
+    const appUrl = process.env.APP_URL;
     const data = [ 
             {
                 'title':'未來焦點',
@@ -11,6 +12,10 @@ export default function handler(req, res) {
                 'url':'javascript:void(0)',
                 'page_name':'view',
                 'child':[
+                    {
+                        'title':'全部',
+                        'url':appUrl+'/view',
+                    },
                     {
                         'title':'新趨勢',
                         'url':'javascript:void(0)',
@@ -31,25 +36,25 @@ export default function handler(req, res) {
             },
             {
                 'title':'永續生活小撇步',
-                'url':'/secret',
+                'url':appUrl+'/secret',
                 'page_name':'secret',
                 'child':[]
             },
             {
                 'title':'永續行動',
-                'url':'/action',
+                'url':appUrl+'/action',
                 'page_name':'action',
                 'child':[]
             },
             {
                 'title':'共好夥伴',
-                'url':'/partner',
+                'url':appUrl+'/partner',
                 'page_name':'partner',
                 'child':[]
             },
             {
                 'title':'TVBS永續責任',
-                'url':'/responsibility',
+                'url':appUrl+'/responsibility',
                 'page_name':'responsibility',
                 'child':[]
             },

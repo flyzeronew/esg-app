@@ -8,7 +8,6 @@ import Footer from '../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
-    console.log(props);
     // 頁面識別
     const thisPage='focus';
     const [imgHover, setImgHover] = useState(null);
@@ -37,7 +36,7 @@ export default function Focus(props) {
             window.removeEventListener('resize', handleResize);
         };
     }, []); 
-// resize 監聽事件 ed
+    // resize 監聽事件 ed
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
