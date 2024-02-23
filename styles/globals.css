@@ -1642,6 +1642,26 @@ header .menuMo .list li:last-child{
     height: 830px;
     overflow: hidden;
     position: relative;
+    display: flex;
+    border-radius: 0px 0px 30px 30px;
+} 
+.partnerDetailPage .coverImgBanner .partnerName{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2.56px;
+}
+/* .partnerDetailPage .coverImgBanner{
+    width: 100%;
+    height: 830px;
+    overflow: hidden;
+    position: relative;
 } 
 @media (max-width:1476px) {   
     .partnerDetailPage .coverImgBanner{
@@ -1650,7 +1670,7 @@ header .menuMo .list li:last-child{
         aspect-ratio: 16/9;
         overflow: visible;
     }
-}
+} */
 
 /* 共好夥伴內頁 ed*/
 
