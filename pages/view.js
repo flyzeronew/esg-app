@@ -8,37 +8,10 @@ import Header from '../comps/Header'
 import Footer from '../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
-export default function Focus(props) {
+export default function View(props) {
     const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='view';
-    const [imgHover, setImgHover] = useState(null);
-    const [bgSize, setBgSize] = useState();
-    const [hoverBgSize, setHoverBgSize] = useState();
-    const imgMouseOver = (e) => {
-        const isLargeScreen = window.innerWidth > 767;
-        setHoverBgSize(isLargeScreen ? 120 : 280);
-        setImgHover(e);
-    };
-
-    const imgMouseOut = (e) => {
-        setImgHover(null);
-    };
-    // resize 監聽事件
-    useEffect(() => { 
-        const handleResize = (e) => {
-            const newSize = window.innerWidth > 767 ? 100 : 250;
-            setBgSize(newSize);
-            setHoverBgSize(newSize);
-            setImgHover(null);
-        };  
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []); 
-    // resize 監聽事件 ed
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
@@ -102,7 +75,7 @@ export default function Focus(props) {
                 <div className='list'>
                     <ul>
                         <li>
-                            <Link href={`javascript:void(0)`}>
+                            <Link href={`/view/article/1`}>
                                 <div className='img'>
                                     <div className='playIcon'>                                 
                                         <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
@@ -121,7 +94,7 @@ export default function Focus(props) {
                             </Link>
                         </li>
                         <li>
-                            <Link href={`javascript:void(0)`}>
+                            <Link href={`/view/article/1`}>
                                 <div className='img'>
                                     <div className='playIcon'>                                 
                                         <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
