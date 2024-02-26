@@ -136,7 +136,7 @@ img{
     z-index: 1;
 }
 /* play-icon ed*/
-/* play-icon*/
+/* nameImg logo*/
 .nameImg img{
     line-height: 0;
     width: 60%;
@@ -153,7 +153,16 @@ img{
     background-color: #fff;
     border: 2px #DDDDDD solid;
 }
-/* play-icon ed*/
+/* nameImg logo ed*/
+
+/* 圖說 */
+.imgAlt{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+}
+/* 圖說 ed*/
 
 /* 共用標籤 */
 .submenu{
@@ -2275,6 +2284,94 @@ header .menuMo .list li:last-child{
         display:none;
     }
 }
+
+/* 永續觀點內頁*/
+.viewArticlePage{
+    border-radius: 30px 30px 0 0;
+    background-color: #ccc;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+}
+.viewArticlePage .articleContent{
+    width: 1000px;
+    margin: 0 auto;
+    padding:30px;
+    background-color: #fff;
+    border-radius:30px 30px 0 0;
+}
+.viewArticlePage .articleContent .category{
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.viewArticlePage .articleContent .mainTitle{
+    padding:0 100px;
+    font-size: 48px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.viewArticlePage .articleContent .mainImg .pic{
+    width: 100%;
+    line-height: 0;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.viewArticlePage .articleContent .mainImg .playIcon{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0 ;
+    bottom: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.viewArticlePage .articleContent .mainImg .playIcon img{
+    width: 60px;
+    height: 60px;
+}
+.viewArticlePage .articleContent .mainDescription{
+    padding:0 150px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+.viewArticlePage .articleContent .mainDescription p{
+    margin-bottom: 40px;
+}
+.viewArticlePage .articleContent .mainDescription .line{
+    background-color: #89EC54;
+    width: 30px;
+    height: 2px;
+    margin:0 auto 40px;
+}
+.timeBar{
+    font-size: 14px;
+    margin-bottom: 50px;
+    color: #999999;
+    display:flex;
+    column-gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+.timeBar .line{
+    background-color: #89EC54;
+    width: 2px;
+    height: 6px;
+}
+.timeBar .name{
+    color: #333;
+}
+/* 永續觀點內頁 ed*/
+
 /* 永續觀點頁面 ed*/
 
 /* 永續行動頁面 */
