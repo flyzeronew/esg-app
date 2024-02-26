@@ -53,7 +53,7 @@ export default function viewArticle(props) {
                             <div className='playIcon'>
                                 <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
                             </div>
-                            <Image src="/images/esg03.jpg" alt="全聯惜食專區。（圖／胡瑞麒攝）" width={1072} height={603}/>
+                            <Image src="/images/esg05.jpg" alt="全聯惜食專區。（圖／胡瑞麒攝）" width={1072} height={603}/>
                         </div>                        
                         <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                     </div>
