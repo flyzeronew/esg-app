@@ -110,7 +110,14 @@ export default function Focus(props) {
                                     <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'>
+                                        <div className='img'>
+                                            <Image src="/images/logo-view.png" alt="arraw" width={50} height={50}/>
+                                        </div>
+                                    </div>
+                                    <p>全聯福利中心</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -122,7 +129,14 @@ export default function Focus(props) {
                                     <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'>
+                                        <div className='img'>
+                                            <Image src="/images/logo-view.png" alt="arraw" width={50} height={50}/>
+                                        </div>
+                                    </div>
+                                    <p>全聯福利中心</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -131,7 +145,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg03.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -140,7 +157,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg04.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -149,7 +169,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -158,7 +181,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -167,7 +193,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -176,7 +205,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -185,7 +217,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg03.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -194,7 +229,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg04.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -203,7 +241,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
@@ -212,7 +253,10 @@ export default function Focus(props) {
                                     <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>劉俐均</div>
+                                <div className='name'>
+                                    <div className='nameImg'></div>
+                                    <p>劉俐均</p>
+                                </div>
                             </Link>
                         </li>
                     </ul>
