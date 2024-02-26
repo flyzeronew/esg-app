@@ -133,7 +133,9 @@ img{
     aspect-ratio: 1/1;
     overflow: hidden;
     line-height: 0;
+    z-index: 1;
 }
+
 /* play-icon ed*/
 /* 共用標籤 */
 .submenu{
@@ -339,6 +341,7 @@ header .burgerIcon{
     aspect-ratio: 1/1;
     overflow: hidden;
     line-height: 0;
+    cursor: pointer;
 }
 
 header .menuMo .search{
@@ -2073,18 +2076,24 @@ header .menuMo .list li:last-child{
     padding-top: 50px;
 }
 .viewPage .list .img{
+    position: relative;
     overflow: hidden;
     margin-bottom: 15px;
     border-radius: 30px;
     aspect-ratio: 16/9;
-    line-height: 0;
+    line-height: 0;    
 }
+
 .viewPage .list a .img img{
     transition: transform 0.3s;
 }
 .viewPage .list a:hover .img img{
     transition: transform 0.3s ease-in-out;
     transform: scale(1.2);
+}
+.viewPage .list a:hover .img .playIcon img{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
 }
 .viewPage .list .txt{
     font-size: 32px;
