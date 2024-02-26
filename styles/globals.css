@@ -120,6 +120,21 @@ img{
     }
 }
 /* 跳頁按鈕 ed*/
+.img{
+    position: relative;
+}
+/* play-icon*/
+.playIcon{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom:10px;
+    left:10px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    line-height: 0;
+}
+/* play-icon ed*/
 /* 共用標籤 */
 .submenu{
     margin:0 32px 50px;
