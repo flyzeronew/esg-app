@@ -40,7 +40,7 @@ export default function Focus(props) {
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
-            <title>{"esg | TVBS 官網"}</title>
+            <title>{"esg | 未來焦點"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
             <meta name="description" content="esg description" />        
