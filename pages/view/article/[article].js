@@ -4,18 +4,18 @@ import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import Header from '../comps/Header'
-import Footer from '../comps/Footer'
+import Header from '../../../comps/Header'
+import Footer from '../../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
     const appUrl = process.env.APP_URL;
     // 頁面識別
-    const thisPage='view';
+    const thisPage='view';    
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
-            <title>{"esg | 永續觀點"}</title>
+            <title>{"esg | 永續觀點內頁"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
             <meta name="description" content="esg description" />        
@@ -75,7 +75,7 @@ export default function Focus(props) {
                 <div className='list'>
                     <ul>
                         <li>
-                            <Link href={`/view/article/1`}>
+                            <Link href={`javascript:void(0)`}>
                                 <div className='img'>
                                     <div className='playIcon'>                                 
                                         <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
@@ -94,7 +94,7 @@ export default function Focus(props) {
                             </Link>
                         </li>
                         <li>
-                            <Link href={`/view/article/1`}>
+                            <Link href={`javascript:void(0)`}>
                                 <div className='img'>
                                     <div className='playIcon'>                                 
                                         <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
