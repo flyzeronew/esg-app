@@ -1911,7 +1911,23 @@ header .menuMo .list li:last-child{
     width: 36px;
     height: 36px;
     margin: 0 auto;
+    transform:rotate(0);
+    transition: 0.3s; 
 }
+.partnerDetailPage .linksArea .items:hover .linkIcon{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+}
+/* .partnerDetailPage .moreGoodNewsArea .list ul li .articleCard .linkIcon{
+    width: 36px;
+    height: 36px;
+    transform:rotate(0);
+    transition: 0.3s; 
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li:hover .articleCard .linkIcon{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+} */
 .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
     width: 768px;
     height: auto;
@@ -1981,6 +1997,198 @@ header .menuMo .list li:last-child{
     }
     .partnerDetailPage .linksArea .mo{
         display: block;
+    }
+}
+.partnerDetailPage .firstParagraph{
+    margin: 80px 0px;
+    text-align: center;
+    color: #333;
+}
+.partnerDetailPage .firstParagraph .wordsTitle{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 24px;
+}
+.partnerDetailPage .firstParagraph .wordsTxt{
+    padding-top: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+}
+.partnerDetailPage .firstParagraph .wordsTxt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: #333; /* 设置边框的颜色 */
+}
+@media (max-width:767px) {
+    .partnerDetailPage .firstParagraph .wordsTitle{
+        font-size: 28px;
+    }
+    .partnerDetailPage .firstParagraph .wordsTxt{
+        font-size: 18px;
+    }
+}
+.partnerDetailPage .videoArea {
+    width: 100%;
+    height: 521px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+@media (max-width:926px) {
+    .partnerDetailPage .videoArea {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+.partnerDetailPage .videoArea .videoCard{
+
+}
+.partnerDetailPage .videoArea .videoCard .videoTitle{
+    text-align: center;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    padding-bottom: 16px;
+}
+.partnerDetailPage .videoArea .videoCard .play{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .videoArea .videoCard .videoTitle{
+        font-size: 24px;
+        letter-spacing: 0.48px;
+    }
+    .partnerDetailPage .videoArea .videoCard .play{
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.partnerDetailPage .secondParagraph{
+    margin: 80px 0px;
+    text-align: center;
+    color: #333;
+}
+.partnerDetailPage .secondParagraph .wordsTitle{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 24px;
+}
+.partnerDetailPage .secondParagraph .wordsTxt{
+    padding-top: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    margin-bottom: 80px;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .secondParagraph .wordsTitle{
+        font-size: 28px;
+    }
+    .partnerDetailPage .secondParagraph .wordsTxt{
+        font-size: 18px;
+    }
+}
+.partnerDetailPage .moreGoodNewsArea{
+    padding: 56px 15px;
+    background-color: rgba(217,217,217,0.4);
+}
+.partnerDetailPage .moreGoodNewsArea .title{
+    color: #333;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    margin-bottom: 32px;
+}
+.partnerDetailPage .moreGoodNewsArea .list{
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 1130px;
+    column-gap: 24px;
+    row-gap: 24px;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li{
+    border-radius: 30px;
+    width: calc((100% - 24px) / 2);
+    height: auto;
+    aspect-ratio: 16/9;
+    /* background-size: cover; */
+    background-position: top top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li:hover{
+    background-position: center center;
+    background-size: 125%;
+    transition: 0.3s;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li .articleCard{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding: 24px;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li .articleCard .articleTitle{
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    width: 95%;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li .articleCard .linkIcon{
+    width: 36px;
+    height: 36px;
+    transform:rotate(0);
+    transition: 0.3s; 
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li:hover .articleCard .linkIcon{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .moreGoodNewsArea .title{
+        font-size: 28px;
+    }
+    .partnerDetailPage .moreGoodNewsArea .list ul li{
+        width: 100%;
     }
 }
 /* 共好夥伴內頁 ed*/
