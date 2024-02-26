@@ -1908,7 +1908,23 @@ header .menuMo .list li:last-child{
     width: 36px;
     height: 36px;
     margin: 0 auto;
+    transform:rotate(0);
+    transition: 0.3s; 
 }
+.partnerDetailPage .linksArea .items:hover .linkIcon{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+}
+/* .partnerDetailPage .moreGoodNewsArea .list ul li .articleCard .linkIcon{
+    width: 36px;
+    height: 36px;
+    transform:rotate(0);
+    transition: 0.3s; 
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li:hover .articleCard .linkIcon{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+} */
 .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
     width: 768px;
     height: auto;

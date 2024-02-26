@@ -10,9 +10,9 @@ import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
-    console.log(props);
-    console.log("單獨資料");
-    console.log(props.detailData.partner_links[0].image_url);
+    // console.log(props);
+    // console.log("單獨資料");
+    // console.log(props.detailData.partner_links[0].image_url);
 // 頁面識別
 const thisPage='partnerDetail';
 const router = useRouter();
@@ -98,8 +98,13 @@ return (
                 </div>
                 
                 <div className="linksArea">
-                        {/* pc */}
-                        <div className="first items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                        <div className="first items pc" style={{ 
+                            background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)  no-repeat center center / 105%`,
+                            backgroundSize: 1 === imgHover ? `130%` : `105%`,
+                            transition: 'background-size 0.3s',
+                             }}
+                             onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
+                        >
                             <Link  href="##">
                                 <div className="linkArea">
                                     <div className="linkCard">
@@ -113,7 +118,12 @@ return (
                                 </div>
                             </Link>
                         </div>
-                        <div className="second items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/images/partner01.jpg")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                        <div className="second items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/images/partner01.jpg") no-repeat center center / 100%`, 
+                            backgroundSize: 2 === imgHover ? `130%` : `100%`,
+                            transition: 'background-size 0.3s',
+                             }}
+                            onMouseOver={() => imgMouseOver(2)} onMouseOut={imgMouseOut}
+                        >
                             <Link  href="##">
                                 <div className="linkArea">
                                     <div className="linkCard">
@@ -127,7 +137,12 @@ return (
                                 </div>
                             </Link>
                         </div>
-                        <div className="third items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                        <div className="third items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner01.jpg) no-repeat center center / 100%`, 
+                            backgroundSize: 3 === imgHover ? `130%` : `100%`,
+                            transition: 'background-size 0.3s',
+                             }}
+                            onMouseOver={() => imgMouseOver(3)} onMouseOut={imgMouseOut}
+                        >
                             <Link  href="##">
                                 <div className="linkArea">
                                     <div className="linkCard">
@@ -141,7 +156,12 @@ return (
                                 </div>
                             </Link>
                         </div>
-                        <div className="fourth items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                        <div className="fourth items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg) no-repeat center center / 105%`,
+                            backgroundSize: 4 === imgHover ? `130%` : `105%`,
+                            transition: 'background-size 0.3s',
+                             }}
+                            onMouseOver={() => imgMouseOver(4)} onMouseOut={imgMouseOut}
+                        >
                             <Link  href="##">
                                 <div className="linkArea">
                                     <div className="linkCard">
@@ -253,7 +273,13 @@ return (
                     </div>
                     <div className="list">
                         <ul>
-                            <li style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`,backgroundSize:"cover", backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+                            <li style={{ 
+                                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)  no-repeat center center / 100%`,
+                                backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                backgroundPosition: 'center center' 
+                                }}
+                                onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
+                            >
                                 <Link href="##">
                                     <div className="articleCard">
                                         <div className="articleTitle">
@@ -265,7 +291,13 @@ return (
                                     </div>
                                 </Link>
                             </li>
-                            <li style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+                            <li style={{ 
+                                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)  no-repeat center center / 100%`,
+                                backgroundSize: 2 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                backgroundPosition: 'center center' 
+                                }}
+                                onMouseOver={() => imgMouseOver(2)} onMouseOut={imgMouseOut}
+                            >
                                 <Link href="##">
                                     <div className="articleCard">
                                         <div className="articleTitle">
@@ -277,7 +309,13 @@ return (
                                     </div>
                                 </Link>
                             </li>
-                            <li style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+                            <li style={{ 
+                                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)  no-repeat center center / 100%`,
+                                backgroundSize: 3 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                backgroundPosition: 'center center' 
+                                }}
+                                onMouseOver={() => imgMouseOver(3)} onMouseOut={imgMouseOut}
+                            >
                                 <Link href="##">
                                     <div className="articleCard">
                                         <div className="articleTitle">
@@ -317,13 +355,13 @@ export async function getServerSideProps(context) {
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
     // detail
-    const detailUrl = new URL(`/api/partners/${partner}`, process.env.API_URL);
-    const detaulRes = await fetch(detailUrl);    
-    const detailData = await detaulRes.json();
+    // const detailUrl = new URL(`/api/partners/${partner}`, process.env.API_URL);
+    // const detaulRes = await fetch(detailUrl);    
+    // const detailData = await detaulRes.json();
     
     return {
         props: {
-            menu,detailData
+            menu
         },
     };
 }
