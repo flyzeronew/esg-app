@@ -8,7 +8,7 @@ import Header from '../comps/Header'
 import Footer from '../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
-export default function Focus(props) {
+export default function View(props) {
     const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='view';
