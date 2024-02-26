@@ -102,6 +102,23 @@ img{
     background-color: #89EC54;
     transition: 0.3s;    
 }
+@media (max-width:767px) { 
+    .pageJump .box{
+        display:flex; 
+        justify-content: center; 
+        align-items: center;
+        column-gap: 5px;
+    }
+    .pageJump .box a{
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    .pageJump .next a{
+        font-size: 16px;
+        padding: 10px;
+    }
+}
 /* 跳頁按鈕 ed*/
 /* 共用標籤 */
 .submenu{
@@ -1685,6 +1702,270 @@ header .menuMo .list li:last-child{
     }
 }
 /* 共好夥伴頁面 ed*/
+/* 共好夥伴內頁 */
+.partnerDetailPage .bannerArea{
+    margin-bottom: 48px;
+}
+@media (max-width:767px) {  
+    .partnerDetailPage .bannerArea{
+        margin-bottom: 0;
+    }
+}
+@media (max-width:414px) {  
+    .partnerDetailPage .bannerArea{
+        margin-bottom: 48px;
+    }
+}
+.partnerDetailPage .coverImgBanner{
+    width: 100%;
+    height: 830px;
+    overflow: hidden;
+    /* position: relative; */
+    display: flex;
+    border-radius: 0px 0px 30px 30px;
+} 
+@media (max-width:1476px) {   
+    .partnerDetailPage .coverImgBanner{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        overflow: visible;
+    }
+} 
+.partnerDetailPage .coverImgBanner .partnerName{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2.56px;
+}
+.partnerDetailPage .bannerArea .introduceArea{
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard{
+    border-radius: 30px 30px 0px 0px;
+    margin-top: -176px;
+    /* margin-top: -10%; */
+    width: 710px;
+    height: 378px;
+    background-color: white;
+    /* border: 1px solid black; */
+    position: relative;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+    position: absolute;
+    top:146px;
+    left: -30px;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+    position: absolute;
+    top:146px;
+    right: -30px;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 36px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard{
+        margin-top: -86px;
+        /* margin-top: -10%; */
+        width: 331px;
+        height: 460px;
+        /* border: 1px solid black; */
+    } 
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+        top:56px;
+        left: -30px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+        top:56px;
+        right: -30px;
+    }
+}
+@media (max-width:565px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 24px;
+    }
+}
+@media (max-width:414px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 20px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard{
+        margin-top: -66px;
+        width: 250px;
+        height: 460px;
+    } 
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+        top:36px;
+        left: -30px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+        top:36px;
+        right: -30px;
+    }
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar{
+    padding: 36px 36px 0 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar img{
+    width: 140px;
+    height: 140px;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail{
+    margin-top: 36px;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    padding: 32px 36px;
+    position: relative;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: black; /* 设置边框的颜色 */
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: #333; /* 设置边框的颜色 */
+}
+.partnerDetailPage .linksArea{
+    width: 1244px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 24px;
+    /* row-gap: 61px; */
+}
+.partnerDetailPage .linksArea .items{
+    border-radius: 30px;
+}
+.partnerDetailPage .linksArea .items img{
+    border-radius: 30px;
+}
+.partnerDetailPage .linksArea .items .linkArea{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.partnerDetailPage .linksArea .items .linkArea .title{
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+.partnerDetailPage .linksArea .items .linkArea .linkIcon{
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+}
+.partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
+    width: 768px;
+    height: auto;
+    aspect-ratio: 16/9;
+
+}
+.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third{
+    width: 452px;
+    height: 452px;
+    aspect-ratio: 1/1;
+
+}
+.partnerDetailPage .linksArea .first{
+    margin-bottom: 61px;
+}
+.partnerDetailPage .linksArea .second{
+    margin-top: 56px;
+}
+.partnerDetailPage .linksArea .fourth{
+    margin-top: 61px;
+} 
+.partnerDetailPage .linksArea .pc{
+    display: block;
+}
+.partnerDetailPage .linksArea .mo{
+    display: none;
+}
+@media (max-width:1245px) {
+    .partnerDetailPage .linksArea{
+        width: 767px;
+    }
+    .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
+        width: 468px;
+        height: auto;
+        aspect-ratio: 16/9;
+    
+    }
+    .partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third{
+        width: 275px;
+        height: 275px;
+        aspect-ratio: 1/1;
+    
+    }
+}
+@media (max-width:767px) {
+    .partnerDetailPage .linksArea{
+        width:100%;
+        display: flex;
+        padding: 15px;
+        row-gap: 24px;
+    }
+    .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third,.partnerDetailPage .linksArea .fourth{
+        width: 100%;
+        height: 100%;
+    }
+    .partnerDetailPage .linksArea .first{
+        margin-bottom: 0px;
+    }
+    .partnerDetailPage .linksArea .second{
+        margin-top: 0px;
+    }
+    .partnerDetailPage .linksArea .fourth{
+        margin-top: 0px;
+    }
+    .partnerDetailPage .linksArea .pc{
+        display: none;
+    }
+    .partnerDetailPage .linksArea .mo{
+        display: block;
+    }
+}
+/* 共好夥伴內頁 ed*/
 
 /* 永續觀點頁面 */
 .viewPage .mainView{
@@ -1703,13 +1984,14 @@ header .menuMo .list li:last-child{
 }
 .viewPage .mainView .imgMaskBox {
     position:absolute;
-    bottom:0;
-    right:0;
+    bottom:-1px;
+    right:-1px;
 }
 .viewPage .mainView .imgMaskBox .rounded{
     display:flex;
     justify-content: flex-end;
-    align-items: flex-end;  
+    align-items: flex-end;
+    line-height: 0;
 }
 .viewPage .mainView .imgMaskBox .case{
     display:flex;
@@ -1738,6 +2020,7 @@ header .menuMo .list li:last-child{
 }
 .viewPage .mainView .txtBox .title{
     font-size: 48px;
+    height: 128px;
     margin-bottom: 20px;
     font-weight: 600;
     overflow: hidden;
@@ -1809,12 +2092,139 @@ header .menuMo .list li:last-child{
 .viewPage .sharedBanner{
     padding:24px 32px 0;
 }
+@media (max-width:1600px) {
+    .viewPage .mainView .txtBox {
+        width: 55%;
+        margin-bottom: -80px;
+        margin-left: 43%;
+    }
+    .viewPage .mainView .txtBox .title {
+        font-size: 36px;
+        height: 100px;
+    }
+}
+@media (max-width:1599px) {
+    .viewPage .mainView {
+        width: 100%;
+        position: relative;
+        display: block;
+        padding: 0 30px 180px;
+    }
+    .viewPage .mainView .imgMask {
+        padding: 80px 150px;
+        border-radius: 20px 0 0 0;
+    }
+}
+@media (max-width:1280px) {
+    .viewPage .mainView .txtBox {
+        width: 55%;
+        margin-bottom: -70px;
+        margin-left: 38%;
+    }
+    .viewPage .mainView .txtBox .title {
+        font-size: 36px;
+    }
+}
+@media (max-width:1279px) {
+    .viewPage .list{
+        width: 100%;
+        padding:0 15px;
+    }
+    .viewPage .list ul{
+        column-gap: 30px;  
+        row-gap: 30px; 
+    }
+    .viewPage .list ul li{
+        width: calc((100% - 30px) / 2);
+    }
+    .viewPage .list .txt{
+        font-size: 24px;
+        line-height:normal;
+    }
+    .viewPage .list .name{
+        font-size: 16px;
+        line-height:normal;
+    }
+}
+@media (max-width:1024px) {
+    .viewPage .mainView {
+        padding: 0 30px 130px;
+    }
+    .viewPage .mainView .img {
+        width: 70%;
+    }
+    .viewPage .mainView .txtBox {
+        width: 55%;
+        margin-bottom: -70px;
+        margin-left: 43%;
+    }
+    .viewPage .mainView .txtBox .title {
+        font-size: 36px;
+    }
+}
+@media (max-width:1023px) {    
+    .viewPage .mainView .imgMaskBox {
+        width: 90%;
+    }
+    .viewPage .mainView .imgMask {
+        padding: 80px 45%;
+    }
+    .viewPage .mainView {
+        padding: 0 0 130px;
+    }
+    .viewPage .mainView .img {
+        width: 100%;
+        border-radius: 0;
+    }
+    .viewPage .mainView .txtBox {
+        width: 70%;
+        margin-bottom: -70px;
+        margin-left: 200px;
+    }
+}
 @media (max-width:767px) {
+    
     .viewPage .sharedBanner{
         padding: 15px 15px 0px 15px;
     }  
-    .viewPage .mainView{
-        padding:0 30px 30px;
+    .viewPage .list ul li{
+        width:100%;
+    }
+    .viewPage .list ul li:nth-child(even){
+        padding-top: 0px;
+    }
+    .viewPage .list .txt{
+        font-size: 20px;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+    .viewPage .list .img{
+        overflow: hidden;
+        margin-bottom: 15px;
+        border-radius: 20px;
+    }
+    .viewPage .mainView .txtBox {
+        width: 70%;
+        margin-bottom:-15px;
+        margin-left:23%;
+    }
+    .viewPage .mainView .imgMask {
+        padding: 50px 45%;
+    }
+    .viewPage .mainView {
+        padding: 0 0 60px;
+    }
+    .viewPage .mainView .txtBox .title {
+        font-size: 24px;
+        height: 96px;
+        margin-bottom: 0;
+        -webkit-line-clamp: 3;
+    }
+    .viewPage .mainView .txtBox .txt{
+        display:none;
     }
 }
 /* 永續觀點頁面 ed*/
@@ -1826,7 +2236,8 @@ header .menuMo .list li:last-child{
 @media (max-width:767px) {
     .actionPage .sharedBanner{
         padding: 15px 15px 0px 15px;
-    }  
+    } 
+
 }
 /* 永續行動頁面 ed*/
 
