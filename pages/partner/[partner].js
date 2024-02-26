@@ -211,7 +211,26 @@ return (
                             </div>
                         </div>
                 </div>
-                   
+                <div className="firstParagraph">
+                    <div className="fistTitle">
+                        推廣具規模的永續食物系統
+                    </div>
+                    <div className="firstTxt">
+                        排放路徑圖顯示，我們有近三分之二的溫室氣體排放來自農業。因此，改善農業碳排放是我們的主要專注的領域之一。
+                    </div>
+                </div>
+                <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                    <Link href="https://www.youtube.com/shorts/Uz9k6QGqXj0">
+                        <div className="videoCard">
+                            <div className="videoTitle">
+                                在台攜手產學推動永續包裝革新首度推出雀巢
+                            </div>
+                            <div className="playIcon">
+                            <Image src={"/images/playIcon.svg"} alt="img" width={48} height={48}/> 
+                            </div>
+                        </div>
+                    </Link>
+                </div>
             </div>
         </main>
         <div className="footerLine">

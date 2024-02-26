@@ -1903,6 +1903,92 @@ header .menuMo .list li:last-child{
         display: block;
     }
 }
+.partnerDetailPage .firstParagraph{
+    margin: 80px 0px;
+    text-align: center;
+    color: #333;
+}
+.partnerDetailPage .firstParagraph .fistTitle{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 24px;
+}
+.partnerDetailPage .firstParagraph .firstTxt{
+    padding-top: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+}
+.partnerDetailPage .firstParagraph .firstTxt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: #333; /* 设置边框的颜色 */
+}
+.partnerDetailPage .videoArea {
+    width: 100%;
+    height: 521px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:926px) {
+    .partnerDetailPage .videoArea {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+.partnerDetailPage .videoArea .videoCard{
+
+}
+.partnerDetailPage .videoArea .videoCard .videoTitle{
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    padding-bottom: 16px;
+}
+.partnerDetailPage .videoArea .videoCard .playIcon{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.partnerDetailPage .videoArea .videoCard .playIcon img{
+    width: 32px;
+    height: 28px;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .videoArea .videoCard .playIcon{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .partnerDetailPage .videoArea .videoCard .playIcon img{
+        width: 18px;
+        height: 15px;
+    }
+}
+
 /* 共好夥伴內頁 ed*/
 
 /* 永續觀點頁面 */
