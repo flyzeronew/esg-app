@@ -135,8 +135,28 @@ img{
     line-height: 0;
     z-index: 1;
 }
-
 /* play-icon ed*/
+/* play-icon*/
+.nameImg img{
+    line-height: 0;
+}
+
+.nameImg .img{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    border-radius: 60px;
+    background-color: #fff;
+    border: 2px #DDDDDD solid;
+}
+.nameImg .img img{
+    width: 60%;
+}
+/* play-icon ed*/
+
 /* 共用標籤 */
 .submenu{
     margin:0 32px 50px;
@@ -2083,7 +2103,9 @@ header .menuMo .list li:last-child{
     aspect-ratio: 16/9;
     line-height: 0;    
 }
-
+.viewPage .list .name .img{
+    margin-bottom: 0;
+}
 .viewPage .list a .img img{
     transition: transform 0.3s;
 }
@@ -2107,6 +2129,9 @@ header .menuMo .list li:last-child{
     display: -webkit-box;
 }
 .viewPage .list .name{
+    display:flex;
+    align-items: center;
+    column-gap: 5px;
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
