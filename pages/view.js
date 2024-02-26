@@ -112,7 +112,7 @@ export default function Focus(props) {
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
                                 <div className='name'>
                                     <div className='nameImg'>
-                                        <div className='img'>
+                                        <div className='img1'>
                                             <Image src="/images/logo-view.png" alt="arraw" width={50} height={50}/>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@ export default function Focus(props) {
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
                                 <div className='name'>
                                     <div className='nameImg'>
-                                        <div className='img'>
+                                        <div className='img1'>
                                             <Image src="/images/logo-view.png" alt="arraw" width={50} height={50}/>
                                         </div>
                                     </div>

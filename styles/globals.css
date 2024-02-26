@@ -139,9 +139,10 @@ img{
 /* play-icon*/
 .nameImg img{
     line-height: 0;
+    width: 60%;
 }
 
-.nameImg .img{
+.nameImg .img1{
     width: 40px;
     height: 40px;
     display: flex;
@@ -151,9 +152,6 @@ img{
     border-radius: 60px;
     background-color: #fff;
     border: 2px #DDDDDD solid;
-}
-.nameImg .img img{
-    width: 60%;
 }
 /* play-icon ed*/
 
@@ -2117,6 +2115,7 @@ header .menuMo .list li:last-child{
     transition: transform 0.3s ease-in-out;
     transform: scale(1);
 }
+
 .viewPage .list .txt{
     font-size: 32px;
     font-weight: 600;
