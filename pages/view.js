@@ -9,6 +9,7 @@ import Footer from '../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
+    const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='view';
     const [imgHover, setImgHover] = useState(null);
@@ -103,6 +104,9 @@ export default function Focus(props) {
                         <li>
                             <Link href={`javascript:void(0)`}>
                                 <div className='img'>
+                                    <div className='playIcon'>                                 
+                                        <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                    </div>
                                     <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
@@ -112,6 +116,9 @@ export default function Focus(props) {
                         <li>
                             <Link href={`javascript:void(0)`}>
                                 <div className='img'>
+                                    <div className='playIcon'>                                 
+                                        <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                    </div>
                                     <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
                                 </div>
                                 <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
