@@ -212,10 +212,10 @@ return (
                         </div>
                 </div>
                 <div className="firstParagraph">
-                    <div className="fistTitle">
+                    <div className="wordsTitle">
                         推廣具規模的永續食物系統
                     </div>
-                    <div className="firstTxt">
+                    <div className="wordsTxt">
                         排放路徑圖顯示，我們有近三分之二的溫室氣體排放來自農業。因此，改善農業碳排放是我們的主要專注的領域之一。
                     </div>
                 </div>
@@ -225,11 +225,72 @@ return (
                             <div className="videoTitle">
                                 在台攜手產學推動永續包裝革新首度推出雀巢
                             </div>
-                            <div className="playIcon">
-                            <Image src={"/images/playIcon.svg"} alt="img" width={48} height={48}/> 
+                            <div className="play">
+                                <Image src={"/images/play-icon.svg"} alt="img" width={48} height={48}/> 
                             </div>
                         </div>
                     </Link>
+                </div>
+                <div className="secondParagraph">
+                    <div className="wordsTitle">
+                        雀巢的零廢棄包裝策略
+                    </div>
+                    <div className="wordsTxt">
+                    我們追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設和可再利用或可重複裝填的包裝，讓未來不再有塑膠廢棄物汙染我們的土地或海洋。
+
+                    我們的理想是：未來沒有任何一個來自雀巢的包裝，包括塑膠在內，最終成為填埋廢棄物或棄置於土地、海洋或河川中的垃圾。
+
+                    我們正致力於減少塑膠廢棄物，包括增加回收塑膠使用，減少原生塑膠的使用，並協助建立促進塑膠產品收集、回收與再利用的循環體系。
+
+                    雀巢致力達成 100 % 包裝可回收或再利用，至 2025 年預計超過 95 %包裝完成轉換，並將原生塑膠用量減少三分之一。
+
+                    要解決食物浪費及耗損這個複雜的全球性問題，我們從自身做起，積極與其他業者合作，並鼓勵消費者儘可能選用從田地到餐桌的食物。
+                    </div>
+                </div>
+                <div className="moreGoodNewsArea">
+                    <div className="title">
+                        更多共好消息
+                    </div>
+                    <div className="list">
+                        <ul>
+                            <li style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`,backgroundSize:"cover", backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+                                <Link href="##">
+                                    <div className="articleCard">
+                                        <div className="articleTitle">
+                                            華航永續發展6度入榜 2030地面作業用10%再生能源，華航永續發展6度入榜 2030地面作業用10%再生能源
+                                        </div>
+                                        <div className="linkIcon">
+                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                        </div>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+                                <Link href="##">
+                                    <div className="articleCard">
+                                        <div className="articleTitle">
+                                            華航永續發展6度入榜 2030地面作業用10%再生能源，華航永續發展6度入榜 2030地面作業用10%再生能源
+                                        </div>
+                                        <div className="linkIcon">
+                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                        </div>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+                                <Link href="##">
+                                    <div className="articleCard">
+                                        <div className="articleTitle">
+                                            華航永續發展6度入榜 2030地面作業用10%再生能源
+                                        </div>
+                                        <div className="linkIcon">
+                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                        </div>
+                                    </div>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
