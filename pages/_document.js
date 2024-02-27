@@ -1,10 +1,11 @@
-import { Html, Head, Main, NextScript } from 'next/document';
-import { useState ,useEffect } from 'react';
+import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 export default function Document() {
   let gtmId = process.env.GTM_ID;
   return (
     <Html lang='zh-Hant-TW'>
       <Head>
+        <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></Script>
         <script
             dangerouslySetInnerHTML={{
               __html: `    
