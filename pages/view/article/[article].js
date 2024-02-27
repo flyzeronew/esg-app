@@ -10,8 +10,23 @@ import Footer from '../../../comps/Footer'
 const inter = Inter({ subsets: ['latin'] })
 export default function viewArticle(props) {
     const appUrl = process.env.APP_URL;
+    const [bgShow, setBgShow] = useState(true);
     // 頁面識別
     const thisPage='view';    
+    // resize 監聽事件
+    useEffect(() => { 
+        const handleResize = (e) => {
+            const showBg = window.innerWidth > 767 ? true : false;
+            setBgShow(showBg);
+        };  
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []); 
+    // resize 監聽事件 ed
+
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
@@ -24,7 +39,7 @@ export default function viewArticle(props) {
         <main>
             <div className="viewArticlePage" 
             style={{ 
-                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${appUrl}/images/esg02.jpg)`,
+                backgroundImage:bgShow ==true ? `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${appUrl}/images/esg02.jpg)`:'',
                 backgroundAttachment:`fixed`,            
             }}>
                 
@@ -69,12 +84,19 @@ export default function viewArticle(props) {
                         </div>
 
                         <div className="articleGroup">
-                            <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>
-                            <p>
-                                不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、
-                                好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。
+                            <div className="img">
+                                <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>
+                            </div>
+                            <div className="txt">
+                                <div className="line"></div>
+                                <p>
+                                    不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、
+                                    好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。
+                                </p>
                                 <small style={{textAlign:`center`}}>— 記者徐葳倫</small>
-                            </p>
+                                <div className="line"></div>
+                            </div>
+
                         </div>
 
                         <h2>藉由非一次性使用的環保商品推廣，減少環境的汙染及惡化</h2>
@@ -129,7 +151,7 @@ export default function viewArticle(props) {
                                 <div className='box'>
                                     <div className="company">
                                         <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                                        <span>台灣雀巢 Nestlé Taiwan</span><span>Sponsored</span>
+                                        <span>台灣雀巢 Nestlé Taiwan</span>
                                     </div>
                                     <div className="title">
                                         <p>吃完的免洗紙餐盒，需洗完再回收嗎？</p>
@@ -156,49 +178,55 @@ export default function viewArticle(props) {
                                 <div className="line"></div>
                             </div>
                             <div className="tags">
-                                <Link href={`javascript:void(0)`}>#環保餐具</Link>
-                                <Link href={`javascript:void(0)`}>#環保吸管</Link>
-                                <Link href={`javascript:void(0)`}>#可分解材質</Link>
-                                <Link href={`javascript:void(0)`}>#銘安科技</Link>
+                                <div className="box1">
+                                    <Link href={`javascript:void(0)`}>#環保餐具</Link>
+                                    <Link href={`javascript:void(0)`}>#環保吸管</Link>
+                                    <Link href={`javascript:void(0)`}>#可分解材質</Link>
+                                    <Link href={`javascript:void(0)`}>#銘安科技</Link>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="list">
-                            <ul>
-                                <li>
-                                    <Link href={`javascript:void(0)`}>
-                                        <div className="img">
-                                            <div className='playIcon'>                                 
-                                                <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                        <div className="listBox">
+                            <div className="arraw">
+                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                            </div>
+                            <div className="list">
+                                <ul>
+                                    <li>
+                                        <Link href={`javascript:void(0)`}>
+                                            <div className="img">
+                                                <div className='playIcon'>                                 
+                                                    <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                                </div>
+                                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
                                             </div>
-                                            <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                        </div>
-                                        <div className="txt">
-                                            使用「紙吸管、竹吸管」
-                                        </div>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={`javascript:void(0)`}>
-                                        <div className="img">
-                                            <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                        </div>
-                                        <div className="txt">
-                                            使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣
-                                        </div>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={`javascript:void(0)`}>
-                                        <div className="img">
-                                            <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                        </div>
-                                        <div className="txt">
-                                            使用「紙吸管、竹吸管」真環保？真相竟是這樣
-                                        </div>
-                                    </Link>
-                                </li>
-                            </ul>
+                                            <div className="txt">
+                                                使用「紙吸管、竹吸管」
+                                            </div>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href={`javascript:void(0)`}>
+                                            <div className="img">
+                                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                            </div>
+                                            <div className="txt">
+                                                使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣
+                                            </div>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href={`javascript:void(0)`}>
+                                            <div className="img">
+                                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                            </div>
+                                            <div className="txt">
+                                                使用「紙吸管、竹吸管」真環保？真相竟是這樣
+                                            </div>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

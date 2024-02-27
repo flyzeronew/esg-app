@@ -2510,20 +2510,38 @@ header .menuMo .list li:last-child{
 }
 
 /* 永續觀點內頁*/
+.articleContent small{
+    display: block;
+    margin:10px 0;
+}
 .viewArticlePage{
     border-radius: 30px 30px 0 0;
-    background-color: #ccc;
+    border-top: 1px solid #DDD;
     padding-top: 30px;
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: top center;
     background-size: 100% auto;    
 }
 .viewArticlePage .articleContent{
-    width: 1000px;
+    width: 970px;
     margin: 0 auto;
     padding:30px;
     background-color: #fff;
     border-radius:30px 30px 0 0;
+}
+@media (max-width:1023px) {
+    .viewArticlePage{
+        padding-top: 0;  
+    }
+    .viewArticlePage .articleContent{
+        width: 100%;
+    }
+}
+@media (max-width:767px) {
+    .viewArticlePage .articleContent{
+        margin: 0 auto;
+        padding:30px 15px;
+    }
 }
 .viewArticlePage .articleContent .category{
     font-size: 14px;
@@ -2537,6 +2555,21 @@ header .menuMo .list li:last-child{
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
+}
+@media (max-width:1023px) {
+    .viewArticlePage{
+        padding-top: 0;  
+    }
+    .viewArticlePage .articleContent{
+        width: 100%;
+    }
+}
+@media (max-width:767px) {
+    .viewArticlePage .articleContent .mainTitle{
+        padding:0;
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
 }
 .viewArticlePage .articleContent .mainImg{
     margin-bottom: 40px;
@@ -2579,6 +2612,12 @@ header .menuMo .list li:last-child{
     height: 2px;
     margin:0 auto 40px;
 }
+@media (max-width:767px) {
+    .viewArticlePage .articleContent .mainDescription{
+        padding:0;
+        font-size: 18px;
+    }
+}
 .timeBar{
     font-size: 14px;
     margin-bottom: 50px;
@@ -2595,14 +2634,6 @@ header .menuMo .list li:last-child{
 }
 .timeBar .name{
     color: #333;
-}
-.viewArticlePage .articleContent .editor p{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0.04em;
-    text-align: left;
-    padding:0 120px 40px;
 }
 .articleAd{margin-bottom: 50px;}
 .articleContent .articleAd img{border-radius: 0;}
@@ -2628,25 +2659,53 @@ header .menuMo .list li:last-child{
     letter-spacing: 0.04em;
     padding: 0 120px 20px;    
 }
+@media (max-width:767px) {
+    .viewArticlePage .articleContent .editor p{
+        padding: 0 0 40px; 
+    }
+    .viewArticlePage .articleContent .editor h2{
+        font-size: 28px;
+        line-height: 38px;
+        padding: 0 0 20px;    
+    }
+}
 .articleGroup{
     display:flex;
     align-items: center;
     justify-content: center;
     background-color: #F2F2F2;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 50px;
     overflow: hidden;
 }
-.articleGroup img{
+.articleGroup .line{
+    width: 30px;
+    height: 2px;
+    background-color: #89EC54;
+    margin:15px auto;
+}
+.articleGroup .img{
     width: 50%;
     aspect-ratio: 16/9;
     overflow: hidden;
     margin-bottom: 0;
-    border-radius: 10px;
+    border-radius: 20px;
+}
+.articleGroup .img img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius:0px;
+    padding:0 ;
+}
+.articleGroup .txt{
+    width: 50%;
+    overflow: hidden;
+    border-radius:0px;
+    padding:0px 40px;
 }
 .viewArticlePage .articleContent .editor .articleGroup p{
-    width: 50%;
-    padding:0px 40px;
+    padding:0px;
     font-size: 16px;
     line-height:28px;
     text-align:justify;
@@ -2655,6 +2714,24 @@ header .menuMo .list li:last-child{
     text-overflow: ellipsis;
     display: -webkit-box;
     overflow: hidden;
+}
+@media (max-width:1023px) {
+    .articleGroup .txt{
+        width: 100%;
+        padding: 15px 30px;
+    }
+    .articleGroup .line{
+        margin:20px auto;
+    }
+    .articleGroup{
+        display:block;
+    }
+    .articleGroup .img{
+        width: 100%;
+    }
+    .articleContent small{
+        margin-bottom: 15px;
+    }
 }
 .articleContent blockquote{
     font-size: 20px;
@@ -2684,9 +2761,14 @@ header .menuMo .list li:last-child{
     color: #89EC54;
     margin-top: 20px;
 }
-.articleContent small{
-    display: block;
-    margin:10px 0;
+@media (max-width:767px) {
+    .articleContent blockquote{
+        font-size: 20px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 0 0 20px;
+    }
 }
 .imageGroup{
     display:flex;
@@ -2697,6 +2779,17 @@ header .menuMo .list li:last-child{
 }
 .imageGroup .img:nth-child(even){
     margin-top: 50px;
+}
+@media (max-width:767px) {
+    .imageGroup{
+        display:block;
+    }
+    .imageGroup .img:nth-child(even){
+        margin-top: 0px;
+    }
+    .imageGroup .img{
+        margin-bottom: 30px;
+    }
 }
 .articleSecret{
     padding: 0 120px 40px;
@@ -2797,7 +2890,6 @@ header .menuMo .list li:last-child{
     font-weight: 500;
     line-height: 20px;
     letter-spacing: 0.02em;
-    text-align: center;
     margin-bottom: 10px;
 }
 .articleSecret .company img{
@@ -2812,13 +2904,44 @@ header .menuMo .list li:last-child{
     overflow: hidden;
     align-items: flex-end;
 }
+@media (max-width:1023px) {
+    .articleSecret{
+        padding: 0 0 40px;
+    }
+}
+@media (max-width:767px) {
+    .articleSecret .imgBox{
+        width: 30%;    
+        background:linear-gradient(60deg, rgba(242, 242, 242, 0.2) 0, rgba(242, 242, 242, 1) 100%);
+    }
+    .articleSecret .txtBox{
+        width: 70%;
+    }
+    .articleSecret .txtBox .box{
+        padding: 15px;
+        border-radius:0px 20px 20px 20px;
+    }
+    .articleSecret .txtBox .title {
+        display: block;
+    }
+    .articleSecret .txtBox .title p{
+        margin-bottom: 10px;
+        display:block;
+    }
+    .articleSecret .object {
+        align-items:flex-start;
+    }
+    .articleSecret .rounded{
+        display: none;
+    }
+}
 .articleExtended{
     background-color: #F2F2F2;
     padding:40px 0;
     display:flex;
 }
 .articleExtended .box{
-    width: 1000px;
+    width: 970px;
     margin:0 auto ;
     display:flex;
     column-gap: 30px;
@@ -2826,8 +2949,23 @@ header .menuMo .list li:last-child{
 .articleExtended .tagBox{
     width: 15%;
 }
-.articleExtended .list{
+.articleExtended .listBox{
     width: 85%;
+    position: relative;
+}
+.articleExtended .listBox .arraw{
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right:30px;
+    display:none;    
+    z-index: 1;
+}
+.articleExtended .listBox .arraw img{
+    margin-bottom:80px;
+    aspect-ratio: 1/1;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0 15px;
+    border-radius: 60px;
 }
 .articleExtended .tags a{
     font-size: 14px;
@@ -2835,6 +2973,7 @@ header .menuMo .list li:last-child{
     border-bottom: 2px solid #89EC54;
     width: max-content;
     margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 .viewArticlePage .articleExtended .articleTitle{
     font-size: 32px;
@@ -2843,6 +2982,7 @@ header .menuMo .list li:last-child{
 .viewArticlePage .articleExtended .articleTitle .line{
     width: 32px;
 }
+
 .articleExtended .list ul{
     display:flex;
     flex-wrap: wrap;
@@ -2874,6 +3014,69 @@ header .menuMo .list li:last-child{
 .articleExtended .list .img .playIcon{
     width: 40px;
 }
+
+@media (max-width:1023px) {
+    .articleExtended .listBox .arraw{
+        position: absolute;
+        display:flex;
+        align-items: center;
+    }
+    .viewArticlePage .articleExtended .articleTitle{
+        margin-bottom: 30px;
+    }
+    .articleExtended .box,.articleExtended .tagBox,
+    .articleExtended .listBox{
+        display: block;
+        width: 100%;
+        padding-bottom: 0;
+    }
+    .articleExtended .list{
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .articleExtended .list::-webkit-scrollbar {
+        width: 0px;
+    }
+    .articleExtended .list ul{
+        width: 250%;
+    }
+    .articleExtended .tags .box1{        
+        display:flex;
+        column-gap:20px;
+        margin-bottom: 30px;
+    }
+    .articleExtended{
+        background-color: #F2F2F2;
+        padding:40px 0;
+        display:flex;
+    }
+    .articleExtended .tagBox,.articleExtended .list{
+        padding:0 0 0 15px;
+    }
+
+}
+@media (max-width:1023px) {
+    .articleExtended .tags{
+        overflow: hidden;
+        overflow-x: auto;
+        padding: 0;
+    }
+    .articleExtended .tags::-webkit-scrollbar {
+        width: 0px;
+    }
+    .articleExtended .tags .box1{
+        width: max-content;        
+    }
+    .articleExtended .tags .box1 a{
+        margin-bottom: 0;       
+    }
+}
+@media (max-width:767px) {
+    .articleExtended{
+        overflow: hidden;
+        border-radius: 30px 30px 0 0;
+    }
+}
 /* 永續觀點內頁 ed*/
 
 /* 永續觀點頁面 ed*/
@@ -2885,8 +3088,7 @@ header .menuMo .list li:last-child{
 @media (max-width:767px) {
     .actionPage .sharedBanner{
         padding: 15px 15px 0px 15px;
-    } 
-
+    }
 }
 /* 永續行動頁面 ed*/
 
