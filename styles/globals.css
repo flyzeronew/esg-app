@@ -2285,9 +2285,10 @@ header .menuMo .list li:last-child{
     }
     .viewPage .mainView .txtBox .title {
         font-size: 24px;
-        height: 96px;
+        height: 100px;
         margin-bottom: 0;
         -webkit-line-clamp: 3;
+        line-height: 30px;
     }
     .viewPage .mainView .txtBox .txt{
         display:none;
