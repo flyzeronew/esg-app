@@ -24,7 +24,7 @@ export default function viewArticle(props) {
         <main>
             <div className="viewArticlePage" 
             style={{ 
-                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 50%), url(${appUrl}/images/esg02.jpg)`
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 20%), url(${appUrl}/images/esg02.jpg)`
             }}>
                 
                 <div className="articleContent">
@@ -57,15 +57,159 @@ export default function viewArticle(props) {
                         </div>                        
                         <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                     </div>
+
+                    {/* 編輯器 */}
+                    <div className="editor">
+                        <p>但單從即期品打折的方式遠遠不夠，根據環保署統計，2017年3月至2018年4月超市和量販業廚餘的廢棄食品申報量高達6630公噸，平均每月有超過500公噸剩食變廚餘，以一個500公克便當來計算，相當於100萬個便當的量。</p>
+                        <p>看守台灣協會祕書長謝和霖指出，剩食的出現是從農產品一路到餐桌，農場端率先就會有農作物被丟棄的狀況，一路到賣場、果菜市場通路端將一些醜蔬果、沒賣掉的進行報廢。</p>
+                        <p>針對源頭出現的浪費，全聯表示，目前主要是藉由採用契作和契養，和農友們有計畫性的生產，避免某一時期全部農民都搶種同一種生鮮蔬果商品，導致後續出現爆量、價格暴跌的窘境。</p>
+                        <div className="articleAd">
+                            <Image src="/images/article-ad.jpg" alt="arraw" width={950} height={250}/>
+                        </div>
+
+                        <div className="articleGroup">
+                            <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>
+                            <p>
+                                不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、
+                                好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。
+                                <small style={{textAlign:`center`}}>— 記者徐葳倫</small>
+                            </p>
+                        </div>
+
+                        <h2>藉由非一次性使用的環保商品推廣，減少環境的汙染及惡化</h2>
+                        <p>搖一搖，再把飲料倒進紙杯，但這杯飲料使用的吸管，暗藏玄機；因為過去常使用的塑膠吸管，在這間飲料店，再也看不到。飲料店店長邱小姐：「可分解吸管的話，就是比較不會製造垃圾跟塑膠的問題，其實現在很多客人也都響應環保，使用上客人也覺得蠻好的。」響應環保、減塑概念，手搖飲店把每天都會用到的塑膠吸管，全部換成可分解材質。</p>
+
+                        <div className="articleImg">
+                            <Image src="/images/esg01.jpg" alt="img" width={1072} height={603}/>
+                            <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
+                        </div>
+
+                        <blockquote>
+                            不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。 
+                            <small style={{textAlign:`center`}}>— 記者徐葳倫</small>
+                        </blockquote>
+
+                        <h2>藉由非一次性使用的環保商品推廣，減少環境的汙染及惡化</h2>
+                        <p>原來製作這個可分解吸管的公司，發跡在台中無尾巷，靠著可分解塑膠的技術，闖進國際市場，不僅僅限於吸管，幾乎所有塑膠製品，從一次性餐具、餐盒、購物袋，全都找得到，差別在於它的「塑膠」，是完全能被分解。會做這些可分解材質，來自於董事長想培育學生，做中學的概念。</p>
+
+                        <div className="imageGroup">
+                            <div className="img">
+                                <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>
+                                <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
+                            </div>
+                            <div className="img">
+                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
+                            </div>
+                        </div>
+
+                        <p>銘安科技董事長黃建銘：「因為當你分解以後，有可能這個東西會稍微被濃縮，我們希望就是，你完全是低於土壤的背景值，所以全世界的認證裡面，分解度是大家都一致的要求，用堆肥的標準來講，你材料要在12周內就能崩解完畢，然後再接下來3個月，就是總共是180天內，你要能夠有90%以上，完全被轉換成二氧化碳跟水的能力，你不小心掉在土壤裡面，掉在地上，它還是會分解。」</p>
+                        <p>標榜連掉在地上，三年內都能分解；其實這種可分解吸管的製作過程相當費工，不只溫度不能太高或太低，加工過程連含水量，都得注意，因為這些都可能影響材料老化，因此它的產量會比一般塑膠吸管少2成。掌握產品的分解速度，更是技術核心所在，如何做到兼顧可分解，又能拉長它的壽命，難度最高</p>
+                    </div>
+                    {/* 編輯器 ed*/}
+
+                    {/* 小撇步報你知 */}                    
+                    <div className="articleSecret">
+                        <div className="articleTitle">
+                            <p>小撇步報你知</p>
+                            <div className="line"></div>
+                        </div>
+                        <div className="object">
+                            <div className="imgBox">
+                                <div className="tag">食</div>
+                                <div className="img">
+                                    <Image src="/images/food01-m.jpg" alt="img" width={140} height={140}/>
+                                </div>
+                            </div>
+                            <div className="txtBox">                                
+                                <div className='rounded'>
+                                    <Image src="/images/rounded-02.svg" alt="rounded" width={50} height={50}/>
+                                </div>
+                                <div className='box'>
+                                    <div className="company">
+                                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
+                                        <span>台灣雀巢 Nestlé Taiwan</span><span>Sponsored</span>
+                                    </div>
+                                    <div className="title">
+                                        <p>吃完的免洗紙餐盒，需洗完再回收嗎？</p>
+                                        <div className="arraw">
+                                            <Image src={`${appUrl}/images/icon_arraw05.svg`} alt="arraw" width={50} height={50}/>
+                                        </div>
+                                    </div>                                    
+                                </div>                                                            
+                            </div>
+                        </div>
+                    </div>
                     
+                    {/* 小撇步報你知 ed*/}
+
+
                 </div>
+
+                {/* 延伸閱讀 */}
+                <div className="articleExtended">
+                    <div className="box">
+                        <div className="tagBox">
+                            <div className="articleTitle">
+                                <p>延伸閱讀</p>
+                                <div className="line"></div>
+                            </div>
+                            <div className="tags">
+                                <Link href={`javascript:void(0)`}>#環保餐具</Link>
+                                <Link href={`javascript:void(0)`}>#環保吸管</Link>
+                                <Link href={`javascript:void(0)`}>#可分解材質</Link>
+                                <Link href={`javascript:void(0)`}>#銘安科技</Link>
+                            </div>
+                        </div>
+
+                        <div className="list">
+                            <ul>
+                                <li>
+                                    <Link href={`javascript:void(0)`}>
+                                        <div className="img">
+                                            <div className='playIcon'>                                 
+                                                <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                            </div>
+                                            <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                        </div>
+                                        <div className="txt">
+                                            使用「紙吸管、竹吸管」
+                                        </div>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={`javascript:void(0)`}>
+                                        <div className="img">
+                                            <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                        </div>
+                                        <div className="txt">
+                                            使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣
+                                        </div>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={`javascript:void(0)`}>
+                                        <div className="img">
+                                            <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                        </div>
+                                        <div className="txt">
+                                            使用「紙吸管、竹吸管」真環保？真相竟是這樣
+                                        </div>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {/* 延伸閱讀 ed*/}
+
             </div>       
 
         </main>
         <div className="footerLine">
-            <div className="box"></div>
+            <div className="box color1"></div>
         </div>
-        <Footer />
+        <Footer act='color1'/>
     </div>
     );
 }

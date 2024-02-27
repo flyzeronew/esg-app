@@ -5,9 +5,11 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
+    const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='focus';
     const [imgHover, setImgHover] = useState(null);
@@ -75,7 +77,7 @@ export default function Focus(props) {
                                                     <div className="txt"><p>{item.description}</p></div>
                                                 </div>
                                                 <div className= {`arraw ${index === imgHover ? 'act':''}`}>
-                                                    <img src="images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                                                    <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
                                                 </div>
                                             </div>                           
                                         </Link>
