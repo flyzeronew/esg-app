@@ -2297,8 +2297,8 @@ header .menuMo .list li:last-child{
     background-color: #ccc;
     padding-top: 30px;
     background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100% auto;
+    background-position: left center;
+    background-size: 100% auto;    
 }
 .viewArticlePage .articleContent{
     width: 1000px;

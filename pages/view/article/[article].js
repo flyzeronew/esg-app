@@ -24,7 +24,8 @@ export default function viewArticle(props) {
         <main>
             <div className="viewArticlePage" 
             style={{ 
-                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 20%), url(${appUrl}/images/esg02.jpg)`
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${appUrl}/images/esg02.jpg)`,
+                backgroundAttachment:`fixed`,            
             }}>
                 
                 <div className="articleContent">
