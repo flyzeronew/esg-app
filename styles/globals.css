@@ -48,6 +48,10 @@ html::-webkit-scrollbar-thumb {
     line-height: normal;
     margin: 0 auto;
 }
+.img img{
+    width: 100%;
+    height: auto;
+}
 img{
     height: auto;
 }
