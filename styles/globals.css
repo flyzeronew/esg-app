@@ -2009,6 +2009,8 @@ header .menuMo .list li:last-child{
     padding-bottom: 24px;
 }
 .partnerDetailPage .firstParagraph .wordsTxt{
+    margin: 0 auto;
+    width: 638px;
     padding-top: 24px;
     font-size: 20px;
     font-style: normal;
@@ -2031,6 +2033,9 @@ header .menuMo .list li:last-child{
         font-size: 28px;
     }
     .partnerDetailPage .firstParagraph .wordsTxt{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
         font-size: 18px;
     }
 }
@@ -2091,19 +2096,24 @@ header .menuMo .list li:last-child{
     padding-bottom: 24px;
 }
 .partnerDetailPage .secondParagraph .wordsTxt{
+    margin: 0 auto 80px auto;
+    width: 638px;
     padding-top: 24px;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     position: relative;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
 }
 @media (max-width:767px) {
     .partnerDetailPage .secondParagraph .wordsTitle{
         font-size: 28px;
     }
     .partnerDetailPage .secondParagraph .wordsTxt{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
         font-size: 18px;
     }
 }
