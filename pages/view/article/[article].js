@@ -80,7 +80,12 @@ export default function viewArticle(props) {
                         <p>看守台灣協會祕書長謝和霖指出，剩食的出現是從農產品一路到餐桌，農場端率先就會有農作物被丟棄的狀況，一路到賣場、果菜市場通路端將一些醜蔬果、沒賣掉的進行報廢。</p>
                         <p>針對源頭出現的浪費，全聯表示，目前主要是藉由採用契作和契養，和農友們有計畫性的生產，避免某一時期全部農民都搶種同一種生鮮蔬果商品，導致後續出現爆量、價格暴跌的窘境。</p>
                         <div className="articleAd">
-                            <Image src="/images/article-ad.jpg" alt="arraw" width={950} height={250}/>
+                            <div className="pc">
+                                <Image src="/images/article-ad.jpg" alt="arraw" width={950} height={250}/>
+                            </div>
+                            <div className="mo">
+                                <Image src="/images/article-ad-m.jpg" alt="arraw" width={343} height={250}/>
+                            </div>
                         </div>
 
                         <div className="articleGroup">

@@ -49,7 +49,6 @@ html::-webkit-scrollbar-thumb {
     margin: 0 auto;
 }
 img{
-    width: 100%;
     height: auto;
 }
 .arraw{
@@ -2523,7 +2522,7 @@ header .menuMo .list li:last-child{
     background-size: 100% auto;    
 }
 .viewArticlePage .articleContent{
-    width: 970px;
+    width: 1030px;
     margin: 0 auto;
     padding:30px;
     background-color: #fff;
@@ -2635,8 +2634,19 @@ header .menuMo .list li:last-child{
 .timeBar .name{
     color: #333;
 }
-.articleAd{margin-bottom: 50px;}
-.articleContent .articleAd img{border-radius: 0;}
+.articleAd{
+    margin-bottom: 50px;
+}
+.articleAd .pc{
+    display:block;
+}
+.articleAd .mo{
+    display:none;
+}
+.articleContent .articleAd img{
+    margin:0 auto ;
+    border-radius: 0;
+}
 .articleImg{
     margin-bottom: 50px;
 }
@@ -2658,6 +2668,14 @@ header .menuMo .list li:last-child{
     line-height: 45px;
     letter-spacing: 0.04em;
     padding: 0 120px 20px;    
+}
+@media (max-width:1023px) {
+    .articleAd .pc{
+        display:none;        
+    }
+    .articleAd .mo{
+        display:block;
+    }
 }
 @media (max-width:767px) {
     .viewArticlePage .articleContent .editor p{
@@ -2941,7 +2959,7 @@ header .menuMo .list li:last-child{
     display:flex;
 }
 .articleExtended .box{
-    width: 970px;
+    width: 1030px;
     margin:0 auto ;
     display:flex;
     column-gap: 30px;
