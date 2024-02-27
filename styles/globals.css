@@ -2506,7 +2506,7 @@ header .menuMo .list li:last-child{
         height: 100px;
         margin-bottom: 0;
         -webkit-line-clamp: 3;
-        line-height: 30px;
+        line-height: 32px;
     }
     .viewPage .mainView .txtBox .txt{
         display:none;
