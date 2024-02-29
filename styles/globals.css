@@ -1506,7 +1506,7 @@ header .menuMo .list li:last-child{
     position: relative;
     padding-left: 12px;
     overflow: hidden;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -1573,7 +1573,7 @@ header .menuMo .list li:last-child{
     .partnerPage .list .profileCard .txt{
         font-size: 18px;
         overflow: hidden;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         display: -webkit-box;
