@@ -225,7 +225,7 @@ export default function viewArticle(props) {
                                 <div className='box'>
                                     <div className="company">
                                         <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                                        <span>台灣雀巢 Nestlé Taiwan</span>
+                                        <span>台灣雀巢 Nestlé Taiwan <span style={{fontStyle:`italic`}}>Sponsored</span></span>
                                     </div>
                                     <div className="title">
                                         <p>吃完的免洗紙餐盒，需洗完再回收嗎？</p>
