@@ -261,7 +261,14 @@ export async function getServerSideProps() {
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
     // 線上資料
-
+    // submenu
+    const submenuUrl = new URL('/api/partner-genres', process.env.API_URL);
+    const submenuRes = await fetch(submenuUrl);    
+    const submenuData = await submenuRes.json();
+    // list
+    const partnerUrl = new URL('/api/partners', process.env.API_URL);
+    const partnerRes = await fetch(partnerUrl);    
+    const partnerData = await partnerRes.json();
     
     return {
         props: {

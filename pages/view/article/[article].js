@@ -80,8 +80,9 @@ export default function viewArticle(props) {
                         <p>看守台灣協會祕書長謝和霖指出，剩食的出現是從農產品一路到餐桌，農場端率先就會有農作物被丟棄的狀況，一路到賣場、果菜市場通路端將一些醜蔬果、沒賣掉的進行報廢。</p>
                         <p>針對源頭出現的浪費，全聯表示，目前主要是藉由採用契作和契養，和農友們有計畫性的生產，避免某一時期全部農民都搶種同一種生鮮蔬果商品，導致後續出現爆量、價格暴跌的窘境。</p>
                         <div className="articleAd">
+                            <small>Sponsored</small>
                             <div className="pc">
-                                <Image src="/images/article-ad.jpg" alt="arraw" width={950} height={250}/>
+                                <Image src="/images/article-ad.jpg" alt="arraw" width={970} height={250}/>
                             </div>
                             <div className="mo">
                                 <Image src="/images/article-ad-m.jpg" alt="arraw" width={343} height={250}/>
@@ -121,12 +122,16 @@ export default function viewArticle(props) {
                         <p>原來製作這個可分解吸管的公司，發跡在台中無尾巷，靠著可分解塑膠的技術，闖進國際市場，不僅僅限於吸管，幾乎所有塑膠製品，從一次性餐具、餐盒、購物袋，全都找得到，差別在於它的「塑膠」，是完全能被分解。會做這些可分解材質，來自於董事長想培育學生，做中學的概念。</p>
 
                         <div className="imageGroup">
-                            <div className="img">
-                                <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>
+                            <div className="box">
+                                <div className="img">
+                                    <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>                                    
+                                </div>
                                 <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                             </div>
-                            <div className="img">
-                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                            <div className="box">
+                                <div className="img">
+                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>                                    
+                                </div>
                                 <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                             </div>
                         </div>
