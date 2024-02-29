@@ -30,7 +30,7 @@ export default function viewArticle(props) {
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
-            <title>{"esg | 永續觀點內頁"}</title>
+            <title>{"文章標題 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
             <meta name="description" content="esg description" />        

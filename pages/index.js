@@ -16,10 +16,10 @@ export default function Home(props) {
   return (
     <div id='wrapper' className={inter.className}>  
       <Head>
-        <title>{"esg | TVBS 官網"}</title>
+        <title>{"ESG企業永續治理 - TVBS ESG專區"}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="Keywords" content="esg,esg2,esg3" />
-        <meta name="description" content="esg description" />  \      
+        <meta name="description" content="ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。" />  \      
       </Head>
       <Header thisPage={thisPage} menuData={props.menu}/>
       <main>

@@ -15,10 +15,10 @@ export default function View(props) {
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
-            <title>{"esg | 永續觀點"}</title>
+            <title>{"永續觀點 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="esg description" />        
+            <meta name="description" content="ESG 企業永續治理已成為全球企業發展的趨勢。 在新趨勢下，企業更加重視永續環境、共好社會、綠色生活等議題。幫助企業、投資人、消費者與一般民眾理解ESG企業永續治理的重要性與實踐方法。" />        
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
