@@ -133,9 +133,72 @@ export default function viewArticle(props) {
 
                         <p>銘安科技董事長黃建銘：「因為當你分解以後，有可能這個東西會稍微被濃縮，我們希望就是，你完全是低於土壤的背景值，所以全世界的認證裡面，分解度是大家都一致的要求，用堆肥的標準來講，你材料要在12周內就能崩解完畢，然後再接下來3個月，就是總共是180天內，你要能夠有90%以上，完全被轉換成二氧化碳跟水的能力，你不小心掉在土壤裡面，掉在地上，它還是會分解。」</p>
                         <p>標榜連掉在地上，三年內都能分解；其實這種可分解吸管的製作過程相當費工，不只溫度不能太高或太低，加工過程連含水量，都得注意，因為這些都可能影響材料老化，因此它的產量會比一般塑膠吸管少2成。掌握產品的分解速度，更是技術核心所在，如何做到兼顧可分解，又能拉長它的壽命，難度最高</p>
+
                     </div>
                     {/* 編輯器 ed*/}
+                    {/* 廠商資訊 */}
+                    <div className="articleSponsor style1">
+                        <div className="box">
+                            <div className="imgBox">
+                                <div className="img">
+                                    <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
+                                </div>
+                                <div className="txt">
+                                    <div className="type">共好夥伴</div>
+                                    <div className="name">
+                                        <p>全聯福利中心</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="description">
+                                <p>秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。</p>                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="articleSponsor style2">
+                        <div className="box">
+                            <div className="imgBox">
+                                <div className="img">
+                                    <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
+                                </div>
+                                <div className="txt">
+                                    <div className="type">共好夥伴</div>
+                                    <div className="name">
+                                        <p>全聯福利中心</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="description">
+                                <p>秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。</p>                                
+                            </div>
+                        </div>
+                    </div>
 
+                    <div className="articleSponsor style3">
+                        <div className="box">
+                            <div className="imgBox">
+                                <div className="img">
+                                    <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
+                                </div>
+                                <div className="txt">
+                                    <div className="type pc">共好夥伴</div>
+                                    <div className="name">
+                                        <p>全聯福利中心</p>
+                                    </div>
+                                    <div className="type mo">
+                                        共好夥伴
+                                        <div className="line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="description">
+                                <p>秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。</p>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 廠商資訊 ed*/}
                     {/* 小撇步報你知 */}                    
                     <div className="articleSecret">
                         <div className="articleTitle">

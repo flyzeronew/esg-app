@@ -2814,6 +2814,179 @@ header .menuMo .list li:last-child{
         margin-bottom: 30px;
     }
 }
+
+/* 共好夥伴區塊 */
+.articleSponsor{
+    padding: 0 120px 40px;
+}
+.articleSponsor .box{
+    padding:20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #F2F2F2;
+}
+.articleSponsor .imgBox{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+.articleSponsor .img{
+    width: 90px;    
+}
+.articleSponsor img{
+    margin-bottom: 0;
+    border: 1px solid #F2F2F2;
+    aspect-ratio: 1/1;
+}
+.articleSponsor .type{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-align: left;    
+    color: #666666;
+    margin-bottom: 5px;
+}
+.articleSponsor .name{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    text-align: left; 
+}
+.articleSponsor .name p{ 
+    border-bottom:2px solid #89EC54;   
+}
+.articleSponsor .description{
+    width: 50%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.articleSponsor .description p{
+    padding-left: 20px;
+    border-left:1px solid #dadada;
+}
+@media (max-width:1023px) {
+    .articleSponsor{    
+        padding: 0 0 40px;
+    }
+}
+@media (max-width:767px) {
+    .articleSponsor .box{
+        display: block;
+    }
+    /* 樣式1 */
+    .articleSponsor.style1 .imgBox{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .articleSponsor.style1 .description{
+        width: 100%;
+    }
+    .articleSponsor.style1 .description p{
+        padding-left: 0px;
+        border-left:0px solid #dadada;
+        line-height: 25px;
+    }
+    /* 樣式2 */
+    .articleSponsor.style2 .imgBox{
+        width: 100%;
+        display: block;
+    }
+    .articleSponsor.style2 .img{
+        width: 140px;
+        margin: 0 auto 15px;
+    }
+    .articleSponsor.style2 .type {
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .articleSponsor.style2 .name{
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .articleSponsor.style2 .name p{ 
+        width:max-content;
+        display: block;
+        margin:0 auto ;
+        border-bottom:2px solid #89EC54;   
+    }
+    .articleSponsor.style2 .description{
+        font-size: 18px;
+        width: 100%;
+    }
+    .articleSponsor.style2 .description p{
+        text-align: center;
+        padding-left: 0px;
+        border-left:0px solid #dadada;
+        line-height: 25px;
+    }
+
+     /* 樣式3 */
+    .articleSponsor.style3 .box{
+        overflow: hidden;
+        padding:0;
+    }
+    .articleSponsor.style3 .imgBox{
+        width: 100%;
+        display: block;
+    }
+    .articleSponsor.style3 .img{
+        width: 100%;
+        background-color: #c5161f;
+        padding:20px;
+        margin-bottom: 20px;
+    }
+    .articleSponsor.style3 .img img{
+        width: 140px;
+        margin: 0 auto 15px;        
+    }
+    .articleSponsor.style3 .type {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .articleSponsor.style3 .name{
+        margin-bottom: 15px;  
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 39px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .articleSponsor.style3 .line{
+       width: 30px;
+       height: 2px;
+       border-bottom: 2px #23E888 solid;
+       margin: 20px 0;
+    }
+    .articleSponsor.style3 .name p{ 
+        display: block;
+        border: none;
+    }
+    .articleSponsor.style3 .txt{
+        padding:0 20px;
+    }
+    .articleSponsor.style3 .description{
+        font-size: 18px;
+        width: 100%;
+        padding:0 20px 20px;
+    }
+    .articleSponsor.style3 .description p{
+        text-align: left;
+        padding-left: 0px;
+        border-left:0px solid #dadada;
+        line-height: 25px;
+    }
+}
+/* 共好夥伴區塊 ed*/
+
 .articleSecret{
     padding: 0 120px 40px;
 }
@@ -3043,6 +3216,9 @@ header .menuMo .list li:last-child{
         position: absolute;
         display:flex;
         align-items: center;
+    }
+    .articleExtended .listBox .arraw.hide{
+        display:none;    
     }
     .viewArticlePage .articleExtended .articleTitle{
         margin-bottom: 30px;
