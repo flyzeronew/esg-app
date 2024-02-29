@@ -57,10 +57,10 @@ const [submenuActive, setSubmenuActive] = useState(0);
 return (
     <div id='wrapper' className={inter.className}> 
         <Head>
-            <title>{"esg | 共好夥伴"}</title>
+            <title>{"ESG共好夥伴 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="esg description" />        
+            <meta name="description" content="透過企業合作，ESG共好夥伴可以共享資源、互補優勢、擴大影響力，共同推動ESG理念的實踐，創造永續發展的未來。" />        
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
