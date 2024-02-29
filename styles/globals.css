@@ -2309,18 +2309,20 @@ header .menuMo .list li:last-child{
     background-size: 100% auto;    
 }
 .viewArticlePage .articleContent{
-    width: 1030px;
+    width: 1240px;
     margin: 0 auto;
     padding:30px;
     background-color: #fff;
     border-radius:30px 30px 0 0;
 }
+@media (max-width:1279px) {
+    .viewArticlePage .articleContent{
+        width: 100%;
+    }
+}
 @media (max-width:1023px) {
     .viewArticlePage{
         padding-top: 0;  
-    }
-    .viewArticlePage .articleContent{
-        width: 100%;
     }
 }
 @media (max-width:767px) {
@@ -2336,13 +2338,17 @@ header .menuMo .list li:last-child{
     margin-bottom: 15px;
 }
 .viewArticlePage .articleContent .mainTitle{
-    padding:0 100px;
+    width: 970px;
     font-size: 48px;
     text-align: center;
     font-weight: 600;
+    margin:0 auto ;
     margin-bottom: 30px;
 }
 @media (max-width:1023px) {
+    .viewArticlePage .articleContent .mainTitle{
+        width: 100%;
+    }
     .viewArticlePage{
         padding-top: 0;  
     }
@@ -2358,6 +2364,8 @@ header .menuMo .list li:last-child{
     }
 }
 .viewArticlePage .articleContent .mainImg{
+    width: 970px;
+    margin: 0 auto;
     margin-bottom: 40px;
 }
 .viewArticlePage .articleContent .mainImg .pic{
@@ -2384,7 +2392,8 @@ header .menuMo .list li:last-child{
     height: 60px;
 }
 .viewArticlePage .articleContent .mainDescription{
-    padding:0 150px;
+    width: 630px;
+    margin:0 auto ;
     font-size: 20px;
     text-align: center;
     font-weight: 600;
@@ -2398,8 +2407,16 @@ header .menuMo .list li:last-child{
     height: 2px;
     margin:0 auto 40px;
 }
+@media (max-width:1023px) {
+    .viewArticlePage .articleContent .mainImg{
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}
 @media (max-width:767px) {
     .viewArticlePage .articleContent .mainDescription{
+        width: 100%;
         padding:0;
         font-size: 18px;
     }
@@ -2414,7 +2431,7 @@ header .menuMo .list li:last-child{
     column-gap: 12px;
 }
 .timeBar .line{
-    background-color: #89EC54;
+    background-color: #D9D9D9;
     width: 2px;
     height: 6px;
 }
@@ -2423,6 +2440,11 @@ header .menuMo .list li:last-child{
 }
 .articleAd{
     margin-bottom: 50px;
+}
+.articleAd small{
+    font-size: 14px;
+    text-align: center;
+    color: #999999;
 }
 .articleAd .pc{
     display:block;
@@ -2434,8 +2456,15 @@ header .menuMo .list li:last-child{
     margin:0 auto ;
     border-radius: 0;
 }
-.articleImg{
+.articleContent .articleImg{
+    width: 970px;
+    margin:0 auto ;
     margin-bottom: 50px;
+}
+@media (max-width:1023px) {
+    .articleContent .articleImg{
+        width:100%;
+    }
 }
 .articleContent img{
     border-radius: 20px;
@@ -2447,14 +2476,18 @@ header .menuMo .list li:last-child{
     line-height: 32px;
     letter-spacing: 0.04em;
     text-align: left;
-    padding: 0 120px 40px;    
 }
 .viewArticlePage .articleContent .editor h2{
     font-size: 32px;
     font-weight: 600;
     line-height: 45px;
-    letter-spacing: 0.04em;
-    padding: 0 120px 20px;    
+    letter-spacing: 0.04em;   
+}
+.viewArticlePage .articleContent .editor p,
+.viewArticlePage .articleContent .editor h2{
+    width: 630px;
+    margin:0 auto ;
+    margin-bottom: 40px;
 }
 @media (max-width:1023px) {
     .articleAd .pc{
@@ -2465,13 +2498,13 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:767px) {
-    .viewArticlePage .articleContent .editor p{
-        padding: 0 0 40px; 
+    .viewArticlePage .articleContent .editor p,
+    .viewArticlePage .articleContent .editor h2{
+        width: 100%;
     }
     .viewArticlePage .articleContent .editor h2{
         font-size: 28px;
-        line-height: 38px;
-        padding: 0 0 20px;    
+        line-height: 38px;  
     }
 }
 .articleGroup{
@@ -2510,6 +2543,7 @@ header .menuMo .list li:last-child{
     padding:0px 40px;
 }
 .viewArticlePage .articleContent .editor .articleGroup p{
+    width: 100%;
     padding:0px;
     font-size: 16px;
     line-height:28px;
@@ -2540,13 +2574,14 @@ header .menuMo .list li:last-child{
 }
 .articleContent blockquote{
     font-size: 20px;
-    width: 100%;
+    width: 730px;
     content:'❛❛';
     display: block;
     text-align: center;
-    padding: 0 120px 20px;
     line-height: 32px;
     letter-spacing: 0.04em;
+    margin:0 auto ;
+    margin-bottom: 20px;
 }
 .articleContent blockquote::before{
     font-size: 40px;
@@ -2576,23 +2611,37 @@ header .menuMo .list li:last-child{
     }
 }
 .imageGroup{
+    width: 100%;
     display:flex;
     align-items: center;
     justify-content: center;
     column-gap: 20px;
     margin-bottom: 50px;
 }
-.imageGroup .img:nth-child(even){
-    margin-top: 50px;
+.imageGroup .img{
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    line-height: 0;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.imageGroup .box{
+    width: 50%;
+}
+.imageGroup .box:nth-child(even){
+    margin-top: 100px;
 }
 @media (max-width:767px) {
+    .imageGroup .box {
+        width: 100%;
+    }
     .imageGroup{
         display:block;
     }
-    .imageGroup .img:nth-child(even){
+    .imageGroup .box:nth-child(even){
         margin-top: 0px;
     }
-    .imageGroup .img{
+    .imageGroup .box{
         margin-bottom: 30px;
     }
 }
@@ -2919,10 +2968,21 @@ header .menuMo .list li:last-child{
     display:flex;
 }
 .articleExtended .box{
-    width: 1030px;
+    width: 1240px;
     margin:0 auto ;
     display:flex;
     column-gap: 30px;
+}
+@media (max-width:1279px) {
+    .articleExtended .box{
+        width: 100%;
+        padding:0 15px;
+    }
+}
+@media (max-width:1023px) {
+    .articleExtended .box{
+        padding:0;
+    }
 }
 .articleExtended .tagBox{
     width: 15%;
