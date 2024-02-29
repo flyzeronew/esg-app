@@ -2866,7 +2866,9 @@ header .menuMo .list li:last-child{
 
 /* 共好夥伴區塊 */
 .articleSponsor{
-    padding: 0 120px 40px;
+    width: 630px;
+    margin:0 auto ;
+    margin-bottom: 40px;
 }
 .articleSponsor .box{
     padding:20px;
@@ -2921,8 +2923,8 @@ header .menuMo .list li:last-child{
     border-left:1px solid #dadada;
 }
 @media (max-width:1023px) {
-    .articleSponsor{    
-        padding: 0 0 40px;
+    .articleSponsor{
+        width: 100%;
     }
 }
 @media (max-width:767px) {
@@ -3037,7 +3039,9 @@ header .menuMo .list li:last-child{
 /* 共好夥伴區塊 ed*/
 
 .articleSecret{
-    padding: 0 120px 40px;
+    width:630px;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 .viewArticlePage .articleTitle{
     font-size: 24px;
@@ -3151,7 +3155,7 @@ header .menuMo .list li:last-child{
 }
 @media (max-width:1023px) {
     .articleSecret{
-        padding: 0 0 40px;
+        width:100%;
     }
 }
 @media (max-width:767px) {
