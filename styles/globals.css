@@ -2300,6 +2300,7 @@ header .menuMo .list li:last-child{
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
+    text-align: justify;
     
 }
 .viewPage .mainView .txtBox .txt{
@@ -2312,6 +2313,7 @@ header .menuMo .list li:last-child{
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
+    text-align: justify;
 }
 .viewPage .list{
     width: 1220px;
