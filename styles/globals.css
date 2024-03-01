@@ -20,6 +20,34 @@ html::-webkit-scrollbar-thumb {
     background: #89EC54;
 }
 
+/* 404 */
+.notFoundContainer {
+    width: 100%;
+    height: 100vh ;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.notFoundContainer .logo{
+    width: max-content;
+    text-align: center;
+    margin: 0 auto 20px;
+}
+.notFoundContainer .heading {
+    width: 100%;
+    font-size: 30px;
+    color: #333333;
+    margin: 0 auto 20px;
+}
+.notFoundContainer .description {
+    width: 100%;
+    font-size: 14px;
+    color: gray;
+}
+/* 404 ed*/
+
 .pc {
     display: block;
 }
