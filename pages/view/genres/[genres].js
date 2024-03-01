@@ -1,5 +1,6 @@
 
 import { useState ,useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Submenu from '../../../comps/view/Submenu'
@@ -9,11 +10,20 @@ import Footer from '../../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
+
+    const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
     const articleList = props.viewData.article_list;
     const genreId=props.genreId;
-    const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'404 - 沒有分類';
+    const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'';
     const genreDescription = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].description:'';
+    
+    useEffect(() => {
+        const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'';    
+        if (!genreName) {
+            router.push('/404');
+        }
+    }, []);
 
     // 頁面識別
     const thisPage='view';
