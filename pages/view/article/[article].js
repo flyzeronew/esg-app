@@ -1,5 +1,3 @@
-
-import Link from 'next/link'
 import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
@@ -253,10 +251,10 @@ export default function viewArticle(props) {
                             </div>
                             <div className="tags">
                                 <div className="box1">
-                                    <Link href={`javascript:void(0)`}>#環保餐具</Link>
-                                    <Link href={`javascript:void(0)`}>#環保吸管</Link>
-                                    <Link href={`javascript:void(0)`}>#可分解材質</Link>
-                                    <Link href={`javascript:void(0)`}>#銘安科技</Link>
+                                    <a href={`javascript:void(0)`}>#環保餐具</a>
+                                    <a href={`javascript:void(0)`}>#環保吸管</a>
+                                    <a href={`javascript:void(0)`}>#可分解材質</a>
+                                    <a href={`javascript:void(0)`}>#銘安科技</a>
                                 </div>
                             </div>
                         </div>
@@ -267,7 +265,7 @@ export default function viewArticle(props) {
                             <div className="list">
                                 <ul>
                                     <li>
-                                        <Link href={`javascript:void(0)`}>
+                                        <a href={`javascript:void(0)`}>
                                             <div className="img">
                                                 <div className='playIcon'>                                 
                                                     <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
@@ -277,27 +275,27 @@ export default function viewArticle(props) {
                                             <div className="txt">
                                                 使用「紙吸管、竹吸管」
                                             </div>
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link href={`javascript:void(0)`}>
+                                        <a href={`javascript:void(0)`}>
                                             <div className="img">
                                                 <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
                                             </div>
                                             <div className="txt">
                                                 使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣
                                             </div>
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link href={`javascript:void(0)`}>
+                                        <a href={`javascript:void(0)`}>
                                             <div className="img">
                                                 <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
                                             </div>
                                             <div className="txt">
                                                 使用「紙吸管、竹吸管」真環保？真相竟是這樣
                                             </div>
-                                        </Link>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
