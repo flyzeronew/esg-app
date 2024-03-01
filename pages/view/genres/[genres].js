@@ -12,48 +12,48 @@ export default function Genres(props) {
     const viewSubmenu = props.viewSubmenuData;    
     const articleList = props.viewData.article_list;
     const genreId=props.genreId;
-    const genreName = props.viewSubmenuData[genreId-1].name;
-    const genreDescription = props.viewSubmenuData[genreId-1].description;
+    const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'404 - 沒有分類';
+    const genreDescription = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].description:'';
 
     // 頁面識別
     const thisPage='view';
     return (
-        <div id='wrapper' className={inter.className}> 
-            <Head>
-                <title>{`${genreName} - TVBS ESG專區`}</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta name="Keywords" content="" />
-                <meta name="description" content={genreDescription}/>        
-            </Head>
-            <Header thisPage={thisPage} menuData={props.menu}/>
-            <main>            
-                <div className="viewPage">
-                    {/* 大標 */}
-                    <div className="sharedBanner">
-                        <div className="mask"></div>
-                        <div className="box">
-                            <div className="title">{genreName}</div>
-                            <div className="txt">
-                                <p>{genreDescription}</p>
-                                <div className="line"></div>
-                            </div>
+    <div id='wrapper' className={inter.className}> 
+        <Head>
+            <title>{`${genreName} - TVBS ESG專區`}</title>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            <meta name="Keywords" content="" />
+            <meta name="description" content={genreDescription}/>        
+        </Head>
+        <Header thisPage={thisPage} menuData={props.menu}/>
+        <main>            
+            <div className="viewPage">
+                {/* 大標 */}
+                <div className="sharedBanner">
+                    <div className="mask"></div>
+                    <div className="box">
+                        <div className="title">{genreName}</div>
+                        <div className="txt">
+                            <p>{genreDescription}</p>
+                            <div className="line"></div>
                         </div>
                     </div>
-                    {/* 大標 ed*/}
-                    {/* 分類標籤 */}
-                        <Submenu  submenu={viewSubmenu} genreId={genreId}/>
-                    {/* 分類標籤 ed*/}
-                    {/* 文章列表 */}                
-                        <ArticleList  articleList={articleList} genreId={genreId}/>
-                    {/* 文章列表 ed */}                
                 </div>
-                
-            </main>
-            <div className="footerLine">
-                <div className="box"></div>
+                {/* 大標 ed*/}
+                {/* 分類標籤 */}
+                    <Submenu  submenu={viewSubmenu} genreId={genreId}/>
+                {/* 分類標籤 ed*/}
+                {/* 文章列表 */}                
+                    <ArticleList  articleList={articleList} genreId={genreId}/>
+                {/* 文章列表 ed */}                
             </div>
-            <Footer />
+            
+        </main>
+        <div className="footerLine">
+            <div className="box"></div>
         </div>
+        <Footer />
+    </div>
     );
 }
 
