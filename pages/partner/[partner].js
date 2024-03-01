@@ -11,8 +11,14 @@ import { useRouter } from 'next/router';
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
     // console.log(props);
-    // console.log("單獨資料");
+    console.log("單獨資料");
+    console.log(props.detailData);
     // console.log(props.detailData.partner_links[0].image_url);
+    const detail = props.detailData;
+    const pcLinksArr = ["first","second","third","fourth"];
+    const moLinksIndexArr = [
+        [0,"first"],[1,"second"],[3,"fourth"],[2,"third"]
+    ];
 // 頁面識別
 const thisPage='partnerDetail';
 const router = useRouter();
@@ -72,20 +78,21 @@ return (
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
+            {detail?
             <div className="partnerDetailPage">
                 <div className="bannerArea">
-                    <div className="coverImgBanner" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                    <div className="coverImgBanner" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.cover_img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                         <div className="partnerName">
-                            夥伴名稱寬度不能超過 16 個字
+                            {detail.name}
                         </div>
                     </div>
                     <div className="introduceArea">
                         <div className="introduceCard">
                             <div className="avatar">
-                                <Image src={"/images/partner01.jpg"} alt="img" width={140} height={140}/> 
+                                <Image src={detail.avatar} alt="img" width={140} height={140}/> 
                             </div>
                             <div className="detail">
-                                普希金講過，生活多美好，所以我希望諸位也能好好地體會這句話。
+                                {detail.introduction}
                             </div>
                             <div className="leftPic">
                                 <Image src={"/images/Rectangle-left.svg"} alt="img" width={30} height={30}/> 
@@ -98,183 +105,83 @@ return (
                 </div>
                 
                 <div className="linksArea">
-                        <div className="first items pc" style={{ 
-                            background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)  no-repeat center center / 105%`,
-                            backgroundSize: 1 === imgHover ? `130%` : `105%`,
-                            transition: 'background-size 0.3s',
-                             }}
-                             onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
-                        >
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="second items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/images/partner01.jpg") no-repeat center center / 100%`, 
-                            backgroundSize: 2 === imgHover ? `130%` : `100%`,
-                            transition: 'background-size 0.3s',
-                             }}
-                            onMouseOver={() => imgMouseOver(2)} onMouseOut={imgMouseOut}
-                        >
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="third items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner01.jpg) no-repeat center center / 100%`, 
-                            backgroundSize: 3 === imgHover ? `130%` : `100%`,
-                            transition: 'background-size 0.3s',
-                             }}
-                            onMouseOver={() => imgMouseOver(3)} onMouseOut={imgMouseOut}
-                        >
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="fourth items pc" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg) no-repeat center center / 105%`,
-                            backgroundSize: 4 === imgHover ? `130%` : `105%`,
-                            transition: 'background-size 0.3s',
-                             }}
-                            onMouseOver={() => imgMouseOver(4)} onMouseOut={imgMouseOut}
-                        >
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        {/* mobile */}
-                        <div className="first items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="second items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/images/partner01.jpg")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="fourth items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="third items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                {/* pc */}
+                {detail.partner_links.map((item, index) => (
+                    <div className={`${pcLinksArr[index]} items pc`} style={{ 
+                        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.image_url})  no-repeat center center / 105%`,
+                        backgroundSize: index === imgHover ? `130%` : `105%`,
+                        transition: 'background-size 0.3s',
+                            }}
+                            onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}
+                    >
+                        <Link target={item.link_type ? `_blank` : ""} href={item.link_url}>
                             <div className="linkArea">
                                 <div className="linkCard">
                                     <div className="title">
-                                        台灣雀巢獲食創獎最高榮譽肯定
+                                        {item.link_title}
                                     </div>
                                     <div className="linkIcon">
                                         <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
+                    </div>
+                ))}
+
+                {/* mobile */}
+                {moLinksIndexArr.map((item, index) => (
+                        <div className={`${item[1]} items mo`} style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url}`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+                        <Link target={detail.partner_links[item[0]].link_type ? `_blank` : ""} href={detail.partner_links[item[0]].link_url}>
+                            <div className="linkArea">
+                                <div className="linkCard">
+                                    <div className="title">
+                                        {detail.partner_links[item[0]].link_title}
+                                    </div>
+                                    <div className="linkIcon">
+                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                ))}
                 </div>
-                <div className="firstParagraph">
+                {detail.partner_pages?
+                <div className="firstParagraph">    
                     <div className="wordsTitle">
-                        推廣具規模的永續食物系統
+                    {detail.partner_pages[0].title}
                     </div>
                     <div className="wordsTxt">
-                        我們追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設和可再利用或可重複裝填的包裝，讓未來不再有塑膠廢棄物汙染我們的土地或海洋。
-
-                        我們的理想是：未來沒有任何一個來自雀巢的包裝，包括塑膠在內，最終成為填埋廢棄物或棄置於土地、海洋或河川中的垃圾。
-
-                        我們正致力於減少塑膠廢棄物，包括增加回收塑膠使用，減少原生塑膠的使用，並協助建立促進塑膠產品收集、回收與再利用的循環體系。
-
-                        雀巢致力達成 100 % 包裝可回收或再利用，至 2025 年預計超過 95 %包裝完成轉換，並將原生塑膠用量減少三分之一。
-
-                        要解決食物浪費及耗損這個複雜的全球性問題，我們從自身做起，積極與其他業者合作，並鼓勵消費者儘可能選用從田地到餐桌的食物。
+                    {detail.partner_pages[0].content}
                     </div>
                 </div>
-                <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                    <Link href="https://www.youtube.com/shorts/Uz9k6QGqXj0">
-                        <div className="videoCard">
-                            <div className="videoTitle">
-                                在台攜手產學推動永續包裝革新首度推出雀巢
+                :""}
+                {detail?
+                    <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                        <Link href={detail.video_url}>
+                            <div className="videoCard">
+                                <div className="videoTitle">
+                                    {detail.video_title}
+                                </div>
+                                <div className="play">
+                                    <Image src={"/images/play-icon.svg"} alt="img" width={48} height={48}/> 
+                                </div>
                             </div>
-                            <div className="play">
-                                <Image src={"/images/play-icon.svg"} alt="img" width={48} height={48}/> 
-                            </div>
-                        </div>
-                    </Link>
-                </div>
+                        </Link>
+                    </div>
+                :""}
+                {detail.partner_pages?
                 <div className="secondParagraph">
                     <div className="wordsTitle">
-                        雀巢的零廢棄包裝策略
+                        {detail.partner_pages[1].title}
                     </div>
                     <div className="wordsTxt">
-                        我們追求的目標是透過巧妙的包裝設計、創新材質、更完備的回收基礎建設和可再利用或可重複裝填的包裝，讓未來不再有塑膠廢棄物汙染我們的土地或海洋。
-
-                        我們的理想是：未來沒有任何一個來自雀巢的包裝，包括塑膠在內，最終成為填埋廢棄物或棄置於土地、海洋或河川中的垃圾。
-
-                        我們正致力於減少塑膠廢棄物，包括增加回收塑膠使用，減少原生塑膠的使用，並協助建立促進塑膠產品收集、回收與再利用的循環體系。
-
-                        雀巢致力達成 100 % 包裝可回收或再利用，至 2025 年預計超過 95 %包裝完成轉換，並將原生塑膠用量減少三分之一。
-
-                        要解決食物浪費及耗損這個複雜的全球性問題，我們從自身做起，積極與其他業者合作，並鼓勵消費者儘可能選用從田地到餐桌的食物。
+                        {detail.partner_pages[1].content}
                     </div>
                 </div>
+                :""}
+                {/* 永續觀點的文章頁 */}
                 <div className="moreGoodNewsArea">
                     <div className="title">
                         更多共好消息
@@ -321,6 +228,7 @@ return (
                     </div>
                 </div>
             </div>
+            :''}
         </main>
         <div className="footerLine">
             <div className="box"></div>
@@ -345,13 +253,13 @@ export async function getServerSideProps(context) {
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
     // detail
-    // const detailUrl = new URL(`/api/partners/${partner}`, process.env.API_URL);
-    // const detaulRes = await fetch(detailUrl);    
-    // const detailData = await detaulRes.json();
+    const detailUrl = new URL(`/api/partners/${partner}`, process.env.API_URL);
+    const detaulRes = await fetch(detailUrl);    
+    const detailData = await detaulRes.json();
     
     return {
         props: {
-            menu
+            menu,detailData
         },
     };
 }

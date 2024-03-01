@@ -1836,7 +1836,7 @@ header .menuMo .list li:last-child{
     margin-top: -176px;
     /* margin-top: -10%; */
     width: 710px;
-    height: 378px;
+    /* height: 378px; */
     background-color: white;
     /* border: 1px solid black; */
     position: relative;
@@ -1859,7 +1859,7 @@ header .menuMo .list li:last-child{
         margin-top: -86px;
         /* margin-top: -10%; */
         width: 331px;
-        height: 460px;
+        /* height: 460px; */
         /* border: 1px solid black; */
     } 
     .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
@@ -1883,7 +1883,7 @@ header .menuMo .list li:last-child{
     .partnerDetailPage .bannerArea .introduceArea .introduceCard{
         margin-top: -66px;
         width: 250px;
-        height: 460px;
+        /* height: 460px; */
     } 
     .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
         top:36px;
