@@ -10,10 +10,6 @@ import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
-    // console.log(props);
-    console.log("單獨資料");
-    console.log(props.detailData);
-    // console.log(props.detailData.partner_links[0].image_url);
     const detail = props.detailData;
     const pcLinksArr = ["first","second","third","fourth"];
     const moLinksIndexArr = [
@@ -241,14 +237,7 @@ return (
 export async function getServerSideProps(context) {
     const { params } = context;
     const { partner } = params;
-        // console.log("裏面id");
-        // console.log(partner);
-        // detail
-        // const router = useRouter();
-        // const { partner } = router.query;
-        // console.log("頁面id");
-        // console.log(partner);
-
+    // menu
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
