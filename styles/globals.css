@@ -177,6 +177,7 @@ img{
     padding: 8px 12px;
     border-radius: 50px;
     background-color: #F2F2F2;
+    transition: 0.3s;
 }
 .submenu a.act{
     background-color: #89EC54;
@@ -204,7 +205,7 @@ img{
     }
     .submenu::-webkit-scrollbar {
         display: none; 
-      }
+    }
 }
 /* 共用標籤 ed*/
 
@@ -2364,6 +2365,7 @@ header .menuMo .list li:last-child{
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
+    overflow: hidden;
 }
 .viewPage .list .name{
     display:flex;

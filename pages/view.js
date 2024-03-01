@@ -1,15 +1,20 @@
 
-import Link from 'next/link'
 import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import Submenu from '../comps/view/Submenu'
+import ArticleList from '../comps/view/ArticleList'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function View(props) {
     const appUrl = process.env.APP_URL;
+    const viewSubmenu = props.viewSubmenuData;
+    const mainVision = props.viewData.main_vision;
+    const articleList = props.viewData.article_list;
+
     // 頁面識別
     const thisPage='view';
     return (
@@ -17,12 +22,14 @@ export default function View(props) {
         <Head>
             <title>{"永續觀點 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="esg,esg2,esg3" />
+            <meta name="Keywords" content="" />
             <meta name="description" content="ESG 企業永續治理已成為全球企業發展的趨勢。 在新趨勢下，企業更加重視永續環境、共好社會、綠色生活等議題。幫助企業、投資人、消費者與一般民眾理解ESG企業永續治理的重要性與實踐方法。" />        
         </Head>
-        <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>
+        <Header thisPage={thisPage} menuData={props.menu} submenu={viewSubmenu}/>
+        <main>            
             <div className="viewPage">
+
+                {/* 大標 */}
                 <div className="sharedBanner">
                     <div className="mask"></div>
                     <div className="box">
@@ -33,218 +40,43 @@ export default function View(props) {
                         </div>
                     </div>
                 </div>
+                {/* 大標 ed*/}
 
-                <div className='submenuArea'>
-                    <div className='submenu'> 
-                        <div className='submenuMask'></div>
-                        <Link className="act" href={`javascript:void(0)`}>全部</Link>
-                        <Link href={`javascript:void(0)`}>新趨勢</Link>
-                        <Link href={`javascript:void(0)`}>永續環境</Link>
-                        <Link href={`javascript:void(0)`}>共好社會</Link>
-                        <Link href={`javascript:void(0)`}>綠色生活</Link>
-                    </div>
-                </div>
+                {/* 分類標籤 */}
+                    <Submenu  submenu={viewSubmenu} />
+                {/* 分類標籤 ed*/}
 
-                <div className='mainView'>
-                    <div className='box'>
-                        <div className='img'>
-                            <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
-                            <div className='imgMaskBox'>
-                                <div className='rounded'>
-                                    <Image src="/images/rounded-01.svg" alt="arraw" width={50} height={50}/>
-                                </div>
-                                <div className='case'>
+                {/* 主視覺 */}
+                {mainVision ?
+                    <div className='mainView'>
+                        <div className='box'>
+                            <div className='img'>
+                                <Image src={`${appUrl}${mainVision.cover_img}`} alt="arraw" width={1072} height={603}/>
+                                <div className='imgMaskBox'>
                                     <div className='rounded'>
-                                        <Image src="/images/rounded-01.svg" alt="arraw" width={50} height={50}/>
+                                        <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
                                     </div>
-                                    <div className='imgMask'></div>
+                                    <div className='case'>
+                                        <div className='rounded'>
+                                            <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                        </div>
+                                        <div className='imgMask'></div>
+                                    </div>
                                 </div>
+                            </div>
+                            <div className='txtBox'>
+                                <div className='title'>{mainVision.title}</div>
+                                <div className='txt'>{mainVision.description}</div>
                             </div>
                         </div>
-                        <div className='txtBox'>
-                            <div className='title'>
-                                「台灣製造」超夯環保吸管、餐具 連美國白宮、蘋果公司都愛用
-                            </div>
-                            <div className='txt'>
-                                什麼環保餐具這麼特別，讓星巴克、遠在美國白宮的環保紙杯，以及蘋果公司員工餐廳環保餐具，都愛使用這家公司的產品。原來這家公司來自台中，專門研發可分解材質的吸管和餐具，標榜對環境不會產生負擔，連海龜都能使用，究竟有甚麼特別？帶您來看。
-                            </div>
-                        </div>
                     </div>
-                </div>
-
-                <div className='list'>
-                    <ul>
-                        <li>
-                            <Link href={`/view/article/1`}>
-                                <div className='img'>
-                                    <div className='playIcon'>                                 
-                                        <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                                    </div>
-                                    <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'>
-                                        <div className='img1'>
-                                            <Image src="/images/logo-view.png" alt="arraw" width={50} height={50}/>
-                                        </div>
-                                    </div>
-                                    <p>全聯福利中心</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`/view/article/1`}>
-                                <div className='img'>
-                                    <div className='playIcon'>                                 
-                                        <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                                    </div>
-                                    <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'>
-                                        <div className='img1'>
-                                            <Image src="/images/logo-view.png" alt="arraw" width={50} height={50}/>
-                                        </div>
-                                    </div>
-                                    <p>全聯福利中心</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg03.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg04.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg03.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg04.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg01.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={`javascript:void(0)`}>
-                                <div className='img'>
-                                    <Image src="/images/esg02.jpg" alt="arraw" width={1072} height={603}/>
-                                </div>
-                                <div className='txt'>改造飛機救生衣「變身環保包」 出三款式圖案獨一無二</div>
-                                <div className='name'>
-                                    <div className='nameImg'></div>
-                                    <p>劉俐均</p>
-                                </div>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className='pageJump'>
-                    <div className='box'>
-                        <Link className='act' href={`javascript:void(0)`}>1</Link>
-                        <Link href={`javascript:void(0)`}>2</Link>
-                        <Link href={`javascript:void(0)`}>3</Link>
-                    </div>
-                    <div className='next'>
-                        <Link href={`javascript:void(0)`}>下一頁</Link>
-                    </div>
-                </div>
+                    :''
+                }
+                {/* 主視覺 ed*/}
+                {/* 文章列表 */}                
+                    <ArticleList  articleList={articleList} />
+                {/* 文章列表 ed */}
+                
             </div>
             
         </main>
@@ -256,23 +88,23 @@ export default function View(props) {
     );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
     // 線上資料
     // submenu
-    const submenuUrl = new URL('/api/partner-genres', process.env.API_URL);
-    const submenuRes = await fetch(submenuUrl);    
-    const submenuData = await submenuRes.json();
+    const viewSubmenuUrl = new URL('/api/view-genres', process.env.APP_URL);
+    const viewSubmenuRes = await fetch(viewSubmenuUrl);    
+    const viewSubmenuData = await viewSubmenuRes.json();
     // list
-    const partnerUrl = new URL('/api/partners', process.env.API_URL);
-    const partnerRes = await fetch(partnerUrl);    
-    const partnerData = await partnerRes.json();
+    const viewUrl = new URL('/api/view', process.env.APP_URL);
+    const viewRes = await fetch(viewUrl);    
+    const viewData = await viewRes.json();
     
     return {
         props: {
-            menu
+            menu,viewSubmenuData,viewData,
         },
     };
 }
