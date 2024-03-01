@@ -1803,7 +1803,6 @@ header .menuMo .list li:last-child{
     width: 100%;
     height: 830px;
     overflow: hidden;
-    /* position: relative; */
     display: flex;
     border-radius: 0px 0px 30px 30px;
 } 
@@ -1834,11 +1833,9 @@ header .menuMo .list li:last-child{
 .partnerDetailPage .bannerArea .introduceArea .introduceCard{
     border-radius: 30px 30px 0px 0px;
     margin-top: -176px;
-    /* margin-top: -10%; */
     width: 710px;
     /* height: 378px; */
     background-color: white;
-    /* border: 1px solid black; */
     position: relative;
 }
 .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
@@ -1857,10 +1854,8 @@ header .menuMo .list li:last-child{
     }
     .partnerDetailPage .bannerArea .introduceArea .introduceCard{
         margin-top: -86px;
-        /* margin-top: -10%; */
         width: 331px;
         /* height: 460px; */
-        /* border: 1px solid black; */
     } 
     .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
         top:56px;
@@ -1983,16 +1978,6 @@ header .menuMo .list li:last-child{
     transform:rotate(-45deg);
     transition: 0.3s;
 }
-/* .partnerDetailPage .moreGoodNewsArea .list ul li .articleCard .linkIcon{
-    width: 36px;
-    height: 36px;
-    transform:rotate(0);
-    transition: 0.3s; 
-}
-.partnerDetailPage .moreGoodNewsArea .list ul li:hover .articleCard .linkIcon{
-    transform:rotate(-45deg);
-    transition: 0.3s;
-} */
 .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
     width: 768px;
     height: auto;
@@ -2172,7 +2157,6 @@ header .menuMo .list li:last-child{
     font-weight: 400;
     line-height: normal;
     position: relative;
-    /* margin-bottom: 80px; */
 }
 @media (max-width:767px) {
     .partnerDetailPage .secondParagraph .wordsTitle{
@@ -2216,7 +2200,6 @@ header .menuMo .list li:last-child{
     width: calc((100% - 24px) / 2);
     height: auto;
     aspect-ratio: 16/9;
-    /* background-size: cover; */
     background-position: top top;
     background-size: 100%;
     background-repeat: no-repeat;
