@@ -16,7 +16,9 @@ export default function Partner(props) {
     // console.log(props.detailData.partner_links[0].image_url);
     const detail = props.detailData;
     const pcLinksArr = ["first","second","third","fourth"];
-    const moLinksArr = ["first","second","fourth","third"];
+    const moLinksIndexArr = [
+        [0,"first"],[1,"second"],[3,"fourth"],[2,"third"]
+    ];
 // 頁面識別
 const thisPage='partnerDetail';
 const router = useRouter();
@@ -128,14 +130,13 @@ return (
                 ))}
 
                 {/* mobile */}
-                {detail.partner_links.map((item, index) => (
-                        <div className={`${moLinksArr[index]} items mo`} style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.image_url}`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
-                        {/* <div className={`${moLinksArr[index]} items mo`} style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.image_url}`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}> */}
-                        <Link target={item.link_type ? `_blank` : ""} href={item.link_url}>
+                {moLinksIndexArr.map((item, index) => (
+                        <div className={`${item[1]} items mo`} style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url}`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+                        <Link target={detail.partner_links[item[0]].link_type ? `_blank` : ""} href={detail.partner_links[item[0]].link_url}>
                             <div className="linkArea">
                                 <div className="linkCard">
                                     <div className="title">
-                                        {item.link_title}
+                                        {detail.partner_links[item[0]].link_title}
                                     </div>
                                     <div className="linkIcon">
                                         <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
@@ -145,62 +146,6 @@ return (
                         </Link>
                     </div>
                 ))}
-                 
-                        {/* mobile */}
-                        {/* <div className="first items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="second items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/images/partner01.jpg")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="fourth items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            <Link  href="##">
-                                <div className="linkArea">
-                                    <div className="linkCard">
-                                        <div className="title">
-                                            台灣雀巢獲食創獎最高榮譽肯定
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="third items mo" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner01.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            <div className="linkArea">
-                                <div className="linkCard">
-                                    <div className="title">
-                                        台灣雀巢獲食創獎最高榮譽肯定
-                                    </div>
-                                    <div className="linkIcon">
-                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
                 </div>
                 {detail.partner_pages?
                 <div className="firstParagraph">    
