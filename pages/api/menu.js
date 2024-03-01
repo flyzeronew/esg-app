@@ -18,19 +18,19 @@ export default function handler(req, res) {
                     },
                     {
                         'title':'新趨勢',
-                        'url':'javascript:void(0)',
+                        'url':appUrl+'/view/genres/1',
                     },
                     {
                         'title':'永續環境',
-                        'url':'javascript:void(0)',
+                        'url':appUrl+'/view/genres/2',
                     },
                     {
                         'title':'共好社會',
-                        'url':'javascript:void(0)',
+                        'url':appUrl+'/view/genres/3',
                     },
                     {
                         'title':'綠色生活',
-                        'url':'javascript:void(0)',
+                        'url':appUrl+'/view/genres/4',
                     },
                 ]
             },
