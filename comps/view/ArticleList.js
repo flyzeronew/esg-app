@@ -16,9 +16,9 @@ function ArticleList(props) {
             <div className='list'>
                 <ul>
                     {props.articleList.length > 0 ? props.articleList.map((item, index) => (
-                        <>
+                        <React.Fragment key={index}>
                             { item.view_genre.id == props.genreId || props.genreId == null ?                         
-                                <li key={index}>                            
+                                <li >                            
                                     <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' }>
                                         <div className='img'>
                                             {item.youtube !='' ? 
@@ -44,7 +44,7 @@ function ArticleList(props) {
                                     </a>
                                 </li> :''
                             }
-                        </>                        
+                        </React.Fragment>                     
                     )):''
                     }
                 </ul>
@@ -53,12 +53,12 @@ function ArticleList(props) {
                 {listLength >= 12 ? 
                     <div className='pageJump'>
                         <div className='box'>
-                            <a className='act' href={`javascript:void(0)`}>1</a>
-                            <a href={`javascript:void(0)`}>2</a>
-                            <a href={`javascript:void(0)`}>3</a>
+                            <a className='act' href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#" >3</a>
                         </div>
                         <div className='next'>
-                            <a href={`javascript:void(0)`}>下一頁</a>
+                            <a href="#" >下一頁</a>
                         </div>
                     </div>
                 :''}

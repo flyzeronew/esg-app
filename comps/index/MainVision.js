@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useState ,useEffect } from 'react'
 import Image from 'next/image'
 import React, { Component } from "react"
@@ -22,7 +21,7 @@ function MainVision(props) {
     return (
         <div className="mainVision">
             <Slider {...settings}>                
-                <Link href='#' onClick={handleClick}>
+                <a href='#' onClick={handleClick}>
                     <div className="img" style={{ 
                         background: `url(/images/esg01.jpg) no-repeat center center`,
                         backgroundSize:`cover`,
@@ -41,8 +40,8 @@ function MainVision(props) {
                             </div>
                         </div>
                     </div>
-                </Link>
-                <Link href='#' onClick={handleClick}>
+                </a>
+                <a href='#' onClick={handleClick}>
                     <div className="img" style={{ 
                         background: `url(/images/esg04.jpg) no-repeat center center`,
                         backgroundSize:`cover`,
@@ -60,7 +59,7 @@ function MainVision(props) {
                             </div>
                         </div>
                     </div>
-                </Link>
+                </a>
             </Slider>
         </div>
     )

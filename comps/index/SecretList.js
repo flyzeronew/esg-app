@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useState ,useEffect } from 'react'
 import Image from 'next/image'
 import React, { Component } from "react"
@@ -7,6 +6,9 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function SecretList(props) {
+    const handleClick = (e) => {
+        e.preventDefault();
+    };
     const settings = {
         dots: true,
         fade: true,
@@ -20,7 +22,7 @@ function SecretList(props) {
         <div className="secret">
             <div className="list">
                 <Slider {...settings}>
-                    <Link href='#'>
+                    <a href='#' onClick={handleClick}>
                         <div className="img mo">
                             <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
                         </div>
@@ -36,8 +38,8 @@ function SecretList(props) {
                             </div>
                         </div>
                         <div className="txt">嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡</div>
-                    </Link>
-                    <Link href='#'>
+                    </a>
+                    <a href='#' onClick={handleClick}>
                         <div className="img mo">
                             <Image src="/images/esg02.jpg" alt="img" width={640} height={360}/>
                         </div>
@@ -53,7 +55,7 @@ function SecretList(props) {
                             </div>
                         </div>
                         <div className="txt">測試這2文字文字</div>
-                    </Link>
+                    </a>
                 </Slider>
             </div>
         </div>

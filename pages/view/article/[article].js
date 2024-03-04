@@ -212,10 +212,10 @@ export default function viewArticle(props) {
                             </div>
                             <div className="tags">
                                 <div className="box1">
-                                    <a href={`javascript:void(0)`}>#環保餐具</a>
-                                    <a href={`javascript:void(0)`}>#環保吸管</a>
-                                    <a href={`javascript:void(0)`}>#可分解材質</a>
-                                    <a href={`javascript:void(0)`}>#銘安科技</a>
+                                    <a href='#'>#環保餐具</a>
+                                    <a href='#'>#環保吸管</a>
+                                    <a href='#'>#可分解材質</a>
+                                    <a href='#'>#銘安科技</a>
                                 </div>
                             </div>
                         </div>
@@ -226,7 +226,7 @@ export default function viewArticle(props) {
                             <div className="list">
                                 <ul>
                                     <li>
-                                        <a href={`javascript:void(0)`}>
+                                        <a href='#'>
                                             <div className="img">
                                                 <div className='playIcon'>                                 
                                                     <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
@@ -239,7 +239,7 @@ export default function viewArticle(props) {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href={`javascript:void(0)`}>
+                                        <a href='#'>
                                             <div className="img">
                                                 <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
                                             </div>
@@ -249,7 +249,7 @@ export default function viewArticle(props) {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href={`javascript:void(0)`}>
+                                        <a href='#'>
                                             <div className="img">
                                                 <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
                                             </div>
