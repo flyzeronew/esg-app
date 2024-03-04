@@ -30,15 +30,18 @@ function ArticleList(props) {
                                             <Image src={item.cover_img} alt="img" width={1072} height={603}/>
                                         </div>
                                         <div className='txt'>{item.title}</div>
+                                        {}
                                         <div className='name'>
-                                            {item.partner_logo !='' ? 
+                                            {item.partner.logo !='' ? 
+                                            <>
                                                 <div className='nameImg'>
                                                     <div className='img1'>
-                                                        <Image src={item.partner_logo} alt="logo" width={50} height={50}/>
+                                                        <Image src={item.partner.logo} alt="logo" width={50} height={50}/>
                                                     </div>
                                                 </div>
-                                            :''}                                            
-                                            <p>{item.author_name}</p>
+                                                <p>{item.partner.name}</p>
+                                            </>
+                                            :<p>{item.author_name}</p>}                                            
                                         </div>
                                     </a>
                                 </li> :''
