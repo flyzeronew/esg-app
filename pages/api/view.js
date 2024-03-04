@@ -11,193 +11,817 @@ export default function handler(req, res) {
                         'article_id':1,
                         'cover_img':'/images/esg06.jpg',
                         'title':'快訊／妻爆是180CM正妹！陪練畫面流出　大谷翔平曝老婆身分',
+                        'content':'',
                         'url':'/view/article/1',
                         "is_blank": 0,
                         'youtube':'2mCSYvcfhtc',
-                        'partner_logo':'',
+                        'partner':{
+                            'logo':'',
+                            'name':'',
+                            'description':'',
+                        },
                         'author_name':'莊雅婷',
-                        "view_genre": {
-                            "id": 1,
-                            "name": "新趨勢",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 1,
+                            'name': '新趨勢',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':2,
                         'cover_img':'/images/esg02.jpg',
                         'title':'全聯300家惜食門市，幫社福團體1123萬人次加菜',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/logo-view.png',
+                        'partner':{
+                            'logo':'/images/logo-view.png',
+                            'name':'全聯福利中心',
+                            'description':'秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。',
+                        },
                         'author_name':'全聯福利中心',
-                        "view_genre": {
-                            "id": 2,
-                            "name": "永續企業",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 2,
+                            'name': '永續企業',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':3,
                         'cover_img':'/images/esg03.jpg',
                         'title':'蝦皮商城讓你用最划算的價格買到所有需要、想要的商品，包含美妝保健、流行服飾配件、母嬰居家、美食旅遊票券、3C家電影音等千萬件熱銷好物等你來。',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/logo-view2.png',
-                        'author_name':'蝦皮商城',
-                        "view_genre": {
-                            "id": 3,
-                            "name": "永續環境",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'partner':{
+                            'logo':'/images/logo-view.png',
+                            'name':'全聯福利中心',
+                            'description':'秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。',
+                        },
+                        'author_name':'全聯福利中心',
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 3,
+                            'name': '永續環境',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     }, 
                     {
                         'article_id':4,
                         'cover_img':'/images/esg04.jpg',
                         'title':'雀巢一貫提倡良好通暢的溝通，並珍視與每一個顧客的意見指教，如果您有任何建議或是想更了解雀巢公司及產品，歡迎您與我們聯繫。',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/partner01.jpg',
+                        'partner':{
+                            'logo':'',
+                            'name':'',
+                            'description':'',
+                        },
                         'author_name':'雀巢',
-                        "view_genre": {
-                            "id": 4,
-                            "name": "綠色生活",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 4,
+                            'name': '綠色生活',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':5,
                         'cover_img':'/images/esg06.jpg',
                         'title':'快訊／妻爆是180CM正妹！陪練畫面流出　大谷翔平曝老婆身分',
+                        'content':'',
                         'url':'/view/article/1',
                         "is_blank": 1,
                         'youtube':'2mCSYvcfhtc',
-                        'partner_logo':'',
+                        'partner':{
+                            'logo':'',
+                            'name':'',
+                            'description':'',
+                        },
                         'author_name':'莊雅婷',
-                        "view_genre": {
-                            "id": 1,
-                            "name": "新趨勢",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 1,
+                            'name': '新趨勢',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':6,
                         'cover_img':'/images/esg02.jpg',
                         'title':'全聯300家惜食門市，幫社福團體1123萬人次加菜',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/logo-view.png',
+                        'partner':{
+                            'logo':'/images/logo-view.png',
+                            'name':'全聯福利中心',
+                            'description':'秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。',
+                        },
                         'author_name':'全聯福利中心',
-                        "view_genre": {
-                            "id": 2,
-                            "name": "永續企業",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 2,
+                            'name': '永續企業',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':7,
                         'cover_img':'/images/esg03.jpg',
                         'title':'蝦皮商城讓你用最划算的價格買到所有需要、想要的商品，包含美妝保健、流行服飾配件、母嬰居家、美食旅遊票券、3C家電影音等千萬件熱銷好物等你來。',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/logo-view2.png',
+                        'partner':{
+                            'logo':'/images/logo-view2.png',
+                            'name':'蝦皮商城',
+                            'description':'秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。',
+                        },
                         'author_name':'蝦皮商城',
-                        "view_genre": {
-                            "id": 3,
-                            "name": "永續環境",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 3,
+                            'name': '永續環境',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     }, 
                     {
                         'article_id':8,
                         'cover_img':'/images/esg04.jpg',
                         'title':'雀巢一貫提倡良好通暢的溝通，並珍視與每一個顧客的意見指教，如果您有任何建議或是想更了解雀巢公司及產品，歡迎您與我們聯繫。',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/partner01.jpg',
+                        'partner':{
+                            'logo':'/images/logo-view.png',
+                            'name':'雀巢',
+                            'description':'秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。',
+                        },
                         'author_name':'雀巢',
-                        "view_genre": {
-                            "id": 4,
-                            "name": "綠色生活",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 4,
+                            'name': '綠色生活',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':9,
                         'cover_img':'/images/esg06.jpg',
                         'title':'快訊／妻爆是180CM正妹！陪練畫面流出　大谷翔平曝老婆身分',
+                        'content':'',
                         'url':'/view/article/1',
                         "is_blank": 1,
                         'youtube':'2mCSYvcfhtc',
-                        'partner_logo':'',
+                        'partner':{
+                            'logo':'',
+                            'name':'',
+                            'description':'',
+                        },
                         'author_name':'莊雅婷',
-                        "view_genre": {
-                            "id": 1,
-                            "name": "新趨勢",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 1,
+                            'name': '新趨勢',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':10,
                         'cover_img':'/images/esg02.jpg',
                         'title':'全聯300家惜食門市，幫社福團體1123萬人次加菜',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/logo-view.png',
+                        'partner':{
+                            'logo':'/images/logo-view.png',
+                            'name':'全聯福利中心',
+                            'description':'秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。',
+                        },
                         'author_name':'全聯福利中心',
-                        "view_genre": {
-                            "id": 2,
-                            "name": "永續企業",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 2,
+                            'name': '永續企業',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                     {
                         'article_id':11,
                         'cover_img':'/images/esg03.jpg',
                         'title':'蝦皮商城讓你用最划算的價格買到所有需要、想要的商品，包含美妝保健、流行服飾配件、母嬰居家、美食旅遊票券、3C家電影音等千萬件熱銷好物等你來。',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/logo-view2.png',
+                        'partner':{
+                            'logo':'/images/logo-view2.png',
+                            'name':'蝦皮商城',
+                            'description':'秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。',
+                        },
                         'author_name':'蝦皮商城',
-                        "view_genre": {
-                            "id": 3,
-                            "name": "永續環境",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 3,
+                            'name': '永續環境',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     }, 
                     {
                         'article_id':12,
                         'cover_img':'/images/esg04.jpg',
                         'title':'雀巢一貫提倡良好通暢的溝通，並珍視與每一個顧客的意見指教，如果您有任何建議或是想更了解雀巢公司及產品，歡迎您與我們聯繫。',
+                        'content':'',
                         'url':'javascript:void(0)',
                         "is_blank": 0,
                         'youtube':'',
-                        'partner_logo':'/images/partner01.jpg',
+                        'partner':{
+                            'logo':'',
+                            'name':'',
+                            'description':'',
+                        },
                         'author_name':'雀巢',
-                        "view_genre": {
-                            "id": 4,
-                            "name": "綠色生活",
-                            "created_at": "2024-01-25T14:23:06.000000Z",
-                            "updated_at": "2024-01-25T14:23:06.000000Z"
-                        }
+                        'article_secret':{
+                            'cover_img':'/images/esg06.jpg',
+                            'tag':'食',
+                            'partner_log':'/partner01.jpg',
+                            'partner_name':'台灣雀巢',
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                        },
+                        'article_extended':{
+                            'tags':[
+                                {
+                                    'name':'#環保餐具',
+                                    'url':'javascript:void(0)',
+                                },
+                                {
+                                    'name':'#環保吸管',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#可分解材質',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'name':'#銘安科技',
+                                    'url':'javascript:void(0)'
+                                },
+                            ],
+                            'list':[
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」',
+                                    'youtube':'2mCSYvcfhtc',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                                {
+                                    'cover_img':'/images/esg06.jpg',
+                                    'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
+                                    'youtube':'',
+                                    'url':'javascript:void(0)'
+                                },
+                            ]
+                        },
+                        'view_genre': {
+                            'id': 4,
+                            'name': '綠色生活',
+                        },
+                        'created_at': '2024-01-25T14:23:06.000000Z',
+                        'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
                 ],
             }
