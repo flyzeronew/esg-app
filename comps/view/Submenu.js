@@ -12,7 +12,7 @@ function Submenu(props) {
                                 <a 
                                     key={index} 
                                     className={ index+1 == props.genreId ? 'act':''} 
-                                    href={`${appUrl}/view/genres/${item.id}`}
+                                    href={`${appUrl}/view/${item.id}`}
                                 >
                                     {item.name}
                                 </a>

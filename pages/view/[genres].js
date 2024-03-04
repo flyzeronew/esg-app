@@ -3,10 +3,10 @@ import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import Submenu from '../../../comps/view/Submenu'
-import ArticleList from '../../../comps/view/ArticleList'
-import Header from '../../../comps/Header'
-import Footer from '../../../comps/Footer'
+import Submenu from '../../comps/view/Submenu'
+import ArticleList from '../../comps/view/ArticleList'
+import Header from '../../comps/Header'
+import Footer from '../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
@@ -16,6 +16,7 @@ export default function Genres(props) {
     const articleList = props.viewData.article_list;
     const genreId=props.genreId;
     const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'';
+    const genreEnName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].en_name:'';
     const genreDescription = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].description:'';
     
     useEffect(() => {
@@ -36,7 +37,7 @@ export default function Genres(props) {
             <meta name="description" content={genreDescription}/>        
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>            
+        <main>
             <div className="viewPage">
                 {/* 大標 */}
                 <div className="sharedBanner">

@@ -71,6 +71,7 @@ export default function handler(req, res) {
                         'view_genre': {
                             'id': 1,
                             'name': '新趨勢',
+                            'en_name':'trend'
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -138,7 +139,8 @@ export default function handler(req, res) {
                         },
                         'view_genre': {
                             'id': 2,
-                            'name': '永續企業',
+                            'name': '永續環境',
+                            'en_name':'environment'
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -206,7 +208,8 @@ export default function handler(req, res) {
                         },
                         'view_genre': {
                             'id': 3,
-                            'name': '永續環境',
+                            'name': '共好社會',
+                            'en_name': 'society',                            
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -275,6 +278,7 @@ export default function handler(req, res) {
                         'view_genre': {
                             'id': 4,
                             'name': '綠色生活',
+                            'en_name':'greelife'
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -343,6 +347,7 @@ export default function handler(req, res) {
                         'view_genre': {
                             'id': 1,
                             'name': '新趨勢',
+                            'en_name':'trend'
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -410,7 +415,8 @@ export default function handler(req, res) {
                         },
                         'view_genre': {
                             'id': 2,
-                            'name': '永續企業',
+                            'name': '永續環境',
+                            'en_name':'environment'
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -478,7 +484,8 @@ export default function handler(req, res) {
                         },
                         'view_genre': {
                             'id': 3,
-                            'name': '永續環境',
+                            'name': '共好社會',
+                            'en_name': 'society',
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -547,6 +554,7 @@ export default function handler(req, res) {
                         'view_genre': {
                             'id': 4,
                             'name': '綠色生活',
+                            'en_name': 'greelife',
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -682,7 +690,8 @@ export default function handler(req, res) {
                         },
                         'view_genre': {
                             'id': 2,
-                            'name': '永續企業',
+                            'name': '永續環境',
+                            'en_name': 'environment', 
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
@@ -750,7 +759,8 @@ export default function handler(req, res) {
                         },
                         'view_genre': {
                             'id': 3,
-                            'name': '永續環境',
+                            'name': '共好社會',
+                            'en_name': 'society',                            
                         },
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
