@@ -98,19 +98,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -118,19 +118,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -233,19 +233,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -253,19 +253,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -368,19 +368,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -388,19 +388,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -503,19 +503,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -523,19 +523,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -638,19 +638,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -658,19 +658,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -773,19 +773,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -793,19 +793,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -908,19 +908,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -928,19 +928,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -1043,19 +1043,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -1063,19 +1063,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -1178,19 +1178,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -1198,19 +1198,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -1312,19 +1312,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -1332,19 +1332,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -1447,19 +1447,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -1467,19 +1467,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },
@@ -1582,19 +1582,19 @@ export default function handler(req, res) {
                             'tags':[
                                 {
                                     'name':'#環保餐具',
-                                    'url':'javascript:void(0)',
+                                    'url':'#',
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ],
                             'list':[
@@ -1602,19 +1602,19 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'javascript:void(0)'
+                                    'url':'#'
                                 },
                             ]
                         },

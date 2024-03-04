@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useState ,useEffect } from 'react'
 import Image from 'next/image'
 import React, { Component } from "react"
@@ -7,7 +6,9 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function ViewList(props) {
-
+    const handleClick = (e) => {
+        e.preventDefault();
+    };
     const settings = {
         dots: true,
         fade: true,
@@ -19,59 +20,59 @@ function ViewList(props) {
     };  
     return (        
         <div className="partner">
-              <div className="titleBox">
+            <div className="titleBox">
                 <div className="title">Who’s doing ESG?</div>
                 <div className="txt">落實ESG的夥伴 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
-              </div>
-              <div className="list">
+            </div>
+            <div className="list">
                 <Slider {...settings}>
                     <div className="box">                    
-                        <Link href='##'>
+                        <a href='#' onClick={handleClick}>
                         <div className="img">
                             <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                         </div>
                         <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                        </Link>
+                        </a>
 
-                        <Link href='##'>
+                        <a href='#' onClick={handleClick}>
                         <div className="img">
                             <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                         </div>
                         <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                        </Link>
+                        </a>
 
-                        <Link href='##'>
+                        <a href='#' onClick={handleClick}>
                         <div className="img">
                             <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                         </div>
                         <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                        </Link>                    
+                        </a>                    
                     </div>
 
                     <div className="box">                    
-                        <Link href='##'>
+                        <a href='#' onClick={handleClick}>
                         <div className="img">
                             <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                         </div>
                         <div className="txt">台灣雀巢 Nestlé Taiwan2</div>
-                        </Link>
+                        </a>
 
-                        <Link href='##'>
+                        <a href='##'>
                         <div className="img">
                             <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                         </div>
                         <div className="txt">台灣雀巢 Nestlé Taiwan2</div>
-                        </Link>
+                        </a>
 
-                        <Link href='##'>
+                        <a href='#' onClick={handleClick}>
                         <div className="img">
                             <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
                         </div>
                         <div className="txt">台灣雀巢 Nestlé Taiwan2</div>
-                        </Link>                    
+                        </a>                    
                     </div>
                 </Slider>
-              </div>
+            </div>
         </div> 
     )
 }

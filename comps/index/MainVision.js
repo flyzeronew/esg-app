@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useState ,useEffect } from 'react'
 import Image from 'next/image'
 import React, { Component } from "react"
@@ -7,6 +6,9 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function MainVision(props) {
+    const handleClick = (e) => {
+        e.preventDefault();
+    };
     const settings = {
         dots: true,
         fade: true,
@@ -19,7 +21,7 @@ function MainVision(props) {
     return (
         <div className="mainVision">
             <Slider {...settings}>                
-                <Link href='javascript:void(0)'>
+                <a href='#' onClick={handleClick}>
                     <div className="img" style={{ 
                         background: `url(/images/esg01.jpg) no-repeat center center`,
                         backgroundSize:`cover`,
@@ -38,14 +40,14 @@ function MainVision(props) {
                             </div>
                         </div>
                     </div>
-                </Link>
-                <Link href='javascript:void(0)'>
+                </a>
+                <a href='#' onClick={handleClick}>
                     <div className="img" style={{ 
                         background: `url(/images/esg04.jpg) no-repeat center center`,
                         backgroundSize:`cover`,
                         transition: 'background-size 0.3s',
                     }}></div>
-                     <div className="txtAbsolute">
+                    <div className="txtAbsolute">
                         <div className="txtBox">
                             <div className="title">台灣剩食危機</div>
                             <div className="txt">每人每天浪費一個便當！</div>
@@ -57,7 +59,7 @@ function MainVision(props) {
                             </div>
                         </div>
                     </div>
-                </Link>
+                </a>
             </Slider>
         </div>
     )
