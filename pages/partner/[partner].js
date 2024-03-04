@@ -246,8 +246,14 @@ export async function getServerSideProps(context) {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
+    // list
+    const partnerUrl = new URL('/api/partners', process.env.API_URL);
+    const partnerRes = await fetch(partnerUrl);    
+    const partnerData = await partnerRes.json();
+    const filteredData = partnerData.filter(item => item.name === partner);
+    const id = filteredData[0].id;
     // detail
-    const detailUrl = new URL(`/api/partners/${partner}`, process.env.API_URL);
+    const detailUrl = new URL(`/api/partners/${id}`, process.env.API_URL);
     const detaulRes = await fetch(detailUrl);    
     const detailData = await detaulRes.json();
     

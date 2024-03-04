@@ -98,7 +98,7 @@ return (
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                <Link  href={`/partner/`+item.id}>
+                                <Link  href={`/partner/`+item.name}>
                                     <div class="itemMask"></div>
                                     <div className="profileCard">
                                         <div className="profileImg">
