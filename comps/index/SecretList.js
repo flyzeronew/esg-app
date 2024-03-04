@@ -20,7 +20,7 @@ function SecretList(props) {
         <div className="secret">
             <div className="list">
                 <Slider {...settings}>
-                    <Link href='javascript:void(0)'>
+                    <Link href='#'>
                         <div className="img mo">
                             <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
                         </div>
@@ -37,7 +37,7 @@ function SecretList(props) {
                         </div>
                         <div className="txt">嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡</div>
                     </Link>
-                    <Link href='javascript:void(0)'>
+                    <Link href='#'>
                         <div className="img mo">
                             <Image src="/images/esg02.jpg" alt="img" width={640} height={360}/>
                         </div>
