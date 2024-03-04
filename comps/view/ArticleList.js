@@ -29,9 +29,8 @@ function ArticleList(props) {
                                             <Image src={item.cover_img} alt="img" width={1072} height={603}/>
                                         </div>
                                         <div className='txt'>{item.title}</div>
-                                        {}
                                         <div className='name'>
-                                            {item.partner.logo !='' ? 
+                                            {item.partner.name !='' ? 
                                             <>
                                                 <div className='nameImg'>
                                                     <div className='img1'>
