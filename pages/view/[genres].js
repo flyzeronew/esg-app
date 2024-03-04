@@ -3,10 +3,10 @@ import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import Submenu from '../../../comps/view/Submenu'
-import ArticleList from '../../../comps/view/ArticleList'
-import Header from '../../../comps/Header'
-import Footer from '../../../comps/Footer'
+import Submenu from '../../comps/view/Submenu'
+import ArticleList from '../../comps/view/ArticleList'
+import Header from '../../comps/Header'
+import Footer from '../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
@@ -14,16 +14,22 @@ export default function Genres(props) {
     const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
     const articleList = props.viewData.article_list;
-    const genreId=props.genreId;
-    const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'';
-    const genreDescription = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].description:'';
-    
-    useEffect(() => {
-        const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'';    
-        if (!genreName) {
-            router.push('/404');
-        }
-    }, []);
+    const genreEnName=String(props.genreEnName);
+    const genreData = viewSubmenu.find(item => item.en_name === genreEnName);
+    const genreId = genreData ? genreData.id :'';
+    const genreName = genreData ? genreData.name :'';
+    const genreDescription =genreData ? genreData.description :'';
+
+    // const genreEnName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].en_name:'';
+    // const genreDescription = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].description:'';
+    console.log(genreName);
+
+    // useEffect(() => {
+    //     const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'';    
+    //     if (!genreName) {
+    //         router.push('/404');
+    //     }
+    // }, []);
 
     // 頁面識別
     const thisPage='view';
@@ -36,7 +42,7 @@ export default function Genres(props) {
             <meta name="description" content={genreDescription}/>        
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>            
+        <main>
             <div className="viewPage">
                 {/* 大標 */}
                 <div className="sharedBanner">
@@ -51,7 +57,7 @@ export default function Genres(props) {
                 </div>
                 {/* 大標 ed*/}
                 {/* 分類標籤 */}
-                    <Submenu  submenu={viewSubmenu} genreId={genreId}/>
+                    <Submenu  submenu={viewSubmenu} genreEnName={genreEnName} genreId={genreId}/>
                 {/* 分類標籤 ed*/}
                 {/* 文章列表 */}                
                     <ArticleList  articleList={articleList} genreId={genreId}/>
@@ -68,7 +74,7 @@ export default function Genres(props) {
 }
 
 export async function getServerSideProps(context) {
-    const genreId = context.query.genres;    
+    const genreEnName = context.query.genres;    
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
@@ -84,7 +90,7 @@ export async function getServerSideProps(context) {
     
     return {
         props: {
-            menu,viewSubmenuData,viewData,genreId,
+            menu,viewSubmenuData,viewData,genreEnName,
         },
     };
 }
