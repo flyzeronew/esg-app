@@ -11,7 +11,6 @@ function ArticleList(props) {
         setListLength(listItems.length);
     }, []);
 
-    console.log(props);
     return (        
         <>
             <div className='list'>
