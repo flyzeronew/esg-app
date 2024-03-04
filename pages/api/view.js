@@ -215,7 +215,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/2',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -276,8 +276,8 @@ export default function handler(req, res) {
                             'name': '永續環境',
                             'en_name':'environment'
                         },
-                        'created_at': '2024-01-25T14:23:06.000000Z',
-                        'updated_at': '2024-01-25T14:23:06.000000Z'
+                        'created_at': '2024-01-24T14:23:06.000000Z',
+                        'updated_at': '2024-01-24T14:23:06.000000Z'
                     },
                     {
                         'article_id':3,
@@ -351,7 +351,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/3',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -487,7 +487,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/4',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -623,7 +623,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'/view/article/1',
+                        'url':'/view/article/5',
                         "is_blank": 1,
                         'youtube':'2mCSYvcfhtc',
                         'partner':{
@@ -759,7 +759,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/6',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -895,7 +895,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/7',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -1031,7 +1031,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/8',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -1167,7 +1167,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'/view/article/1',
+                        'url':'/view/article/9',
                         "is_blank": 1,
                         'youtube':'2mCSYvcfhtc',
                         'partner':{
@@ -1302,7 +1302,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/10',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -1438,7 +1438,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/11',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{
@@ -1574,7 +1574,7 @@ export default function handler(req, res) {
                             <p>以下廠商資訊三款樣式(手機版)</p>
                         </div>
                         `,
-                        'url':'javascript:void(0)',
+                        'url':'/view/article/12',
                         "is_blank": 0,
                         'youtube':'',
                         'partner':{

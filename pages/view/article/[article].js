@@ -27,6 +27,7 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
+    console.log(articlePartner.name);
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -95,25 +96,27 @@ export default function viewArticle(props) {
                     <div className="editor" dangerouslySetInnerHTML={{ __html: articleContent }}></div>
                     {/* 編輯器 ed*/}
                     {/* 廠商資訊 */}
-                    
-                    <div className="articleSponsor style1">
-                        <div className="box">
-                            <div className="imgBox">
-                                <div className="img">
-                                    <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
-                                </div>
-                                <div className="txt">
-                                    <div className="type">共好夥伴</div>
-                                    <div className="name">
-                                        <p>全聯福利中心</p>
+                    {articlePartner.name ? 
+                        <div className="articleSponsor style1">
+                            <div className="box">
+                                <div className="imgBox">
+                                    <div className="img">
+                                        <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
+                                    </div>
+                                    <div className="txt">
+                                        <div className="type">共好夥伴</div>
+                                        <div className="name">
+                                            <p>{articlePartner.name}</p>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="description">
+                                    <p>{articlePartner.description}</p>                                
+                                </div>
                             </div>
-                            <div className="description">
-                                <p>秉持「從心出發，實現美好生活」為核心，提供優質的產品與服務。</p>                                
-                            </div>
-                        </div>
-                    </div>
+                        </div>                    
+                    :''}
+
                     
                     <div className="articleSponsor style2">
                         <div className="box">
