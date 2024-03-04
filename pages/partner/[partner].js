@@ -127,7 +127,12 @@ return (
 
                 {/* mobile */}
                 {moLinksIndexArr.map((item, index) => (
-                        <div className={`${item[1]} items mo`} style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url}`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+                        <div className={`${item[1]} items mo`}  style={{ 
+                            background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url})  no-repeat center center / 105%`,
+                            backgroundSize: index === imgHover ? `130%` : `105%`,
+                            transition: 'background-size 0.3s',
+                                }}
+                                onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
                         <Link target={detail.partner_links[item[0]].link_type ? `_blank` : ""} href={detail.partner_links[item[0]].link_url}>
                             <div className="linkArea">
                                 <div className="linkCard">
