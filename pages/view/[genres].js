@@ -19,17 +19,12 @@ export default function Genres(props) {
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
-
-    // const genreEnName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].en_name:'';
-    // const genreDescription = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].description:'';
     console.log(genreName);
-
-    // useEffect(() => {
-    //     const genreName = viewSubmenu[genreId-1] ? viewSubmenu[genreId-1].name:'';    
-    //     if (!genreName) {
-    //         router.push('/404');
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (!genreData) {
+            router.push('/404');
+        }
+    }, []);
 
     // 頁面識別
     const thisPage='view';
