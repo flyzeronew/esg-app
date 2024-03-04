@@ -19,7 +19,7 @@ export default function Genres(props) {
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
-    console.log(genreName);
+    // console.log(props);
     useEffect(() => {
         if (!genreData) {
             router.push('/404');
@@ -69,7 +69,7 @@ export default function Genres(props) {
 }
 
 export async function getServerSideProps(context) {
-    const genreEnName = context.query.genres;    
+    const genreEnName = context.query.genres;
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
