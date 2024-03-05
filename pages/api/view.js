@@ -91,7 +91,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -227,7 +227,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -363,7 +363,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -499,7 +499,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -635,7 +635,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -771,7 +771,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -907,7 +907,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -1042,7 +1042,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -1178,7 +1178,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -1313,7 +1313,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -1449,7 +1449,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
@@ -1585,7 +1585,7 @@ export default function handler(req, res) {
                         'article_secret':{
                             'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
-                            'partner_log':'/partner01.jpg',
+                            'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
                             'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
                         },
