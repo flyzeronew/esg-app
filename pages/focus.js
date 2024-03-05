@@ -1,5 +1,3 @@
-
-import Link from 'next/link'
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
@@ -70,7 +68,7 @@ export default function Focus(props) {
                                         backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                        <Link href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >                                        
+                                        <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >                                        
                                             <div className="titleBox">                                        
                                                 <div className="titleDiv">                                            
                                                     <div className="title"><p>{item.title}</p></div>
@@ -80,7 +78,7 @@ export default function Focus(props) {
                                                     <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
                                                 </div>
                                             </div>                           
-                                        </Link>
+                                        </a>
                                     </li>
                                 ))
                             :''
