@@ -233,51 +233,23 @@ export default function viewArticle(props) {
                                 </div>
                                 <div className="list">
                                     <ul>
-
-                                    { articleExtended.list.length > 0 ?
-                                        articleExtended.list.map((item, index) => (
-                                            <li key={index}>
-                                                <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' }>
-
-                                                </a>
-                                                {item.name}
-                                            </li>
-                                        ))
-                                    :''}
-
-                                        <li>
-                                            <a href='#'>
-                                                <div className="img">
-                                                    <div className='playIcon'>                                 
-                                                        <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                                                    </div>
-                                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                                </div>
-                                                <div className="txt">
-                                                    使用「紙吸管、竹吸管」
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='#'>
-                                                <div className="img">
-                                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                                </div>
-                                                <div className="txt">
-                                                    使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='#'>
-                                                <div className="img">
-                                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                                </div>
-                                                <div className="txt">
-                                                    使用「紙吸管、竹吸管」真環保？真相竟是這樣
-                                                </div>
-                                            </a>
-                                        </li>
+                                        { articleExtended.list.length > 0 ?
+                                            articleExtended.list.map((item, index) => (
+                                                <li key={index}>
+                                                    <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' }>
+                                                        <div className="img">
+                                                            {item.youtube ?
+                                                                <div className='playIcon'>                                 
+                                                                    <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                                                </div>
+                                                            :''}                                                            
+                                                            <Image src={item.cover_img} alt="img" width={1072} height={603}/>
+                                                        </div>
+                                                        <div className="txt">{item.title}</div>
+                                                    </a>
+                                                </li>
+                                            ))
+                                        :''}
                                     </ul>
                                 </div>
                             </div>
