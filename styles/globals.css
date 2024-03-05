@@ -3130,6 +3130,8 @@ header .menuMo .list li:last-child{
     line-height: 30px;
     letter-spacing: 0.02em;
     text-align: left;
+}
+.articleSecret .txtBox .title a{
     display:flex;
     align-items: center;
     justify-content: space-between;

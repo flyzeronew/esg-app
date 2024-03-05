@@ -27,7 +27,7 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
-    console.log(articleSecret);
+    console.log(articleExtended);
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -63,7 +63,7 @@ export default function viewArticle(props) {
                 
                 <div className="articleContent">
                     <div className="category">
-                        <span>文章：{getArticleData.view_genre.name}</span>
+                        <span>文章：{getArticleData.article_genre[0].name}</span>
                     </div>
                     <div className="mainTitle">{getArticleData.title}</div>
 
@@ -84,9 +84,11 @@ export default function viewArticle(props) {
 
                     <div className="mainImg">
                         <div className="pic">
-                            <div className='playIcon'>
-                                <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                            </div>
+                            { getArticleData.youtube ? 
+                                <div className='playIcon'>
+                                    <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                </div>
+                            :''}                            
                             <Image src={getArticleData.cover_img} alt={getArticleData.img_alt} title={getArticleData.img_title} width={1072} height={603}/>
                         </div>                        
                         <div className="imgAlt">{getArticleData.img_title}</div>
@@ -187,10 +189,12 @@ export default function viewArticle(props) {
                                             <span>{articleSecret.partner_name} <span style={{fontStyle:`italic`}}>Sponsored</span></span>
                                         </div>
                                         <div className="title">
-                                            <p><a href='#'></a>{articleSecret.description}</p>
-                                            <div className="arraw">
-                                                <Image src={`${appUrl}/images/icon_arraw05.svg`} alt="arraw" width={50} height={50}/>
-                                            </div>
+                                            <a href={articleSecret.url}>
+                                                <p>{articleSecret.description}</p>
+                                                <div className="arraw">
+                                                    <Image src={`${appUrl}/images/icon_arraw05.svg`} alt="arraw" width={50} height={50}/>
+                                                </div>
+                                            </a>
                                         </div>                                    
                                     </div>                                                            
                                 </div>
@@ -203,66 +207,84 @@ export default function viewArticle(props) {
                 </div>
 
                 {/* 延伸閱讀 */}
-                <div className="articleExtended">
-                    <div className="box">
-                        <div className="tagBox">
-                            <div className="articleTitle">
-                                <p>延伸閱讀</p>
-                                <div className="line"></div>
+                {articleExtended ?
+                    <div className="articleExtended">
+                        <div className="box">
+                            <div className="tagBox">
+                                <div className="articleTitle">
+                                    <p>延伸閱讀</p>
+                                    <div className="line"></div>
+                                </div>                                
+                                <div className="tags">
+                                    <div className="box1">
+                                        { articleExtended.tags.length > 0 ?
+                                            articleExtended.tags.map((item, index) => (
+                                                <a key={index} href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >
+                                                    {item.name}
+                                                </a>
+                                            ))
+                                        :''}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="tags">
-                                <div className="box1">
-                                    <a href='#'>#環保餐具</a>
-                                    <a href='#'>#環保吸管</a>
-                                    <a href='#'>#可分解材質</a>
-                                    <a href='#'>#銘安科技</a>
+                            <div className="listBox">
+                                <div className="arraw">
+                                    <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                </div>
+                                <div className="list">
+                                    <ul>
+
+                                    { articleExtended.list.length > 0 ?
+                                        articleExtended.list.map((item, index) => (
+                                            <li key={index}>
+                                                <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' }>
+
+                                                </a>
+                                                {item.name}
+                                            </li>
+                                        ))
+                                    :''}
+
+                                        <li>
+                                            <a href='#'>
+                                                <div className="img">
+                                                    <div className='playIcon'>                                 
+                                                        <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                                    </div>
+                                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                                </div>
+                                                <div className="txt">
+                                                    使用「紙吸管、竹吸管」
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>
+                                                <div className="img">
+                                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                                </div>
+                                                <div className="txt">
+                                                    使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>
+                                                <div className="img">
+                                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                                </div>
+                                                <div className="txt">
+                                                    使用「紙吸管、竹吸管」真環保？真相竟是這樣
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div className="listBox">
-                            <div className="arraw">
-                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
-                            </div>
-                            <div className="list">
-                                <ul>
-                                    <li>
-                                        <a href='#'>
-                                            <div className="img">
-                                                <div className='playIcon'>                                 
-                                                    <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                                                </div>
-                                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                            </div>
-                                            <div className="txt">
-                                                使用「紙吸管、竹吸管」
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <div className="img">
-                                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                            </div>
-                                            <div className="txt">
-                                                使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣使用「紙吸管、竹吸管」真環保？真相竟是這樣
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <div className="img">
-                                                <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
-                                            </div>
-                                            <div className="txt">
-                                                使用「紙吸管、竹吸管」真環保？真相竟是這樣
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </div>                
+                :''}
+
                 {/* 延伸閱讀 ed*/}
 
             </div>       

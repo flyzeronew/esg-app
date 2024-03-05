@@ -4,7 +4,8 @@ export default function handler(req, res) {
                 'main_vision':{
                     'cover_img':'/images/esg02.jpg',
                     'title':'「台灣製造」超夯環保吸管、餐具 連美國白宮、蘋果公司都愛用',
-                    "description": "什麼環保餐具這麼特別，讓星巴克、遠在美國白宮的環保紙杯，以及蘋果公司員工餐廳環保餐具，都愛使用這家公司的產品。原來這家公司來自台中，專門研發可分解材質的吸管和餐具，標榜對環境不會產生負擔，連海龜都能使用，究竟有甚麼特別？帶您來看。",
+                    'description': '什麼環保餐具這麼特別，讓星巴克、遠在美國白宮的環保紙杯，以及蘋果公司員工餐廳環保餐具，都愛使用這家公司的產品。原來這家公司來自台中，專門研發可分解材質的吸管和餐具，標榜對環境不會產生負擔，連海龜都能使用，究竟有甚麼特別？帶您來看。',
+                    'youtube':'xxxxx'
                 },
                 'article_list':[
                         {
@@ -93,25 +94,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -119,27 +125,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 1,
-                            'name': '新趨勢',
-                            'en_name':'trend'
-                        },
+                        'article_genre': [
+                            {
+                                'id': 1,
+                                'name': '新趨勢',
+                                'en_name':'trend'
+                            },
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
@@ -229,25 +240,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -255,27 +271,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 2,
-                            'name': '永續環境',
-                            'en_name':'environment'
-                        },
+                        'article_genre': [
+                            {
+                                'id': 2,
+                                'name': '永續環境',
+                                'en_name':'environment'
+                            },
+                        ],
                         'created_at': '2024-01-24T14:23:06.000000Z',
                         'updated_at': '2024-01-24T14:23:06.000000Z'
                     },
@@ -365,25 +386,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -391,27 +417,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 3,
-                            'name': '共好社會',
-                            'en_name': 'society',                            
-                        },
+                        'article_genre':[
+                            {
+                                'id': 3,
+                                'name': '共好社會',
+                                'en_name': 'society',                            
+                            },
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     }, 
@@ -501,25 +532,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -527,27 +563,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 4,
-                            'name': '綠色生活',
-                            'en_name':'greelife'
-                        },
+                        'article_genre': [
+                            {
+                                'id': 4,
+                                'name': '綠色生活',
+                                'en_name':'greelife'
+                            }
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
@@ -637,25 +678,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -663,27 +709,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 1,
-                            'name': '新趨勢',
-                            'en_name':'trend'
-                        },
+                        'article_genre': [
+                            {
+                                'id': 1,
+                                'name': '新趨勢',
+                                'en_name':'trend'
+                            }
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
@@ -773,25 +824,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -799,27 +855,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 2,
-                            'name': '永續環境',
-                            'en_name':'environment'
-                        },
+                        'article_genre': [
+                            {
+                                'id': 2,
+                                'name': '永續環境',
+                                'en_name':'environment'
+                            }
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
@@ -909,25 +970,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -935,27 +1001,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 3,
-                            'name': '共好社會',
-                            'en_name': 'society',
-                        },
+                        'article_genre': [
+                            {
+                                'id': 3,
+                                'name': '共好社會',
+                                'en_name': 'society',
+                            }
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     }, 
@@ -1044,25 +1115,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -1070,27 +1146,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 4,
-                            'name': '綠色生活',
-                            'en_name': 'greelife',
-                        },
+                        'article_genre': [
+                            {
+                                'id': 4,
+                                'name': '綠色生活',
+                                'en_name':'greelife'
+                            }
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
@@ -1180,25 +1261,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -1206,26 +1292,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 1,
-                            'name': '新趨勢',
-                        },
+                        'article_genre': [
+                            {
+                                'id': 1,
+                                'name': '新趨勢',
+                                'en_name':'trend'
+                            }
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
@@ -1315,25 +1407,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -1341,27 +1438,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 2,
-                            'name': '永續環境',
-                            'en_name': 'environment', 
-                        },
+                        'article_genre': [
+                            {
+                                'id': 2,
+                                'name': '永續環境',
+                                'en_name': 'environment', 
+                            }                            
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
@@ -1451,25 +1553,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -1477,27 +1584,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 3,
-                            'name': '共好社會',
-                            'en_name': 'society',                            
-                        },
+                        'article_genre':[
+                            {
+                                'id': 3,
+                                'name': '共好社會',
+                                'en_name': 'society',                            
+                            },
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     }, 
@@ -1587,25 +1699,30 @@ export default function handler(req, res) {
                             'tag':'食',
                             'partner_logo':'/images/partner01.jpg',
                             'partner_name':'台灣雀巢',
-                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？'
+                            'description':'吃完的免洗紙餐盒，需洗完再回收嗎？',
+                            'url':'#',
                         },
                         'article_extended':{
                             'tags':[
                                 {
                                     'name':'#環保餐具',
                                     'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#環保吸管',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#可分解材質',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'name':'#銘安科技',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ],
                             'list':[
@@ -1613,26 +1730,32 @@ export default function handler(req, res) {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」',
                                     'youtube':'2mCSYvcfhtc',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                                 {
                                     'cover_img':'/images/esg06.jpg',
                                     'title':'使用「紙吸管、竹吸管」使用「紙吸管、竹吸管」',
                                     'youtube':'',
-                                    'url':'#'
+                                    'url':'#',
+                                    "is_blank": 0,
                                 },
                             ]
                         },
-                        'view_genre': {
-                            'id': 4,
-                            'name': '綠色生活',
-                        },
+                        'article_genre': [
+                            {
+                                'id': 4,
+                                'name': '綠色生活',
+                                'en_name':'greelife'
+                            }
+                        ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
                         'updated_at': '2024-01-25T14:23:06.000000Z'
                     },
