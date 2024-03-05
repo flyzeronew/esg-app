@@ -17,7 +17,7 @@ function ArticleList(props) {
                 <ul>
                     {props.articleList.length > 0 ? props.articleList.map((item, index) => (
                         <React.Fragment key={index}>
-                            { item.view_genre.id == props.genreId || props.genreId == null ?                         
+                            { item.article_genre[0].id == props.genreId || props.genreId == null ?                         
                                 <li >                            
                                     <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' }>
                                         <div className='img'>
