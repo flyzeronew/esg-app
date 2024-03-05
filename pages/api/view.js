@@ -11,6 +11,7 @@ export default function handler(req, res) {
                             'article_id':1,
                             'cover_img':'/images/esg06.jpg',
                             'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                            'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                             'title':'快訊／妻爆是180CM正妹！陪練畫面流出　大谷翔平曝老婆身分',
                             'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                             'content':`
@@ -88,7 +89,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'莊雅婷',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -146,6 +147,7 @@ export default function handler(req, res) {
                         'article_id':2,
                         'cover_img':'/images/esg02.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'全聯300家惜食門市，幫社福團體1123萬人次加菜',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -223,7 +225,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'全聯福利中心',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -281,6 +283,7 @@ export default function handler(req, res) {
                         'article_id':3,
                         'cover_img':'/images/esg03.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'蝦皮商城讓你用最划算的價格買到所有需要、想要的商品，包含美妝保健、流行服飾配件、母嬰居家、美食旅遊票券、3C家電影音等千萬件熱銷好物等你來。',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -358,7 +361,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'全聯福利中心',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -416,6 +419,7 @@ export default function handler(req, res) {
                         'article_id':4,
                         'cover_img':'/images/esg04.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'雀巢一貫提倡良好通暢的溝通，並珍視與每一個顧客的意見指教，如果您有任何建議或是想更了解雀巢公司及產品，歡迎您與我們聯繫。',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -493,7 +497,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'雀巢',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -551,6 +555,7 @@ export default function handler(req, res) {
                         'article_id':5,
                         'cover_img':'/images/esg06.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'快訊／妻爆是180CM正妹！陪練畫面流出　大谷翔平曝老婆身分',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -628,7 +633,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'莊雅婷',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -686,6 +691,7 @@ export default function handler(req, res) {
                         'article_id':6,
                         'cover_img':'/images/esg02.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'全聯300家惜食門市，幫社福團體1123萬人次加菜',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -763,7 +769,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'全聯福利中心',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -821,6 +827,7 @@ export default function handler(req, res) {
                         'article_id':7,
                         'cover_img':'/images/esg03.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'蝦皮商城讓你用最划算的價格買到所有需要、想要的商品，包含美妝保健、流行服飾配件、母嬰居家、美食旅遊票券、3C家電影音等千萬件熱銷好物等你來。',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -898,7 +905,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'蝦皮商城',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -1033,7 +1040,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'雀巢',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -1091,6 +1098,7 @@ export default function handler(req, res) {
                         'article_id':9,
                         'cover_img':'/images/esg06.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'快訊／妻爆是180CM正妹！陪練畫面流出　大谷翔平曝老婆身分',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -1168,7 +1176,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'莊雅婷',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -1225,6 +1233,7 @@ export default function handler(req, res) {
                         'article_id':10,
                         'cover_img':'/images/esg02.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'全聯300家惜食門市，幫社福團體1123萬人次加菜',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -1302,7 +1311,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'全聯福利中心',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -1360,6 +1369,7 @@ export default function handler(req, res) {
                         'article_id':11,
                         'cover_img':'/images/esg03.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'蝦皮商城讓你用最划算的價格買到所有需要、想要的商品，包含美妝保健、流行服飾配件、母嬰居家、美食旅遊票券、3C家電影音等千萬件熱銷好物等你來。',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -1437,7 +1447,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'蝦皮商城',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
@@ -1495,6 +1505,7 @@ export default function handler(req, res) {
                         'article_id':12,
                         'cover_img':'/images/esg04.jpg',
                         'img_alt':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
+                        'img_title':'大谷翔平曝老婆身分（圖／胡瑞麒攝）',
                         'title':'雀巢一貫提倡良好通暢的溝通，並珍視與每一個顧客的意見指教，如果您有任何建議或是想更了解雀巢公司及產品，歡迎您與我們聯繫。',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
@@ -1572,7 +1583,7 @@ export default function handler(req, res) {
                         },
                         'author_name':'雀巢',
                         'article_secret':{
-                            'cover_img':'/images/esg06.jpg',
+                            'cover_img':'/images/food01-m.jpg',
                             'tag':'食',
                             'partner_log':'/partner01.jpg',
                             'partner_name':'台灣雀巢',
