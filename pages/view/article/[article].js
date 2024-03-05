@@ -87,9 +87,9 @@ export default function viewArticle(props) {
                             <div className='playIcon'>
                                 <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
                             </div>
-                            <Image src={getArticleData.cover_img} alt={getArticleData.img_alt} width={1072} height={603}/>
+                            <Image src={getArticleData.cover_img} alt={getArticleData.img_alt} title={getArticleData.img_title} width={1072} height={603}/>
                         </div>                        
-                        <div className="imgAlt">{getArticleData.img_alt}</div>
+                        <div className="imgAlt">{getArticleData.img_title}</div>
                     </div>
 
                     {/* 編輯器 */}
@@ -164,39 +164,39 @@ export default function viewArticle(props) {
 
                     {/* 廠商資訊 ed*/}
                     {/* 小撇步報你知 */}    
-                    {articlePartner.name ?'':''}                
-                    <div className="articleSecret">
-                        <div className="articleTitle">
-                            <p>小撇步報你知</p>
-                            <div className="line"></div>
-                        </div>
-                        <div className="object">
-                            <div className="imgBox">
-                                <div className="tag">食</div>
-                                <div className="img">
-                                    <Image src="/images/food01-m.jpg" alt="img" width={140} height={140}/>
-                                </div>
+                    {articleSecret.cover_img ?
+                        <div className="articleSecret">
+                            <div className="articleTitle">
+                                <p>小撇步報你知</p>
+                                <div className="line"></div>
                             </div>
-                            <div className="txtBox">                                
-                                <div className='rounded'>
-                                    <Image src="/images/rounded-02.svg" alt="rounded" width={50} height={50}/>
-                                </div>
-                                <div className='box'>
-                                    <div className="company">
-                                        <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                                        <span>台灣雀巢 Nestlé Taiwan <span style={{fontStyle:`italic`}}>Sponsored</span></span>
+                            <div className="object">
+                                <div className="imgBox">
+                                    <div className="tag"></div>
+                                    <div className="img">
+                                        <Image src={articleSecret.cover_img} alt="img" width={140} height={140}/>
                                     </div>
-                                    <div className="title">
-                                        <p>吃完的免洗紙餐盒，需洗完再回收嗎？</p>
-                                        <div className="arraw">
-                                            <Image src={`${appUrl}/images/icon_arraw05.svg`} alt="arraw" width={50} height={50}/>
+                                </div>
+                                <div className="txtBox">                                
+                                    <div className='rounded'>
+                                        <Image src="/images/rounded-02.svg" alt="rounded" width={50} height={50}/>
+                                    </div>
+                                    <div className='box'>
+                                        <div className="company">
+                                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
+                                            <span>台灣雀巢 Nestlé Taiwan <span style={{fontStyle:`italic`}}>Sponsored</span></span>
                                         </div>
-                                    </div>                                    
-                                </div>                                                            
+                                        <div className="title">
+                                            <p>吃完的免洗紙餐盒，需洗完再回收嗎？</p>
+                                            <div className="arraw">
+                                                <Image src={`${appUrl}/images/icon_arraw05.svg`} alt="arraw" width={50} height={50}/>
+                                            </div>
+                                        </div>                                    
+                                    </div>                                                            
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    
+                        </div>                    
+                    :''}
                     {/* 小撇步報你知 ed*/}
 
 
