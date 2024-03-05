@@ -27,7 +27,7 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
-    console.log(articleExtended);
+    console.log(getArticleData);
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -54,10 +54,10 @@ export default function viewArticle(props) {
             <meta name="description" content="esg description" />        
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>
+        <main>            
             <div className="viewArticlePage" 
             style={{ 
-                backgroundImage:bgShow ==true ? `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${appUrl}/images/esg02.jpg)`:'',
+                backgroundImage:bgShow ==true ? `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${getArticleData.cover_img})`:'',
                 backgroundAttachment:`fixed`,            
             }}>
                 
