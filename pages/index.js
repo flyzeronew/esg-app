@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
