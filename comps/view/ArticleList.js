@@ -4,6 +4,8 @@ import React, { Component } from "react"
 
 function ArticleList(props) {
     const appUrl = process.env.APP_URL;
+    const uri =props.genreEnName? `/view/${props.genreEnName}` :`/view`;
+
     // 計算列表數量 跳頁防呆
     const [listLength, setListLength] = useState(0);
     useEffect(() => {
@@ -53,9 +55,9 @@ function ArticleList(props) {
                 {listLength >= 12 ? 
                     <div className='pageJump'>
                         <div className='box'>
-                            <a className='act' href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#" >3</a>
+                            <a className='act' href={`${appUrl}${uri}?page=1`}>1</a>
+                            <a href={`${appUrl}${uri}?page=2`}>2</a>
+                            <a href={`${appUrl}${uri}?page=3`}>3</a>
                         </div>
                         <div className='next'>
                             <a href="#" >下一頁</a>

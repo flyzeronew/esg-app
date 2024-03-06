@@ -10,7 +10,6 @@ import Footer from '../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
-
     const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
     const articleList = props.viewData.article_list;
@@ -19,7 +18,6 @@ export default function Genres(props) {
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
-    // console.log(props);
     useEffect(() => {
         if (!genreData) {
             router.push('/404');
@@ -55,7 +53,7 @@ export default function Genres(props) {
                     <Submenu  submenu={viewSubmenu} genreEnName={genreEnName} genreId={genreId}/>
                 {/* 分類標籤 ed*/}
                 {/* 文章列表 */}                
-                    <ArticleList  articleList={articleList} genreId={genreId}/>
+                    <ArticleList  articleList={articleList} genreId={genreId} genreEnName={genreEnName}/>
                 {/* 文章列表 ed */}                
             </div>
             

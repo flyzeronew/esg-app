@@ -14,7 +14,7 @@ export default function View(props) {
     const viewSubmenu = props.viewSubmenuData;
     const mainVision = props.viewData.main_vision;
     const articleList = props.viewData.article_list;
-
+console.log(props);
     // 頁面識別
     const thisPage='view';
     return (
@@ -89,22 +89,26 @@ export default function View(props) {
 }
 
 export async function getServerSideProps(context) {
+    const { query } = context;
+    const page = query.page ? query.page : 1;
+
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
+    
     // 線上資料
     // submenu
-    const viewSubmenuUrl = new URL('/api/view-genres', process.env.APP_URL);
+    const viewSubmenuUrl = new URL(`/api/view-genres`, process.env.APP_URL);
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
     // list
-    const viewUrl = new URL('/api/view', process.env.APP_URL);
+    const viewUrl = new URL(`/api/view?page=${page}`, process.env.APP_URL);
     const viewRes = await fetch(viewUrl);    
     const viewData = await viewRes.json();
     
     return {
         props: {
-            menu,viewSubmenuData,viewData,
+            page,menu,viewSubmenuData,viewData,page,
         },
     };
 }
