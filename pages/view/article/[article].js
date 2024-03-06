@@ -27,7 +27,7 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
-    console.log(getArticleData);
+    console.log(props.viewData.article_total);
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -81,19 +81,7 @@ export default function viewArticle(props) {
                             <span className="name">{getArticleData.author_name}</span>
                         </div>
                     </div>
-
-                    <div className="mainImg">
-                        <div className="pic">
-                            { getArticleData.youtube ? 
-                                <div className='playIcon'>
-                                    <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                                </div>
-                            :''}                            
-                            <Image src={getArticleData.cover_img} alt={getArticleData.img_alt} title={getArticleData.img_title} width={1072} height={603}/>
-                        </div>                        
-                        <div className="imgAlt">{getArticleData.img_title}</div>
-                    </div>
-
+                    
                     {/* 編輯器 */}
                     <div className="editor" dangerouslySetInnerHTML={{ __html: articleContent }}></div>
                     {/* 編輯器 ed*/}
