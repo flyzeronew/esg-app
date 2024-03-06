@@ -1046,7 +1046,7 @@ export default function handler(req, res) {
                     }, 
                     {
                         'article_id':8,
-                        'cover_img':'/images/esg06.jpg',
+                        'cover_img':'/images/esg04.jpg',
                         'title':'雀巢一貫提倡良好通暢的溝通，並珍視與每一個顧客的意見指教，如果您有任何建議或是想更了解雀巢公司及產品，歡迎您與我們聯繫。',
                         'description':'日前超市全聯「36元特價便當」引發熱烈討論，但這不僅僅只是一般的促銷，而是全聯推出「剩食策略」的一環。',
                         'content':`
