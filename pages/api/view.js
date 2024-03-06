@@ -7,6 +7,7 @@ export default function handler(req, res) {
                     'description': '什麼環保餐具這麼特別，讓星巴克、遠在美國白宮的環保紙杯，以及蘋果公司員工餐廳環保餐具，都愛使用這家公司的產品。原來這家公司來自台中，專門研發可分解材質的吸管和餐具，標榜對環境不會產生負擔，連海龜都能使用，究竟有甚麼特別？帶您來看。',
                     'youtube':'xxxxx'
                 },
+                'article_total':100,
                 'article_list':[
                         {
                             'article_id':1,
