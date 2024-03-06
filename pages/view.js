@@ -9,12 +9,13 @@ import Header from '../comps/Header'
 import Footer from '../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
+
 export default function View(props) {
+
     const appUrl = process.env.APP_URL;
     const viewSubmenu = props.viewSubmenuData;
     const mainVision = props.viewData.main_vision;
     const articleList = props.viewData.article_list;
-console.log(props);
     // 頁面識別
     const thisPage='view';
     return (
@@ -47,7 +48,7 @@ console.log(props);
                 {/* 分類標籤 ed*/}
 
                 {/* 主視覺 */}
-                {mainVision ?
+                {mainVision && props.page === 1 ?
                     <div className='mainView'>
                         <div className='box'>
                             <div className='img'>
