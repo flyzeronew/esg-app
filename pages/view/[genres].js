@@ -10,6 +10,7 @@ import Footer from '../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
+    console.log(props);
     const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
     const articleList = props.viewData.article_list;
@@ -67,6 +68,8 @@ export default function Genres(props) {
 }
 
 export async function getServerSideProps(context) {
+    const { query } = context;
+    const page = query.page ? query.page : 1;
     const genreEnName = context.query.genres;
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
@@ -77,7 +80,7 @@ export async function getServerSideProps(context) {
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
     // list
-    const viewUrl = new URL('/api/view', process.env.APP_URL);
+    const viewUrl = new URL(`/api/view?page=${page}`, process.env.APP_URL);
     const viewRes = await fetch(viewUrl);    
     const viewData = await viewRes.json();
     
