@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
-    const detail = props.detailData;
+    const detail = props.detailData;    
     const pcLinksArr = ["first","second","third","fourth"];
     const moLinksIndexArr = [
         [0,"first"],[1,"second"],[3,"fourth"],[2,"third"]
@@ -22,8 +22,8 @@ const { partner } = router.query;
 const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
-const [showList, setShowList] = useState(props.partnerData);
-const [submenuActive, setSubmenuActive] = useState(0);
+const [clicked, setClicked] = useState(false);
+
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
@@ -35,15 +35,10 @@ const [submenuActive, setSubmenuActive] = useState(0);
     };
 
     // 處理點擊事件
-    const handleClick = (id) => {
-        setSubmenuActive(id);
-        if(id === 0){
-            // 全部
-            return setShowList(props.partnerData);
-        }
-        const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
-        setShowList(filteredData);
+    const handleClick = () => {
+      setClicked(!clicked);
     };
+    
 
     // resize 監聽事件
     useEffect(() => { 
@@ -159,8 +154,13 @@ return (
                 </div>
                 :""}
                 {detail?
-                    <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                        <Link href={detail.video_url}>
+                    <div className="videoClick" onClick={handleClick}>
+                      {clicked ? 
+                        <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
+                            <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${detail.youtube_id}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
+                        </div> 
+                      : 
+                      <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
                             <div className="videoCard">
                                 <div className="videoTitle">
                                     {detail.video_title}
@@ -169,7 +169,8 @@ return (
                                     <Image src={"/images/play-icon.svg"} alt="img" width={48} height={48}/> 
                                 </div>
                             </div>
-                        </Link>
+                        </div>
+                      }
                     </div>
                 :""}
                 {detail.partner_pages?
