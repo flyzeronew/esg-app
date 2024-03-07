@@ -26,7 +26,7 @@ export default function View(props) {
     const thisPage='view';
     return (
     <div id='wrapper' className={inter.className}> 
-        <Head>con
+        <Head>
             <title>{"永續觀點 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="" />
