@@ -7,23 +7,30 @@ import Submenu from '../../comps/view/Submenu'
 import ArticleList from '../../comps/view/ArticleList'
 import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
+import JumpPage from '../../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
+    
     const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
-    const articleList = props.viewData.article_list;
+    const articleList = props.viewData.article_list; 
     const genreEnName=String(props.genreEnName);
+    const uri =`/view/${genreEnName}`;
     const genreData = viewSubmenu.find(item => item.en_name === genreEnName);
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
+    const [listLength, setListLength] = useState(0);
+
     useEffect(() => {
         if (!genreData) {
             router.push('/404');
         }
+        const listItems = document.querySelectorAll('.viewPage .list ul li');
+        setListLength(listItems.length);
     }, []);
-
+    
     // 頁面識別
     const thisPage='view';
     return (
@@ -53,8 +60,11 @@ export default function Genres(props) {
                     <Submenu  submenu={viewSubmenu} genreEnName={genreEnName} genreId={genreId}/>
                 {/* 分類標籤 ed*/}
                 {/* 文章列表 */}                
-                    <ArticleList  articleList={articleList} genreId={genreId} genreEnName={genreEnName}/>
-                {/* 文章列表 ed */}                
+                    <ArticleList  articleList={articleList} genreId={genreId}/>
+                {/* 文章列表 ed */}
+                {/* 跳頁選單 */}
+                    {listLength >= 12 ? <JumpPage uri={uri}/> :''}
+                {/* 跳頁選單 ed */}
             </div>
             
         </main>
@@ -67,6 +77,8 @@ export default function Genres(props) {
 }
 
 export async function getServerSideProps(context) {
+    const { query } = context;
+    const page = query.page ? query.page : 1;
     const genreEnName = context.query.genres;
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
@@ -77,7 +89,7 @@ export async function getServerSideProps(context) {
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
     // list
-    const viewUrl = new URL('/api/view', process.env.APP_URL);
+    const viewUrl = new URL(`/api/view?page=${page}`, process.env.APP_URL);
     const viewRes = await fetch(viewUrl);    
     const viewData = await viewRes.json();
     
