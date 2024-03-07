@@ -3374,7 +3374,7 @@ header .menuMo .list li:last-child{
 /* 永續觀點頁面 ed*/
 
 /* 永續責任 */
-.responsibilityPage{}
+.responsibilityPage{margin-bottom: 100px;}
 .responsibilityPage .mainView{
     position: relative;
 }
@@ -3383,9 +3383,38 @@ header .menuMo .list li:last-child{
     overflow: hidden;
 }
 .responsibilityPage .mainView .titleBox{
+    width: 100%;
     position: absolute;
+    display: flex;
+    justify-content: center;
     bottom: 0;
 }
+.responsibilityPage .mainView .title p{
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 5px 20px 0;
+    background-color: #fff;
+}
+.responsibilityPage .mainView .title .box{
+    width: max-content;
+    display:flex;
+    align-items: flex-end;
+}
+.responsibilityPage .mainView .title .box:first-child p{
+    border-radius: 20px 20px 0 0;
+}
+.responsibilityPage .mainView .title .box:nth-child(2) p{
+    height: 60px;
+    border-radius: 0 20px 0 0;
+    justify-content: center;
+}
+.responsibilityPage .mainView .rounded{
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+}
+
 /* 永續責任 ed*/
 
 /* 永續行動頁面 */

@@ -25,6 +25,26 @@ export default function Focus(props) {
                     <div className='img'>
                         <Image src={`${appUrl}/images/responsibility_bg.jpg`} alt="arraw" width={1920} height={1024}/>
                     </div>
+                    <div className='titleBox'>
+                        <div className='title'>
+                            <div className='box'>
+                                <div className='rounded'></div>
+                                <p>關於共好未來</p>
+                                <div className='rounded'>
+                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="arraw" width={50} height={50}/>
+                                </div>
+                            </div>
+                            <div className='box'>
+                                <div className='rounded'>
+                                    <Image src={`${appUrl}/images/rounded-03.svg`} alt="arraw" width={50} height={50}/>
+                                </div>
+                                <p>Better Future. Together</p>
+                                <div className='rounded'>
+                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="arraw" width={50} height={50}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
