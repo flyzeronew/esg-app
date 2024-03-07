@@ -1,4 +1,3 @@
-import { useState ,useEffect } from 'react'
 import React, { Component } from "react"
 import { useRouter } from 'next/router'
 
@@ -6,13 +5,12 @@ function JumpList(props) {
     const router = useRouter();
     const { page = 1 } = router.query;
     const appUrl = process.env.APP_URL;
-    const uri =props.genreEnName? `/view/${props.genreEnName}` :`/view`;
+    const uri =props.uri;
    //插入跳頁按鈕顯示按鈕數量
     const jumpBtns = [];
     for (let i = 1; i <= 3; i++) {
         jumpBtns.push(i);
-    }
-
+    }    
     return (        
         <div className='pageJump'>
             <div className={`btn ${Number(page)==1 ? 'hide':''}`} >

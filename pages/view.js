@@ -7,7 +7,7 @@ import Submenu from '../comps/view/Submenu'
 import ArticleList from '../comps/view/ArticleList'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
-import JumpList from '../comps/JumpList'
+import JumpPage from '../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,18 +16,17 @@ export default function View(props) {
     const viewSubmenu = props.viewSubmenuData;
     const mainVision = props.viewData.main_vision;
     const articleList = props.viewData.article_list;
-    
+    const uri =`/view`;
     const [listLength, setListLength] = useState(0);
     useEffect(() => {
         const listItems = document.querySelectorAll('.viewPage .list ul li');
         setListLength(listItems.length);
     }, []);
-
     // 頁面識別
     const thisPage='view';
     return (
     <div id='wrapper' className={inter.className}> 
-        <Head>
+        <Head>con
             <title>{"永續觀點 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="" />
@@ -85,7 +84,7 @@ export default function View(props) {
                     <ArticleList  articleList={articleList} />
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    {listLength >= 12 ? <JumpList /> :''}
+                    {listLength >= 12 ? <JumpPage uri={uri}/> :''}
                 {/* 跳頁選單 ed */}
             </div>
             

@@ -7,15 +7,16 @@ import Submenu from '../../comps/view/Submenu'
 import ArticleList from '../../comps/view/ArticleList'
 import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
-import JumpList from '../../comps/JumpList'
+import JumpPage from '../../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
-    console.log(props);
+    
     const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
-    const articleList = props.viewData.article_list;
+    const articleList = props.viewData.article_list; 
     const genreEnName=String(props.genreEnName);
+    const uri =`/view/${genreEnName}`;
     const genreData = viewSubmenu.find(item => item.en_name === genreEnName);
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
@@ -62,7 +63,7 @@ export default function Genres(props) {
                     <ArticleList  articleList={articleList} genreId={genreId}/>
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    {listLength >= 12 ? <JumpList genreEnName={genreEnName}/> :''}
+                    {listLength >= 12 ? <JumpPage uri={uri}/> :''}
                 {/* 跳頁選單 ed */}
             </div>
             
