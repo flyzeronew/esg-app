@@ -12,6 +12,7 @@ const nextConfig = {
       'esg-frontend-staging.tvbs.com.tw',
       'esg-frontend.tvbs.com.tw',
       'esg-app-alpha.vercel.app',
+      'img.youtube.com'
     ],   
   }, 
    // 自訂服務器配置
