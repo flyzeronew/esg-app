@@ -3371,8 +3371,22 @@ header .menuMo .list li:last-child{
     }
 }
 /* 永續觀點內頁 ed*/
-
 /* 永續觀點頁面 ed*/
+
+/* 永續責任 */
+.responsibilityPage{}
+.responsibilityPage .mainView{
+    position: relative;
+}
+.responsibilityPage .mainView .img{
+    aspect-ratio: 15/8;
+    overflow: hidden;
+}
+.responsibilityPage .mainView .titleBox{
+    position: absolute;
+    bottom: 0;
+}
+/* 永續責任 ed*/
 
 /* 永續行動頁面 */
 .actionPage .sharedBanner{

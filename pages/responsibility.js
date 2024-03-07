@@ -1,4 +1,5 @@
 import { useState ,useEffect } from 'react'
+import Image from 'next/image'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
@@ -7,7 +8,8 @@ import Footer from '../comps/Footer'
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
     // 頁面識別
-    const thisPage='responsibility';   
+    const thisPage='responsibility';
+    const appUrl = process.env.APP_URL;
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
@@ -19,8 +21,12 @@ export default function Focus(props) {
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
             <div className="responsibilityPage">
-   
-            </div>            
+                <div className='mainView'>
+                    <div className='img'>
+                        <Image src={`${appUrl}/images/responsibility_bg.jpg`} alt="arraw" width={1920} height={1024}/>
+                    </div>
+                </div>
+            </div>
         </main>
         <div className="footerLine">
             <div className="box"></div>
