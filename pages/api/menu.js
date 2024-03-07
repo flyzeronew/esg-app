@@ -40,12 +40,12 @@ export default function handler(req, res) {
                 'page_name':'secret',
                 'child':[]
             },
-            {
-                'title':'永續行動',
-                'url':appUrl+'/action',
-                'page_name':'action',
-                'child':[]
-            },
+            // {
+            //     'title':'永續行動',
+            //     'url':appUrl+'/action',
+            //     'page_name':'action',
+            //     'child':[]
+            // },
             {
                 'title':'共好夥伴',
                 'url':appUrl+'/partner',
