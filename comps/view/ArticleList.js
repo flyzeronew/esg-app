@@ -1,21 +1,8 @@
-import { useState ,useEffect } from 'react'
 import Image from 'next/image'
 import React, { Component } from "react"
-import { useRouter } from 'next/router'
 
 function ArticleList(props) {
-    const router = useRouter();
-    const { page = 1 } = router.query;
     const appUrl = process.env.APP_URL;
-    const uri =props.genreEnName? `/view/${props.genreEnName}` :`/view`;
-   
-    // 計算列表數量 跳頁防呆
-    const [listLength, setListLength] = useState(0);
-    useEffect(() => {
-        const listItems = document.querySelectorAll('.viewPage .list ul li');
-        setListLength(listItems.length);
-    }, []);
-
     return (        
         <>
             <div className='list'>
@@ -53,28 +40,7 @@ function ArticleList(props) {
                     )):''
                     }
                 </ul>
-            </div>        
-            {/* 跳頁選單 */}
-                {listLength >= 12 ? 
-                    <div className='pageJump'>
-                        <div className={`btn ${Number(page)==1 ? 'hide':''}`} >
-                            <a href={`${appUrl}${uri}?page=${Number(page)-1}`} >上一頁</a>
-                        </div>
-                        <div className={`first ${Number(page)==1 ? 'hide':''}`}>
-                            <a href={`${appUrl}${uri}?page=1`}>1</a>
-                            <span>....</span>
-                        </div>
-                        <div className='box'>
-                            <a className='act' href={`${appUrl}${uri}?page=${page}`}>{page}</a>
-                            <a href={`${appUrl}${uri}?page=${Number(page)+1}`}>{Number(page)+1}</a>
-                            <a href={`${appUrl}${uri}?page=${Number(page)+2}`}>{Number(page)+2}</a>
-                        </div>
-                        <div className='btn'>
-                            <a href={`${appUrl}${uri}?page=${Number(page)+1}`} >下一頁</a>
-                        </div>
-                    </div>
-                :''}
-            {/* 跳頁選單 ed*/}
+            </div>
         </>
     )
 }

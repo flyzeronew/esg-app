@@ -7,6 +7,7 @@ import Submenu from '../../comps/view/Submenu'
 import ArticleList from '../../comps/view/ArticleList'
 import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
+import JumpList from '../../comps/JumpList'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
@@ -19,12 +20,16 @@ export default function Genres(props) {
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
+    const [listLength, setListLength] = useState(0);
+
     useEffect(() => {
         if (!genreData) {
             router.push('/404');
         }
+        const listItems = document.querySelectorAll('.viewPage .list ul li');
+        setListLength(listItems.length);
     }, []);
-
+    
     // 頁面識別
     const thisPage='view';
     return (
@@ -54,8 +59,11 @@ export default function Genres(props) {
                     <Submenu  submenu={viewSubmenu} genreEnName={genreEnName} genreId={genreId}/>
                 {/* 分類標籤 ed*/}
                 {/* 文章列表 */}                
-                    <ArticleList  articleList={articleList} genreId={genreId} genreEnName={genreEnName}/>
-                {/* 文章列表 ed */}                
+                    <ArticleList  articleList={articleList} genreId={genreId}/>
+                {/* 文章列表 ed */}
+                {/* 跳頁選單 */}
+                    {listLength >= 12 ? <JumpList genreEnName={genreEnName}/> :''}
+                {/* 跳頁選單 ed */}
             </div>
             
         </main>
