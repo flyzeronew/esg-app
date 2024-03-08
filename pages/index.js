@@ -7,11 +7,20 @@ import MainVision from '../comps/index/MainVision'
 import SecretList from '../comps/index/SecretList'
 import ViewList from '../comps/index/ViewList'
 import PartnerList from '../comps/index/PartnerList'
-
+import { useState ,useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
   // 頁面識別
   const thisPage='home';
+  const [hover, setHover] = useState(false);
+    // 處理hover事件
+    const mouseOver = (e) => {
+      setHover(true);
+  };
+
+    const mouseOut = (e) => {
+      setHover(false);
+  };
   return (
     <div id='wrapper' className={inter.className}>  
       <Head>
@@ -38,15 +47,27 @@ export default function Home(props) {
               </div>
 
               <ViewList/>
-
-              <div className="action">
-                <div className="title">參加活動GO!</div>
-                <div className="txtBox">
-                  <div className="txt">一起實踐永續</div>
-                  <div className="arraw">
-                    <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+              
+            
+              <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.3s'}}>
+                {hover?<div>
+                  <div className="title" >Coming Soon唷!</div>
+                  {/* <div className="title" >參加活動GO!</div> */}
+                  <div className="txtBox">
+                    <div className="txt">敬請期待</div>
+                    <div className="arraw" style={{cursor: "auto"}}>
+                      {/* <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/> */}
+                    </div>
                   </div>
-                </div>
+                </div>:<div>
+                  <div className="title">參加活動GO!</div>
+                  <div className="txtBox">
+                    <div className="txt">一起實踐永續</div>
+                    <div className="arraw" style={{cursor: "auto"}}>
+                      {/* <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/> */}
+                    </div>
+                  </div>
+                </div>}
               </div>
             </div>
 
