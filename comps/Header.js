@@ -90,9 +90,9 @@ function Navber(props) {
                                 </ul>
                             </div>
                             {/* 搜尋 */}
-                            <div className="iconSearch">
+                            {/* <div className="iconSearch">
                                 <Image src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {/* pc子選單 */}
@@ -115,10 +115,10 @@ function Navber(props) {
                     {
                         hamBurger ? 
                             <div className="menuMo">                                
-                                <div className="search">
+                                {/* <div className="search">
                                     <Image src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
                                     <input id="searchInput" type="text" placeholder="搜尋"  />
-                                </div>
+                                </div> */}
                                 <div className="list">
                                     <ul>
                                         {menu.map((item, index) => (
