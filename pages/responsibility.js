@@ -50,7 +50,7 @@ export default function Focus(props) {
                                 <div className='rounded'>
                                     <Image src={`${appUrl}/images/rounded-03.svg`} alt="rounded" width={50} height={50}/>
                                 </div>
-                                <p>Better Future. Together</p>
+                                <p>Better Future.<br/>Together</p>
                                 <div className='rounded'>
                                     <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
                                 </div>
@@ -151,112 +151,115 @@ export default function Focus(props) {
                             地球黃金線關注電動車與環保材質汽車的最新趨勢；食尚玩家提倡綠色低碳旅遊，用觀眾能夠接受
                             和理解的方式，將永續觀念「轉譯」為更親和易懂的內容。
                         </p>
-
-                        <div className='list'>
-                            <ul>
-                                <li>
-                                    <a href='#' onClick={defaultClick}>
-                                        <div className='imgBox'>
+                        <div className='listBox'>
+                            <div className="arraw">
+                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                            </div>
+                            <div className='list'>
+                                <ul>
+                                    <li>
+                                        <a href='#' onClick={defaultClick}>
+                                            <div className='imgBox'>
+                                                <div className='img'>
+                                                    <Image src={`${appUrl}/images/esg01.jpg`} alt="img" width={1072} height={603}/>
+                                                </div>                                            
+                                                <div className='logoBox'>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                    <div className='logoFlex'>
+                                                        <div className='logo'>
+                                                            <Image src={`${appUrl}/images/brand-logo01.png`} alt="img" width={1072} height={603}/>
+                                                        </div>
+                                                        <div className='rounded'>
+                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='txt'>
+                                                為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                            </div>                                    
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='#' onClick={defaultClick}>
+                                            <div className='imgBox'>
                                             <div className='img'>
-                                                <Image src={`${appUrl}/images/esg01.jpg`} alt="img" width={1072} height={603}/>
-                                            </div>                                            
-                                            <div className='logoBox'>
+                                                    <Image src={`${appUrl}/images/esg02.jpg`} alt="img" width={1072} height={603}/>
+                                                </div>  
+                                                <div className='logoBox'>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                    <div className='logoFlex'>
+                                                        <div className='logo'>
+                                                            <Image src={`${appUrl}/images/brand-logo02.png`} alt="img" width={1072} height={603}/>
+                                                        </div>
+                                                        <div className='rounded'>
+                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='txt'>
+                                                為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                            </div>                                    
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='#' onClick={defaultClick}>
+                                            <div className='imgBox'>
+                                                <div className='img'>
+                                                    <Image src={`${appUrl}/images/esg03.jpg`} alt="img" width={1072} height={603}/>
+                                                </div>  
+                                                <div className='logoBox'>
                                                 <div className='rounded'>
-                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
-                                                </div>
-                                                <div className='logoFlex'>
-                                                    <div className='logo'>
-                                                        <Image src={`${appUrl}/images/brand-logo01.png`} alt="img" width={1072} height={603}/>
-                                                    </div>
-                                                    <div className='rounded'>
                                                         <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                    <div className='logoFlex'>
+                                                        <div className='logo'>
+                                                            <Image src={`${appUrl}/images/brand-logo03.png`} alt="img" width={1072} height={603}/>
+                                                        </div>
+                                                        <div className='rounded'>
+                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className='txt'>
-                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
-                                        </div>                                    
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#' onClick={defaultClick}>
-                                        <div className='imgBox'>
-                                        <div className='img'>
-                                                <Image src={`${appUrl}/images/esg02.jpg`} alt="img" width={1072} height={603}/>
-                                            </div>  
-                                            <div className='logoBox'>
-                                                <div className='rounded'>
-                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
-                                                </div>
-                                                <div className='logoFlex'>
-                                                    <div className='logo'>
-                                                        <Image src={`${appUrl}/images/brand-logo02.png`} alt="img" width={1072} height={603}/>
-                                                    </div>
+                                            <div className='txt'>
+                                                為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                            </div>                                    
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='#' onClick={defaultClick}>
+                                            <div className='imgBox'>
+                                                <div className='img'>
+                                                    <Image src={`${appUrl}/images/esg04.jpg`} alt="img" width={1072} height={603}/>
+                                                </div>  
+                                                <div className='logoBox'>
                                                     <div className='rounded'>
                                                         <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className='txt'>
-                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
-                                        </div>                                    
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#' onClick={defaultClick}>
-                                        <div className='imgBox'>
-                                            <div className='img'>
-                                                <Image src={`${appUrl}/images/esg03.jpg`} alt="img" width={1072} height={603}/>
-                                            </div>  
-                                            <div className='logoBox'>
-                                            <div className='rounded'>
-                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
-                                                </div>
-                                                <div className='logoFlex'>
-                                                    <div className='logo'>
-                                                        <Image src={`${appUrl}/images/brand-logo03.png`} alt="img" width={1072} height={603}/>
-                                                    </div>
-                                                    <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    <div className='logoFlex'>
+                                                        <div className='logo'>
+                                                            <Image src={`${appUrl}/images/brand-logo04.png`} alt="img" width={1072} height={603}/>
+                                                        </div>
+                                                        <div className='rounded'>
+                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className='txt'>
-                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
-                                        </div>                                    
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#' onClick={defaultClick}>
-                                        <div className='imgBox'>
-                                            <div className='img'>
-                                                <Image src={`${appUrl}/images/esg04.jpg`} alt="img" width={1072} height={603}/>
-                                            </div>  
-                                            <div className='logoBox'>
-                                                <div className='rounded'>
-                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
-                                                </div>
-                                                <div className='logoFlex'>
-                                                    <div className='logo'>
-                                                        <Image src={`${appUrl}/images/brand-logo04.png`} alt="img" width={1072} height={603}/>
-                                                    </div>
-                                                    <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className='txt'>
-                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
-                                        </div>                                    
-                                    </a>
-                                </li>
-                            </ul>
+                                            <div className='txt'>
+                                                為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                            </div>                                    
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-
                         <div className='title s1'>
                             <h2>領航ESG媒體實踐</h2>
                             <div className='line'></div>
