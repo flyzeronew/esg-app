@@ -34,12 +34,19 @@ function SecretList(props) {
                             <div className="tag">衣</div>
                         </div>
                         <div className="title">
-                            <p>吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</p>
+                            <div className="word">
+                                <p>
+                                    吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？
+                                </p>
+                                <div className="description">
+                                    嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡
+                                </div>
+                            </div>
                             <div className="img pc">
                                 <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
+                                {/* <Image src="/images/partner-bg01.jpg" alt="img" width={640} height={360}/> */}
                             </div>
                         </div>
-                        <div className="txt">嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡</div>
                     </a>
                     <a href='#' onClick={handleClick}>
                         <div className="img mo">
@@ -51,12 +58,18 @@ function SecretList(props) {
                             <div className="tag">衣</div>
                         </div>
                         <div className="title">
-                            <p>測試這2</p>
+                            <div className="word">
+                                <p>
+                                    2吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？
+                                </p>
+                                <div className="description">
+                                    2嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡
+                                </div>
+                            </div>
                             <div className="img pc">
                                 <Image src="/images/esg02.jpg" alt="img" width={640} height={360}/>
                             </div>
                         </div>
-                        <div className="txt">測試這2文字文字</div>
                     </a>
                 </Slider>
             </div>
