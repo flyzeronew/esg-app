@@ -18,7 +18,7 @@ function SecretList(props) {
         slidesToScroll: 1,
         swipeToSlide:true,
         autoplay: true,
-        autoplaySpeed:10000, 
+        autoplaySpeed:5000, 
     };  
     return (
         <div className="secret">
