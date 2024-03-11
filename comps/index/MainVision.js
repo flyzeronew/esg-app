@@ -20,7 +20,7 @@ function MainVision(props) {
     };  
     return (
         <div className="mainVision">
-            <Slider {...settings}>                
+            <Slider {...settings}>
                 <a href='#' onClick={handleClick}>
                     <div className="img" style={{ 
                         background: `url(/images/esg01.jpg) no-repeat center center`,
