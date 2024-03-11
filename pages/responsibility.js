@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
+import Practice from '../comps/responsibility/Practice'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
@@ -11,8 +12,13 @@ export default function Focus(props) {
     const [clicked, setClicked] = useState(false);
     // 處理點擊事件
     const handleClick = () => {
-      setClicked(!clicked);
+        setClicked(!clicked);
     };
+
+    const defaultClick = (event) => {
+        event.preventDefault();
+    };
+    
 
     const thisPage='responsibility';
     const appUrl = process.env.APP_URL;
@@ -53,10 +59,12 @@ export default function Focus(props) {
                     </div>
                 </div>
                 <div className='content'>
+
                     <div className='title'>
                         <h2>TVBS新聞 ESG轉譯者</h2>
                         <div className='line'></div>
                     </div>
+
                     <div className='mainImage'>
                         {
                             clicked ? 
@@ -87,20 +95,227 @@ export default function Focus(props) {
                         </p>
                     </div>
 
-                    <div className='people'>
+                    <div className='peopleBox'>
                         <div className='title'>
                             <h2>TVBS永續倡議大使 莊開文</h2>
                             <div className='line'></div>
                         </div>
+                        <div className='contxt'>
+                            <p>
+                                TVBS資深主播<strong>莊開文</strong>，擔任「TVBS永續倡議大使」，並以「永續．共好．愛無限」為核心目標，透過TVBS自身資源從各方面投入永續倡議，成為媒體界的ESG貢獻者。
+                            </p>
+                        </div>
+
+                        <div className='people'>
+                            <div className='img'>
+                                <Image src={`${appUrl}/images/people01.jpg`} alt="img" width={1920} height={1080}/>
+                            </div>
+                            <div className='txtBox'>
+                                <div className='txt'>
+                                    希望能夠從以前各個部門的單兵作戰，現在能夠集結各部門、跨部門的資源跟力量，大家一起來做。
+                                </div>
+                                <div className='small'>- 永續倡議大使 莊開文 </div>
+                            </div>
+                        </div> 
+
+                        <p>
+                            <strong>「永續．共好．愛無限」 三面向推進ESG策略，</strong>
+                            同步實踐TVBS自身的永續發展，發揮媒體責任，提出對永續的獨到見解並付諸行動。
+                            TVBS也將持續關注氣候變遷、全球暖化、再生能源等議題，推動各界綠色作為，並發揮媒體影響力，推動社會共好、世界共好，以及愛無限系列活動為社會帶來正能量。莊開文也期許，台灣的ESG理念與成效，能透過TVBS英語新聞，傳播到世界各地，為生態、人道關懷等議題帶來不同觀點與發聲，並以永續為目標，期待在永續議題上能成為台灣的推手，做世界的通道。
+                        </p>
+
+                        <div class="imageGroup">
+                            <div class="box">
+                                <div class="img">
+                                    <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>                                    
+                                </div>
+                                <div class="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
+                            </div>
+                            <div class="box">
+                                <div class="img">
+                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                </div>
+                                <div class="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="brand">
+                        <div className='title'>
+                            <h2>TVBS永續品牌</h2>
+                            <div className='line'></div>
+                        </div>
+
+                        <p>
+                            女人我最大節目，倡議「純淨美容Clean Beauty」觀念，在變美之餘，也不造成地球環境負擔；
+                            地球黃金線關注電動車與環保材質汽車的最新趨勢；食尚玩家提倡綠色低碳旅遊，用觀眾能夠接受
+                            和理解的方式，將永續觀念「轉譯」為更親和易懂的內容。
+                        </p>
+
+                        <div className='list'>
+                            <ul>
+                                <li>
+                                    <a href='#' onClick={defaultClick}>
+                                        <div className='imgBox'>
+                                            <div className='img'>
+                                                <Image src={`${appUrl}/images/esg01.jpg`} alt="img" width={1072} height={603}/>
+                                            </div>                                            
+                                            <div className='logoBox'>
+                                                <div className='rounded'>
+                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                </div>
+                                                <div className='logoFlex'>
+                                                    <div className='logo'>
+                                                        <Image src={`${appUrl}/images/brand-logo01.png`} alt="img" width={1072} height={603}/>
+                                                    </div>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='txt'>
+                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                        </div>                                    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' onClick={defaultClick}>
+                                        <div className='imgBox'>
+                                        <div className='img'>
+                                                <Image src={`${appUrl}/images/esg02.jpg`} alt="img" width={1072} height={603}/>
+                                            </div>  
+                                            <div className='logoBox'>
+                                                <div className='rounded'>
+                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                </div>
+                                                <div className='logoFlex'>
+                                                    <div className='logo'>
+                                                        <Image src={`${appUrl}/images/brand-logo02.png`} alt="img" width={1072} height={603}/>
+                                                    </div>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='txt'>
+                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                        </div>                                    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' onClick={defaultClick}>
+                                        <div className='imgBox'>
+                                            <div className='img'>
+                                                <Image src={`${appUrl}/images/esg03.jpg`} alt="img" width={1072} height={603}/>
+                                            </div>  
+                                            <div className='logoBox'>
+                                            <div className='rounded'>
+                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                </div>
+                                                <div className='logoFlex'>
+                                                    <div className='logo'>
+                                                        <Image src={`${appUrl}/images/brand-logo03.png`} alt="img" width={1072} height={603}/>
+                                                    </div>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='txt'>
+                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                        </div>                                    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#' onClick={defaultClick}>
+                                        <div className='imgBox'>
+                                            <div className='img'>
+                                                <Image src={`${appUrl}/images/esg04.jpg`} alt="img" width={1072} height={603}/>
+                                            </div>  
+                                            <div className='logoBox'>
+                                                <div className='rounded'>
+                                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                </div>
+                                                <div className='logoFlex'>
+                                                    <div className='logo'>
+                                                        <Image src={`${appUrl}/images/brand-logo04.png`} alt="img" width={1072} height={603}/>
+                                                    </div>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='txt'>
+                                            為地球盡一份心力的同時，也能保有自己的時尚風格。
+                                        </div>                                    
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className='title s1'>
+                            <h2>領航ESG媒體實踐</h2>
+                            <div className='line'></div>
+                        </div>
+
+                        <p>
+                            女人我最大節目，倡議「純淨美容Clean Beauty」觀念，在變美之餘，也不造成地球環境負擔；
+                            地球黃金線關注電動車與環保材質汽車的最新趨勢；食尚玩家提倡綠色低碳旅遊，用觀眾能夠接受
+                            和理解的方式，將永續觀念「轉譯」為更親和易懂的內容。
+                        </p>
+                        {/* 輪播部分 */}
+                        <Practice/>
+                        {/* 輪播部分 ed*/}
+
+                        <div className='practiceMore'>
+                            <div className='title s1'>
+                                <h2>更多TVBS永續實踐力</h2>
+                            </div>
+                            <div className='list'>
+                                <a href='#' onClick={defaultClick}>
+                                    <div className='img'>
+                                        <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                    </div>
+                                    <div className='txtBox'>
+                                        <div className='txt'>
+                                            <p>媒體科技大會亮點TVBS拚「ESG永續轉譯機」</p>
+                                            <div className='arraw' >
+                                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href='#' onClick={defaultClick}>
+                                    <div className='img'>
+                                        <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                    </div>
+                                    <div className='txtBox'>
+                                        <div className='txt'>
+                                            <p>媒體科技大會亮點TVBS拚「ESG永續轉譯機」</p>
+                                            <div className='arraw' >
+                                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
                 </div>
 
             </div>
         </main>
         <div className="footerLine">
-            <div className="box"></div>
+            <div className="box color1"></div>
         </div>
-        <Footer />
+        <Footer act='color1'/>
     </div>
     );
 }
