@@ -16,7 +16,9 @@ function ViewList(props) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
+        swipeToSlide:true,
+        autoplay: true,
+        autoplaySpeed:10000, 
     };  
     return (        
         <div className="view">
@@ -31,7 +33,7 @@ function ViewList(props) {
                     <div className="img">
                         <Image src="/images/esg02.jpg" alt="img" width={1920} height={1080}/>  
                     </div>
-                    <div className="txt">一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地</div>
+                    <div className="txt">一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地2</div>
                 </a>
             </Slider>
         </div> 

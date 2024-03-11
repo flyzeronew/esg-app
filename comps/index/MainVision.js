@@ -16,7 +16,9 @@ function MainVision(props) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        swipeToSlide:true,
         autoplay: true,
+        autoplaySpeed:10000, 
     };  
     return (
         <div className="mainVision">
@@ -49,7 +51,7 @@ function MainVision(props) {
                     }}></div>
                     <div className="txtAbsolute">
                         <div className="txtBox">
-                            <div className="title">台灣剩食危機</div>
+                            <div className="title">台灣剩食危機2</div>
                             <div className="txt">每人每天浪費一個便當！</div>
                             <div className="object">
                                 <div className="point"></div>
