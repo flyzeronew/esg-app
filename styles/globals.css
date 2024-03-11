@@ -3400,6 +3400,82 @@ header .menuMo .list li:last-child{
 /* 永續觀點頁面 ed*/
 
 /* 永續責任 */
+/* 各種文字區塊 */
+.responsibilityPage .content .mainImage .txt{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16 / 9;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.responsibilityPage .content .mainImage .txt p{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 45px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 110px;
+}
+.responsibilityPage .content .contxt .t1{
+    width: 780px;
+    margin: 0 auto;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.responsibilityPage .content p{
+    width: 640px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    margin-bottom: 50px;    
+}
+@media (max-width:1023px) {
+    .responsibilityPage .content .contxt .t1{
+        width: 100%;
+        padding:0 15px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: 0.02em;
+    }
+}
+@media (max-width:767px) {
+    .responsibilityPage .content .mainImage .txt p{
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 34px;
+        letter-spacing: 0.02em;
+        margin-bottom: 80px;
+    }
+    .responsibilityPage .content p{
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        text-align: left;
+        padding:0 15px;
+    }
+}
+@media (max-width:374px) {
+    .responsibilityPage .content .mainImage .txt p{
+        font-size: 18px;
+    }
+}
+/* 各種文字區塊 ed*/
+
 .responsibilityPage .mainView{
     position: relative;
     margin-bottom: 100px;
@@ -3421,6 +3497,40 @@ header .menuMo .list li:last-child{
     letter-spacing: 0.04em;
     padding: 5px 20px 0;
     background-color: #fff;
+}
+.responsibilityPage .mainView .title p br{
+    display:none;
+}
+@media (max-width:1399px) {
+    .responsibilityPage .mainView .title p{
+        font-size: 80px;
+    }
+}
+@media (max-width:1279px) {
+    .responsibilityPage .mainView .title p{
+        font-size: 60px;
+    }
+}
+@media (max-width:1023px) {
+    .responsibilityPage .mainView .title p{
+        font-size: 50px;
+    }
+}
+@media (max-width:767px) {
+    .responsibilityPage .mainView .title p{
+        font-size: 36px;
+    }
+    .responsibilityPage .mainView {
+        margin-bottom: 80px;
+    }
+    .responsibilityPage .mainView .title p br{
+        display:block;
+    }
+}
+@media (max-width:359px) {
+    .responsibilityPage .mainView .title p{
+        font-size: 30px;
+    }
 }
 .responsibilityPage .mainView .title .box{
     width: max-content;
@@ -3450,6 +3560,20 @@ header .menuMo .list li:last-child{
     letter-spacing: 0.04em;
     text-align: center;
     margin-bottom: 40px;
+}
+@media (max-width:767px) {
+    .responsibilityPage .content .title{
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 45px;
+        letter-spacing: 0.04em;
+        padding:0 15px;
+    }
+}
+@media (max-width:359px) {
+    .responsibilityPage .content .title{
+        font-size: 30px;
+    }
 }
 .responsibilityPage .content .title.s1 h2{
     margin-bottom: 30px;
@@ -3482,30 +3606,23 @@ header .menuMo .list li:last-child{
     position: relative;
     margin-bottom: 50px;
 }
+
+@media (max-width:1279px) {
+    .responsibilityPage .content .mainImage{
+        width:100%;
+        border-radius: 0;
+    }
+}
+@media (max-width:359px) {
+    .responsibilityPage .content .title.s1{
+        font-size: 30px;
+    }
+}
 .responsibilityPage .content .mainImage .video{
     width: 100%;
     aspect-ratio: 16/9;
 }
-.responsibilityPage .content .txt{
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    aspect-ratio: 16 / 9;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 45px;
-    letter-spacing: 0.02em;
-    text-align: center;
-    color: #fff;
-}
-.responsibilityPage .content .txt p{
-    margin-bottom: 110px;
-}
+
 .responsibilityPage .content .playIcon{    
     position: absolute;
     width: 100%;
@@ -3524,28 +3641,6 @@ header .menuMo .list li:last-child{
     width: 80px;
     margin-top: 100px;
 }
-/* 各種文字區塊 */
-.responsibilityPage .content .contxt .t1{
-    width: 780px;
-    margin: 0 auto;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 45px;
-    letter-spacing: 0.04em;
-    text-align: center;
-    margin-bottom: 50px;
-}
-.responsibilityPage .content p{
-    width: 640px;
-    margin: 0 auto;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0.04em;
-    text-align: left;
-    margin-bottom: 50px;    
-}
-/* 各種文字區塊 ed*/
 .responsibilityPage .peopleBox{
     background-color: #FAFAFA;
     padding:50px 0 50px;
@@ -3573,11 +3668,10 @@ header .menuMo .list li:last-child{
     width: 50%;
     aspect-ratio: 16/9;
 }
+
 .responsibilityPage .peopleBox .people .txtBox .txt{
     position: relative;
-    width: 80%;
     height: auto;
-    margin:0 auto ;
     color: #333333;
     font-size: 32px;
     font-weight: 400;
@@ -3587,6 +3681,7 @@ header .menuMo .list li:last-child{
     margin-bottom: 40px;
     aspect-ratio:unset;
     display: block;
+    padding: 0 30px;
 }
 .responsibilityPage .peopleBox .people .txtBox .txt::before{
     font-size: 40px;
@@ -3610,19 +3705,101 @@ header .menuMo .list li:last-child{
     width: 100%;
     text-align:center ;
 }
+@media (max-width:1279px) {
+    .responsibilityPage .peopleBox .people .txtBox .txt::before,
+    .responsibilityPage .peopleBox .people .txtBox .txt::after
+    {
+        font-size: 60px;
+    }
+    .responsibilityPage .peopleBox .people .txtBox .txt::after
+    {
+        margin-top: 60px;
+    }
+    .responsibilityPage .peopleBox .people .txtBox .txt{
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 34px;
+        letter-spacing: 0.04em;
+        text-align: center;
+    }
+    .responsibilityPage .peopleBox .people .txtBox{
+        width: 100%;
+        padding: 40px 0;
+    }
+    .responsibilityPage .peopleBox .people .img{
+        width: 100%;
+    }
+    .responsibilityPage .peopleBox .people{
+        display: block;
+    }
+    .responsibilityPage .content .playIcon img{    
+        width: 60px;
+        margin-top: 80px;
+    }
+}
+@media (max-width:767px) {
+    .responsibilityPage .peopleBox p{
+        width: 100%;
+    }
+}
+
+
 .responsibilityPage .imageGroup{
     width: 1240px;
     margin:0 auto ;
+    column-gap: 30px;
+}
+@media (max-width:1279px) {
+    .responsibilityPage .imageGroup{
+        width: 100%;
+        padding:0 15px;
+    }
+}
+.responsibilityPage .brand .listBox {
+    position: relative;
+    margin-bottom: 50px;
+}
+.responsibilityPage .brand .listBox .arraw {
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right: 30px;
+    display: none;
+    z-index: 1;
 }
 .responsibilityPage .brand .list {
     padding:0 15px;
 }
 .responsibilityPage .brand .list ul{
     display: flex;
+    flex-wrap: wrap;
     column-gap: 30px;
 }
 .responsibilityPage .brand .list ul li{
     width: calc((100% - 90px) / 4);
+}
+@media (max-width:1279px) {
+    .responsibilityPage .brand .listBox .arraw {
+        display: flex;
+    }
+    .responsibilityPage .brand .listBox .arraw img{
+        margin-bottom: 80px;
+    }
+    .responsibilityPage .brand .list {
+        padding:0 15px;
+        overflow-x: auto;        
+    }
+    .responsibilityPage .brand .list::-webkit-scrollbar {
+        width: 0px;
+    }
+    .responsibilityPage .brand .list ul{
+        width: 250%;
+    }    
+}
+@media (max-width:767px) {
+    .responsibilityPage .brand .list ul{
+        width: 300%;
+    }
 }
 .responsibilityPage .brand .list .imgBox{
     position: relative;
@@ -3657,6 +3834,11 @@ header .menuMo .list li:last-child{
     letter-spacing: 0em;
     text-align: left;
     color: #333333;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
 }
 .responsibilityPage .brand .list .logoBox .rounded{
     width: 20px;
@@ -3681,28 +3863,21 @@ header .menuMo .list li:last-child{
     border-radius: 30px;
     display:block;
     opacity: 0.5;
+    transition: 0.5s;
 }
 .responsibilityPage .carousel .slick-slider a .txt{
     position:absolute;
+    width: 100%;
     height: 150px;
     top:auto;
     bottom:0;
-    aspect-ratio:unset;  
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 100%);
     padding:0 15px;
     box-sizing: border-box;
+    display: flex;
     align-items: flex-end;
-}
-.responsibilityPage .content .carousel .slick-slider p{
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 42px;
-    letter-spacing: 0.02em;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    display: -webkit-box;  
+    color: #fff;
+    padding-bottom: 30px;
 }
 
 .responsibilityPage .carousel .slick-slider a .txt p{
@@ -3714,14 +3889,18 @@ header .menuMo .list li:last-child{
     display: -webkit-box;
     overflow: hidden; 
     box-sizing: border-box;
-    margin-bottom: 20px;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0.02em;
 }
-
 .responsibilityPage .carousel .slick-initialized .slick-slide{
     padding:15px;
 }
 .responsibilityPage .carousel .slick-initialized .slick-center a{
     opacity: 1;
+    transition: 1.5s;
 }
 .responsibilityPage .carousel .slick-next,.responsibilityPage .carousel .slick-prev{
     background-color: #fff;
@@ -3742,6 +3921,49 @@ header .menuMo .list li:last-child{
 .responsibilityPage .carousel .slick-prev::before,.responsibilityPage .carousel .slick-next::before{
     content: '';
 }
+@media (max-width:1919px) {
+    .responsibilityPage .carousel .slick-next{
+        right: 200px;
+    }
+    .responsibilityPage .carousel .slick-prev{
+        left: 200px;
+    }
+}
+@media (max-width:1279px) {
+    .responsibilityPage .carousel .slick-next{
+        right: 100px;
+    }
+    .responsibilityPage .carousel .slick-prev{
+        left: 100px;
+    }
+    
+}
+@media (max-width:767px) {
+    .responsibilityPage .carousel .slick-next{
+        right: 30px;
+    }
+    .responsibilityPage .carousel .slick-prev{
+        left: 30px;
+    }
+    .responsibilityPage  .carousel .slick-slider a{
+        border-radius: 10px;
+    }
+    .responsibilityPage .carousel .slick-slider a .txt{
+        height: 100px;
+        padding-bottom: 15px;
+    }
+    .responsibilityPage .carousel .slick-slider a .txt p{
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        padding:0;        
+    }
+    .responsibilityPage .carousel .slick-initialized .slick-slide{
+        padding:8px;
+    }
+}
 /* 輪播部分 ed*/
 /* 更多TVBS永續實踐力 */
 .practiceMore{
@@ -3750,16 +3972,18 @@ header .menuMo .list li:last-child{
 }
 .practiceMore .list{
     width: 1240px;
-    margin:0 auto ;    
+    margin:0 auto ;
     display:flex;
     justify-content:center;
     column-gap: 30px;
 }
 .practiceMore .list a{
+    width: 50%;
     position: relative;
     aspect-ratio: 16/9;
     overflow: hidden;
     border-radius: 30px;
+    display:block;
 }
 .responsibilityPage .content .practiceMore .list .txtBox{
     position:absolute;
@@ -3772,6 +3996,7 @@ header .menuMo .list li:last-child{
     top:0;
 }
 .responsibilityPage .content .practiceMore .list .txt{
+    width: 100%;
     position:relative;
     padding:30px;
     display:flex;
@@ -3798,7 +4023,29 @@ header .menuMo .list li:last-child{
     height: 35px;
     line-height: 0;
 }
-.arraw
+@media (max-width:1279px) {
+    .practiceMore .list{
+        width: 100%;
+    }
+}
+@media (max-width:1023px) {
+    .practiceMore .list{
+        display:block;
+    }
+    .practiceMore .list a{        
+        width: 100%;
+        border-radius: 20px;
+    }
+    .practiceMore .list a:first-child{        
+        margin-bottom: 30px;
+    }
+    .responsibilityPage .content .practiceMore .list .txt{
+        padding:20px;
+    }
+    .responsibilityPage .content .practiceMore .list .txt p{
+        padding:0;
+    }
+}
 /* 更多TVBS永續實踐力ed */
 /* 永續責任 ed*/
 

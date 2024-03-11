@@ -18,6 +18,26 @@ function Practice(props) {
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: "500px", 
+        responsive: [
+            {
+                breakpoint: 1919,
+                settings: {
+                    centerPadding: "200px", 
+                },
+            },
+            {
+                breakpoint: 1279,
+                settings: {
+                    centerPadding: "100px", 
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    centerPadding: "30px", 
+                },
+            },
+        ],
     };  
     return (
         <div className='carousel'>
@@ -27,7 +47,7 @@ function Practice(props) {
                         <Image src="/images/esg05.jpg" alt="img" width={1072} height={603}/>
                     </div>
                     <div className='txt'>
-                        <p>華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠</p>
+                        <p>華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠</p>
                     </div>
                 </a>
                 <a href='#' onClick={defaultClick}>
