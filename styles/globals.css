@@ -1328,7 +1328,7 @@ header .menuMo .list li:last-child{
 .indexPage .partner .slick-dots li button:before{
     width: 100%;
     height: 100%;
-    background-color: #AACB7C;
+    background-color: #D4D4D4;
     font-size: 0;
     content:'';
     opacity: 1;
