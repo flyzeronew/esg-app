@@ -30,7 +30,7 @@ export default function handler(req, res) {
                     },
                     {
                         'title':'綠色生活',
-                        'url':appUrl+'/view/greelife',
+                        'url':appUrl+'/view/greenlife',
                     },
                 ]
             },
