@@ -843,7 +843,7 @@ header .menuMo .list li:last-child{
     line-height: 33.6px;
     margin-top: 50px;
     margin-bottom: 50px;
-    height:194px;
+    height:233px;
     display:flex;
     align-items: center;
 }
@@ -863,6 +863,9 @@ header .menuMo .list li:last-child{
         font-size: 35px;
         margin-top: 60px;
     }
+    .indexPage .action .titleComingSoon{
+        height:194px;
+    }
 }
 @media (max-width:1599px) {
     .indexPage .action .title {      
@@ -873,6 +876,7 @@ header .menuMo .list li:last-child{
         margin-bottom: 10px;
     }
     .indexPage .action .titleComingSoon{
+        font-size: 20px;
         height: 153px;
     }
     .indexPage .action .txt {
