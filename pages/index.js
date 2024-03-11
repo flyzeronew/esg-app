@@ -50,16 +50,11 @@ export default function Home(props) {
               
             
               <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.3s'}}>
-                {hover?<div>
-                  <div className="title" >Coming Soon唷!</div>
-                  {/* <div className="title" >參加活動GO!</div> */}
-                  <div className="txtBox">
-                    <div className="txt">敬請期待</div>
-                    <div className="arraw" style={{cursor: "auto"}}>
-                      {/* <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/> */}
-                    </div>
-                  </div>
-                </div>:<div>
+                {hover?
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <div className="titleComingSoon">COMING SOON</div>
+                </div>
+                :<div>
                   <div className="title">參加活動GO!</div>
                   <div className="txtBox">
                     <div className="txt">一起實踐永續</div>
