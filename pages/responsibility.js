@@ -78,7 +78,7 @@ export default function Focus(props) {
                                 <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
                             </div>
                             <div className='txt'>
-                                <p>數位永續皆卓越！TVBS總經理劉文硯<br/>再獲APEA「卓越企業領袖」</p>
+                                <div className='t1'>數位永續皆卓越！TVBS總經理劉文硯<br/>再獲APEA「卓越企業領袖」</div>
                             </div>
                             <div className='video'>
                                 <Image src='http://img.youtube.com/vi/pMTFK3q-rek/maxresdefault.jpg' alt="img" width={1920} height={1080}/>

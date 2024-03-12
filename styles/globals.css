@@ -3386,7 +3386,7 @@ header .menuMo .list li:last-child{
     justify-content: center;
     align-items: center;
 }
-.responsibilityPage .content .mainImage .txt p{
+.responsibilityPage .content .mainImage .txt .t1{
     font-size: 32px;
     font-weight: 600;
     line-height: 45px;
@@ -3430,30 +3430,30 @@ header .menuMo .list li:last-child{
         width:35px;
         margin-top:70px;
     }
-    .responsibilityPage .content .mainImage .txt p{
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 28px;
-        letter-spacing: 0.02em;
-        margin-bottom: 50px;
-    }
     .responsibilityPage .content p{
         width: 100%;
         font-size: 18px;
         font-weight: 400;
-        line-height: 32px;
+        line-height: 24px;
         letter-spacing: 0.04em;
         padding:0 15px;
     }
+    .responsibilityPage .content .mainImage .txt .t1{
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0.02em;
+        margin-bottom: 50px;
+    }
 }
 @media (max-width:374px) {
-    .responsibilityPage .content .mainImage .txt p{
+    .responsibilityPage .content .mainImage .txt .t1{
         font-size: 18px;
         line-height:24px;
     }
 }
 @media (max-width:359px) {
-    .responsibilityPage .content .mainImage .txt p{
+    .responsibilityPage .content .mainImage .txt .t1{
         font-size: 16px;
     }
 }
