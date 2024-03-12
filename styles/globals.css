@@ -3752,7 +3752,7 @@ header .menuMo .list li:last-child{
     }
 }
 .responsibilityPage .brand{
-    padding:40px 0;
+    padding:40px 0 0;
 }
 .responsibilityPage .brand .listBox {
     position: relative;
@@ -3765,6 +3765,8 @@ header .menuMo .list li:last-child{
     right: 30px;
     display: none;
     z-index: 1;
+    aspect-ratio: 1/1;
+    overflow: hidden;
 }
 .responsibilityPage .brand .list {
     padding:0 15px;
@@ -3779,10 +3781,8 @@ header .menuMo .list li:last-child{
 }
 @media (max-width:1279px) {
     .responsibilityPage .brand .listBox .arraw {
-        display: flex;
-    }
-    .responsibilityPage .brand .listBox .arraw img{
-        margin-bottom: 80px;
+        top:35%;
+        display: block;
     }
     .responsibilityPage .brand .list {
         padding:0 15px;
@@ -3796,12 +3796,37 @@ header .menuMo .list li:last-child{
     }    
 }
 @media (max-width:767px) {
+    .responsibilityPage .brand .listBox .arraw {
+        width:35px;
+        top:30%;
+    }
     .responsibilityPage .brand .list ul{
         column-gap: 20px;
         width: 300%;
     }
     .responsibilityPage .brand .list ul li{
         width: calc((100% - 60px) / 4);
+    }
+}
+@media (max-width:414px) {
+    .responsibilityPage .brand .listBox .arraw {
+        top:20%;
+    }
+}
+@media (max-width:413px) {
+    .responsibilityPage .brand .listBox .arraw {
+        width:30px;
+        top:20%;
+    }
+}
+@media (max-width:374px) {
+    .responsibilityPage .brand .listBox .arraw {
+        top:18%;
+    }
+}
+@media (max-width:374px) {
+    .responsibilityPage .brand .listBox .arraw {
+        top:15%;
     }
 }
 .responsibilityPage .brand .list .imgBox{
