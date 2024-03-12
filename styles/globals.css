@@ -1014,7 +1014,8 @@ header .menuMo .list li:last-child{
     border-radius: 190px;
     background: #D0FF90;
     overflow: hidden;
-    padding: 25.5px 58px;
+    /* padding: 25.5px 58px; */
+    padding: 33.5px 58px;
     color: #226158;
     display:flex;
     align-items: center;
@@ -1052,6 +1053,9 @@ header .menuMo .list li:last-child{
         font-weight: 700;
         line-height: normal;
         letter-spacing: 1.44px;
+    }
+    .indexPage .ourMissionHover{
+        padding: 25.5px 58px;
     }
 }
 @media (max-width:1599px) {
