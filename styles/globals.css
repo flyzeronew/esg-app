@@ -101,7 +101,6 @@ img{
     justify-content: center; 
     align-items: center;
     column-gap: 15px;
-    margin-left: 10px;
 }
 .pageJump .lastTxt{
     font-size: 18px;
@@ -113,7 +112,7 @@ img{
     display:flex; 
     justify-content: center; 
     align-items: center;
-    column-gap: 10px;
+    column-gap:3px;
 }
 .pageJump .box a,.pageJump .first a,.pageJump .last a{
     width: 42px;

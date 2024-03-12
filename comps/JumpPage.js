@@ -7,11 +7,12 @@ function JumpList(props) {
     const appUrl = process.env.APP_URL;
     const uri = props.uri;
     const pageCount = props.pageCount;
+    const btnCount = pageCount < 3 ? pageCount : 3;
     console.log(pageCount);
     
    //插入跳頁按鈕顯示按鈕數量
     const jumpBtns = [];
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= btnCount; i++) {
         jumpBtns.push(i);
     }    
     return (        
@@ -20,24 +21,26 @@ function JumpList(props) {
                 <a href={`${appUrl}${uri}?page=${Number(page)-1}`} >上一頁</a>
             </div>
             <div className={`first ${Number(page)==1 ? 'hide':''}`}>
-                <a href={`${appUrl}${uri}?page=1`}>1</a>
-                <span>..</span>
+                <a href={`${appUrl}${uri}`}>1</a>
+                {pageCount > 3 ? <span>..</span>:''}
             </div>
             <div className='box'>
                 {/* 倒數第1-2頁補頁數 */}
-                { page == pageCount ?
+                { pageCount > 2 && page == pageCount ?
                     <>
-                        <a href={`${appUrl}${uri}?page=${pageCount-2}`}>{pageCount-2}</a>
-                        <a href={`${appUrl}${uri}?page=${pageCount-1}`}>{pageCount-1}</a>
-                    </>
-                :''}
-                { page == pageCount-1 ?
-                    <>
-                        <a href={`${appUrl}${uri}?page=${pageCount-2}`}>{pageCount-2}</a>
+                        {
+                            pageCount-2 === 1 ? '':
+                            <a href={`${appUrl}${uri}?page=${pageCount-2}`}>{pageCount-2}</a>
+                        }                        
                     </>
                 :''}
                 {/* 倒數第1-2頁補頁數 ed*/}
-
+                
+                { page > 2  ?
+                    <>
+                        <a href={`${appUrl}${uri}?page=${Number(page)-1}`}>{Number(page)-1}</a>
+                    </>
+                :''}
                 {jumpBtns.map((item, index) => (
                     <React.Fragment key={index}>                        
                         { Number(page)+index <= pageCount?                        

@@ -1,7 +1,7 @@
 export default function handler(req, res) {
     const data =
         {
-            "article_count":150,
+            "article_count":36,
             "articles": [
               {
                 "article_id": 1,
