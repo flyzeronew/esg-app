@@ -63,7 +63,9 @@ export default function Home(props) {
                   <div className="txtBox">
                     <div className="txt">看文章了解更多</div>
                     <div className="arraw">
-                      <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                      <a href="#">
+                        <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -73,7 +75,9 @@ export default function Home(props) {
                   <div className="txtBox">
                     <div className="txt">什麼是ESG?</div>
                     <div className="arraw">
-                      <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                      <a href="#">
+                        <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                      </a>
                     </div>
                   </div>
                 </div>}
@@ -106,14 +110,22 @@ export default function Home(props) {
               ?<div className="ourMissionHover" >
               <div className="txtBox">
                 <div className="txt up">TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂</div>
-                <div className="txt">看更多<Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+                <div className="txt">看更多                    
+                    <a href="#">                  
+                      <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                    </a>
+                  </div>
               </div>
             </div>
               :<div className="ourMission" >
                 <div className="img"><Image src="/images/our-mission01.jpg" alt="img"  width={300} height={300}/></div>
                 <div className="txtBox">
                   <div className="title">Our Mission</div>
-                  <div className="txt">TVBS ESG永續倡議大使 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+                  <div className="txt">TVBS ESG永續倡議大使 
+                    <a href="#">                  
+                      <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                    </a>
+                  </div>
                 </div>
               </div>}
             </div>
