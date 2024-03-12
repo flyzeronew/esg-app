@@ -124,23 +124,23 @@ export default function Focus(props) {
                             TVBS也將持續關注氣候變遷、全球暖化、再生能源等議題，推動各界綠色作為，並發揮媒體影響力，推動社會共好、世界共好，以及愛無限系列活動為社會帶來正能量。莊開文也期許，台灣的ESG理念與成效，能透過TVBS英語新聞，傳播到世界各地，為生態、人道關懷等議題帶來不同觀點與發聲，並以永續為目標，期待在永續議題上能成為台灣的推手，做世界的通道。
                         </p>
 
-                        <div class="imageGroup">
-                            <div class="box">
-                                <div class="img">
+                        <div className="imageGroup">
+                            <div className="box">
+                                <div className="img">
                                     <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>                                    
                                 </div>
-                                <div class="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
+                                <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                             </div>
-                            <div class="box">
-                                <div class="img">
+                            <div className="box">
+                                <div className="img">
                                     <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
                                 </div>
-                                <div class="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
+                                <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="brand">
+                    <div className="brand">
                         <div className='title'>
                             <h2>TVBS永續品牌</h2>
                             <div className='line'></div>
