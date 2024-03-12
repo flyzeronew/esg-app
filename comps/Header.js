@@ -36,10 +36,10 @@ function Navber(props) {
     };
 
     function childMenuClick(e) {
-        setShowChildMenu(!!e.currentTarget.querySelector('img'));
+        setShowChildMenu(!showChildMenu);
     }
     function childMenuClickMo(e) {
-        setShowChildMenuMo(!!e.currentTarget.querySelector('img'));
+        setShowChildMenuMo(!showChildMenuMo);
     }
     function hamBurgerClick(e) {
         setHamBurger(!hamBurger);
@@ -81,7 +81,7 @@ function Navber(props) {
                                 <ul>
                                     {menu.map((item, index) => (
                                         <li key={index} >
-                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick}>
+                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick} onClick={childMenuClick}>
                                                 {item.title}
                                                 {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </a>
