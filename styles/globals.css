@@ -3454,7 +3454,7 @@ header .menuMo .list li:last-child{
 @media (max-width:767px) {
     .responsibilityPage .content .mainImage .playIcon img{
         width:35px;
-        margin-top:50px;
+        margin-top:70px;
     }
     .responsibilityPage .content .mainImage .txt p{
         font-size: 24px;
