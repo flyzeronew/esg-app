@@ -678,7 +678,15 @@ header .menuMo .list li:last-child{
     line-height: normal;
     text-align: center;
 }
-
+.indexPage .whatEsg .whatEsgHover .txt{
+   font-size: 22px;
+}
+.indexPage .whatEsg .whatEsgHover .txtBox{
+  margin-top: 10px;
+ }
+.indexPage .whatEsg .whatEsgHover .txtBox .arraw img{
+    transform: rotate(-45deg);
+ }
 @media (max-width:1919px) {
     .indexPage .whatEsg .title {
         font-size: 62px;
@@ -697,6 +705,12 @@ header .menuMo .list li:last-child{
         width: 45%;
         padding: 30px;
     }
+    .indexPage .whatEsg .whatEsgHover .txt{
+        font-size: 16px;
+     }
+     .indexPage .whatEsg .whatEsgHover .txtBox{
+       margin-top: 10px;
+      }
 }
 @media (max-width:1279px) {
     .indexPage .whatEsg{
@@ -717,6 +731,16 @@ header .menuMo .list li:last-child{
         width: 45%;
         padding: 25px 30px;
     }
+    .indexPage .whatEsg .whatEsgHover .txt{
+        font-size: 13px;
+     }
+     .indexPage .whatEsg .whatEsgHover .txtBox{
+       margin-top: 0px;
+      }
+      .indexPage .whatEsg .whatEsgHover .txtBox .arraw img{
+        width: 35px;
+        height: 35px;
+     }
 }
 @media (max-width:1023px) {
     .indexPage .other{
@@ -726,6 +750,12 @@ header .menuMo .list li:last-child{
         width: 100%;
         margin-bottom: 20px;
     }
+    .indexPage .whatEsg .whatEsgHover .txt{
+        font-size: 18px;
+     }
+     .indexPage .whatEsg .whatEsgHover .txtBox{
+       margin-top: 10px;
+      }
 }
 /* What is ESG? ed*/
 /* 永續觀點 */

@@ -16,6 +16,8 @@ export default function Home(props) {
   const [hover, setHover] = useState(false); 
   // ourMissionHover
   const [ourMissionHover, setOurMissionHover] = useState(false); 
+  // what is ESG Hover
+  const [esgHover, setEsgHover] = useState(false); 
   // 參加活動hover事件
   const mouseOver = (e) => {
       setHover(true);
@@ -30,6 +32,13 @@ export default function Home(props) {
   const missionMouseOut = (e) => {
     setOurMissionHover(false);
   };
+    // what is ESG hover事件
+    const esgMouseOver = () => {
+      setEsgHover(true);
+    };
+    const esgMouseOut = () => {
+      setEsgHover(false);
+    };
   return (
     <div id='wrapper' className={inter.className}>  
       <Head>
@@ -45,14 +54,29 @@ export default function Home(props) {
             <MainVision/>
 
             <div className="other">
-              <div className="whatEsg">
-                <div className="title">What is ESG?</div>
-                <div className="txtBox">
-                  <div className="txt">什麼是ESG?</div>
-                  <div className="arraw">
-                    <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+              
+              <div className="whatEsg" onMouseOver={() => esgMouseOver(1)}   onMouseOut={esgMouseOut}>
+                {esgHover
+                ?
+                <div className="whatEsgHover">
+                  <div className="txt">ESG分別是環境保護（E，Environmental）、社會責任（S，Social）以及公司治理（G，governance）的縮寫，是一種新型態評估企業的數據與指標</div>
+                  <div className="txtBox">
+                    <div className="txt">看文章了解更多</div>
+                    <div className="arraw">
+                      <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                    </div>
                   </div>
                 </div>
+                :
+                <div>
+                  <div className="title">What is ESG?</div>
+                  <div className="txtBox">
+                    <div className="txt">什麼是ESG?</div>
+                    <div className="arraw">
+                      <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                    </div>
+                  </div>
+                </div>}
               </div>
 
               <ViewList/>
@@ -81,7 +105,6 @@ export default function Home(props) {
               {ourMissionHover
               ?<div className="ourMissionHover" >
               <div className="txtBox">
-                {/* <div className="title">Our Mission</div> */}
                 <div className="txt up">TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂</div>
                 <div className="txt">看更多<Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
               </div>
@@ -93,9 +116,6 @@ export default function Home(props) {
                   <div className="txt">TVBS ESG永續倡議大使 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
                 </div>
               </div>}
-
-                
-
             </div>
             
             <SecretList/>
