@@ -1927,7 +1927,7 @@ export default function handler(req, res) {
                             {
                                 'id': 4,
                                 'name': '綠色生活',
-                                'en_name':'greelife'
+                                'en_name':'greenlife'
                             }
                         ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
@@ -2519,7 +2519,7 @@ export default function handler(req, res) {
                             {
                                 'id': 4,
                                 'name': '綠色生活',
-                                'en_name':'greelife'
+                                'en_name':'greenlife'
                             }
                         ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
@@ -3111,7 +3111,7 @@ export default function handler(req, res) {
                             {
                                 'id': 4,
                                 'name': '綠色生活',
-                                'en_name':'greelife'
+                                'en_name':'greenlife'
                             }
                         ],
                         'created_at': '2024-01-25T14:23:06.000000Z',
