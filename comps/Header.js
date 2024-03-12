@@ -36,10 +36,16 @@ function Navber(props) {
     };
 
     function childMenuClick(e) {
-        setShowChildMenu(!showChildMenu);
+        const thisName = e.target.textContent;
+        if(thisName === "永續觀點"){
+            setShowChildMenu(!showChildMenu);
+        }
     }
     function childMenuClickMo(e) {
-        setShowChildMenuMo(!showChildMenuMo);
+        const thisName = e.target.textContent;
+        if(thisName === "永續觀點"){
+            setShowChildMenuMo(!showChildMenuMo);
+        }
     }
     function hamBurgerClick(e) {
         setHamBurger(!hamBurger);
