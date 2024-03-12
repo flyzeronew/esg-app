@@ -3412,8 +3412,8 @@ header .menuMo .list li:last-child{
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0.04em;
-    text-align: left;
-    margin-bottom: 50px;    
+    text-align:justify;
+    margin-bottom: 50px;
 }
 @media (max-width:1023px) {
     .responsibilityPage .content .contxt .t1{
@@ -3439,7 +3439,6 @@ header .menuMo .list li:last-child{
         font-weight: 400;
         line-height: 32px;
         letter-spacing: 0.04em;
-        text-align: left;
         padding:0 15px;
     }
 }
@@ -3632,7 +3631,6 @@ header .menuMo .list li:last-child{
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0.04em;
-    text-align: left;
     margin-bottom: 50px;
 }
 .responsibilityPage .peopleBox .people .txtBox{
@@ -3716,8 +3714,6 @@ header .menuMo .list li:last-child{
         width: 100%;
     }
 }
-
-
 .responsibilityPage .imageGroup{
     width: 1240px;
     margin:0 auto ;
@@ -3728,6 +3724,9 @@ header .menuMo .list li:last-child{
         width: 100%;
         padding:0 15px;
     }
+}
+.responsibilityPage .brand{
+    padding:40px 0;
 }
 .responsibilityPage .brand .listBox {
     position: relative;
@@ -3772,7 +3771,11 @@ header .menuMo .list li:last-child{
 }
 @media (max-width:767px) {
     .responsibilityPage .brand .list ul{
+        column-gap: 20px;
         width: 300%;
+    }
+    .responsibilityPage .brand .list ul li{
+        width: calc((100% - 60px) / 4);
     }
 }
 .responsibilityPage .brand .list .imgBox{
