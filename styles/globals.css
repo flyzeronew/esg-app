@@ -938,6 +938,7 @@ header .menuMo .list li:last-child{
 /* 參加活動 ed*/
 /* Our Mission */
 .indexPage .ourMission{
+    transition: background-color 0.5s ease;
     border-radius: 190px;
     background: #89EC54;
     overflow: hidden;
@@ -954,6 +955,8 @@ header .menuMo .list li:last-child{
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1.44px;
+    color: #006358;
+    ;
 }
 .indexPage .ourMission .txt{
     display:flex;
@@ -975,6 +978,31 @@ header .menuMo .list li:last-child{
     width: 42px;
     height: 42px;
     cursor: pointer;
+}
+.indexPage .ourMissionHover{
+    transition: background-color 0.5s ease;
+    border-radius: 190px;
+    background: #D0FF90;
+    overflow: hidden;
+    padding: 25.5px 58px;
+    color: #226158;
+    display:flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-bottom: 20px;
+}
+.indexPage .ourMissionHover .txt.up{
+    margin-bottom: 8px;
+}
+.indexPage .ourMissionHover .txt{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    column-gap: 16px;
+}
+.indexPage .ourMissionHover .txt img{
+    transform: rotate(-45deg);
 }
 @media (max-width:1919px) {
     .indexPage .ourMission{
@@ -1012,6 +1040,21 @@ header .menuMo .list li:last-child{
         width: 32px;
         height: 32px;
     }
+    .indexPage .ourMissionHover{
+        padding: 23.5px 58px;
+        column-gap: 20px;
+        margin-bottom: 20px;
+    }
+    .indexPage .ourMissionHover .txt.up{
+        margin-bottom: 5px;
+    }
+    .indexPage .ourMissionHover .txt{
+        font-size: 17.5px;
+    }
+    .indexPage .ourMissionHover .txt img{
+        width: 30px;
+        height: 30px;
+    }
 }
 @media (max-width:1279px) {
     .indexPage .ourMission {
@@ -1040,6 +1083,21 @@ header .menuMo .list li:last-child{
     .indexPage .ourMission .txt img {
         width: 28px;
         height: 28px;
+    }
+    .indexPage .ourMissionHover{
+        padding: 13.5px 30px;
+        column-gap: 20px;
+        margin-bottom: 15px;
+    }
+    .indexPage .ourMissionHover .txt.up{
+        margin-bottom: 5px;
+    }
+    .indexPage .ourMissionHover .txt{
+        font-size: 15px;
+    }
+    .indexPage .ourMissionHover .txt img{
+        width: 30px;
+        height: 30px;
     }
 }
 @media (max-width:1023px) {

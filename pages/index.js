@@ -12,14 +12,23 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
   // 頁面識別
   const thisPage='home';
-  const [hover, setHover] = useState(false);
-    // 處理hover事件
-    const mouseOver = (e) => {
+  // 參加活動hover
+  const [hover, setHover] = useState(false); 
+  // ourMissionHover
+  const [ourMissionHover, setOurMissionHover] = useState(false); 
+  // 參加活動hover事件
+  const mouseOver = (e) => {
       setHover(true);
   };
-
-    const mouseOut = (e) => {
+  const mouseOut = (e) => {
       setHover(false);
+  };
+  // ourMissionHoverhover事件
+  const missionMouseOver = (e) => {
+    setOurMissionHover(true);
+  };
+  const missionMouseOut = (e) => {
+    setOurMissionHover(false);
   };
   return (
     <div id='wrapper' className={inter.className}>  
@@ -68,12 +77,25 @@ export default function Home(props) {
 
           </section>
           <section>
-            <div className="ourMission">
-              <div className="img"><Image src="/images/our-mission01.jpg" alt="img"  width={300} height={300}/></div>
+            <div onMouseOver={() => missionMouseOver(1)}   onMouseOut={missionMouseOut} >
+              {ourMissionHover
+              ?<div className="ourMissionHover" >
               <div className="txtBox">
-                <div className="title">Our Mission</div>
-                <div className="txt">TVBS ESG永續倡議大使 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+                {/* <div className="title">Our Mission</div> */}
+                <div className="txt up">TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂</div>
+                <div className="txt">看更多<Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
               </div>
+            </div>
+              :<div className="ourMission" >
+                <div className="img"><Image src="/images/our-mission01.jpg" alt="img"  width={300} height={300}/></div>
+                <div className="txtBox">
+                  <div className="title">Our Mission</div>
+                  <div className="txt">TVBS ESG永續倡議大使 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+                </div>
+              </div>}
+
+                
+
             </div>
             
             <SecretList/>
