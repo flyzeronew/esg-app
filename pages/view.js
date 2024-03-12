@@ -23,14 +23,14 @@ export default function View(props) {
     const articlesFirst = props.articlesData.articles[0];
     const articleList = props.articlesData.articles.slice(1);
     const uri =`/view`;
-    const [listLength, setListLength] = useState(0);
+    // const [listLength, setListLength] = useState(0);
 
     useEffect(() => {
         if (props.page > pageCount) {
             router.push('/404');
         }
-        const listItems = document.querySelectorAll('.viewPage .list ul li');
-        setListLength(listItems.length);
+        // const listItems = document.querySelectorAll('.viewPage .list ul li');
+        // setListLength(listItems.length);
     }, []);
     // 頁面識別
     const thisPage='view';
@@ -94,7 +94,7 @@ export default function View(props) {
                     <ArticleList  articleList={articleList} />
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    {listLength >= 12 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
+                    { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
                 {/* 跳頁選單 ed */}
             </div>
             
