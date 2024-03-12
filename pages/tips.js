@@ -90,36 +90,7 @@ return (
                 </div>  
                 <div className="list">
                     <ul>
-                    {
-                    showList.length > 0 ?
-                    showList.map((item, index) => (
-                            <li key={index} style={{ 
-                                background: `url(${item.cover_img}) no-repeat center center / 100%`,
-                                backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                transition: 'background-size 0.3s',
-                            }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                <Link  href={`/partner/`+item.name}>
-                                    <div class="itemMask"></div>
-                                    <div className="profileCard">
-                                        <div className="profileImg">
-                                            <div className="img">
-                                                <Image src={item.avatar} alt="img" width={50} height={50}/> 
-                                            </div>
-                                        </div>
-                                        <div className='name'>
-                                            {item.name}
-                                        </div>
-                                        <div className='outBorder'>
-                                            <div className='txt'>
-                                                {item.brief}
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </Link>
-                                    </li>
-                                ))
-                            :''
-                        }
+                        <li></li>
                     </ul>
 
                 </div>       
