@@ -13,11 +13,12 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
     
     const router = useRouter();
+    const page = Number(props.page);
     const viewSubmenu = props.viewSubmenuData;    
-    const articleList = props.viewData.article_list; 
+    const articleList = props.articlesData.articles.slice(1);
     const genreEnName=String(props.genreEnName);
     const uri =`/view/${genreEnName}`;
-    const genreData = viewSubmenu.find(item => item.en_name === genreEnName);
+    const genreData = viewSubmenu.find(item => item.en_name === genreEnName);    
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
@@ -85,17 +86,17 @@ export async function getServerSideProps(context) {
     const menu = await menuRes.json();
     // 線上資料
     // submenu
-    const viewSubmenuUrl = new URL('/api/view-genres', process.env.APP_URL);
+    const viewSubmenuUrl = new URL('/api/article-genres', process.env.APP_URL);
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
     // list
-    const viewUrl = new URL(`/api/view?page=${page}`, process.env.APP_URL);
-    const viewRes = await fetch(viewUrl);    
-    const viewData = await viewRes.json();
+    const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.APP_URL);
+    const articlesRes = await fetch(articlesUrl);    
+    const articlesData = await articlesRes.json();
     
     return {
         props: {
-            menu,viewSubmenuData,viewData,genreEnName,
+            menu,viewSubmenuData,articlesData,genreEnName,page
         },
     };
 }

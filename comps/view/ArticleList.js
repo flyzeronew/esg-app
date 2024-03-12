@@ -9,27 +9,22 @@ function ArticleList(props) {
                 <ul>
                     {props.articleList.length > 0 ? props.articleList.map((item, index) => (
                         <React.Fragment key={index}>
-                            { item.article_genre[0].id == props.genreId || props.genreId == null ?                         
+                            { item.article_genres[0].id == props.genreId || props.genreId == null ?                         
                                 <li >                            
-                                    <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' }>
+                                    <a href={item.url}>
                                         <div className='img'>
-                                            {item.youtube !='' ? 
-                                                <div className='playIcon'>                                 
-                                                    <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                                                </div>
-                                            :''}
                                             <Image src={item.cover_img} alt="img" width={1072} height={603}/>
                                         </div>
                                         <div className='txt'>{item.title}</div>
                                         <div className='name'>
-                                            {item.partner.name !='' ? 
+                                            {item.partner != null ? 
                                             <>
                                                 <div className='nameImg'>
                                                     <div className='img1'>
                                                         <Image src={item.partner.logo} alt="logo" width={50} height={50}/>
                                                     </div>
                                                 </div>
-                                                <p>{item.partner.name}</p>
+                                                <p>{item.author_name}</p>
                                             </>
                                             :<p>{item.author_name}</p>}                                            
                                         </div>

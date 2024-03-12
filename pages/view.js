@@ -13,9 +13,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function View(props) {
     const appUrl = process.env.APP_URL;
+    const articleCount = props.articlesData.article_count-1;    
+    const pageCount = articleCount % 12 != 0 ? Math.floor(articleCount/12)+1 : Math.floor(articleCount/12);
     const viewSubmenu = props.viewSubmenuData;
-    const mainVision = props.viewData.main_vision;
-    const articleList = props.viewData.article_list;
+    const articlesFirst = props.articlesData.articles[0];
+    const articleList = props.articlesData.articles.slice(1);
     const uri =`/view`;
     const [listLength, setListLength] = useState(0);
     useEffect(() => {
@@ -54,11 +56,11 @@ export default function View(props) {
                 {/* 分類標籤 ed*/}
 
                 {/* 主視覺 */}
-                {mainVision && props.page === 1 ?
+                {articlesFirst && props.page === 1 ?
                     <div className='mainView'>
                         <div className='box'>
                             <div className='img'>
-                                <Image src={`${appUrl}${mainVision.cover_img}`} alt="arraw" width={1072} height={603}/>
+                                <Image src={`${appUrl}${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
                                 <div className='imgMaskBox'>
                                     <div className='rounded'>
                                         <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
@@ -72,8 +74,8 @@ export default function View(props) {
                                 </div>
                             </div>
                             <div className='txtBox'>
-                                <div className='title'>{mainVision.title}</div>
-                                <div className='txt'>{mainVision.description}</div>
+                                <div className='title'>{articlesFirst.title}</div>
+                                <div className='txt'>{articlesFirst.description}</div>
                             </div>
                         </div>
                     </div>
@@ -84,7 +86,7 @@ export default function View(props) {
                     <ArticleList  articleList={articleList} />
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    {listLength >= 12 ? <JumpPage uri={uri}/> :''}
+                    {listLength >= 12 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
                 {/* 跳頁選單 ed */}
             </div>
             
@@ -107,17 +109,17 @@ export async function getServerSideProps(context) {
     
     // 線上資料
     // submenu
-    const viewSubmenuUrl = new URL(`/api/view-genres`, process.env.APP_URL);
+    const viewSubmenuUrl = new URL(`/api/article-genres`, process.env.APP_URL);
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
     // list
-    const viewUrl = new URL(`/api/view?page=${page}`, process.env.APP_URL);
-    const viewRes = await fetch(viewUrl);    
-    const viewData = await viewRes.json();
+    const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.APP_URL);
+    const articlesRes = await fetch(articlesUrl);    
+    const articlesData = await articlesRes.json();
     
     return {
         props: {
-            page,menu,viewSubmenuData,viewData,page,
+            page,menu,viewSubmenuData,articlesData,page
         },
     };
 }
