@@ -1,6 +1,6 @@
-
 import Image from 'next/image'
 import { useState ,useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Submenu from '../comps/view/Submenu'
@@ -12,15 +12,23 @@ import JumpPage from '../comps/JumpPage'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function View(props) {
+    const router = useRouter();
     const appUrl = process.env.APP_URL;
-    const articleCount = props.articlesData.article_count-1;    
-    const pageCount = articleCount % 12 != 0 ? Math.floor(articleCount/12)+1 : Math.floor(articleCount/12);
+    // 計算文章數量轉頁面數
+    const articleCount = props.articlesData.article_count-1;
+    const articleMath = Math.floor(articleCount/12);
+    const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
+    // 計算文章數量轉頁面數 ed
     const viewSubmenu = props.viewSubmenuData;
     const articlesFirst = props.articlesData.articles[0];
     const articleList = props.articlesData.articles.slice(1);
     const uri =`/view`;
     const [listLength, setListLength] = useState(0);
+
     useEffect(() => {
+        if (props.page > pageCount) {
+            router.push('/404');
+        }
         const listItems = document.querySelectorAll('.viewPage .list ul li');
         setListLength(listItems.length);
     }, []);
