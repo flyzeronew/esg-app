@@ -10,6 +10,7 @@ import PartnerList from '../comps/index/PartnerList'
 import { useState ,useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
+  const isPcScreen = window.innerWidth > 1023;
   // 頁面識別
   const thisPage='home';
   // 參加活動hover
@@ -27,17 +28,25 @@ export default function Home(props) {
   };
   // ourMissionHoverhover事件
   const missionMouseOver = (e) => {
-    setOurMissionHover(true);
+    if(isPcScreen){
+      setOurMissionHover(true);
+    }
   };
   const missionMouseOut = (e) => {
-    setOurMissionHover(false);
+    if(isPcScreen){
+      setOurMissionHover(false);
+    }
   };
     // what is ESG hover事件
     const esgMouseOver = () => {
-      setEsgHover(true);
+      if(isPcScreen){
+        setEsgHover(true);
+      }
     };
     const esgMouseOut = () => {
-      setEsgHover(false);
+      if(isPcScreen){
+        setEsgHover(false);
+      }
     };
   return (
     <div id='wrapper' className={inter.className}>  
