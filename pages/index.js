@@ -49,7 +49,7 @@ export default function Home(props) {
               <ViewList/>
               
             
-              <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.3s'}}>
+              <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.5s'}}>
                 {hover?
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <div className="titleComingSoon">COMING SOON</div>
