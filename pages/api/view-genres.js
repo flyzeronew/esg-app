@@ -27,7 +27,7 @@ export default function handler(req, res) {
             {
                 "id": 4,
                 "name": "綠色生活",
-                "en_name": "greelife",
+                "en_name": "greenlife",
                 "description":"ESG企業透過倡導綠色消費、低碳生活等理念，可以為環境保護做出貢獻。ESG企業的綠色生活理念帶來正面效益。透過綠色生活理念來提升企業形象、拓展市場機會、提升品牌價值。",
                 "created_at": "2024-01-25T14:23:06.000000Z",
                 "updated_at": "2024-01-25T14:23:06.000000Z"
