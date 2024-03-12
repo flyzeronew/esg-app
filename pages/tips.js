@@ -71,7 +71,7 @@ return (
                     <div className="box">
                         <div className="title">2024 共好夥伴</div>
                         <div className="txt">
-                            <p>城市街頭盛開綠意，企業在環保徽章下環繞，共同編織著永續的未來。讓城市與企業一同前行，共創可持續的明日。</p>
+                            <p>踏上永續生活的路上，小小的舉措，我們珍愛這片土地，永續生活於其中。</p>
                             <div className="line"></div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ export async function getServerSideProps() {
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
     // submenu
-    const submenuUrl = new URL('/api/partner-genres', process.env.API_URL);
+    const submenuUrl = new URL('/api/tips-genres', process.env.APP_URL);
     const submenuRes = await fetch(submenuUrl);    
     const submenuData = await submenuRes.json();
     // list

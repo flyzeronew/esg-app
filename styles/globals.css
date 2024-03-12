@@ -3582,6 +3582,9 @@ header .menuMo .list li:last-child{
     height: 1px; 
     background: linear-gradient(to right, rgba(221, 221, 221, 0.5) 0%, rgba(255, 255, 255, 1) 40%);
   }
+  .tipsListPage .sharedBanner .box .txt{
+    margin-top: 208px;
+  }
 /* 永續生活小撇步 頁面 ed*/
 
 
