@@ -1246,11 +1246,10 @@ header .menuMo .list li:last-child{
     /* width: 40%;  */
     border-radius: 30px;
     overflow: hidden;
-    aspect-ratio: 16/9;
 }
 .indexPage .secret .img img{ 
     border-radius: 30px;
-    aspect-ratio: 16/9;
+    aspect-ratio: 1/1;
 }
 
 .indexPage .secret .slick-dots{
