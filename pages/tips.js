@@ -99,7 +99,7 @@ return (
                             <div className='upImg'>
                                 <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
                             </div>
-                                <div className="txt">123</div>
+                                <div className="txt">吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</div>
                             <div className='rightImg'>
                                 <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
                             </div>
@@ -114,7 +114,7 @@ return (
                             <div className='upImg'>
                                 <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
                             </div>
-                                <div className="txt">123</div>
+                                <div className="txt">吃完的免洗紙餐盒</div>
                             <div className='rightImg'>
                                 <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
                             </div>

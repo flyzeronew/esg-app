@@ -4286,10 +4286,10 @@ header .menuMo .list li:last-child{
   .tipsListPage .list ul li .genres{
     position: absolute;
     font-size: 24px;
+    font-weight: 600;
     top: 16px;
     right: 16px;
     z-index: 1;
-
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -4325,14 +4325,24 @@ header .menuMo .list li:last-child{
   .tipsListPage .list ul li .detail{
     position: absolute;
     font-size: 24px;
+    font-weight: 600;
     bottom: 0px;
     left: 0px;
     width: 268px;
-    height: 104px;
+    /* height: 100px; */
     background-color: #F2F2F2;
     z-index: 1;
     border-radius: 0 20px 0 20px;
+    padding: 16px;
   }
+  .tipsListPage .list ul li .detail .txt{
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden; 
+  }
+
   .tipsListPage .list ul li .detail .upImg{
     position: absolute;
     top: -20px;
