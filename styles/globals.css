@@ -4266,6 +4266,84 @@ header .menuMo .list li:last-child{
   .tipsListPage .sharedBanner .box .txt{
     margin-top: 208px;
   }
+  .tipsListPage .list ul{
+    display: flex;
+    column-gap: 56px;
+    row-gap: 56px;
+    flex-wrap: wrap;
+  }
+  .tipsListPage .list ul li{
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 360px;
+    height: 360px;
+  }
+  .tipsListPage .list ul li .img img{
+    border-radius: 20px;
+    overflow: hidden;
+    border: 4px solid #F2F2F2;
+  }
+  .tipsListPage .list ul li .genres{
+    position: absolute;
+    font-size: 24px;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tagFoodColor{
+    background-color: #FFDC34;
+    color: #333333;
+  }
+  .tagClothingColor{
+    background-color: #68E3BC;
+    color: #333333;
+  }
+  .tagHousingColor{
+    background-color: #226158;
+    color: #FFFFFF;
+  }
+  .tagTransportColor{
+    background-color: #74D8D2;
+    color: #333333;
+  }
+  .tagEducationColor{
+    background-color: #F37732;
+    color: #FFFFFF;
+  }
+  .tagEntertainmentColor{
+    background-color: #89EC54;
+    color: #333333;
+  }
+  
+  .tipsListPage .list ul li .detail{
+    position: absolute;
+    font-size: 24px;
+    bottom: 0px;
+    left: 0px;
+    width: 268px;
+    height: 104px;
+    background-color: #F2F2F2;
+    z-index: 1;
+    border-radius: 0 20px 0 20px;
+  }
+  .tipsListPage .list ul li .detail .upImg{
+    position: absolute;
+    top: -20px;
+    left: 0px;
+
+  }
+  .tipsListPage .list ul li .detail .rightImg{
+    position: absolute;
+    bottom: 0px;
+    right: -20px;
+  }
 /* 永續生活小撇步 頁面 ed*/
 
 

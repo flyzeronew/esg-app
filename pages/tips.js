@@ -9,7 +9,7 @@ import Image from 'next/image'
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {    
 // 頁面識別
-const thisPage='tipsList';
+const thisPage='tips';
 const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
@@ -90,7 +90,96 @@ return (
                 </div>  
                 <div className="list">
                     <ul>
-                        <li></li>
+                        <li>
+                            <div className="genres tagFoodColor">食</div>
+                            <div className="img">
+                                <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
+                            </div>
+                            <div className="detail">
+                            <div className='upImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                                <div className="txt">123</div>
+                            <div className='rightImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="genres tagClothingColor">衣</div>
+                            <div className="img">
+                                <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
+                            </div>
+                            <div className="detail">
+                            <div className='upImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                                <div className="txt">123</div>
+                            <div className='rightImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="genres tagHousingColor">住</div>
+                            <div className="img">
+                                <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
+                            </div>
+                            <div className="detail">
+                            <div className='upImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                                <div className="txt">123</div>
+                            <div className='rightImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="genres tagTransportColor">行</div>
+                            <div className="img">
+                                <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
+                            </div>
+                            <div className="detail">
+                            <div className='upImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                                <div className="txt">123</div>
+                            <div className='rightImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="genres tagEducationColor">育</div>
+                            <div className="img">
+                                <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
+                            </div>
+                            <div className="detail">
+                            <div className='upImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                                <div className="txt">123</div>
+                            <div className='rightImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="genres tagEntertainmentColor">樂</div>
+                            <div className="img">
+                                <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
+                            </div>
+                            <div className="detail">
+                            <div className='upImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                                <div className="txt">123</div>
+                            <div className='rightImg'>
+                                <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                            </div>
+                            </div>
+                        </li>
                     </ul>
 
                 </div>       
