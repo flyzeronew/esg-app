@@ -4268,5 +4268,87 @@ header .menuMo .list li:last-child{
   }
 /* 永續生活小撇步 頁面 ed*/
 
+/* 永續生活小撇步內頁*/
+.tipsDetailPage .contentBox .frameBox{
+    
+}
+.tipsDetailPage .tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #FFDC34;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: 600;
+}
+.tipsDetailPage .title{
+    width: max-content;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    margin: 0 auto 20px;
+}
+.tipsDetailPage .contentMore{
+    background-color: #F2F2F2;
+    padding:40px 0 40px;
+}
+.tipsDetailPage .contentMore .frameBox{
+    width: 1140px;
+    margin: 0 auto;
+}
+.tipsDetailPage .contentMore .list ul{
+    display: flex;
+    column-gap: 30px;
+}
+.tipsDetailPage .contentMore .list ul li{
+    width: calc((100% - 60px) / 3);
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 20px 20px 20px 0;
+}
+.tipsDetailPage .contentMore .list .txtBox{    
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.tipsDetailPage .contentMore .list .txtFlex{    
+    display: flex;
+    align-items: flex-end;
+}
+.tipsDetailPage .contentMore .list .txtFlex .txt{
+    max-width:80%;
+    background-color: #F2F2F2;
+    padding:15px;
+    border-radius: 0 20px 0 0;
+}
+.tipsDetailPage .contentMore .rounded{
+    width: 20px;
+}
+.tipsDetailPage .contentMore .list .txtFlex .txt p{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+}
+@media (max-width:767px) {
+
+}
+/* 永續生活小撇步內頁ed*/
+.tagFoodColor{}
+
 
 

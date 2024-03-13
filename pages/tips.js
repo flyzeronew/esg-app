@@ -9,7 +9,7 @@ import Image from 'next/image'
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {    
 // 頁面識別
-const thisPage='tipsList';
+const thisPage='tips';
 const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
