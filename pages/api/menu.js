@@ -36,8 +36,8 @@ export default function handler(req, res) {
             },
             {
                 'title':'永續生活小撇步',
-                'url':appUrl+'/secret',
-                'page_name':'secret',
+                'url':appUrl+'/tips',
+                'page_name':'tips',
                 'child':[]
             },
             // {
