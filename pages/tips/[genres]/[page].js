@@ -102,6 +102,8 @@ export default function page(props) {
                                 <div className="answerTitle">免洗餐盒要丟一般垃圾還是資源回收？</div>
                                 <p>記者徐葳倫：「不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。」</p>
                             </div>
+
+                            <div className="time">2023-08-17 <span>更新</span></div>
                         </div>
 
                     </div>
