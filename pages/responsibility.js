@@ -315,8 +315,8 @@ export default function Focus(props) {
 
             </div>
         </main>
-        <div className="footerLine">
-            <div className="box color1"></div>
+        <div className="footerLine color1">
+            <div className="box"></div>
         </div>
         <Footer act='color1'/>
     </div>
