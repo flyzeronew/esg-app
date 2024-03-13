@@ -4269,15 +4269,155 @@ header .menuMo .list li:last-child{
 /* 永續生活小撇步 頁面 ed*/
 
 /* 永續生活小撇步內頁*/
-.tipsDetailPage .contentBox .frameBox{
-    
+.tipsDetailPage .contentBox{
+    padding:0 32px;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 50px;
+ }
+.tipsDetailPage .contentBox .imgBox{
+    width: 50%;
 }
-.tipsDetailPage .tag {
+.tipsDetailPage .contentBox .txtBox{
+    width: 45%;
+}
+.tipsDetailPage .contentBox .txtBox .checkbox{
+    margin-bottom: 30px;
+}
+.tipsDetailPage .contentBox .txtBox .checkbox label{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+}
+.tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]{
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+.tipsDetailPage .contentBox .txtBox .checkbox label input[type=checkbox]:checked{
+     background-color: #FFDC34;
+     transition: 0.3s;
+}
+.tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked::before {
+    content: '✔'; 
+    position: absolute;
+    left:5px;
+    top:-2px;
+    font-size: 18px;
+    color: #fff;
+}
+.tipsDetailPage .contentBox .txtBox .btn{
+    width: max-content;
+    display:flex;
+    align-items: center;
+    column-gap: 15px;
+    overflow: hidden;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    padding:10px 10px 10px 25px;
+    background-color: #fff;
+    border-radius: 60px;
+    border: 1px solid #333;
+    line-height: 0;
+    cursor: pointer;
+}
+.tipsDetailPage .contentBox .txtBox .arraw{
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background-color: #FFDC34;
+    border-radius:60px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+.tipsDetailPage .contentBox .txtBox .arraw img{
+    width: 50%;
+    aspect-ratio: 1/1;
+}
+.tipsDetailPage .contentBox .imgBox .box{
+    width: 80%;
+    margin: 0 auto;
+    border-radius:30px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+}
+.tipsDetailPage .contentBox .imgBox img{
+    width: 100%;
+}
+.tipsDetailPage .contentBox .tag {
+    background-color: #FFDC34;
+    width: 60px;
+    height:60px;
+    aspect-ratio: 1 / 1;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.tipsDetailPage .contentBox .title {
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 101px;
+    letter-spacing: 0.04em;
+    width: auto;
+    margin-bottom: 50px;
+}
+.tipsDetailPage .contentBox .answer{
+    margin-top: 50%;
+}
+.tipsDetailPage .contentBox .answer .answerTxtBox{
+    margin-bottom: 50px;
+}
+.tipsDetailPage .contentBox .answer .answerTxtBox .answerTitle{
+    font-family: PingFang TC;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    margin-bottom: 30px;
+}
+.tipsDetailPage .contentBox .answer .answerTxtBox p{
+    font-family: PingFang TC;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+}
+.tipsDetailPage .contentBox .answer .title{
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    letter-spacing: 0em;
+    display: flex;
+    align-items: center;
+    column-gap:15px;
+}
+.tipsDetailPage .contentMore .tag {
     position: absolute;
     top: 15px;
     right: 15px;
     background-color: #FFDC34;
     width: 40px;
+    height:40px;
     aspect-ratio: 1 / 1;
     border-radius: 60px;
     display: flex;
@@ -4299,6 +4439,7 @@ header .menuMo .list li:last-child{
 .tipsDetailPage .contentMore{
     background-color: #F2F2F2;
     padding:40px 0 40px;
+    border-radius: 20px 20px 0 0;
 }
 .tipsDetailPage .contentMore .frameBox{
     width: 1140px;
@@ -4348,7 +4489,5 @@ header .menuMo .list li:last-child{
 
 }
 /* 永續生活小撇步內頁ed*/
-.tagFoodColor{}
-
 
 
