@@ -4338,7 +4338,6 @@ header .menuMo .list li:last-child{
     bottom: 0px;
     left: 0px;
     width: 268px;
-    /* height: 100px; */
     background-color: #F2F2F2;
     z-index: 1;
     border-radius: 0 20px 0 20px;
@@ -4363,6 +4362,62 @@ header .menuMo .list li:last-child{
     bottom: 0px;
     right: -20px;
   }
+  @media (max-width:1342px) {
+    .tipsListPage .list ul{
+        column-gap: 20px;
+      }
+    .tipsListPage .list ul li{
+        width: 240px;
+        height: 240px;
+      }
+      .tipsListPage .list ul li:nth-child(even) {
+        margin-top: 56px;
+      }
+      .tipsListPage .list ul li .detail{
+        width: 200px;
+      }
+      
+    }
+@media (max-width:1066px) {
+    .tipsListPage{
+        display: block;
+    }
+    .tipsListPage .list ul{
+        display: block;
+        display: flex;    
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .tipsListPage .list ul li{
+        width: 240px;
+        height: 240px;
+    }
+    .tipsListPage .list ul li:nth-child(even) {
+        margin-top: 0px;
+    }
+    .tipsListPage .list ul li .detail{
+        width: 200px;
+    }
+}
+@media (max-width:767px) {
+    .tipsListPage{
+        display: block;
+    }
+    .tipsListPage .list ul{
+        row-gap: 32px;
+    }
+    .tipsListPage .list ul li{
+        width: 100%;
+        height: 100%;
+    }
+    .tipsListPage .list ul li:nth-child(even) {
+        margin-top: 0px;
+    }
+    .tipsListPage .list ul li .detail{
+        width: 85%;
+    }
+}
 /* 永續生活小撇步 頁面 ed*/
 
 
