@@ -4262,10 +4262,10 @@ header .menuMo .list li:last-child{
     width: 100%;
     height: 1px; 
     background: linear-gradient(to right, rgba(221, 221, 221, 0.5) 0%, rgba(255, 255, 255, 1) 40%);
-  }
-  .tipsListPage .sharedBanner .box .txt{
-    margin-top: 208px;
-  }
+}
+.tipsListPage .sharedBanner .box .txt{
+margin-top: 208px;
+}
 /* 永續生活小撇步 頁面 ed*/
 
 /* 永續生活小撇步內頁*/
@@ -4275,9 +4275,13 @@ header .menuMo .list li:last-child{
     justify-content: center;
     margin-bottom: 50px;
     column-gap: 80px;
- }
+}
+
 .tipsDetailPage .contentBox .imgBox{
     width: 40%;
+}
+.tipsDetailPage .contentBox .imgBox .fixBox{
+    /* position: fixed; */
 }
 .tipsDetailPage .contentBox .imgBox .box{
     position: relative;
@@ -4363,9 +4367,7 @@ header .menuMo .list li:last-child{
     width: 50%;
     aspect-ratio: 1/1;
 }
-.tipsDetailPage .contentBox .fixBox{
-  
-}
+
 .tipsDetailPage .contentBox .imgBox .box{
     width: 100%; 
     margin: 0 auto;

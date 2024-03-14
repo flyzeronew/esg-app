@@ -25,7 +25,7 @@ export default function page(props) {
     <div id='wrapper' className={inter.className}> 
         <style jsx>{`
             .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked ,
-            .tipsDetailPage .contentBox .imgBox .tag,
+            .tipsDetailPage .contentBox .tag,
             .tipsDetailPage .contentBox .txtBox .arraw
             {
                 background-color: ${tagColor[0]};
