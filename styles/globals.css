@@ -4237,7 +4237,7 @@ header .menuMo .list li:last-child{
     display: flex;
 }
 .tipsListPage .mainArea{
- width: 100%;
+    width: 50%;
 }
 .tipsListPage .sharedBanner{
 }
@@ -4273,6 +4273,7 @@ header .menuMo .list li:last-child{
     margin-bottom: 91px;
   }
   .tipsListPage .list ul{
+    width: 776px;
     display: flex;
     column-gap: 56px;
     flex-wrap: wrap;
@@ -4364,6 +4365,7 @@ header .menuMo .list li:last-child{
   @media (max-width:1342px) {
     .tipsListPage .list ul{
         column-gap: 20px;
+        width: 500px;
       }
     .tipsListPage .list ul li{
         width: 240px;
@@ -4378,10 +4380,14 @@ header .menuMo .list li:last-child{
       
     }
 @media (max-width:1066px) {
+    .tipsListPage .mainArea{
+        width: 100%;
+    }
     .tipsListPage{
         display: block;
     }
     .tipsListPage .list ul{
+        width: 100%;
         display: block;
         display: flex;    
         flex-wrap: wrap;
@@ -4419,6 +4425,7 @@ header .menuMo .list li:last-child{
         display: block;
     }
     .tipsListPage .list ul{
+        width: 100%;
         row-gap: 32px;
     }
     .tipsListPage .list ul li{

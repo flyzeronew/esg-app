@@ -10,20 +10,16 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {    
 // 頁面識別
 const thisPage='tips';
-const [imgHover, setImgHover] = useState(null);
-const [bgSize, setBgSize] = useState();
-const [hoverBgSize, setHoverBgSize] = useState();
 const [showList, setShowList] = useState(props.partnerData);
 const [submenuActive, setSubmenuActive] = useState(0);
-    const imgMouseOver = (e) => {
-        const isLargeScreen = window.innerWidth > 767;
-        setHoverBgSize(isLargeScreen ? 120 : 280);
-        setImgHover(e);
-    };
-
-    const imgMouseOut = (e) => {
-        setImgHover(null);
-    };
+const tipsGenresArr = [
+    'tagFoodColor',
+    'tagClothingColor',
+    'tagHousingColor',
+    'tagTransportColor',
+    'tagEducationColor',
+    'tagEntertainmentColor',
+];
 
     // 處理點擊事件
     const handleClick = (id) => {
@@ -35,26 +31,6 @@ const [submenuActive, setSubmenuActive] = useState(0);
         const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
         setShowList(filteredData);
     };
-
-    // resize 監聽事件
-    useEffect(() => { 
-        const handleResize = (e) => {
-            let newSize = 100 ;
-            if(window.innerWidth < 1609 && window.innerWidth > 1208){
-                newSize = 135;
-            }else if(window.innerWidth < 403){
-                newSize = 125;
-            }
-            setBgSize(newSize);
-            setHoverBgSize(newSize);
-            setImgHover(null);
-        };  
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []); 
 return (
     <div id='wrapper' className={inter.className}> 
         <Head>
@@ -92,110 +68,28 @@ return (
                 </div>
                 <div className="list">
                     <ul>
-                        <li>
-                            <a href='#'>
-                                <div className="genres tagFoodColor">食</div>
+                        {props.tipsData.length > 0?
+                        props.tipsData.map((item, index) => (
+                            <li>
+                            <a href={item.url}>
+                                <div className={`genres ${tipsGenresArr[item.tip_genre.id-1]}`}>{item.tip_genre.name}</div>
                                 <div className="img">
-                                    <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
+                                    <Image src={item.img} alt="img" width={360} height={360}/>
                                 </div>
                                 <div className="detail">
                                 <div className='upImg'>
                                     <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
                                 </div>
-                                    <div className="txt">吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？</div>
+                                    <div className="txt">{item.title}</div>
                                 <div className='rightImg'>
                                     <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
                                 </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="##">
-                                <div className="genres tagClothingColor">衣</div>
-                                <div className="img">
-                                    <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
-                                </div>
-                                <div className="detail">
-                                <div className='upImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                    <div className="txt">吃完的免洗紙餐盒</div>
-                                <div className='rightImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div className="genres tagHousingColor">住</div>
-                                <div className="img">
-                                    <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
-                                </div>
-                                <div className="detail">
-                                <div className='upImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                    <div className="txt">123</div>
-                                <div className='rightImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div className="genres tagTransportColor">行</div>
-                                <div className="img">
-                                    <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
-                                </div>
-                                <div className="detail">
-                                <div className='upImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                    <div className="txt">123</div>
-                                <div className='rightImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div className="genres tagEducationColor">育</div>
-                                <div className="img">
-                                    <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
-                                </div>
-                                <div className="detail">
-                                <div className='upImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                    <div className="txt">123</div>
-                                <div className='rightImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div className="genres tagEntertainmentColor">樂</div>
-                                <div className="img">
-                                    <Image src="https://esg-statics-staging.tvbs.com.tw/partner/avatar/IcYiBBxwm3SokXcl6GQW3WZRhkCp48u2iNhjOahA.jpg" alt="img" width={360} height={360}/>
-                                </div>
-                                <div className="detail">
-                                <div className='upImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                    <div className="txt">123</div>
-                                <div className='rightImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                </div>
-                            </a>
-                        </li>
+                        ))  
+                        :''}
                     </ul>
-
                 </div>       
             </div>
         </main>
@@ -217,14 +111,14 @@ export async function getServerSideProps() {
     const submenuRes = await fetch(submenuUrl);    
     const submenuData = await submenuRes.json();
     // list
-    const partnerUrl = new URL('/api/partners', process.env.API_URL);
-    const partnerRes = await fetch(partnerUrl);    
-    const partnerData = await partnerRes.json();
+    const tipsUrl = new URL('/api/tips-list', process.env.APP_URL);
+    const tipsRes = await fetch(tipsUrl);    
+    const tipsData = await tipsRes.json();
 
     
     return {
         props: {
-            menu,partnerData,submenuData
+            menu,tipsData,submenuData
         },
     };
 }
