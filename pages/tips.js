@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
+import List from '../comps/tips/List'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {    
 // 頁面識別
 const thisPage='tips';
-const [showList, setShowList] = useState(props.partnerData);
+const [showList, setShowList] = useState(props.tipsData);
 const [submenuActive, setSubmenuActive] = useState(0);
 const tipsGenresArr = [
     'tagFoodColor',
@@ -26,9 +27,9 @@ const tipsGenresArr = [
         setSubmenuActive(id);
         if(id === 0){
             // 全部
-            return setShowList(props.partnerData);
+            return setShowList(props.tipsData);
         }
-        const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
+        const filteredData = props.tipsData.filter(item => item.tip_genre.id === id);
         setShowList(filteredData);
     };
 return (
@@ -66,31 +67,7 @@ return (
                         </div>  
                     </div>  
                 </div>
-                <div className="list">
-                    <ul>
-                        {props.tipsData.length > 0?
-                        props.tipsData.map((item, index) => (
-                            <li>
-                            <a href={item.url}>
-                                <div className={`genres ${tipsGenresArr[item.tip_genre.id-1]}`}>{item.tip_genre.name}</div>
-                                <div className="img">
-                                    <Image src={item.img} alt="img" width={360} height={360}/>
-                                </div>
-                                <div className="detail">
-                                <div className='upImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                    <div className="txt">{item.title}</div>
-                                <div className='rightImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                </div>
-                            </a>
-                        </li>
-                        ))  
-                        :''}
-                    </ul>
-                </div>       
+                <List listData={showList} />
             </div>
         </main>
         <div className="footerLine">
