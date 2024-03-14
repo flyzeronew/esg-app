@@ -7,22 +7,50 @@ import Footer from '../../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function page(props) {
-    const [selectedOptions, setSelectedOptions] = useState([]);
-
+    const [selectedOptions, setSelectedOptions] = useState([]);    
+    const [scorllStop, setScorllStop] = useState(false);
+    
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
         if (selectedOptions.includes(value)) {
-          setSelectedOptions(selectedOptions.filter(option => option !== value));
+            setSelectedOptions(selectedOptions.filter(option => option !== value));
         } else {
-          setSelectedOptions([...selectedOptions, value]);
+            setSelectedOptions([...selectedOptions, value]);
         }
     };
+    useEffect(() => {
+        const contentMore = document.querySelector('.tipsDetailPage .contentMore');  
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const imgBoxHeight = document.querySelector('.tipsDetailPage .fixBox').offsetHeight;
+        const handleScroll = () => {
+            if (window.scrollY + headerHeight + imgBoxHeight > contentMore.offsetTop) {
+                setScorllStop(true);             
+            } else {
+                setScorllStop(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
+    const tagColor =['#FFDC34','#68E3BC','#226158','#74D8D2','#F37732','#89EC54']
     const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='tips';    
     return (
     <div id='wrapper' className={inter.className}> 
+        <style jsx>{`
+            .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked ,
+            .tipsDetailPage .contentBox .tag,
+            .tipsDetailPage .contentBox .txtBox .arraw
+            {
+                background-color: ${tagColor[0]};
+                transition: 0.3s;
+            }
+        `}
+        </style>
         <Head>
             <title>{`永續小撇步文章標題 - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -34,8 +62,11 @@ export default function page(props) {
             <div className="tipsDetailPage">
                 <div className="contentBox">
                     <div className="imgBox">
-                        <div className="box">
-                            <Image src="/images/tips01.jpg" alt="img" width={800} height={800}/>
+                        <div className="fixBox" style={{bottom: scorllStop ? `600px` : ``}}>
+                            <div className="box">
+                                <div className="tag">食</div>
+                                <Image src="/images/tips01.jpg" alt="img" width={800} height={800}/>
+                            </div>
                         </div>
                     </div>
                     <div className="txtBox">
@@ -84,7 +115,7 @@ export default function page(props) {
 
                             <div className="btn">
                                 <span>送出答案</span>
-                                <div className="arraw tagFoodColor">
+                                <div className="arraw">
                                     <Image src={`${appUrl}/images/icon_arraw07.svg`} alt="arraw" width={30} height={30}/>
                                 </div>
                             </div>                   
@@ -92,7 +123,7 @@ export default function page(props) {
 
                         <div className="answer">
                             <div className="title">
-                                <Image src={`${appUrl}/images/smirking-face.png`} alt="arraw" width={50} height={50}/> 你答對了嗎？
+                                <Image src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
                             </div>
                             <div className="answerTxtBox">
                                 <div className="answerTitle">免洗餐盒該當垃圾直接丟棄，還是洗淨回收？</div>
@@ -112,72 +143,77 @@ export default function page(props) {
                 <div className="contentMore">                    
                     <div className="frameBox">
                         <div className="title">繼續看</div>
-                        <div className="list">
-                            <ul>
-                                <li>
-                                    <a href='#'>
-                                        <div className="img">
-                                            <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
-                                        </div>
-                                        <div className="tag tagFoodColor">食</div>
-                                        <div className="txtBox">
-                                            <div className='rounded'>
-                                                <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                        <div className="listBox">
+                            <div className="arraw">
+                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                            </div>
+                            <div className="list">
+                                <ul>
+                                    <li>
+                                        <a href='#'>
+                                            <div className="img">
+                                                <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
                                             </div>
-                                            <div className='txtFlex'>
-                                                <div className='txt'>
-                                                    <p>怎麼喝咖啡最環保？怎麼喝咖啡最環保？怎麼喝咖啡最環保？怎麼喝咖啡最環保？</p>
-                                                </div>
+                                            <div className="tag tagFoodColor">食</div>
+                                            <div className="txtBox">
                                                 <div className='rounded'>
                                                     <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
                                                 </div>
-                                            </div>                                        
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className="img">
-                                            <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
-                                        </div>
-                                        <div className="tag tagFoodColor">食</div>
-                                        <div className="txtBox">
-                                            <div className='rounded'>
-                                                <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                                                <div className='txtFlex'>
+                                                    <div className='txt'>
+                                                        <p>怎麼喝咖啡最環保？怎麼喝咖啡最環保？怎麼喝咖啡最環保？怎麼喝咖啡最環保？</p>
+                                                    </div>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                </div>                                        
                                             </div>
-                                            <div className='txtFlex'>
-                                                <div className='txt'>
-                                                    <p>怎麼喝咖啡最環保？</p>
-                                                </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='#'>
+                                            <div className="img">
+                                                <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
+                                            </div>
+                                            <div className="tag tagFoodColor">食</div>
+                                            <div className="txtBox">
                                                 <div className='rounded'>
                                                     <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
                                                 </div>
-                                            </div>                                        
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className="img">
-                                            <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
-                                        </div>
-                                        <div className="tag tagFoodColor">食</div>
-                                        <div className="txtBox">
-                                            <div className='rounded'>
-                                                <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                                                <div className='txtFlex'>
+                                                    <div className='txt'>
+                                                        <p>怎麼喝咖啡最環保？</p>
+                                                    </div>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                </div>                                        
                                             </div>
-                                            <div className='txtFlex'>
-                                                <div className='txt'>
-                                                    <p>怎麼喝咖啡最環保？</p>
-                                                </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='#'>
+                                            <div className="img">
+                                                <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
+                                            </div>
+                                            <div className="tag tagFoodColor">食</div>
+                                            <div className="txtBox">
                                                 <div className='rounded'>
                                                     <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
                                                 </div>
-                                            </div>                                        
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
+                                                <div className='txtFlex'>
+                                                    <div className='txt'>
+                                                        <p>怎麼喝咖啡最環保？</p>
+                                                    </div>
+                                                    <div className='rounded'>
+                                                        <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                                                    </div>
+                                                </div>                                        
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
