@@ -4,12 +4,26 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../../../comps/Header'
 import Footer from '../../../comps/Footer'
+import DetailMainView from '../../../comps/tips/DetailMainView'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function page(props) {
+    const appUrl = process.env.APP_URL;
+    // 頁面識別
+    const thisPage='tips';
     const [selectedOptions, setSelectedOptions] = useState([]);    
     const [scorllStop, setScorllStop] = useState(false);
-    
+
+    //送出答案錨點程式
+    const scrollToAnswer = () => {
+        const answerTop = document.querySelector('.tipsDetailPage .contentBox .answer').offsetTop; 
+        const headerHeight = document.querySelector('header').offsetHeight;
+        window.scrollTo({
+            top: answerTop - headerHeight,
+            behavior: 'smooth',
+        });
+    };  
+    //選單程式
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
         if (selectedOptions.includes(value)) {
@@ -34,20 +48,48 @@ export default function page(props) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    
+    const tagColor =[
+        {
+            'bgColor':'#FFDC34',
+            'txtColor':'#333333',
+        },
+        {
+            'bgColor':'#68E3BC',
+            'txtColor':'#333333',
+        },
+        {
+            'bgColor':'#226158',
+            'txtColor':'#fff',
+        },
+        {
+            'bgColor':'#74D8D2',
+            'txtColor':'#333333',
+        },
+        {
+            'bgColor':'#F37732',
+            'txtColor':'#333333',
+        },
+        {
+            'bgColor':'#89EC54',
+            'txtColor':'#333333',
+        },
+    ];
 
-    const tagColor =['#FFDC34','#68E3BC','#226158','#74D8D2','#F37732','#89EC54']
-    const appUrl = process.env.APP_URL;
-    // 頁面識別
-    const thisPage='tips';    
     return (
     <div id='wrapper' className={inter.className}> 
-        <style jsx>{`
+        <style jsx global>{`
             .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked ,
             .tipsDetailPage .contentBox .tag,
-            .tipsDetailPage .contentBox .txtBox .arraw
+            .tipsDetailPage .contentBox .txtBox .arraw,
+            .tipsDetailPage .slick-dots li.slick-active button:before          
             {
-                background-color: ${tagColor[0]};
+                background-color: ${tagColor[0].bgColor};
+                color:${tagColor[0].txtColor};
                 transition: 0.3s;
+            }
+            .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked::before {
+                color: ${tagColor[0].txtColor};
             }
         `}
         </style>
@@ -63,10 +105,7 @@ export default function page(props) {
                 <div className="contentBox">
                     <div className={`imgBox ${scorllStop ? 'act' : ''}`}>
                         <div className={`fixBox ${scorllStop ? 'act' : ''}`}>
-                            <div className="box">
-                                <div className="tag">食</div>
-                                <Image src="/images/tips01.jpg" alt="img" width={800} height={800}/>
-                            </div>
+                            <DetailMainView />
                         </div>
                     </div>
                     <div className="txtBox">
@@ -113,7 +152,7 @@ export default function page(props) {
                                 </label>
                             </div>
 
-                            <div className="btn">
+                            <div className="btn" onClick={scrollToAnswer}>
                                 <span>送出答案</span>
                                 <div className="arraw">
                                     <Image src={`${appUrl}/images/icon_arraw07.svg`} alt="arraw" width={30} height={30}/>
@@ -144,9 +183,7 @@ export default function page(props) {
                     <div className="frameBox">
                         <div className="title">繼續看</div>
                         <div className="listBox">
-                            <div className="arraw">
-                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
-                            </div>
+                            <div className="arraw">↓</div>
                             <div className="list">
                                 <ul>
                                     <li>
