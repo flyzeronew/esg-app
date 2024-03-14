@@ -17,6 +17,7 @@ export default function page(props) {
             setSelectedOptions([...selectedOptions, value]);
         }
     };
+    
     const tagColor =['#FFDC34','#68E3BC','#226158','#74D8D2','#F37732','#89EC54']
     const appUrl = process.env.APP_URL;
     // 頁面識別
