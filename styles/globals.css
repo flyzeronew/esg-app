@@ -1206,7 +1206,7 @@ header .menuMo .list li:last-child{
 .indexPage .secret .title{
     display: flex;
     align-items: center;
-    margin-bottom: 136px;
+    margin-bottom: 70px;
 }
 .indexPage .secret .title .word{
     width: 65%;
@@ -1261,7 +1261,7 @@ header .menuMo .list li:last-child{
 @media (max-width:1919px) {
     .indexPage .secret .title {
         font-size: 30px;
-        margin-bottom: 46px;
+        margin-bottom: 26px;
     }
     .indexPage .secret .txt {
         font-size: 20px;
@@ -1275,7 +1275,7 @@ header .menuMo .list li:last-child{
     }
     .indexPage .secret .title {
         font-size: 24px;
-        margin-bottom: 32px;
+        margin-bottom: 0px;
     }
     .indexPage .secret .title p{
         font-size: 30px;
@@ -1301,16 +1301,13 @@ header .menuMo .list li:last-child{
         padding: 16px;
         margin-bottom: 20px;
     }
-    .indexPage .secret .title {
-        font-size: 20px;
-    }
     .indexPage .secret .title .word .description{
         margin-top: 0px;
         font-size: 16px;
         height: 20px;
     }
     .indexPage .secret .img{ 
-        width: 40%;
+        width: 33%;
     }
     .indexPage .secret .img {
         border-radius: 15px;
