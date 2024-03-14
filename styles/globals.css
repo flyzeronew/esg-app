@@ -4390,6 +4390,7 @@ header .menuMo .list li:last-child{
         display: block;
     }
     .tipsListPage .list ul{
+        width: 100%;
         display: block;
         display: flex;    
         flex-wrap: wrap;
