@@ -217,14 +217,14 @@ export async function getServerSideProps() {
     const submenuRes = await fetch(submenuUrl);    
     const submenuData = await submenuRes.json();
     // list
-    const partnerUrl = new URL('/api/partners', process.env.API_URL);
-    const partnerRes = await fetch(partnerUrl);    
-    const partnerData = await partnerRes.json();
+    const tipsUrl = new URL('/api/tips-list', process.env.APP_URL);
+    const tipsRes = await fetch(tipsUrl);    
+    const tipsData = await tipsRes.json();
 
     
     return {
         props: {
-            menu,partnerData,submenuData
+            menu,tipsData,submenuData
         },
     };
 }
