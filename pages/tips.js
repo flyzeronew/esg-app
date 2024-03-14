@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
+import List from '../comps/tips/List'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -66,31 +67,7 @@ return (
                         </div>  
                     </div>  
                 </div>
-                <div className="list">
-                    <ul>
-                        {props.tipsData.length > 0?
-                        props.tipsData.map((item, index) => (
-                            <li>
-                            <a href={item.url}>
-                                <div className={`genres ${tipsGenresArr[item.tip_genre.id-1]}`}>{item.tip_genre.name}</div>
-                                <div className="img">
-                                    <Image src={item.img} alt="img" width={360} height={360}/>
-                                </div>
-                                <div className="detail">
-                                <div className='upImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                    <div className="txt">{item.title}</div>
-                                <div className='rightImg'>
-                                    <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
-                                </div>
-                                </div>
-                            </a>
-                        </li>
-                        ))  
-                        :''}
-                    </ul>
-                </div>       
+                <List listData={props.tipsData} />
             </div>
         </main>
         <div className="footerLine">
