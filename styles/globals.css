@@ -4244,6 +4244,9 @@ header .menuMo .list li:last-child{
 }
 .tipsListPage .sharedBanner{
 }
+.tipsListPage .mainArea .sharedBanner .mask{
+    z-index: 1;
+}
 .tipsListPage .sharedBanner .box{
     position: relative;
     display:block;
@@ -4400,6 +4403,21 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:767px) {
+    .tipsListPage .sharedBanner .box{
+        /* border-top: 1px solid #DDD;
+        border-left: 1px solid #DDD;
+        border-right: 1px solid #DDD; */
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+    .tipsListPage .sharedBanner .box::before {
+        display: none;
+    }
+    .tipsListPage .sharedBanner .box .txt {
+        margin-top: 0;
+        width: 100%;
+    }
     .tipsListPage{
         display: block;
     }
