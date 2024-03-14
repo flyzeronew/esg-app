@@ -4274,12 +4274,26 @@ header .menuMo .list li:last-child{
     display:flex;
     justify-content: center;
     margin-bottom: 50px;
+    column-gap: 80px;
  }
 .tipsDetailPage .contentBox .imgBox{
-    width: 50%;
+    width: 40%;
+}
+.tipsDetailPage .contentBox .imgBox .box{
+    position: relative;
+}
+.tipsDetailPage .contentBox .imgBox .tag{
+    position:absolute;
+    right:15px;
+    top:15px;
+    display: none;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height:0;
 }
 .tipsDetailPage .contentBox .txtBox{
-    width: 45%;
+    width: 40%;
 }
 .tipsDetailPage .contentBox .txtBox .checkbox{
     margin-bottom: 30px;
@@ -4343,14 +4357,17 @@ header .menuMo .list li:last-child{
     display:flex;
     align-items: center;
     justify-content: center;
-    line-height: 0;
+    line-height: 0;    
 }
 .tipsDetailPage .contentBox .txtBox .arraw img{
     width: 50%;
     aspect-ratio: 1/1;
 }
+.tipsDetailPage .contentBox .fixBox{
+  
+}
 .tipsDetailPage .contentBox .imgBox .box{
-    width: 80%;
+    width: 100%; 
     margin: 0 auto;
     border-radius:30px;
     overflow: hidden;
@@ -4372,6 +4389,7 @@ header .menuMo .list li:last-child{
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 10px;
+    line-height: 0;
 }
 .tipsDetailPage .contentBox .title {
     font-size: 72px;
@@ -4433,6 +4451,7 @@ header .menuMo .list li:last-child{
     z-index: 1;
     font-size: 24px;
     font-weight: 600;
+    line-height: 0;
 }
 .tipsDetailPage .title{
     width: max-content;
@@ -4451,6 +4470,10 @@ header .menuMo .list li:last-child{
 .tipsDetailPage .contentMore .frameBox{
     width: 1140px;
     margin: 0 auto;
+}
+.tipsDetailPage .contentMore .listBox{position: relative;}
+.tipsDetailPage .contentMore .listBox .arraw{
+    display:none;
 }
 .tipsDetailPage .contentMore .list ul{
     display: flex;
@@ -4492,8 +4515,186 @@ header .menuMo .list li:last-child{
     display: -webkit-box;
     overflow: hidden;
 }
-@media (max-width:767px) {
+@media (max-width:1599px) {
+    .tipsDetailPage .contentBox {
+        column-gap: 50px;
+    }
+    .tipsDetailPage .contentBox .title {
+        font-size: 60px;
+        line-height: 90px;
+    }
+    .tipsDetailPage .contentBox .txtBox {
+        width: 50%;
+    }
+    .tipsDetailPage .contentBox .imgBox .box {
+        width: 100%;
+    }
+}
+@media (max-width:1365px) {
+    .tipsDetailPage .contentBox .title {
+        font-size: 50px;
+        line-height: 70px;
+        margin-bottom: 30px;
+    }
+}
 
+@media (max-width:1279px) {
+    .tipsDetailPage .contentBox .title {
+        font-size: 40px;
+        line-height: 60px;
+        margin-bottom: 30px;
+    }
+    .tipsDetailPage .contentMore .frameBox{
+        width: 100%;
+        margin: 0 auto;
+        padding:0 15px;
+    }
+}
+@media (max-width:1023px) {
+    .tipsDetailPage .contentBox {
+        column-gap: 30px;
+    }
+    .tipsDetailPage .contentBox .title {
+        font-size: 30px;
+        line-height: 45px;
+        margin-bottom: 20px;
+    }
+    .tipsDetailPage .contentBox .tag {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .tipsDetailPage .contentBox {
+        padding: 0 15px;
+    }
+
+    .tipsDetailPage .contentMore .list .txtFlex .txt p {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+    }
+    .tipsDetailPage .contentMore .list .txtFlex .txt {
+        padding: 10px;
+    }
+    .tipsDetailPage .contentBox .txtBox .btn{
+        font-size: 20px;        
+    }
+    .tipsDetailPage .contentBox .txtBox .arraw{
+        width: 30px;
+        height: 30px;
+    }
+    .tipsDetailPage .contentBox .answer .title{
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 48px;
+        letter-spacing: 0em;
+    }
+    .tipsDetailPage .contentBox .answer .title img{
+        width: 35px;
+    }
+    .tipsDetailPage .contentBox .answer .answerTitle{
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 42px;
+        letter-spacing: 0.04em;
+        text-align: center;
+    }
+    .tipsDetailPage .contentBox .answer .answerTxtBox p{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        text-align: justify;
+    }
+}
+@media (max-width:767px) {
+    .tipsDetailPage .contentMore .listBox .arraw{
+        position:absolute;
+        top:30%;
+        right:10px;
+        display:block;
+        z-index: 1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 60px;
+    }
+    .tipsDetailPage .contentMore .frameBox{
+        padding:0 0 0 15px;
+    }
+    .tipsDetailPage .contentBox {
+        padding: 0;
+        display: block;
+    }
+    .tipsDetailPage .contentBox .imgBox .box ,.tipsDetailPage .contentBox .txtBox{
+        width: 100%;
+        border-radius: 0;
+    }
+    .tipsDetailPage .contentBox .txtBox{
+        padding:0 15px;
+    }
+    .tipsDetailPage .contentBox .imgBox {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .tipsDetailPage .contentBox .title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 44px;
+        letter-spacing: 0.04em;
+        text-align: center;
+    }
+    .tipsDetailPage .contentBox .tag{
+        display: none;
+    }
+    .tipsDetailPage .contentBox .imgBox .tag{
+        display: flex;
+    }
+
+    .tipsDetailPage .contentBox .txtBox .checkbox{
+        width: 50%;
+        margin: 0 auto 50px;
+    }
+    .tipsDetailPage .contentBox .txtBox .btn{
+        font-size: 20px;
+        margin:0 auto ;
+    }
+    .tipsDetailPage .contentBox .txtBox .arraw{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .tipsDetailPage .title {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 39px;
+        letter-spacing: 0.02em;
+    }
+    .tipsDetailPage .contentMore .list{
+        overflow-x: auto;
+    }
+    .tipsDetailPage .contentMore .list::-webkit-scrollbar {
+        width: 0;
+    }
+    .tipsDetailPage .contentMore .list ul{
+        width: 150%;
+        column-gap:20px;
+    }
+}
+@media (max-width:414px) {
+    .tipsDetailPage .contentMore .list ul{
+        width: 250%;
+    }
+}
+@media (max-width:413px) {
+    .tipsDetailPage .contentBox .txtBox .checkbox{
+        width: 60%;
+    }
+}
+@media (max-width:359px) {
+    .tipsDetailPage .contentBox .txtBox .checkbox{
+        width: 70%;
+    }
 }
 /* 永續生活小撇步內頁ed*/
 
