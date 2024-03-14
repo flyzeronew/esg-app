@@ -12,6 +12,7 @@ const nextConfig = {
       'esg-frontend-staging.tvbs.com.tw',
       'esg-frontend.tvbs.com.tw',
       'esg-app-alpha.vercel.app',
+      'esg.tvbs.com.tw',
       'img.youtube.com'
     ],   
   }, 
