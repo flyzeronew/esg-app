@@ -4270,18 +4270,52 @@ margin-top: 208px;
 
 /* 永續生活小撇步內頁*/
 .tipsDetailPage .contentBox{
-    padding:0 32px;
+    padding:20px 32px 0;
     display:flex;
     justify-content: center;
     margin-bottom: 50px;
     column-gap: 80px;
 }
-
 .tipsDetailPage .contentBox .imgBox{
     width: 40%;
+    position: relative;
 }
 .tipsDetailPage .contentBox .imgBox .fixBox{
-    /* position: fixed; */
+    width: 720px;
+    position: fixed;
+    z-index: 1;
+    transition: 0.3s;
+}
+@media (max-width:1919px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 630px;
+    }
+}
+@media (max-width:1599px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 500px;
+    }
+}
+@media (max-width:1365px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 480px;
+    }
+}
+@media (max-width:1279px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 390px;
+    }
+}
+@media (max-width:1023px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 300px;
+    }
+}
+@media (max-width:767px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 100%;
+        position: relative;
+    }
 }
 .tipsDetailPage .contentBox .imgBox .box{
     position: relative;
@@ -4438,6 +4472,7 @@ margin-top: 208px;
     align-items: center;
     column-gap:15px;
 }
+
 .tipsDetailPage .contentMore .tag {
     position: absolute;
     top: 15px;
@@ -4516,6 +4551,12 @@ margin-top: 208px;
     text-overflow: ellipsis;
     display: -webkit-box;
     overflow: hidden;
+}
+@media (max-width:1919px) {
+    .tipsDetailPage .contentBox .title {
+        font-size: 60px;
+        line-height: 90px;
+    }
 }
 @media (max-width:1599px) {
     .tipsDetailPage .contentBox {

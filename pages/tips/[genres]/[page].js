@@ -7,8 +7,9 @@ import Footer from '../../../comps/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function page(props) {
-    const [selectedOptions, setSelectedOptions] = useState([]);
-
+    const [selectedOptions, setSelectedOptions] = useState([]);    
+    const [scorllStop, setScorllStop] = useState(false);
+    
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
         if (selectedOptions.includes(value)) {
@@ -17,6 +18,23 @@ export default function page(props) {
             setSelectedOptions([...selectedOptions, value]);
         }
     };
+    useEffect(() => {
+        const contentMore = document.querySelector('.tipsDetailPage .contentMore');  
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const imgBoxHeight = document.querySelector('.tipsDetailPage .fixBox').offsetHeight;
+        const handleScroll = () => {
+            if (window.scrollY + headerHeight + imgBoxHeight > contentMore.offsetTop) {
+                setScorllStop(true);             
+            } else {
+                setScorllStop(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const tagColor =['#FFDC34','#68E3BC','#226158','#74D8D2','#F37732','#89EC54']
     const appUrl = process.env.APP_URL;
     // 頁面識別
@@ -44,7 +62,7 @@ export default function page(props) {
             <div className="tipsDetailPage">
                 <div className="contentBox">
                     <div className="imgBox">
-                        <div className="fixBox">
+                        <div className="fixBox" style={{bottom: scorllStop ? `600px` : ``}}>
                             <div className="box">
                                 <div className="tag">食</div>
                                 <Image src="/images/tips01.jpg" alt="img" width={800} height={800}/>
