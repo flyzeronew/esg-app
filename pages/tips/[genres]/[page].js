@@ -61,8 +61,8 @@ export default function page(props) {
         <main>
             <div className="tipsDetailPage">
                 <div className="contentBox">
-                    <div className="imgBox">
-                        <div className="fixBox" style={{bottom: scorllStop ? `600px` : ``}}>
+                    <div className={`imgBox ${scorllStop ? 'act' : ''}`}>
+                        <div className={`fixBox ${scorllStop ? 'act' : ''}`}>
                             <div className="box">
                                 <div className="tag">食</div>
                                 <Image src="/images/tips01.jpg" alt="img" width={800} height={800}/>

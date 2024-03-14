@@ -4459,6 +4459,13 @@ header .menuMo .list li:last-child{
     z-index: 1;
     transition: 0.3s;
 }
+.tipsDetailPage .contentBox .imgBox .fixBox.act{
+    position: relative;
+}
+.tipsDetailPage .contentBox .imgBox.act{
+    display: flex;
+    align-items: flex-end;
+}
 @media (max-width:1919px) {
     .tipsDetailPage .contentBox .imgBox .fixBox{
         width: 630px;
