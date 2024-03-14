@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {    
 // 頁面識別
 const thisPage='tips';
-const [showList, setShowList] = useState(props.partnerData);
+const [showList, setShowList] = useState(props.tipsData);
 const [submenuActive, setSubmenuActive] = useState(0);
 const tipsGenresArr = [
     'tagFoodColor',
@@ -27,9 +27,9 @@ const tipsGenresArr = [
         setSubmenuActive(id);
         if(id === 0){
             // 全部
-            return setShowList(props.partnerData);
+            return setShowList(props.tipsData);
         }
-        const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
+        const filteredData = props.tipsData.filter(item => item.tip_genre.id === id);
         setShowList(filteredData);
     };
 return (
@@ -67,7 +67,7 @@ return (
                         </div>  
                     </div>  
                 </div>
-                <List listData={props.tipsData} />
+                <List listData={showList} />
             </div>
         </main>
         <div className="footerLine">
