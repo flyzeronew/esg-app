@@ -18,14 +18,25 @@ function DetailMainView(props) {
         slidesToScroll: 1,
         swipeToSlide:true,
         autoplay: true,
-        autoplaySpeed:5000, 
+        autoplaySpeed:3000, 
     };  
     return (
-        <div className="mainView">
+        <>
             <Slider {...settings}>
-                
+                <div className="box">
+                    <div className="tag">食</div>
+                    <Image src="/images/tips01.jpg" alt="img" width={800} height={800}/>
+                </div>
+                <div className="box">
+                    <div className="tag">食</div>
+                    <Image src="/images/tips02.jpg" alt="img" width={800} height={800}/>
+                </div>
+                <div className="box">
+                    <div className="tag">食</div>
+                    <Image src="/images/tips03.jpg" alt="img" width={800} height={800}/>
+                </div>
             </Slider>
-        </div>
+        </>
     )
 }
 export default DetailMainView;
