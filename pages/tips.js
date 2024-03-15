@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
 import List from '../comps/tips/List'
-import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {    
@@ -13,14 +12,6 @@ export default function Partner(props) {
 const thisPage='tips';
 const [showList, setShowList] = useState(props.tipsData);
 const [submenuActive, setSubmenuActive] = useState(0);
-const tipsGenresArr = [
-    'tagFoodColor',
-    'tagClothingColor',
-    'tagHousingColor',
-    'tagTransportColor',
-    'tagEducationColor',
-    'tagEntertainmentColor',
-];
 
     // 處理點擊事件
     const handleClick = (id) => {
