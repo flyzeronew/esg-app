@@ -20,7 +20,6 @@ export default function Genres(props) {
     const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
     const router = useRouter();
-    const page = Number(props.page);
     const viewSubmenu = props.viewSubmenuData;    
     const articleList = props.articlesData.articles;
     const genreEnName=String(props.genreEnName);
