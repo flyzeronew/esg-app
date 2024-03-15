@@ -7,8 +7,7 @@ function Navber(props) {
     const thisPage = props.thisPage;     
     // 變數宣告
     const [hamBurger, setHamBurger] = useState(false);
-    const [showChildMenu, setShowChildMenu] = useState(false);
-    const [showChildMenuMo, setShowChildMenuMo] = useState(false);
+    const [showChildMenu, setShowChildMenu] = useState(null);
     const [navScroll, setNavScroll] = useState(false);
     // 變數宣告 ed
 
@@ -34,28 +33,14 @@ function Navber(props) {
     const navScrollStart = () => {
         setNavScroll(window.scrollY > 0 ? true : false);
     };
-
     function childMenuClick(e) {
-        const thisName = e.target.textContent;
-        if(thisName === "永續觀點"){
-            setShowChildMenu(true);
-        }else{
-            setShowChildMenu(false);
-        }
-    }
-    function childMenuClickMo(e) {
-        const thisName = e.target.textContent;
-        if(thisName === "永續觀點"){
-            setShowChildMenu(true);
-        }else{
-            setShowChildMenu(false);
-        }
+        setShowChildMenu(e);
     }
     function hamBurgerClick(e) {
         setHamBurger(!hamBurger);
     }
     function childMenuMouseLeave() {
-        setShowChildMenu(false);
+        setShowChildMenu(null);
     };
     // 事件動作 ed
 
@@ -91,7 +76,7 @@ function Navber(props) {
                                 <ul>
                                     {menu.map((item, index) => (
                                         <li key={index} >
-                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick} onClick={childMenuClick}>
+                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={childMenuClick}>
                                                 {item.title}
                                                 {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </a>
@@ -107,18 +92,22 @@ function Navber(props) {
                     </div>
                     {/* pc子選單 */}
                     <div className={`childMenu ${showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}>
-                        <ul>
-                            {menu.map((item, index) => (
-                                item.child.map((item2, index2) => (
-                                    <li key={index2}>
-                                        <a href={item2.url} onClick={childMenuMouseLeave}>
-                                            {item2.title}
-                                        </a>
-                                    </li>
-                                ))
-                            ))}                           
-                        </ul>
-                    </div>   
+                        {menu.map((item, index) => (
+                            index===showChildMenu ?                                     
+                                    <ul>
+                                        {
+                                            item.child.map((item2, index2) => (
+                                                <li key={index2}>
+                                                    <a href={item2.url} onClick={childMenuMouseLeave}>
+                                                        {item2.title}
+                                                    </a>
+                                                </li>
+                                            ))  
+                                        }                                            
+                                    </ul>                                    
+                            :''
+                        ))}
+                    </div>
                     {/* pc子選單 ed*/}
 
                     {/* 手機板導覽列 */}
@@ -133,21 +122,23 @@ function Navber(props) {
                                     <ul>
                                         {menu.map((item, index) => (
                                             <li key={index} >
-                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={childMenuClickMo}>
+                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={() => childMenuClick(index)} >
                                                     {item.title}
-                                                    {item.child.length>0 ? <Image className={showChildMenuMo ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                    {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                                 </a>
 
                                                 {
                                                     item.child.length>0 ?
-                                                        <div className={`child ${showChildMenuMo ? 'act':''}`}>
+                                                        <div className={`child ${showChildMenu ? 'act':''}`}>
                                                             {
-                                                                item.child.map((item2, index2) => (
-                                                                    <a key={index2} href={item2.url}>
-                                                                        {item2.title}
-                                                                        <div className="line"></div>
-                                                                    </a>
-                                                                )) 
+                                                                index===showChildMenu ? 
+                                                                    item.child.map((item2, index2) => (
+                                                                        <a key={index2} href={item2.url}>
+                                                                            {item2.title}
+                                                                            <div className="line"></div>
+                                                                        </a>
+                                                                    )) 
+                                                                :''
                                                             }
                                                         </div>
                                                     :''
