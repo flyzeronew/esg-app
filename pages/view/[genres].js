@@ -11,14 +11,14 @@ import JumpPage from '../../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
-    
+    console.log(props);
     const router = useRouter();
     const page = Number(props.page);
     const viewSubmenu = props.viewSubmenuData;    
     const articleList = props.articlesData.articles.slice(1);
     const genreEnName=String(props.genreEnName);
     const uri =`/view/${genreEnName}`;
-    const genreData = viewSubmenu.find(item => item.en_name === genreEnName);    
+    const genreData = props.genreData;    
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
@@ -84,19 +84,22 @@ export async function getServerSideProps(context) {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
+
     // 線上資料
     // submenu
-    const viewSubmenuUrl = new URL('/api/article-genres', process.env.APP_URL);
+    const viewSubmenuUrl = new URL('/api/article-genres', process.env.API_URL);
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
+    const genreData = viewSubmenuData.find(item => item.en_name === genreEnName);    
+    const genreId = genreData ? genreData.id :'';
     // list
-    const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.APP_URL);
+    const articlesUrl = new URL(`/api/articles?genre_id=${genreId}&page=${page}`, process.env.API_URL);
     const articlesRes = await fetch(articlesUrl);    
     const articlesData = await articlesRes.json();
     
     return {
         props: {
-            menu,viewSubmenuData,articlesData,genreEnName,page
+            menu,viewSubmenuData,articlesData,genreEnName,page,genreData
         },
     };
 }

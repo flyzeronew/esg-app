@@ -3111,6 +3111,11 @@ header .menuMo .list li:last-child{
 .articleSponsor .description p{
     padding-left: 20px;
     border-left:1px solid #dadada;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
 }
 @media (max-width:1023px) {
     .articleSponsor{
@@ -3133,6 +3138,7 @@ header .menuMo .list li:last-child{
         padding-left: 0px;
         border-left:0px solid #dadada;
         line-height: 25px;
+        display: block;
     }
     /* 樣式2 */
     .articleSponsor.style2 .imgBox{
