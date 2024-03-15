@@ -252,6 +252,14 @@ img{
 }
 /* 共用標籤 ed*/
 
+/* 修正react-slick 套件 輪播時href的值永遠一樣的錯誤 */
+.slick-slide {
+    visibility: hidden;
+  }
+.slick-slide.slick-active {
+    visibility: visible;
+  }
+/* 修正react-slick 套件 輪播時href的值永遠一樣的錯誤 ed*/
 
 header nav{
     width: 100%;
