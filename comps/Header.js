@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useState ,useEffect } from 'react'
+import React, { Component } from "react"
 
 function Navber(props) {  
     const appUrl = process.env.APP_URL;    
@@ -78,7 +79,7 @@ function Navber(props) {
                                         <li key={index} >
                                             <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={childMenuClick}>
                                                 {item.title}
-                                                {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                {item.child.length > 0 ? <Image className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </a>
                                         </li>
                                     ))}                                
@@ -92,21 +93,23 @@ function Navber(props) {
                     </div>
                     {/* pc子選單 */}
                     <div className={`childMenu ${showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}>
-                        {menu.map((item, index) => (
-                            index===showChildMenu ?                                     
-                                    <ul>
-                                        {
+                        <ul>
+                            {menu.map((item, index) => (
+                                <React.Fragment key={index}> 
+                                    {
+                                        index===showChildMenu ?                                    
                                             item.child.map((item2, index2) => (
                                                 <li key={index2}>
                                                     <a href={item2.url} onClick={childMenuMouseLeave}>
                                                         {item2.title}
                                                     </a>
                                                 </li>
-                                            ))  
-                                        }                                            
-                                    </ul>                                    
-                            :''
-                        ))}
+                                            ))                                    
+                                        :''
+                                    }
+                                </React.Fragment>                          
+                            ))}
+                        </ul>
                     </div>
                     {/* pc子選單 ed*/}
 

@@ -13,15 +13,15 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
     // 頁面識別
     const thisPage='view';
-    // 計算分類文章數量轉頁面數
-    const articleCount = props.articlesData.article_count;
+    // 計算文章數量轉頁面數
+    const articleCount = props.page > 1 ? props.articlesData.article_count : props.articlesData.article_count-1;
     const articleMath = Math.floor(articleCount/12);
     const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
-    // 計算分類文章數量轉頁面數 ed
+    // 計算文章數量轉頁面數 ed
     const router = useRouter();
     const page = Number(props.page);
     const viewSubmenu = props.viewSubmenuData;    
-    const articleList = props.articlesData.articles.slice(1);
+    const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
     const genreEnName=String(props.genreEnName);
     const uri =`/view/${genreEnName}`;
     const genreData = props.genreData;    
