@@ -38,13 +38,17 @@ function Navber(props) {
     function childMenuClick(e) {
         const thisName = e.target.textContent;
         if(thisName === "永續觀點"){
-            setShowChildMenu(!showChildMenu);
+            setShowChildMenu(true);
+        }else{
+            setShowChildMenu(false);
         }
     }
     function childMenuClickMo(e) {
         const thisName = e.target.textContent;
         if(thisName === "永續觀點"){
-            setShowChildMenuMo(!showChildMenuMo);
+            setShowChildMenu(true);
+        }else{
+            setShowChildMenu(false);
         }
     }
     function hamBurgerClick(e) {
