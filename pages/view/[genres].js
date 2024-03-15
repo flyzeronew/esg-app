@@ -9,6 +9,7 @@ import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
 import JumpPage from '../../comps/JumpPage'
 
+
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
     // 頁面識別
