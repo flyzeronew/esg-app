@@ -64,6 +64,21 @@ export default function handler(req, res) {
           "created_at": "2024-01-25T14:23:06.000000Z",
           "updated_at": "2024-01-25T14:23:06.000000Z"
         }
+      },
+      {
+        "id": 3,
+        "title": "3一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地",
+        "url": "/view/society/3",
+        "img": "https://esg-statics-staging.tvbs.com.tw/partner/videos/Zqv7rZPxyGP94CB9krcE1ar69iWBuSM6JU8hYjdA.jpg",
+        "created_at": "2024-01-25T14:23:06.000000Z",
+        "updated_at": "2024-01-25T14:23:06.000000Z",
+        "article_genre": {
+          "id": 3,
+          "name": "共好社會",
+          "en_name": "society",
+          "created_at": "2024-01-25T14:23:06.000000Z",
+          "updated_at": "2024-01-25T14:23:06.000000Z"
+        }
       }
       
     ],
