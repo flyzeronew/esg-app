@@ -6,9 +6,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function ViewList(props) {
-    const handleClick = (e) => {
-        e.preventDefault();
-    };
+    const data = props.data;
     const settings = {
         dots: true,
         fade: true,
@@ -23,18 +21,17 @@ function ViewList(props) {
     return (        
         <div className="view">
             <Slider {...settings}>
-                <a href='#' onClick={handleClick}>
+                {data.length > 0
+                ?
+                data.map((item, index) => (
+                <a href={item.url}>
                     <div className="img">
-                        <Image src="/images/esg02.jpg" alt="img" width={1920} height={1080}/>  
+                        <Image src={item.img} alt="img" width={1920} height={1080}/>  
                     </div>
-                    <div className="txt">一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地</div>
+                    <div className="txt">{item.title}</div>
                 </a>
-                <a href='#' onClick={handleClick}>
-                    <div className="img">
-                        <Image src="/images/esg02.jpg" alt="img" width={1920} height={1080}/>  
-                    </div>
-                    <div className="txt">一菜三吃！淨零綠生活當道 首「惜」廚師教您如何吃在地2</div>
-                </a>
+                ))
+                :""}
             </Slider>
         </div> 
     )

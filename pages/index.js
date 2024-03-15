@@ -95,7 +95,7 @@ export default function Home(props) {
                 </div>}
               </div>
 
-              <ViewList/>
+              <ViewList data={props.data.viewpoint}/>
               
             
               <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.5s'}}>
