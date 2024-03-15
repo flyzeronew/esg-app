@@ -37,7 +37,7 @@ function SecretList(props) {
                                         </div>
                                         <div className="subtitle">
                                             <p>永續生活小撇步</p>
-                                            <div className="line"></div>
+                                            <div className={`line ${tipsGenresArr[item.tip_genre.id - 1]}`}></div>
                                             <div className={`tag ${tipsGenresArr[item.tip_genre.id - 1]}`}>{item.tip_genre.name}</div>
                                         </div>
                                         <div className="title">
