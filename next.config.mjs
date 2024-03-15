@@ -18,10 +18,10 @@ const nextConfig = {
     ],   
   }, 
    // 自訂服務器配置
-  server: {
-    host: '0.0.0.0',
-    port: process.env.PORT || 3000,
-  },
+  // server: {
+  //   host: '0.0.0.0',
+  //   port: process.env.PORT || 3000,
+  // },
   env: {
     APP_URL: process.env.APP_URL,
     GTM_ID: process.env.GTM_ID,
