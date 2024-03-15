@@ -15,25 +15,22 @@ export default function View(props) {
     const router = useRouter();
     const appUrl = process.env.APP_URL;
     // 計算文章數量轉頁面數
-    const articleCount = props.articlesData.article_count-1;
+    const articleCount = props.page > 1 ? props.articlesData.article_count : props.articlesData.article_count-1;
     const articleMath = Math.floor(articleCount/12);
     const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
     const viewSubmenu = props.viewSubmenuData;
     const articlesFirst = props.articlesData.articles[0];
-    const articleList = props.articlesData.articles.slice(1);
+    const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
     const uri =`/view`;
-    // const [listLength, setListLength] = useState(0);
-
     useEffect(() => {
         if (props.page > pageCount) {
             router.push('/404');
         }
-        // const listItems = document.querySelectorAll('.viewPage .list ul li');
-        // setListLength(listItems.length);
     }, []);
     // 頁面識別
     const thisPage='view';
+    console.log(articleCount);
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
@@ -68,7 +65,7 @@ export default function View(props) {
                     <div className='mainView'>
                         <div className='box'>
                             <div className='img'>
-                                <Image src={`${appUrl}${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
+                                <Image src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
                                 <div className='imgMaskBox'>
                                     <div className='rounded'>
                                         <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
@@ -117,17 +114,17 @@ export async function getServerSideProps(context) {
     
     // 線上資料
     // submenu
-    const viewSubmenuUrl = new URL(`/api/article-genres`, process.env.APP_URL);
+    const viewSubmenuUrl = new URL(`/api/article-genres`, process.env.API_URL);
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
     // list
-    const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.APP_URL);
+    const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.API_URL);
     const articlesRes = await fetch(articlesUrl);    
     const articlesData = await articlesRes.json();
     
     return {
         props: {
-            page,menu,viewSubmenuData,articlesData,page
+            page,menu,viewSubmenuData,articlesData,page,
         },
     };
 }
