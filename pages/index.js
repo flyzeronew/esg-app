@@ -142,7 +142,7 @@ export default function Home(props) {
               </div>}
             </div>
             
-            <SecretList/>
+            <SecretList data={props.data.tips}/>
             <PartnerList/>
             
           </section>
@@ -157,9 +157,13 @@ export async function getServerSideProps() {
   const menuUrl = new URL('/api/menu', process.env.APP_URL);
   const menuRes = await fetch(menuUrl);
   const menu = await menuRes.json();
+  // data
+  const dataUrl = new URL('/api/indexData', process.env.APP_URL);
+  const dataRes = await fetch(dataUrl);
+  const data = await dataRes.json();
   return {
     props: {
-      menu,
+      menu,data
     },
   };
 }
