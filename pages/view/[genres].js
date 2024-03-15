@@ -11,7 +11,13 @@ import JumpPage from '../../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
-    console.log(props);
+    // 頁面識別
+    const thisPage='view';
+    // 計算分類文章數量轉頁面數
+    const articleCount = props.articlesData.article_count;
+    const articleMath = Math.floor(articleCount/12);
+    const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
+    // 計算分類文章數量轉頁面數 ed
     const router = useRouter();
     const page = Number(props.page);
     const viewSubmenu = props.viewSubmenuData;    
@@ -22,18 +28,13 @@ export default function Genres(props) {
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
-    const [listLength, setListLength] = useState(0);
 
     useEffect(() => {
         if (!genreData) {
             router.push('/404');
         }
-        const listItems = document.querySelectorAll('.viewPage .list ul li');
-        setListLength(listItems.length);
-    }, []);
-    
-    // 頁面識別
-    const thisPage='view';
+    }, []);    
+
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
@@ -64,7 +65,8 @@ export default function Genres(props) {
                     <ArticleList  articleList={articleList} genreId={genreId}/>
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    {listLength >= 12 ? <JumpPage uri={uri}/> :''}
+                    { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
+                    
                 {/* 跳頁選單 ed */}
             </div>
             
