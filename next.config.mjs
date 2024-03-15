@@ -5,15 +5,17 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
+      // development
       'localhost',
-      'esg-statics-staging.tvbs.com.tw',
-      'esg-statics.tvbs.com.tw',
-      'cc.tvbs.com.tw',
-      'esg-frontend-staging.tvbs.com.tw',
-      'esg-frontend.tvbs.com.tw',
       'esg-app-alpha.vercel.app',
+      // staging
+      'esg-statics-staging.tvbs.com.tw',
+      'esg-frontend-staging.tvbs.com.tw',
+      // production
+      'esg-statics-production.tvbs.com.tw',
       'esg.tvbs.com.tw',
-      'img.youtube.com'
+      // youtube
+      'img.youtube.com',
     ],   
   }, 
    // 自訂服務器配置
