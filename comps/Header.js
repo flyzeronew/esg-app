@@ -8,8 +8,10 @@ function Navber(props) {
     const thisPage = props.thisPage;     
     // 變數宣告
     const [hamBurger, setHamBurger] = useState(false);
-    const [showChildMenu, setShowChildMenu] = useState(null);
+    const [showChildMenu, setShowChildMenu] = useState(false);
     const [navScroll, setNavScroll] = useState(false);
+    const [childMo, setChildMo] = React.useState(Array(menu.length).fill(false));
+    
     // 變數宣告 ed
 
     // resize 監聽事件
@@ -35,17 +37,22 @@ function Navber(props) {
         setNavScroll(window.scrollY > 0 ? true : false);
     };
     function childMenuClick(e) {
-        setShowChildMenu(null);
         setShowChildMenu(e);
     }
     function hamBurgerClick(e) {
         setHamBurger(!hamBurger);
     }
     function childMenuMouseLeave() {
-        setShowChildMenu(null);
+        setShowChildMenu(false);
     };
     // 事件動作 ed
-
+    function childMoClick(e) {
+        setChildMo((prevActive) => {
+            const newActive = [...prevActive];
+            newActive[e] = !newActive[e];
+            return newActive;
+        });
+    }
     return (
             <header>                
                 { hamBurger ?  
@@ -78,7 +85,7 @@ function Navber(props) {
                                 <ul>
                                     {menu.map((item, index) => (
                                         <li key={index} >
-                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={childMenuClick}>
+                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={childMenuMouseLeave}>
                                                 {item.title}
                                                 {item.child.length > 0 ? <Image className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </a>
@@ -93,24 +100,27 @@ function Navber(props) {
                         </div>
                     </div>
                     {/* pc子選單 */}
-                    <div className={`childMenu ${showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}>
-                        <ul>
+                    <div className={`childMenu ${showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}>                        
                             {menu.map((item, index) => (
                                 <React.Fragment key={index}> 
                                     {
-                                        index===showChildMenu ?                                    
-                                            item.child.map((item2, index2) => (
-                                                <li key={index2}>
-                                                    <a href={item2.url} onClick={childMenuMouseLeave}>
-                                                        {item2.title}
-                                                    </a>
-                                                </li>
-                                            ))                                    
+                                        index===showChildMenu && item.child.length > 0 ?  
+                                            <ul>
+                                                {
+                                                    item.child.map((item2, index2) => (
+                                                        <li key={index2}>
+                                                            <a href={item2.url} onClick={childMenuMouseLeave}>
+                                                                {item2.title}
+                                                            </a>
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
                                         :''
                                     }
                                 </React.Fragment>                          
                             ))}
-                        </ul>
+
                     </div>
                     {/* pc子選單 ed*/}
 
@@ -126,16 +136,15 @@ function Navber(props) {
                                     <ul>
                                         {menu.map((item, index) => (
                                             <li key={index} >
-                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={() => childMenuClick(index)} >
+                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={() => childMoClick(index)} >
                                                     {item.title}
-                                                    {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                    {item.child.length>0 ? <Image className={childMo[index] ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                                 </a>
-
                                                 {
                                                     item.child.length>0 ?
-                                                        <div className={`child ${showChildMenu ? 'act':''}`}>
+                                                        <div className={`child ${childMo[index] ? 'act':''}`}>
                                                             {
-                                                                index===showChildMenu ? 
+                                                                childMo[index] ? 
                                                                     item.child.map((item2, index2) => (
                                                                         <a key={index2} href={item2.url}>
                                                                             {item2.title}
