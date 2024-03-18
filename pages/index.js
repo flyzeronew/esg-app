@@ -125,7 +125,7 @@ export default function Home(props) {
               <div className="txtBox">
                 <div className="txt up">{props.data.ourMissoin.description}</div>
                 <div className="txt">看更多                    
-                    <a href="#">                  
+                    <a href={props.data.ourMissoin.url}>                  
                       <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                     </a>
                   </div>
@@ -136,7 +136,7 @@ export default function Home(props) {
                 <div className="txtBox">
                   <div className="title">Our Mission</div>
                   <div className="txt">{props.data.ourMissoin.title} 
-                    <a href="#">                  
+                    <a href={props.data.ourMissoin.url}>                  
                       <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                     </a>
                   </div>

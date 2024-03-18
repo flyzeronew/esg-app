@@ -23,7 +23,8 @@ export default function handler(req, res) {
     "ourMissoin":{
       "title":"TVBS ESG永續倡議大使",
       "img":"/images/our-mission01.jpg",
-      "description":"TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂"
+      "description":"TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂",
+      "url":"https://news.tvbs.com.tw/life/2426793"
     },
     "tips": [
       {
