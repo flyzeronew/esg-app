@@ -19,7 +19,7 @@ function PartnerList(props) {
     return (        
         <div className="partner">
             <div className="titleBox">
-                <div className="title">Who’s doing ESG?</div>
+                <div className="title"><a href="/partner">Who’s doing ESG?</a></div>
                 <div className="txt">落實ESG的夥伴 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
             </div>
             <div className="list">
