@@ -143,7 +143,7 @@ export default function Home(props) {
             </div>
             
             <SecretList data={props.data.tips}/>
-            <PartnerList/>
+            <PartnerList data={props.data.partners}/>
             
           </section>
         </div>
