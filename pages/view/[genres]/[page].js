@@ -11,8 +11,7 @@ export default function viewArticle(props) {
     const appUrl = process.env.APP_URL;
     const [bgShow, setBgShow] = useState(true);
 
-    const articleList = props.viewData.article_list;
-    const getArticleData = articleList.find(item => item.article_id === articleId);
+    const getArticleData = props.viewData;
 
     //取資料 文章、共好夥伴、小撇步、延伸閱讀
     const articleContent = getArticleData.content;
@@ -27,7 +26,7 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
-    console.log(props.viewData.article_total);
+    console.log(getArticleData);
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -50,8 +49,8 @@ export default function viewArticle(props) {
         <Head>
             <title>{`${getArticleData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="esg description" />        
+            <meta name="Keywords" content="" />
+            <meta name="description" content={getArticleData.description} />        
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>            
@@ -63,7 +62,7 @@ export default function viewArticle(props) {
                 
                 <div className="articleContent">
                     <div className="category">
-                        <span>文章：{getArticleData.article_genre[0].name}</span>
+                        <span>文章：{getArticleData.article_genres[0].name}</span>
                     </div>
                     <div className="mainTitle">{getArticleData.title}</div>
 
@@ -87,12 +86,13 @@ export default function viewArticle(props) {
                     {/* 編輯器 ed*/}
 
                     {/* 廠商資訊 樣式三選一*/}
-                    {articlePartner.name ? 
+
+                    {articlePartner ? 
                         <div className="articleSponsor style1">
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
-                                        <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
+                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
                                     </div>
                                     <div className="txt">
                                         <div className="type">共好夥伴</div>
@@ -102,18 +102,18 @@ export default function viewArticle(props) {
                                     </div>
                                 </div>
                                 <div className="description">
-                                    <p>{articlePartner.description}</p>                                
+                                    <p>{articlePartner.introduction}</p>                                
                                 </div>
                             </div>
                         </div>                    
                     :''}
 
-                    {articlePartner.name ? 
+                    {/* {articlePartner.name ? 
                         <div className="articleSponsor style2">
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
-                                        <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
+                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
                                     </div>
                                     <div className="txt">
                                         <div className="type">共好夥伴</div>
@@ -123,18 +123,18 @@ export default function viewArticle(props) {
                                     </div>
                                 </div>
                                 <div className="description">
-                                    <p>{articlePartner.description}</p>
+                                    <p>{articlePartner.introduction}</p>
                                 </div>
                             </div>
                         </div>
-                    :''}
+                    :''} */}
 
-                    {articlePartner.name ?
+                    {/* {articlePartner.name ?
                         <div className="articleSponsor style3">
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
-                                        <Image src="/images/logo-view2.png" alt="img" width={90} height={90}/>
+                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
                                     </div>
                                     <div className="txt">
                                         <div className="type pc">共好夥伴</div>
@@ -146,15 +146,15 @@ export default function viewArticle(props) {
                                     </div>
                                 </div>
                                 <div className="description">
-                                    <p>{articlePartner.description}</p>                                
+                                    <p>{articlePartner.introduction}</p>                               
                                 </div>
                             </div>
                         </div>
-                    :''}
+                    :''} */}
 
                     {/* 廠商資訊 ed*/}
                     {/* 小撇步報你知 */}    
-                    {articleSecret.cover_img ?
+                    {/* {articleSecret.cover_img ?
                         <div className="articleSecret">
                             <div className="articleTitle">
                                 <p>小撇步報你知</p>
@@ -164,7 +164,7 @@ export default function viewArticle(props) {
                                 <div className="imgBox">
                                     <div className="tag">{articleSecret.tag}</div>
                                     <div className="img">
-                                        <Image src={articleSecret.cover_img} alt="img" width={140} height={140}/>
+                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
                                     </div>
                                 </div>
                                 <div className="txtBox">                                
@@ -188,10 +188,8 @@ export default function viewArticle(props) {
                                 </div>
                             </div>
                         </div>                    
-                    :''}
+                    :''} */}
                     {/* 小撇步報你知 ed*/}
-
-
                 </div>
 
                 {/* 延伸閱讀 */}
@@ -259,20 +257,19 @@ export default function viewArticle(props) {
 }
 
 export async function getServerSideProps(context) {
-    const articleId = context.query.article;
+    const articleId = context.query.page;
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
     // 線上資料
     // list
-    const viewUrl = new URL('/api/view', process.env.APP_URL);
-    const viewRes = await fetch(viewUrl);    
+    const viewUrl = new URL(`/api/articles/${articleId}`, process.env.API_URL);
+    const viewRes = await fetch(viewUrl); 
     const viewData = await viewRes.json();
 
-    
     return {
         props: {
-            menu,viewData,articleId
+            menu,viewData,articleId,
         },
     };
 }

@@ -11,29 +11,29 @@ import JumpPage from '../../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
-    
+    // 頁面識別
+    const thisPage='view';
+    // 計算文章數量轉頁面數
+    const articleCount = props.articlesData.article_count;
+    const articleMath = Math.floor(articleCount/12);
+    const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
+    // 計算文章數量轉頁面數 ed
     const router = useRouter();
-    const page = Number(props.page);
     const viewSubmenu = props.viewSubmenuData;    
-    const articleList = props.articlesData.articles.slice(1);
+    const articleList = props.articlesData.articles;
     const genreEnName=String(props.genreEnName);
     const uri =`/view/${genreEnName}`;
-    const genreData = viewSubmenu.find(item => item.en_name === genreEnName);    
+    const genreData = props.genreData;    
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
-    const [listLength, setListLength] = useState(0);
 
     useEffect(() => {
         if (!genreData) {
             router.push('/404');
         }
-        const listItems = document.querySelectorAll('.viewPage .list ul li');
-        setListLength(listItems.length);
-    }, []);
-    
-    // 頁面識別
-    const thisPage='view';
+    }, []);    
+
     return (
     <div id='wrapper' className={inter.className}> 
         <Head>
@@ -64,7 +64,8 @@ export default function Genres(props) {
                     <ArticleList  articleList={articleList} genreId={genreId}/>
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    {listLength >= 12 ? <JumpPage uri={uri}/> :''}
+                    { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
+                    
                 {/* 跳頁選單 ed */}
             </div>
             
@@ -84,19 +85,22 @@ export async function getServerSideProps(context) {
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
+
     // 線上資料
     // submenu
-    const viewSubmenuUrl = new URL('/api/article-genres', process.env.APP_URL);
+    const viewSubmenuUrl = new URL('/api/article-genres', process.env.API_URL);
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
+    const genreData = viewSubmenuData.find(item => item.en_name === genreEnName);    
+    const genreId = genreData ? genreData.id :'';
     // list
-    const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.APP_URL);
+    const articlesUrl = new URL(`/api/articles?genre_id=${genreId}&page=${page}`, process.env.API_URL);
     const articlesRes = await fetch(articlesUrl);    
     const articlesData = await articlesRes.json();
     
     return {
         props: {
-            menu,viewSubmenuData,articlesData,genreEnName,page
+            menu,viewSubmenuData,articlesData,genreEnName,page,genreData
         },
     };
 }

@@ -11,7 +11,7 @@ function ArticleList(props) {
                         <React.Fragment key={index}>
                             { item.article_genres[0].id == props.genreId || props.genreId == null ?                         
                                 <li >                            
-                                    <a href={item.url}>
+                                    <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
                                         <div className='img'>
                                             <Image src={item.cover_img} alt="img" width={1072} height={603}/>
                                         </div>
@@ -21,7 +21,7 @@ function ArticleList(props) {
                                             <>
                                                 <div className='nameImg'>
                                                     <div className='img1'>
-                                                        <Image src={item.partner.logo} alt="logo" width={50} height={50}/>
+                                                        <Image src={item.partner.avatar} alt="logo" width={50} height={50}/>
                                                     </div>
                                                 </div>
                                                 <p>{item.author_name}</p>

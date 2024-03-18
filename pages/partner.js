@@ -1,6 +1,5 @@
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
@@ -24,16 +23,16 @@ const [submenuActive, setSubmenuActive] = useState(0);
     const imgMouseOut = (e) => {
         setImgHover(null);
     };
-
+console.log(props.partnerData);
     // 處理點擊事件
     const handleClick = (id) => {
         setSubmenuActive(id);
         if(id === 0){
             // 全部
-            return setShowList(props.partnerData);
+            // return setShowList(props.partnerData);
         }
-        const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
-        setShowList(filteredData);
+        // const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
+        // setShowList(filteredData);
     };
 
     // resize 監聽事件
@@ -79,11 +78,11 @@ return (
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>  
-                        <Link onClick={() => handleClick(0)}  href="javascript:void(0)" className={submenuActive === 0 ? "act" : ""}>全部</Link>
+                        <a onClick={() => handleClick(0)}  href="javascript:void(0)" className={submenuActive === 0 ? "act" : ""}>全部</a>
                         {
                             props.submenuData.length > 0 ?
                                 props.submenuData.map((item, index) => (
-                                    <Link onClick={() => handleClick(item.id)} href="javascript:void(0)" className={submenuActive === item.id ? "act" : ""}>{item.name}</Link>
+                                    <a onClick={() => handleClick(item.id)} href="javascript:void(0)" className={submenuActive === item.id ? "act" : ""}>{item.name}</a>
                                 )):''
                         }
                     </div>  
@@ -98,7 +97,7 @@ return (
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                <Link  href={`/partner/`+item.name}>
+                                <a  href={`/partner/${item.name}`}>
                                     <div class="itemMask"></div>
                                     <div className="profileCard">
                                         <div className="profileImg">
@@ -115,7 +114,7 @@ return (
                                             </div>
                                         </div>
                                     </div> 
-                                </Link>
+                                </a>
                                     </li>
                                 ))
                             :''
