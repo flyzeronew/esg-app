@@ -10,6 +10,7 @@ function Navber(props) {
     const [hamBurger, setHamBurger] = useState(false);
     const [showChildMenu, setShowChildMenu] = useState(null);
     const [navScroll, setNavScroll] = useState(false);
+    const [hamChild, setHamChild] = React.useState(Array(menu.length).fill(false));
     // 變數宣告 ed
 
     // resize 監聽事件
@@ -35,7 +36,6 @@ function Navber(props) {
         setNavScroll(window.scrollY > 0 ? true : false);
     };
     function childMenuClick(e) {
-        setShowChildMenu(null);
         setShowChildMenu(e);
     }
     function hamBurgerClick(e) {
@@ -45,7 +45,13 @@ function Navber(props) {
         setShowChildMenu(null);
     };
     // 事件動作 ed
-
+    function hamChildClick(e) {
+        setHamChild((prevActive) => {
+            const newActive = [...prevActive];
+            newActive[e] = !newActive[e];
+            return newActive;
+        });
+    }
     return (
             <header>                
                 { hamBurger ?  
@@ -126,16 +132,16 @@ function Navber(props) {
                                     <ul>
                                         {menu.map((item, index) => (
                                             <li key={index} >
-                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={() => childMenuClick(index)} >
+                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={() => hamChildClick(index)} >
                                                     {item.title}
-                                                    {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                    {item.child.length>0 ? <Image className={hamChild[index] ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                                 </a>
 
                                                 {
                                                     item.child.length>0 ?
-                                                        <div className={`child ${showChildMenu ? 'act':''}`}>
+                                                        <div className={`child ${hamChild[index] ? 'act':''}`}>
                                                             {
-                                                                index===showChildMenu ? 
+                                                                hamChild[index] ? 
                                                                     item.child.map((item2, index2) => (
                                                                         <a key={index2} href={item2.url}>
                                                                             {item2.title}
