@@ -88,7 +88,10 @@ export default function Focus(props) {
 
                     <div className='contxt'>
                         <div className='t1'>
-                            持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞媒體的永續殿堂
+                            <p>
+                                持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞媒體的永續殿堂
+                            </p>                            
+                            <div className='line'></div>
                         </div>
                         <p>
                             《TVBS新聞》常態性探討聯合國17項永續發展目標議題，包括檢視長照、醫療制度的「你我老之路-老病死之生路」、以及關注派遣勞工權益的「派遣工的正義-我不是你的免洗筷」等。近期TVBS新聞網更開闢ESG永續專區，針對ESG環境、ESG新趨勢、減碳生活、永續企業，做分類詳細的相關報導，TVBS總經理劉文硯表示，希望透過深入淺出的挖掘與剖析，轉譯永續議題，讓社會大眾更理解永續跟自身的關係，並培養民眾永續識讀力。
@@ -117,7 +120,7 @@ export default function Focus(props) {
                                 <div className='small'>- 永續倡議大使 莊開文 </div>
                             </div>
                         </div> 
-
+                        <div className='line'></div>
                         <p>
                             <strong>「永續．共好．愛無限」 三面向推進ESG策略，</strong>
                             同步實踐TVBS自身的永續發展，發揮媒體責任，提出對永續的獨到見解並付諸行動。
