@@ -60,6 +60,11 @@ export default function handler(req, res) {
         }
       }
     ],
+    "whatIsEsg":{
+      "description":"什麼是ESG",
+      "detail":"ESG分別是環境保護（E，Environmental）、社會責任（S，Social）以及公司治理（G，governance）的縮寫，是一種新型態評估企業的數據與指標",
+      "url":"https://news.tvbs.com.tw/world/2427704"
+    },
     "viewpoint":[
       {
         "id": 1,

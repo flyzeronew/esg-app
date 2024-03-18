@@ -66,16 +66,16 @@ export default function Home(props) {
             <MainVision data={props.data.headline}/>
 
             <div className="other">
-              
+            {props.data.whatIsEsg?
               <div className="whatEsg" onMouseOver={() => esgMouseOver(1)}   onMouseOut={esgMouseOut}>
                 {esgHover
                 ?
                 <div className="whatEsgHover">
-                  <div className="txt">ESG分別是環境保護（E，Environmental）、社會責任（S，Social）以及公司治理（G，governance）的縮寫，是一種新型態評估企業的數據與指標</div>
+                  <div className="txt">{props.data.whatIsEsg.detail}</div>
                   <div className="txtBox">
                     <div className="txt">看文章了解更多</div>
                     <div className="arraw">
-                      <a href="#">
+                      <a href={props.data.whatIsEsg.url}>
                         <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
                       </a>
                     </div>
@@ -85,16 +85,16 @@ export default function Home(props) {
                 <div>
                   <div className="title">What is ESG?</div>
                   <div className="txtBox">
-                    <div className="txt">什麼是ESG?</div>
+                    <div className="txt">{props.data.whatIsEsg.description}</div>
                     <div className="arraw">
-                      <a href="#">
+                      <a href={props.data.whatIsEsg.url}>
                         <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
                       </a>
                     </div>
                   </div>
                 </div>}
               </div>
-
+              :""}
               <ViewList data={props.data.viewpoint}/>
               
             
