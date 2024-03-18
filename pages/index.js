@@ -117,11 +117,13 @@ export default function Home(props) {
 
           </section>
           <section>
+            {props.data.ourMissoin
+            ?
             <div onMouseOver={() => missionMouseOver(1)}   onMouseOut={missionMouseOut} >
               {ourMissionHover
               ?<div className="ourMissionHover" >
               <div className="txtBox">
-                <div className="txt up">TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂</div>
+                <div className="txt up">{props.data.ourMissoin.description}</div>
                 <div className="txt">看更多                    
                     <a href="#">                  
                       <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
@@ -130,10 +132,10 @@ export default function Home(props) {
               </div>
             </div>
               :<div className="ourMission" >
-                <div className="img"><Image src="/images/our-mission01.jpg" alt="img"  width={300} height={300}/></div>
+                <div className="img"><Image src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
                 <div className="txtBox">
                   <div className="title">Our Mission</div>
-                  <div className="txt">TVBS ESG永續倡議大使 
+                  <div className="txt">{props.data.ourMissoin.title} 
                     <a href="#">                  
                       <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                     </a>
@@ -141,6 +143,8 @@ export default function Home(props) {
                 </div>
               </div>}
             </div>
+            :""}
+
             
             <SecretList data={props.data.tips}/>
             <PartnerList data={props.data.partners}/>
