@@ -10,6 +10,7 @@ import React, { Component } from "react"
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
+    const appUrl = process.env.APP_URL;
     const detail = props.detailData;    
     const pcLinksArr = ["first","second","third","fourth"];
     const moLinksIndexArr = [
@@ -200,7 +201,7 @@ return (
                                                 }}
                                                 onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
                                             >
-                                                <a href="##">
+                                                <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
                                                     <div className="articleCard">
                                                         <div className="articleTitle">{item.title}</div>
                                                         <div className="linkIcon">
