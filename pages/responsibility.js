@@ -83,11 +83,12 @@ export default function Focus(props) {
                             <div className='video'>
                                 <Image src='http://img.youtube.com/vi/pMTFK3q-rek/maxresdefault.jpg' alt="img" width={1920} height={1080}/>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
 
                     <div className='contxt'>
-                        <div className='t1'>
+                        <div className='t1'>  
+                            <div className='line'></div>                         
                             <p>
                                 持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞媒體的永續殿堂
                             </p>                            
