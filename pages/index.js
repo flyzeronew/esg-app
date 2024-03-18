@@ -63,7 +63,7 @@ export default function Home(props) {
       <main>
         <div className="indexPage">
           <section>
-            <MainVision/>
+            <MainVision data={props.data.headline}/>
 
             <div className="other">
               
