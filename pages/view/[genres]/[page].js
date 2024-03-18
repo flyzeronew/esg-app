@@ -190,8 +190,6 @@ export default function viewArticle(props) {
                         </div>                    
                     :''} */}
                     {/* 小撇步報你知 ed*/}
-
-
                 </div>
 
                 {/* 延伸閱讀 */}
@@ -265,10 +263,6 @@ export async function getServerSideProps(context) {
     const menu = await menuRes.json();
     // 線上資料
     // list
-    // const viewUrl = new URL('/api/view', process.env.APP_URL);
-    // const viewRes = await fetch(viewUrl);    
-    // const viewData = await viewRes.json();
-
     const viewUrl = new URL(`/api/articles/${articleId}`, process.env.API_URL);
     const viewRes = await fetch(viewUrl); 
     const viewData = await viewRes.json();
