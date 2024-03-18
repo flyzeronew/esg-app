@@ -35,6 +35,7 @@ function Navber(props) {
         setNavScroll(window.scrollY > 0 ? true : false);
     };
     function childMenuClick(e) {
+        setShowChildMenu(null);
         setShowChildMenu(e);
     }
     function hamBurgerClick(e) {
