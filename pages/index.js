@@ -63,19 +63,19 @@ export default function Home(props) {
       <main>
         <div className="indexPage">
           <section>
-            <MainVision/>
+            <MainVision data={props.data.headline}/>
 
             <div className="other">
-              
+            {props.data.whatIsEsg?
               <div className="whatEsg" onMouseOver={() => esgMouseOver(1)}   onMouseOut={esgMouseOut}>
                 {esgHover
                 ?
                 <div className="whatEsgHover">
-                  <div className="txt">ESG分別是環境保護（E，Environmental）、社會責任（S，Social）以及公司治理（G，governance）的縮寫，是一種新型態評估企業的數據與指標</div>
+                  <div className="txt">{props.data.whatIsEsg.detail}</div>
                   <div className="txtBox">
                     <div className="txt">看文章了解更多</div>
                     <div className="arraw">
-                      <a href="#">
+                      <a href={props.data.whatIsEsg.url}>
                         <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
                       </a>
                     </div>
@@ -85,62 +85,69 @@ export default function Home(props) {
                 <div>
                   <div className="title">What is ESG?</div>
                   <div className="txtBox">
-                    <div className="txt">什麼是ESG?</div>
+                    <div className="txt">{props.data.whatIsEsg.description}</div>
                     <div className="arraw">
-                      <a href="#">
+                      <a href={props.data.whatIsEsg.url}>
                         <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
                       </a>
                     </div>
                   </div>
                 </div>}
               </div>
-
+              :""}
               <ViewList data={props.data.viewpoint}/>
               
-            
+              {props.data.activity
+              ?
               <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.5s'}}>
                 {hover?
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <div className="titleComingSoon">COMING SOON</div>
+                  <div className="titleComingSoon">{props.data.activity.detail}</div>
                 </div>
                 :<div>
                   <div className="title">參加活動GO!</div>
                   <div className="txtBox">
-                    <div className="txt">一起實踐永續</div>
+                    <div className="txt">{props.data.activity.description}</div>
                     <div className="arraw" style={{cursor: "auto"}}>
                       {/* <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/> */}
                     </div>
                   </div>
                 </div>}
               </div>
+              :""}
+
             </div>
 
           </section>
           <section>
+            {props.data.ourMissoin
+            ?
             <div onMouseOver={() => missionMouseOver(1)}   onMouseOut={missionMouseOut} >
               {ourMissionHover
               ?<div className="ourMissionHover" >
               <div className="txtBox">
-                <div className="txt up">TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂</div>
+                <div className="txt up">{props.data.ourMissoin.description}</div>
                 <div className="txt">看更多                    
-                    <a href="#">                  
+                    <a href={props.data.ourMissoin.url}>                  
                       <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                     </a>
                   </div>
               </div>
             </div>
               :<div className="ourMission" >
-                <div className="img"><Image src="/images/our-mission01.jpg" alt="img"  width={300} height={300}/></div>
+                <div className="img"><Image src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
                 <div className="txtBox">
                   <div className="title">Our Mission</div>
-                  <div className="txt">TVBS ESG永續倡議大使 
-                    <a href="#">                  
+                  <div className="txt">{props.data.ourMissoin.title} 
+                    <a href={props.data.ourMissoin.url}>                  
                       <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                     </a>
                   </div>
                 </div>
               </div>}
             </div>
+            :""}
+
             
             <SecretList data={props.data.tips}/>
             <PartnerList data={props.data.partners}/>

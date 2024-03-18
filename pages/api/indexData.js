@@ -1,5 +1,31 @@
 export default function handler(req, res) {
   const data = {
+    "headline":[
+      {
+        "id": 1,
+        "title": "台灣剩食危機",
+        "url": "https://news.tvbs.com.tw/life/2427357",
+        "img": "https://esg-statics-staging.tvbs.com.tw/partner/videos/EGDr751P9n8WBGSyiXFJRSWBtlnilPSq0RduQfqn.jpg",
+        "description":"每人每天浪費一個便當每人每天浪費一個便當每人每天浪費一個便當每人每天浪費一個便當每人每天浪費一個便當每人每天浪費一個便當",
+        "created_at": "2024-01-25T14:23:06.000000Z",
+        "updated_at": "2024-01-25T14:23:06.000000Z"
+      },
+      {
+        "id": 2,
+        "title": "2台灣剩食危機",
+        "url": "https://news.tvbs.com.tw/life/2426206",
+        "img": "https://esg-statics-staging.tvbs.com.tw/partner/videos/aDWhQpsbs0i5uoKLUfr8AzbtFUBMfdZUQkQLGSPN.jpg",
+        "description":"222每人每天浪費一個便當",
+        "created_at": "2024-01-25T14:23:06.000000Z",
+        "updated_at": "2024-01-25T14:23:06.000000Z"
+      }
+    ],
+    "ourMissoin":{
+      "title":"TVBS ESG永續倡議大使",
+      "img":"/images/our-mission01.jpg",
+      "description":"TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永體，共創關懷環境生態與新聞學的永續殿堂",
+      "url":"https://news.tvbs.com.tw/life/2426793"
+    },
     "tips": [
       {
         "id": 1,
@@ -34,6 +60,11 @@ export default function handler(req, res) {
         }
       }
     ],
+    "whatIsEsg":{
+      "description":"什麼是ESG",
+      "detail":"ESG分別是環境保護（E，Environmental）、社會責任（S，Social）以及公司治理（G，governance）的縮寫，是一種新型態評估企業的數據與指標",
+      "url":"https://news.tvbs.com.tw/world/2427704"
+    },
     "viewpoint":[
       {
         "id": 1,
@@ -82,6 +113,11 @@ export default function handler(req, res) {
       }
       
     ],
+    "activity":{
+      "description":"一起實踐永續",
+      "detail":"COMING SOON",
+      "url":""
+    },
     "partners":[
       {
         "id": 17,
