@@ -85,7 +85,7 @@ function Navber(props) {
                                 <ul>
                                     {menu.map((item, index) => (
                                         <li key={index} >
-                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={childMenuMouseLeave}>
+                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={() => childMenuClick(index)}>
                                                 {item.title}
                                                 {item.child.length > 0 ? <Image className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </a>
