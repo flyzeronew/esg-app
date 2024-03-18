@@ -100,11 +100,12 @@ function Navber(props) {
                         </div>
                     </div>
                     {/* pc子選單 */}
-                    <div className={`childMenu ${showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}>                        
+
                             {menu.map((item, index) => (
                                 <React.Fragment key={index}> 
                                     {
-                                        index===showChildMenu && item.child.length > 0 ?  
+                                        item.child.length > 0 ?  
+                                        <div className={`childMenu ${index === showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}> 
                                             <ul>
                                                 {
                                                     item.child.map((item2, index2) => (
@@ -116,12 +117,13 @@ function Navber(props) {
                                                     ))
                                                 }
                                             </ul>
+                                            </div>
                                         :''
                                     }
                                 </React.Fragment>                          
                             ))}
 
-                    </div>
+                    
                     {/* pc子選單 ed*/}
 
                     {/* 手機板導覽列 */}
