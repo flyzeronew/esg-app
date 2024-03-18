@@ -1,0 +1,34 @@
+export default function handler(req, res) {
+    const data = 
+        {
+          "id": 1,
+          "title": "吃完的免洗紙餐盒，需洗完再回收嗎？",
+          "url": "/tips/food/1",
+          "cover_img": "/images/tips01.jpg",
+          "cover_img2": "/images/tips02.jpg",
+          "cover_img3": "/images/tips03.jpg",
+          "answer1": "當然要洗啊～",
+          "answer2": "我都直接丟",
+          "answer3": "大概擦一下而已",
+          "answer4": "忘記了",
+          "content":`<div className="answerTxtBox">
+          <div className="answerTitle">免洗餐盒該當垃圾直接丟棄，還是洗淨回收？</div>
+          <p>記者徐葳倫：「不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。」</p>
+      </div>
+      <div className="answerTxtBox">
+          <div className="answerTitle">免洗餐盒要丟一般垃圾還是資源回收？</div>
+          <p>記者徐葳倫：「不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。」</p>
+      </div>`,
+          "created_at": "2024-01-25T14:23:06.000000Z",
+          "updated_at": "2024-01-25T14:23:06.000000Z",
+          "tip_genre": {
+            "id": 1,
+            "name": "食",
+            "en_name": "food",
+            "created_at": "2024-01-25T14:23:06.000000Z",
+            "updated_at": "2024-01-25T14:23:06.000000Z"
+          }
+        };
+    res.status(200).json(data);
+}
+
