@@ -113,6 +113,11 @@ export default function handler(req, res) {
       }
       
     ],
+    "activity":{
+      "description":"一起實踐永續",
+      "detail":"COMING SOON",
+      "url":""
+    },
     "partners":[
       {
         "id": 17,

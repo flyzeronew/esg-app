@@ -97,22 +97,25 @@ export default function Home(props) {
               :""}
               <ViewList data={props.data.viewpoint}/>
               
-            
+              {props.data.activity
+              ?
               <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.5s'}}>
                 {hover?
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <div className="titleComingSoon">COMING SOON</div>
+                  <div className="titleComingSoon">{props.data.activity.detail}</div>
                 </div>
                 :<div>
                   <div className="title">參加活動GO!</div>
                   <div className="txtBox">
-                    <div className="txt">一起實踐永續</div>
+                    <div className="txt">{props.data.activity.description}</div>
                     <div className="arraw" style={{cursor: "auto"}}>
                       {/* <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/> */}
                     </div>
                   </div>
                 </div>}
               </div>
+              :""}
+
             </div>
 
           </section>
