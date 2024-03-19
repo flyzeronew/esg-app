@@ -67,26 +67,28 @@ export default function Genres(props) {
                  {/* 主視覺 */}
                  {articlesFirst && props.page === 1 ?
                     <div className='mainView'>
-                        <div className='box'>
-                            <div className='img'>
-                                <Image src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
-                                <div className='imgMaskBox'>
-                                    <div className='rounded'>
-                                        <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
-                                    </div>
-                                    <div className='case'>
+                        <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
+                            <div className='box'>
+                                <div className='img'>
+                                    <Image src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
+                                    <div className='imgMaskBox'>
                                         <div className='rounded'>
                                             <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
                                         </div>
-                                        <div className='imgMask'></div>
+                                        <div className='case'>
+                                            <div className='rounded'>
+                                                <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                            </div>
+                                            <div className='imgMask'></div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className='txtBox'>
+                                    <div className='title'>{articlesFirst.title}</div>
+                                    <div className='txt'>{articlesFirst.description}</div>
+                                </div>
                             </div>
-                            <div className='txtBox'>
-                                <div className='title'>{articlesFirst.title}</div>
-                                <div className='txt'>{articlesFirst.description}</div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     :''
                 }
