@@ -26,7 +26,7 @@ export default function View(props) {
     console.log(pageCount);
     useEffect(() => {
         if (props.page > pageCount) {
-            // router.push('/404');
+            router.push('/404');
         }
     }, []);
     // 頁面識別
