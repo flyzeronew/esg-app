@@ -183,7 +183,9 @@ export default function page(props) {
                     <div className="frameBox">
                         <div className="title">繼續看</div>
                         <div className="listBox">
-                            <div className="arraw">↓</div>
+                            <div className="arraw">
+                            <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                            </div>
                             <div className="list">
                                 <ul>
                                     <li>

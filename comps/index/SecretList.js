@@ -6,9 +6,15 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function SecretList(props) {
-    const handleClick = (e) => {
-        e.preventDefault();
-    };
+    const data = props.data;
+    const tipsGenresArr = [
+        'tagFoodColor',
+        'tagClothingColor',
+        'tagHousingColor',
+        'tagTransportColor',
+        'tagEducationColor',
+        'tagEntertainmentColor',
+    ];
     const settings = {
         dots: true,
         fade: true,
@@ -24,53 +30,32 @@ function SecretList(props) {
         <div className="secret">
             <div className="list">
                 <Slider {...settings}>
-                    <a href='#' onClick={handleClick}>
-                        <div className="img mo">
-                            <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
-                        </div>
-                        <div className="subtitle">
-                            <p>永續生活小撇步</p>
-                            <div className="line"></div>
-                            <div className="tag">衣</div>
-                        </div>
-                        <div className="title">
-                            <div className="word">
-                                <p>
-                                    吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？
-                                </p>
-                                <div className="description">
-                                    嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡
-                                </div>
-                            </div>
-                            <div className="img pc">
-                                <Image src="/images/esg03.jpg" alt="img" width={640} height={360}/>
-                                {/* <Image src="/images/partner-bg01.jpg" alt="img" width={640} height={360}/> */}
-                            </div>
-                        </div>
-                    </a>
-                    <a href='#' onClick={handleClick}>
-                        <div className="img mo">
-                            <Image src="/images/esg02.jpg" alt="img" width={640} height={360}/>
-                        </div>
-                        <div className="subtitle">
-                            <p>永續生活小撇步</p>
-                            <div className="line"></div>
-                            <div className="tag">衣</div>
-                        </div>
-                        <div className="title">
-                            <div className="word">
-                                <p>
-                                    2吃完的免洗紙餐盒，需洗完再回收嗎？吃完的免洗紙餐盒，需洗完再回收嗎？
-                                </p>
-                                <div className="description">
-                                    2嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡嘗試替「舊愛」尋找新歡
-                                </div>
-                            </div>
-                            <div className="img pc">
-                                <Image src="/images/esg02.jpg" alt="img" width={640} height={360}/>
-                            </div>
-                        </div>
-                    </a>
+                    {data.length > 0?data.map((item, index) => (
+                                        <a href={item.url}>
+                                        <div className="img mo">
+                                            <Image src={item.img} alt="img" width={640} height={360}/>
+                                        </div>
+                                        <div className="subtitle">
+                                            <p>永續生活小撇步</p>
+                                            <div className={`line ${tipsGenresArr[item.tip_genre.id - 1]}`}></div>
+                                            <div className={`tag ${tipsGenresArr[item.tip_genre.id - 1]}`}>{item.tip_genre.name}</div>
+                                        </div>
+                                        <div className="title">
+                                            <div className="word">
+                                                <p>
+                                                    {item.title}
+                                                </p>
+                                                <div className="description">
+                                                    {item.description}
+                                                </div>
+                                            </div>
+                                            <div className="img pc">
+                                                <Image src={item.img} alt="img" width={640} height={360}/>
+                                            </div>
+                                        </div>
+                                    </a>
+                   
+                                    )):""}
                 </Slider>
             </div>
         </div>

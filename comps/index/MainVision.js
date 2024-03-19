@@ -6,9 +6,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function MainVision(props) {
-    const handleClick = (e) => {
-        e.preventDefault();
-    };
+    const data = props.data;
     const settings = {
         dots: true,
         fade: true,
@@ -23,45 +21,31 @@ function MainVision(props) {
     return (
         <div className="mainVision">
             <Slider {...settings}>
-                <a href='#' onClick={handleClick}>
-                    <div className="img" style={{ 
-                        background: `url(/images/esg01.jpg) no-repeat center center`,
-                        backgroundSize:`cover`,
-                        transition: 'background-size 0.3s',
-                    }}></div> 
-                    
-                    <div className="txtAbsolute">
-                        <div className="txtBox">
-                            <div className="title">台灣剩食危機</div>
-                            <div className="txt">每人每天浪費一個便當！</div>
-                            <div className="object">
-                                <div className="point"></div>
-                                <div className="arraw">
-                                    <Image src="/images/icon_arraw02.svg" alt="arraw" width={50} height={50}/>
+                {data.length>0
+                ?
+                data.map((item, index) => (
+                    <a href={item.url}>
+                        <div className="img" style={{ 
+                            background: `url(${item.img}) no-repeat center center`,
+                            backgroundSize:`cover`,
+                            transition: 'background-size 0.3s',
+                        }}></div> 
+                        
+                        <div className="txtAbsolute">
+                            <div className="txtBox">
+                                <div className="title">{item.title}</div>
+                                <div className="txt">{item.description}</div>
+                                <div className="object">
+                                    <div className="point"></div>
+                                    <div className="arraw">
+                                        <Image src="/images/icon_arraw02.svg" alt="arraw" width={50} height={50}/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href='#' onClick={handleClick}>
-                    <div className="img" style={{ 
-                        background: `url(/images/esg04.jpg) no-repeat center center`,
-                        backgroundSize:`cover`,
-                        transition: 'background-size 0.3s',
-                    }}></div>
-                    <div className="txtAbsolute">
-                        <div className="txtBox">
-                            <div className="title">台灣剩食危機2</div>
-                            <div className="txt">每人每天浪費一個便當！</div>
-                            <div className="object">
-                                <div className="point"></div>
-                                <div className="arraw">
-                                    <Image src="/images/icon_arraw02.svg" alt="arraw" width={50} height={50}/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                ))
+                :""}
             </Slider>
         </div>
     )

@@ -4,11 +4,13 @@ import { Inter } from 'next/font/google'
 import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
 import Image from 'next/image'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
+import React, { Component } from "react"
 
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
+    const appUrl = process.env.APP_URL;
     const detail = props.detailData;    
     const pcLinksArr = ["first","second","third","fourth"];
     const moLinksIndexArr = [
@@ -188,24 +190,29 @@ return (
                         <div className="title">更多共好消息</div>
                         <div className="list">
                             <ul>
-                                {otherArticles.map((item, index) => (
-                                    <li key={index} 
-                                        style={{ 
-                                            background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.cover_img})  no-repeat center center / 100%`,
-                                            backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                            backgroundPosition: 'center center' 
-                                        }}
-                                        onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
-                                    >
-                                        <a href="##">
-                                            <div className="articleCard">
-                                                <div className="articleTitle">{item.title}</div>
-                                                <div className="linkIcon">
-                                                    <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
+                                {otherArticles.map((item, index) => (  
+                                    <React.Fragment key={index}>
+                                        {item.status > 0 ? 
+                                            <li
+                                                style={{ 
+                                                    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.cover_img})  no-repeat center center / 100%`,
+                                                    backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                                    backgroundPosition: 'center center' 
+                                                }}
+                                                onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
+                                            >
+                                                <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
+                                                    <div className="articleCard">
+                                                        <div className="articleTitle">{item.title}</div>
+                                                        <div className="linkIcon">
+                                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        :''}
+                                    </React.Fragment>
+
                                 ))}
 
                             </ul>

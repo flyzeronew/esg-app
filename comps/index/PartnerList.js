@@ -5,10 +5,8 @@ import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-function ViewList(props) {
-    const handleClick = (e) => {
-        e.preventDefault();
-    };
+function PartnerList(props) {
+    const data = props.data;
     const settings = {
         dots: true,
         fade: true,
@@ -21,59 +19,31 @@ function ViewList(props) {
     return (        
         <div className="partner">
             <div className="titleBox">
-                <div className="title">Who’s doing ESG?</div>
-                <div className="txt">落實ESG的夥伴 <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></div>
+                <div className="title"><a href="/partner">Who’s doing ESG?</a></div>
+                <div className="txt">落實ESG的夥伴 <a href="/partner"><Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></a></div>
             </div>
             <div className="list">
                 <Slider {...settings}>
-                    <div className="box">                    
-                        <a href='#' onClick={handleClick}>
-                        <div className="img">
-                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
+                    {data.length>0?data.reduce((acc, item, index) => {
+                        if (index % 3 === 0) {
+                            acc.push(data.slice(index, index + 3));
+                        }
+                        return acc;
+                    }, []).map((chunk, chunkIndex) => (
+                        <div className="box" key={chunkIndex}>
+                            {chunk.map((item, index) => (
+                                <a href={`/partner/${item.name}`} key={index}>
+                                    <div className="img">
+                                        <Image src={item.avatar} alt="img" width={50} height={50}/>
+                                    </div>
+                                    <div className="txt">{item.name}</div>
+                                </a>
+                            ))}
                         </div>
-                        <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                        </a>
-
-                        <a href='#' onClick={handleClick}>
-                        <div className="img">
-                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                        </div>
-                        <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                        </a>
-
-                        <a href='#' onClick={handleClick}>
-                        <div className="img">
-                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                        </div>
-                        <div className="txt">台灣雀巢 Nestlé Taiwan</div>
-                        </a>                    
-                    </div>
-
-                    <div className="box">                    
-                        <a href='#' onClick={handleClick}>
-                        <div className="img">
-                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                        </div>
-                        <div className="txt">台灣雀巢 Nestlé Taiwan2</div>
-                        </a>
-
-                        <a href='##'>
-                        <div className="img">
-                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                        </div>
-                        <div className="txt">台灣雀巢 Nestlé Taiwan2</div>
-                        </a>
-
-                        <a href='#' onClick={handleClick}>
-                        <div className="img">
-                            <Image src="/images/partner01.jpg" alt="img" width={50} height={50}/>
-                        </div>
-                        <div className="txt">台灣雀巢 Nestlé Taiwan2</div>
-                        </a>                    
-                    </div>
+                    )):""}
                 </Slider>
             </div>
         </div> 
     )
 }
-export default ViewList;
+export default PartnerList;
