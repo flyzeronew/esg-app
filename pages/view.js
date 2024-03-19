@@ -23,10 +23,9 @@ export default function View(props) {
     const articlesFirst = props.articlesData.articles[0];
     const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
     const uri =`/view`;
-    console.log(articleCount);
     useEffect(() => {
         if (props.page > pageCount) {
-            router.push('/404');
+            // router.push('/404');
         }
     }, []);
     // 頁面識別
@@ -63,7 +62,7 @@ export default function View(props) {
                 {/* 主視覺 */}
                 {articlesFirst && props.page === 1 ?
                     <div className='mainView'>
-                        <a href='##'>
+                        <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
                             <div className='box'>
                                 <div className='img'>
                                     <Image src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
