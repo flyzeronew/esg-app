@@ -6,6 +6,8 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function DetailMainView(props) {
+    let data = props.data;
+
     const handleClick = (e) => {
         e.preventDefault();
     };
@@ -22,18 +24,28 @@ function DetailMainView(props) {
     return (
         <>
             <Slider {...settings}>
+                {data.hasOwnProperty('cover_img') && data.cover_img!==''
+                ?
                 <div className="box">
-                    <div className="tag">食</div>
-                    <Image src="/images/tips01.jpg" alt="img" width={800} height={800}/>
+                    <div className="tag">{data.tip_genre.name}</div>
+                    <Image src={data.cover_img} alt="img" width={800} height={800}/>
                 </div>
+                :''}
+                {data.hasOwnProperty('cover_img2') && data.cover_img2!==''
+                ?
                 <div className="box">
-                    <div className="tag">食</div>
-                    <Image src="/images/tips02.jpg" alt="img" width={800} height={800}/>
+                    <div className="tag">{data.tip_genre.name}</div>
+                    <Image src={data.cover_img2} alt="img" width={800} height={800}/>
                 </div>
+                :''}
+                {data.hasOwnProperty('cover_img3') && data.cover_img3!==''
+                ?
                 <div className="box">
-                    <div className="tag">食</div>
-                    <Image src="/images/tips03.jpg" alt="img" width={800} height={800}/>
+                    <div className="tag">{data.tip_genre.name}</div>
+                    <Image src={data.cover_img3} alt="img" width={800} height={800}/>
                 </div>
+                :''}
+
             </Slider>
         </>
     )

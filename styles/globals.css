@@ -4669,6 +4669,13 @@ header .menuMo .list li:last-child{
 .tipsDetailPage .contentBox .answer{
     margin: 200% 0 30%;
 }
+.tipsDetailPage .contentBox .answer .tipsContent{
+    margin-bottom: 50px;
+}
+.tipsDetailPage .contentBox .answer .tipsContent h1, h2, h3, h4, h5, h6 {
+    font-size: revert; 
+    font-weight: revert; 
+}
 .tipsDetailPage .contentBox .answer .time{
     font-size: 14px;
     font-weight: 400;
