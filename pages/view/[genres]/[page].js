@@ -82,7 +82,7 @@ export default function viewArticle(props) {
                     </div>
                     
                     {/* 編輯器 */}
-                    <div className="editor" dangerouslySetInnerHTML={{ __html: articleContent }}></div>
+                    <div className="editorNew" dangerouslySetInnerHTML={{ __html: articleContent }}></div>
                     {/* 編輯器 ed*/}
 
                     {/* 廠商資訊 樣式三選一*/}
