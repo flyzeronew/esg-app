@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -12,25 +13,27 @@ import JumpPage from '../../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
+    const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='view';
     // 計算文章數量轉頁面數
-    const articleCount = props.articlesData.article_count;
+    const articleCount = props.articlesData.article_count-1;
     const articleMath = Math.floor(articleCount/12);
     const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
     const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
-    const articleList = props.articlesData.articles;
+    const articlesFirst = props.articlesData.articles[0];
+    const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
     const genreEnName=String(props.genreEnName);
     const uri =`/view/${genreEnName}`;
     const genreData = props.genreData;    
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
-
+console.log(pageCount);
     useEffect(() => {
-        if (!genreData) {
+        if (props.page > pageCount) {
             router.push('/404');
         }
     }, []);    
@@ -61,6 +64,35 @@ export default function Genres(props) {
                 {/* 分類標籤 */}
                     <Submenu  submenu={viewSubmenu} genreEnName={genreEnName} genreId={genreId}/>
                 {/* 分類標籤 ed*/}
+
+                 {/* 主視覺 */}
+                 {articlesFirst && props.page === 1 ?
+                    <div className='mainView'>
+                        <div className='box'>
+                            <div className='img'>
+                                <Image src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
+                                <div className='imgMaskBox'>
+                                    <div className='rounded'>
+                                        <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                    </div>
+                                    <div className='case'>
+                                        <div className='rounded'>
+                                            <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                        </div>
+                                        <div className='imgMask'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='txtBox'>
+                                <div className='title'>{articlesFirst.title}</div>
+                                <div className='txt'>{articlesFirst.description}</div>
+                            </div>
+                        </div>
+                    </div>
+                    :''
+                }
+                {/* 主視覺 ed*/}
+                
                 {/* 文章列表 */}                
                     <ArticleList  articleList={articleList} genreId={genreId}/>
                 {/* 文章列表 ed */}
