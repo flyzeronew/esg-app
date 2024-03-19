@@ -341,7 +341,9 @@ header .childMenu ul{
     display:flex;
     align-items: center;
     justify-content: flex-end;
-    border-top: 1px solid #DDD;
+}
+header .childMenu.act ul{ 
+    border-top: 1px solid #DDD;  
 }
 header .childMenu ul li a{
     display:block;
