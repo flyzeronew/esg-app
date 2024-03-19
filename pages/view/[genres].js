@@ -16,7 +16,7 @@ export default function Genres(props) {
     // 頁面識別
     const thisPage='view';
     // 計算文章數量轉頁面數
-    const articleCount = props.page > 1 ? props.articlesData.article_count : props.articlesData.article_count-1;
+    const articleCount = props.articlesData.article_count-1;
     const articleMath = Math.floor(articleCount/12);
     const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
@@ -30,9 +30,9 @@ export default function Genres(props) {
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
-
+console.log(pageCount);
     useEffect(() => {
-        if (!genreData) {
+        if (props.page > pageCount) {
             router.push('/404');
         }
     }, []);    

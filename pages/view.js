@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useState ,useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Submenu from '../comps/view/Submenu'
@@ -11,9 +12,10 @@ import JumpPage from '../comps/JumpPage'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function View(props) {
+    const router = useRouter();
     const appUrl = process.env.APP_URL;
     // 計算文章數量轉頁面數
-    const articleCount = props.page > 1 ? props.articlesData.article_count : props.articlesData.article_count-1;
+    const articleCount = props.articlesData.article_count-1;
     const articleMath = Math.floor(articleCount/12);
     const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
@@ -21,9 +23,10 @@ export default function View(props) {
     const articlesFirst = props.articlesData.articles[0];
     const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
     const uri =`/view`;
+    console.log(pageCount);
     useEffect(() => {
         if (props.page > pageCount) {
-            // router.push('/404');
+            router.push('/404');
         }
     }, []);
     // 頁面識別
