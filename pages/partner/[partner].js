@@ -1,15 +1,16 @@
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
 import Image from 'next/image'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
+import React, { Component } from "react"
 
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
+    const appUrl = process.env.APP_URL;
     const detail = props.detailData;    
     const pcLinksArr = ["first","second","third","fourth"];
     const moLinksIndexArr = [
@@ -23,7 +24,8 @@ const [imgHover, setImgHover] = useState(null);
 const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
 const [clicked, setClicked] = useState(false);
-
+const otherArticles = props.detailData.other_articles;
+const otherArticlesSum = otherArticles.reduce((acc, cur) => acc + cur.status, 0);
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
@@ -36,10 +38,9 @@ const [clicked, setClicked] = useState(false);
 
     // 處理點擊事件
     const handleClick = () => {
-      setClicked(!clicked);
+        setClicked(!clicked);
     };
     
-
     // resize 監聽事件
     useEffect(() => { 
         const handleResize = (e) => {
@@ -105,7 +106,7 @@ return (
                             }}
                             onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}
                     >
-                        <Link target={item.link_type ? `_blank` : ""} href={item.link_url}>
+                        <a target={item.link_type ? `_blank` : ""} href={item.link_url}>
                             <div className="linkArea">
                                 <div className="linkCard">
                                     <div className="title">
@@ -116,7 +117,7 @@ return (
                                     </div>
                                 </div>
                             </div>
-                        </Link>
+                        </a>
                     </div>
                 ))}
 
@@ -128,7 +129,7 @@ return (
                             transition: 'background-size 0.3s',
                                 }}
                                 onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                        <Link target={detail.partner_links[item[0]].link_type ? `_blank` : ""} href={detail.partner_links[item[0]].link_url}>
+                        <a target={detail.partner_links[item[0]].link_type ? `_blank` : ""} href={detail.partner_links[item[0]].link_url}>
                             <div className="linkArea">
                                 <div className="linkCard">
                                     <div className="title">
@@ -139,7 +140,7 @@ return (
                                     </div>
                                 </div>
                             </div>
-                        </Link>
+                        </a>
                     </div>
                 ))}
                 </div>
@@ -155,12 +156,12 @@ return (
                 :""}
                 {detail?
                     <div className="videoClick" onClick={handleClick}>
-                      {clicked ? 
+                        {clicked ? 
                         <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
                             <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${detail.youtube_id}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
                         </div> 
-                      : 
-                      <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
+                        : 
+                        <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
                             <div className="videoCard">
                                 <div className="videoTitle">
                                     {detail.video_title}
@@ -170,7 +171,7 @@ return (
                                 </div>
                             </div>
                         </div>
-                      }
+                        }
                     </div>
                 :""}
                 {detail.partner_pages?
@@ -184,51 +185,40 @@ return (
                 </div>
                 :""}
                 {/* 永續觀點的文章頁 */}
-                <div className="moreGoodNewsArea">
-                    <div className="title">
-                        更多共好消息
+                {otherArticles.length > 0 && otherArticlesSum > 0 ? 
+                    <div className="moreGoodNewsArea">
+                        <div className="title">更多共好消息</div>
+                        <div className="list">
+                            <ul>
+                                {otherArticles.map((item, index) => (  
+                                    <React.Fragment key={index}>
+                                        {item.status > 0 ? 
+                                            <li
+                                                style={{ 
+                                                    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.cover_img})  no-repeat center center / 100%`,
+                                                    backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
+                                                    backgroundPosition: 'center center' 
+                                                }}
+                                                onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
+                                            >
+                                                <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
+                                                    <div className="articleCard">
+                                                        <div className="articleTitle">{item.title}</div>
+                                                        <div className="linkIcon">
+                                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        :''}
+                                    </React.Fragment>
+
+                                ))}
+
+                            </ul>
+                        </div>
                     </div>
-                    <div className="list">
-                        <ul>
-                            <li style={{ 
-                                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)  no-repeat center center / 100%`,
-                                backgroundSize: 1 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                backgroundPosition: 'center center' 
-                                }}
-                                onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
-                            >
-                                <Link href="##">
-                                    <div className="articleCard">
-                                        <div className="articleTitle">
-                                            華航永續發展6度入榜 2030地面作業用10%再生能源，華航永續發展6度入榜 2030地面作業用10%再生能源
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li style={{ 
-                                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(/images/partner-bg01.jpg)  no-repeat center center / 100%`,
-                                backgroundSize: 2 === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
-                                backgroundPosition: 'center center' 
-                                }}
-                                onMouseOver={() => imgMouseOver(2)} onMouseOut={imgMouseOut}
-                            >
-                                <Link href="##">
-                                    <div className="articleCard">
-                                        <div className="articleTitle">
-                                            華航永續發展6度入榜 2030地面作業用10%再生能源，華航永續發展6度入榜 2030地面作業用10%再生能源
-                                        </div>
-                                        <div className="linkIcon">
-                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
-                                        </div>
-                                    </div>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                :''}
             </div>
             :''}
         </main>
@@ -260,7 +250,7 @@ export async function getServerSideProps(context) {
     
     return {
         props: {
-            menu,detailData
+            menu,detailData,id
         },
     };
 }

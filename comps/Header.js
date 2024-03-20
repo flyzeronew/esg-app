@@ -1,15 +1,17 @@
 import Image from 'next/image'
 import { useState ,useEffect } from 'react'
+import React, { Component } from "react"
 
 function Navber(props) {  
-    const appUrl = process.env.APP_URL;    
+    const appUrl = process.env.APP_URL;
     const menu = props.menuData;
     const thisPage = props.thisPage;     
     // 變數宣告
     const [hamBurger, setHamBurger] = useState(false);
     const [showChildMenu, setShowChildMenu] = useState(false);
-    const [showChildMenuMo, setShowChildMenuMo] = useState(false);
     const [navScroll, setNavScroll] = useState(false);
+    const [childMo, setChildMo] = React.useState(Array(menu.length).fill(false));
+    
     // 變數宣告 ed
 
     // resize 監聽事件
@@ -34,12 +36,8 @@ function Navber(props) {
     const navScrollStart = () => {
         setNavScroll(window.scrollY > 0 ? true : false);
     };
-
     function childMenuClick(e) {
-        setShowChildMenu(!!e.currentTarget.querySelector('img'));
-    }
-    function childMenuClickMo(e) {
-        setShowChildMenuMo(!!e.currentTarget.querySelector('img'));
+        setShowChildMenu(e);
     }
     function hamBurgerClick(e) {
         setHamBurger(!hamBurger);
@@ -48,7 +46,13 @@ function Navber(props) {
         setShowChildMenu(false);
     };
     // 事件動作 ed
-
+    function childMoClick(e) {
+        setChildMo((prevActive) => {
+            const newActive = [...prevActive];
+            newActive[e] = !newActive[e];
+            return newActive;
+        });
+    }
     return (
             <header>                
                 { hamBurger ?  
@@ -81,63 +85,75 @@ function Navber(props) {
                                 <ul>
                                     {menu.map((item, index) => (
                                         <li key={index} >
-                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={childMenuClick}>
+                                            <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={() => childMenuClick(index)}>
                                                 {item.title}
-                                                {item.child.length>0 ? <Image className={showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                {item.child.length > 0 ? <Image className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </a>
                                         </li>
                                     ))}                                
                                 </ul>
                             </div>
                             {/* 搜尋 */}
-                            <div className="iconSearch">
+                            {/* <div className="iconSearch">
                                 <Image src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {/* pc子選單 */}
-                    <div className={`childMenu ${showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}>
-                        <ul>
+
                             {menu.map((item, index) => (
-                                item.child.map((item2, index2) => (
-                                    <li key={index2}>
-                                        <a href={item2.url} onClick={childMenuMouseLeave}>
-                                            {item2.title}
-                                        </a>
-                                    </li>
-                                ))
-                            ))}                           
-                        </ul>
-                    </div>   
+                                <React.Fragment key={index}> 
+                                    {
+                                        item.child.length > 0 ?  
+                                        <div className={`childMenu ${index === showChildMenu ? 'act':''}`} onMouseLeave={childMenuMouseLeave}> 
+                                            <ul>
+                                                {
+                                                    item.child.map((item2, index2) => (
+                                                        <li key={index2}>
+                                                            <a href={item2.url} onClick={childMenuMouseLeave}>
+                                                                {item2.title}
+                                                            </a>
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
+                                            </div>
+                                        :''
+                                    }
+                                </React.Fragment>                          
+                            ))}
+
+                    
                     {/* pc子選單 ed*/}
 
                     {/* 手機板導覽列 */}
                     {
                         hamBurger ? 
                             <div className="menuMo">                                
-                                <div className="search">
+                                {/* <div className="search">
                                     <Image src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
                                     <input id="searchInput" type="text" placeholder="搜尋"  />
-                                </div>
+                                </div> */}
                                 <div className="list">
                                     <ul>
                                         {menu.map((item, index) => (
                                             <li key={index} >
-                                                <a className={thisPage==item.page_name ? 'act':''} href={item.url} onClick={childMenuClickMo}>
+                                                <a className={thisPage==item.page_name ? 'act':''} href={item.child.length>0 ? '#':item.url} onClick={() => childMoClick(index)} >
                                                     {item.title}
-                                                    {item.child.length>0 ? <Image className={showChildMenuMo ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                    {item.child.length>0 ? <Image className={childMo[index] ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                                 </a>
-
                                                 {
                                                     item.child.length>0 ?
-                                                        <div className={`child ${showChildMenuMo ? 'act':''}`}>
+                                                        <div className={`child ${childMo[index] ? 'act':''}`}>
                                                             {
-                                                                item.child.map((item2, index2) => (
-                                                                    <a key={index2} href={item2.url}>
-                                                                        {item2.title}
-                                                                        <div className="line"></div>
-                                                                    </a>
-                                                                )) 
+                                                                childMo[index] ? 
+                                                                    item.child.map((item2, index2) => (
+                                                                        <a key={index2} href={item2.url}>
+                                                                            {item2.title}
+                                                                            <div className="line"></div>
+                                                                        </a>
+                                                                    )) 
+                                                                :''
                                                             }
                                                         </div>
                                                     :''

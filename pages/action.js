@@ -1,5 +1,3 @@
-
-import Link from 'next/link'
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
@@ -62,8 +60,8 @@ export default function Focus(props) {
                 <div className='submenuArea'>
                     <div className='submenu'> 
                         <div className='submenuMask'></div>
-                        <Link className="act" href={`javascript:void(0)`}>即將開始</Link>
-                        <Link href={`javascript:void(0)`}>過去活動</Link>
+                        <a className="act" href={`javascript:void(0)`}>即將開始</a>
+                        <a href={`javascript:void(0)`}>過去活動</a>
                     </div>
                 </div>     
             </div>

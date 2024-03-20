@@ -9,7 +9,7 @@ export default function handler(req, res) {
             },
             {
                 'title':'永續觀點',
-                'url':'javascript:void(0)',
+                'url':'/view',
                 'page_name':'view',
                 'child':[
                     {
@@ -18,34 +18,34 @@ export default function handler(req, res) {
                     },
                     {
                         'title':'新趨勢',
-                        'url':appUrl+'/view/1',
+                        'url':appUrl+'/view/trend',
                     },
                     {
                         'title':'永續環境',
-                        'url':appUrl+'/view/2',
+                        'url':appUrl+'/view/environment',
                     },
                     {
                         'title':'共好社會',
-                        'url':appUrl+'/view/3',
+                        'url':appUrl+'/view/society',
                     },
                     {
                         'title':'綠色生活',
-                        'url':appUrl+'/view/4',
+                        'url':appUrl+'/view/greenlife',
                     },
                 ]
             },
             {
                 'title':'永續生活小撇步',
-                'url':appUrl+'/secret',
-                'page_name':'secret',
+                'url':appUrl+'/tips',
+                'page_name':'tips',
                 'child':[]
             },
-            {
-                'title':'永續行動',
-                'url':appUrl+'/action',
-                'page_name':'action',
-                'child':[]
-            },
+            // {
+            //     'title':'永續行動',
+            //     'url':appUrl+'/action',
+            //     'page_name':'action',
+            //     'child':[]
+            // },
             {
                 'title':'共好夥伴',
                 'url':appUrl+'/partner',
