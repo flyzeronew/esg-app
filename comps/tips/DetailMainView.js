@@ -24,25 +24,25 @@ function DetailMainView(props) {
     return (
         <>
             <Slider {...settings}>
-                {data.hasOwnProperty('cover_img') && data.cover_img!==''
+                {data.hasOwnProperty('img') && data.img!==''
                 ?
                 <div className="box">
                     <div className="tag">{data.tip_genre.name}</div>
-                    <Image src={data.cover_img} alt="img" width={800} height={800}/>
+                    <Image src={data.img} alt="img" width={800} height={800}/>
                 </div>
                 :''}
-                {data.hasOwnProperty('cover_img2') && data.cover_img2!==''
+                {data.hasOwnProperty('img2') && data.img2!==''
                 ?
                 <div className="box">
                     <div className="tag">{data.tip_genre.name}</div>
-                    <Image src={data.cover_img2} alt="img" width={800} height={800}/>
+                    <Image src={data.img2} alt="img" width={800} height={800}/>
                 </div>
                 :''}
-                {data.hasOwnProperty('cover_img3') && data.cover_img3!==''
+                {data.hasOwnProperty('img3') && data.img3!==''
                 ?
                 <div className="box">
                     <div className="tag">{data.tip_genre.name}</div>
-                    <Image src={data.cover_img3} alt="img" width={800} height={800}/>
+                    <Image src={data.img3} alt="img" width={800} height={800}/>
                 </div>
                 :''}
 
