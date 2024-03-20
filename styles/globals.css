@@ -237,6 +237,7 @@ img{
         height: 40px;
         margin:0 0 40px;
         padding:10px 30px;
+        overflow: hidden;
         overflow-x: auto;
         white-space:nowrap;
         scroll-snap-type: x mandatory;
