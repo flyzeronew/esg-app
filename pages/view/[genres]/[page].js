@@ -10,15 +10,15 @@ export default function viewArticle(props) {
     const articleId = Number(props.articleId);
     const appUrl = process.env.APP_URL;
     const [bgShow, setBgShow] = useState(true);
-
     const getArticleData = props.viewData;
 
     //取資料 文章、共好夥伴、小撇步、延伸閱讀
     const articleContent = getArticleData.content;
     const articlePartner = getArticleData.partner;
     const articleSecret = getArticleData.article_secret;
-    const articleExtended = getArticleData.article_extended;
-
+    const articleExtended = getArticleData.extend_articles;
+    console.log(getArticleData);
+    console.log(articleExtended);
     // 日期轉換
     const formattedDate = (date) => {
         const originalTime = new Date(date);
@@ -26,7 +26,7 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
-    console.log(getArticleData.has_cover_img);
+
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -62,7 +62,9 @@ export default function viewArticle(props) {
                 
                 <div className="articleContent">
                     <div className="category">
-                        <span>文章：{getArticleData.article_genres[0].name}</span>
+                        <span>文章 </span>
+                        <div className="line"></div>
+                        <span>{getArticleData.article_genres[0].name}</span>
                     </div>
                     <div className="mainTitle">{getArticleData.title}</div>
 
@@ -76,7 +78,7 @@ export default function viewArticle(props) {
                         <span>{formattedDate(getArticleData.updated_at)} 更新</span>
                         <span className="line"></span>                        
                         <div>
-                            <span>協助撰稿  </span>
+                            <span>撰稿  </span>
                             <span className="name">{getArticleData.author_name}</span>
                         </div>
                     </div>
@@ -201,7 +203,7 @@ export default function viewArticle(props) {
                                     <p>延伸閱讀</p>
                                     <div className="line"></div>
                                 </div>                                
-                                <div className="tags">
+                                {/* <div className="tags">
                                     <div className="box1">
                                         { articleExtended.tags.length > 0 ?
                                             articleExtended.tags.map((item, index) => (
@@ -211,7 +213,7 @@ export default function viewArticle(props) {
                                             ))
                                         :''}
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="listBox">
                                 <div className="arraw">
@@ -219,16 +221,11 @@ export default function viewArticle(props) {
                                 </div>
                                 <div className="list">
                                     <ul>
-                                        { articleExtended.list.length > 0 ?
-                                            articleExtended.list.map((item, index) => (
+                                        { articleExtended.length > 0 ?
+                                            articleExtended.map((item, index) => (
                                                 <li key={index}>
-                                                    <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' }>
-                                                        <div className="img">
-                                                            {item.youtube ?
-                                                                <div className='playIcon'>                                 
-                                                                    <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
-                                                                </div>
-                                                            :''}                                                            
+                                                    <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.article_id}`}>
+                                                        <div className="img">                                                          
                                                             <Image src={item.cover_img} alt="img" width={1072} height={603}/>
                                                         </div>
                                                         <div className="txt">{item.title}</div>
