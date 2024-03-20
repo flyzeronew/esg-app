@@ -25,7 +25,7 @@ const [bgSize, setBgSize] = useState();
 const [hoverBgSize, setHoverBgSize] = useState();
 const [clicked, setClicked] = useState(false);
 const otherArticles = props.detailData.other_articles;
-
+const otherArticlesSum = otherArticles.reduce((acc, cur) => acc + cur.status, 0);
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
@@ -185,7 +185,7 @@ return (
                 </div>
                 :""}
                 {/* 永續觀點的文章頁 */}
-                {otherArticles.length > 0 ? 
+                {otherArticles.length > 0 && otherArticlesSum > 0 ? 
                     <div className="moreGoodNewsArea">
                         <div className="title">更多共好消息</div>
                         <div className="list">

@@ -2351,7 +2351,7 @@ header .menuMo .list li:last-child{
 }
 .partnerDetailPage .moreGoodNewsArea .list ul{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     width: 1130px;
     column-gap: 24px;
