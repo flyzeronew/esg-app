@@ -195,7 +195,7 @@ export default function viewArticle(props) {
                 </div>
 
                 {/* 延伸閱讀 */}
-                {articleExtended ?
+                {articleExtended.length > 0 ?
                     <div className="articleExtended">
                         <div className="box">
                             <div className="tagBox">
