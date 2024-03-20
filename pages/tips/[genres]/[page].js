@@ -114,7 +114,7 @@ export default function page(props) {
         `}
         </style>
         <Head>
-            <title>{`永續小撇步文章標題 - TVBS ESG專區`}</title>
+            <title>{`${tipsData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
             <meta name="description" content="esg description" />        
