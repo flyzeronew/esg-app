@@ -9,6 +9,9 @@ import DetailMainView from '../../../comps/tips/DetailMainView'
 const inter = Inter({ subsets: ['latin'] })
 export default function page(props) {
     const appUrl = process.env.APP_URL;
+    const tipsData = props.tipsData;
+    // random 繼續看區塊
+    let randomElements = props.randomElements;
     // 頁面識別
     const thisPage='tips';
     const [selectedOptions, setSelectedOptions] = useState([]);    
@@ -31,6 +34,14 @@ export default function page(props) {
         } else {
             setSelectedOptions([...selectedOptions, value]);
         }
+    };
+
+    // 日期轉換
+    const formattedDate = (date) => {
+        const originalTime = new Date(date);
+        const isoDateString = originalTime.toISOString();
+        const formattedDate = isoDateString.substring(0, 10);
+        return formattedDate;
     };
     useEffect(() => {
         const contentMore = document.querySelector('.tipsDetailPage .contentMore');  
@@ -76,6 +87,15 @@ export default function page(props) {
         },
     ];
 
+    const tipsGenresArr = [
+        'tagFoodColor',
+        'tagClothingColor',
+        'tagHousingColor',
+        'tagTransportColor',
+        'tagEducationColor',
+        'tagEntertainmentColor',
+    ];
+
     return (
     <div id='wrapper' className={inter.className}> 
         <style jsx global>{`
@@ -84,12 +104,12 @@ export default function page(props) {
             .tipsDetailPage .contentBox .txtBox .arraw,
             .tipsDetailPage .slick-dots li.slick-active button:before          
             {
-                background-color: ${tagColor[0].bgColor};
-                color:${tagColor[0].txtColor};
+                background-color: ${tagColor[tipsData.tip_genre.id-1].bgColor};
+                color:${tagColor[tipsData.tip_genre.id-1].txtColor};
                 transition: 0.3s;
             }
             .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked::before {
-                color: ${tagColor[0].txtColor};
+                color: ${tagColor[tipsData.tip_genre.id-1].txtColor};
             }
         `}
         </style>
@@ -105,13 +125,13 @@ export default function page(props) {
                 <div className="contentBox">
                     <div className={`imgBox ${scorllStop ? 'act' : ''}`}>
                         <div className={`fixBox ${scorllStop ? 'act' : ''}`}>
-                            <DetailMainView />
+                            <DetailMainView data={tipsData} />
                         </div>
                     </div>
                     <div className="txtBox">
                         <div className="question">
-                            <div className="tag">食</div>
-                            <div className="title">吃完的免洗紙餐盒，需洗完再回收嗎？</div>
+                            <div className="tag">{tipsData.tip_genre.name}</div>
+                            <div className="title">{tipsData.title}</div>
                             
                             <div className="checkbox">
                                 <label>
@@ -121,7 +141,7 @@ export default function page(props) {
                                         checked={selectedOptions.includes('option1')}
                                         onChange={handleCheckboxChange}
                                     />
-                                    <span>當然要洗啊～</span>
+                                    <span>{tipsData.answer1}</span>
                                 </label>
                                 <label>
                                     <input
@@ -130,7 +150,7 @@ export default function page(props) {
                                         checked={selectedOptions.includes('option2')}
                                         onChange={handleCheckboxChange}
                                     />
-                                    <span>我都直接丟</span>
+                                    <span>{tipsData.answer2}</span>
                                 </label>
                                 <label>
                                     <input
@@ -139,7 +159,7 @@ export default function page(props) {
                                         checked={selectedOptions.includes('option3')}
                                         onChange={handleCheckboxChange}
                                     />
-                                    <span>大概擦一下而已</span>
+                                    <span>{tipsData.answer3}</span>
                                 </label>
                                 <label>
                                     <input
@@ -148,7 +168,7 @@ export default function page(props) {
                                         checked={selectedOptions.includes('option4')}
                                         onChange={handleCheckboxChange}
                                     />
-                                    <span>忘記了</span>
+                                    <span>{tipsData.answer4}</span>
                                 </label>
                             </div>
 
@@ -164,16 +184,9 @@ export default function page(props) {
                             <div className="title">
                                 <Image src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
                             </div>
-                            <div className="answerTxtBox">
-                                <div className="answerTitle">免洗餐盒該當垃圾直接丟棄，還是洗淨回收？</div>
-                                <p>記者徐葳倫：「不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。」</p>
-                            </div>
-                            <div className="answerTxtBox">
-                                <div className="answerTitle">免洗餐盒要丟一般垃圾還是資源回收？</div>
-                                <p>記者徐葳倫：「不說還真不知道，其實這個可分解的吸管，來自台灣的公司，連它(吸管)的包裝袋，都能夠分解，包含亞馬遜、蘋果、好市多和星巴克都是主要客戶，甚至在疫情期間，台灣口罩國家隊，所送往國外的口罩包裝袋，也是這家公司的產品。」</p>
-                            </div>
-
-                            <div className="time">2023-08-17 <span>更新</span></div>
+                            <div  className="tipsContent" dangerouslySetInnerHTML={{ __html: tipsData.content }} />
+                            <div className="time">{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
+                            {/* <div className="time">2023-08-17 <span>更新</span></div> */}
                         </div>
 
                     </div>
@@ -188,69 +201,31 @@ export default function page(props) {
                             </div>
                             <div className="list">
                                 <ul>
+                                    {randomElements?
+                                    randomElements.map((item, index) => (
                                     <li>
-                                        <a href='#'>
+                                        <a href={item.url}>
                                             <div className="img">
-                                                <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
+                                                <Image src={item.img} alt="img" width={300} height={300}/>
                                             </div>
-                                            <div className="tag tagFoodColor">食</div>
+                                            <div className={`tag ${tipsGenresArr[item.tip_genre.id-1]}`}>{item.tip_genre.name}</div>
                                             <div className="txtBox">
                                                 <div className='rounded'>
                                                     <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
                                                 </div>
                                                 <div className='txtFlex'>
                                                     <div className='txt'>
-                                                        <p>怎麼喝咖啡最環保？怎麼喝咖啡最環保？怎麼喝咖啡最環保？怎麼喝咖啡最環保？</p>
+                                                        <p>{item.title}</p>
                                                     </div>
                                                     <div className='rounded'>
                                                         <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
                                                     </div>
-                                                </div>                                        
+                                                </div>                                   
                                             </div>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href='#'>
-                                            <div className="img">
-                                                <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
-                                            </div>
-                                            <div className="tag tagFoodColor">食</div>
-                                            <div className="txtBox">
-                                                <div className='rounded'>
-                                                    <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
-                                                </div>
-                                                <div className='txtFlex'>
-                                                    <div className='txt'>
-                                                        <p>怎麼喝咖啡最環保？</p>
-                                                    </div>
-                                                    <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
-                                                    </div>
-                                                </div>                                        
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <div className="img">
-                                                <Image src={`${appUrl}/images/tips01.jpg`} alt="img" width={300} height={300}/>
-                                            </div>
-                                            <div className="tag tagFoodColor">食</div>
-                                            <div className="txtBox">
-                                                <div className='rounded'>
-                                                    <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
-                                                </div>
-                                                <div className='txtFlex'>
-                                                    <div className='txt'>
-                                                        <p>怎麼喝咖啡最環保？</p>
-                                                    </div>
-                                                    <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
-                                                    </div>
-                                                </div>                                        
-                                            </div>
-                                        </a>
-                                    </li>
+                                    ))
+                                    :""}
                                 </ul>
                             </div>
                         </div>
@@ -266,13 +241,34 @@ export default function page(props) {
     );
 }
 export async function getServerSideProps(context) {
+    const { params } = context;
+    const { page } = params;
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
+
+    // list
+    const tipsListUrl = new URL('/api/tips-list', process.env.APP_URL);
+    const tipsListRes = await fetch(tipsListUrl);    
+    let tipsListData = await tipsListRes.json();
+    // 處理繼續看random資料
+    tipsListData = tipsListData.filter(item => item.id !== parseInt(page));
+    console.log(tipsListData);
+    // 每次從原始 array 中隨機取出三個元素
+    function getRandomElements(array, count) {
+        const shuffled = array.sort(() => Math.random()-0.5); // 隨機排序
+        return shuffled.slice(0, count); // 取出前 count 個元素
+    }
+    const randomElements = getRandomElements(tipsListData, 3);
+
+    // 小撇步資料
+    const tipsUrl = new URL('/api/tips-detail', process.env.APP_URL);
+    const tipsRes = await fetch(tipsUrl);    
+    const tipsData = await tipsRes.json();
     
     return {
         props: {
-            menu
+            menu,randomElements,tipsData
         },
     };
 }

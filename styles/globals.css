@@ -4679,6 +4679,13 @@ header .menuMo .list li:last-child{
 .tipsDetailPage .contentBox .answer{
     margin: 200% 0 30%;
 }
+.tipsDetailPage .contentBox .answer .tipsContent{
+    margin-bottom: 50px;
+}
+.tipsDetailPage .contentBox .answer .tipsContent h1, h2, h3, h4, h5, h6 {
+    font-size: revert; 
+    font-weight: revert; 
+}
 .tipsDetailPage .contentBox .answer .time{
     font-size: 14px;
     font-weight: 400;
@@ -4718,7 +4725,6 @@ header .menuMo .list li:last-child{
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: #FFDC34;
     width: 40px;
     height:40px;
     aspect-ratio: 1 / 1;
@@ -4873,7 +4879,6 @@ header .menuMo .list li:last-child{
     .tipsDetailPage .contentBox {
         padding: 0 15px;
     }
-
     .tipsDetailPage .contentMore .list .txtFlex .txt p {
         font-size: 20px;
         font-weight: 600;
