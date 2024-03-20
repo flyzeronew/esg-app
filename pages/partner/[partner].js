@@ -158,7 +158,7 @@ return (
                     <div className="videoClick" onClick={handleClick}>
                         {clicked ? 
                         <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
-                            <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${detail.youtube_id}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
+                            <iframe width="100%" height="100%" src={`${detail.video_url}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
                         </div> 
                         : 
                         <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
