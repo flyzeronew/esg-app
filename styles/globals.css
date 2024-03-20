@@ -2919,7 +2919,6 @@ header .menuMo .list li:last-child{
 @media (max-width:1023px) {
     .viewArticlePage .articleContent .editorNew {
         width: 100%;
-        margin: 0 auto;
     }
     .articleAd .pc{
         display:none;        
@@ -3405,6 +3404,11 @@ header .menuMo .list li:last-child{
         display: none;
     }
 }
+
+.articleExtended{
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
 .articleExtended{
     background-color: #F2F2F2;
     padding:40px 0;
@@ -3558,7 +3562,7 @@ header .menuMo .list li:last-child{
 @media (max-width:767px) {
     .articleExtended{
         overflow: hidden;
-        border-radius: 30px 30px 0 0;
+        border-radius: 20px 20px 0 0;
     }
 }
 /* 永續觀點內頁 ed*/
