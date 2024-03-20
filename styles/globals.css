@@ -133,7 +133,7 @@ img{
 .pageJump .btn a{
     overflow: hidden;
     border-radius: 60px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     display:flex; 
     justify-content: center; 
@@ -153,16 +153,19 @@ img{
         display:flex; 
         justify-content: center; 
         align-items: center;
-        column-gap: 5px;
+        column-gap: 10px;
     }
     .pageJump .box a,.pageJump .first a,.pageJump .last a{
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
     }
     .pageJump .btn a{
-        font-size: 16px;
+        font-size: 24px;
         padding: 10px;
+    }
+    .pageJump .lastTxt{
+        font-size: 14px;
     }
 }
 /* 跳頁按鈕 ed*/

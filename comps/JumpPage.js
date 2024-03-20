@@ -7,7 +7,7 @@ function JumpList(props) {
     const appUrl = process.env.APP_URL;
     const uri = props.uri;
     const pageCount = props.pageCount;
-    const btnCount = pageCount < 3 ? pageCount : 3;
+    const btnCount = pageCount < 3 ? pageCount : 2;
 
    //插入跳頁按鈕顯示按鈕數量
     const jumpBtns = [];
@@ -17,7 +17,7 @@ function JumpList(props) {
     return (        
         <div className='pageJump'>
             <div className={`btn ${Number(page)==1 ? 'hide':''}`} >
-                <a href={`${appUrl}${uri}?page=${Number(page)-1}`} >上一頁</a>
+                <a href={`${appUrl}${uri}?page=${Number(page)-1}`} >‹</a>
             </div>
             <div className={`first ${Number(page)==1 ? 'hide':''}`}>
                 <a href={`${appUrl}${uri}`}>1</a>
@@ -66,7 +66,7 @@ function JumpList(props) {
             <div className='btn'>
                 {   
                     Number(page)+1 <= pageCount ? 
-                    <a href={`${appUrl}${uri}?page=${Number(page)+1}`} >下一頁</a>                    
+                    <a href={`${appUrl}${uri}?page=${Number(page)+1}`} >›</a>                    
                     :
                     <span className='lastTxt'>最後一頁</span>
                 }                
