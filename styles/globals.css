@@ -217,6 +217,7 @@ img{
     margin:0 32px 50px;
     padding:10px 32px;
     white-space:nowrap;
+    height: max-content;
 }
 .submenu a{
     margin-right:16px;
