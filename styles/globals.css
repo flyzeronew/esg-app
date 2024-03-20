@@ -2534,7 +2534,6 @@ header .menuMo .list li:last-child{
     font-size: 32px;
     font-weight: 600;
     line-height: 48px;
-    letter-spacing: 0.02em;
     margin-bottom: 15px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
