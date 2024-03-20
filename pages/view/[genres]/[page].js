@@ -26,7 +26,7 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
-    console.log(getArticleData);
+    console.log(getArticleData.has_cover_img);
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -56,7 +56,7 @@ export default function viewArticle(props) {
         <main>            
             <div className="viewArticlePage" 
             style={{ 
-                backgroundImage:bgShow ==true ? `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${getArticleData.cover_img})`:'',
+                backgroundImage:getArticleData.has_cover_img == 1 && bgShow ==true ? `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${getArticleData.cover_img})`:'',
                 backgroundAttachment:`fixed`,            
             }}>
                 

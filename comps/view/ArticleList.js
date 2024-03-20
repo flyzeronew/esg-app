@@ -24,7 +24,7 @@ function ArticleList(props) {
                                                         <Image src={item.partner.avatar} alt="logo" width={50} height={50}/>
                                                     </div>
                                                 </div>
-                                                <p>{item.author_name}</p>
+                                                <p>{item.partner.name}</p>
                                             </>
                                             :<p>{item.author_name}</p>}                                            
                                         </div>

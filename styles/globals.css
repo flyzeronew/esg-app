@@ -2484,7 +2484,7 @@ header .menuMo .list li:last-child{
     line-height: 27px;
     letter-spacing: 0.02em;
     overflow: hidden;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
