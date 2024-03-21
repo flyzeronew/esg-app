@@ -67,8 +67,7 @@ function JumpList(props) {
                 {   
                     Number(page)+1 <= pageCount ? 
                     <a href={`${appUrl}${uri}?page=${Number(page)+1}`} >›</a>                    
-                    :
-                    <span className='lastTxt'>最後一頁</span>
+                    :''                    
                 }                
             </div>
         </div>
