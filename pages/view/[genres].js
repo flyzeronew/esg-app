@@ -64,20 +64,20 @@ export default function Genres(props) {
                     <Submenu  submenu={viewSubmenu} genreEnName={genreEnName} genreId={genreId}/>
                 {/* 分類標籤 ed*/}
 
-                 {/* 主視覺 */}
-                 {articlesFirst && props.page === 1 ?
+                {/* 主視覺 */}
+                {articlesFirst && props.page === 1 ?
                     <div className='mainView'>
                         <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
                             <div className='box'>
                                 <div className='img'>
-                                    <Image src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
+                                    <img src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603} loading="lazy"/>
                                     <div className='imgMaskBox'>
                                         <div className='rounded'>
-                                            <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                            <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50} loading="lazy"/>
                                         </div>
                                         <div className='case'>
                                             <div className='rounded'>
-                                                <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                                <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50} loading="lazy"/>
                                             </div>
                                             <div className='imgMask'></div>
                                         </div>
