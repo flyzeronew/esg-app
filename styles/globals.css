@@ -579,6 +579,7 @@ header .menuMo .list li:last-child{
     overflow: hidden;
     aspect-ratio: 16/9;
     line-height: 0;
+    background-size: 100%;
 }
 .indexPage .mainVision .txtAbsolute{
     width: 55%;
@@ -1251,7 +1252,6 @@ header .menuMo .list li:last-child{
 }
 .indexPage .secret .img{ 
     width: 35%;   
-    /* width: 40%;  */
     border-radius: 30px;
     overflow: hidden;
     aspect-ratio: 16/9;
@@ -1288,7 +1288,7 @@ header .menuMo .list li:last-child{
     }
     .indexPage .secret .title p{
         font-size: 30px;
-        height: 90px;
+        height: 85px;
     }
     .indexPage .secret .img{ 
         width: 40%;   
