@@ -1210,7 +1210,6 @@ header .menuMo .list li:last-child{
     font-size: 18px; 
 }
 .indexPage .secret .subtitle .tag{
-    background-color: #00D221;
     width: 30px;
     height: 30px; 
     display:flex;
@@ -4396,28 +4395,28 @@ header .menuMo .list li:last-child{
     justify-content: center;
   }
   .tagFoodColor{
-    background-color: #FFDC34;
+    background-color: #FFC400;
     color: #333333;
   }
   .tagClothingColor{
-    background-color: #68E3BC;
+    background-color: #E2F6F9;
     color: #333333;
   }
   .tagHousingColor{
-    background-color: #226158;
-    color: #FFFFFF;
+    background-color: #D1FFE0;
+    color: #333333;
   }
   .tagTransportColor{
-    background-color: #74D8D2;
+    background-color: #00BAFF;
     color: #333333;
   }
   .tagEducationColor{
-    background-color: #F37732;
+    background-color: #00422C;
     color: #FFFFFF;
   }
   .tagEntertainmentColor{
-    background-color: #89EC54;
-    color: #333333;
+    background-color: ##001C48;
+    color: #FFFFFF;
   }
   
   .tipsListPage .list ul li .detail{

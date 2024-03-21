@@ -62,28 +62,28 @@ export default function page(props) {
     
     const tagColor =[
         {
-            'bgColor':'#FFDC34',
+            'bgColor':'#FFC400',
             'txtColor':'#333333',
         },
         {
-            'bgColor':'#68E3BC',
+            'bgColor':'#E2F6F9',
             'txtColor':'#333333',
         },
         {
-            'bgColor':'#226158',
+            'bgColor':'#D1FFE0',
+            'txtColor':'#333333',
+        },
+        {
+            'bgColor':'#00BAFF,
+            'txtColor':'#333333',
+        },
+        {
+            'bgColor':'#00422C,
             'txtColor':'#fff',
         },
         {
-            'bgColor':'#74D8D2',
-            'txtColor':'#333333',
-        },
-        {
-            'bgColor':'#F37732',
-            'txtColor':'#333333',
-        },
-        {
-            'bgColor':'#89EC54',
-            'txtColor':'#333333',
+            'bgColor':'#001C48',
+            'txtColor':'#fff',
         },
     ];
 
