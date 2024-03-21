@@ -67,54 +67,47 @@ export default function Home(props) {
             <MainVision data={props.data.headline}/>
 
             <div className="other">
-            {props.data.whatIsEsg?
-              <div className="whatEsg" onMouseOver={() => esgMouseOver(1)}   onMouseOut={esgMouseOut}>
-                {esgHover
-                ?
-                <div className="whatEsgHover">
-                  <div className="txt">{props.data.whatIsEsg.detail}</div>
-                  <div className="txtBox">
-                    <div className="txt">看文章了解更多</div>
-                    <div className="arraw">
-                      <a href={props.data.whatIsEsg.url}>
-                        <img src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42} loading="lazy"/>
-                      </a>
-                    </div>
+              {props.data.whatIsEsg?
+                <div className="whatEsg" onMouseOver={() => esgMouseOver(1)}   onMouseOut={esgMouseOut}>
+                  
+                  <div className={`whatEsgHover ${esgHover ? 'act':''}`}>
+                    <a href={props.data.whatIsEsg.url}>
+                      <div className="txt">{props.data.whatIsEsg.detail}</div>
+                      <div className="txtBox">
+                        <div className="txt">看文章了解更多</div>
+                        <div className="arraw">                        
+                            <img src="/images/icon_arraw02.svg" alt="arraw" width={42} height={42} loading="lazy"/>
+                        </div>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                :
-                <div>
+
                   <div className="title">What is ESG?</div>
                   <div className="txtBox">
                     <div className="txt">{props.data.whatIsEsg.description}</div>
                     <div className="arraw">
-                      <a href="#">
                         <img src="/images/icon_arraw02.svg" alt="arraw" width={42} height={42} loading='lazy'/>
-                      </a>
                     </div>
                   </div>
-                </div>}
-              </div>
+                </div>
+
               :""}
               <ViewList data={props.data.viewpoint}/>
               
-              {props.data.activity
-              ?
-              <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFDC34':'#FFC400',transition:'0.5s'}}>
-                {hover?
-                <div style={{display:"flex",justifyContent:"center"}}>
-                  <div className="titleComingSoon">{props.data.activity.detail}</div>
-                </div>
-                :<div>
+              { props.data.activity ?
+              
+                <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} >
+                  <div className={`titleComingSoon ${hover ? 'act' : ''}`}>
+                    {props.data.activity.detail}
+                  </div>
                   <div className="title">參加活動GO!</div>
                   <div className="txtBox">
                     <div className="txt">{props.data.activity.description}</div>
                     <div className="arraw" style={{cursor: "auto"}}>
                       {/* <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42} loading="lazy"/> */}
                     </div>
+                  </div>                  
                   </div>
-                </div>}
-              </div>
               :""}
 
             </div>
@@ -124,7 +117,7 @@ export default function Home(props) {
             {props.data.ourMissoin
             ?
             <div onMouseOver={() => missionMouseOver(1)}   onMouseOut={missionMouseOut} >
-              {ourMissionHover
+              {/* {ourMissionHover
               ?<div className="ourMissionHover" >
               <div className="txtBox">
                 <div className="txt up">{props.data.ourMissoin.description}</div>
@@ -135,17 +128,31 @@ export default function Home(props) {
                   </div>
               </div>
             </div>
-              :<div className="ourMission" >
-                <div className="img"><img src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
-                <div className="txtBox">
-                  <div className="title">Our Mission</div>
-                  <div className="txt">{props.data.ourMissoin.title} 
-                    <a href={props.data.ourMissoin.url}>                  
-                      <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
-                    </a>
-                  </div>
-                </div>
-              </div>}
+              : */}
+              <div className="ourMission">
+                 
+                    <div className={`ourMissionHover ${ourMissionHover ? 'act' : ''}`}>
+                      <a href={props.data.ourMissoin.url}>
+                        <div className="txtBox">
+                          <div className="txt up">{props.data.ourMissoin.description}</div>
+                          <div className="txt">看更多
+                                <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading="lazy"/>
+                            </div>
+                        </div>
+                      </a>
+                    </div>
+      
+                  <a href={props.data.ourMissoin.url}>                               
+                    <div className="img"><img src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
+                    <div className="txtBox">
+                      <div className="title">Our Mission</div>
+                      <div className="txt">{props.data.ourMissoin.title}
+                          <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>                      
+                      </div>
+                    </div>
+                  </a>      
+              </div>
+              {/* } */}
             </div>
             :""}
 
