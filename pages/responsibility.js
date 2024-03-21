@@ -35,7 +35,7 @@ export default function Focus(props) {
             <div className="responsibilityPage">
                 <div className='mainView'>
                     <div className='img'>
-                        <Image src={`${appUrl}/images/responsibility_bg.jpg`} alt="bg" width={1920} height={1024}/>
+                        <img src={`${appUrl}/images/responsibility_bg.jpg`} alt="bg" width={1920} height={1024} loading="lazy"/>
                     </div>
                     <div className='titleBox'>
                         <div className='title'>
@@ -43,16 +43,16 @@ export default function Focus(props) {
                                 <div className='rounded'></div>
                                 <p>關於共好未來</p>
                                 <div className='rounded'>
-                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                    <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                 </div>
                             </div>
                             <div className='box'>
                                 <div className='rounded'>
-                                    <Image src={`${appUrl}/images/rounded-03.svg`} alt="rounded" width={50} height={50}/>
+                                    <img src={`${appUrl}/images/rounded-03.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                 </div>
                                 <p>Better Future.<br/>Together</p>
                                 <div className='rounded'>
-                                    <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                    <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                 </div>
                             </div>
                         </div>
@@ -75,13 +75,13 @@ export default function Focus(props) {
                         }
                         <div className='img' onClick={handleClick}>
                             <div className='playIcon'>
-                                <Image src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50}/>
+                                <img src={`${appUrl}/images/play-icon.svg`} alt="play" width={50} height={50} loading="lazy"/>
                             </div>
                             <div className='txt'>
                                 <div className='t1'>數位永續皆卓越！TVBS總經理劉文硯<br/>再獲APEA「卓越企業領袖」</div>
                             </div>
                             <div className='video'>
-                                <Image src='http://img.youtube.com/vi/pMTFK3q-rek/maxresdefault.jpg' alt="img" width={1920} height={1080}/>
+                                <img src='http://img.youtube.com/vi/pMTFK3q-rek/maxresdefault.jpg' alt="img" width={1920} height={1080} loading="lazy"/>
                             </div>
                         </div>                        
                     </div>
@@ -112,7 +112,7 @@ export default function Focus(props) {
 
                         <div className='people'>
                             <div className='img'>
-                                <Image src={`${appUrl}/images/people01.jpg`} alt="img" width={1920} height={1080}/>
+                                <img src={`${appUrl}/images/people01.jpg`} alt="img" width={1920} height={1080} loading="lazy"/>
                             </div>
                             <div className='txtBox'>
                                 <div className='txt'>
@@ -131,13 +131,13 @@ export default function Focus(props) {
                         <div className="imageGroup">
                             <div className="box">
                                 <div className="img">
-                                    <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>                                    
+                                    <img src="/images/esg02.jpg" alt="img" width={1072} height={603} loading="lazy"/>                                    
                                 </div>
                                 <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                             </div>
                             <div className="box">
                                 <div className="img">
-                                    <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                    <img src="/images/esg03.jpg" alt="img" width={1072} height={603} loading="lazy"/>
                                 </div>
                                 <div className="imgAlt">全聯惜食專區。（圖／胡瑞麒攝）</div>
                             </div>
@@ -157,7 +157,7 @@ export default function Focus(props) {
                         </p>
                         <div className='listBox'>
                             {/* <div className="arraw">
-                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading="lazy"s/>
                             </div> */}
                             <div className='list'>
                                 <ul>
@@ -165,18 +165,18 @@ export default function Focus(props) {
                                         <a href='#' onClick={defaultClick}>
                                             <div className='imgBox'>
                                                 <div className='img'>
-                                                    <Image src={`${appUrl}/images/esg01.jpg`} alt="img" width={1072} height={603}/>
+                                                    <img src={`${appUrl}/images/esg01.jpg`} alt="img" width={1072} height={603} loading="lazy"/>
                                                 </div>                                            
                                                 <div className='logoBox'>
                                                     <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                                     </div>
                                                     <div className='logoFlex'>
                                                         <div className='logo'>
-                                                            <Image src={`${appUrl}/images/brand-logo01.png`} alt="img" width={1072} height={603}/>
+                                                            <img src={`${appUrl}/images/brand-logo01.png`} alt="img" width={1072} height={603} loading="lazy"/>
                                                         </div>
                                                         <div className='rounded'>
-                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                            <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -190,18 +190,18 @@ export default function Focus(props) {
                                         <a href='#' onClick={defaultClick}>
                                             <div className='imgBox'>
                                             <div className='img'>
-                                                    <Image src={`${appUrl}/images/esg02.jpg`} alt="img" width={1072} height={603}/>
+                                                    <img src={`${appUrl}/images/esg02.jpg`} alt="img" width={1072} height={603} loading="lazy"/>
                                                 </div>  
                                                 <div className='logoBox'>
                                                     <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                                     </div>
                                                     <div className='logoFlex'>
                                                         <div className='logo'>
-                                                            <Image src={`${appUrl}/images/brand-logo02.png`} alt="img" width={1072} height={603}/>
+                                                            <img src={`${appUrl}/images/brand-logo02.png`} alt="img" width={1072} height={603} loading="lazy"/>
                                                         </div>
                                                         <div className='rounded'>
-                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                            <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -215,18 +215,18 @@ export default function Focus(props) {
                                         <a href='#' onClick={defaultClick}>
                                             <div className='imgBox'>
                                                 <div className='img'>
-                                                    <Image src={`${appUrl}/images/esg03.jpg`} alt="img" width={1072} height={603}/>
+                                                    <img src={`${appUrl}/images/esg03.jpg`} alt="img" width={1072} height={603} loading="lazy"/>
                                                 </div>  
                                                 <div className='logoBox'>
                                                 <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                                     </div>
                                                     <div className='logoFlex'>
                                                         <div className='logo'>
-                                                            <Image src={`${appUrl}/images/brand-logo03.png`} alt="img" width={1072} height={603}/>
+                                                            <img src={`${appUrl}/images/brand-logo03.png`} alt="img" width={1072} height={603} loading="lazy"/>
                                                         </div>
                                                         <div className='rounded'>
-                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                            <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -240,18 +240,18 @@ export default function Focus(props) {
                                         <a href='#' onClick={defaultClick}>
                                             <div className='imgBox'>
                                                 <div className='img'>
-                                                    <Image src={`${appUrl}/images/esg04.jpg`} alt="img" width={1072} height={603}/>
+                                                    <img src={`${appUrl}/images/esg04.jpg`} alt="img" width={1072} height={603} loading="lazy"/>
                                                 </div>  
                                                 <div className='logoBox'>
                                                     <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                        <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                                     </div>
                                                     <div className='logoFlex'>
                                                         <div className='logo'>
-                                                            <Image src={`${appUrl}/images/brand-logo04.png`} alt="img" width={1072} height={603}/>
+                                                            <img src={`${appUrl}/images/brand-logo04.png`} alt="img" width={1072} height={603} loading="lazy"/>
                                                         </div>
                                                         <div className='rounded'>
-                                                            <Image src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50}/>
+                                                            <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -285,13 +285,13 @@ export default function Focus(props) {
                             <div className='list'>
                                 <a href='#' onClick={defaultClick}>
                                     <div className='img'>
-                                        <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                        <img src="/images/esg03.jpg" alt="img" width={1072} height={603} loading="lazy"/>
                                     </div>
                                     <div className='txtBox'>
                                         <div className='txt'>
                                             <p>媒體科技大會亮點TVBS拚「ESG永續轉譯機」</p>
                                             <div className='arraw' >
-                                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                                <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading="lazy"/>
                                             </div>
                                         </div>
                                     </div>
@@ -299,13 +299,13 @@ export default function Focus(props) {
 
                                 <a href='#' onClick={defaultClick}>
                                     <div className='img'>
-                                        <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                                        <img src="/images/esg03.jpg" alt="img" width={1072} height={603} loading="lazy"/>
                                     </div>
                                     <div className='txtBox'>
                                         <div className='txt'>
                                             <p>媒體科技大會亮點TVBS拚「ESG永續轉譯機」</p>
                                             <div className='arraw' >
-                                                <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                                <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading="lazy"/>
                                             </div>
                                         </div>
                                     </div>
