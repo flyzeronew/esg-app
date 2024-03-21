@@ -1352,6 +1352,10 @@ header .menuMo .list li:last-child{
         width: 100%;
         height: auto;
         display: block;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box; 
     }
     .indexPage .secret .txt {
         font-size: 18px;
