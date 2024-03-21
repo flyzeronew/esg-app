@@ -88,7 +88,7 @@ export default function Home(props) {
                     <div className="txt">什麼是ESG?</div>
                     <div className="arraw">
                       <a href="#">
-                        <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                        <img src="/images/icon_arraw02.svg" alt="arraw" width={42} height={42} loading='lazy'/>
                       </a>
                     </div>
                   </div>
