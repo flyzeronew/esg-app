@@ -17,7 +17,7 @@ input:focus {
     outline: 0;
 }
 html::-webkit-scrollbar-thumb {
-    background: #89EC54;
+    background: #00D221;
 }
 
 /* 404 */
@@ -127,7 +127,7 @@ img{
     transition: 0.3s;
 }
 .pageJump .box a.act,.pageJump .box a:hover,.pageJump .first a:hover,.pageJump .last a:hover{
-    background-color: #89EC54;
+    background-color: #00D221;
     transition: 0.3s;
 }
 .pageJump .btn a{
@@ -142,7 +142,7 @@ img{
     padding: 10px 15px;
 }
 .pageJump .btn a.act,.pageJump .btn a:hover{
-    background-color: #89EC54;
+    background-color: #00D221;
     transition: 0.3s;    
 }
 .pageJump .btn.hide,.pageJump .first.hide,.pageJump .last.hide{
@@ -227,7 +227,7 @@ img{
     transition: 0.3s;
 }
 .submenu a.act{
-    background-color: #89EC54;
+    background-color: #00D221;
 }
 @media (max-width:767px) { 
     .submenuArea{
@@ -356,7 +356,7 @@ header .childMenu ul li a{
     margin-right: 32px;
 }
 header .menu li a.act,header .menu li a:hover{
-    border-bottom: 3px solid #89EC54;
+    border-bottom: 3px solid #00D221;
     transition: 0.3s;
 }
 header .logo{
@@ -485,7 +485,7 @@ header .menuMo .list li .child a{
 header .menuMo .list li .child a .line{
     width: 12px;
     height: 1px;
-    background: #23E888;
+    background: #00D221;
     margin: 15px auto 0;
 }
 header .menuMo .list li .child a:last-child .line{
@@ -986,7 +986,7 @@ header .menuMo .list li:last-child{
 .indexPage .ourMission{
     transition: background-color 0.5s ease;
     border-radius: 190px;
-    background: #89EC54;
+    background: #00D221;
     overflow: hidden;
     padding: 24px 24px 24px 31px;
     color: #226158;
@@ -1054,7 +1054,7 @@ header .menuMo .list li:last-child{
 @media (max-width:1919px) {
     .indexPage .ourMission{
         border-radius: 190px;
-        background: #89EC54;
+        background: #00D221;
         overflow: hidden;
         padding: 16px;
         color: #226158;
@@ -1642,7 +1642,7 @@ header .menuMo .list li:last-child{
     margin-bottom: 15px;
 }
 .sharedBanner .line{
-    background: #89EC54;
+    background: #00D221;
     width: 28px;
     height: 1px;
 }
@@ -2756,7 +2756,7 @@ header .menuMo .list li:last-child{
 .viewArticlePage .articleContent .category .line{
     width: 2px;
     height: 6px;
-    background-color: #89EC54;
+    background-color: #00D221;
 }
 .viewArticlePage .articleContent .mainTitle{
     width: 970px;
@@ -2823,7 +2823,7 @@ header .menuMo .list li:last-child{
     margin-bottom: 40px;
 }
 .viewArticlePage .articleContent .mainDescription .line{
-    background-color: #89EC54;
+    background-color: #00D221;
     width: 30px;
     height: 2px;
     margin:0 auto 40px;
@@ -2947,7 +2947,7 @@ header .menuMo .list li:last-child{
 .articleGroup .line{
     width: 30px;
     height: 2px;
-    background-color: #89EC54;
+    background-color: #00D221;
     margin:15px auto;
 }
 .articleGroup .img{
@@ -3017,7 +3017,7 @@ header .menuMo .list li:last-child{
     content:'❛❛';
     display: block;
     text-align: center;
-    color: #89EC54;
+    color: #00D221;
     margin-bottom: 20px;
 }
 .articleContent blockquote::after{
@@ -3026,7 +3026,7 @@ header .menuMo .list li:last-child{
     content:'❜❜';
     display: block;
     text-align: center;
-    color: #89EC54;
+    color: #00D221;
     margin-top: 20px;
 }
 @media (max-width:767px) {
@@ -3118,7 +3118,7 @@ header .menuMo .list li:last-child{
     text-align: left; 
 }
 .articleSponsor .name p{ 
-    border-bottom:2px solid #89EC54;   
+    border-bottom:2px solid #00D221;   
 }
 .articleSponsor .description{
     width: 50%;
@@ -3182,7 +3182,7 @@ header .menuMo .list li:last-child{
         width:max-content;
         display: block;
         margin:0 auto ;
-        border-bottom:2px solid #89EC54;   
+        border-bottom:2px solid #00D221;   
     }
     .articleSponsor.style2 .description{
         font-size: 18px;
@@ -3230,7 +3230,7 @@ header .menuMo .list li:last-child{
     .articleSponsor.style3 .line{
        width: 30px;
        height: 2px;
-       border-bottom: 2px #23E888 solid;
+       border-bottom: 2px #00D221 solid;
        margin: 20px 0;
     }
     .articleSponsor.style3 .name p{ 
@@ -3273,7 +3273,7 @@ header .menuMo .list li:last-child{
 .viewArticlePage .articleTitle .line{
     width: 50px;
     height: 2px;
-    background-color: #89EC54;
+    background-color: #00D221;
 }
 .articleSecret .object{
     display:flex;
@@ -3453,7 +3453,7 @@ header .menuMo .list li:last-child{
 .articleExtended .tags a{
     font-size: 14px;
     display: block;
-    border-bottom: 2px solid #89EC54;
+    border-bottom: 2px solid #00D221;
     width: max-content;
     margin-bottom: 10px;
     padding-bottom: 5px;
@@ -3605,7 +3605,7 @@ header .menuMo .list li:last-child{
 .responsibilityPage .content .contxt .t1 .line{
     width: 30px;
     height: 2px;
-    background-color: #89EC54;
+    background-color: #00D221;
     margin: 0 auto;
 }
 .responsibilityPage .content p{
@@ -3782,7 +3782,7 @@ header .menuMo .list li:last-child{
 .responsibilityPage .content .title .line{
     width: 30px;
     height: 2px;
-    background-color: #89EC54;
+    background-color: #00D221;
     margin: 0 auto;
 }
 .responsibilityPage .content .mainImage{
@@ -3838,7 +3838,7 @@ header .menuMo .list li:last-child{
 .responsibilityPage .peopleBox .line{
     width: 30px;
     height: 2px;
-    background-color: #89EC54;
+    background-color: #00D221;
     margin: 0 auto 50px;
 }
 .responsibilityPage .peopleBox .people{
@@ -3884,7 +3884,7 @@ header .menuMo .list li:last-child{
     content:'❛❛';
     display: block;
     text-align: center;
-    color: #89EC54;
+    color: #00D221;
     margin-bottom: 20px;
 }
 .responsibilityPage .peopleBox .people .txtBox .txt::after{
@@ -3893,7 +3893,7 @@ header .menuMo .list li:last-child{
     content:'❜❜';
     display: block;
     text-align: center;
-    color: #89EC54;
+    color: #00D221;
     margin-top: 20px;
 }
 .responsibilityPage .peopleBox .people .txtBox .small{
