@@ -660,7 +660,6 @@ header .menuMo .list li:last-child{
 }
 .slick-dots li.slick-active button:before{
     background-color:#68E3BC;
-    opacity:10;
     border-radius: 30px;
 }
 @media (max-width:1279px) {
@@ -834,7 +833,6 @@ header .menuMo .list li:last-child{
 }
 .indexPage .view .slick-dots li.slick-active button:before{
     background-color:#226158;
-    opacity:10;
     border-radius: 30px;
 }
 @media (max-width:1919px) {
@@ -1452,7 +1450,6 @@ header .menuMo .list li:last-child{
 }
 .indexPage .partner .slick-dots li.slick-active button:before{
     background-color:#226158;
-    opacity:10;
     border-radius: 30px;
 }
 
@@ -4087,6 +4084,9 @@ header .menuMo .list li:last-child{
     overflow: hidden;
     margin-bottom: 50px;
 }
+.responsibilityPage .carousel  .slick-slide {
+    visibility:unset;
+}
 .responsibilityPage .carousel .slick-slider{
     width: 100%;
 }
@@ -4843,7 +4843,6 @@ header .menuMo .list li:last-child{
 }
 .tipsDetailPage .slick-dots li.slick-active button:before{
     background-color:#FFDC34;
-    opacity:10;
     border-radius: 30px;
 }
 
