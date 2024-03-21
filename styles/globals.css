@@ -587,6 +587,7 @@ header .menuMo .list li:last-child{
     overflow: hidden;
     aspect-ratio: 16/9;
     line-height: 0;
+    background-size: 100%;
 }
 .indexPage .mainVision .txtAbsolute{
     width: 55%;
@@ -659,7 +660,7 @@ header .menuMo .list li:last-child{
     border-radius: 30px;
 }
 .slick-dots li.slick-active button:before{
-    background-color:#68E3BC;
+    background-color:#00D221;
     border-radius: 30px;
 }
 @media (max-width:1279px) {
@@ -832,7 +833,7 @@ header .menuMo .list li:last-child{
     border-radius: 30px;
 }
 .indexPage .view .slick-dots li.slick-active button:before{
-    background-color:#226158;
+    background-color:#00442c;
     border-radius: 30px;
 }
 @media (max-width:1919px) {
@@ -1203,11 +1204,13 @@ header .menuMo .list li:last-child{
     margin-bottom: 10px;
 }
 .indexPage .secret .subtitle .line{
+    background-color: #00D221;
     width: 2px;
     height: 6px;
     font-size: 18px; 
 }
 .indexPage .secret .subtitle .tag{
+    background-color: #00D221;
     width: 30px;
     height: 30px; 
     display:flex;
@@ -1257,7 +1260,6 @@ header .menuMo .list li:last-child{
 }
 .indexPage .secret .img{ 
     width: 35%;   
-    /* width: 40%;  */
     border-radius: 30px;
     overflow: hidden;
 }
@@ -1293,7 +1295,7 @@ header .menuMo .list li:last-child{
     }
     .indexPage .secret .title p{
         font-size: 30px;
-        height: 90px;
+        height: 85px;
     }
     .indexPage .secret .img{ 
         width: 40%;   
@@ -1449,7 +1451,7 @@ header .menuMo .list li:last-child{
     border-radius: 30px;
 }
 .indexPage .partner .slick-dots li.slick-active button:before{
-    background-color:#226158;
+    background-color:#00442c;
     border-radius: 30px;
 }
 

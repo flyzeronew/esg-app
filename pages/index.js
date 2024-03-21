@@ -87,8 +87,8 @@ export default function Home(props) {
                   <div className="txtBox">
                     <div className="txt">{props.data.whatIsEsg.description}</div>
                     <div className="arraw">
-                      <a href={props.data.whatIsEsg.url}>
-                        <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                      <a href="#">
+                        <img src="/images/icon_arraw02.svg" alt="arraw" width={42} height={42} loading='lazy'/>
                       </a>
                     </div>
                   </div>
