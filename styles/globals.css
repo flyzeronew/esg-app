@@ -2709,6 +2709,7 @@ header .menuMo .list li:last-child{
         margin-bottom: 0;
         -webkit-line-clamp: 3;
         line-height: 32px;
+        text-align: left;
     }
     .viewPage .mainView .txtBox .txt{
         display:none;
@@ -3748,6 +3749,10 @@ header .menuMo .list li:last-child{
     overflow: hidden;
 }
 .responsibilityPage .content .title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.responsibilityPage .content .title h2{
     font-size: 48px;
     font-weight: 600;
     line-height: 67px;
@@ -3756,7 +3761,7 @@ header .menuMo .list li:last-child{
     margin-bottom: 40px;
 }
 @media (max-width:767px) {
-    .responsibilityPage .content .title{
+    .responsibilityPage .content .title h2{
         font-size: 32px;
         font-weight: 600;
         line-height: 45px;
@@ -3765,7 +3770,7 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:359px) {
-    .responsibilityPage .content .title{
+    .responsibilityPage .content .title h2{
         font-size: 30px;
     }
 }
