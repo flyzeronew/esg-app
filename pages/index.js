@@ -99,7 +99,7 @@ export default function Home(props) {
               
               {props.data.activity
               ?
-              <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFB834':'#FFDC34',transition:'0.5s'}}>
+              <div className="action" onMouseOver={() => mouseOver(1)}  onMouseOut={mouseOut} style={{backgroundColor:hover?'#FFDC34':'#FFC400',transition:'0.5s'}}>
                 {hover?
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <div className="titleComingSoon">{props.data.activity.detail}</div>

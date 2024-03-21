@@ -74,11 +74,11 @@ export default function page(props) {
             'txtColor':'#333333',
         },
         {
-            'bgColor':'#00BAFF,
+            'bgColor':'#00BAFF',
             'txtColor':'#333333',
         },
         {
-            'bgColor':'#00422C,
+            'bgColor':'#00422C',
             'txtColor':'#fff',
         },
         {

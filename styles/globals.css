@@ -882,7 +882,7 @@ header .menuMo .list li:last-child{
 .indexPage .action{
     width:20%;
     border-radius: 180px;
-    background: #FFDC34;
+    background: #FFC400;
     overflow: hidden;
 }
 .indexPage .action .title{
@@ -1010,7 +1010,7 @@ header .menuMo .list li:last-child{
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1.44px;
-    color: #006358;
+    color: #00422C;
     ;
 }
 .indexPage .ourMission .txt{
@@ -1037,11 +1037,11 @@ header .menuMo .list li:last-child{
 .indexPage .ourMissionHover{
     transition: background-color 0.5s ease;
     border-radius: 190px;
-    background: #D0FF90;
+    background: #D1FFE0;
     overflow: hidden;
     /* padding: 25.5px 58px; */
     padding: 33.5px 58px;
-    color: #226158;
+    color: #00422C;
     display:flex;
     align-items: center;
     column-gap: 20px;
