@@ -44,7 +44,7 @@ function Practice(props) {
             <Slider {...settings}>            
                 <a href='#' onClick={defaultClick}>
                     <div className='img'>
-                        <Image src="/images/esg05.jpg" alt="img" width={1072} height={603}/>
+                        <img src="/images/esg05.jpg" alt="img" width={1072} height={603}/>
                     </div>
                     <div className='txt'>
                         <p>華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠</p>
@@ -52,7 +52,7 @@ function Practice(props) {
                 </a>
                 <a href='#' onClick={defaultClick}>
                     <div className='img'>
-                        <Image src="/images/esg02.jpg" alt="img" width={1072} height={603}/>
+                        <img src="/images/esg02.jpg" alt="img" width={1072} height={603}/>
                     </div>
                     <div className='txt'>
                         <p>華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠</p>
@@ -60,7 +60,7 @@ function Practice(props) {
                 </a>
                 <a href='#' onClick={defaultClick}>
                     <div className='img'>
-                        <Image src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
+                        <img src="/images/esg03.jpg" alt="img" width={1072} height={603}/>
                     </div>
                     <div className='txt'>
                         <p>華文永續報導獎／真假ESG揭祕-你是真綠、還是漂綠</p>
