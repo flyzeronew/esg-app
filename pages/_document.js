@@ -2,9 +2,11 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 export default function Document() {
   let gtmId = process.env.GTM_ID;
+  const appUrl = process.env.APP_URL;
   return (
     <Html lang='zh-Hant-TW'>
       <Head>
+      <link rel="icon" type="image/png" sizes="16x16" href={`${appUrl}/images/tvbs-good.png`}></link>
         {/* <script
             dangerouslySetInnerHTML={{
               __html: `    

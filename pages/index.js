@@ -10,6 +10,7 @@ import PartnerList from '../comps/index/PartnerList'
 import { useState ,useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
+  const appUrl = process.env.APP_URL;
   // 頁面識別
   const thisPage='home';
   // 參加活動hover
@@ -54,10 +55,10 @@ export default function Home(props) {
   return (
     <div id='wrapper' className={inter.className}>  
       <Head>
-        <title>{"ESG企業永續治理 - TVBS ESG專區"}</title>
+        <title>{"ESG企業永續治理 - TVBS ESG專區"}</title>        
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="Keywords" content="esg,esg2,esg3" />
-        <meta name="description" content="ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。" />  \      
+        <meta name="description" content="ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。" />      
       </Head>
       <Header thisPage={thisPage} menuData={props.menu}/>
       <main>
@@ -76,7 +77,7 @@ export default function Home(props) {
                     <div className="txt">看文章了解更多</div>
                     <div className="arraw">
                       <a href={props.data.whatIsEsg.url}>
-                        <Image src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42}/>
+                        <img src="/images/icon_arraw03.svg" alt="arraw" width={42} height={42} loading="lazy"/>
                       </a>
                     </div>
                   </div>
@@ -109,7 +110,7 @@ export default function Home(props) {
                   <div className="txtBox">
                     <div className="txt">{props.data.activity.description}</div>
                     <div className="arraw" style={{cursor: "auto"}}>
-                      {/* <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/> */}
+                      {/* <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42} loading="lazy"/> */}
                     </div>
                   </div>
                 </div>}
@@ -129,18 +130,18 @@ export default function Home(props) {
                 <div className="txt up">{props.data.ourMissoin.description}</div>
                 <div className="txt">看更多                    
                     <a href={props.data.ourMissoin.url}>                  
-                      <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                      <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42} loading="lazy"/>
                     </a>
                   </div>
               </div>
             </div>
               :<div className="ourMission" >
-                <div className="img"><Image src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
+                <div className="img"><img src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
                 <div className="txtBox">
                   <div className="title">Our Mission</div>
                   <div className="txt">{props.data.ourMissoin.title} 
                     <a href={props.data.ourMissoin.url}>                  
-                      <Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
+                      <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>
                     </a>
                   </div>
                 </div>
