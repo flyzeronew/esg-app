@@ -94,7 +94,7 @@ export default function viewArticle(props) {
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
-                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
+                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
                                     </div>
                                     <div className="txt">
                                         <div className="type">共好夥伴</div>
@@ -115,7 +115,7 @@ export default function viewArticle(props) {
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
-                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
+                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
                                     </div>
                                     <div className="txt">
                                         <div className="type">共好夥伴</div>
@@ -136,7 +136,7 @@ export default function viewArticle(props) {
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
-                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
+                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
                                     </div>
                                     <div className="txt">
                                         <div className="type pc">共好夥伴</div>
@@ -166,23 +166,23 @@ export default function viewArticle(props) {
                                 <div className="imgBox">
                                     <div className="tag">{articleSecret.tag}</div>
                                     <div className="img">
-                                        <Image src={articlePartner.avatar} alt="img" width={90} height={90}/>
+                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
                                     </div>
                                 </div>
                                 <div className="txtBox">                                
                                     <div className='rounded'>
-                                        <Image src="/images/rounded-02.svg" alt="rounded" width={50} height={50}/>
+                                        <img src="/images/rounded-02.svg" alt="rounded" width={50} height={50} loading="lazy"/>
                                     </div>
                                     <div className='box'>
                                         <div className="company">
-                                            <Image src={articleSecret.partner_logo} alt="img" width={50} height={50}/>
+                                            <img src={articleSecret.partner_logo} alt="img" width={50} height={50}/>
                                             <span>{articleSecret.partner_name} <span style={{fontStyle:`italic`}}>Sponsored</span></span>
                                         </div>
                                         <div className="title">
                                             <a href={articleSecret.url}>
                                                 <p>{articleSecret.description}</p>
                                                 <div className="arraw">
-                                                    <Image src={`${appUrl}/images/icon_arraw05.svg`} alt="arraw" width={50} height={50}/>
+                                                    <img src={`${appUrl}/images/icon_arraw05.svg`} alt="arraw" width={50} height={50} loading="lazy"/>
                                                 </div>
                                             </a>
                                         </div>                                    
@@ -217,7 +217,7 @@ export default function viewArticle(props) {
                             </div>
                             <div className="listBox">
                                 {/* <div className="arraw">
-                                    <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                    <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
                                 </div> */}
                                 <div className="list">
                                     <ul>
@@ -226,7 +226,7 @@ export default function viewArticle(props) {
                                                 <li key={index}>
                                                     <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.article_id}`}>
                                                         <div className="img">                                                          
-                                                            <Image src={item.cover_img} alt="img" width={1072} height={603}/>
+                                                            <img src={item.cover_img} alt="img" width={1072} height={603} loading="lazy"/>
                                                         </div>
                                                         <div className="txt">{item.title}</div>
                                                     </a>
