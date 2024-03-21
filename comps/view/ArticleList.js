@@ -13,7 +13,7 @@ function ArticleList(props) {
                                 <li >                            
                                     <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
                                         <div className='img'>
-                                            <Image src={item.cover_img} alt="img" width={1072} height={603}/>
+                                            <Image src={item.cover_img} alt="img" width={1072} height={603} loading="lazy"/>
                                         </div>
                                         <div className='txt'>{item.title}</div>
                                         <div className='name'>
@@ -21,7 +21,7 @@ function ArticleList(props) {
                                             <>
                                                 <div className='nameImg'>
                                                     <div className='img1'>
-                                                        <Image src={item.partner.avatar} alt="logo" width={50} height={50}/>
+                                                        <Image src={item.partner.avatar} alt="logo" width={50} height={50} loading="lazy"/>
                                                     </div>
                                                 </div>
                                                 <p>{item.partner.name}</p>
