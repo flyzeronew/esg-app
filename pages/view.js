@@ -65,14 +65,14 @@ export default function View(props) {
                         <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
                             <div className='box'>
                                 <div className='img'>
-                                    <Image src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
+                                    <img src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603}/>
                                     <div className='imgMaskBox'>
                                         <div className='rounded'>
-                                            <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                            <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
                                         </div>
                                         <div className='case'>
                                             <div className='rounded'>
-                                                <Image src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
+                                                <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50}/>
                                             </div>
                                             <div className='imgMask'></div>
                                         </div>
