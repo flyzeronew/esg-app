@@ -156,9 +156,9 @@ export default function Focus(props) {
                             和理解的方式，將永續觀念「轉譯」為更親和易懂的內容。
                         </p>
                         <div className='listBox'>
-                            <div className="arraw">
+                            {/* <div className="arraw">
                                 <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
-                            </div>
+                            </div> */}
                             <div className='list'>
                                 <ul>
                                     <li>
