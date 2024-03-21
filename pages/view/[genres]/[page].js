@@ -216,9 +216,9 @@ export default function viewArticle(props) {
                                 </div> */}
                             </div>
                             <div className="listBox">
-                                <div className="arraw">
+                                {/* <div className="arraw">
                                     <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
-                                </div>
+                                </div> */}
                                 <div className="list">
                                     <ul>
                                         { articleExtended.length > 0 ?
