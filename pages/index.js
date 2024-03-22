@@ -130,7 +130,6 @@ export default function Home(props) {
             </div>
               : */}
               <div className="ourMission">
-                 
                     <div className={`ourMissionHover ${ourMissionHover ? 'act' : ''}`}>
                       <a href={props.data.ourMissoin.url}>
                         <div className="txtBox">
@@ -141,7 +140,6 @@ export default function Home(props) {
                         </div>
                       </a>
                     </div>
-      
                   <a href={props.data.ourMissoin.url}>                               
                     <div className="img"><img src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
                     <div className="txtBox">

@@ -976,6 +976,7 @@ header .menuMo .list li:last-child{
         margin-bottom: 10px;
     }
     .indexPage .action .titleComingSoon{
+        text-align: center;
         font-size: 20px;
     }
     .indexPage .action .txt {
