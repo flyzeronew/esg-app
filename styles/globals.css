@@ -4738,6 +4738,10 @@ header .menuMo .list li:last-child{
 .tipsDetailPage .contentBox .imgBox img{
     width: 100%;
 }
+.tipsDetailPage .contentBox .imgBox .slick-dots {
+    position: relative;
+    bottom: 0;
+}
 .tipsDetailPage .contentBox .tag {
     background-color: #FFDC34;
     width: 60px;
