@@ -945,6 +945,8 @@ header .menuMo .list li:last-child{
     transition: 0.3s ease;
 }
 .indexPage .action .titleComingSoon.act{
+    width: 100%;
+    text-align: center;
     opacity: 1;
     transition: 0.3s ease;
 }
