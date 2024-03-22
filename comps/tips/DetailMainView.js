@@ -28,21 +28,21 @@ function DetailMainView(props) {
                 ?
                 <div className="box">
                     <div className="tag">{data.tip_genre.name}</div>
-                    <Image src={data.img} alt="img" width={800} height={800}/>
+                    <img src={data.img} alt="img" width={800} height={800} loading='lazy'/>
                 </div>
                 :''}
                 {data.hasOwnProperty('img2') && data.img2!==''
                 ?
                 <div className="box">
                     <div className="tag">{data.tip_genre.name}</div>
-                    <Image src={data.img2} alt="img" width={800} height={800}/>
+                    <img src={data.img2} alt="img" width={800} height={800} loading='lazy'/>
                 </div>
                 :''}
                 {data.hasOwnProperty('img3') && data.img3!==''
                 ?
                 <div className="box">
                     <div className="tag">{data.tip_genre.name}</div>
-                    <Image src={data.img3} alt="img" width={800} height={800}/>
+                    <img src={data.img3} alt="img" width={800} height={800} loading='lazy'/>
                 </div>
                 :''}
 

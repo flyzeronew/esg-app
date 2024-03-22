@@ -33,7 +33,7 @@ function SecretList(props) {
                     {data.length > 0?data.map((item, index) => (
                                         <a href={item.url}>
                                         <div className="img mo">
-                                            <Image src={item.img} alt="img" width={640} height={360}/>
+                                            <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
                                         </div>
                                         <div className="subtitle">
                                             <p>永續生活小撇步</p>
@@ -50,11 +50,10 @@ function SecretList(props) {
                                                 </div>
                                             </div>
                                             <div className="img pc">
-                                                <Image src={item.img} alt="img" width={640} height={360}/>
+                                                <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
                                             </div>
                                         </div>
                                     </a>
-                   
                                     )):""}
                 </Slider>
             </div>

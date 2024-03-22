@@ -22,7 +22,7 @@ function PartnerList(props) {
         <div className="partner">
             <div className="titleBox">
                 <div className="title"><a href="/partner">Who’s doing ESG?</a></div>
-                <div className="txt">落實ESG的夥伴 <a href="/partner"><Image src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/></a></div>
+                <div className="txt">落實ESG的夥伴 <a href="/partner"><img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42} loading='lazy'/></a></div>
             </div>
             <div className="list">
                 <Slider {...settings}>
@@ -36,7 +36,7 @@ function PartnerList(props) {
                             {chunk.map((item, index) => (
                                 <a href={`/partner/${item.name}`} key={index}>
                                     <div className="img">
-                                        <Image src={item.avatar} alt="img" width={50} height={50}/>
+                                        <img src={item.avatar} alt="img" width={50} height={50} loading='lazy'/>
                                     </div>
                                     <div className="txt">{item.name}</div>
                                 </a>

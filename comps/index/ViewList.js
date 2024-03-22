@@ -26,7 +26,7 @@ function ViewList(props) {
                 data.map((item, index) => (
                 <a href={item.url}>
                     <div className="img">
-                        <Image src={item.img} alt="img" width={1920} height={1080}/>  
+                        <img src={item.img} alt="img" width={1920} height={1080} loading='lazy'/>  
                     </div>
                     <div className="txt">{item.title}</div>
                 </a>

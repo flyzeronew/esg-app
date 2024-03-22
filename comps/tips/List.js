@@ -19,15 +19,15 @@ function tipsList(props) {
                                 <a href={item.url}>
                                     <div className={`genres ${tipsGenresArr[item.tip_genre.id-1]}`}>{item.tip_genre.name}</div>
                                     <div className="img">
-                                        <Image src={item.img} alt="img" width={360} height={360}/>
+                                        <img src={item.img} alt="img" width={360} height={360} loading='lazy'/>
                                     </div>
                                     <div className="detail">
                                     <div className='upImg'>
-                                        <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                                        <img src="images/Rectangle-grey.svg" alt="img" width={20} height={20} loading='lazy'/>
                                     </div>
                                         <div className="txt">{item.title}</div>
                                     <div className='rightImg'>
-                                        <Image src="images/Rectangle-grey.svg" alt="img" width={20} height={20}/>
+                                        <img src="images/Rectangle-grey.svg" alt="img" width={20} height={20} loading='lazy'/>
                                     </div>
                                     </div>
                                 </a>

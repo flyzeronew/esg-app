@@ -38,7 +38,7 @@ function MainVision(props) {
                                 <div className="object">
                                     <div className="point"></div>
                                     <div className="arraw">
-                                        <Image src="/images/icon_arraw02.svg" alt="arraw" width={50} height={50}/>
+                                        <img src="/images/icon_arraw02.svg" alt="arraw" width={50} height={50} loading='lazy'/>
                                     </div>
                                 </div>
                             </div>
