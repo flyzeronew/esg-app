@@ -1,15 +1,21 @@
-import Image from 'next/image'
-import { useState ,useEffect } from 'react'
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Header from '../../../comps/Header'
-import Footer from '../../../comps/Footer'
 import DetailMainView from '../../../comps/tips/DetailMainView'
+import Footer from '../../../comps/Footer'
+import Head from 'next/head'
+import Header from '../../../comps/Header'
+import Image from 'next/image'
+import { Inter } from 'next/font/google'
+import Swal from 'sweetalert2'
+import { useState ,useEffect } from 'react'
+import { useRouter } from 'next/router'
+
 
 const inter = Inter({ subsets: ['latin'] })
-export default function page(props) {
+export default function page(props) {    
+    const router = useRouter();
+    const tipId = router.query.page - 1;    
     const appUrl = process.env.APP_URL;
-    const tipsData = props.tipsData;
+    const tipsData = props.tipsData[tipId];
+    const genreEnName = tipsData.tip_genre.en_name;
     // random 繼續看區塊
     let randomElements = props.randomElements;
     // 頁面識別
@@ -19,13 +25,26 @@ export default function page(props) {
 
     //送出答案錨點程式
     const scrollToAnswer = () => {
+        if(selectedOptions.length === 0){
+            Swal.fire({
+                title: "提醒",
+                text: "尚未選擇答案",
+                icon: "warning"
+              });
+            return;
+        }
         const answerTop = document.querySelector('.tipsDetailPage .contentBox .answer').offsetTop; 
         const headerHeight = document.querySelector('header').offsetHeight;
+        
         window.scrollTo({
             top: answerTop - headerHeight,
             behavior: 'smooth',
         });
-    };  
+    }; 
+    
+    // 選單
+    const optionArr = ['option1','option2','option3','option4'];
+    const answerArr = ['answer1','answer2','answer3','answer4'];
     //選單程式
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
@@ -116,8 +135,15 @@ export default function page(props) {
         <Head>
             <title>{`${tipsData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="esg description" />        
+            <meta name="Keywords" content={tipsData.keywords} />
+            <meta name="description" content={tipsData.description} /> 
+            <meta name="author" content="TVBS" />
+            <meta name="copyright" content="TVBS" />
+            <meta name="application-name" content="TVBS" />
+            <meta name="URL" content={`${appUrl}${tipsData.url}`} />
+            <meta name="medium" content="mult" />
+            <meta name="robots" content="INDEX,FOLLOW"/>
+            <link rel="canonical" href={`${appUrl}${tipsData.url}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
@@ -132,58 +158,37 @@ export default function page(props) {
                         <div className="question">
                             <div className="tag">{tipsData.tip_genre.name}</div>
                             <div className="title">{tipsData.title}</div>
-                            
+                            {tipsData? 
                             <div className="checkbox">
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        value="option1"
-                                        checked={selectedOptions.includes('option1')}
-                                        onChange={handleCheckboxChange}
-                                    />
-                                    <span>{tipsData.answer1}</span>
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        value="option2"
-                                        checked={selectedOptions.includes('option2')}
-                                        onChange={handleCheckboxChange}
-                                    />
-                                    <span>{tipsData.answer2}</span>
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        value="option3"
-                                        checked={selectedOptions.includes('option3')}
-                                        onChange={handleCheckboxChange}
-                                    />
-                                    <span>{tipsData.answer3}</span>
-                                </label>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        value="option4"
-                                        checked={selectedOptions.includes('option4')}
-                                        onChange={handleCheckboxChange}
-                                    />
-                                    <span>{tipsData.answer4}</span>
-                                </label>
+                                {
+                                optionArr.map((item, index) => (
+                                     tipsData[answerArr[index]] !== null && tipsData[answerArr[index]].trim() !== ''
+                                     ?
+                                     <label>
+                                        <input
+                                            type="checkbox"
+                                            value={optionArr[index]}
+                                            checked={selectedOptions.includes(optionArr[index])}
+                                            onChange={handleCheckboxChange}
+                                        />
+                                        <span>{tipsData[answerArr[index]]}</span>
+                                    </label>
+                                     :''
+                                    ))
+                                }
                             </div>
-
+                            :''}
                             <div className="btn" onClick={scrollToAnswer}>
                                 <span>送出答案</span>
-                                <div className="arraw">
-                                    <Image src={`${appUrl}/images/icon_arraw07.svg`} alt="arraw" width={30} height={30}/>
-                                </div>
+                                <div className="arraw">↓</div>
                             </div>                   
                         </div>
 
                         <div className="answer">
                             <div className="title">
-                                <Image src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
+                                <img src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
                             </div>
+                            <div className="line"></div>
                             <div  className="tipsContent" dangerouslySetInnerHTML={{ __html: tipsData.content }} />
                             <div className="time">{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
                             {/* <div className="time">2023-08-17 <span>更新</span></div> */}
@@ -197,7 +202,7 @@ export default function page(props) {
                         <div className="title">繼續看</div>
                         <div className="listBox">
                             {/* <div className="arraw">
-                            <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                            <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
                             </div> */}
                             <div className="list">
                                 <ul>
@@ -206,19 +211,19 @@ export default function page(props) {
                                     <li>
                                         <a href={item.url}>
                                             <div className="img">
-                                                <Image src={item.img} alt="img" width={300} height={300}/>
+                                                <img src={item.img} alt="img" width={300} height={300} loading='lazy'/>
                                             </div>
                                             <div className={`tag ${tipsGenresArr[item.tip_genre.id-1]}`}>{item.tip_genre.name}</div>
                                             <div className="txtBox">
                                                 <div className='rounded'>
-                                                    <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                                                    <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
                                                 </div>
                                                 <div className='txtFlex'>
                                                     <div className='txt'>
                                                         <p>{item.title}</p>
                                                     </div>
                                                     <div className='rounded'>
-                                                        <Image src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50}/>
+                                                        <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
                                                     </div>
                                                 </div>                                   
                                             </div>
@@ -253,7 +258,6 @@ export async function getServerSideProps(context) {
     let tipsListData = await tipsListRes.json();
     // 處理繼續看random資料
     tipsListData = tipsListData.filter(item => item.id !== parseInt(page));
-    console.log(tipsListData);
     // 每次從原始 array 中隨機取出三個元素
     function getRandomElements(array, count) {
         const shuffled = array.sort(() => Math.random()-0.5); // 隨機排序

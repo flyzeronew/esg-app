@@ -42,8 +42,15 @@ export default function Focus(props) {
         <Head>
             <title>{"未來焦點 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="" />        
+            <meta name="Keywords" content="TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, 世界地球日活動, ESG議題, ESG活動" />
+            <meta name="description" content="" />
+            <meta name="author" content="TVBS" />
+            <meta name="copyright" content="TVBS" />
+            <meta name="application-name" content="TVBS" />
+            <meta name="URL" content={`${appUrl}/${thisPage}`} />
+            <meta name="medium" content="mult" />
+            <meta name="robots" content="INDEX,FOLLOW"/>
+            <link rel="canonical" href={`${appUrl}/${thisPage}`} />      
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
@@ -75,7 +82,7 @@ export default function Focus(props) {
                                                     <div className="txt"><p>{item.description}</p></div>
                                                 </div>
                                                 <div className= {`arraw ${index === imgHover ? 'act':''}`}>
-                                                    <Image src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
+                                                    <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading='lazy'/>
                                                 </div>
                                             </div>                           
                                         </a>

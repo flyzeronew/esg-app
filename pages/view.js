@@ -35,8 +35,15 @@ export default function View(props) {
         <Head>
             <title>{"永續觀點 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="" />
+            <meta name="Keywords" content="TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題" />
             <meta name="description" content="ESG 企業永續治理已成為全球企業發展的趨勢。 在新趨勢下，企業更加重視永續環境、共好社會、綠色生活等議題。幫助企業、投資人、消費者與一般民眾理解ESG企業永續治理的重要性與實踐方法。" />        
+            <meta name="author" content="TVBS" />
+            <meta name="copyright" content="TVBS" />
+            <meta name="application-name" content="TVBS" />
+            <meta name="URL" content={`${appUrl}/${thisPage}`} />
+            <meta name="medium" content="mult" />
+            <meta name="robots" content="INDEX,FOLLOW"/>
+            <link rel="canonical" href={`${appUrl}/${thisPage}`} />   
         </Head>
         <Header thisPage={thisPage} menuData={props.menu} submenu={viewSubmenu}/>
         <main>            

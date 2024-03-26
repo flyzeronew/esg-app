@@ -42,8 +42,15 @@ export default function Genres(props) {
         <Head>
             <title>{`${genreName} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="" />
-            <meta name="description" content={genreDescription}/>        
+            <meta name="Keywords" content="TVBS,TVBS GOOD,TVBS ESG,ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題,ESG趨勢" />
+            <meta name="description" content={genreDescription}/>
+            <meta name="author" content="TVBS" />
+            <meta name="copyright" content="TVBS" />
+            <meta name="application-name" content="TVBS" />
+            <meta name="URL" content={`${appUrl}/${thisPage}/${genreEnName}`} />
+            <meta name="medium" content="mult" />
+            <meta name="robots" content="INDEX,FOLLOW"/>
+            <link rel="canonical" href={`${appUrl}/${thisPage}/${genreEnName}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>

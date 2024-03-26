@@ -1,4 +1,3 @@
-import Image from 'next/image'
 const NotFound = (props) => {
     const appUrl = process.env.APP_URL;
     return (
@@ -6,7 +5,7 @@ const NotFound = (props) => {
         <div>
             <div className='logo'>
                 <a href="/">
-                    <Image src={`${appUrl}/images/esg-logo.png`} alt="logo" width={187} height={48} />
+                    <img src={`${appUrl}/images/esg-logo.svg`} alt="logo" width={187} height={48} />
                 </a>
             </div>
             <h1 className='heading'>404 - Not Found</h1>

@@ -31,30 +31,30 @@ function SecretList(props) {
             <div className="list">
                 <Slider {...settings}>
                     {data.length > 0?data.map((item, index) => (
-                                        <a href={item.url}>
-                                        <div className="img mo">
-                                            <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
-                                        </div>
-                                        <div className="subtitle">
-                                            <p>永續生活小撇步</p>
-                                            <div className={`line ${tipsGenresArr[item.tip_genre.id - 1]}`}></div>
-                                            <div className={`tag ${tipsGenresArr[item.tip_genre.id - 1]}`}>{item.tip_genre.name}</div>
-                                        </div>
-                                        <div className="title">
-                                            <div className="word">
-                                                <p>
-                                                    {item.title}
-                                                </p>
-                                                <div className="description">
-                                                    {item.description}
-                                                </div>
-                                            </div>
-                                            <div className="img pc">
-                                                <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    )):""}
+                        <a key={index} href={item.url}>
+                            <div className="img mo">
+                                <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
+                            </div>
+                            <div className="subtitle">
+                                <p>永續生活小撇步</p>
+                                <div className={`line ${tipsGenresArr[item.tip_genre.id - 1]}`}></div>
+                                <div className={`tag ${tipsGenresArr[item.tip_genre.id - 1]}`}>{item.tip_genre.name}</div>
+                            </div>
+                            <div className="title">
+                                <div className="word">
+                                    <p>
+                                        {item.title}
+                                    </p>
+                                    <div className="description">
+                                        {item.description}
+                                    </div>
+                                </div>
+                                <div className="img pc">
+                                    <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
+                                </div>
+                            </div>
+                        </a>
+                    )):""}
                 </Slider>
             </div>
         </div>

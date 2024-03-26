@@ -19,7 +19,13 @@ input:focus {
 html::-webkit-scrollbar-thumb {
     background: #00D221;
 }
-
+.bottomTxt{
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 50px;
+    color: #333333;
+    padding:15px 30px;
+}
 /* 404 */
 .notFoundContainer {
     width: 100%;
@@ -56,6 +62,12 @@ html::-webkit-scrollbar-thumb {
     display: none;
 }
 
+@media (max-width:1023px) {
+    .bottomTxt{
+        text-align:center;
+    }
+}
+
 @media (max-width:767px) {
     .pc {
         display: none;
@@ -64,6 +76,7 @@ html::-webkit-scrollbar-thumb {
     .mo {
         display: block;
     }
+    .bottomTxt{text-align:center;}
 }
 
 .ligthBox{width: 100%; height: 100vh;background-color: #ccc;position: absolute;z-index: 100;top:0;overflow: hidden;}
@@ -530,16 +543,18 @@ header .menuMo .list li:last-child{
 }
 /* 手機板導覽列 ed*/
 /* 首頁 內容*/
-.indexPage{
+.indexPage{    
+    margin:30px 30px 15px;
+}
+.flexBox{
     display:flex;
     column-gap: 20px;
-    margin:30px;
 }
 .indexPage section:nth-child(1){
     width: 60%;
 }
 .indexPage section:nth-child(2){
-    width: 40%;
+    width: 39%;
 }
 @media (max-width:1919px) {
     .indexPage{
@@ -561,6 +576,8 @@ header .menuMo .list li:last-child{
     .indexPage{
         width: 728px;
         padding:20px;
+    }
+    .indexPage .flexBox{
         display:block;
     }
     .indexPage section:nth-child(1),
@@ -937,6 +954,7 @@ header .menuMo .list li:last-child{
     display:flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     z-index: 1;
     background-color: #FFDC34;
     top:0;
@@ -1064,6 +1082,7 @@ header .menuMo .list li:last-child{
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.48px;
+    color: #00422C;
 }
 .indexPage .ourMission .img{
     width: 135px;
@@ -1440,7 +1459,7 @@ header .menuMo .list li:last-child{
 .indexPage .partner{
     overflow: hidden;
     padding: 40px 24px 40px 96px;
-    background-color:#d7f2dd;
+    background-color:#D1FFE0;
     border-radius: 190px 30px 30px 190px;
     display:flex;
     align-items: center;
@@ -1487,11 +1506,15 @@ header .menuMo .list li:last-child{
     height: 70px;
     border-radius: 80px;
     overflow: hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
 }
 .indexPage .partner .list a .img img{
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1;
+    width: 80%;
+    height: 80%;
+    aspect-ratio: 1/1;    
 }
 .indexPage .partner .slick-dots{
     bottom:-25px;
@@ -1516,7 +1539,6 @@ header .menuMo .list li:last-child{
     .indexPage .partner {
         overflow: hidden;
         padding: 40px 24px 40px 96px;
-        background-color: #d7f2dd;
         border-radius: 190px 30px 30px 190px;
         display: flex;
         align-items: center;
@@ -2960,6 +2982,9 @@ header .menuMo .list li:last-child{
     width: 900px;
     margin: 0 auto 50px;
 }
+.viewArticlePage .articleContent .editorNew img{
+    display: unset;
+}
 .viewArticlePage .articleContent .editor p {
     font-size: 20px;
     font-weight: 400;
@@ -3769,6 +3794,9 @@ header .menuMo .list li:last-child{
 }
 @media (max-width:767px) {
     .responsibilityPage .mainView .title p{
+        padding: 5px 15px 0;
+    }
+    .responsibilityPage .mainView .title p{
         font-size: 36px;
     }
     .responsibilityPage .mainView {
@@ -3817,6 +3845,21 @@ header .menuMo .list li:last-child{
     margin-bottom: 40px;
 }
 @media (max-width:767px) {
+    .responsibilityPage .mainView .rounded{
+        width: 20px;
+        height: 20px;
+        aspect-ratio: 1/1;
+    }
+    .responsibilityPage .mainView .title .t1{
+        font-size: 20px;
+        line-height:24px;
+    }
+    .responsibilityPage .mainView .title .box:first-child p{
+        border-radius: 15px 15px 0 0;
+        letter-spacing: unset;
+        line-height: unset;
+        padding:0 15px ;
+    }
     .responsibilityPage .content .title h2{
         font-size: 32px;
         font-weight: 600;
@@ -3826,6 +3869,10 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:359px) {
+    .responsibilityPage .mainView .title .t1{
+        font-size: 18px;
+        line-height:24px;
+    }
     .responsibilityPage .content .title h2{
         font-size: 30px;
     }
@@ -4037,6 +4084,7 @@ header .menuMo .list li:last-child{
     display: flex;
     flex-wrap: wrap;
     column-gap: 30px;
+    row-gap: 50px;
 }
 .responsibilityPage .brand .list ul li{
     width: calc((100% - 90px) / 4);
@@ -4054,8 +4102,11 @@ header .menuMo .list li:last-child{
         width: 0px;
     }
     .responsibilityPage .brand .list ul{
-        width: 250%;
+        width: 450%;
     }    
+    .responsibilityPage .brand .list ul li{
+        width: calc((100% - 210px) / 8);
+    }
 }
 @media (max-width:767px) {
     .responsibilityPage .brand .listBox .arraw {
@@ -4064,10 +4115,10 @@ header .menuMo .list li:last-child{
     }
     .responsibilityPage .brand .list ul{
         column-gap: 20px;
-        width: 300%;
+        width: 520%;
     }
     .responsibilityPage .brand .list ul li{
-        width: calc((100% - 60px) / 4);
+        width: calc((100% - 140px) / 8);
     }
 }
 @media (max-width:414px) {
@@ -4473,7 +4524,7 @@ header .menuMo .list li:last-child{
     color: #FFFFFF;
   }
   .tagEntertainmentColor{
-    background-color: ##001C48;
+    background-color: #001C48;
     color: #FFFFFF;
   }
   
@@ -4766,7 +4817,7 @@ header .menuMo .list li:last-child{
     margin-bottom: 50px;
 }
 .tipsDetailPage .contentBox .answer{
-    margin: 200% 0 30%;
+    margin: 80% 0 30%;
 }
 .tipsDetailPage .contentBox .answer .tipsContent{
     margin-bottom: 50px;
@@ -4774,6 +4825,13 @@ header .menuMo .list li:last-child{
 .tipsDetailPage .contentBox .answer .tipsContent h1, h2, h3, h4, h5, h6 {
     font-size: revert; 
     font-weight: revert; 
+}
+.tipsDetailPage .contentBox .answer .line{
+    width: 30px;
+    height: 2px;
+    margin: 0 auto 50px;
+    background-color: #00D221;
+    display:none;
 }
 .tipsDetailPage .contentBox .answer .time{
     font-size: 14px;
@@ -5009,6 +5067,13 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:767px) {
+    .tipsDetailPage .contentBox .answer .tipsContent h1{
+        font-size: 28px;
+        text-align: center;
+    }
+    .tipsDetailPage .contentBox .answer .line{
+        display:block;
+    }
     .tipsDetailPage .contentMore .listBox .arraw{
         position:absolute;
         top:30%;

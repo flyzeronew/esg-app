@@ -1,28 +1,29 @@
-import Image from 'next/image'
-import { useState ,useEffect } from 'react'
+import { useState ,useEffect} from 'react'
 import React, { Component } from "react"
 
 function Navber(props) {  
+    // 變數宣告
     const appUrl = process.env.APP_URL;
     const menu = props.menuData;
-    const thisPage = props.thisPage;     
-    // 變數宣告
+    const thisPage = props.thisPage;   
     const [hamBurger, setHamBurger] = useState(false);
     const [showChildMenu, setShowChildMenu] = useState(false);
     const [navScroll, setNavScroll] = useState(false);
     const [childMo, setChildMo] = React.useState(Array(menu.length).fill(false));
-    
+    const [mainMenuHeight, setMainMenuHeight] = useState(132);
     // 變數宣告 ed
 
     // resize 監聽事件
     useEffect(() => {
-        const mainMenuHeight = document.querySelector('.mainMenu').clientHeight;
-        const mainMenuBox = document.querySelector('.mainMenuBox');
-        mainMenuBox.style.height = `${mainMenuHeight}px`;
         const handleResize = () => {
             setHamBurger(false);
             setShowChildMenu(false);
-        };    
+        };
+        const updateMainMenuHeight = () => {
+            const newMainMenuHeight = document.querySelector('.mainMenu').clientHeight;
+            setMainMenuHeight(newMainMenuHeight);
+        };
+        updateMainMenuHeight();
         window.addEventListener('resize', handleResize);
         window.addEventListener('scroll', navScrollStart);
         return () => {
@@ -64,18 +65,18 @@ function Navber(props) {
                         `}
                     </style>
                 :''}
-                <div className="mainMenuBox"></div>
+                <div className="mainMenuBox" style={{height:mainMenuHeight}}></div>
                 <nav className={hamBurger ? 'act': (navScroll ? 'act' : '')}>                    
                     <div className="mainMenu">
                         <div className="logo">
                             <a href="/">
-                                <Image src={`${appUrl}/images/esg-logo.png`} alt="logo" width={187} height={48} />
+                                <img src={`${appUrl}/images/esg-logo.svg`} alt="logo" width={187} height={84.47} />
                             </a>
                         </div>
 
                         {/* 手機板漢堡 */}
                         <div className="burgerIcon" onClick={hamBurgerClick}>
-                            <Image src={`${appUrl}/images/icon-burger.svg`} alt="img" width={187} height={48} />
+                            <img src={`${appUrl}/images/icon-burger.svg`} alt="img" width={187} height={48} loading='lazy'/>
                         </div>                        
 
                         {/* 手機板漢堡 ed*/}
@@ -87,7 +88,7 @@ function Navber(props) {
                                         <li key={index} >
                                             <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={() => childMenuClick(index)}>
                                                 {item.title}
-                                                {item.child.length > 0 ? <Image className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                {item.child.length > 0 ? <img className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                             </a>
                                         </li>
                                     ))}                                
@@ -95,7 +96,7 @@ function Navber(props) {
                             </div>
                             {/* 搜尋 */}
                             {/* <div className="iconSearch">
-                                <Image src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
+                                <img src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
                             </div> */}
                         </div>
                     </div>
@@ -131,7 +132,7 @@ function Navber(props) {
                         hamBurger ? 
                             <div className="menuMo">                                
                                 {/* <div className="search">
-                                    <Image src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
+                                    <img src={`${appUrl}/images/icon_search.svg`} alt="icon" width={30} height={30}/>
                                     <input id="searchInput" type="text" placeholder="搜尋"  />
                                 </div> */}
                                 <div className="list">
@@ -140,7 +141,7 @@ function Navber(props) {
                                             <li key={index} >
                                                 <a className={thisPage==item.page_name ? 'act':''} href={item.child.length>0 ? '#':item.url} onClick={() => childMoClick(index)} >
                                                     {item.title}
-                                                    {item.child.length>0 ? <Image className={childMo[index] ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                    {item.child.length>0 ? <img className={childMo[index] ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
                                                 </a>
                                                 {
                                                     item.child.length>0 ?

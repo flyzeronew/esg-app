@@ -45,6 +45,20 @@ function DetailMainView(props) {
                     <img src={data.img3} alt="img" width={800} height={800} loading='lazy'/>
                 </div>
                 :''}
+                {data.hasOwnProperty('img4') && data.img4!==''
+                ?
+                <div className="box">
+                    <div className="tag">{data.tip_genre.name}</div>
+                    <img src={data.img4} alt="img" width={800} height={800} loading='lazy'/>
+                </div>
+                :''}
+                {data.hasOwnProperty('img5') && data.img5!==''
+                ?
+                <div className="box">
+                    <div className="tag">{data.tip_genre.name}</div>
+                    <img src={data.img5} alt="img" width={800} height={800} loading='lazy'/>
+                </div>
+                :''}
 
             </Slider>
         </>

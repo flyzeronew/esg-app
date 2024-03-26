@@ -24,7 +24,7 @@ function MainVision(props) {
                 {data.length>0
                 ?
                 data.map((item, index) => (
-                    <a href={item.url}>
+                    <a key={index} href={item.url}>
                         <div className="img" style={{ 
                             background: `url(${item.img}) no-repeat center center`,
                             backgroundSize:`cover`,

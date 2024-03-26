@@ -18,6 +18,10 @@ function PartnerList(props) {
         autoplay: true,
         autoplaySpeed:5000,
     };  
+
+    const defaultClick = (event) => {
+        event.preventDefault();
+    };
     return (        
         <div className="partner">
             <div className="titleBox">
@@ -34,7 +38,7 @@ function PartnerList(props) {
                     }, []).map((chunk, chunkIndex) => (
                         <div className="box" key={chunkIndex}>
                             {chunk.map((item, index) => (
-                                <a href={`/partner/${item.name}`} key={index}>
+                                <a href={`#`} key={index} onClick={defaultClick}>
                                     <div className="img">
                                         <img src={item.avatar} alt="img" width={50} height={50} loading='lazy'/>
                                     </div>

@@ -99,7 +99,7 @@ return (
                 <div className="linksArea">
                 {/* pc */}
                 {detail.partner_links.map((item, index) => (
-                    <div className={`${pcLinksArr[index]} items pc`} style={{ 
+                    <div key={index} className={`${pcLinksArr[index]} items pc`} style={{ 
                         background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.image_url})  no-repeat center center / 105%`,
                         backgroundSize: index === imgHover ? `130%` : `105%`,
                         transition: 'background-size 0.3s',
@@ -123,7 +123,7 @@ return (
 
                 {/* mobile */}
                 {moLinksIndexArr.map((item, index) => (
-                        <div className={`${item[1]} items mo`}  style={{ 
+                        <div key={index}  className={`${item[1]} items mo`}  style={{ 
                             background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url})  no-repeat center center / 105%`,
                             backgroundSize: index === imgHover ? `130%` : `105%`,
                             transition: 'background-size 0.3s',
@@ -158,7 +158,7 @@ return (
                     <div className="videoClick" onClick={handleClick}>
                         {clicked ? 
                         <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
-                            <iframe width="100%" height="100%" src={`${detail.video_url}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
+                            <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${detail.youtube_id}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
                         </div> 
                         : 
                         <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >

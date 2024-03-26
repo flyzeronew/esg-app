@@ -1,19 +1,20 @@
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
-import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {    
-// 頁面識別
-const thisPage='partner';
-const [imgHover, setImgHover] = useState(null);
-const [bgSize, setBgSize] = useState();
-const [hoverBgSize, setHoverBgSize] = useState();
-const [showList, setShowList] = useState(props.partnerData);
-const [submenuActive, setSubmenuActive] = useState(0);
+    const appUrl = process.env.APP_URL;
+    // 頁面識別
+    const thisPage='partner';
+    const [imgHover, setImgHover] = useState(null);
+    const [bgSize, setBgSize] = useState();
+    const [hoverBgSize, setHoverBgSize] = useState();
+    const [showList, setShowList] = useState(props.partnerData);
+    const [submenuActive, setSubmenuActive] = useState(0);
     const imgMouseOver = (e) => {
         const isLargeScreen = window.innerWidth > 767;
         setHoverBgSize(isLargeScreen ? 120 : 280);
@@ -23,16 +24,16 @@ const [submenuActive, setSubmenuActive] = useState(0);
     const imgMouseOut = (e) => {
         setImgHover(null);
     };
-console.log(props.partnerData);
+
     // 處理點擊事件
     const handleClick = (id) => {
         setSubmenuActive(id);
         if(id === 0){
             // 全部
-            // return setShowList(props.partnerData);
+            return setShowList(props.partnerData);
         }
-        // const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
-        // setShowList(filteredData);
+        const filteredData = props.partnerData.filter(item => item.partner_genre_id === id);
+        setShowList(filteredData);
     };
 
     // resize 監聽事件
@@ -59,8 +60,15 @@ return (
         <Head>
             <title>{"ESG共好夥伴 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="esg,esg2,esg3" />
+            <meta name="Keywords" content="TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG共好夥伴" />
             <meta name="description" content="透過企業合作，ESG共好夥伴可以共享資源、互補優勢、擴大影響力，共同推動ESG理念的實踐，創造永續發展的未來。" />        
+            <meta name="author" content="TVBS" />
+            <meta name="copyright" content="TVBS" />
+            <meta name="application-name" content="TVBS" />
+            <meta name="URL" content={`${appUrl}/${thisPage}`} />
+            <meta name="medium" content="mult" />
+            <meta name="robots" content="INDEX,FOLLOW"/>
+            <link rel="canonical" href={`${appUrl}/${thisPage}`} />   
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
@@ -82,7 +90,7 @@ return (
                         {
                             props.submenuData.length > 0 ?
                                 props.submenuData.map((item, index) => (
-                                    <a onClick={() => handleClick(item.id)} href="javascript:void(0)" className={submenuActive === item.id ? "act" : ""}>{item.name}</a>
+                                    <a key={index} onClick={() => handleClick(item.id)} href="javascript:void(0)" className={submenuActive === item.id ? "act" : ""}>{item.name}</a>
                                 )):''
                         }
                     </div>  
@@ -97,24 +105,26 @@ return (
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                <a  href={`/partner/${item.name}`}>
+                                {/* <Link  href={`/partner/`+item.name}> */}
                                     <div class="itemMask"></div>
                                     <div className="profileCard">
                                         <div className="profileImg">
                                             <div className="img">
-                                                <Image src={item.avatar} alt="img" width={50} height={50}/> 
+                                                <img src={item.avatar} alt="img" width={50} height={50} loading="lazy" /> 
                                             </div>
                                         </div>
                                         <div className='name'>
                                             {item.name}
                                         </div>
-                                        <div className='outBorder'>
+                                        {item.brief
+                                        ?                                    <div className='outBorder'>
                                             <div className='txt'>
                                                 {item.brief}
                                             </div>
                                         </div>
+                                        :''}
                                     </div> 
-                                </a>
+                                {/* </Link> */}
                                     </li>
                                 ))
                             :''

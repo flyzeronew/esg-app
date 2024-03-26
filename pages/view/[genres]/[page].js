@@ -11,14 +11,13 @@ export default function viewArticle(props) {
     const appUrl = process.env.APP_URL;
     const [bgShow, setBgShow] = useState(true);
     const getArticleData = props.viewData;
+    const genreEnName = props.viewData.article_genres[0].en_name;
 
     //取資料 文章、共好夥伴、小撇步、延伸閱讀
     const articleContent = getArticleData.content;
     const articlePartner = getArticleData.partner;
     const articleSecret = getArticleData.article_secret;
     const articleExtended = getArticleData.extend_articles;
-    console.log(getArticleData);
-    console.log(articleExtended);
     // 日期轉換
     const formattedDate = (date) => {
         const originalTime = new Date(date);
@@ -26,7 +25,6 @@ export default function viewArticle(props) {
         const formattedDate = isoDateString.substring(0, 10);
         return formattedDate;
     };
-
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
     const thisPage='view';    
@@ -49,8 +47,15 @@ export default function viewArticle(props) {
         <Head>
             <title>{`${getArticleData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content="" />
-            <meta name="description" content={getArticleData.description} />        
+            <meta name="Keywords" content="TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題" />
+            <meta name="description" content={getArticleData.description} />
+            <meta name="author" content="TVBS" />
+            <meta name="copyright" content="TVBS" />
+            <meta name="application-name" content="TVBS" />
+            <meta name="URL" content={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`} />
+            <meta name="medium" content="mult" />
+            <meta name="robots" content="INDEX,FOLLOW"/>
+            <link rel="canonical" href={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>            
