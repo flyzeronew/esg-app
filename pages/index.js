@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
@@ -55,10 +54,10 @@ export default function Home(props) {
   return (
     <div id='wrapper' className={inter.className}>  
       <Head>
-        <title>{"ESG企業永續治理 - TVBS ESG專區"}</title>        
+        <title>{"TVBS GOOD - ESG 倡議與永續生活平台"}</title>        
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="Keywords" content="TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題" />
-        <meta name="description" content="ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。" />      
+        <meta name="description" content="TVBS GOOD 是 TVBS 倡議 ESG、實踐與地球共好的平台。我們的永續目標接軌聯合國與世界並進，從報導追蹤企業永續發展，到分享日常永續生活撇步，協同多方一起節能減碳，邁向淨零碳排的永續目標。" />      
         <meta name="author" content="TVBS" />
         <meta name="copyright" content="TVBS" />
         <meta name="application-name" content="TVBS" />
@@ -75,6 +74,20 @@ export default function Home(props) {
               <MainVision data={props.data.headline}/>
 
               <div className="other">
+
+                {props.data.ourMissoin ?
+                    <div className="ourMission mo">                          
+                        <a href={props.data.ourMissoin.url}>
+                          <div className="txtBox">
+                            <div className="title">Our Mission</div>
+                            <div className="txt">{props.data.ourMissoin.title}
+                                <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>                      
+                            </div>
+                          </div>
+                        </a>      
+                    </div>
+                :""}
+
                 {props.data.whatIsEsg?
                   <div className="whatEsg" onMouseOver={() => esgMouseOver(1)}   onMouseOut={esgMouseOut}>
                     
@@ -122,48 +135,33 @@ export default function Home(props) {
 
             </section>
             <section>
-              {props.data.ourMissoin
-              ?
-              <div onMouseOver={() => missionMouseOver(1)}   onMouseOut={missionMouseOut} >
-                {/* {ourMissionHover
-                ?<div className="ourMissionHover" >
-                <div className="txtBox">
-                  <div className="txt up">{props.data.ourMissoin.description}</div>
-                  <div className="txt">看更多                    
-                      <a href={props.data.ourMissoin.url}>                  
-                        <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42} loading="lazy"/>
-                      </a>
-                    </div>
-                </div>
-              </div>
-                : */}
-                <div className="ourMission">
-                      <div className={`ourMissionHover ${ourMissionHover ? 'act' : ''}`}>
-                        <a href={props.data.ourMissoin.url}>
-                          <div className="txtBox">
-                            <div className="txt up">{props.data.ourMissoin.description}</div>
-                            <div className="txt">看更多
-                                  <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading="lazy"/>
-                              </div>
-                          </div>
-                        </a>
-                      </div>
-        
-                    <a href={props.data.ourMissoin.url}>                               
-                      <div className="img"><img src={props.data.ourMissoin.img} alt="img"  width={300} height={300}/></div>
-                      <div className="txtBox">
-                        <div className="title">Our Mission</div>
-                        <div className="txt">{props.data.ourMissoin.title}
-                            <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>                      
+              {props.data.ourMissoin ?
+
+                <div onMouseOver={() => missionMouseOver(1)}   onMouseOut={missionMouseOut} >
+                  <div className="ourMission pc">
+                        <div className={`ourMissionHover ${ourMissionHover ? 'act' : ''}`}>
+                          <a href={props.data.ourMissoin.url}>
+                            <div className="txtBox">
+                              <div className="txt up">{props.data.ourMissoin.description}</div>
+                              <div className="txt">看更多
+                                    <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading="lazy"/>
+                                </div>
+                            </div>
+                          </a>
                         </div>
-                      </div>
-                    </a>      
+                      <a href={props.data.ourMissoin.url}>
+                        <div className="txtBox">
+                          <div className="title">Our Mission</div>
+                          <div className="txt">{props.data.ourMissoin.title}
+                              <img src="/images/icon_arraw04.svg" alt="arraw" width={42} height={42}/>                      
+                          </div>
+                        </div>
+                      </a>      
+                  </div>
                 </div>
-                {/* } */}
-              </div>
+
               :""}
 
-              
               <SecretList data={props.data.tips}/>
               <PartnerList data={props.data.partners}/>
               
@@ -182,7 +180,11 @@ export async function getServerSideProps() {
   const menuRes = await fetch(menuUrl);
   const menu = await menuRes.json();
   // data
-  const dataUrl = new URL('/api/indexData', process.env.APP_URL);
+
+  const dataUrl = process.env.APP_ENV==='production'?
+  new URL('/api/index-data-prd', process.env.APP_URL):
+  new URL('/api/index-data-dev', process.env.APP_URL);
+
   const dataRes = await fetch(dataUrl);
   const data = await dataRes.json();
   return {

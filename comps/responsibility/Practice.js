@@ -1,5 +1,3 @@
-import { useState ,useEffect } from 'react'
-import Image from 'next/image'
 import React, { Component } from "react"
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
@@ -15,6 +13,7 @@ function Practice(props) {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
+        swipeToSlide:false,
         centerPadding: "500px", 
         responsive: [
             {

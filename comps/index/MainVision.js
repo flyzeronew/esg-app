@@ -1,5 +1,3 @@
-import { useState ,useEffect } from 'react'
-import Image from 'next/image'
 import React, { Component } from "react"
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
@@ -14,7 +12,7 @@ function MainVision(props) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        swipeToSlide:true,
+        swipeToSlide:false,
         autoplay: true,
         autoplaySpeed:5000, 
     };  
@@ -25,12 +23,9 @@ function MainVision(props) {
                 ?
                 data.map((item, index) => (
                     <a key={index} href={item.url}>
-                        <div className="img" style={{ 
-                            background: `url(${item.img}) no-repeat center center`,
-                            backgroundSize:`cover`,
-                            transition: 'background-size 0.3s',
-                        }}></div> 
-                        
+                        <div className="img">
+                            <img src={item.img} alt="img" width={1072} height={603}/>
+                        </div>
                         <div className="txtAbsolute">
                             <div className="txtBox">
                                 <div className="title">{item.title}</div>

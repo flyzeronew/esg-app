@@ -1,5 +1,3 @@
-import { useState ,useEffect } from 'react'
-import Image from 'next/image'
 import React, { Component } from "react"
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
@@ -22,7 +20,7 @@ function SecretList(props) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        swipeToSlide:true,
+        swipeToSlide:false,
         autoplay: true,
         autoplaySpeed:5000, 
     };  
@@ -42,12 +40,7 @@ function SecretList(props) {
                             </div>
                             <div className="title">
                                 <div className="word">
-                                    <p>
-                                        {item.title}
-                                    </p>
-                                    <div className="description">
-                                        {item.description}
-                                    </div>
+                                    <p>{item.title}</p>
                                 </div>
                                 <div className="img pc">
                                     <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>

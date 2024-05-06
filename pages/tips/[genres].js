@@ -1,22 +1,25 @@
+import Head from 'next/head'
 import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import Header from '../comps/Header'
-import Footer from '../comps/Footer'
-import SharedBanner from '../comps/tips/SharedBanner'
-import Submenu from '../comps/tips/Submenu'
-import List from '../comps/tips/List'
-import JumpPage from '../comps/JumpPage'
+import Header from '../../comps/Header'
+import Footer from '../../comps/Footer'
+import SharedBanner from '../../comps/tips/SharedBanner'
+import Submenu from '../../comps/tips/Submenu'
+import List from '../../comps/tips/List'
+import JumpPage from '../../comps/JumpPage'
 
 const inter = Inter({ subsets: ['latin'] })
-export default function Tips(props) {
+export default function Genres(props) {
     const router = useRouter();
     // 頁面識別
     const thisPage='tips';
     const appUrl = process.env.APP_URL;
     const tipsSubmenu = props.submenuData;
     const showList = props.tipsData.tips;
+    const genreData = props.genreData;
+    const genreId = props.genreId;
+    const genreEnName=String(props.genreEnName);
     const colorMapping = props.colorMapping;
     // 計算文章數量轉頁面數
     const articleNum = 20;
@@ -24,8 +27,9 @@ export default function Tips(props) {
     const articleMath = Math.floor(articleCount / articleNum);
     const pageCount = articleCount % articleNum != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
+    const uri =`/tips/${genreEnName}`;
     useEffect(() => {
-        if (props.page > pageCount) {
+        if (props.page > pageCount || genreData === '') {
             router.push('/404');
         }
     }, []);
@@ -49,13 +53,11 @@ export default function Tips(props) {
                 <div className="tipsListPage">
                     <div className="mainArea">
                         <SharedBanner/>
-                        <Submenu submenu={tipsSubmenu} />                       
+                        <Submenu submenu={tipsSubmenu} genreEnName={genreEnName} genreId={genreId} />
                     </div>
-                    <List listData={showList} colorMapping={colorMapping} />
+                    <List listData={showList} colorMapping={colorMapping} genreId={genreId} />
                 </div>
-                {/* 跳頁選單 */}
-                { pageCount > 1 ? <JumpPage uri={`/${thisPage}`} pageCount={pageCount} /> :''}
-                {/* 跳頁選單 ed */}
+                { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
             </main>
             <div className="footerLine">
                 <div className="box"></div>
@@ -65,10 +67,11 @@ export default function Tips(props) {
         );
 }
 
-export async function getServerSideProps(context) {    
-    const { query } = context;    
+export async function getServerSideProps(context) {
+    const { query } = context;
     const page = query.page ? query.page : 1;
-    
+    const genreEnName = context.query.genres;
+
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
@@ -82,14 +85,19 @@ export async function getServerSideProps(context) {
     const submenuUrl = new URL('/api/tips-genres', process.env.APP_URL);
     const submenuRes = await fetch(submenuUrl);    
     const submenuData = await submenuRes.json();
+
+    const getGenreData = submenuData.find(item => item.en_name === genreEnName);
+    const genreData = getGenreData ? getGenreData:'';
+    const genreId = getGenreData ? getGenreData.id :'';
+
     // list
-    const tipsUrl = new URL(`/api/tips?page=${page}`, process.env.API_URL);
+    const tipsUrl = new URL(`/api/tips?genre_id=${genreId}&page=${page}`, process.env.API_URL);
     const tipsRes = await fetch(tipsUrl);    
     const tipsData = await tipsRes.json();
-
+    
     return {
         props: {
-            menu,tipsData,submenuData,page,colorMapping,
+            menu,tipsData,submenuData,genreData,genreEnName,genreId,page,colorMapping
         },
     };
 }

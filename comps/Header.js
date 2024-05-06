@@ -16,6 +16,7 @@ function Navber(props) {
     // resize 監聽事件
     useEffect(() => {
         const handleResize = () => {
+            updateMainMenuHeight();
             setHamBurger(false);
             setShowChildMenu(false);
         };
@@ -70,7 +71,13 @@ function Navber(props) {
                     <div className="mainMenu">
                         <div className="logo">
                             <a href="/">
-                                <img src={`${appUrl}/images/esg-logo.svg`} alt="logo" width={187} height={84.47} />
+                                { thisPage === 'home' ? 
+                                    <h1>
+                                        <img src={`${appUrl}/images/esg-logo.svg`} alt="TVBS GOOD" width={106.3} height={48} />
+                                    </h1>
+                                :
+                                    <img src={`${appUrl}/images/esg-logo.svg`} alt="TVBS GOOD" width={106.3} height={48} />                                
+                                }
                             </a>
                         </div>
 
@@ -87,8 +94,17 @@ function Navber(props) {
                                     {menu.map((item, index) => (
                                         <li key={index} >
                                             <a className={thisPage==item.page_name ? 'act':''} href={item.url} onMouseOver={() => childMenuClick(index)} onClick={() => childMenuClick(index)}>
-                                                {item.title}
-                                                {item.child.length > 0 ? <img className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                { thisPage === 'home' ? 
+                                                    <h2>
+                                                        {item.title}
+                                                        {item.child.length > 0 ? <img className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                    </h2>
+                                                    :
+                                                    <>
+                                                        {item.title}
+                                                        {item.child.length > 0 ? <img className={index === showChildMenu ? 'act':''} src={`${appUrl}/images/icon_arraw01.svg`} alt="arraw" width={8} height={5}/> : ''}
+                                                    </>                                                    
+                                                }                                                
                                             </a>
                                         </li>
                                     ))}                                
@@ -112,7 +128,15 @@ function Navber(props) {
                                                     item.child.map((item2, index2) => (
                                                         <li key={index2}>
                                                             <a href={item2.url} onClick={childMenuMouseLeave}>
-                                                                {item2.title}
+                                                                { thisPage === 'home' ? 
+                                                                    <h3>
+                                                                        {item2.title}
+                                                                    </h3>
+                                                                    :
+                                                                    <>
+                                                                        {item2.title}
+                                                                    </>
+                                                                }
                                                             </a>
                                                         </li>
                                                     ))

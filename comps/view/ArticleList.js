@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React, { Component } from "react"
 
 function ArticleList(props) {
@@ -13,9 +12,9 @@ function ArticleList(props) {
                                 <li >                            
                                     <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
                                         <div className='img'>
-                                            <img src={item.cover_img} alt="img" width={1072} height={603} loading="lazy"/>
+                                            <img src={item.cover_img ? item.cover_img : process.env.IMG_DEFAULT} alt="img" width={559} height={315} loading="lazy"/>
                                         </div>
-                                        <div className='txt'>{item.title}</div>
+                                        <h2 className='txt'>{item.title}</h2>
                                         <div className='name'>
                                             {item.partner != null ? 
                                             <>

@@ -1,5 +1,4 @@
 import { useState ,useEffect } from 'react'
-import Image from 'next/image'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
@@ -46,12 +45,10 @@ export default function Responsibility(props) {
                         <img src={`${appUrl}/images/responsibility_bg01.jpg`} alt="bg" width={1920} height={1024} loading="lazy"/>
                     </div>
                     <div className='titleBox'>
-                        <div className='title'>
+                        <div className='title'>                            
                             <div className='box'>
                                 <div className='rounded'></div>
-                                <p>
-                                    <span className='t1'>TVBS GOOD 永續共好</span>
-                                </p>
+                                <h1 className='t1'>TVBS GOOD 永續共好</h1>
                                 <div className='rounded'>
                                     <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
                                 </div>
@@ -116,7 +113,7 @@ export default function Responsibility(props) {
 
                     <div className='peopleBox'>
                         <div className='title'>
-                            <h2>TVBS永續大使 莊開文</h2>
+                            <h2>TVBS永續倡議大使 莊開文</h2>
                             <div className='line'></div>
                         </div>
                         <div className='contxt'>
@@ -133,7 +130,7 @@ export default function Responsibility(props) {
                                 <div className='txt'>
                                     我們深信，媒體的傳播力量可以撼動生命，影響一整個世代; 而您的關心和投入，更是這股力量的加速器! 
                                 </div>
-                                <div className='small'>- 永續大使 莊開文 </div>
+                                <div className='small'>- 永續倡議大使 莊開文 </div>
                             </div>
                         </div> 
                         <div className='line'></div>
@@ -167,9 +164,6 @@ export default function Responsibility(props) {
                             根據英國牛津大學調查認證: TVBS連續6年獲選為最受信賴商業電視台，身為臺灣媒體領導品牌，我們秉持「真實」（Truth）、「信賴」（Trust）、「科技」（Technology）三大核心價值，發展出各大永續品牌。包括:倡議「純淨美容clean Beauty」觀念的「女人我最大」，關注電動車與環保材質汽車最新趨勢的「地球黃金線」，提倡綠色低碳旅遊的「食尚玩家」，關懷健康生活的「健康 2.0」，我們用觀眾能夠接受和理解的方式，將永續觀念「轉譯」為更親和易懂的內容。
                         </p>
                         <div className='listBox'>
-                            {/* <div className="arraw">
-                                <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading="lazy"s/>
-                            </div> */}
                             <div className='list'>
                                 <ul>
                                     <li>
@@ -192,7 +186,7 @@ export default function Responsibility(props) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className='txt'>關注台灣電動車分析與產業動態，讓永續行動更落地</div>                                    
+                                            <div className='txt'>關注台灣電動車分析與產業動態，讓永續行動更落地。</div>                                    
                                         </a>
                                     </li>
                                     <li>
@@ -377,9 +371,7 @@ export default function Responsibility(props) {
                         {/* 輪播部分 ed*/}
                         { moreData.length > 0 ? 
                             <div className='practiceMore'>
-                                <div className='title s1'>
-                                    <h2>更多TVBS永續實踐力</h2>
-                                </div>
+                                <div className='title s1'>更多TVBS永續實踐力</div>
                                 <div className='list'>
                                     {moreData.map((item, index) => (
                                         <a key={index} href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.article_id}`} >
@@ -418,7 +410,11 @@ export async function getServerSideProps() {
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
     // 線上資料
-    const responsibilityUrl = new URL('/api/responsibility', process.env.APP_URL);
+
+    const responsibilityUrl = process.env.APP_ENV==='production'?
+    new URL('/api/responsibility-prd', process.env.APP_URL):
+    new URL('/api/responsibility-dev', process.env.APP_URL);    
+
     const responsibilityRes = await fetch(responsibilityUrl);
     const responsibilityData = await responsibilityRes.json();
     

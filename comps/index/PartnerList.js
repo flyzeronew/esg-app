@@ -1,5 +1,3 @@
-import { useState ,useEffect } from 'react'
-import Image from 'next/image'
 import React, { Component } from "react"
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
@@ -14,7 +12,7 @@ function PartnerList(props) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        swipeToSlide:true,
+        swipeToSlide:false,
         autoplay: true,
         autoplaySpeed:5000,
     };  

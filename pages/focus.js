@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
-import Image from 'next/image'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
+
 export default function Focus(props) {
     const appUrl = process.env.APP_URL;
     // 頁面識別
@@ -58,7 +58,7 @@ export default function Focus(props) {
                 <div className="sharedBanner">
                     <div className="mask"></div>
                     <div className="box">
-                        <div className="title">未來焦點</div>
+                        <h1 className="title">未來焦點</h1>
                         <div className="txt">
                             <p>綠能發展、資源再生，海洋保護與氣候因應，都成為社會訴求，企業以綠色思維，創新技術，營造永續商業新模式。</p>
                             <div className="line"></div>
@@ -78,7 +78,7 @@ export default function Focus(props) {
                                         <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >                                        
                                             <div className="titleBox">                                        
                                                 <div className="titleDiv">                                            
-                                                    <div className="title"><p>{item.title}</p></div>
+                                                    <h2 className="title"><p>{item.title}</p></h2>
                                                     <div className="txt"><p>{item.description}</p></div>
                                                 </div>
                                                 <div className= {`arraw ${index === imgHover ? 'act':''}`}>

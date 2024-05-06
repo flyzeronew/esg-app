@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../../comps/Header'
 import Footer from '../../comps/Footer'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { Component } from "react"
 
@@ -12,9 +11,16 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
     const appUrl = process.env.APP_URL;
     const detail = props.detailData;    
-    const pcLinksArr = ["first","second","third","fourth"];
+    const pcLinksArr = [
+        ["first",process.env.IMG_DEFAULT],
+        ["second",process.env.IMG_DEFAULT_SQUARE],
+        ["third",process.env.IMG_DEFAULT_SQUARE],
+        ["fourth",process.env.IMG_DEFAULT]];
     const moLinksIndexArr = [
-        [0,"first"],[1,"second"],[3,"fourth"],[2,"third"]
+        [0,"first",process.env.IMG_DEFAULT],
+        [1,"second",process.env.IMG_DEFAULT_SQUARE],
+        [3,"fourth",process.env.IMG_DEFAULT],
+        [2,"third",process.env.IMG_DEFAULT_SQUARE]
     ];
 // 頁面識別
 const thisPage='partnerDetail';
@@ -73,24 +79,22 @@ return (
             {detail?
             <div className="partnerDetailPage">
                 <div className="bannerArea">
-                    <div className="coverImgBanner" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.cover_img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                        <div className="partnerName">
-                            {detail.name}
-                        </div>
+                    <div className="coverImgBanner" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.cover_img ? detail.cover_img : process.env.IMG_DEFAULT})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                        <h1 className="partnerName">{detail.name}</h1>
                     </div>
                     <div className="introduceArea">
                         <div className="introduceCard">
                             <div className="avatar">
-                                <Image src={detail.avatar} alt="img" width={140} height={140}/> 
+                                <img src={detail.avatar ? detail.avatar : process.env.IMG_DEFAULT_SQUARE} alt="img" width={140} height={140}/> 
                             </div>
                             <div className="detail">
                                 {detail.introduction}
                             </div>
                             <div className="leftPic">
-                                <Image src={"/images/Rectangle-left.svg"} alt="img" width={30} height={30}/> 
+                                <img src={"/images/Rectangle-left.svg"} alt="img" width={30} height={30}/> 
                             </div>
                             <div className="rightPic">
-                                <Image src={"/images/Rectangle-right.svg"} alt="img" width={30} height={30}/> 
+                                <img src={"/images/Rectangle-right.svg"} alt="img" width={30} height={30}/> 
                             </div>
                         </div>
                     </div>
@@ -99,8 +103,8 @@ return (
                 <div className="linksArea">
                 {/* pc */}
                 {detail.partner_links.map((item, index) => (
-                    <div key={index} className={`${pcLinksArr[index]} items pc`} style={{ 
-                        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.image_url})  no-repeat center center / 105%`,
+                    <div key={index} className={`${pcLinksArr[index][0]} items pc`} style={{ 
+                        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.image_url ? item.image_url : pcLinksArr[index][1]})  no-repeat center center / 105%`,
                         backgroundSize: index === imgHover ? `130%` : `105%`,
                         transition: 'background-size 0.3s',
                             }}
@@ -109,11 +113,9 @@ return (
                         <a target={item.link_type ? `_blank` : ""} href={item.link_url}>
                             <div className="linkArea">
                                 <div className="linkCard">
-                                    <div className="title">
-                                        {item.link_title}
-                                    </div>
+                                    <h3 className="title">{item.link_title}</h3>
                                     <div className="linkIcon">
-                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                        <img src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +126,7 @@ return (
                 {/* mobile */}
                 {moLinksIndexArr.map((item, index) => (
                         <div key={index}  className={`${item[1]} items mo`}  style={{ 
-                            background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url})  no-repeat center center / 105%`,
+                            background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url ? detail.partner_links[item[0]].image_url : item[2]})  no-repeat center center / 105%`,
                             backgroundSize: index === imgHover ? `130%` : `105%`,
                             transition: 'background-size 0.3s',
                                 }}
@@ -136,7 +138,7 @@ return (
                                         {detail.partner_links[item[0]].link_title}
                                     </div>
                                     <div className="linkIcon">
-                                        <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                        <img src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
                                     </div>
                                 </div>
                             </div>
@@ -146,12 +148,8 @@ return (
                 </div>
                 {detail.partner_pages?
                 <div className="firstParagraph">    
-                    <div className="wordsTitle">
-                    {detail.partner_pages[0].title}
-                    </div>
-                    <div className="wordsTxt">
-                    {detail.partner_pages[0].content}
-                    </div>
+                    <h2 className="wordsTitle">{detail.partner_pages[0].title}</h2>
+                    <div className="wordsTxt">{detail.partner_pages[0].content}</div>
                 </div>
                 :""}
                 {detail?
@@ -161,13 +159,13 @@ return (
                             <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${detail.youtube_id}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
                         </div> 
                         : 
-                        <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
+                        <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url ? detail.video_cover_url : process.env.IMG_DEFAULT})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
                             <div className="videoCard">
                                 <div className="videoTitle">
                                     {detail.video_title}
                                 </div>
                                 <div className="play">
-                                    <Image src={"/images/play-icon.svg"} alt="img" width={48} height={48}/> 
+                                    <img src={"/images/play-icon.svg"} alt="img" width={48} height={48}/> 
                                 </div>
                             </div>
                         </div>
@@ -176,12 +174,8 @@ return (
                 :""}
                 {detail.partner_pages?
                 <div className="secondParagraph">
-                    <div className="wordsTitle">
-                        {detail.partner_pages[1].title}
-                    </div>
-                    <div className="wordsTxt">
-                        {detail.partner_pages[1].content}
-                    </div>
+                    <h2 className="wordsTitle">{detail.partner_pages[1].title}</h2>
+                    <div className="wordsTxt">{detail.partner_pages[1].content}</div>
                 </div>
                 :""}
                 {/* 永續觀點的文章頁 */}
@@ -205,7 +199,7 @@ return (
                                                     <div className="articleCard">
                                                         <div className="articleTitle">{item.title}</div>
                                                         <div className="linkIcon">
-                                                            <Image src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
+                                                            <img src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
                                                         </div>
                                                     </div>
                                                 </a>

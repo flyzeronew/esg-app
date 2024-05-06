@@ -1,6 +1,5 @@
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import Header from '../comps/Header'
 import Footer from '../comps/Footer'
@@ -76,7 +75,7 @@ return (
                 <div className="sharedBanner">
                     <div className="mask"></div>
                     <div className="box">
-                        <div className="title">2024 共好夥伴</div>
+                        <h1 className="title">2024 共好夥伴</h1>
                         <div className="txt">
                             <p>城市街頭盛開綠意，企業在環保徽章下環繞，共同編織著永續的未來。讓城市與企業一同前行，共創可持續的明日。</p>
                             <div className="line"></div>
@@ -101,7 +100,7 @@ return (
                     showList.length > 0 ?
                     showList.map((item, index) => (
                             <li key={index} style={{ 
-                                background: `url(${item.cover_img}) no-repeat center center / 100%`,
+                                background: `url(${item.cover_img ? item.cover_img : process.env.IMG_DEFAULT}) no-repeat center center / 100%`,
                                 backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                 transition: 'background-size 0.3s',
                             }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
@@ -110,18 +109,16 @@ return (
                                     <div className="profileCard">
                                         <div className="profileImg">
                                             <div className="img">
-                                                <img src={item.avatar} alt="img" width={50} height={50} loading="lazy" /> 
+                                                <img src={item.avatar ? item.avatar : process.env.IMG_DEFAULT_SQUARE} alt="img" width={50} height={50} loading="lazy" /> 
                                             </div>
                                         </div>
-                                        <div className='name'>
-                                            {item.name}
-                                        </div>
-                                        {item.brief
-                                        ?                                    <div className='outBorder'>
-                                            <div className='txt'>
-                                                {item.brief}
+                                        <h2 className='name'>{item.name}</h2>
+                                        { item.brief ?
+                                            <div className='outBorder'>
+                                                <div className='txt'>
+                                                    {item.brief}
+                                                </div>
                                             </div>
-                                        </div>
                                         :''}
                                     </div> 
                                 {/* </Link> */}

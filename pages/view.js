@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -15,14 +14,14 @@ export default function View(props) {
     const router = useRouter();
     const appUrl = process.env.APP_URL;
     // 計算文章數量轉頁面數
-    const articleCount = props.articlesData.article_count;
-    const articleMath = Math.floor(articleCount/12);
-    const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
+    const articleNum = 12;
+    const articleCount = props.articlesData.article_count-1;
+    const articleMath = Math.floor(articleCount / articleNum);
+    const pageCount = articleCount % articleNum != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
     const viewSubmenu = props.viewSubmenuData;
     const articlesFirst = props.articlesData.articles[0];
     const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
-    const uri =`/view`;
     useEffect(() => {
         if (props.page > pageCount) {
             router.push('/404');
@@ -53,7 +52,7 @@ export default function View(props) {
                 <div className="sharedBanner">
                     <div className="mask"></div>
                     <div className="box">
-                        <div className="title">永續觀點</div>
+                        <h1 className="title">永續觀點</h1>
                         <div className="txt">
                             <p>大地映照永續觀點，綠色生活如詩，台灣之智守護大自然，共創可持續明天，並且將永續觀點，指引我們前行。</p>
                             <div className="line"></div>
@@ -72,7 +71,7 @@ export default function View(props) {
                         <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
                             <div className='box'>
                                 <div className='img'>
-                                    <img src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603} loading="lazy"/>
+                                    <img src={`${articlesFirst.cover_img ? articlesFirst.cover_img : process.env.IMG_DEFAULT}`} alt="arraw" width={1072} height={603} loading="lazy"/>
                                     <div className='imgMaskBox'>
                                         <div className='rounded'>
                                             <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50} loading="lazy"/>
@@ -86,7 +85,7 @@ export default function View(props) {
                                     </div>
                                 </div>
                                 <div className='txtBox'>
-                                    <div className='title'>{articlesFirst.title}</div>
+                                    <h2 className='title'>{articlesFirst.title}</h2>
                                     <div className='txt'>{articlesFirst.description}</div>
                                 </div>
                             </div>
@@ -99,7 +98,7 @@ export default function View(props) {
                     <ArticleList  articleList={articleList} />
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
+                    { pageCount > 1 ? <JumpPage uri={`/${thisPage}`} pageCount={pageCount} /> :''}
                 {/* 跳頁選單 ed */}
             </div>
             
@@ -132,7 +131,7 @@ export async function getServerSideProps(context) {
     
     return {
         props: {
-            page,menu,viewSubmenuData,articlesData,page,
+            page,menu,viewSubmenuData,articlesData,
         },
     };
 }

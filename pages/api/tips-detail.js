@@ -16,8 +16,8 @@ export default function handler(req, res) {
         <br>
         <p>使用蓋子可保持熱氣，減少烹飪時間與能源消耗。這不僅節省了能源，也加速了烹飪過程，讓食物更快上桌
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -44,8 +44,8 @@ export default function handler(req, res) {
         <br>
         <p>使用冷水洗衣可以大幅度減少能源消耗。大多數現代洗衣粉或液體適合在低溫下有效清潔，並且冷水洗衣對衣物纖維的損耗更小。</p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -72,8 +72,8 @@ export default function handler(req, res) {
         <br>
         <p>布尿布雖然需要清洗，但相較於一次性尿布，其對環境的影響要小得多。使用布尿布不僅能減少垃圾填埋場的壓力，還可以在長期內節省開支。</p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -100,8 +100,8 @@ export default function handler(req, res) {
         <br>
         <p>智能恆溫器能夠根據您的日常生活模式自動調節家中的溫度，不在家時降低能耗，在您回家前預熱或預冷，以達到節能又舒適的生活環境。</p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -128,8 +128,8 @@ export default function handler(req, res) {
         <br>
         <p>檸檬和橙皮富含天然油脂和香氣，可以用來製作天然的家用清潔劑。將果皮浸泡在醋中幾天，製成的清潔液不僅環保，還能散發自然清新的果香。</p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -151,8 +151,8 @@ export default function handler(req, res) {
       "answer2": "0.01克",
       "answer3": "0.3克",
       "answer4": "4克",
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "content": `
         <h2>我們每天都在製造數位碳足跡</h2>
         <br>
@@ -189,8 +189,8 @@ export default function handler(req, res) {
       "answer2": "正在努力一天至少一餐",
       "answer3": "一個禮拜至少一次",
       "answer4": "無法不吃肉",
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "content": `
         <h2>肉食和蔬食對環境的影響有差嗎</h2>
         <br>
@@ -206,8 +206,8 @@ export default function handler(req, res) {
           在用餐時經常猶豫不決嗎？不妨試著增加蔬菜、減少肉類的飲食習慣。降低吃肉的頻率和份量，盡可能以蔬菜為主食，也可以考慮使用接近牛奶和肉類的植物性替代品，如植物奶和未來肉。這些做法不僅對環境友好，長期下來還有助於保持體態和身體健康！
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -244,8 +244,8 @@ export default function handler(req, res) {
           挑選衛浴設備時，可考慮選用省水標章產品、安裝節水墊片或低流量水龍頭，將多餘水收集用於沖馬桶，注意淋浴時間，培養隨手關閉蓮蓬頭的習慣，定期檢查水龍頭是否漏水或有異常潮濕情況，都能有助於節約用水。
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -282,8 +282,8 @@ export default function handler(req, res) {
           抑制購物慾望確實很具挑戰性，但我們可以嘗試減少退貨、捐贈或拍賣那些用不到的衣物，以減少碳足跡。從改變消費模式開始，你的每次消費就會為身處環境帶來不同的意義。據慈善組織 WRAP 的研究，如果一件衣服能夠延長至少9個月的壽命，再次被購買和穿著，就能減少該衣物本身25%的碳足跡。
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -320,8 +320,8 @@ export default function handler(req, res) {
           以下為一些常見的綠色金融投資商品，包括綠色債券、綠色貸款、綠色股票指數基金、綠色債券基金、綠色基礎設施基金、氣候風險保險等，投資者可以根據自己的偏好和風險承受能力選擇適合的投資方式。
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -350,8 +350,8 @@ export default function handler(req, res) {
           注意環保杯材質說明，才能健康地使用環保杯。
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -380,8 +380,8 @@ export default function handler(req, res) {
           省電燈泡不一定比較省電，市面上最省電的燈泡是LED燈泡，購買時可詳閱包裝上說明確保符合使用需求。
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -410,8 +410,8 @@ export default function handler(req, res) {
           對待小老婆，定期保養檢驗，不隨意飆車改裝，正是讓車子保持省油最佳狀態的方法。
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -440,8 +440,8 @@ export default function handler(req, res) {
           家戶廚餘中的剩飯菜、果皮、未蒸煮蔬菜類及經高溫烹煮後會軟化可當作養豬廚餘之橘子皮、蛋殼、蝦殼、小軟小軟骨頭、小魚刺、中藥及無法分類之有機物(如咖啡渣、茶渣、豆渣)等;但高纖維及硬殼類等不易分解之椰子殼、蟹殼、蛤殼、花卉、甘蔗、筍殼、筊白筍殼、玉米殼、椰子、榴槤、芒果籽及蔗渣、羽毛、紙張、衛生紙、垃圾，不會腐化之牙籤、塑膠袋、吸管、繩、棒、包裝紙、石頭、金屬等物質則不可放入。
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {
@@ -470,8 +470,8 @@ export default function handler(req, res) {
           炎炎夏日即將到來，幾個小動作不但節能又能省荷包
         </p>
       `,
-      "description":'ESG理念的實踐，需要從你我做起。如何透過食、衣、住、行、育、樂等方面的小撇步，來實踐ESG理念。',
-      "keywords":'TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐',
+      "description":'ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。',
+      "keywords":'TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題',
       "created_at": "2024-01-25T14:23:06.000000Z",
       "updated_at": "2024-01-25T14:23:06.000000Z",
       "tip_genre": {

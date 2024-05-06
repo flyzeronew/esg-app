@@ -3,13 +3,13 @@ export default function handler(req, res) {
     const data = [ 
             {
                 'title':'未來焦點',
-                'url':'/focus',
+                'url':appUrl+'/focus',
                 'page_name':'focus',
                 'child':[]
             },
             {
                 'title':'永續觀點',
-                'url':'/view',
+                'url':appUrl+'/view',
                 'page_name':'view',
                 'child':[
                     {

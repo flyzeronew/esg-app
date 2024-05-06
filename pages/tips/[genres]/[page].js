@@ -1,28 +1,26 @@
-import DetailMainView from '../../../comps/tips/DetailMainView'
-import Footer from '../../../comps/Footer'
-import Head from 'next/head'
-import Header from '../../../comps/Header'
-import Image from 'next/image'
+import { useState ,useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import Swal from 'sweetalert2'
-import { useState ,useEffect } from 'react'
-import { useRouter } from 'next/router'
-
+import Head from 'next/head'
+import Header from '../../../comps/Header'
+import Footer from '../../../comps/Footer'
+import DetailMainView from '../../../comps/tips/DetailMainView'
 
 const inter = Inter({ subsets: ['latin'] })
-export default function page(props) {    
-    const router = useRouter();
-    const tipId = router.query.page - 1;    
-    const appUrl = process.env.APP_URL;
-    const tipsData = props.tipsData[tipId];
-    const genreEnName = tipsData.tip_genre.en_name;
-    // random 繼續看區塊
-    let randomElements = props.randomElements;
+export default function page(props) {
     // 頁面識別
     const thisPage='tips';
+    const isIOS = props.isIOS;   
+    const appUrl = process.env.APP_URL;
+    const tipsData = props.tipsData.tip;
+    const colorMapping = props.colorMapping;
+    const getEnName =  props.getEnName;
+    const thisPageGenreUri =`${appUrl}/${thisPage}/${getEnName}`;
+    const thisPageUri =`${appUrl}/${thisPage}`;
+    // random 繼續看區塊
+    const keepReading = props.tipsData.more;
     const [selectedOptions, setSelectedOptions] = useState([]);    
     const [scorllStop, setScorllStop] = useState(false);
-
     //送出答案錨點程式
     const scrollToAnswer = () => {
         if(selectedOptions.length === 0){
@@ -30,12 +28,11 @@ export default function page(props) {
                 title: "提醒",
                 text: "尚未選擇答案",
                 icon: "warning"
-              });
+            });
             return;
         }
         const answerTop = document.querySelector('.tipsDetailPage .contentBox .answer').offsetTop; 
-        const headerHeight = document.querySelector('header').offsetHeight;
-        
+        const headerHeight = document.querySelector('header').offsetHeight;        
         window.scrollTo({
             top: answerTop - headerHeight,
             behavior: 'smooth',
@@ -78,72 +75,36 @@ export default function page(props) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    
-    const tagColor =[
-        {
-            'bgColor':'#FFC400',
-            'txtColor':'#333333',
-        },
-        {
-            'bgColor':'#E2F6F9',
-            'txtColor':'#333333',
-        },
-        {
-            'bgColor':'#D1FFE0',
-            'txtColor':'#333333',
-        },
-        {
-            'bgColor':'#00BAFF',
-            'txtColor':'#333333',
-        },
-        {
-            'bgColor':'#00422C',
-            'txtColor':'#fff',
-        },
-        {
-            'bgColor':'#001C48',
-            'txtColor':'#fff',
-        },
-    ];
-
-    const tipsGenresArr = [
-        'tagFoodColor',
-        'tagClothingColor',
-        'tagHousingColor',
-        'tagTransportColor',
-        'tagEducationColor',
-        'tagEntertainmentColor',
-    ];
 
     return (
-    <div id='wrapper' className={inter.className}> 
+    <div id='wrapper' className={inter.className}>        
         <style jsx global>{`
             .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked ,
             .tipsDetailPage .contentBox .tag,
             .tipsDetailPage .contentBox .txtBox .arraw,
             .tipsDetailPage .slick-dots li.slick-active button:before          
             {
-                background-color: ${tagColor[tipsData.tip_genre.id-1].bgColor};
-                color:${tagColor[tipsData.tip_genre.id-1].txtColor};
+                background-color: ${colorMapping[tipsData.genre-1].bgColor};
+                color:${colorMapping[tipsData.genre-1].txtColor};
                 transition: 0.3s;
             }
             .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked::before {
-                color: ${tagColor[tipsData.tip_genre.id-1].txtColor};
+                color: ${colorMapping[tipsData.genre-1].txtColor};
             }
         `}
         </style>
         <Head>
             <title>{`${tipsData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta name="Keywords" content={tipsData.keywords} />
-            <meta name="description" content={tipsData.description} /> 
+            <meta name="Keywords" content='TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題' />
+            <meta name="description" content='ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。' /> 
             <meta name="author" content="TVBS" />
             <meta name="copyright" content="TVBS" />
             <meta name="application-name" content="TVBS" />
-            <meta name="URL" content={`${appUrl}${tipsData.url}`} />
+            <meta name="URL" content={`${thisPageGenreUri}/${tipsData.id}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
-            <link rel="canonical" href={`${appUrl}${tipsData.url}`} />
+            <link rel="canonical" href={`${thisPageGenreUri}/${tipsData.id}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
@@ -151,29 +112,31 @@ export default function page(props) {
                 <div className="contentBox">
                     <div className={`imgBox ${scorllStop ? 'act' : ''}`}>
                         <div className={`fixBox ${scorllStop ? 'act' : ''}`}>
-                            <DetailMainView data={tipsData} />
+                                <DetailMainView data={tipsData} tag={colorMapping[tipsData.genre-1].genre} />
                         </div>
                     </div>
                     <div className="txtBox">
                         <div className="question">
-                            <div className="tag">{tipsData.tip_genre.name}</div>
-                            <div className="title">{tipsData.title}</div>
+                            <div className="tag">{colorMapping[tipsData.genre-1].genre}</div>
+                            <h1 className="title">{tipsData.title}</h1>
                             {tipsData? 
                             <div className="checkbox">
-                                {
-                                optionArr.map((item, index) => (
-                                     tipsData[answerArr[index]] !== null && tipsData[answerArr[index]].trim() !== ''
-                                     ?
-                                     <label>
-                                        <input
-                                            type="checkbox"
-                                            value={optionArr[index]}
-                                            checked={selectedOptions.includes(optionArr[index])}
-                                            onChange={handleCheckboxChange}
-                                        />
+                                { optionArr.map((item, index) => (
+                                    tipsData[answerArr[index]] !== null && tipsData[answerArr[index]].trim() !== ''
+                                    ?
+                                    <label key={index}>
+                                        <div className="inputArea">
+                                            <input
+                                                className={isIOS ? 'ios-only' : ''}
+                                                type="checkbox"
+                                                value={optionArr[index]}
+                                                checked={selectedOptions.includes(optionArr[index])}
+                                                onChange={handleCheckboxChange}
+                                            />
+                                        </div>
                                         <span>{tipsData[answerArr[index]]}</span>
                                     </label>
-                                     :''
+                                    :''
                                     ))
                                 }
                             </div>
@@ -183,54 +146,51 @@ export default function page(props) {
                                 <div className="arraw">↓</div>
                             </div>                   
                         </div>
-
                         <div className="answer">
-                            <div className="title">
-                                <img src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
-                            </div>
-                            <div className="line"></div>
-                            <div  className="tipsContent" dangerouslySetInnerHTML={{ __html: tipsData.content }} />
-                            <div className="time">{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
-                            {/* <div className="time">2023-08-17 <span>更新</span></div> */}
+                            {selectedOptions.length > 0 ? 
+                                <>
+                                    <div className="title">
+                                        <img src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
+                                    </div>
+                                    <div className="line"></div>
+                                    <div  className="tipsContent" dangerouslySetInnerHTML={{ __html: tipsData.content }} />
+                                    <div className="time">{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
+                                </>
+                            : ''}
                         </div>
 
                     </div>
                 </div>
 
-                <div className="contentMore">                    
-                    <div className="frameBox">
-                        <div className="title">繼續看</div>
+                <div className="contentMore">
+                    <div className="title">繼續看</div>
+                    <div className="frameBox">                        
                         <div className="listBox">
-                            {/* <div className="arraw">
-                            <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
-                            </div> */}
                             <div className="list">
                                 <ul>
-                                    {randomElements?
-                                    randomElements.map((item, index) => (
-                                    <li>
-                                        <a href={item.url}>
-                                            <div className="img">
-                                                <img src={item.img} alt="img" width={300} height={300} loading='lazy'/>
-                                            </div>
-                                            <div className={`tag ${tipsGenresArr[item.tip_genre.id-1]}`}>{item.tip_genre.name}</div>
-                                            <div className="txtBox">
-                                                <div className='rounded'>
-                                                    <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
-                                                </div>
-                                                <div className='txtFlex'>
-                                                    <div className='txt'>
-                                                        <p>{item.title}</p>
+                                    { keepReading ? keepReading.map((item, index) => (
+                                            <li key={index}>
+                                                <a href={`${thisPageUri}/${colorMapping[item.genre-1].en_name}/${item.id}`}>
+                                                    <div className="img">
+                                                        <img src={item.tip_galleries[0].image_url} alt="img" width={300} height={300} loading='lazy'/>
                                                     </div>
-                                                    <div className='rounded'>
-                                                        <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
+                                                    <div className={`tag ${colorMapping[item.genre-1].color}`}>{colorMapping[item.genre-1].genre}</div>
+                                                    <div className="txtBox">
+                                                        <div className='rounded'>
+                                                            <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
+                                                        </div>
+                                                        <div className='txtFlex'>
+                                                            <div className='txt'>
+                                                                <p>{item.title}</p>
+                                                            </div>
+                                                            <div className='rounded'>
+                                                                <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
+                                                            </div>
+                                                        </div>                                   
                                                     </div>
-                                                </div>                                   
-                                            </div>
-                                        </a>
-                                    </li>
-                                    ))
-                                    :""}
+                                                </a>
+                                            </li>
+                                    )) : "" }
                                 </ul>
                             </div>
                         </div>
@@ -247,32 +207,44 @@ export default function page(props) {
 }
 export async function getServerSideProps(context) {
     const { params } = context;
+    const userAgent = context.req.headers['user-agent'];
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent);
     const { page } = params;
+
     const menuUrl = new URL('/api/menu', process.env.APP_URL);
     const menuRes = await fetch(menuUrl);
     const menu = await menuRes.json();
 
-    // list
-    const tipsListUrl = new URL('/api/tips-list', process.env.APP_URL);
-    const tipsListRes = await fetch(tipsListUrl);    
-    let tipsListData = await tipsListRes.json();
-    // 處理繼續看random資料
-    tipsListData = tipsListData.filter(item => item.id !== parseInt(page));
-    // 每次從原始 array 中隨機取出三個元素
-    function getRandomElements(array, count) {
-        const shuffled = array.sort(() => Math.random()-0.5); // 隨機排序
-        return shuffled.slice(0, count); // 取出前 count 個元素
-    }
-    const randomElements = getRandomElements(tipsListData, 3);
+    // submenu
+    const submenuUrl = new URL('/api/tips-genres', process.env.APP_URL);
+    const submenuRes = await fetch(submenuUrl);
+    const submenuData = await submenuRes.json();
 
-    // 小撇步資料
-    const tipsUrl = new URL('/api/tips-detail', process.env.APP_URL);
-    const tipsRes = await fetch(tipsUrl);    
-    const tipsData = await tipsRes.json();
+    // 顏色配對
+    const colorMappingUrl = new URL('/api/tips-color-mapping', process.env.APP_URL);
+    const colorMappingRes = await fetch(colorMappingUrl);
+    const colorMapping = await colorMappingRes.json();
+
+    // 小撇步內頁資料
+    const tipsUrl = new URL(`/api/tips/${page}`, process.env.API_URL);
+    const tipsRes = await fetch(tipsUrl);
+
+    let tipsData = '';
+    let getEnName = '';
+      
+    //判斷撈不到東西直接跳404
+    if(tipsRes.status !== 404){
+        tipsData = await tipsRes.json();
+        getEnName = submenuData.filter(item => item.id == tipsData.tip.genre)[0].en_name;
+    }else{
+        return {
+            notFound: true,
+        };
+    }
     
     return {
         props: {
-            menu,randomElements,tipsData
+            menu, tipsData, isIOS, colorMapping, submenuData, getEnName
         },
     };
 }

@@ -7,7 +7,7 @@ function JumpList(props) {
     const appUrl = process.env.APP_URL;
     const uri = props.uri;
     const pageCount = props.pageCount;
-    const btnCount = pageCount < 3 ? pageCount : 3;
+    const btnCount = pageCount < 3 ? pageCount : ( page > 2 && page < pageCount-2 ? 2 : 3 );
 
    //插入跳頁按鈕顯示按鈕數量
     const jumpBtns = [];

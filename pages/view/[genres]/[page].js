@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
@@ -10,6 +9,7 @@ export default function viewArticle(props) {
     const articleId = Number(props.articleId);
     const appUrl = process.env.APP_URL;
     const [bgShow, setBgShow] = useState(true);
+    const [paddingTop, setPaddingTop] = useState();
     const getArticleData = props.viewData;
     const genreEnName = props.viewData.article_genres[0].en_name;
 
@@ -32,7 +32,9 @@ export default function viewArticle(props) {
     useEffect(() => { 
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
+            const needPaddingTop = window.innerWidth > 1023 ? "30px" : "";
             setBgShow(showBg);
+            setPaddingTop(needPaddingTop);
         };  
         handleResize();
         window.addEventListener('resize', handleResize);
@@ -58,20 +60,22 @@ export default function viewArticle(props) {
             <link rel="canonical" href={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>            
-            <div className="viewArticlePage" 
-            style={{ 
-                backgroundImage:getArticleData.has_cover_img == 1 && bgShow ==true ? `linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 1) 60%), url(${getArticleData.cover_img})`:'',
-                backgroundAttachment:`fixed`,            
-            }}>
-                
+        <main>      
+            <div className="viewArticlePage" style={{ paddingTop:getArticleData.has_cover_img === 0 ? paddingTop : "" }}>   
+                {getArticleData.has_cover_img === 1
+                ?   <div className="coverImgBanner">
+                        <div className="img">
+                        <img src={getArticleData.cover_img}/>  
+                        </div>
+                    </div>
+                :""}
                 <div className="articleContent">
                     <div className="category">
                         <span>文章 </span>
                         <div className="line"></div>
                         <span>{getArticleData.article_genres[0].name}</span>
                     </div>
-                    <div className="mainTitle">{getArticleData.title}</div>
+                    <h1 className="mainTitle">{getArticleData.title}</h1>
 
 
                     <div className="mainDescription">
@@ -92,19 +96,24 @@ export default function viewArticle(props) {
                     <div className="editorNew" dangerouslySetInnerHTML={{ __html: articleContent }}></div>
                     {/* 編輯器 ed*/}
 
-                    {/* 廠商資訊 樣式三選一*/}
-
+                    {/* 廠商資訊 */}
                     {articlePartner ? 
-                        <div className="articleSponsor style1">
+                        <div className="articleSponsor">
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
-                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
+                                        <img src={articlePartner.avatar ? articlePartner.avatar : process.env.IMG_DEFAULT_SQUARE} alt="img" width={90} height={90} loading="lazy"/>
                                     </div>
-                                    <div className="txt">
+                                    <div className="txt pc">
                                         <div className="type">共好夥伴</div>
                                         <div className="name">
                                             <p>{articlePartner.name}</p>
+                                        </div>
+                                    </div>
+                                    <div className="txt mo">
+                                        <div className="type">{articlePartner.name}</div>
+                                        <div className="name">
+                                            <p>共好夥伴</p>
                                         </div>
                                     </div>
                                 </div>
@@ -113,52 +122,7 @@ export default function viewArticle(props) {
                                 </div>
                             </div>
                         </div>                    
-                    :''}
-
-                    {/* {articlePartner.name ? 
-                        <div className="articleSponsor style2">
-                            <div className="box">
-                                <div className="imgBox">
-                                    <div className="img">
-                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
-                                    </div>
-                                    <div className="txt">
-                                        <div className="type">共好夥伴</div>
-                                        <div className="name">
-                                            <p>{articlePartner.name}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="description">
-                                    <p>{articlePartner.introduction}</p>
-                                </div>
-                            </div>
-                        </div>
-                    :''} */}
-
-                    {/* {articlePartner.name ?
-                        <div className="articleSponsor style3">
-                            <div className="box">
-                                <div className="imgBox">
-                                    <div className="img">
-                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
-                                    </div>
-                                    <div className="txt">
-                                        <div className="type pc">共好夥伴</div>
-                                        <div className="name">
-                                            <p>{articlePartner.name}</p>
-                                        </div>
-                                        <div className="type mo">共好夥伴<div className="line"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="description">
-                                    <p>{articlePartner.introduction}</p>                               
-                                </div>
-                            </div>
-                        </div>
-                    :''} */}
-
+                    :''}                  
                     {/* 廠商資訊 ed*/}
                     {/* 小撇步報你知 */}    
                     {/* {articleSecret.cover_img ?
@@ -221,9 +185,6 @@ export default function viewArticle(props) {
                                 </div> */}
                             </div>
                             <div className="listBox">
-                                {/* <div className="arraw">
-                                    <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42}/>
-                                </div> */}
                                 <div className="list">
                                     <ul>
                                         { articleExtended.length > 0 ?
@@ -231,7 +192,7 @@ export default function viewArticle(props) {
                                                 <li key={index}>
                                                     <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.article_id}`}>
                                                         <div className="img">                                                          
-                                                            <img src={item.cover_img} alt="img" width={1072} height={603} loading="lazy"/>
+                                                            <img src={item.cover_img ? item.cover_img : process.env.IMG_DEFAULT} alt="img" width={1072} height={603} loading="lazy"/>
                                                         </div>
                                                         <div className="txt">{item.title}</div>
                                                     </a>
@@ -259,19 +220,33 @@ export default function viewArticle(props) {
 }
 
 export async function getServerSideProps(context) {
-    const articleId = context.query.page;
-    const menuUrl = new URL('/api/menu', process.env.APP_URL);
-    const menuRes = await fetch(menuUrl);
-    const menu = await menuRes.json();
-    // 線上資料
-    // list
-    const viewUrl = new URL(`/api/articles/${articleId}`, process.env.API_URL);
-    const viewRes = await fetch(viewUrl); 
-    const viewData = await viewRes.json();
-
-    return {
-        props: {
-            menu,viewData,articleId,
-        },
-    };
+    try {
+        const articleId = context.query.page;
+        const menuUrl = new URL('/api/menu', process.env.APP_URL);
+        const menuRes = await fetch(menuUrl);
+        const menu = await menuRes.json();
+        const viewUrl = new URL(`/api/articles/${articleId}`, process.env.API_URL);
+        const viewRes = await fetch(viewUrl); 
+        if (!viewRes.ok) {
+            if (viewRes.status === 404) {
+                return {
+                    notFound: true,
+                };
+            } 
+        }
+        const viewData = await viewRes.json();
+        return {
+            props: {
+                menu,
+                viewData,
+                articleId,
+            },
+        };
+    } catch (error) {
+        return {
+            props: {
+                error: error.message
+            }
+        };
+    }
 }

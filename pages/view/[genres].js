@@ -1,5 +1,4 @@
 
-import Image from 'next/image'
 import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -17,9 +16,10 @@ export default function Genres(props) {
     // 頁面識別
     const thisPage='view';
     // 計算文章數量轉頁面數
-    const articleCount = props.articlesData.article_count;
-    const articleMath = Math.floor(articleCount/12);
-    const pageCount = articleCount % 12 != 0 ? articleMath + 1 : articleMath;
+    const articleNum = 12;
+    const articleCount = props.articlesData.article_count-1;
+    const articleMath = Math.floor(articleCount / articleNum);
+    const pageCount = articleCount % articleNum != 0 ? articleMath + 1 : articleMath ;
     // 計算文章數量轉頁面數 ed
     const router = useRouter();
     const viewSubmenu = props.viewSubmenuData;    
@@ -32,7 +32,7 @@ export default function Genres(props) {
     const genreName = genreData ? genreData.name :'';
     const genreDescription =genreData ? genreData.description :'';
     useEffect(() => {
-        if (props.page > pageCount) {
+        if (props.page > pageCount || genreData ==='') {
             router.push('/404');
         }
     }, []);    
@@ -59,7 +59,7 @@ export default function Genres(props) {
                 <div className="sharedBanner">
                     <div className="mask"></div>
                     <div className="box">
-                        <div className="title">{genreName}</div>
+                        <h1 className="title">{genreName}</h1>
                         <div className="txt">
                             <p>{genreDescription}</p>
                             <div className="line"></div>
@@ -77,7 +77,7 @@ export default function Genres(props) {
                         <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
                             <div className='box'>
                                 <div className='img'>
-                                    <img src={`${articlesFirst.cover_img}`} alt="arraw" width={1072} height={603} loading="lazy"/>
+                                    <img src={`${articlesFirst.cover_img ? articlesFirst.cover_img : process.env.IMG_DEFAULT}`} alt="arraw" width={1072} height={603} loading="lazy"/>
                                     <div className='imgMaskBox'>
                                         <div className='rounded'>
                                             <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50} loading="lazy"/>
@@ -91,7 +91,7 @@ export default function Genres(props) {
                                     </div>
                                 </div>
                                 <div className='txtBox'>
-                                    <div className='title'>{articlesFirst.title}</div>
+                                    <h2 className='title'>{articlesFirst.title}</h2>
                                     <div className='txt'>{articlesFirst.description}</div>
                                 </div>
                             </div>
@@ -132,8 +132,10 @@ export async function getServerSideProps(context) {
     const viewSubmenuUrl = new URL('/api/article-genres', process.env.API_URL);
     const viewSubmenuRes = await fetch(viewSubmenuUrl);    
     const viewSubmenuData = await viewSubmenuRes.json();
-    const genreData = viewSubmenuData.find(item => item.en_name === genreEnName);    
-    const genreId = genreData ? genreData.id :'';
+
+    const getGenreData = viewSubmenuData.find(item => item.en_name === genreEnName);
+    const genreData = getGenreData ? getGenreData : '';    
+    const genreId = genreData ? genreData.id : '';
     // list
     const articlesUrl = new URL(`/api/articles?genre_id=${genreId}&page=${page}`, process.env.API_URL);
     const articlesRes = await fetch(articlesUrl);    
