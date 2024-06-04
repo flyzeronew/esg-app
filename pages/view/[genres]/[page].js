@@ -31,9 +31,6 @@ export default function viewArticle(props) {
     const ogImg = process.env.OG_IMG;   
     // resize 監聽事件
     useEffect(() => {         
-        if (typeof window !== 'undefined') {
-            window.googletag = window.googletag || { cmd: [] };
-        }
         //dfp廣告
         const loadAdsaa='970,250';
         const loadAds = (loadAdsaa) => {
