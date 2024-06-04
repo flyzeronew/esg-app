@@ -40,16 +40,20 @@ export default function viewArticle(props) {
         // dfp廣告     
         if (typeof window !== 'undefined') {
             window.googletag = window.googletag || { cmd: [] };
-        }        
-        const loadAds = () => {
+        }   
+        const adId='21697024903';
+        const adLaout='news.tvbs.com.tw_pc_index_top';
+        const adSize='[970,250]';
+        loadAds(adId,adLaout,adSize);
+
+        const loadAds = (adId,adLaout,adSize) => {            
             window.googletag.cmd.push(function () {
-                window.googletag.defineSlot('/21697024903/news.tvbs.com.tw_pc_index_top', [970,250], 'adBox').addService(window.googletag.pubads());
+                window.googletag.defineSlot(`/${adId}/${adLaout}`, adSize, 'adBox').addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
                 window.googletag.enableServices();
                 googletag.display('adBox');
             });
-        };      
-        loadAds();
+        };
         // dfp廣告 ed        
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
