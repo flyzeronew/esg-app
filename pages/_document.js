@@ -27,8 +27,11 @@ export default function Document() {
               _comscore.push({ c1: "2", c2: "18400300" , options: { enableFirstPartyCookie: "false" } });
               (function() { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = "https://sb.scorecardresearch.com/cs/18400300/beacon.js"; el.parentNode.insertBefore(s, el); })();
               `,
-            }}
+            }}           
           />
+
+          <script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js' />
+         
       </Head>      
       <body>
         <Main />

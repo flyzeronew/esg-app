@@ -30,7 +30,20 @@ export default function viewArticle(props) {
     const thisPage='view'; 
     const ogImg = process.env.OG_IMG;   
     // resize 監聽事件
-    useEffect(() => { 
+    useEffect(() => {
+         
+        if (typeof window !== 'undefined') {
+            window.googletag = window.googletag || { cmd: [] };
+        }
+        const loadAds = () => {
+            window.googletag.cmd.push(function () {
+                window.googletag.defineSlot('/31610311/news_tvbs_com_tw_pc_index_top', [970, 250], 'div-gpt-ad-1234567890').addService(window.googletag.pubads());
+                window.googletag.pubads().enableSingleRequest();
+                window.googletag.enableServices();
+            });
+        };      
+        loadAds();
+
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
             const needPaddingTop = window.innerWidth > 1023 ? "30px" : "";
@@ -63,11 +76,8 @@ export default function viewArticle(props) {
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
-            {/* <div className="ad_970x250_pc" id="ad_970x250_pc">
-                <DFPSlotsProvider dfpNetworkId={'31610311'}>
-                    <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} slotId="ad_970x250_pc"  adUnit="v4_focus_index_970x90"/>
-                </DFPSlotsProvider> 
-            </div>  */}
+            <div>dfp廣告測試</div>
+            <div id="div-gpt-ad-1234567890"></div>
             <div className="viewArticlePage" style={{ paddingTop:getArticleData.has_cover_img === 0 ? paddingTop : "" }}>   
                 {getArticleData.has_cover_img === 1
                 ?   <div className="coverImgBanner">
