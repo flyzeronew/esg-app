@@ -30,7 +30,13 @@ export default function viewArticle(props) {
     const thisPage='view'; 
     const ogImg = process.env.OG_IMG;   
     // resize 監聽事件
-    useEffect(() => {  
+    useEffect(() => {
+        const editorNew = document.querySelector('.editorNew');
+        const firstParagraph = editorNew.querySelector('p');
+        const adBox = document.createElement('div');
+        adBox.id = 'ad_box';
+        editorNew.insertBefore(adBox, firstParagraph.nextSibling);
+
         // dfp廣告     
         if (typeof window !== 'undefined') {
             window.googletag = window.googletag || { cmd: [] };
@@ -44,12 +50,7 @@ export default function viewArticle(props) {
             });
         };      
         loadAds();
-        // dfp廣告 ed
-
-        const adBox = document.createElement('div');
-        adBox.className = 'ad_box';
-        document.querySelector('.editorNew p:first-child').appendChild(adBox);
-        
+        // dfp廣告 ed        
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
             const needPaddingTop = window.innerWidth > 1023 ? "30px" : "";
