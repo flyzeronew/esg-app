@@ -48,7 +48,7 @@ export default function viewArticle(props) {
 
         const adBox = document.createElement('div');
         adBox.className = 'ad_box';
-        document.querySelector('.content p:first-child').insertAdjacentElement('afterend', adBox);
+        document.querySelector('.editorNew p:first-child').appendChild(adBox);
         
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
