@@ -30,14 +30,15 @@ export default function viewArticle(props) {
     const thisPage='view'; 
     const ogImg = process.env.OG_IMG;   
     // resize 監聽事件
-    useEffect(() => {
-         
+    useEffect(() => {         
         if (typeof window !== 'undefined') {
             window.googletag = window.googletag || { cmd: [] };
         }
-        const loadAds = () => {
+        //dfp廣告
+        const loadAdsaa='970,250';
+        const loadAds = (loadAdsaa) => {
             window.googletag.cmd.push(function () {
-                window.googletag.defineSlot('/21697024903/news.tvbs.com.tw_pc_index_top', [970,250], 'gpt_test').addService(window.googletag.pubads());
+                window.googletag.defineSlot('/21697024903/news.tvbs.com.tw_pc_index_top', [loadAdsaa], 'gpt_test').addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
                 window.googletag.enableServices();
                 googletag.display('gpt_test');
