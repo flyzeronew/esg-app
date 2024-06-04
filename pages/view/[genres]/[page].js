@@ -43,10 +43,10 @@ export default function viewArticle(props) {
         }        
         const loadAds = () => {
             window.googletag.cmd.push(function () {
-                window.googletag.defineSlot('/21697024903/news.tvbs.com.tw_pc_index_top', [970,250], 'gpt_test').addService(window.googletag.pubads());
+                window.googletag.defineSlot('/21697024903/news.tvbs.com.tw_pc_index_top', [970,250], 'ad_box').addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
                 window.googletag.enableServices();
-                googletag.display('gpt_test');
+                googletag.display('ad_box');
             });
         };      
         loadAds();
