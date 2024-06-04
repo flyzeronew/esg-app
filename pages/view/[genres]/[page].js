@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../../../comps/Header'
 import Footer from '../../../comps/Footer'
-import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 
 const inter = Inter({ subsets: ['latin'] })
 export default function viewArticle(props) {    
@@ -64,11 +63,11 @@ export default function viewArticle(props) {
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
-            <div className="ad_970x250_pc" id="ad_970x250_pc">
+            {/* <div className="ad_970x250_pc" id="ad_970x250_pc">
                 <DFPSlotsProvider dfpNetworkId={'31610311'}>
                     <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} slotId="ad_970x250_pc"  adUnit="v4_focus_index_970x90"/>
                 </DFPSlotsProvider> 
-            </div> 
+            </div>  */}
             <div className="viewArticlePage" style={{ paddingTop:getArticleData.has_cover_img === 0 ? paddingTop : "" }}>   
                 {getArticleData.has_cover_img === 1
                 ?   <div className="coverImgBanner">
