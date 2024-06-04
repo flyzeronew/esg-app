@@ -29,31 +29,56 @@ export default function viewArticle(props) {
     // 頁面識別
     const thisPage='view'; 
     const ogImg = process.env.OG_IMG;   
-    // resize 監聽事件
-    useEffect(() => {
-        const editorNew = document.querySelector('.editorNew');
-        const firstParagraph = editorNew.querySelector('p');
-        const adBox = document.createElement('div');
-        adBox.id = 'adBox';
-        editorNew.insertBefore(adBox, firstParagraph.nextSibling);
 
+    // resize 監聽事件
+    useEffect(() => {        
         // dfp廣告     
         if (typeof window !== 'undefined') {
             window.googletag = window.googletag || { cmd: [] };
-        }   
-        const adId='21697024903';
-        const adLaout='news.tvbs.com.tw_pc_index_top';
-        const adSize='[970,250]';
-        loadAds(adId,adLaout,adSize);
-
-        const loadAds = (adId,adLaout,adSize) => {            
+        }
+        const loadAds = (id,type,size,style) => {
+            const editorNew = document.querySelector('.editorNew');
+            const existingAdBox = document.querySelector(`#${style}`);            
+            if (!existingAdBox) {
+                const firstParagraph = editorNew.querySelector('p');
+                const adBox = document.createElement('div');
+                adBox.id = `${style}`;
+                editorNew.insertBefore(adBox, firstParagraph.nextSibling);
+            }
             window.googletag.cmd.push(function () {
-                window.googletag.defineSlot(`/${adId}/${adLaout}`, adSize, 'adBox').addService(window.googletag.pubads());
+                window.googletag.defineSlot(`/${id}/${type}`,size, style).addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
                 window.googletag.enableServices();
-                googletag.display('adBox');
+                googletag.display(style);
             });
         };
+        const adType=[
+            {
+                'id':'21697024903',
+                'type':'news.tvbs.com.tw_pc_index_top',
+                'size':[[970,250],[1, 1]],
+                'style':['ad970_250_pc','ad_box_pc'], 
+                'mode':'pc'
+            },
+            {
+                'id':'21697024903',
+                'type':'news.tvbs.com.tw_m_index_top',
+                'size':[[320,100],[1, 1]],
+                'style':['ad320_100_mo','ad_box_mo'],
+                'mode':'mo'
+            }
+        ];
+        const isPcScreen = window.innerWidth > 1023;
+        for(let i=0; i<adType.length; i++){
+            for(let j=0; j<adType[i].style.length; j++){
+                if(isPcScreen && adType[i].mode == 'pc'){
+                    loadAds(adType[i].id,adType[i].type,adType[i].size[j],adType[i].style[j]); 
+                }else{
+                    loadAds(adType[i].id,adType[i].type,adType[i].size[j],adType[i].style[j]);
+                }
+            }
+        }
+        
         // dfp廣告 ed        
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;

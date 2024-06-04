@@ -60,12 +60,60 @@ h1, h2, h3, h4, h5, h6{
     color: gray;
 }
 /* 404 ed*/
+
 /* 廣告使用 */
-#adBox{
-    padding:40px 0;
+#ad_box_pc{
     margin:0 auto;
+    padding:40px 0;
+}
+#ad970_250_pc{
+    width: 970px;
+    min-height:250px;    
+    margin:0 auto;
+    padding:40px 0;
+}
+#ad300_250_pc{
+    width: 300px;
+    min-height:250px;    
+    margin:0 auto;
+    padding:40px 0;    
+}
+#ad_box_mo{
+    margin:0 auto;
+    padding:40px 0;
+    display:none;
+}
+#ad320_100_mo{
+    width: 320px;
+    min-height:100px;    
+    margin:0 auto;
+    padding:40px 0;
+    display:none;
+}
+#ad300_250_mo{
+    width: 300px;
+    min-height:250px;    
+    margin:0 auto;
+    padding:40px 0;
+    display:none;
+}
+#ad300_600_mo{
+    width: 300px;
+    min-height:600px;    
+    margin:0 auto;
+    padding:40px 0;
+    display:none;
+}
+@media (max-width:1023px) {
+    #ad_box_pc,#ad970_250_pc,#ad300_250_pc{
+        display:none;
+    }
+    #ad_box_mo,#ad320_100_mo,#ad300_250_mo,#ad300_600_mo{
+        display:block;
+    }
 }
 /* 廣告使用 */
+
 .pc {
     display: block;
 }
