@@ -37,7 +37,7 @@ export default function viewArticle(props) {
         }
         const loadAds = () => {
             window.googletag.cmd.push(function () {
-                window.googletag.defineSlot('/31610311/news_tvbs_com_tw_pc_index_top', [970, 250], 'div-gpt-ad-1234567890').addService(window.googletag.pubads());
+                window.googletag.defineSlot('/31610311/v4_focus_index_incover', [970, 250], 'div-gpt-ad-1484649371125-101').addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
                 window.googletag.enableServices();
             });
@@ -77,7 +77,7 @@ export default function viewArticle(props) {
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
             <div>dfp廣告測試</div>
-            <div id="div-gpt-ad-1234567890"></div>
+            <div id="div-gpt-ad-1484649371125-101"></div>
             <div className="viewArticlePage" style={{ paddingTop:getArticleData.has_cover_img === 0 ? paddingTop : "" }}>   
                 {getArticleData.has_cover_img === 1
                 ?   <div className="coverImgBanner">
