@@ -3147,7 +3147,8 @@ header .menuMo .list li:last-child{
     margin: 0 auto 50px;
 }
 .viewArticlePage .articleContent .editorNew img{
-    display: unset;
+    margin: 0 auto;
+    display: block;
 }
 .viewArticlePage .articleContent .editor p {
     font-size: 20px;
