@@ -34,7 +34,7 @@ export default function viewArticle(props) {
         const editorNew = document.querySelector('.editorNew');
         const firstParagraph = editorNew.querySelector('p');
         const adBox = document.createElement('div');
-        adBox.id = 'ad_box';
+        adBox.id = 'adBox';
         editorNew.insertBefore(adBox, firstParagraph.nextSibling);
 
         // dfp廣告     
@@ -43,10 +43,10 @@ export default function viewArticle(props) {
         }        
         const loadAds = () => {
             window.googletag.cmd.push(function () {
-                window.googletag.defineSlot('/21697024903/news.tvbs.com.tw_pc_index_top', [970,250], 'ad_box').addService(window.googletag.pubads());
+                window.googletag.defineSlot('/21697024903/news.tvbs.com.tw_pc_index_top', [970,250], 'adBox').addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
                 window.googletag.enableServices();
-                googletag.display('ad_box');
+                googletag.display('adBox');
             });
         };      
         loadAds();
