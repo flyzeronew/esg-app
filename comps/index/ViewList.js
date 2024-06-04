@@ -4,7 +4,8 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function ViewList(props) {
-    const data = props.data;
+    const appUrl = process.env.APP_URL;
+    const articles = props.articles;
     const settings = {
         dots: true,
         fade: true,
@@ -19,11 +20,11 @@ function ViewList(props) {
     return (        
         <div className="view">
             <Slider {...settings}>
-                {data.length > 0 ?
-                    data.map((item, index) => (
-                        <a key={index} href={item.url}>
+                {articles.length > 0 ?
+                    articles.map((item, index) => (
+                        <a key={index} href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`} >
                             <div className="img">
-                                <img src={item.img} alt="img" width={1920} height={1080} loading='lazy'/>  
+                                <img src={item.cover_img} alt="img" width={1920} height={1080} loading='lazy'/>  
                             </div>
                             <div className="category">
                                 <span>永續觀點</span>

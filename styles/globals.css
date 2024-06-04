@@ -708,9 +708,8 @@ header .menuMo .list li:last-child{
     width: 40px;
     height: 6px;
     margin: 0;
-    margin-right: 7px;
-    overflow: hidden;
-    padding:0;
+    margin-right: 7px;   
+    overflow: hidden; 
 }
 .indexPage .slick-dots li button {
     width: 100%;
@@ -2955,7 +2954,11 @@ header .menuMo .list li:last-child{
     overflow: hidden;
 }
 .viewArticlePage .coverImgBanner .img{
+    overflow: hidden;
     aspect-ratio: 16 / 9;
+    width: 60%;
+    margin: 15px auto 0;
+    border-radius: 30px;
 }
 .viewArticlePage .articleContent{
     width: 1240px;
@@ -2970,6 +2973,11 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:1023px) {
+    .viewArticlePage .coverImgBanner .img{
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 20px 20px 0 0;
+    }
     .viewArticlePage{
         margin-top: 0;
         padding-top: 0;  
@@ -3384,57 +3392,114 @@ header .menuMo .list li:last-child{
     }
 }
 @media (max-width:767px) {
-    .articleSponsor{
-        margin: 120px auto 50px;
-    }
     .articleSponsor .box{
         display: block;
     }
-   /* 樣式2 */
-    .articleSponsor .imgBox{
+    /* 樣式1 */
+    .articleSponsor.style1 .imgBox{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .articleSponsor.style1 .description{
+        width: 100%;
+    }
+    .articleSponsor.style1 .description p{
+        padding-left: 0px;
+        border-left:0px solid #dadada;
+        line-height: 25px;
+        display: block;
+    }
+    /* 樣式2 */
+    .articleSponsor.style2 .imgBox{
         width: 100%;
         display: block;
     }
-    .articleSponsor .img{
+    .articleSponsor.style2 .img{
         width: 140px;
-        height: 50px;
         margin: 0 auto 15px;
-        position: relative;
     }
-    .articleSponsor .img img{
-        position: absolute;
-        top: -90px;
-    }
-    .articleSponsor .type {
-        font-size: 20px;
-        margin-bottom:0px;
+    .articleSponsor.style2 .type {
+        font-size: 14px;
+        margin-bottom: 10px;
         text-align: center;
-        font-weight: 500;
-        color: #333333;
     }
-    .articleSponsor .name{
+    .articleSponsor.style2 .name{
         margin-bottom: 15px;
         text-align: center;
-        font-size: 14px;
-        color: #999999;
     }
-    .articleSponsor .name p{ 
+    .articleSponsor.style2 .name p{ 
         width:max-content;
         display: block;
         margin:0 auto ;
-        padding: 15px 0;
         border-bottom:2px solid #00D221;   
     }
-    .articleSponsor .description{
+    .articleSponsor.style2 .description{
         font-size: 18px;
         width: 100%;
     }
-    .articleSponsor .description p{
+    .articleSponsor.style2 .description p{
         text-align: center;
         padding-left: 0px;
         border-left:0px solid #dadada;
         line-height: 25px;
-    }    
+    }
+
+     /* 樣式3 */
+    .articleSponsor.style3 .box{
+        overflow: hidden;
+        padding:0;
+    }
+    .articleSponsor.style3 .imgBox{
+        width: 100%;
+        display: block;
+    }
+    .articleSponsor.style3 .img{
+        width: 100%;
+        background-color: #c5161f;
+        padding:20px;
+        margin-bottom: 20px;
+    }
+    .articleSponsor.style3 .img img{
+        width: 140px;
+        margin: 0 auto 15px;        
+    }
+    .articleSponsor.style3 .type {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .articleSponsor.style3 .name{
+        margin-bottom: 15px;  
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 39px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .articleSponsor.style3 .line{
+       width: 30px;
+       height: 2px;
+       border-bottom: 2px #00D221 solid;
+       margin: 20px 0;
+    }
+    .articleSponsor.style3 .name p{ 
+        display: block;
+        border: none;
+    }
+    .articleSponsor.style3 .txt{
+        padding:0 20px;
+    }
+    .articleSponsor.style3 .description{
+        font-size: 18px;
+        width: 100%;
+        padding:0 20px 20px;
+    }
+    .articleSponsor.style3 .description p{
+        text-align: left;
+        padding-left: 0px;
+        border-left:0px solid #dadada;
+        line-height: 25px;
+    }
 }
 /* 共好夥伴區塊 ed*/
 
@@ -3777,8 +3842,7 @@ header .menuMo .list li:last-child{
     width: 780px;
     margin: 0 auto;
     margin-bottom: 50px;
-}
-.responsibilityPage .content .contxt .t1 p{
+}.responsibilityPage .content .contxt .t1 p{
     width:100%;
     font-size: 32px;
     font-weight: 400;
@@ -3803,7 +3867,6 @@ header .menuMo .list li:last-child{
     text-align:justify;
     margin-bottom: 50px;
 }
-
 @media (max-width:1023px) {
     .responsibilityPage .content .contxt .t1{
         width: 100%;
@@ -3833,11 +3896,6 @@ header .menuMo .list li:last-child{
         line-height: 32px;
         letter-spacing: 0.02em;
         margin-bottom: 50px;
-    }
-    .responsibilityPage .content .contxt .t1 p{
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 32px;
     }
 }
 @media (max-width:374px) {
@@ -4200,39 +4258,31 @@ header .menuMo .list li:last-child{
         top:35%;
         display: block;
     }
-    .responsibilityPage .brand .list ul{
-        display: block;
-        white-space:nowrap;
-    }
-    .responsibilityPage .brand .list ul li{
-        width: 350px;
-        display:inline-block;
-        vertical-align: top;
-        overflow: hidden;
-        margin-right: 30px;
-    }
-    .responsibilityPage .brand .list .txt{
-        white-space:pre-wrap;
-    }
     .responsibilityPage .brand .list {
         padding:0 15px;
-        overflow-x: auto;
+        overflow-x: auto;        
     }
     .responsibilityPage .brand .list::-webkit-scrollbar {
         width: 0px;
     }
+    .responsibilityPage .brand .list ul{
+        width: 450%;
+    }    
+    .responsibilityPage .brand .list ul li{
+        width: calc((100% - 210px) / 8);
+    }
 }
 @media (max-width:767px) {
-    .responsibilityPage .brand .list ul li{
-        width: 250px;
-        display:inline-block;
-        vertical-align: top;
-        overflow: hidden;
-        margin-right: 20px;
-    }
     .responsibilityPage .brand .listBox .arraw {
         width:35px;
         top:30%;
+    }
+    .responsibilityPage .brand .list ul{
+        column-gap: 20px;
+        width: 520%;
+    }
+    .responsibilityPage .brand .list ul li{
+        width: calc((100% - 140px) / 8);
     }
 }
 @media (max-width:414px) {
@@ -4393,9 +4443,6 @@ header .menuMo .list li:last-child{
     
 }
 @media (max-width:767px) {
-    .responsibilityPage .brand .list .imgBox .logo img{
-        max-height: 20px;
-    }
     .responsibilityPage .carousel .slick-next,.responsibilityPage .carousel .slick-prev{
         width: 35px;
         height: 35px;
@@ -4528,363 +4575,6 @@ header .menuMo .list li:last-child{
     }
 }
 /* 更多TVBS永續實踐力ed */
-
-/* 永續責任內頁 */
-
-.responsibilityPage .detailMainView{
-    width: 100%;
-    position: relative;
-    display:block;
-    padding: 15px 30px 100px;
-}
-.responsibilityPage .detailMainView .box{
-    display:flex;
-}
-.responsibilityPage .detailMainView .img{
-    width: 60%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    border-radius: 30px 30px 0px 30px;
-    position: relative;
-    line-height: 0;
-}
-.responsibilityPage .detailMainView .box .logo{
-    width: 40%;
-    padding-top: 8%;
-    display:flex;
-    justify-content: center;
-    align-items:flex-start;
-}
-.responsibilityPage .detailMainView .box .logo img{
-    width: 35%;
-    height: auto;
-}
-.responsibilityPage .detailMainView .imgMaskBox {
-    position:absolute;
-    bottom:-1px;
-    right:-1px;
-}
-.responsibilityPage .detailMainView .imgMaskBox .rounded{
-    display:flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    line-height: 0;
-}
-.responsibilityPage .detailMainView .imgMaskBox .case{
-    display:flex;
-    justify-content: flex-end;
-}
-.responsibilityPage .detailMainView .imgMask{
-    background-color: #fff;
-    padding:110px 150px;
-    border-radius: 30px 0 0 0;
-}
-.responsibilityPage .detailMainView .box{
-    position: relative;
-}
-.responsibilityPage .detailMainView .txtBox{
-    width: 52%;
-    min-height: 180px;
-    position: absolute;
-    box-sizing: border-box;
-    bottom:0;
-    margin-left: 46%;
-}
-.responsibilityPage .detailMainView .rounded img{
-    width: 30px;
-    height: 30px;
-    aspect-ratio: 1/1;
-}
-.responsibilityPage .detailMainView .txtBox .title{
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 56px;
-    overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    text-align: justify;    
-}
-.responsibilityPage .detailMainView .imgMaskBox .rounded.pc{
-    display: flex;
-}
-.responsibilityPage .detailMainView .imgMaskBox .rounded.mo{
-    display: none;
-}
-@media (max-width:1919px) {
-    .responsibilityPage .detailMainView .txtBox{
-        margin-left:45%;
-    }
-}
-@media (max-width:1600px) {
-    .responsibilityPage .detailMainView .txtBox{
-        width: 48%;
-        margin-left: 43%;
-    }
-}
-@media (max-width:1599px) {
-    .responsibilityPage .detailMainView .txtBox .title{
-        font-size: 30px;
-        line-height: 46px;
-    }
-    .responsibilityPage .detailMainView .txtBox{
-        margin-left: 46%;
-    }
-    .responsibilityPage .detailMainView .img{
-        width: 70%;
-    }
-}
-@media (max-width:1366px) {
-    .responsibilityPage .detailMainView .txtBox{
-        margin-left:44%;
-    }
-}
-@media (max-width:1279px) {
-    .responsibilityPage .detailMainView .txtBox .title{
-        font-size: 24px;
-        line-height: 36px;
-    }
-    .responsibilityPage .detailMainView .txtBox{
-        min-height: 120px;
-        margin-left: 43%;
-    }
-    .responsibilityPage .detailMainView .img{
-        width: 80%;
-    }
-    .responsibilityPage .detailMainView .imgMask{
-        background-color: #fff;
-        padding:70px 150px;
-    }
-}
-@media (max-width:1100px) {
-    .responsibilityPage .detailMainView .txtBox{
-        margin-left:40%;
-    }
-}
-@media (max-width:1024px) {
-    .responsibilityPage .detailMainView .txtBox{
-        margin-left: 38%;
-    }
-}
-@media (max-width:1023px) {
-    .responsibilityPage .detailMainView .box {
-        display: block;
-        position: relative;
-    }
-    .responsibilityPage .detailMainView .txtBox{
-        width: 100%;
-        position: relative;
-        margin: 0 auto;
-        padding:0 15px;
-    }
-    .responsibilityPage .detailMainView .txtBox .title{
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 36px;
-        overflow: hidden;
-        display:block;
-        text-align: justify;    
-    }
-    .responsibilityPage .detailMainView .box .logo{
-        width: 100%;
-        padding: 0;
-        position: relative;
-        margin-bottom:80px;
-    }
-    .responsibilityPage .detailMainView .box .logo img{
-        width: 140px;
-        position: absolute;
-        top:-50px;
-    }
-    .responsibilityPage .detailMainView .imgMaskBox .rounded.pc{
-        display: none;
-    }
-    .responsibilityPage .detailMainView .imgMaskBox .rounded.mo{
-        display: flex;
-    }
-    .responsibilityPage .detailMainView {
-        width: 100%;
-        position: relative;
-        display: block;
-        padding: 0 0 80px;        
-    }
-    .responsibilityPage .detailMainView .imgMaskBox{
-        width: 100%;
-        right: auto;
-        bottom: -3px;
-    }
-    .responsibilityPage .detailMainView .imgMaskBox .case{
-        width: 100%;
-        margin:0 auto;
-    }
-    .responsibilityPage .detailMainView .imgMask {
-        width: 100%;
-        height: 90px;
-        background-color: #fff;
-        padding:0px;
-        margin:0 auto;
-        border-radius:20px 20px 0 0;
-    }
-    .responsibilityPage .detailMainView .img{
-        border-radius: 0px;
-    }
-    .responsibilityPage .detailMainView .img{
-        width: 100%;
-    }
-}
-@media (max-width:414px) {
-    .responsibilityPage .detailMainView .box .logo{
-        width: 100%;
-    }
-    .responsibilityPage .detailMainView .imgMask {
-        height: 70px;
-    }
-}
-
-.responsibilityPage .brandIp{
-    width: max-content;
-    margin:0 auto 50px;
-}
-.responsibilityPage .brandIp .logo{
-    width: 200px;
-    margin:0 auto 20px;
-}
-.responsibilityPage .brandIp .logo img{
-    width: 100%;
-}
-.responsibilityPage .brandIp .icon a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 15px;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0.02em; 
-    padding:15px;
-    border-radius: 60px;
-    border: 1px solid #000;
-}
-.responsibilityPage .brandIp .icon img{
-    width: 30px;
-    height: 30px;
-    aspect-ratio: 1/1;
-}
-/* 更多TVBS永續品牌 */
-.responsibilityPage .brandMore {
-    width: 1240px;
-    margin: 0 auto;
-    padding:0 15px;
-}
-.responsibilityPage .brandMore .imgBox{
-    position: relative;
-    margin-bottom: 10px;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-    border-radius:20px;
-}
-.responsibilityPage .brandMore .imgBox .logoBox{
-    position:absolute;
-    width: 100%;
-    bottom:0;
-    overflow: hidden;
-}
-.responsibilityPage .brandMore .imgBox .logo{
-    width: max-content;
-    padding:10px 15px;
-    background-color: #fff;
-    border-radius:0 20px 0 0;
-}
-
-.responsibilityPage .brandMore .imgBox .logo img{
-    width: auto;
-    max-height: 40px;
-}
-.responsibilityPage .brandMore .txtBox{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 20px;
-}
-.responsibilityPage .brandMore .txt{
-    position: relative;
-    aspect-ratio: unset;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align:justify;
-    color: #333333;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    overflow: hidden;
-}
-.responsibilityPage .brandMore .txt img{
-    width: 30px;
-    height: 30px;
-}
-.responsibilityPage .brandMore .logoBox .rounded{
-    width: 20px;
-}
-.responsibilityPage .brandMore .logoBox .logoFlex{
-    display: flex;
-    align-items: flex-end;
-}
-.responsibilityPage .brandMore ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 30px;
-    row-gap: 50px;
-}
-.responsibilityPage .brandMore ul li{
-    width: calc((100% - 60px) / 3);
-}
-@media (max-width:1279px) {
-    .responsibilityPage .brandMore {
-        width: 100%;
-    }
-    .responsibilityPage .brandMore ul{
-        display: block;
-        white-space:nowrap;
-    }
-    .responsibilityPage .brandMore ul li{
-        width: 350px;
-        display:inline-block;
-        vertical-align: top;
-        overflow: hidden;
-        margin-right: 30px;
-    }
-    .responsibilityPage .brandMore .txt{
-        white-space:pre-wrap;
-    }
-    .responsibilityPage .brandMore {
-        padding:0 15px;
-        overflow-x: auto;
-    }
-    .responsibilityPage .brandMore::-webkit-scrollbar {
-        width: 0px;
-    }
-}
-@media (max-width:767px) {
-    .responsibilityPage .brandMore ul li{
-        width: 280px;
-        display:inline-block;
-        vertical-align: top;
-        overflow: hidden;
-        margin-right: 20px;
-    }
-    .responsibilityPage .brandMore.arraw {
-        width:35px;
-        top:30%;
-    }
-}
-/* 更多TVBS永續品牌 ed*/
-/* 永續責任內頁 ed*/
-
 /* 永續責任 ed*/
 
 /* 永續行動頁面 */

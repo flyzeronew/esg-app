@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function MainVision(props) {
-    const data = props.data;
+    const indexHeadlines = props.indexHeadlines;
     const settings = {
         dots: true,
         fade: true,
@@ -19,27 +19,26 @@ function MainVision(props) {
     return (
         <div className="mainVision">
             <Slider {...settings}>
-                {data.length>0
-                ?
-                data.map((item, index) => (
-                    <a key={index} href={item.url}>
-                        <div className="img">
-                            <img src={item.img} alt="img" width={1072} height={603}/>
-                        </div>
-                        <div className="txtAbsolute">
-                            <div className="txtBox">
-                                <div className="title">{item.title}</div>
-                                <div className="txt">{item.description}</div>
-                                <div className="object">
-                                    <div className="point"></div>
-                                    <div className="arraw">
-                                        <img src="/images/icon_arraw02.svg" alt="arraw" width={50} height={50} loading='lazy'/>
+                { indexHeadlines.length > 0 ?
+                    indexHeadlines.map((item, index) => (
+                        <a key={index} href={item.url} target={item.is_blank === 1? '_blank' :'' } >
+                            <div className="img">
+                                <img src={item.cover_img} alt="img" width={1072} height={603}/>
+                            </div>
+                            <div className="txtAbsolute">
+                                <div className="txtBox">
+                                    <div className="title">{item.title}</div>
+                                    <div className="txt">{item.description}</div>
+                                    <div className="object">
+                                        <div className="point"></div>
+                                        <div className="arraw">
+                                            <img src="/images/icon_arraw02.svg" alt="arraw" width={50} height={50} loading='lazy'/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                ))
+                        </a>
+                    ))
                 :""}
             </Slider>
         </div>

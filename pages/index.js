@@ -10,8 +10,15 @@ import { useState ,useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home(props) {
   const appUrl = process.env.APP_URL;
+  const indexHeadlines = props.indexData.indexHeadlines;
+  const articles = props.indexData.articles;
+  const partners = props.indexData.partners;
+  const tips = props.indexData.tips;
+  const colorMapping = props.colorMapping;
   // 頁面識別
   const thisPage='home';
+  // 社群分享圖
+  const ogImg = process.env.OG_IMG;
   // 參加活動hover
   const [hover, setHover] = useState(false); 
   // ourMissionHover
@@ -64,6 +71,7 @@ export default function Home(props) {
         <meta name="URL" content={appUrl} />
         <meta name="medium" content="mult" />
         <meta name="robots" content="INDEX,FOLLOW"/>
+        <meta property="og:image" content={ogImg} />  
         <link rel="canonical" href={appUrl} />
       </Head>
       <Header thisPage={thisPage} menuData={props.menu}/>
@@ -71,7 +79,7 @@ export default function Home(props) {
         <div className="indexPage">
           <div className="flexBox">
             <section>
-              <MainVision data={props.data.headline}/>
+              <MainVision indexHeadlines={indexHeadlines} />
 
               <div className="other">
 
@@ -113,7 +121,7 @@ export default function Home(props) {
                   </div>
 
                 :""}
-                <ViewList data={props.data.viewpoint}/>
+                <ViewList articles={articles}/>
                 
                 { props.data.activity ?
                 
@@ -162,8 +170,8 @@ export default function Home(props) {
 
               :""}
 
-              <SecretList data={props.data.tips}/>
-              <PartnerList data={props.data.partners}/>
+              <SecretList tips={tips} colorMapping={colorMapping} />
+              <PartnerList partners={partners}  />
               
             </section>
           </div>
@@ -179,17 +187,24 @@ export async function getServerSideProps() {
   const menuUrl = new URL('/api/menu', process.env.APP_URL);
   const menuRes = await fetch(menuUrl);
   const menu = await menuRes.json();
+
   // data
-
-  const dataUrl = process.env.APP_ENV==='production'?
-  new URL('/api/index-data-prd', process.env.APP_URL):
-  new URL('/api/index-data-dev', process.env.APP_URL);
-
+  const dataUrl = new URL('/api/index-other', process.env.APP_URL);
   const dataRes = await fetch(dataUrl);
   const data = await dataRes.json();
+  
+  // 顏色配對
+  const colorMappingUrl = new URL('/api/tips-color-mapping', process.env.APP_URL);
+  const colorMappingRes = await fetch(colorMappingUrl);
+  const colorMapping = await colorMappingRes.json();
+
+  const indexDataUrl = new URL('/api/index-data', process.env.API_URL);
+  const indexDataRes = await fetch(indexDataUrl);
+  const indexData = await indexDataRes.json();
+
   return {
     props: {
-      menu,data
+      menu,data,indexData,colorMapping
     },
   };
 }

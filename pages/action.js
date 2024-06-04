@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Focus(props) {
     // 頁面識別
     const thisPage='action';
+    const ogImg = process.env.OG_IMG;
     const [imgHover, setImgHover] = useState(null);
     const [bgSize, setBgSize] = useState();
     const [hoverBgSize, setHoverBgSize] = useState();
@@ -41,7 +42,8 @@ export default function Focus(props) {
             <title>{"esg | 永續行動"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="esg description" />        
+            <meta name="description" content="esg description" /> 
+            <meta property="og:image" content={ogImg} />       
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>

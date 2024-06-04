@@ -68,7 +68,7 @@ export default function handler(req, res) {
         }, 
         {
             "article_id": 209,
-            "cover_img": "https://esg-statics-production.tvbs.com.tw/article/img/uDT9CW02pZUS5CywI3aHFj6LsI2Bb1JnD8zhRX0a.jpg",
+            "cover_img": "https://esg-statics-production.tvbs.com.tw/articles/img/uDT9CW02pZUS5CywI3aHFj6LsI2Bb1JnD8zhRX0a.jpg",
             "title": "30企業獲「減碳永續獎」　TVBS首家綠色福利媒體",
             "description": "宜睿智慧推出電子票券，2010年開始協助台灣企業進行數位轉型，超過千家以上的企業客戶採用，這回獲獎的有9間企業，其中TVBS不只報導永續內容，也將員工福利改發放電子票券，成為首家採取綠色福利的電視台，因此獲得肯定。",
             "partner": null,

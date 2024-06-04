@@ -8,6 +8,8 @@ import Practice from '../comps/responsibility/Practice'
 const inter = Inter({ subsets: ['latin'] })
 export default function Responsibility(props) {
     // 頁面識別
+    const thisPage='responsibility';
+    const ogImg = process.env.OG_IMG;
     const [clicked, setClicked] = useState(false);
     // 處理點擊事件
     const handleClick = () => {
@@ -20,7 +22,6 @@ export default function Responsibility(props) {
     const responsibilityData = props.responsibilityData;
     const practiceData = responsibilityData.slice(0, 3);
     const moreData = responsibilityData.slice(3);
-    const thisPage='responsibility';
     const appUrl = process.env.APP_URL;
     return (
     <div id='wrapper' className={inter.className}> 
@@ -35,6 +36,7 @@ export default function Responsibility(props) {
             <meta name="URL" content={`${appUrl}/${thisPage}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta property="og:image" content={ogImg} /> 
             <link rel="canonical" href={`${appUrl}/${thisPage}`}/>       
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>

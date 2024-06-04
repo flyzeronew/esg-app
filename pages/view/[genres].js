@@ -15,6 +15,7 @@ export default function Genres(props) {
     const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='view';
+    const ogImg = process.env.OG_IMG;
     // 計算文章數量轉頁面數
     const articleNum = 12;
     const articleCount = props.articlesData.article_count-1;
@@ -50,6 +51,7 @@ export default function Genres(props) {
             <meta name="URL" content={`${appUrl}/${thisPage}/${genreEnName}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta property="og:image" content={ogImg} />
             <link rel="canonical" href={`${appUrl}/${thisPage}/${genreEnName}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>

@@ -9,6 +9,7 @@ export default function Partner(props) {
     const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='partner';
+    const ogImg = process.env.OG_IMG;
     const [imgHover, setImgHover] = useState(null);
     const [bgSize, setBgSize] = useState();
     const [hoverBgSize, setHoverBgSize] = useState();
@@ -67,6 +68,7 @@ return (
             <meta name="URL" content={`${appUrl}/${thisPage}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta property="og:image" content={ogImg} />  
             <link rel="canonical" href={`${appUrl}/${thisPage}`} />   
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>

@@ -11,6 +11,7 @@ import JumpPage from '../comps/JumpPage'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function View(props) {
+    const ogImg = process.env.OG_IMG;
     const router = useRouter();
     const appUrl = process.env.APP_URL;
     // 計算文章數量轉頁面數
@@ -42,6 +43,7 @@ export default function View(props) {
             <meta name="URL" content={`${appUrl}/${thisPage}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta property="og:image" content={ogImg} /> 
             <link rel="canonical" href={`${appUrl}/${thisPage}`} />   
         </Head>
         <Header thisPage={thisPage} menuData={props.menu} submenu={viewSubmenu}/>

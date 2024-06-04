@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function PartnerList(props) {
-    const data = props.data;
+    const partners = props.partners;
     const settings = {
         dots: true,
         fade: true,
@@ -28,9 +28,9 @@ function PartnerList(props) {
             </div>
             <div className="list">
                 <Slider {...settings}>
-                    {data.length>0?data.reduce((acc, item, index) => {
+                    {partners.length > 0 ? partners.reduce((acc, item, index) => {
                         if (index % 3 === 0) {
-                            acc.push(data.slice(index, index + 3));
+                            acc.push(partners.slice(index, index + 3));
                         }
                         return acc;
                     }, []).map((chunk, chunkIndex) => (

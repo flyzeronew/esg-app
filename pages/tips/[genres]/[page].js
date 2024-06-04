@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function page(props) {
     // 頁面識別
     const thisPage='tips';
+    const ogImg = process.env.OG_IMG;
     const isIOS = props.isIOS;   
     const appUrl = process.env.APP_URL;
     const tipsData = props.tipsData.tip;
@@ -104,6 +105,7 @@ export default function page(props) {
             <meta name="URL" content={`${thisPageGenreUri}/${tipsData.id}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta property="og:image" content={ogImg} />
             <link rel="canonical" href={`${thisPageGenreUri}/${tipsData.id}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>

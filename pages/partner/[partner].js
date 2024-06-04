@@ -24,6 +24,7 @@ export default function Partner(props) {
     ];
 // 頁面識別
 const thisPage='partnerDetail';
+const ogImg = process.env.OG_IMG;
 const router = useRouter();
 const { partner } = router.query;
 const [imgHover, setImgHover] = useState(null);
@@ -72,7 +73,8 @@ return (
             <title>{"夥伴名 ESG共好夥伴 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="透過企業合作，ESG共好夥伴可以共享資源、互補優勢、擴大影響力，共同推動ESG理念的實踐，創造永續發展的未來。" />        
+            <meta name="description" content="透過企業合作，ESG共好夥伴可以共享資源、互補優勢、擴大影響力，共同推動ESG理念的實踐，創造永續發展的未來。" />   
+            <meta property="og:image" content={ogImg} />      
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Header from '../../../comps/Header'
 import Footer from '../../../comps/Footer'
+import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 
 const inter = Inter({ subsets: ['latin'] })
 export default function viewArticle(props) {    
@@ -27,7 +28,8 @@ export default function viewArticle(props) {
     };
     //return <pre>{JSON.stringify(articleList,null,4)}</pre>
     // 頁面識別
-    const thisPage='view';    
+    const thisPage='view'; 
+    const ogImg = process.env.OG_IMG;   
     // resize 監聽事件
     useEffect(() => { 
         const handleResize = (e) => {
@@ -57,10 +59,16 @@ export default function viewArticle(props) {
             <meta name="URL" content={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta property="og:image" content={ogImg} />
             <link rel="canonical" href={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>      
+        <main>
+            <div className="ad_970x250_pc" id="ad_970x250_pc">
+                <DFPSlotsProvider dfpNetworkId={'31610311'}>
+                    <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} slotId="ad_970x250_pc"  adUnit="v4_focus_index_970x90"/>
+                </DFPSlotsProvider> 
+            </div> 
             <div className="viewArticlePage" style={{ paddingTop:getArticleData.has_cover_img === 0 ? paddingTop : "" }}>   
                 {getArticleData.has_cover_img === 1
                 ?   <div className="coverImgBanner">
@@ -96,24 +104,19 @@ export default function viewArticle(props) {
                     <div className="editorNew" dangerouslySetInnerHTML={{ __html: articleContent }}></div>
                     {/* 編輯器 ed*/}
 
-                    {/* 廠商資訊 */}
+                    {/* 廠商資訊 樣式三選一*/}
+
                     {articlePartner ? 
-                        <div className="articleSponsor">
+                        <div className="articleSponsor style1">
                             <div className="box">
                                 <div className="imgBox">
                                     <div className="img">
                                         <img src={articlePartner.avatar ? articlePartner.avatar : process.env.IMG_DEFAULT_SQUARE} alt="img" width={90} height={90} loading="lazy"/>
                                     </div>
-                                    <div className="txt pc">
+                                    <div className="txt">
                                         <div className="type">共好夥伴</div>
                                         <div className="name">
                                             <p>{articlePartner.name}</p>
-                                        </div>
-                                    </div>
-                                    <div className="txt mo">
-                                        <div className="type">{articlePartner.name}</div>
-                                        <div className="name">
-                                            <p>共好夥伴</p>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +125,52 @@ export default function viewArticle(props) {
                                 </div>
                             </div>
                         </div>                    
-                    :''}                  
+                    :''}
+
+                    {/* {articlePartner.name ? 
+                        <div className="articleSponsor style2">
+                            <div className="box">
+                                <div className="imgBox">
+                                    <div className="img">
+                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
+                                    </div>
+                                    <div className="txt">
+                                        <div className="type">共好夥伴</div>
+                                        <div className="name">
+                                            <p>{articlePartner.name}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="description">
+                                    <p>{articlePartner.introduction}</p>
+                                </div>
+                            </div>
+                        </div>
+                    :''} */}
+
+                    {/* {articlePartner.name ?
+                        <div className="articleSponsor style3">
+                            <div className="box">
+                                <div className="imgBox">
+                                    <div className="img">
+                                        <img src={articlePartner.avatar} alt="img" width={90} height={90} loading="lazy"/>
+                                    </div>
+                                    <div className="txt">
+                                        <div className="type pc">共好夥伴</div>
+                                        <div className="name">
+                                            <p>{articlePartner.name}</p>
+                                        </div>
+                                        <div className="type mo">共好夥伴<div className="line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="description">
+                                    <p>{articlePartner.introduction}</p>                               
+                                </div>
+                            </div>
+                        </div>
+                    :''} */}
+
                     {/* 廠商資訊 ed*/}
                     {/* 小撇步報你知 */}    
                     {/* {articleSecret.cover_img ?

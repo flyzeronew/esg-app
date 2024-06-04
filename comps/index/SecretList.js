@@ -4,15 +4,9 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function SecretList(props) {
-    const data = props.data;
-    const tipsGenresArr = [
-        'tagFoodColor',
-        'tagClothingColor',
-        'tagHousingColor',
-        'tagTransportColor',
-        'tagEducationColor',
-        'tagEntertainmentColor',
-    ];
+    const tips = props.tips;
+    const colorMapping = props.colorMapping;
+    const appUrl = process.env.APP_URL;
     const settings = {
         dots: true,
         fade: true,
@@ -24,30 +18,35 @@ function SecretList(props) {
         autoplay: true,
         autoplaySpeed:5000, 
     };  
-    return (
+    return (        
         <div className="secret">
             <div className="list">
                 <Slider {...settings}>
-                    {data.length > 0?data.map((item, index) => (
-                        <a key={index} href={item.url}>
-                            <div className="img mo">
-                                <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
-                            </div>
-                            <div className="subtitle">
-                                <p>永續生活小撇步</p>
-                                <div className={`line ${tipsGenresArr[item.tip_genre.id - 1]}`}></div>
-                                <div className={`tag ${tipsGenresArr[item.tip_genre.id - 1]}`}>{item.tip_genre.name}</div>
-                            </div>
-                            <div className="title">
-                                <div className="word">
-                                    <p>{item.title}</p>
+                    {tips.length > 0 ? 
+                        tips.map((item, index) => (
+                            <a key={index} 
+                                href={`${appUrl}/tips/${colorMapping[item.genre - 1].en_name}/${item.id}`}
+                            >
+                                <div className="img mo">
+                                    <img src={item.tip_galleries[0].image_url} alt="img" width={640} height={360} loading='lazy'/>
                                 </div>
-                                <div className="img pc">
-                                    <img src={item.img} alt="img" width={640} height={360} loading='lazy'/>
+                                <div className="subtitle">
+                                    <p>永續生活小撇步</p>
+                                    <div className={`line ${colorMapping[item.genre - 1].color}`}></div>
+                                    <div className={`tag ${colorMapping[item.genre - 1].color}`}>{
+                                        colorMapping[item.genre - 1].genre}
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    )):""}
+                                <div className="title">
+                                    <div className="word">
+                                        <p>{item.title}</p>
+                                    </div>
+                                    <div className="img pc">
+                                        <img src={item.tip_galleries[0].image_url} alt="img" width={640} height={360} loading='lazy'/>
+                                    </div>
+                                </div>
+                            </a>
+                        )):""}
                 </Slider>
             </div>
         </div>

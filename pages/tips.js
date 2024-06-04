@@ -14,6 +14,7 @@ export default function Tips(props) {
     const router = useRouter();
     // 頁面識別
     const thisPage='tips';
+    const ogImg = process.env.OG_IMG;
     const appUrl = process.env.APP_URL;
     const tipsSubmenu = props.submenuData;
     const showList = props.tipsData.tips;
@@ -42,6 +43,7 @@ export default function Tips(props) {
                 <meta name="URL" content={`${appUrl}/${thisPage}`} />
                 <meta name="medium" content="mult" />
                 <meta name="robots" content="INDEX,FOLLOW"/>
+                <meta property="og:image" content={ogImg} /> 
                 <link rel="canonical" href={`${appUrl}/${thisPage}`} />     
             </Head>
             <Header thisPage={thisPage} menuData={props.menu}/>
