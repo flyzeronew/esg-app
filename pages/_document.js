@@ -29,16 +29,15 @@ export default function Document() {
               `,
             }}           
           />
-          {/* google dfp 廣告 */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `    
-              window.googletag = window.googletag || { cmd: [] };
-              `,
-            }}           
-          />
+
           <script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js' />
-         
+          <script
+              dangerouslySetInnerHTML={{
+                __html: `    
+                window.googletag = window.googletag || {cmd: []};
+                `,
+              }}           
+          />
       </Head>      
       <body>
         <Main />
