@@ -77,8 +77,7 @@ export default function viewArticle(props) {
                     loadAds(adType[i].id,adType[i].type,adType[i].size[j],adType[i].style[j]);
                 }
             }
-        }
-        
+        }        
         // dfp廣告 ed        
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
