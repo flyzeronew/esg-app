@@ -40,6 +40,7 @@ export default function viewArticle(props) {
                 window.googletag.defineSlot('/31610311/v4_focus_index_incover', [1,1], 'div-gpt-ad-1484649371125-101').addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
                 window.googletag.enableServices();
+                googletag.display(31610311);
             });
         };      
         loadAds();
