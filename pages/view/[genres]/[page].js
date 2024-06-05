@@ -36,15 +36,28 @@ export default function viewArticle(props) {
         if (typeof window !== 'undefined') {
             window.googletag = window.googletag || { cmd: [] };
         }
-        const loadAds = (id,type,size,style) => {
-            const editorNew = document.querySelector('.editorNew');
-            const existingAdBox = document.querySelector(`#${style}`);            
-            if (!existingAdBox) {
-                const firstParagraph = editorNew.querySelector('p');
-                const adBox = document.createElement('div');
-                adBox.id = `${style}`;
-                editorNew.insertBefore(adBox, firstParagraph.nextSibling);
-            }
+        const editorNew = document.querySelector('.editorNew');
+        const existingAdBox = document.querySelector('.adBox');            
+        if (!existingAdBox) {
+            const firstParagraph = editorNew.querySelector('p');
+            const adBox = document.createElement('div');
+            adBox.className ='adBox';
+            editorNew.insertBefore(adBox, firstParagraph.nextSibling);
+        }
+
+        const loadAds = (id,type,size,style,mode) => {
+            const adBox = document.querySelector('.adBox');
+            if (!adBox || document.getElementById(style)) {
+                return; 
+            }         
+            const adInsert = document.createElement('div');
+            adInsert.id =`${style}`;
+            adBox.appendChild(adInsert);
+            document.getElementById(style).classList.add(mode);
+            document.getElementById(style).style.width = `${size[0]}px`;
+            document.getElementById(style).style.height = `${size[1]}px`;
+            document.getElementById(style).style.margin = '0 auto';
+
             window.googletag.cmd.push(function () {
                 window.googletag.defineSlot(`/${id}/${type}`,size, style).addService(window.googletag.pubads());
                 window.googletag.pubads().enableSingleRequest();
@@ -57,27 +70,22 @@ export default function viewArticle(props) {
                 'id':'21697024903',
                 'type':'news.tvbs.com.tw_pc_index_top',
                 'size':[[970,250],[1, 1]],
-                'style':['ad970_250_pc','ad_box_pc'], 
+                'style':['ad_pc_1','ad_pc_2'], 
                 'mode':'pc'
             },
             {
                 'id':'21697024903',
                 'type':'news.tvbs.com.tw_m_index_top',
                 'size':[[320,100],[1, 1]],
-                'style':['ad320_100_mo','ad_box_mo'],
+                'style':['ad_mo_1','ad_mo_2'],
                 'mode':'mo'
             }
         ];
-        const isPcScreen = window.innerWidth > 1023;
-        for(let i=0; i<adType.length; i++){
-            for(let j=0; j<adType[i].style.length; j++){
-                if(isPcScreen && adType[i].mode == 'pc'){
-                    loadAds(adType[i].id,adType[i].type,adType[i].size[j],adType[i].style[j]); 
-                }else{
-                    loadAds(adType[i].id,adType[i].type,adType[i].size[j],adType[i].style[j]);
-                }
-            }
-        }        
+        adType.forEach(ad => {
+            ad.style.forEach((style, index) => {
+                loadAds(ad.id, ad.type, ad.size[index], style, ad.mode);
+            });
+        });
         // dfp廣告 ed        
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
@@ -111,8 +119,6 @@ export default function viewArticle(props) {
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
-            <div>dfp廣告測試</div>
-            <div id="gpt_test"></div>
             <div className="viewArticlePage" style={{ paddingTop:getArticleData.has_cover_img === 0 ? paddingTop : "" }}>   
                 {getArticleData.has_cover_img === 1
                 ?   <div className="coverImgBanner">
