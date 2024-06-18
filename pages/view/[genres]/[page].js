@@ -29,71 +29,108 @@ export default function viewArticle(props) {
     // 頁面識別
     const thisPage='view'; 
     const ogImg = process.env.OG_IMG;   
-
     // resize 監聽事件
-    useEffect(() => {        
+    useEffect(() => { 
         // dfp廣告     
         if (typeof window !== 'undefined') {
             window.googletag = window.googletag || { cmd: [] };
         }
-        const editorNew = document.querySelector('.editorNew');
-        const existingAdBox = document.querySelector('.adBox');            
-        if (!existingAdBox) {
-            const firstParagraph = editorNew.querySelector('p');
-            const adBox = document.createElement('div');
-            adBox.className ='adBox';
-            editorNew.insertBefore(adBox, firstParagraph.nextSibling);
-        }
 
-        const loadAds = (id,type,size,style,mode) => {
-            const adBox = document.querySelector('.adBox');
-            if (!adBox || document.getElementById(style)) {
-                return; 
-            }         
-            const adInsert = document.createElement('div');
-            adInsert.id =`${style}`;
-            adBox.appendChild(adInsert);
-            document.getElementById(style).classList.add(mode);
-            document.getElementById(style).style.width = `${size[0]}px`;
-            document.getElementById(style).style.height = `${size[1]}px`;
-            document.getElementById(style).style.margin = '0 auto';
-
-            window.googletag.cmd.push(function () {
-                window.googletag.defineSlot(`/${id}/${type}`,size, style).addService(window.googletag.pubads());
-                window.googletag.pubads().enableSingleRequest();
-                window.googletag.enableServices();
-                googletag.display(style);
-            });
-        };
-        const adType=[
+        // 'id':'21697024903',
+        // 'type':'news.tvbs.com.tw_pc_index_top',
+        // 'id':'31610311',
+        // 'type':'esg.tvbs.com.tw_m_read_in1',
+        
+        let adType=[
             {
-                'id':'21697024903',
-                'type':'news.tvbs.com.tw_pc_index_top',
+                'id':'31610311',
+                'type':'esg.tvbs.com.tw_m_read_in1',
                 'size':[[970,250],[1, 1]],
-                'style':['ad_pc_1','ad_pc_2'], 
+                'style':['adPc1','adPc1-2'],
                 'mode':'pc'
             },
             {
-                'id':'21697024903',
-                'type':'news.tvbs.com.tw_m_index_top',
-                'size':[[320,100],[1, 1]],
-                'style':['ad_mo_1','ad_mo_2'],
+                'id':'31610311',
+                'type':'esg.tvbs.com.tw_m_read_in1',
+                'size':[[300,250],[1, 1]],
+                'style':['adMo1','adMo1-2'],
+                'mode':'mo'
+            },
+            {
+                'id':'31610311',
+                'type':'esg.tvbs.com.tw_m_read_in2',
+                'size':[[320,480],[1, 1]],
+                'style':['adMo2','adMo2-2'],
                 'mode':'mo'
             }
         ];
-        adType.forEach(ad => {
-            ad.style.forEach((style, index) => {
-                loadAds(ad.id, ad.type, ad.size[index], style, ad.mode);
+
+        const loadAd = (adIndex, adData, styleIndex) => {
+            const allAdBoxes = document.querySelectorAll('.adBox');
+            if (allAdBoxes[adIndex]) {
+                const adInsert = document.createElement('div');
+                adInsert.id = adData.style[styleIndex];
+                adInsert.classList.add(adData.mode);
+                allAdBoxes[adIndex].appendChild(adInsert);
+                document.getElementById(adData.style[styleIndex]).style.margin = '0 auto';
+                if(adData.size[styleIndex][0] !=1){
+                    document.getElementById(adData.style[styleIndex]).style.width = `${adData.size[styleIndex][0]}px`;
+                }                 
+                window.googletag.cmd.push(() => {
+                    window.googletag.defineSlot(`/${adData.id}/${adData.type}`, adData.size[styleIndex], adData.style[styleIndex])
+                        .addService(window.googletag.pubads());
+                    window.googletag.pubads().enableSingleRequest();
+                    window.googletag.enableServices();
+                    window.googletag.display(adData.style[styleIndex]);
+                });                
+            }
+        };  
+        
+        const insertAdBoxes = () => {
+            const editorNew = document.querySelector('.editorNew');
+            if (!editorNew) return;
+        
+            const paragraphs = editorNew.querySelectorAll('p');
+            const positions = [2, 8];
+            
+            positions.forEach((position, index) => {
+                if (paragraphs[position]) {
+                    const adBox = document.createElement('div');
+                    adBox.className = 'adBox';
+                    index === 1 ? adBox.classList.add('mo') : '';                    
+                    editorNew.insertBefore(adBox, paragraphs[position].nextSibling);                    
+                }
             });
-        });
-        // dfp廣告 ed        
+        };
+        const initializeAds = () => {
+            const editorNew = document.querySelector('.editorNew');
+            if (!editorNew || document.querySelector('.adBox')) return;
+        
+            insertAdBoxes();
+        
+            // Load ads into the first ad box
+            adType.slice(0, 2).forEach((adData, adIndex) => {
+                adData.style.forEach((_, styleIndex) => {
+                    loadAd(0, adData, styleIndex);
+                });
+            });
+        
+            // Load ads into the second ad box
+            adType[2].style.forEach((_, styleIndex) => {
+                loadAd(1, adType[2], styleIndex);
+            });
+        };
+        initializeAds();
+        
+        // dfp廣告 ed
         const handleResize = (e) => {
             const showBg = window.innerWidth > 767 ? true : false;
             const needPaddingTop = window.innerWidth > 1023 ? "30px" : "";
             setBgShow(showBg);
             setPaddingTop(needPaddingTop);
         };  
-        handleResize();
+        handleResize();        
+
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -103,6 +140,7 @@ export default function viewArticle(props) {
 
     return (
     <div id='wrapper' className={inter.className}> 
+    <div id="aa">This is a test div.</div>
         <Head>
             <title>{`${getArticleData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -118,7 +156,7 @@ export default function viewArticle(props) {
             <link rel="canonical" href={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>
+        <main>      
             <div className="viewArticlePage" style={{ paddingTop:getArticleData.has_cover_img === 0 ? paddingTop : "" }}>   
                 {getArticleData.has_cover_img === 1
                 ?   <div className="coverImgBanner">
