@@ -39,12 +39,12 @@ export default function viewArticle(props) {
         // 'id':'21697024903',
         // 'type':'news.tvbs.com.tw_pc_index_top',
         // 'id':'31610311',
-        // 'type':'esg.tvbs.com.tw_m_read_in1',
+        // 'type':'esg.tvbs.com.tw_pc_read_in1',
         
         let adType=[
             {
                 'id':'31610311',
-                'type':'esg.tvbs.com.tw_m_read_in1',
+                'type':'esg.tvbs.com.tw_pc_read_in1',
                 'size':[[970,250],[1, 1]],
                 'style':['adPc1','adPc1-2'],
                 'mode':'pc'
