@@ -5,4 +5,4 @@ User-agent: Facebot
 Allow: /
 
 User-agent: *
-Disallow:
+Allow: /
