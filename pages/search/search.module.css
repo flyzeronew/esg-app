@@ -73,7 +73,7 @@
     aspect-ratio: 16/9;
 }
 .searchPage .list .imgMoBox{
-    width: 30%;
+    width: 35%;
     display: none;
 }
 .searchPage .list .imgMoBox .img{
@@ -105,10 +105,10 @@
     }
     .searchPage .list .txt {        
         display: flex;
-        column-gap: 15px;
+        column-gap: 10px;
     }
     .searchPage .list .txt p{
-        width: 70%;
+        width: 65%;
         height: 70px;
         font-size: 14px;
         line-height: 24px;
