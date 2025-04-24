@@ -51,7 +51,7 @@
     justify-content: center; 
     align-items: center;
     transition: 0.3s;
-    padding: 10px 15px;
+    padding-bottom: 5px;
 }
 .pageJump .btn a.act,.pageJump .btn a:hover{
     background-color: #00D221;
@@ -74,7 +74,6 @@
     }
     .pageJump .btn a{
         font-size: 24px;
-        padding: 10px;
     }
     .pageJump .lastTxt{
         font-size: 14px;
