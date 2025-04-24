@@ -109,6 +109,7 @@
     }
     .searchPage .list .txt p{
         width: 70%;
+        height: 70px;
         font-size: 14px;
         line-height: 24px;
     }
