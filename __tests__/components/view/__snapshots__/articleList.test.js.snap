@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article Component renders article unchanged 1`] = `
+<div>
+  <li>
+    <a
+      href="/view/environment/1"
+    >
+      <div
+        class="img"
+      >
+        <img
+          alt="img"
+          height="315"
+          loading="lazy"
+          src="https://esg.testing.tvbs.com.tw/test.jpg"
+          width="559"
+        />
+      </div>
+      <h2
+        class="txt"
+      >
+        Partner title here
+      </h2>
+      <div
+        class="name"
+      >
+        <div
+          class="nameImg"
+        >
+          <div
+            class="img1"
+          >
+            <img
+              alt="logo"
+              height="50"
+              loading="lazy"
+              src="https://esg.testing.tvbs.com.tw/testavt.jpg"
+              width="50"
+            />
+          </div>
+        </div>
+        <p>
+          Partner test
+        </p>
+      </div>
+    </a>
+  </li>
+</div>
+`;
+
+exports[`Article List component renders the Article list unchanged 1`] = `
+<div>
+  <div
+    class="list"
+  >
+    <ul>
+      <li>
+        <a
+          href="/view/environment/1"
+        >
+          <div
+            class="img"
+          >
+            <img
+              alt="img"
+              height="315"
+              loading="lazy"
+              src="https://esg.testing.tvbs.com.tw/test.jpg"
+              width="559"
+            />
+          </div>
+          <h2
+            class="txt"
+          >
+            Partner title here
+          </h2>
+          <div
+            class="name"
+          >
+            <div
+              class="nameImg"
+            >
+              <div
+                class="img1"
+              >
+                <img
+                  alt="logo"
+                  height="50"
+                  loading="lazy"
+                  src="https://esg.testing.tvbs.com.tw/testavt.jpg"
+                  width="50"
+                />
+              </div>
+            </div>
+            <p>
+              Partner test
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/view/environment/2"
+        >
+          <div
+            class="img"
+          >
+            <img
+              alt="img"
+              height="315"
+              loading="lazy"
+              src="https://esg.testing.tvbs.com.tw/test.jpg"
+              width="559"
+            />
+          </div>
+          <h2
+            class="txt"
+          >
+            Another Test Article
+          </h2>
+          <div
+            class="name"
+          >
+            <p>
+              Test Name
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

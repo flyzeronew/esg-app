@@ -1,0 +1,566 @@
+
+/* 永續生活小撇步內頁 tips*/
+.tipsDetailPage .contentBox{
+    padding:20px 32px 0;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    column-gap: 80px;
+}
+.tipsDetailPage .contentBox .imgBox{
+    width: 40%;
+    position: relative;
+}
+.tipsDetailPage .contentBox .imgBox .fixBox{
+    width: 720px;
+    position: fixed;
+    z-index: 1;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.tipsDetailPage .contentBox .imgBox .fixBox.act{
+    position: relative;
+}
+.tipsDetailPage .contentBox .imgBox.act{
+    display: flex;
+    align-items: flex-end;
+}
+.answerText {
+    color: #333;
+    font-family: var(--font-family-noto);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: var(--font-weight-regular);
+    line-height: 6px;
+}
+@media (max-width:1919px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 630px;
+    }
+}
+@media (max-width:1599px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 500px;
+    }
+}
+@media (max-width:1365px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 480px;
+    }
+}
+@media (max-width:1279px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 390px;
+    }
+}
+@media (max-width:1023px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 300px;
+    }
+    .answerText {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+@media (max-width:767px) {
+    .tipsDetailPage .contentBox .imgBox .fixBox{
+        width: 100%;
+        position: relative;
+    }
+}
+
+.tipsDetailPage .contentBox .txtBox{
+    width: 40%;
+}
+.checkbox{
+    margin-bottom: 30px;
+}
+.checkbox label{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+}
+.checkbox label .inputArea{
+    width: 25px;
+    height: 25px;
+}
+.checkbox label input[type="checkbox"]{
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+.checkbox label input[type=checkbox]:checked{
+    background-color: #FFDC34;
+    transition: 0.3s;
+}
+
+/* .checkbox label .blueTheme  input[type=checkbox]:checked::after{
+    color: red;
+} */
+.checkbox label .blueTheme input[type="checkbox"]:checked::before {
+    color: white;
+}
+.checkbox label input[type="checkbox"]:checked::before {
+    content: ''; 
+    position: absolute;
+    left:3px;
+    top:-2px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.checkbox label input[type="checkbox"]:checked::after{
+    /* content: '✔';  */
+    content: '\2714 \fe0e';
+    position: absolute;
+    left:3px;
+    top:-2px;
+    font-size: 18px;
+    color: #333333;
+}
+ .tagEducationColor input[type=checkbox]:checked::after{
+    background-color: #00422C;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+/* Genre colors if required starts from here */
+.checkbox label .tagFoodColor label input[type=checkbox]:checked{
+    background-color: #FFC400;
+    color: #333333;
+  }
+.checkbox label .tagFoodColor input[type=checkbox]:checked::after{
+    color: #333333;
+}
+.checkbox label .tagClothingColor input[type=checkbox]:checked{
+    background-color: #E2F6F9;
+    transition: 0.3s;
+  }
+.checkbox label .tagClothingColor input[type=checkbox]:checked::after{
+    color: #333333;
+}
+.checkbox label .tagHousingColor input[type=checkbox]:checked{
+    background-color: #D1FFE0;
+    transition: 0.3s;
+  }
+.checkbox label .tagHousingColor input[type=checkbox]:checked::after{
+    color: #333333;
+}
+.checkbox label .tagTransportColor input[type=checkbox]:checked{
+    background-color: #00BAFF;
+    transition: 0.3s;
+  }
+.checkbox label .tagTransportColor input[type=checkbox]:checked::after{
+    color: #333333;
+}
+.checkbox label .tagEntertainmentColor input[type=checkbox]:checked{
+    background-color: #001C48;
+    transition: 0.3s;
+  }
+.checkbox label .tagEntertainmentColor input[type=checkbox]:checked::after{
+    color: #FFFFFF;
+}
+.checkbox label .tagEducationColor input[type=checkbox]:checked{
+    background-color: #00422C;
+    transition: 0.3s;
+  }
+.checkbox label .tagEducationColor input[type=checkbox]:checked::after{
+    color: #FFFFFF;
+}
+
+/* Genre colors if required starts Ends here */
+
+
+.tipsDetailPage .contentBox .txtBox .btn{
+    width: max-content;
+    display:flex;
+    align-items: center;
+    column-gap: 15px;
+    overflow: hidden;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    padding:10px 10px 10px 25px;
+    background-color: #fff;
+    border-radius: 60px;
+    border: 1px solid #333;
+    line-height: 0;
+    cursor: pointer;
+}
+.tipsDetailPage .contentBox .txtBox .arraw{
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background-color: #FFDC34;
+    border-radius:60px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;    
+}
+.tipsDetailPage .contentBox .txtBox .arraw img{
+    width: 50%;
+    aspect-ratio: 1/1;
+}
+
+.tipsDetailPage .contentBox .tag {
+    background-color: #FFDC34;
+    width: 60px;
+    height:60px;
+    aspect-ratio: 1 / 1;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 0;
+}
+.tipsDetailPage .contentBox .title {
+    font-size: 50px;
+    font-family: var(--font-family-noto);
+    font-weight: 600;
+    line-height: 101px;
+    letter-spacing: 0.04em;
+    width: auto;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.tipsDetailPage .contentBox .answer.no {
+    min-height: 0px;
+}
+.tipsDetailPage .contentBox .answer{
+    margin: 80% 0 30%;
+    min-height: 500px;
+}
+.tipsDetailPage .contentBox .onlyanswer{
+    margin: 50px 0;
+    min-height: 400px;
+}
+.onlyAnswerContent{
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+.tipsDetailPage .contentBox .answer .tipsContent{
+    margin-bottom: 50px;
+    font-size: 20px; /* This is only for adapting to default size of editor*/
+}
+.tipsDetailPage .contentBox .answer .line{
+    width: 30px;
+    height: 2px;
+    margin: 0 auto 50px;
+    background-color: #00D221;
+    display:none;
+}
+.time{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #999999;
+}
+.tipsDetailPage .contentBox .answer .answerTxtBox{
+    margin-bottom: 50px;
+}
+.tipsDetailPage .contentBox .answer .answerTxtBox .answerTitle{
+    font-family: PingFang TC;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    margin-bottom: 30px;
+}
+.tipsDetailPage .contentBox .answer .answerTxtBox p{
+    font-family: PingFang TC;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+}
+.tipsDetailPage .contentBox .answer .title{
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    letter-spacing: 0em;
+    display: flex;
+    align-items: center;
+    column-gap:15px;
+}
+
+.tipsDetailPage .contentMore .tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height:40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 0;
+}
+.tipsDetailPage .title{
+    width: 100%;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding:0 15px 20px;
+}
+.tipsDetailPage .contentMore{
+    background-color: #F2F2F2;
+    padding:40px 0 40px;
+    border-radius: 20px 20px 0 0;
+}
+.tipsDetailPage .contentMore .frameBox{
+    width: 1140px;
+    margin: 0 auto;
+}
+.tipsDetailPage .contentMore .listBox{position: relative;}
+.tipsDetailPage .contentMore .listBox .arraw{
+    display:none;
+}
+.tipsDetailPage .contentMore .list ul{
+    display: flex;
+    column-gap: 30px;
+}
+.tipsDetailPage .contentMore .list ul li{
+    width: calc((100% - 60px) / 3);
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 20px 20px 20px 0;
+}
+.tipsDetailPage .contentMore .list .txtBox{    
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.tipsDetailPage .contentMore .list .txtFlex{    
+    display: flex;
+    align-items: flex-end;
+}
+.tipsDetailPage .contentMore .list .txtFlex .txt{
+    max-width:80%;
+    background-color: #F2F2F2;
+    padding:15px;
+    border-radius: 0 20px 0 0;
+}
+.tipsDetailPage .contentMore .rounded{
+    width: 20px;
+}
+.tipsDetailPage .contentMore .list .txtFlex .txt p{
+    font-size: 24px;
+    font-family: var(--font-family-noto);
+    font-weight: var(--font-weight-medium);
+    line-height: 36px;
+    letter-spacing: 0.48px;
+    color: #333333;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+@media (max-width:1919px) {
+  
+    .tipsDetailPage .contentBox .answer{
+        min-height: 300px;
+    }
+}
+@media (max-width:1599px) {
+    .tipsDetailPage .contentBox {
+        column-gap: 50px;
+    }
+    .tipsDetailPage .contentBox .txtBox {
+        width: 50%;
+    }
+}
+@media (max-width:1365px) {
+    .tipsDetailPage .contentBox .title {
+        font-size: 50px;
+        line-height: 70px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width:1279px) {
+    .tipsDetailPage .contentBox .title {
+        font-size: 40px;
+        line-height: 60px;
+        margin-bottom: 30px;
+    }
+    .tipsDetailPage .contentMore .frameBox{
+        width: 100%;
+        margin: 0 auto;
+        padding:0 15px;
+    }
+}
+@media (max-width:1023px) {
+    .tipsDetailPage .contentBox {
+        column-gap: 30px;
+    }
+    .tipsDetailPage .contentBox .title {
+        font-size: 30px;
+        line-height: 45px;
+        margin-bottom: 20px;
+    }
+    .tipsDetailPage .contentBox .tag {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .tipsDetailPage .contentBox {
+        padding: 0 15px;
+    }
+    .tipsDetailPage .contentMore .list .txtFlex .txt p {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+    }
+    .tipsDetailPage .contentMore .list .txtFlex .txt {
+        padding: 10px;
+    }
+    .tipsDetailPage .contentBox .txtBox .btn{
+        font-size: 20px;        
+    }
+    .tipsDetailPage .contentBox .txtBox .arraw{
+        width: 30px;
+        height: 30px;
+    }
+    .tipsDetailPage .contentBox .answer .title{        
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 48px;
+        letter-spacing: 0em;
+    }
+    
+    .tipsDetailPage .contentBox .answer .answerTxtBox p{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        text-align: justify;
+    }
+    .tipsDetailPage .contentMore .list .txtFlex .txt p{
+        font-size: 18px;
+    }
+}
+@media (max-width:767px) {
+    .tipsDetailPage .contentBox .answer .tipsContent h1{
+        font-size: 28px;
+        text-align: center;
+    }
+    .tipsDetailPage .contentBox .answer .line{
+        display:block;
+    }
+    .tipsDetailPage .contentMore .listBox .arraw{
+        position:absolute;
+        top:30%;
+        right:10px;
+        display:block;
+        z-index: 1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 60px;
+    }
+    .tipsDetailPage .contentMore .frameBox{
+        padding:0 0 0 15px;
+    }
+    .tipsDetailPage .contentBox {
+        padding: 0;
+        display: block;
+    }
+    .tipsDetailPage .contentBox .imgBox .box ,.tipsDetailPage .contentBox .txtBox{
+        width: 100%;
+        border-radius: 0;
+    }
+    .tipsDetailPage .contentBox .txtBox{
+        padding:0 15px;
+    }
+    .tipsDetailPage .contentBox .imgBox {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .tipsDetailPage .contentBox .title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 44px;
+        letter-spacing: 0.04em;
+        text-align: center;
+        justify-content: center;
+    }
+    .tipsDetailPage .contentBox .tag{
+        display: none;
+    }
+
+    .tipsDetailPage .contentBox .txtBox .checkbox{
+        width: 50%;
+        margin: 0 auto 50px;
+    }
+    .tipsDetailPage .contentBox .txtBox .btn{
+        font-size: 20px;
+        margin:0 auto ;
+    }
+    .tipsDetailPage .contentBox .txtBox .arraw{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .tipsDetailPage .title {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 39px;
+        letter-spacing: 0.02em;
+    }
+    .tipsDetailPage .contentMore .list{
+        overflow-x: auto;
+    }
+    .tipsDetailPage .contentMore .list::-webkit-scrollbar {
+        width: 0;
+    }
+    .tipsDetailPage .contentMore .list ul{
+        width: 150%;
+        column-gap:20px;
+    }
+    .tipsDetailPage .contentBox .txtBox .checkbox{
+        width: 85%;
+    }
+}
+@media (max-width:414px) {
+    .tipsDetailPage .contentMore .list ul{
+        width: 250%;
+    }
+}
+@media (max-width:413px) {
+    .tipsDetailPage .title{
+        padding: 0 0px 20px;
+    }
+    
+}
+@media (max-width:359px) {
+    .tipsDetailPage .contentBox .txtBox .checkbox{
+        width: 70%;
+    }
+}
+/* 永續生活小撇步內頁ed*/

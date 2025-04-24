@@ -1,13 +1,15 @@
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Header from '../../comps/Header'
-import Footer from '../../comps/Footer'
+import Header from '../../comps/Header/Header'
+import Footer from '../../comps/Footer/Footer'
 import { useRouter } from 'next/router'
 import React, { Component } from "react"
+import styles from './partner.module.css';
+import classNames from 'classnames/bind';
+import { genericPageService } from '@/services/cms/apisCMS';
 
+const cx = classNames.bind(styles);
 
-const inter = Inter({ subsets: ['latin'] })
 export default function Partner(props) {
     const appUrl = process.env.APP_URL;
     const detail = props.detailData;    
@@ -68,7 +70,7 @@ const otherArticlesSum = otherArticles.reduce((acc, cur) => acc + cur.status, 0)
         };
     }, []); 
 return (
-    <div id='wrapper' className={inter.className}> 
+    <div id='wrapper'> 
         <Head>
             <title>{"夥伴名 ESG共好夥伴 - TVBS ESG專區"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -79,33 +81,33 @@ return (
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
             {detail?
-            <div className="partnerDetailPage">
-                <div className="bannerArea">
-                    <div className="coverImgBanner" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.cover_img ? detail.cover_img : process.env.IMG_DEFAULT})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                        <h1 className="partnerName">{detail.name}</h1>
+            <div className={cx("partnerDetailPage")}>
+                <div className={cx("bannerArea")}>
+                    <div className={cx("coverImgBanner")} style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.cover_img ? detail.cover_img : process.env.IMG_DEFAULT})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                        <h1 className={cx("partnerName")}>{detail.name}</h1>
                     </div>
-                    <div className="introduceArea">
-                        <div className="introduceCard">
-                            <div className="avatar">
+                    <div className={cx("introduceArea")}>
+                        <div className={cx("introduceCard")}>
+                            <div className={cx("avatar")}>
                                 <img src={detail.avatar ? detail.avatar : process.env.IMG_DEFAULT_SQUARE} alt="img" width={140} height={140}/> 
                             </div>
-                            <div className="detail">
+                            <div className={cx("detail")}>
                                 {detail.introduction}
                             </div>
-                            <div className="leftPic">
+                            <div className={cx("leftPic")}>
                                 <img src={"/images/Rectangle-left.svg"} alt="img" width={30} height={30}/> 
                             </div>
-                            <div className="rightPic">
+                            <div className={cx("rightPic")}>
                                 <img src={"/images/Rectangle-right.svg"} alt="img" width={30} height={30}/> 
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div className="linksArea">
+                <div className={cx("linksArea")}>
                 {/* pc */}
                 {detail.partner_links.map((item, index) => (
-                    <div key={index} className={`${pcLinksArr[index][0]} items pc`} style={{ 
+                    <div key={index} className={cx(pcLinksArr[index][0],"items", "pc")} style={{ 
                         background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${item.image_url ? item.image_url : pcLinksArr[index][1]})  no-repeat center center / 105%`,
                         backgroundSize: index === imgHover ? `130%` : `105%`,
                         transition: 'background-size 0.3s',
@@ -113,10 +115,10 @@ return (
                             onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}
                     >
                         <a target={item.link_type ? `_blank` : ""} href={item.link_url}>
-                            <div className="linkArea">
-                                <div className="linkCard">
-                                    <h3 className="title">{item.link_title}</h3>
-                                    <div className="linkIcon">
+                            <div className={cx("linkArea")}>
+                                <div className={cx("linkCard")}>
+                                    <h3 className={cx("title")}>{item.link_title}</h3>
+                                    <div className={cx("linkIcon")}>
                                         <img src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
                                     </div>
                                 </div>
@@ -127,19 +129,19 @@ return (
 
                 {/* mobile */}
                 {moLinksIndexArr.map((item, index) => (
-                        <div key={index}  className={`${item[1]} items mo`}  style={{ 
+                        <div key={index}  className={cx(item[1],"items", "mo")}   style={{ 
                             background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.partner_links[item[0]].image_url ? detail.partner_links[item[0]].image_url : item[2]})  no-repeat center center / 105%`,
                             backgroundSize: index === imgHover ? `130%` : `105%`,
                             transition: 'background-size 0.3s',
                                 }}
                                 onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
                         <a target={detail.partner_links[item[0]].link_type ? `_blank` : ""} href={detail.partner_links[item[0]].link_url}>
-                            <div className="linkArea">
-                                <div className="linkCard">
-                                    <div className="title">
+                            <div className={cx("linkArea")}>
+                                <div className={cx("linkCard")}>
+                                    <div className={cx("title")}>
                                         {detail.partner_links[item[0]].link_title}
                                     </div>
-                                    <div className="linkIcon">
+                                    <div className={cx("linkIcon")}>
                                         <img src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
                                     </div>
                                 </div>
@@ -149,24 +151,24 @@ return (
                 ))}
                 </div>
                 {detail.partner_pages?
-                <div className="firstParagraph">    
-                    <h2 className="wordsTitle">{detail.partner_pages[0].title}</h2>
-                    <div className="wordsTxt">{detail.partner_pages[0].content}</div>
+                <div className={cx("firstParagraph")}>    
+                    <h2 className={cx("wordsTitle")}>{detail.partner_pages[0].title}</h2>
+                    <div className={cx("wordsTxt")}  dangerouslySetInnerHTML={{ __html: detail.partner_pages[0].content }}></div>
                 </div>
                 :""}
-                {detail?
-                    <div className="videoClick" onClick={handleClick}>
+                {detail && detail.youtube_id?
+                    <div className={cx("videoClick")} onClick={handleClick}>
                         {clicked ? 
-                        <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
+                        <div className={cx("videoArea")}  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
                             <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${detail.youtube_id}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
                         </div> 
                         : 
-                        <div className="videoArea"  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url ? detail.video_cover_url : process.env.IMG_DEFAULT})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
-                            <div className="videoCard">
-                                <div className="videoTitle">
+                        <div className={cx("videoArea")}  style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${detail.video_cover_url ? detail.video_cover_url : process.env.IMG_DEFAULT})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} >
+                            <div className={cx("videoCard")}>
+                                <div className={cx("videoTitle")}>
                                     {detail.video_title}
                                 </div>
-                                <div className="play">
+                                <div className={cx("play")}>
                                     <img src={"/images/play-icon.svg"} alt="img" width={48} height={48}/> 
                                 </div>
                             </div>
@@ -175,16 +177,16 @@ return (
                     </div>
                 :""}
                 {detail.partner_pages?
-                <div className="secondParagraph">
-                    <h2 className="wordsTitle">{detail.partner_pages[1].title}</h2>
-                    <div className="wordsTxt">{detail.partner_pages[1].content}</div>
+                <div className={cx("secondParagraph")}>
+                    <h2 className={cx("wordsTitle")}>{detail.partner_pages[1].title}</h2>
+                    <div className={cx("wordsTxt")}  dangerouslySetInnerHTML={{ __html: detail.partner_pages[1].content }}></div>
                 </div>
                 :""}
                 {/* 永續觀點的文章頁 */}
                 {otherArticles.length > 0 && otherArticlesSum > 0 ? 
-                    <div className="moreGoodNewsArea">
-                        <div className="title">更多共好消息</div>
-                        <div className="list">
+                    <div className={cx("moreGoodNewsArea")}>
+                        <div className={cx("title")}>更多共好消息</div>
+                        <div className={cx("list")}>
                             <ul>
                                 {otherArticles.map((item, index) => (  
                                     <React.Fragment key={index}>
@@ -198,9 +200,9 @@ return (
                                                 onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
                                             >
                                                 <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
-                                                    <div className="articleCard">
-                                                        <div className="articleTitle">{item.title}</div>
-                                                        <div className="linkIcon">
+                                                    <div className={cx("articleCard")}>
+                                                        <div className={cx("articleTitle")}>{item.title}</div>
+                                                        <div className={cx("linkIcon")}>
                                                             <img src={"/images/icon_arraw04.svg"} alt="img" width={36} height={36}/> 
                                                         </div>
                                                     </div>
@@ -218,8 +220,8 @@ return (
             </div>
             :''}
         </main>
-        <div className="footerLine">
-            <div className="box"></div>
+        <div className={cx("footerLine")}>
+            <div className={cx("box")}></div>
         </div>
         <Footer />
     </div>
@@ -230,9 +232,7 @@ export async function getServerSideProps(context) {
     const { params } = context;
     const { partner } = params;
     // menu
-    const menuUrl = new URL('/api/menu', process.env.APP_URL);
-    const menuRes = await fetch(menuUrl);
-    const menu = await menuRes.json();
+    const menu =  await genericPageService.getMenu();
     // list
     const partnerUrl = new URL('/api/partners', process.env.API_URL);
     const partnerRes = await fetch(partnerUrl);    

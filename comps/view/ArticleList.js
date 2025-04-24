@@ -1,41 +1,44 @@
-import React, { Component } from "react"
+import styles from "./ArticleList.module.css";
 
-function ArticleList(props) {
-    const appUrl = process.env.APP_URL;
-    return (        
+export const Article = ({ articleData, index }) => {
+    return (
         <>
-            <div className='list'>
-                <ul>
-                    {props.articleList.length > 0 ? props.articleList.map((item, index) => (
-                        <React.Fragment key={index}>
-                            { item.article_genres[0].id == props.genreId || props.genreId == null ?                         
-                                <li >                            
-                                    <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
-                                        <div className='img'>
-                                            <img src={item.cover_img ? item.cover_img : process.env.IMG_DEFAULT} alt="img" width={559} height={315} loading="lazy"/>
-                                        </div>
-                                        <h2 className='txt'>{item.title}</h2>
-                                        <div className='name'>
-                                            {item.partner != null ? 
-                                            <>
-                                                <div className='nameImg'>
-                                                    <div className='img1'>
-                                                        <img src={item.partner.avatar} alt="logo" width={50} height={50} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                                <p>{item.partner.name}</p>
-                                            </>
-                                            :<p>{item.author_name}</p>}                                            
-                                        </div>
-                                    </a>
-                                </li> :''
-                            }
-                        </React.Fragment>                     
-                    )):''
-                    }
-                </ul>
-            </div>
+            <li key={index}>
+                <a href={`/view/${articleData.article_genres[0].en_name}/${articleData.id}`}>
+                    <div className={styles.img}>
+                        <img src={articleData.cover_img ? articleData.cover_img : process.env.IMG_DEFAULT} alt="img" width={559} height={315} loading="lazy" />
+                    </div>
+                    <h2 className={styles.txt}>{articleData.title}</h2>
+                    <div className={styles.name}>
+                        {articleData.partner != null ?
+                            <>
+                                <div className={styles.nameImg}>
+                                    <div className={styles.img1} >
+                                        <img src={articleData.partner.avatar} alt="logo" width={50} height={50} loading="lazy" />
+                                    </div>
+                                </div>
+                                <p>{articleData.partner.name}</p>
+                            </>
+                            : <p>{articleData.author_name}</p>}
+                    </div>
+                </a>
+            </li>
+    
         </>
     )
 }
+const ArticleList = ({ articleList }) => {
+    return (
+        <div className={styles.list}>
+            <ul>
+                {articleList?.map((articleData, index) => (
+                    <Article key={index} articleData={articleData} index={index}></Article>
+                ))
+                }
+            </ul>
+        </div>
+    )
+}
+
+
 export default ArticleList;

@@ -1,19 +1,21 @@
-FROM node:lts-alpine3.19 as builder
+FROM node:20.18.0-alpine3.19 as builder
 
 WORKDIR /app
 
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 
-RUN npm i
+RUN npm install -g npm@latest && \
+    npm i
 
-FROM node:lts-alpine3.19
+FROM node:20.18.0-alpine3.19
 
 WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
 COPY . .
 
-RUN npm run build 
+RUN npm install -g npm@latest && \
+    npm run build
 
 EXPOSE 3000
 

@@ -1,8 +1,10 @@
 import React, { Component } from "react"
-import Slider from "react-slick"
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import classnames from "classnames/bind"
+import styles from './ViewList.module.css';
+import CustomSlider from "../CustomSlider/CustomSlider";
 
+
+const cx = classnames.bind(styles)
 function ViewList(props) {
     const appUrl = process.env.APP_URL;
     const articles = props.articles;
@@ -18,24 +20,24 @@ function ViewList(props) {
         autoplaySpeed:5000, 
     };  
     return (        
-        <div className="view">
-            <Slider {...settings}>
+        <div className={cx("view")}>
+            <CustomSlider settings={settings} customClass={"viewList"}>
                 {articles.length > 0 ?
                     articles.map((item, index) => (
                         <a key={index} href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`} >
-                            <div className="img">
+                            <div className={cx("img")} >
                                 <img src={item.cover_img} alt="img" width={1920} height={1080} loading='lazy'/>  
                             </div>
-                            <div className="category">
+                            <div className={cx("category")}>
                                 <span>永續觀點</span>
-                                <div className="line"></div>
+                                <div className={cx("line")}></div>
                                 <span>{item.article_genres[0].name}</span>
                             </div>
-                            <div className="txt">{item.title}</div>
+                            <div className={cx("txt")}>{item.title}</div>
                         </a>
                     ))
                 :""}
-            </Slider>
+            </CustomSlider>
         </div> 
     )
 }

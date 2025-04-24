@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component renders footer unchanged 1`] = `
+<div>
+  <footer
+    class="footer"
+  >
+    © TVBS Media Inc. All Rights Reserved 
+    <br />
+    聯利媒體股份有限公司
+  </footer>
+</div>
+`;

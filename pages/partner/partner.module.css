@@ -1,0 +1,477 @@
+/* 共好夥伴內頁 */
+.partnerDetailPage .bannerArea{
+    margin-bottom: 48px;
+}
+.partnerDetailPage iframe {
+    width: 100%;
+    margin: auto;
+}
+@media (max-width:767px) {  
+    .partnerDetailPage .bannerArea{
+        margin-bottom: 0;
+    }
+}
+@media (max-width:414px) {  
+    .partnerDetailPage .bannerArea{
+        margin-bottom: 48px;
+    }
+}
+.partnerDetailPage .coverImgBanner{
+    width: 100%;
+    height: 830px;
+    overflow: hidden;
+    display: flex;
+    border-radius: 0px 0px 30px 30px;
+} 
+@media (max-width:1476px) {   
+    .partnerDetailPage .coverImgBanner{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        overflow: visible;
+    }
+} 
+.partnerDetailPage .coverImgBanner .partnerName{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2.56px;
+}
+.partnerDetailPage .bannerArea .introduceArea{
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard{
+    border-radius: 30px 30px 0px 0px;
+    margin-top: -176px;
+    width: 710px;
+    /* height: 378px; */
+    background-color: white;
+    position: relative;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+    position: absolute;
+    top:146px;
+    left: -30px;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+    position: absolute;
+    top:146px;
+    right: -30px;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 36px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard{
+        margin-top: -86px;
+        width: 331px;
+        /* height: 460px; */
+    } 
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+        top:56px;
+        left: -30px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+        top:56px;
+        right: -30px;
+    }
+}
+@media (max-width:565px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 24px;
+    }
+}
+@media (max-width:414px) {
+    .partnerDetailPage .coverImgBanner .partnerName{
+        font-size: 20px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard{
+        margin-top: -66px;
+        width: 250px;
+        /* height: 460px; */
+    } 
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .leftPic{
+        top:36px;
+        left: -30px;
+    }
+    .partnerDetailPage .bannerArea .introduceArea .introduceCard .rightPic{
+        top:36px;
+        right: -30px;
+    }
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar{
+    padding: 36px 36px 0 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .avatar img{
+    width: 140px;
+    height: 140px;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail{
+    margin-top: 36px;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    padding: 32px 36px;
+    position: relative;
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: black; /* 设置边框的颜色 */
+}
+.partnerDetailPage .bannerArea .introduceArea .introduceCard .detail::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: #333; /* 设置边框的颜色 */
+}
+.partnerDetailPage .linksArea{
+    width: 1244px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 24px;
+    /* row-gap: 61px; */
+}
+.partnerDetailPage .linksArea .items{
+    border-radius: 30px;
+}
+.partnerDetailPage .linksArea .items img{
+    border-radius: 30px;
+}
+.partnerDetailPage .linksArea .items .linkArea{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.partnerDetailPage .linksArea .items .linkArea .title{
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    padding:0 20px ;
+}
+.partnerDetailPage .linksArea .items .linkArea .linkIcon{
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+    transform:rotate(0);
+    transition: 0.3s; 
+}
+.partnerDetailPage .linksArea .items:hover .linkIcon{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+}
+.partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
+    width: 768px;
+    height: auto;
+    aspect-ratio: 16/9;
+
+}
+.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third{
+    width: 452px;
+    height: 452px;
+    aspect-ratio: 1/1;
+
+}
+.partnerDetailPage .linksArea .first{
+    margin-bottom: 61px;
+}
+.partnerDetailPage .linksArea .second{
+    margin-top: 56px;
+}
+.partnerDetailPage .linksArea .fourth{
+    margin-top: 61px;
+} 
+.partnerDetailPage .linksArea .pc{
+    display: block;
+}
+.partnerDetailPage .linksArea .mo{
+    display: none;
+}
+@media (max-width:1245px) {
+    .partnerDetailPage .linksArea{
+        width: 767px;
+    }
+    .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .fourth{
+        width: 468px;
+        height: auto;
+        aspect-ratio: 16/9;
+    
+    }
+    .partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third{
+        width: 275px;
+        height: 275px;
+        aspect-ratio: 1/1;
+    
+    }
+}
+@media (max-width:767px) {
+    .partnerDetailPage .linksArea{
+        width:100%;
+        display: flex;
+        padding: 15px;
+        row-gap: 24px;
+    }
+    .partnerDetailPage .linksArea .first,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .second,.partnerDetailPage .linksArea .third,.partnerDetailPage .linksArea .fourth{
+        width: 100%;
+        height: 100%;
+    }
+    .partnerDetailPage .linksArea .first{
+        margin-bottom: 0px;
+    }
+    .partnerDetailPage .linksArea .second{
+        margin-top: 0px;
+    }
+    .partnerDetailPage .linksArea .fourth{
+        margin-top: 0px;
+    }
+    .partnerDetailPage .linksArea .pc{
+        display: none;
+    }
+    .partnerDetailPage .linksArea .mo{
+        display: block;
+    }
+}
+.partnerDetailPage .firstParagraph{
+    margin: 80px 0px;
+    text-align: center;
+    color: #333;
+}
+.partnerDetailPage .firstParagraph .wordsTitle{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 24px;
+}
+.partnerDetailPage .firstParagraph .wordsTxt{
+    margin: 0 auto;
+    width: 638px;
+    padding-top: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+}
+.partnerDetailPage .firstParagraph .wordsTxt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* 将伪元素定位到盒子的中间 */
+    transform: translateX(-50%);
+    height: 1px; /* 设置边框的高度 */
+    width: 28px; /* 设置边框的宽度 */
+    background-color: #333; /* 设置边框的颜色 */
+}
+@media (max-width:767px) {
+    .partnerDetailPage .firstParagraph .wordsTitle{
+        font-size: 28px;
+    }
+    .partnerDetailPage .firstParagraph .wordsTxt{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 18px;
+    }
+}
+.partnerDetailPage .videoClick{
+    cursor: pointer;
+}
+.partnerDetailPage .videoArea {
+    width: 100%;
+    height: 521px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+@media (max-width:926px) {
+    .partnerDetailPage .videoArea {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+.partnerDetailPage .videoArea .videoCard{
+
+}
+.partnerDetailPage .videoArea .videoCard .videoTitle{
+    text-align: center;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    padding:0 20px;
+    padding-bottom: 16px;
+}
+.partnerDetailPage .videoArea .videoCard .play{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .videoArea .videoCard .videoTitle{
+        font-size: 24px;
+        letter-spacing: 0.48px;
+    }
+    .partnerDetailPage .videoArea .videoCard .play{
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.partnerDetailPage .secondParagraph{
+    margin: 80px 0px;
+    text-align: center;
+    color: #333;
+}
+.partnerDetailPage .secondParagraph .wordsTitle{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding:0 15px;
+    padding-bottom: 24px;
+}
+.partnerDetailPage .secondParagraph .wordsTxt{
+    margin: 0 auto 80px auto;
+    width: 638px;
+    padding-top: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .secondParagraph .wordsTitle{
+        font-size: 28px;
+    }
+    .partnerDetailPage .secondParagraph .wordsTxt{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 18px;
+    }
+}
+.partnerDetailPage .moreGoodNewsArea{
+    padding: 56px 15px;
+    background-color: rgba(217,217,217,0.4);
+}
+.partnerDetailPage .moreGoodNewsArea .title{
+    color: #333;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    margin-bottom: 32px;
+}
+.partnerDetailPage .moreGoodNewsArea .list{
+    display: flex;
+    justify-content: center;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1130px;
+    column-gap: 24px;
+    row-gap: 24px;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li{
+    border-radius: 30px;
+    width: calc((100% - 24px) / 2);
+    height: auto;
+    aspect-ratio: 16/9;
+    background-position: top top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li:hover{
+    background-position: center center;
+    background-size: 125%;
+    transition: 0.3s;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li .articleCard{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li .articleCard .articleTitle{
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    width: 95%;
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li .articleCard .linkIcon{
+    width: 36px;
+    height: 36px;
+    transform:rotate(0);
+    transition: 0.3s; 
+}
+.partnerDetailPage .moreGoodNewsArea .list ul li:hover .articleCard .linkIcon{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+}
+@media (max-width:767px) {
+    .partnerDetailPage .moreGoodNewsArea .title{
+        font-size: 28px;
+    }
+    .partnerDetailPage .moreGoodNewsArea .list ul li{
+        width: 100%;
+    }
+}
+/* 共好夥伴內頁 ed*/

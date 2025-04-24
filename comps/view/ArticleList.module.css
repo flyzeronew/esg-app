@@ -1,0 +1,105 @@
+ .list{
+    width: 1220px;
+    margin: 0 auto 50px;
+}
+ .list ul{
+    display:flex;
+    flex-wrap: wrap;
+    column-gap: 60px;  
+    row-gap: 60px; 
+}
+ .list ul li{
+    width: calc((100% - 60px) / 2);
+}
+ .list ul li:nth-child(even){
+    padding-top: 50px;
+}
+ .list .img{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    aspect-ratio: 16/9;
+    line-height: 0;    
+}
+ .list .name .img{
+    margin-bottom: 0;
+}
+ .list a .img img{
+    transition: transform 0.3s;
+    width: 100%;
+}
+ .list a:hover .img img{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+ .list a:hover .img .playIcon img{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+ .list .txt{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    margin-bottom: 15px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+}
+ .list .name{
+    display:flex;
+    align-items: center;
+    column-gap: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: #666666;
+}
+@media (max-width:1279px) {
+     .list{
+        width: 100%;
+        padding:0 15px;
+    }
+     .list ul{
+        column-gap: 30px;  
+        row-gap: 30px; 
+    }
+     .list ul li{
+        width: calc((100% - 30px) / 2);
+    }
+     .list .txt{
+        font-size: 24px;
+        line-height:normal;
+    }
+     .list .name{
+        font-size: 16px;
+        line-height:normal;
+    }
+
+}
+
+@media (max-width:767px) {
+     .list ul li{
+        width:100%;
+    }
+     .list ul li:nth-child(even){
+        padding-top: 0px;
+    }
+     .list .txt{
+        font-size: 20px;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+     .list .img{
+        overflow: hidden;
+        margin-bottom: 15px;
+        border-radius: 20px;
+    }
+}

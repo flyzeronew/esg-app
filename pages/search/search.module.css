@@ -1,0 +1,130 @@
+.searchPage{
+    font-family: 'Noto Sans TC';
+}
+.searchPage .frameBox{    
+    width: 872px;
+    margin: 0 auto;
+}
+.searchPage .frameBox{
+    width: 872px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+@media (max-width: 1023px) {
+    .searchPage .frameBox{
+        width: 100%;
+        padding:0 16px;
+    }
+}
+.searchPage .results{
+    margin-bottom: 20px;
+}
+.searchPage .greenTxt{
+    color:#00D780;
+}
+.searchPage .related{
+    font-weight: 500;
+    font-size: 18px;
+    margin: 30px 0;
+}
+.searchPage .list{
+    margin-bottom: 30px;
+}
+.searchPage .list a{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+.searchPage .list .txtBox{
+    width: 70%;
+}
+.searchPage .list .title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 2%;
+    margin-bottom: 15px;
+}
+.searchPage .list .time{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 15px;
+    color: #646E78;
+}
+.searchPage .list .txt p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #303D4B;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+}
+.searchPage .list .imgBox{
+    width: 30%;
+}
+.searchPage .list .img{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
+}
+.searchPage .list .imgMoBox{
+    width: 30%;
+    display: none;
+}
+.searchPage .list .imgMoBox .img{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
+}
+.searchPage .list li{
+    border-bottom:1px solid #CDCDCD;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+.searchPage .list li:last-child{
+    border-bottom:0px solid #CDCDCD;
+}
+
+@media (max-width: 1023px) {
+    .searchPage .list a{
+        display: block;
+    }
+    .searchPage .list .imgBox{
+        display: none;
+    }
+    .searchPage .list .title{
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+    .searchPage .list .txt {        
+        display: flex;
+        column-gap: 15px;
+    }
+    .searchPage .list .txt p{
+        width: 70%;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .searchPage .list .imgMoBox{
+        display: block;
+    }
+    .searchPage .list .time{
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .searchPage .list .txtBox{
+        width: 100%;
+    }
+    .searchPage .related{
+        font-weight: 500;
+        font-size: 16px;
+        margin: 30px 0 20px;
+    }
+}

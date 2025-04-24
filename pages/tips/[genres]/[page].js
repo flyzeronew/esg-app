@@ -1,13 +1,15 @@
 import { useState ,useEffect } from 'react'
-import { Inter } from 'next/font/google'
 import Swal from 'sweetalert2'
 import Head from 'next/head'
-import Header from '../../../comps/Header'
-import Footer from '../../../comps/Footer'
-import DetailMainView from '../../../comps/tips/DetailMainView'
+import Header from '../../../comps/Header/Header'
+import Footer from '../../../comps/Footer/Footer'
+import DetailMainView from './../../../comps/tips/detailedMainView/DetailMainView'
+import styles from './[page].module.css';
+import classNames from 'classnames/bind';
+import { genericPageService } from '@/services/cms/apisCMS';
 
-const inter = Inter({ subsets: ['latin'] })
-export default function page(props) {
+const cx = classNames.bind(styles);
+export default function Page(props) {
     // 頁面識別
     const thisPage='tips';
     const ogImg = process.env.OG_IMG;
@@ -23,6 +25,12 @@ export default function page(props) {
     const [selectedOptions, setSelectedOptions] = useState([]);    
     const [scorllStop, setScorllStop] = useState(false);
     //送出答案錨點程式
+    
+    const themeValues = {
+        bgColor: colorMapping[tipsData.genre-1].bgColor,
+        color:colorMapping[tipsData.genre-1].txtColor,
+        classNamesGenre:colorMapping[tipsData.genre-1].color
+    }
     const scrollToAnswer = () => {
         if(selectedOptions.length === 0){
             Swal.fire({
@@ -32,8 +40,8 @@ export default function page(props) {
             });
             return;
         }
-        const answerTop = document.querySelector('.tipsDetailPage .contentBox .answer').offsetTop; 
-        const headerHeight = document.querySelector('header').offsetHeight;        
+        const answerTop = document.querySelector("." + cx('answer')).offsetTop; 
+        const headerHeight = 100;        
         window.scrollTo({
             top: answerTop - headerHeight,
             behavior: 'smooth',
@@ -41,8 +49,6 @@ export default function page(props) {
     }; 
     
     // 選單
-    const optionArr = ['option1','option2','option3','option4'];
-    const answerArr = ['answer1','answer2','answer3','answer4'];
     //選單程式
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
@@ -61,11 +67,12 @@ export default function page(props) {
         return formattedDate;
     };
     useEffect(() => {
-        const contentMore = document.querySelector('.tipsDetailPage .contentMore');  
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const imgBoxHeight = document.querySelector('.tipsDetailPage .fixBox').offsetHeight;
+        const contentMore = document.querySelector("." + cx('contentMore'));  
+        // const headerHeight = document.querySelector("." + cx('header')).offsetHeight;
+        const headerHeight = 100;
+        const imgBoxHeight = document.querySelector("." +  cx('fixBox')).offsetHeight;
         const handleScroll = () => {
-            if (window.scrollY + headerHeight + imgBoxHeight > contentMore.offsetTop) {
+            if (window.scrollY + 100 + imgBoxHeight > contentMore.offsetTop) {
                 setScorllStop(true);             
             } else {
                 setScorllStop(false);
@@ -76,24 +83,9 @@ export default function page(props) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
     return (
-    <div id='wrapper' className={inter.className}>        
-        <style jsx global>{`
-            .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked ,
-            .tipsDetailPage .contentBox .tag,
-            .tipsDetailPage .contentBox .txtBox .arraw,
-            .tipsDetailPage .slick-dots li.slick-active button:before          
-            {
-                background-color: ${colorMapping[tipsData.genre-1].bgColor};
-                color:${colorMapping[tipsData.genre-1].txtColor};
-                transition: 0.3s;
-            }
-            .tipsDetailPage .contentBox .txtBox .checkbox label input[type="checkbox"]:checked::before {
-                color: ${colorMapping[tipsData.genre-1].txtColor};
-            }
-        `}
-        </style>
+    <div id='wrapper'>        
+       
         <Head>
             <title>{`${tipsData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -110,82 +102,95 @@ export default function page(props) {
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
-            <div className="tipsDetailPage">
-                <div className="contentBox">
-                    <div className={`imgBox ${scorllStop ? 'act' : ''}`}>
-                        <div className={`fixBox ${scorllStop ? 'act' : ''}`}>
-                                <DetailMainView data={tipsData} tag={colorMapping[tipsData.genre-1].genre} />
+            <div className={cx("tipsDetailPage")}>
+                <div className={cx("contentBox")}>
+                    <div className={cx('imgBox', scorllStop ? 'act' : '' )}>
+                        <div className={cx('fixBox', scorllStop ? 'act' : '' )}>
+                                <DetailMainView data={tipsData} tag={colorMapping[tipsData.genre-1].genre} themeValues={"tagFoodColor"} />
                         </div>
                     </div>
-                    <div className="txtBox">
-                        <div className="question">
-                            <div className="tag">{colorMapping[tipsData.genre-1].genre}</div>
-                            <h1 className="title">{tipsData.title}</h1>
-                            {tipsData? 
-                            <div className="checkbox">
-                                { optionArr.map((item, index) => (
-                                    tipsData[answerArr[index]] !== null && tipsData[answerArr[index]].trim() !== ''
+                    {(tipsData?.answers.length > 0) && <div className={cx("txtBox")}>
+                        <div className={cx("question")}>
+                            <div className={cx("tag")}>{colorMapping[tipsData.genre-1].genre}</div>
+                            <h1 className={cx("title")}>{tipsData.title}</h1>
+                            { tipsData? 
+                            <div className={cx("checkbox")}>
+                                { tipsData.answers.map((answer, index) => (
+                                    answer !== null && answer.trim() !== ''
                                     ?
                                     <label key={index}>
-                                        <div className="inputArea">
+                                        {/* <div className={cx(themeValues.classNamesGenre)}></div> */}
+                                        <div>
                                             <input
-                                                className={isIOS ? 'ios-only' : ''}
+                                                className={cx(isIOS ? 'ios-only' : '')}
                                                 type="checkbox"
-                                                value={optionArr[index]}
-                                                checked={selectedOptions.includes(optionArr[index])}
+                                                value={index}
                                                 onChange={handleCheckboxChange}
                                             />
                                         </div>
-                                        <span>{tipsData[answerArr[index]]}</span>
+                                        <span className={cx("answerText")}>{answer}</span>
                                     </label>
                                     :''
                                     ))
                                 }
                             </div>
                             :''}
-                            <div className="btn" onClick={scrollToAnswer}>
+                            <div className={cx("btn")} onClick={scrollToAnswer} >
                                 <span>送出答案</span>
-                                <div className="arraw">↓</div>
+                                {/* <div className={cx("arraw")} style={{backgroundColor:themeValues.bgColor,color:themeValues.color}}>↓</div> */}
+                                <div className={cx("arraw")}>↓</div>
                             </div>                   
                         </div>
-                        <div className="answer">
+                        {/* //this for question with answers */}
+                        <div className={cx("answer", 0 === selectedOptions.length  ? "no" : "")}>
                             {selectedOptions.length > 0 ? 
                                 <>
-                                    <div className="title">
+                                    <div className={cx("title")}>
                                         <img src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
                                     </div>
-                                    <div className="line"></div>
-                                    <div  className="tipsContent" dangerouslySetInnerHTML={{ __html: tipsData.content }} />
-                                    <div className="time">{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
+                                    <div className={cx("line")}></div>
+                                    <div  className={cx("tipsContent")} dangerouslySetInnerHTML={{ __html: tipsData.content }} />
+                                    <div className={cx("time")}>{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
                                 </>
                             : ''}
                         </div>
+                    </div>}
+                  { tipsData?.answers.length === 0 &&  <div className={cx("txtBox")}>
+                        <div className={cx("question")}>
+                            <div className={cx("tag")}>{colorMapping[tipsData.genre-1].genre}</div>
+                            <h1 className={cx("title")}>{tipsData.title}</h1>
+                        </div>
+                         {/* wihout any questions Only answers displayed  */}
+                         <div className={cx("onlyanswer")}>
+                            <div  className={cx("onlyAnswerContent")} dangerouslySetInnerHTML={{ __html: tipsData.content }} />
+                            <div className={cx("time")}>{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
+                        </div>
 
-                    </div>
+                    </div>}
                 </div>
 
-                <div className="contentMore">
-                    <div className="title">繼續看</div>
-                    <div className="frameBox">                        
-                        <div className="listBox">
-                            <div className="list">
+                <div className={cx("contentMore")}>
+                    <div className={cx("title")}>繼續看</div>
+                    <div className={cx("frameBox")}>                        
+                        <div className={cx("listBox")}>
+                            <div className={cx("list")}>
                                 <ul>
                                     { keepReading ? keepReading.map((item, index) => (
                                             <li key={index}>
                                                 <a href={`${thisPageUri}/${colorMapping[item.genre-1].en_name}/${item.id}`}>
-                                                    <div className="img">
+                                                    <div className={cx("img")}>
                                                         <img src={item.tip_galleries[0].image_url} alt="img" width={300} height={300} loading='lazy'/>
                                                     </div>
                                                     <div className={`tag ${colorMapping[item.genre-1].color}`}>{colorMapping[item.genre-1].genre}</div>
-                                                    <div className="txtBox">
-                                                        <div className='rounded'>
+                                                    <div className={cx("txtBox")}>
+                                                        <div className={cx("rounded")}>
                                                             <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
                                                         </div>
-                                                        <div className='txtFlex'>
-                                                            <div className='txt'>
+                                                        <div className={cx("txtFlex")}>
+                                                            <div className={cx("txt")}>
                                                                 <p>{item.title}</p>
                                                             </div>
-                                                            <div className='rounded'>
+                                                            <div className={cx("rounded")}>
                                                                 <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
                                                             </div>
                                                         </div>                                   
@@ -200,8 +205,8 @@ export default function page(props) {
                 </div>
             </div>
         </main>
-        <div className="footerLine color1">
-            <div className="box"></div>
+        <div className={cx("footerLine","color1")}>
+            <div className={cx("box")}></div>
         </div>
         <Footer act ='color1'/>
     </div>
@@ -213,9 +218,7 @@ export async function getServerSideProps(context) {
     const isIOS = /iPad|iPhone|iPod/.test(userAgent);
     const { page } = params;
 
-    const menuUrl = new URL('/api/menu', process.env.APP_URL);
-    const menuRes = await fetch(menuUrl);
-    const menu = await menuRes.json();
+    const menu =  await genericPageService.getMenu();
 
     // submenu
     const submenuUrl = new URL('/api/tips-genres', process.env.APP_URL);
@@ -226,7 +229,6 @@ export async function getServerSideProps(context) {
     const colorMappingUrl = new URL('/api/tips-color-mapping', process.env.APP_URL);
     const colorMappingRes = await fetch(colorMappingUrl);
     const colorMapping = await colorMappingRes.json();
-
     // 小撇步內頁資料
     const tipsUrl = new URL(`/api/tips/${page}`, process.env.API_URL);
     const tipsRes = await fetch(tipsUrl);

@@ -1,0 +1,754 @@
+
+.mainView {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.mainView .img {
+    width: 100%;
+    height: 775px;
+    overflow: hidden;
+}
+
+.mainView .titleBox {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+}
+
+.mainView .title p {
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 5px 20px 0;
+    background-color: #fff;
+}
+
+.mainView .title h1 {
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: 3.2px;
+    padding: 5px 20px 0;
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    padding: 15px 20px;
+}
+
+
+.mainView .title .box {
+    width: max-content;
+    display: flex;
+    align-items: flex-end;
+}
+
+.mainView .title .box:first-child p {
+    border-radius: 20px 20px 0 0;
+}
+
+.mainView .title .box:nth-child(2) p {
+    height: 60px;
+    border-radius: 0 20px 0 0;
+    justify-content: center;
+    letter-spacing: -1.2px;
+}
+
+.mainView .rounded {
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.content .title {
+    text-align: center;
+    margin-bottom: 40px;
+    word-wrap: break-word;
+}
+
+.content .title h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 67px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.content .contxt .commitmentTitle h3 {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin: 32px 0;
+    line-height: 32px;
+}
+
+.content .contxt .commitmentTitle {
+    width: 780px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+
+.content p {
+    width: 640px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    text-align: justify;
+    margin-bottom: 40px;
+    word-wrap: break-word;
+}
+
+.content .contxt .reportsTitle {
+    width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.reportsTitle p {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 45px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin: 35px 0;
+    line-height: 32px;
+}
+.reportsTitle a {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 15px;
+}
+.reportsTitle .list {
+    margin-bottom: 30px;
+}
+.reportsTitle li {
+    margin-bottom: 15px;
+}
+.reportsTitle a.mobilePdf{
+    display: none;
+}
+.reportsTitle a.desktopPdf{
+    display: block;
+}
+.content .contxt .reportsDescription {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.72px;
+    padding-top: 40px;
+}
+
+.content .title.s1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content .title h2 {
+    margin-bottom: 40px;
+}
+
+.content .title .line {
+    width: 30px;
+    height: 2px;
+    background-color: #00d221;
+    margin: 0 auto;
+}
+
+.content .mainImage {
+    cursor: pointer;
+    width: 1130px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    line-height: 0;
+    border-radius: 30px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.content .reportArea {
+    margin: 74px auto 65px auto;
+    background: url(/images/guideCardInfo.png) no-repeat;
+    background-size: cover;
+    width: 1040px;
+    height: 595px;
+    border-radius: 20px;
+    padding: 53px 56px;
+}
+
+.reportContent {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 364px;
+}
+
+.content .reportArea .mainTitle {
+    border-radius: 10px;
+    background: #FFF;
+    padding: 0px 16px;
+    margin: 8px 0;
+    
+}
+
+.reportArea .mainTitle span {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1.44px;
+}
+
+.reportArea .subTitle {
+    width: max-content;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 4px 16px;
+}
+.reportArea .subTitle span {
+    width: max-content;
+    font-family: "Roboto","Noto Sans TC",sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.48px;
+}
+
+.content .reportArea .reportTitle {
+    margin-top: 20%;
+    color: #333333;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 50.4px;
+    border-radius: 10px;
+    opacity: 0.95;
+    background: #FFF;
+}
+
+.content .reportArea .reportEnTitle {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28.44px;
+    margin-top: 8.14px;
+}
+
+.content .reportArea {
+    margin-bottom: 21.28px;
+}
+
+.content .reportArea .downloadArea {
+    display: flex;
+    column-gap: 50px;
+    margin-top: 50.72px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.content .reportArea .mobileView {
+    display: none;
+}
+.downloadArea:hover .arraw {
+    transform: rotate(-45deg);
+    transition: 0.3s;
+}
+
+.downloadArea .arraw {
+    transform: rotate(0deg);
+    transition: 0.3s;
+}
+
+.content .reportArea .downloadArea .bar {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 13.5px 16px;
+}
+
+.content .reportArea .downloadArea .bar:hover .arraw {
+    transform: rotate(-45deg);
+}
+
+.brand {
+    padding: 40px 0 0;
+}
+
+.brand .listBox {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.brand .listBox .arraw {
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right: 30px;
+    display: none;
+    z-index: 1;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.brand .list {
+    padding: 0 15px;
+}
+
+.brand .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 50px;
+}
+
+.brand .list ul li {
+    width: calc((100% - 90px) / 4);
+}
+
+.brand .list .txt {
+    position: relative;
+    aspect-ratio: unset;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.brand .list .txt img {
+    width: 35px;
+    height: 35px;
+}
+
+.brand .list .logoBox .rounded {
+    width: 20px;
+}
+
+.brand .list .logoBox .logoFlex {
+    display: flex;
+    align-items: flex-end;
+}
+
+.practiceMore {
+    padding: 50px 0;
+    background-color: #f2f2f2;
+    border-radius: 30px 30px 0 0;
+}
+
+.practiceMore .list {
+    width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.responsibilityPage .content .title .s1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.practiceMore .list a:hover .arraw {
+    transform: rotate(-45deg);
+    transition: 0.3s;
+}
+
+.practiceMore .list .arraw {
+    transform: rotate(0deg);
+    transition: 0.3s;
+}
+
+.practiceMore .list a:hover .img img {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+.practiceMore .list .img img {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+.practiceMore .list a {
+    width: 50%;
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 30px;
+    display: block;
+}
+
+.content .practiceMore .list .txtBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    aspect-ratio: unset;
+    display: flex;
+    align-items: flex-end;
+    top: 0;
+}
+
+.content .practiceMore .list .txt {
+    width: 100%;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .practiceMore .list .txt p {
+    width: 90%;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.content .practiceMore .arraw {
+    width: 35px;
+    height: 35px;
+    line-height: 0;
+}
+
+/* Refined styles */
+/* new styles start */
+.line {
+    width: 30px;
+    height: 2px;
+    background-color: #00d221;
+    margin: 0 auto;
+}
+
+.reportArea .subTitle br,.commitmentTitle br , .titleBox br {
+    display: none;
+}
+
+/* Laptop styles starts */
+@media (max-width: 1919px) {
+    .mainView {
+        position: relative;
+        margin-bottom: 100px;
+    }
+
+    .mainView .img {
+        /* aspect-ratio: 15/8; */
+        max-width: 100%;
+        max-height: 588px;
+        overflow: hidden;
+    }
+
+    .mainView .title p {
+        font-size: 60px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        padding: 5px 20px 0;
+        background-color: #fff;
+    }
+
+    .mainView .title h1 {
+        font-size: 60px;
+        font-weight: 600;
+        letter-spacing: 3.2px;
+        padding: 5px 20px 0;
+        background-color: #fff;
+        border-radius: 20px 20px 0 0;
+        padding: 15px 20px;
+    }
+
+    .content .reportArea {
+        margin: 54px auto 0 auto;
+        width: 900px;
+        height: 514px;
+        border-radius: 20px;
+        padding: 53px 56px;
+    }
+
+    .content .reportArea {
+        margin: 54px auto 51px auto;
+        background-size: cover;
+        width: 900px;
+        height: 514px;
+        padding: 53px 56px;
+    }
+
+    .reportContent {
+        margin-top: 300px;
+    }
+
+    .content .reportArea .mainTitle {
+        border-radius: 10px;
+        background: #FFF;
+    }
+
+    .reportArea .mainTitle span {
+        text-align: center;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 1.44px;
+    }
+
+    .reportArea .subTitle {
+        border-radius: 10px;
+        background: #FFF;
+        padding: 4px 16px;
+    }
+}
+
+/* Laptop styles Ends */
+
+/* Tab styles starts */
+@media (max-width: 1279px) {
+    .mainView {
+        margin-bottom: 60px;
+    }
+
+    .mainView .img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .mainView .title h1 {
+        font-size: 36px;
+        font-weight: 600;
+        padding: 5px 20px 0;
+        border-radius: 20px 20px 0 0; 
+    }
+    .mainView .title p {
+        font-size: 36px;
+        font-weight: 800;
+    }
+    .content .contxt .commitmentTitle h3 {
+        font-size: 24px;
+        letter-spacing: 0.96px;
+        margin: 24px 0;
+    }
+    .mainView .title .box {
+        margin:  -1px 0px;
+    }
+    .mainView .rounded {
+        margin: 0 -1px;
+    }
+    .content .reportArea {
+        max-width: 656px;
+        max-height: 372px;
+        padding: 53px 20px;
+    }
+    
+    .reportContent {
+        margin-top: 162px;
+    }
+
+    .reportArea .mainTitle span {
+        font-size: 30px;
+        letter-spacing: 1.2px;
+    }
+    .content .contxt .commitmentTitle {
+        width: 656px;
+        margin: 0 auto;
+        margin-bottom: 34px;
+    } 
+    .reportsTitle p {
+        font-size: 24px;
+        letter-spacing: 0.08em;
+        text-align: center;
+        margin: 24px 0 15px 0;
+    }
+    
+    .reportsTitle a {
+        font-size: 18px;
+    }
+    .content .reportArea .desktop {
+        display: none;
+    }
+    .content .reportArea .mobileView {
+        display: flex;
+    }
+    .practiceMore {
+        padding: 30px 0;
+    }
+    .content .title.s1 {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        margin-bottom: 30px;
+    }
+
+    .practiceMore .list {
+        width: 100%;
+        column-gap: 14px;
+    }
+}
+
+/* Tab styles Ends */
+.mainView .titleBoxMobile {  
+    display: none;   
+}
+/* mobile starts */
+@media (max-width: 767px) {
+    .mainView .img img {
+        transform: scale(1.3);
+        transform-origin: center bottom;
+    }
+    .mainView .titleBox {
+        display: none;
+    }
+    .mainView .title h1 { 
+        font-size: 28px;
+        width: max-content;
+        padding: 2px 11px;
+        letter-spacing:normal;
+        border-bottom-right-radius: 11px;
+        
+    }
+    .mainView .title .box:nth-child(2) p {
+        border-top-right-radius: 15px;
+        letter-spacing: normal;
+        line-height: 30px;
+    }
+    .mainView .titleBoxMobile {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+    }
+    .titleBoxMobile .roundedTitle {
+        width: 10px;
+        height: 10px;
+    }
+    .mainView .title p {
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: normal;
+    }
+    .mainView .rounded {
+        width: 38px;
+    }
+    .mainView {
+        margin-bottom: 60px;
+    }
+    .mainView .title h1 {
+        border-bottom-right-radius:0;
+    }
+    .content {
+        width: 100%;
+    }
+    .content .contxt {
+        padding: 0 16px;
+    }
+    .content .contxt .commitmentTitle {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .commitmentTitle br  {
+        display: block;
+    }
+    .content p {
+        width: 100%;
+    }
+    .reportCard {
+        padding: 0 16px;
+    }
+    .content .reportArea {
+        width: 100%;
+        min-height: 368px;
+        padding: 53px 14px;
+    }
+    .content .reportArea .mainTitle { 
+        padding: 4px 6px;
+        display: inline-block;
+    }
+    .reportArea .content {
+        padding: 0 2px;
+    }
+    .reportArea .mainTitle span {
+        font-size: 21px;
+        letter-spacing: 0.84px;
+    }
+    .reportArea .subTitle span {
+        font-family: "Noto Sans TC";
+        color: #333;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.32px;
+    }
+    .reportArea .subTitle {
+        max-width: 182px;
+        padding: 4px 9px;
+    }
+    .reportArea .subTitle br {
+        display: block;
+    }
+    .content .contxt .reportsTitle {
+        width: 100%;
+    }
+    .reportsTitle a.mobilePdf{
+        display: block;
+    }
+    .reportsTitle a.desktopPdf{
+        display: none;
+    }
+    .content .reportArea {
+        background-position: top;
+
+    }
+    .content .title.s1 {
+        margin-bottom: 0;
+    }
+    .practiceMore .list {
+        width: 100%;
+        padding: 0 16px;
+        column-gap: 14px;
+        flex-direction: column;
+    }
+    .practiceMore .list a {
+        width: 100%;
+        margin-top: 24px;
+    }
+    .brand {
+        padding: 0;
+    }
+    
+}
+
+/* mobile ends */

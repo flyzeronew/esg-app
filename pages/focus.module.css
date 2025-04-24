@@ -1,0 +1,215 @@
+/* shared banner styles Starts */
+.sharedBanner{
+    position: relative;
+}
+.sharedBanner .box{
+    display:flex;
+    justify-content: space-between;
+    border-radius: 60px 60px 0px 0px;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    background-color: #fff;  
+    padding:40px;
+    overflow: hidden;
+}
+.sharedBanner .mask{
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    left:0 ;
+    bottom:0;
+}
+.sharedBanner .title{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.44px;
+}
+.sharedBanner .txt{
+    width: 40%;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    margin-bottom: 15px;
+    z-index: 2;
+}
+.sharedBanner .txt p{
+    font-size: 20px;
+    letter-spacing: 0.48px;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+@media (max-width:767px) {
+    .sharedBanner .mask{
+        height: 40px;    
+    }
+    .sharedBanner .box{
+        display: block;
+        border-radius: 50px 50px 0px 0px;
+        padding: 40px 24px 30px;
+        overflow: hidden;
+    }
+    .sharedBanner .title{
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.72px;
+        margin-bottom: 30px;
+    }
+    .sharedBanner .txt{
+        width: 100%;
+        font-size: 18px;
+        letter-spacing: 0.36px;
+    }
+    .sharedBanner .txt p{
+        font-size: 18px;
+        letter-spacing: 0.36px;
+        line-height: normal;
+    }
+}
+.sharedBanner .line{
+    background: #00D221;
+    width: 28px;
+    height: 1px;
+}
+/* shared banner styles Ends */
+
+
+/* 未來焦點頁面 */
+
+
+.focusPage{
+    position: relative;
+    /* padding:24px 32px; */
+}
+.focusPage .list{
+    width: 1130px;
+    margin: 0 auto;
+}
+
+.focusPage .sharedBanner{
+    margin-bottom: 30px;
+}
+@media (max-width:1279px) {
+    .focusPage .list{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+@media (max-width:767px) {
+    .focusPage{
+        padding: 0 16px;
+    }  
+}
+.focusPage .list .titleBox{    
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display:flex;
+    align-items: flex-end;
+    justify-content:space-between;
+    padding:32px; 
+    column-gap: 20px;
+}
+
+.focusPage .list .titleBox .title{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.92px;
+    margin-bottom: 15px;
+}
+.focusPage .list .titleBox .txt{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+.focusPage .list .title p{
+    display: inline-block;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 8px 16px;
+}
+.focusPage .list .txt p{
+    display: inline-block;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 4px 16px;
+}
+.focusPage .list .titleDiv {
+    width: 90%;
+}
+.focusPage .list .titleBox .arraw{
+    width: 72px;
+    height: 72px;
+    overflow: hidden;
+    line-height: 0;   
+    transform:rotate(0);
+    transition: 0.3s; 
+}
+.focusPage .list .titleBox .arraw img{
+    width: 100%; 
+}
+.focusPage .list .titleBox .arraw.act{
+    transform:rotate(-45deg);
+    transition: 0.3s;
+}
+.focusPage .list li{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 113/52;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    background-size: 200%;
+}
+
+.focusPage .list li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+@media (max-width:1023px) {
+    .focusPage .list .titleDiv {        
+        width: 80%;
+    }
+}
+@media (max-width:767px) {    
+    .focusPage .list .titleBox{
+        padding:20px; 
+    }
+    .focusPage .list .titleBox .title{
+        font-size: 32px;
+    }
+    .focusPage .list .titleBox .txt{
+        font-size: 18px;
+    }
+    .focusPage .list .titleBox .arraw{
+        width: 50px;
+        height: 50px;
+    }
+    .focusPage .list li{
+        aspect-ratio: 1/1;
+    }
+}
+@media (max-width:414px) { 
+    .focusPage .list .titleBox .arraw{
+        width: 36px;
+        height: 36px;
+    }
+    .focusPage .list .titleBox .txt p{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+}
+/* 未來焦點頁面 ed */

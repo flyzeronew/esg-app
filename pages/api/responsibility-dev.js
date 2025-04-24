@@ -1,9 +1,11 @@
 export default function handler(req, res) {
     const data = [
         {
-            "article_id": 165,
-            "cover_img": "https://esg-statics-staging.tvbs.com.tw/articles/img/rIyrV8oOZq9sgDkLyA6EgCblDRHCOIZcwuzJQxGH.jpg",
-            "title": "前台永續觀點測試假資料(綠色生活)001",
+            "article_id": 293,
+            "cover_img": "https://esg-asset.tvbs.com.tw/articles/img/XU5hkGPrAtlKGokeUBjb1PiDGawTfxnf2qbk2rpk.jpg",
+            "title": "地球解方關注全球塑膠公約，縮短價值行動差是永續溝通的最大挑戰",
+            "shortTitle": "地球解方關注全球塑膠公約，縮短價值行動差",
+            "url": "https://esg.tvbs.com.tw/view/trend/293",
             "description": "",
             "partner": {
                 "id": 1,
@@ -23,9 +25,11 @@ export default function handler(req, res) {
             "updated_at": "2024-03-11T01:05:01.000000Z"
         },
         {
-            "article_id": 166,
-            "cover_img": "https://esg-statics-staging.tvbs.com.tw/articles/img/EYNPDpUvMlZHO17hkWJUaQr3oSab7X7eAr9EYZRz.jpg",
-            "title": "前台永續觀點測試假資料(綠色生活)002",
+            "article_id": 243,
+            "cover_img": "https://esg-asset.tvbs.com.tw/articles/img/rcOOrjlBFYGc50JbJw8y4UypxKl8fwoBlNgGPiiF.jpg",
+            "title": "TVBS台灣離島紀錄片「看見愛無限」獲雙佳績",
+            "shortTitle": "TVBS台灣離島紀錄片「看見愛無限」獲雙佳績",
+            "url": "https://esg.tvbs.com.tw/view/trend/243",
             "description": "",
             "partner": {
                 "id": 1,
@@ -45,9 +49,11 @@ export default function handler(req, res) {
             "updated_at": "2024-03-11T01:05:01.000000Z"
         }, 
         {
-            "article_id": 167,
-            "cover_img": "https://esg-statics-staging.tvbs.com.tw/articles/img/PV0Wz2pElEXmDVjSA5Ggiqf4yiVXlsWzVK3gF4Mf.jpg",
-            "title": "前台永續觀點測試假資料(綠色生活)003",
+            "article_id": 244,
+            "cover_img": "https://esg-asset.tvbs.com.tw/articles/img/tdvYyfaVBvkvcHPkfPHKp0iEorW9NaU9UcNT57I8.jpg",
+            "title": "數位永續雙軸轉型　TVBS《健康2.0》獲鼎革獎楷模、ESG雙大獎",
+            "shortTitle": "數位永續雙軸轉型　TVBS《健康2.0》獲鼎革獎楷模、ESG雙大獎",
+            "url": "https://esg.tvbs.com.tw/view/trend/244",
             "description": "",
             "partner": {
                 "id": 1,
@@ -68,8 +74,10 @@ export default function handler(req, res) {
         }, 
         {
             "article_id": 9,
-            "cover_img": "https://esg-statics-staging.tvbs.com.tw/articles/img/7GrqR1957iETA4xZJCdhN809IKGBnUvPcd1BipFr.jpg",
-            "title": "永續責任第4篇",
+            "cover_img": "https://esg-asset.tvbs.com.tw/articles/img/uDT9CW02pZUS5CywI3aHFj6LsI2Bb1JnD8zhRX0a.jpg",
+            "title": "30企業獲「減碳永續獎」　TVBS首家綠色福利媒體",
+            "shortTitle": "30企業獲「減碳永續獎」　TVBS首家綠色福利媒體",
+            "url": "https://esg.tvbs.com.tw/view/trend/209",
             "description": "",
             "partner": {
                 "id": 1,
@@ -90,8 +98,10 @@ export default function handler(req, res) {
         }, 
         {
             "article_id": 10,
-            "cover_img": "https://esg-statics-staging.tvbs.com.tw/articles/img/MZoD7CQ6hWKoy2I1n7INontKSaAv0z1trusuH5gE.jpg",
-            "title": "永續責任第5篇",
+            "cover_img": "https://cc.tvbs.com.tw/img/upload/2024/04/17/20240417193121-77168d81.jpg",
+            "title": "TVBSGOOD品牌亮相 從生活策動日常永續革命",
+            "shortTitle": "TVBSGOOD品牌亮相 從生活策動日常永續革命",
+            "url": "https://news.tvbs.com.tw/life/2458983",
             "description": "",
             "partner": {
                 "id": 1,

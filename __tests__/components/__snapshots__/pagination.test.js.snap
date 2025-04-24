@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component render pagination and matchsnapshot 1`] = `
+<div>
+  <div
+    class="pageJump"
+  >
+    <div
+      class="btn hide"
+    >
+      <a
+        href="https://esg-frontend-staging.tvbs.com.tw/view/trend?page=0"
+      >
+        ‹
+      </a>
+    </div>
+    <div
+      class="first hide"
+    >
+      <a
+        href="https://esg-frontend-staging.tvbs.com.tw/view/trend"
+      >
+        1
+      </a>
+      <span>
+        ..
+      </span>
+    </div>
+    <div
+      class="box"
+    >
+      <a
+        class="act"
+        href=""
+      >
+        1
+      </a>
+      <a
+        class=""
+        href="https://esg-frontend-staging.tvbs.com.tw/view/trend?page=2"
+      >
+        2
+      </a>
+      <a
+        class=""
+        href="https://esg-frontend-staging.tvbs.com.tw/view/trend?page=3"
+      >
+        3
+      </a>
+    </div>
+    <div
+      class="last"
+    >
+      <span>
+        ..
+      </span>
+      <a
+        href="https://esg-frontend-staging.tvbs.com.tw/view/trend?page=10"
+      >
+        10
+      </a>
+    </div>
+    <div
+      class="btn"
+    >
+      <a
+        href="https://esg-frontend-staging.tvbs.com.tw/view/trend?page=2"
+      >
+        ›
+      </a>
+    </div>
+  </div>
+</div>
+`;

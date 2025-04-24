@@ -2,15 +2,20 @@
 import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Submenu from '../../comps/view/Submenu'
+import Submenu from '../../comps/Submenu/Submenu';
 import ArticleList from '../../comps/view/ArticleList'
-import Header from '../../comps/Header'
-import Footer from '../../comps/Footer'
-import JumpPage from '../../comps/JumpPage'
+import Header from '../../comps/Header/Header'
+import Footer from '../../comps/Footer/Footer'
+import Pagination from '../../comps/pagination/Pagination'
+import classNames from 'classnames/bind';
+import styles from './view.module.css';
+import { notFound } from 'next/navigation'
+import SharedBanner from '@/comps/sharedBanner/SharedBanner';
+import { genericPageService } from '@/services/cms/apisCMS';
+import { extractDetailsFromSub } from '@/util/helpers';
 
+const cx  = classNames.bind(styles);
 
-const inter = Inter({ subsets: ['latin'] })
 export default function Genres(props) {
     const appUrl = process.env.APP_URL;
     // 頁面識別
@@ -28,73 +33,72 @@ export default function Genres(props) {
     const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
     const genreEnName=String(props.genreEnName);
     const uri =`/view/${genreEnName}`;
-    const genreData = props.genreData;    
+    const genreData = props.genreData;
     const genreId = genreData ? genreData.id :'';
     const genreName = genreData ? genreData.name :'';
-    const genreDescription =genreData ? genreData.description :'';
+    const genreDescription =genreData ? genreData.description :'';    
+    const genrePageDetails = extractDetailsFromSub(props.menu, router.asPath);
+
     useEffect(() => {
-        if (props.page > pageCount || genreData ==='') {
+        if (1 < pageCount && props.page > pageCount || genreData === '') {
             router.push('/404');
         }
-    }, []);    
+    }, [pageCount, props.page, genreData, router]);  
 
     return (
-    <div id='wrapper' className={inter.className}> 
+    <div id='wrapper'> 
         <Head>
-            <title>{`${genreName} - TVBS ESG專區`}</title>
+            <title>{`${genrePageDetails.title}`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="TVBS,TVBS GOOD,TVBS ESG,ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題,ESG趨勢" />
-            <meta name="description" content={genreDescription}/>
+            <meta name="description" content={genrePageDetails.meta_description}/>
             <meta name="author" content="TVBS" />
             <meta name="copyright" content="TVBS" />
             <meta name="application-name" content="TVBS" />
-            <meta name="URL" content={`${appUrl}/${thisPage}/${genreEnName}`} />
+            <meta name="URL" content={`${appUrl}/${genrePageDetails.pathname}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="INDEX,FOLLOW"/>
             <meta property="og:image" content={ogImg} />
-            <link rel="canonical" href={`${appUrl}/${thisPage}/${genreEnName}`} />
+            <link rel="canonical" href={`${appUrl}/${genrePageDetails.pathname}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
-            <div className="viewPage">
+            <div className={cx("viewPage")}>
                 {/* 大標 */}
-                <div className="sharedBanner">
-                    <div className="mask"></div>
-                    <div className="box">
-                        <h1 className="title">{genreName}</h1>
-                        <div className="txt">
-                            <p>{genreDescription}</p>
-                            <div className="line"></div>
-                        </div>
-                    </div>
+                {/* shared banner component goes here*/}
+                <div className={cx("bannerSection")}>
+                    <SharedBanner
+                            title={genrePageDetails.page}
+                            description={genrePageDetails.page_description}>
+                    </SharedBanner>
                 </div>
                 {/* 大標 ed*/}
                 {/* 分類標籤 */}
-                    <Submenu  submenu={viewSubmenu} genreEnName={genreEnName} genreId={genreId}/>
+                    <Submenu  submenu={viewSubmenu} page={"view"} genreEnName={genreEnName} genreId={genreId}/>
                 {/* 分類標籤 ed*/}
 
                 {/* 主視覺 */}
                 {articlesFirst && props.page === 1 ?
-                    <div className='mainView'>
+                    <div className={cx("mainView")}>
                         <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
-                            <div className='box'>
-                                <div className='img'>
+                            <div className={cx("box")}>
+                                <div className={cx("img")}>
                                     <img src={`${articlesFirst.cover_img ? articlesFirst.cover_img : process.env.IMG_DEFAULT}`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                    <div className='imgMaskBox'>
-                                        <div className='rounded'>
+                                    <div className={cx("imgMaskBox")}>
+                                        <div className={cx("rounded")}>
                                             <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50} loading="lazy"/>
                                         </div>
-                                        <div className='case'>
-                                            <div className='rounded'>
+                                        <div className={cx("case")}>
+                                            <div className={cx("rounded")}>
                                                 <img src={`${appUrl}/images/rounded-01.svg`} alt="arraw" width={50} height={50} loading="lazy"/>
                                             </div>
-                                            <div className='imgMask'></div>
+                                            <div className={cx("imgMask")}></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className='txtBox'>
-                                    <h2 className='title'>{articlesFirst.title}</h2>
-                                    <div className='txt'>{articlesFirst.description}</div>
+                                <div className={cx("txtBox")}>
+                                    <h2 className={cx("title")}>{articlesFirst.title}</h2>
+                                    <div className={cx("txt")}>{articlesFirst.description}</div>
                                 </div>
                             </div>
                         </a>
@@ -104,17 +108,17 @@ export default function Genres(props) {
                 {/* 主視覺 ed*/}
                 
                 {/* 文章列表 */}                
-                    <ArticleList  articleList={articleList} genreId={genreId}/>
+                    <ArticleList  articleList={articleList}/>
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
+                    { pageCount > 1 ? <Pagination uri={uri} pageCount={pageCount} /> :''}
                     
                 {/* 跳頁選單 ed */}
             </div>
             
         </main>
-        <div className="footerLine">
-            <div className="box"></div>
+        <div className={cx("footerLine")}>
+            <div className={cx("box")}></div>
         </div>
         <Footer />
     </div>
@@ -123,29 +127,46 @@ export default function Genres(props) {
 
 export async function getServerSideProps(context) {
     const { query } = context;
-    const page = query.page ? query.page : 1;
-    const genreEnName = context.query.genres;
-    const menuUrl = new URL('/api/menu', process.env.APP_URL);
-    const menuRes = await fetch(menuUrl);
-    const menu = await menuRes.json();
-
+    const page = Number(query.page) || 1;    
+    const genreEnName = query.genres;
+    const viewSubmenuUrl = new URL('/api/article-genres', process.env.API_URL);
     // 線上資料
     // submenu
-    const viewSubmenuUrl = new URL('/api/article-genres', process.env.API_URL);
-    const viewSubmenuRes = await fetch(viewSubmenuUrl);    
-    const viewSubmenuData = await viewSubmenuRes.json();
+    try {
+        const viewSubmenuRes = await fetch(viewSubmenuUrl)
+        //currently if something goes wrong redirecting to not found 
+        if(!viewSubmenuRes.ok){
+          return {
+            notFound: true
+          }
+        }
+        const menu =  await genericPageService.getMenu();
+        
+        const viewSubmenuData = await viewSubmenuRes.json();
 
-    const getGenreData = viewSubmenuData.find(item => item.en_name === genreEnName);
-    const genreData = getGenreData ? getGenreData : '';    
-    const genreId = genreData ? genreData.id : '';
-    // list
-    const articlesUrl = new URL(`/api/articles?genre_id=${genreId}&page=${page}`, process.env.API_URL);
-    const articlesRes = await fetch(articlesUrl);    
-    const articlesData = await articlesRes.json();
-    
-    return {
-        props: {
-            menu,viewSubmenuData,articlesData,genreEnName,page,genreData
-        },
-    };
+        const getGenreData = viewSubmenuData.find(item => item.en_name === genreEnName) || null;
+        let articlesData = null;
+        if(getGenreData?.id){
+            const articlesUrl = new URL(`/api/articles?genre_id=${getGenreData.id}&page=${page}`, process.env.API_URL);
+            const articlesRes = await fetch(articlesUrl);    
+            if (!articlesRes.ok) {
+                if(articlesRes.status){
+                    notFound();
+                }
+            }
+            articlesData = await articlesRes.json();
+        }
+        return {
+            props: {
+                menu,
+                viewSubmenuData,
+                articlesData,
+                genreEnName,
+                page,
+                genreData : getGenreData || null
+            },
+        };
+    } catch (error) {
+        console.log("error View genre -->", error) 
+    }
 }

@@ -1,0 +1,123 @@
+.mainVision {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.mainVision :global(.slick-dots li.slick-active button:before) {
+    background-color: #00d221 !important;
+  } 
+.mainVision a {
+  position: relative;
+  overflow: hidden;
+}
+.mainVision .img img {
+    width: 100%;
+}
+.mainVision .img {
+    border-radius: 30px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    line-height: 0;
+    background-size: 100%;
+}
+.slick-slide {
+  visibility: unset;
+}
+.mainVision .txtAbsolute {
+  width: 55%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  padding: 20px;
+  pointer-events: none;
+}
+.mainVision .txtBox {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+}
+.mainVision .txtBox .txt {
+  color: #666666;
+  font-weight: 400;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  margin-bottom: 5px;
+}
+@media (max-width: 767px) {
+  .mainVision .txtAbsolute {
+    width: 100%;
+  }
+  .mainVision .img {
+    aspect-ratio: 1/1;
+  }
+  .mainVision .img img {
+    transform: scale(1.8);
+    transform-origin: center top;
+  }
+  .mainVision .txtAbsolute {
+    padding: 15px;
+  }
+  .mainVision .txtBox .object .arraw {
+    width: 35px;
+    height: 35px;
+  }
+  .mainVision .txtBox .txt {
+    margin-bottom: 15px;
+  }
+}
+.mainVision .txtBox .object {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainVision .title {
+  width: 100%;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  margin-bottom: 10px;
+}
+.mainVision .txt {
+  width: 100%;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+@media (max-width: 1599px) {
+  .mainVision .title {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+  .mainVision .txt {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1279px) {
+  .mainVision .title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+  /* .slick-dots li {
+    width: 25px;
+  } */
+  .mainVision :global(.slick-dots li) {
+    width: 25px;
+  }
+}

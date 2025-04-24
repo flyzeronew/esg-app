@@ -1,0 +1,110 @@
+ .view{
+    width:30%;
+    border-radius: 20px;
+    background: #D0FF90;
+    padding: 24px;
+}
+ .view .category{
+    font-size: 16px;
+    color: #226158;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-weight: 500;
+    display: none;
+}
+ .view .category .line{
+    width: 2px;
+    height: 6px;
+    background-color: #00D221;
+}
+ .view a{
+    overflow: hidden;
+    display: block;
+}
+ .view .img{
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+ .view .txt{
+    overflow: hidden;
+    color: #226158;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 80px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box; 
+    height: 92px;
+    text-align: justify;
+}
+
+ .view :global(.slick-dots){
+    position:relative;
+    bottom:auto;
+    left:auto;
+    text-align:center;
+}
+ .slick-prev,
+ .slick-next {
+  display: none !important;
+}
+ .view :global(.slick-dots li button:before){
+    width: 100%;
+    height: 100%;
+    background-color: #AACB7C;
+    font-size: 0;
+    content:'';
+    opacity: 1;
+    border-radius: 30px;
+}
+ .view :global(.slick-dots li.slick-active button:before){
+    background-color:#00442c !important;
+    border-radius: 30px;
+}
+@media (max-width:1919px) {
+     .view .txt {
+        font-size: 24px;
+        height: 100px;
+    }
+}
+@media (max-width:1599px) {
+     .view {
+        padding: 16px;
+    }
+     .view .txt {
+        font-size: 18px;
+        height: 75px;
+    }
+}
+@media (max-width:1279px) {
+     .view {
+        width: 30%;
+        border-radius: 30px;
+        background: #D0FF90;
+    }
+}
+@media (max-width:1023px) {
+     .view .img{
+        margin-bottom: 15px;
+    }
+     .view .txt{
+        font-size: 24px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+     .view{
+        width:100%;
+        margin-bottom: 20px;
+        padding:20px;
+    }
+     .view .category{
+        display: flex;
+    }
+}

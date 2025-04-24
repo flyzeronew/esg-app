@@ -1,0 +1,82 @@
+.pageJump{
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 50px;
+}
+.pageJump .box{
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    column-gap: 15px;
+}
+.pageJump .lastTxt{
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+    color: #cbcbcb;
+}
+.pageJump .first,.pageJump .last{
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    column-gap:3px;
+}
+.pageJump .box a,.pageJump .first a,.pageJump .last a{
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    border-radius: 60px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 0;
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    transition: 0.3s;
+}
+.pageJump .box a.act,.pageJump .box a:hover,.pageJump .first a:hover,.pageJump .last a:hover{
+    background-color: #00D221;
+    transition: 0.3s;
+}
+.pageJump .btn a{
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    border-radius: 60px;
+    font-size: 24px;
+    font-weight: 600;
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+    transition: 0.3s;
+    padding: 10px 15px;
+}
+.pageJump .btn a.act,.pageJump .btn a:hover{
+    background-color: #00D221;
+    transition: 0.3s;    
+}
+.pageJump .btn.hide,.pageJump .first.hide,.pageJump .last.hide{
+    display: none;
+}
+@media (max-width:767px) { 
+    .pageJump .box{
+        display:flex; 
+        justify-content: center; 
+        align-items: center;
+        column-gap: 10px;
+    }
+    .pageJump .box a,.pageJump .first a,.pageJump .last a,.pageJump .btn a{
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .pageJump .btn a{
+        font-size: 24px;
+        padding: 10px;
+    }
+    .pageJump .lastTxt{
+        font-size: 14px;
+    }
+}

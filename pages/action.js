@@ -1,10 +1,12 @@
 import { useState ,useEffect } from 'react'
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Header from '../comps/Header'
-import Footer from '../comps/Footer'
-
-const inter = Inter({ subsets: ['latin'] })
+import Header from '../comps/Header/Header'
+import Footer from '../comps/Footer/Footer'
+import styles from './action.module.css';
+import classNames from 'classnames/bind';
+import SharedBanner from '@/comps/sharedBanner/SharedBanner';
+import { genericPageService } from '@/services/cms/apisCMS';
+const cx = classNames.bind(styles);
 export default function Focus(props) {
     // 頁面識別
     const thisPage='action';
@@ -37,7 +39,7 @@ export default function Focus(props) {
     }, []); 
 // resize 監聽事件 ed
     return (
-    <div id='wrapper' className={inter.className}> 
+    <div id='wrapper'> 
         <Head>
             <title>{"esg | 永續行動"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -46,31 +48,26 @@ export default function Focus(props) {
             <meta property="og:image" content={ogImg} />       
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
-        <main>
-            <div className="actionPage">
-                <div className="sharedBanner">
-                    <div className="mask"></div>
-                    <div className="box">
-                        <div className="title">永續行動</div>
-                        <div className="txt">
-                            <p>成為悉心栽培社會福祉的一份子，傳承文化，關懷弱勢，燃起社會的溫暖火光，照顧在地環境。</p>
-                            <div className="line"></div>
+            <main>
+                <div className={cx("actionPage")}>
+                    <div className={cx("bannerSection")}>
+                        <SharedBanner
+                            title={"永續行動"}
+                            description={"成為悉心栽培社會福祉的一份子，傳承文化，關懷弱勢，燃起社會的溫暖火光，照顧在地環境。"}
+                        ></SharedBanner>
+                    </div>
+                    <div className={cx("submenuArea")}>
+                        <div className={cx("submenu")}>
+                            <div className={cx("submenuMask")}></div>
+                            <a className={cx("act")} href={'#'}>即將開始</a>
+                            <a href={'#'}>過去活動</a>
                         </div>
                     </div>
                 </div>
 
-                <div className='submenuArea'>
-                    <div className='submenu'> 
-                        <div className='submenuMask'></div>
-                        <a className="act" href={`javascript:void(0)`}>即將開始</a>
-                        <a href={`javascript:void(0)`}>過去活動</a>
-                    </div>
-                </div>     
-            </div>
-            
-        </main>
-        <div className="footerLine">
-            <div className="box"></div>
+            </main>
+        <div className={cx("footerLine")}>
+            <div className={cx("box")}></div>
         </div>
         <Footer />
     </div>
@@ -78,9 +75,7 @@ export default function Focus(props) {
 }
 
 export async function getServerSideProps() {
-    const menuUrl = new URL('/api/menu', process.env.APP_URL);
-    const menuRes = await fetch(menuUrl);
-    const menu = await menuRes.json();
+    const menu =  await genericPageService.getMenu();
     // 線上資料
 
     

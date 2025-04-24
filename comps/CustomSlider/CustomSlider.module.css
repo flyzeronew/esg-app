@@ -1,0 +1,50 @@
+.CustomSlider  :global(.slick-dots){
+    position:absolute;
+    bottom:40px;
+    left: 40px;
+    text-align: left;
+}
+ .CustomSlider :global(.slick-dots li){
+    width: 40px;
+    height: 6px;
+    margin: 0;
+    margin-right: 7px;
+    overflow: hidden;
+    padding:0;
+}
+ .CustomSlider :global(.slick-dots li button ){
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+    overflow: hidden;
+    padding:0;
+}
+/* custom classes from components starts */
+.viewList :global(.slick-dots li){
+    width: 30px;
+}
+/* Ends */
+ .CustomSlider :global(.slick-dots li button:before){
+    width: 100%;
+    height: 100%;
+    background-color: #D4D4D4; 
+    font-size: 0;
+    content:'';
+    opacity: 1;
+    border-radius:30px;
+}
+.CustomSlider :global(.slick-dots li.slick-active button:before) {
+    background-color:red;
+  } 
+@media (max-width:1279px) {
+    .CustomSlider :global(.slick-dots li){
+       width: 34px;
+   }
+   .viewList :global(.slick-dots li){
+    width: 30px;
+}
+} 

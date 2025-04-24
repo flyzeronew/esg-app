@@ -1,0 +1,130 @@
+name: Develop-ESG-Frontend
+run-name: develop-esg-frontend-pipeline
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches: [ staging ]
+    paths-ignore:
+      - '.github/**'
+
+jobs:
+
+  build-and-push:
+    name: Build and push image
+
+    environment: staging
+
+    strategy:
+      matrix:
+        arch: ["amd64", "arm64"]
+
+    runs-on: "arc-${{ matrix.arch }}"
+
+    permissions:
+      id-token: write
+      contents: read
+
+    outputs:
+      sha_short: ${{ steps.vars.outputs.sha_short }}
+      registry: ${{ steps.login-ecr.outputs.registry }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set outputs
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Install AWS Command Tools
+        run: |
+          sudo apt-get update && \
+          sudo apt-get install -y awscli
+
+      - name: Get variables
+        run: |
+          aws secretsmanager get-secret-value --secret-id ${{ secrets.AWS_SECRET_NAME }} --query SecretString --output text > .env
+
+      - name: Build and push image to Amazon ECR
+        id: build-push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: "${{ steps.login-ecr.outputs.registry }}/${{ vars.REPOSITORY }}:${{ steps.vars.outputs.sha_short }}-${{ matrix.arch }}"
+
+  create-multi-arch-manifests:
+    name: Create multi-arch manifests
+
+    needs: [ "build-and-push" ]
+
+    runs-on: arc
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Create multi-arch manifests on Amazon ECR
+        id: create-multi-arch
+        shell: bash
+        run: |
+          docker buildx imagetools create -t "${{ steps.login-ecr.outputs.registry }}/${{ vars.REPOSITORY }}:${{ needs.build-and-push.outputs.sha_short }}" \
+             "${{ steps.login-ecr.outputs.registry }}/${{ vars.REPOSITORY }}:${{ needs.build-and-push.outputs.sha_short }}-amd64" \
+             "${{ steps.login-ecr.outputs.registry }}/${{ vars.REPOSITORY }}:${{ needs.build-and-push.outputs.sha_short }}-arm64"
+           echo "image=${{ steps.login-ecr.outputs.registry }}/${{ vars.REPOSITORY }}:${{ needs.build-and-push.outputs.sha_short }}"
+
+  publish-version:
+    needs: [ "build-and-push", "create-multi-arch-manifests" ]
+
+    runs-on: [ arc ]
+
+    steps:
+
+      - name: Generate Token
+        id: generate_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Public Latest Version
+        uses: tvbstw/github-actions/update-kustomize-values-file@main
+        with:
+          target_repository: tvbstw/ops-esg
+          target_repository_token: ${{ steps.generate_token.outputs.token }}
+          target_file_path: "${{ vars.REPOSITORY }}/overlays/staging"
+          application: ${{ vars.REPOSITORY }}
+          image_repository: "${{ needs.build-and-push.outputs.registry }}/${{ vars.REPOSITORY }}"
+          image_tag: ${{ needs.build-and-push.outputs.sha_short }}
+          username: ${{ github.actor }}
+          useremail: "${{ github.actor }}@users.noreply.github.com"
+          commit_message: "ci: Update ${{ vars.REPOSITORY }} To Version ${{ needs.build-and-push.outputs.sha_short }}"

@@ -1,0 +1,23 @@
+.arrowBack {
+    background: #fff;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+}
+
+@media (max-width: 1279px) {
+    .arrowBack {
+        width: 56px;
+        height: 56px;
+    }
+}
+@media (max-width: 767px) {
+    .arrowBack {
+        width: 36px;
+        height: 36px;
+    }
+}
+

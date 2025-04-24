@@ -1,0 +1,60 @@
+/* 搜尋 */
+.searchBar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-height:0;
+    background-color:#F2F2F2 ;
+    transition: 0s; 
+    overflow: hidden;
+}
+.searchBar input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #F2F2F2 inset;
+}
+.searchBar.show{
+    max-height:500px;
+    transition: 0.5s ease-in;
+}
+.searchBar .searchBox{
+    width: 872px;
+    padding:15px 0px;
+}
+.searchBar .box{    
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    border-bottom: 1px #666 solid;
+    padding: 15px 0 10px;
+}
+.searchBar .input{
+    width: 95%;
+    font-family: 'Noto Sans TC';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 2%;
+    color: #333;
+}
+.searchBar .input input{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: #333;
+}
+.searchBar .input input::placeholder {
+    color: #666; 
+}
+.searchBar .btn{
+    width: 25px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+@media (max-width: 1023px) {
+    .searchBar .searchBox{
+        width: 100%;
+        padding:15px 16px;
+    }
+    .searchBar .input{
+        font-size: 18px;
+    }
+}
+
+/* 搜尋 ed*/

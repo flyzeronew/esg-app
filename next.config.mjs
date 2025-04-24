@@ -3,21 +3,52 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      // development
-      'localhost',
-      'esg-app-alpha.vercel.app',
-      // staging
-      'esg-statics-staging.tvbs.com.tw',
-      'esg-frontend-staging.tvbs.com.tw',
-      // production
-      'esg-statics-production.tvbs.com.tw',
-      'esg.tvbs.com.tw',
-      // youtube
-      'img.youtube.com',
-    ],   
-  }, 
-   // 自訂服務器配置
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'esg-asset.tvbs-staging.com.tw',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'esg-asset.tvbs.com.tw',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'esg.tvbs-staging.com.tw',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'esg.tvbs.com.tw',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cc.tvbs.com.tw',
+        port: '',
+        pathname: '/**',
+      },
+    ]
+  },
+  // 自訂服務器配置
   // server: {
   //   host: '0.0.0.0',
   //   port: process.env.PORT || 3000,
@@ -28,7 +59,24 @@ const nextConfig = {
     IMG_DEFAULT: process.env.IMG_DEFAULT,
     IMG_DEFAULT_SQUARE: process.env.IMG_DEFAULT_SQUARE,
   },
-  
-};
 
-export default nextConfig;
+  
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/robots',
+      },
+      {
+        source: '/responsibility/reports/annual/:yearannual',
+        destination: `${process.env.NEXT_PUBLIC_STATIC_FILES}/responsibility/reports/annual/:yearannual`,
+      },
+      {
+        source: '/responsibility/reports/annual/:yearannual/:path*',
+        destination: `${process.env.NEXT_PUBLIC_STATIC_FILES}/responsibility/reports/annual/:yearannual/:path*`,
+      },
+    ]
+  },
+}
+
+export default nextConfig

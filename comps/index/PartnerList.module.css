@@ -1,0 +1,205 @@
+ .partner{
+    overflow: hidden;
+    padding: 40px 24px 40px 96px;
+    background-color:#D1FFE0;
+    border-radius: 190px 30px 30px 190px;
+    display:flex;
+    align-items: center;
+}
+ .partner .titleBox{
+    width: 40%;
+}
+ .partner .list{
+    width: 60%;
+}
+ .partner .title{
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70px; 
+}
+ .partner .txt{
+    display:flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+ .partner .txt img{
+    display:flex;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+ .partner .list .box{
+    display: block;
+    overflow: hidden;
+}
+ .partner .list .box a{
+    display:flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 10px;
+}
+ .partner .list .box a:last-child{
+    margin-bottom: 0;
+}
+ .partner .list a .img{
+    width: 70px;
+    height: 70px;
+    border-radius: 80px;
+    overflow: hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+ .partner .list a .img img{
+    width: 80%;
+    height: 80%;
+    aspect-ratio: 1/1;    
+}
+
+ .partner :global(.slick-dots){
+    bottom:-25px;
+    left:0;
+    text-align:center;
+}
+ .partner :global(.slick-dots li button:before){
+    width: 100%;
+    height: 100%;
+    background-color: #D4D4D4;
+    font-size: 0;
+    content:'';
+    opacity: 1;
+    border-radius: 30px;
+}
+ .partner :global(.slick-dots li.slick-active button:before){
+    background-color:#00442c !important;
+    border-radius: 30px;
+}
+
+@media (max-width:1919px) {
+     .partner {
+        overflow: hidden;
+        padding: 40px 24px 40px 96px;
+        border-radius: 190px 30px 30px 190px;
+        display: flex;
+        align-items: center;
+    }
+     .partner .title {
+        font-size: 50px;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+     .partner .txt img {
+        width: 30px;
+        height: 30px;
+    }
+     .partner .list a .img {
+        width: 50px;
+        height: 50px;
+    }
+     .partner .list .box a {
+        margin-bottom: 15px;
+    }
+}
+@media (max-width:1599px) {
+     .partner {
+        padding: 32px 16px 32px 70px;
+    }
+     .partner .title {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+     .partner .txt {
+        font-size: 18px;
+    }
+     .partner .txt img {
+        width: 30px;
+        height: 30px;
+    }
+     .partner .list a .img {
+        width: 40px;
+        height:auto;
+        aspect-ratio: 1/1;
+    }
+     .partner .list .box a {
+        margin-bottom: 15px;
+        column-gap: 5px;
+    }
+     .partner .titleBox {
+        width: 45%;
+    }
+     .partner .list {
+        width: 55%;
+    }
+}
+@media (max-width:1279px) {
+     .partner {
+        padding: 24px 16px 24px 60px;
+        column-gap: 5px;
+    }
+     .partner .title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+     .partner .txt {
+        font-size: 16px;
+    }
+     .partner .txt img {
+        width: 25px;
+        height: 25px;
+    }
+     .partner .list a .img {
+        width: 40px;
+        height:auto;
+        aspect-ratio: 1/1;
+    }
+     .partner .list .box a {
+        margin-bottom: 10px;
+        column-gap: 5px;
+    }
+     .partner .titleBox {
+        width: 45%;
+    }
+     .partner .list {
+        width: 55%;
+    }
+    @media (max-width:1023px) {
+         .partner{
+            display:block;
+            padding: 60px 30px 30px 30px;
+            border-radius: 80px 80px 30px 30px;
+        }
+         .partner .titleBox{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+         .partner .titleBox .title{
+            font-size: 36px;
+            margin: 0 auto 15px;
+        }
+         .partner .txt{
+            font-size: 18px;
+            justify-content: center;
+        }
+         .partner .list, .partner .titleBox{
+            width: 100%;
+        }
+         .partner .list a .img{
+            width: 68px;
+        }
+         .partner .list .box a{
+            column-gap: 10px;
+        }
+         .partner :global(.slick-dots){
+            position: relative;
+            bottom:auto;
+            left:auto;
+        }
+    }
+}

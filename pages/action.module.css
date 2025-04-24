@@ -1,0 +1,10 @@
+/* 永續行動頁面 */
+.bannerSection{
+    padding:0;
+}
+@media (max-width:767px) {
+    .bannerSection{
+        padding: 0 16px;
+    }
+}
+/* 永續行動頁面 ed*/
