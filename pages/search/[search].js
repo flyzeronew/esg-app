@@ -85,7 +85,7 @@ export default function Search(props) {
                     searchKeyword= {searchKeyword}
                 />
 
-                <div className={cx('noResults','be8*^&@' === searchKeyword ? 'show' : '')}> 
+                <div className={cx('noResults','be8*^&@' === searchKeyword && 'show')}> 
                     <div className={cx('frameBox')}>
                         <div className={cx('txt')}>
                             找不到符合搜尋字詞「 <strong>{searchKeyword}</strong> 」的結果
@@ -100,7 +100,7 @@ export default function Search(props) {
                     </div>
                 </div>
 
-                <div className={cx('resultsBox','be8*^&@' === searchKeyword ? 'hide' : '')}>
+                <div className={cx('resultsBox','be8*^&@' === searchKeyword && 'hide')}>
                     <div className={cx('results')}>
                         <div className={cx('frameBox')}>
                             <div className={cx('related')}>
@@ -369,7 +369,7 @@ export default function Search(props) {
 
 
                 {/* 跳頁選單 */}
-                <div style={{display:'be8*^&@' === searchKeyword ? 'none' : '' }}>
+                <div style={{display:'be8*^&@' === searchKeyword && 'none' }}>
                     { pageCount > 1 ? <Pagination uri={pathname} pageCount={pageCount} /> :''}
                 </div>                    
                 {/* 跳頁選單 ed */}
