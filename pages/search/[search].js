@@ -369,7 +369,7 @@ export default function Search(props) {
 
 
                 {/* 跳頁選單 */}
-                <div style={{display:'none'}}>
+                <div style={{display:'be8*^&@' === searchKeyword ? 'none' : '' }}>
                     { pageCount > 1 ? <Pagination uri={pathname} pageCount={pageCount} /> :''}
                 </div>                    
                 {/* 跳頁選單 ed */}
