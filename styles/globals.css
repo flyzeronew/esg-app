@@ -481,8 +481,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .ligthBox{width: 100%; height: 100vh;background-color: #ccc;position: absolute;z-index: 100;top:0;overflow: hidden;}
-#wrapper{
-    max-width: 1920px;
+#wrapper{    
     color: #333;
     font-size: 16px;
     font-style: normal;
@@ -490,6 +489,10 @@ h1, h2, h3, h4, h5, h6{
     line-height: normal;
     margin: 0 auto;
     overflow: hidden;
+}
+main{    
+    max-width: 1920px;
+    margin: 0 auto;
 }
 .img img{
     width: 100%;

@@ -125,17 +125,21 @@
     font-size: var(--font-size-md);
     color: #666666;    
 }
+.header  .list{
+    max-width: 1920px;
+    margin: 0 auto;
+}
 .header .childMenu.act {
     max-height: 500px;
     transition: 0.8s ease-in;
 }
 
-.childMenu li {
+.header .childMenu li {
     padding: 24px 0;
     margin-right: 32px;
     display: block;
 }
-.childMenu li a:hover, .childMenu li a h3:hover {
+.header .childMenu li a:hover, .childMenu li a h3:hover {
     border-bottom: 3px solid #00D780;
 }
 @media (max-width:1023px) {
@@ -147,7 +151,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 110px;
+    margin-right: 148px;
 }
 
 

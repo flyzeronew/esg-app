@@ -243,19 +243,21 @@ function Navbar(props) {
                   className={cx('childMenu',index === showChildMenu ? 'act' : '')}
                   onMouseLeave={childMenuMouseLeave}
                 >
-                  <ul>
-                    {item.subMenu.map((item2, index2) => (
-                      <li key={index2}>
-                        <a href={item2.pathname} onClick={childMenuMouseLeave}>
-                          {currentPage === 'home' ? (
-                            <h3>{item2.page}</h3>
-                          ) : (
-                            <>{item2.page}</>
-                          )}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={cx('list')}>
+                    <ul>
+                      {item.subMenu.map((item2, index2) => (
+                        <li key={index2}>
+                          <a href={item2.pathname} onClick={childMenuMouseLeave}>
+                            {currentPage === 'home' ? (
+                              <h3>{item2.page}</h3>
+                            ) : (
+                              <>{item2.page}</>
+                            )}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               ) : (
                 ''
