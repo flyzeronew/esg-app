@@ -17,6 +17,7 @@
 }
 .searchBar .searchBox{
     width: 872px;
+    height: max-content;
     padding:15px 0px;
 }
 .searchBar .box{    
