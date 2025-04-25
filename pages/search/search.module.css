@@ -10,11 +10,40 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+.searchPage .noResults .frameBox{
+    margin: 0 auto;
+}
+.searchPage .noResults{ 
+    padding:30px 0 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+    box-sizing: border-box;
+    display: none;
+}
+.searchPage .noResults.show{ 
+    display: block;
+}
+.searchPage .noResults .txt{
+    margin:0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.searchPage .noResults .txtList{
+    width: max-content;
+    margin:0 auto 30px;
+}
+.searchPage .noResults .txtList ul{
+    padding-left: 30px;
+}
 @media (max-width: 1023px) {
     .searchPage .frameBox{
         width: 100%;
         padding:0 16px;
     }
+}
+.searchPage .resultsBox.hide{
+    display: none;
 }
 .searchPage .results{
     margin-bottom: 20px;
