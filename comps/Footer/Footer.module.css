@@ -5,8 +5,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding:10px 15px 32px;
+    padding:32px 15px 32px;
     background-color: #fff;
+}
+.footer.fixed{
+    width: 100%;
+    position:fixed;
+    bottom:0;
 }
 .footer.color1{
     background-color: #F2F2F2;
