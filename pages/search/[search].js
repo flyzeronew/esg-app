@@ -1,5 +1,6 @@
 import { useState ,useEffect } from 'react';
 import Head from 'next/head';
+import LazyLoad from 'react-lazyload';
 import SearchBar from '../../comps/SearchBar/SearchBar';
 import Header from '../../comps/Header/Header';
 import Footer from '../../comps/Footer/Footer';
@@ -10,11 +11,14 @@ import { genericPageService } from '@/services/cms/apisCMS';
 import { usePathname } from 'next/navigation';
 const cx = classnames.bind(styles);
 
-export default function Search(props) {    
+export default function Search(props) {
+    const searchData = props.searchData;
+    const searchArticles = props.searchData.articles;
     const showSearchBar = true;
     const searchType = 'pageSearch';
     const menu = props.menu;
     const page = props.page;
+    const defaultImg = process.env.IMG_DEFAULT
     const appUrl = process.env.APP_URL;
     const pathname = usePathname();
     const url = `${appUrl}${pathname}`;
@@ -27,7 +31,7 @@ export default function Search(props) {
     // 計算文章數量轉頁面數
     const articleNum = 10;
     // const articleCount = props.articlesData.article_count-1;
-    const articleCount = 20;
+    const articleCount = searchData.searchCount;
     const articleMath = Math.floor(articleCount / articleNum);
     const pageCount = articleCount % articleNum != 0 ? articleMath + 1 : articleMath ;
     // 計算文章數量轉頁面數 ed
@@ -85,12 +89,12 @@ export default function Search(props) {
                     searchKeyword= {searchKeyword}
                 />
 
-                <div className={cx('noResults','be8*^&@' === searchKeyword && 'show')}> 
+                <div className={cx('noResults', 0 === articleCount && 'show')}> 
                     <div className={cx('frameBox')}>
                         <div className={cx('txt')}>
                             找不到符合搜尋字詞「 <strong>{searchKeyword}</strong> 」的結果
                         </div>
-                        <div className={cx('txtList')}>                        
+                        <div className={cx('txtList')}>
                             <p>建議：</p>
                             <ul>
                                 <li>‧請檢查有無錯別字</li>
@@ -100,11 +104,11 @@ export default function Search(props) {
                     </div>
                 </div>
 
-                <div className={cx('resultsBox','be8*^&@' === searchKeyword && 'hide')}>
+                <div className={cx('resultsBox', 0 === articleCount && 'hide')}>
                     <div className={cx('results')}>
                         <div className={cx('frameBox')}>
                             <div className={cx('related')}>
-                                搜尋結果 <span className={cx('greenTxt')}>63</span> 筆
+                                搜尋結果 <span className={cx('greenTxt')}>{articleCount}</span> 筆
                             </div>                    
                         </div>
                     </div>
@@ -112,256 +116,52 @@ export default function Search(props) {
                     <div className={cx('list')}>
                         <div className={cx('frameBox')}>
                             <ul>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
+                                { searchArticles.map((item, index) => (
+
+                                    <li key={index}>
+                                        <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
+                                            <div className={cx('txtBox')}>
+                                                <div className={cx('title')} 
+                                                    dangerouslySetInnerHTML={{ __html: item.title }}>
+                                                </div>
+                                                <div className={cx('time')}>
+                                                    {item.updated_at.slice(0, 10)} <span>更新</span>
+                                                </div>
+                                                <div className={cx('txt')}>
+                                                    <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
+                                                    <div className={cx('imgMoBox')}>
+                                                        <div className={cx('img')}>
+                                                            <LazyLoad
+                                                                width={1072}
+                                                                height={603}
+                                                                offset={100}
+                                                                placeholder={`<img src="${defaultImg}" alt="loading..." />`}
+                                                                once
+                                                            >
+                                                                <img src={item.cover_img} alt="arraw" width={1072} height={603}/>
+                                                            </LazyLoad>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
+
+                                            <div className={cx('imgBox')}>
+                                                <div className={cx('img')}>
+                                                    <LazyLoad
+                                                        width={1072}
+                                                        height={603}
+                                                        offset={100}
+                                                        placeholder={`<img src="${defaultImg}" alt="loading..." />`}
+                                                        once
+                                                    >
+                                                        <img src={item.cover_img} alt="arraw" width={1072} height={603}/>
+                                                    </LazyLoad>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='#'>
-                                        <div className={cx('txtBox')}>
-                                            <div className={cx('title')}>
-                                                <strong>{searchKeyword}</strong> EP2｜顛覆想像！養蝦不只賣蝦，還能賣「碳」救地球
-                                            </div>
-                                            <div className={cx('time')}>
-                                                2025-03-13 <span>更新</span>
-                                            </div>
-                                            <div className={cx('txt')}>
-                                                <p>永續加 第二集登場！養蝦還能斜槓到氣候科技，這次「永續加」邀請艾滴科技創辦人余萬洲，與聽眾分享他如何與太陽能業者合作「蝦電共生」，甚至發展成碳信用業務，還跟與輝達合作還跟與輝達合作還跟與輝達合作</p>
-                                                <div className={cx('imgMoBox')}>
-                                                    <div className={cx('img')}>
-                                                        <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={cx('imgBox')}>
-                                            <div className={cx('img')}>
-                                                <img src={`${appUrl}/images/esg01.jpg`} alt="arraw" width={1072} height={603} loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                                        </a>
+                                    </li>
+                                ))}
+                                
                             </ul>
                         </div>
                     </div>
@@ -382,19 +182,26 @@ export default function Search(props) {
 
 export async function getServerSideProps(context) {
     const { query } = context;
-    const page = Number(query.page) || 1;    
-    const menu =  await genericPageService.getMenu();
-    // 線上資料
+    const page = Number(query.page) || 1;
+    const keyword = query.search;
     const focusUrl = new URL('/api/focus-news', process.env.API_URL);
-    const focusRes = await fetch(focusUrl);
-    const focus = await focusRes.json();
+    const searchUrl = new URL(`/api/search?keyword=${keyword}&page=${page}`, process.env.API_URL);
 
-    return {
-        props: {
-            menu,            
-            page,
-            focus
-        },
-    };
+    try {
+        const [focusRes, searchRes] = await Promise.all([
+            fetch(focusUrl),
+            fetch(searchUrl)
+        ])
+        const menu =  await genericPageService.getMenu();
+        const focus = await focusRes.json();
+        const searchData = await searchRes.json();
+        return {
+            props: {
+                page, menu, focus, searchData,
+            },
+        };
+    } catch (error) {
+        console.log("error in search respective page", error)
+    }
 }
 
