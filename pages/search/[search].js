@@ -135,7 +135,7 @@ export default function Search(props) {
                                                                 width={1072}
                                                                 height={603}
                                                                 offset={100}
-                                                                placeholder={`<img src="${defaultImg}" alt="loading..." />`}
+                                                                placeholder={<img src={`${defaultImg}`} alt="loading..." />}
                                                                 once
                                                             >
                                                                 <img src={item.cover_img} alt="arraw" width={1072} height={603}/>
@@ -151,7 +151,7 @@ export default function Search(props) {
                                                         width={1072}
                                                         height={603}
                                                         offset={100}
-                                                        placeholder={`<img src="${defaultImg}" alt="loading..." />`}
+                                                        placeholder={<img src={`${defaultImg}`} alt="loading..." />}
                                                         once
                                                     >
                                                         <img src={item.cover_img} alt="arraw" width={1072} height={603}/>
