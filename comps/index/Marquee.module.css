@@ -1,0 +1,27 @@
+.marquee{
+    padding: 48px 0;
+    margin-bottom: 48px;
+}
+.marquee a{
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 80px;
+    background: linear-gradient(90deg, #42E031 0%, #12CCFF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media (max-width:1699px) {
+    .marquee{
+        padding: 32px 0;
+        margin-bottom: 32px;
+    }
+    .marquee a{
+        font-size: 48px;
+    }
+}
+@media (max-width:767px) {
+    .marquee a{
+        font-size: 32px;
+    }
+}

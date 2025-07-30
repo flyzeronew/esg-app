@@ -1,3 +1,11 @@
+.mainVision{
+  margin-bottom: 48px;
+}
+@media (max-width:767px) {
+  .mainVision{
+    margin-bottom: 32px;
+  }
+}
 .mainVision .frameBox{
   width: 1664px;
   margin: 0 auto;
