@@ -8,6 +8,7 @@ import PartnerList from '../comps/index/PartnerList'
 import { useState } from 'react'
 import styles from './index-new.module.css';
 import classNames from 'classnames/bind';
+import Marquee from 'react-fast-marquee';
 import { genericPageService } from '@/services/cms/apisCMS'
 
 const cx = classNames.bind(styles);
@@ -50,6 +51,11 @@ export default function Home(props) {
       <main>
         <div className={cx("indexPage")}>
           <MainVisionNew data={indexHeadlines} />
+          <div className={cx("marquee")}>
+            <Marquee speed={50} gradient={false} pauseOnHover={true} loop={0}>
+              <a href="https://www.khm.com.tw/" target="_blank"> 富邦金控攜手田中馬拉松 Run For Green™  富邦金控攜手田中馬拉松 Run For Green™  </a>
+            </Marquee>
+          </div>
         </div>
       </main>
       <Footer />
