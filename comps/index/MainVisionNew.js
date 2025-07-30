@@ -57,7 +57,7 @@ function MainVision(props) {
                                     <div className={cx('bottomMask')}></div>
                                 </div>
                                 <div className={cx('txtBox')}>
-                                    <div className={cx('title')}>{data[current].title}</div>
+                                    <h3 className={cx('title')}>{data[current].title}</h3>
                                     <div className={cx('txt')}>
                                         <p>{data[current].description}</p>
                                         <div className={cx('arraw')}>

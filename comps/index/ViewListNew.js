@@ -8,7 +8,7 @@ function ViewList(props) {
     return (        
         <div className={cx("view")}>
             <div className={cx("frameBox")}>
-                <div className={cx("title")}>永續觀點</div>
+                <h2 className={cx("title")}>永續觀點</h2>
                 <div className={cx("list")}>
                     <ul>
                         <li>

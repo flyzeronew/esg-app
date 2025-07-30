@@ -6,10 +6,12 @@
     font-size: 56px;
     font-weight: 500;
     line-height: 80px;
+/*     
     background: linear-gradient(90deg, #42E031 0%, #12CCFF 100%);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: #42E031;
 }
 @media (max-width:1699px) {
     .marquee{
