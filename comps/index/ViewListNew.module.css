@@ -28,16 +28,62 @@
         margin: 0 auto;
     }
 }
-
 .view{
     background-color: #FBFBFB;
     padding: 80px 0;
 }
-
 .view .title{
     color: #1A242F;
     font-size: 48px;
     font-style: normal;
     font-weight: 500;
     line-height: 135%;
+}
+.view .list{
+
+}
+.view .list ul{
+    
+}
+.view .list ul li{
+    padding: 48px 0;
+}
+.view .list ul li a{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+.view .list .imgBox,.view .list .txtBox{
+    width: 50%;
+}
+.view .list .imgBox{
+    display: flex;
+    gap: 64px;
+}
+.view .list .imgBox .img{
+    aspect-ratio: 16/9;
+    border-radius: 40px;
+    overflow: hidden;
+}
+.view .list .imgBox .time .t1{
+    font-family: var(--font-family-roboto);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: -0.2px;
+}
+.view .list .imgBox .time .t2{
+    font-family: var(--font-family-roboto);
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -1.12px;
+}
+.view .list .txtBox{
+    padding-right: 48px;
+}
+.view .btnBox{
+
 }

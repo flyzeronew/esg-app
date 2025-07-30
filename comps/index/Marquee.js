@@ -8,8 +8,8 @@ function MarqueeView(props) {
 
     return (
         <div className={cx("marquee")}>
-            <Marquee speed={50} pauseOnHover={true} loop={0}>
-                <a href="https://www.khm.com.tw/" target="_blank"> 😀富邦金控攜手田中馬拉松 Run For Green™ 🌏🏃‍♀️ 富邦金控攜手田中馬拉松 Run For Green™ 🌏🏃‍♀️  </a>
+            <Marquee speed={50} loop={0}>
+                <a href="https://www.khm.com.tw/" target="_blank"> 😀富邦金控攜手田中馬拉松 Run For Green™ 🌏🏃‍♀️ 😀富邦金控攜手田中馬拉松 Run For Green™ </a>
             </Marquee>
         </div>
     );
