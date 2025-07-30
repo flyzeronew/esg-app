@@ -192,18 +192,21 @@
 }
 .content .reportArea {
     margin: 74px auto 65px auto;
-    background: url(/images/reportCardInfo.png) no-repeat;
+    background: url(/images/2025reportCardInfo.png) no-repeat;
     background-size: cover;
     width: 1040px;
-    height: 595px;
+    aspect-ratio: 16/9;
     border-radius: 20px;
     padding: 53px 56px;
+    display: flex;
+    align-items: flex-end;
 }
-
-.reportContent {
+.content .reportContent {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 364px;
+    align-items: center;
+    column-gap: 15px;
 }
 
 .content .reportArea .mainTitle {
@@ -261,7 +264,6 @@
 .content .reportArea .downloadArea {
     display: flex;
     column-gap: 50px;
-    margin-top: 50.72px;
     justify-content: flex-end;
     align-items: flex-end;
 }
@@ -493,27 +495,13 @@
         border-radius: 20px 20px 0 0;
         padding: 15px 20px;
     }
-
-    .content .reportArea {
-        margin: 54px auto 0 auto;
-        width: 900px;
-        height: 514px;
-        border-radius: 20px;
-        padding: 53px 56px;
-    }
-
     .content .reportArea {
         margin: 54px auto 51px auto;
         background-size: cover;
+        border-radius: 20px;
         width: 900px;
-        height: 514px;
         padding: 53px 56px;
     }
-
-    .reportContent {
-        margin-top: 300px;
-    }
-
     .content .reportArea .mainTitle {
         border-radius: 10px;
         background: #FFF;
@@ -578,13 +566,12 @@
         margin: 0 -1px;
     }
     .content .reportArea {
-        max-width: 656px;
-        max-height: 372px;
+        width: 90%;
         padding: 53px 20px;
     }
     
     .reportContent {
-        margin-top: 162px;
+
     }
 
     .reportArea .mainTitle span {
@@ -648,7 +635,6 @@
     .mainView .titleBox {
         display: none;
     }
-   
     .mainView .title h1 { 
         font-size: 28px;
         width: max-content;
@@ -690,7 +676,7 @@
     .mainView .title h1 {
         border-bottom-right-radius:0;
     }
-   
+
     .content {
         width: 100%;
     }
@@ -700,8 +686,6 @@
     .content .contxt .commitmentTitle {
         width: 100%;
         margin-bottom: 24px;
-       
-
     }
     .commitmentTitle br  {
         display: block;
@@ -714,7 +698,7 @@
     }
     .content .reportArea {
         width: 100%;
-        min-height: 368px;
+        aspect-ratio: 1/1;
         padding: 53px 14px;
     }
     .content .reportArea .mainTitle { 

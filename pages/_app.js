@@ -21,11 +21,11 @@ export default function App({ Component, pageProps }) {
   return (
     <main >
       <style jsx global>{`
-       :root {
-        --font-family-noto: ${noto.style.fontFamily};
-        --font-family-lexend: ${lexend.style.fontFamily};
-        --font-family-roboto: ${roboto.style.fontFamily};
-       }
+        :root {
+          --font-family-noto: ${noto.style.fontFamily};
+          --font-family-lexend: ${lexend.style.fontFamily};
+          --font-family-roboto: ${roboto.style.fontFamily};
+        }
         header {
           font-family: var(--font-family-noto);
         }

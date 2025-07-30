@@ -49,7 +49,7 @@
     margin-bottom: 20px;
 }
 .searchPage .greenTxt{
-    color:#00D780;
+    color:#00C173;
 }
 .searchPage .related{
     font-weight: 500;
@@ -73,6 +73,11 @@
     line-height: 36px;
     letter-spacing: 2%;
     margin-bottom: 15px;
+}
+.searchPage .list .title strong,
+.searchPage .list .txt strong
+{
+    color: #00C173;
 }
 .searchPage .list .time{
     font-weight: 400;

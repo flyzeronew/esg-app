@@ -6,14 +6,9 @@ export default function Document() {
   return (
     <Html lang='zh-Hant-TW'>
       <Head>
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link> */}
-        {/* <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"></link> */}
-        {/* <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"></link> */}
-        {/* <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"></link> */}
         <link rel="icon" type="image/png" sizes="16x16" href={`${appUrl}/images/tvbs-good.png`}></link>
         {/* GTM */}
-         <script
+        <script
             dangerouslySetInnerHTML={{
               __html: `    
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

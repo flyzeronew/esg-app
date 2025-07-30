@@ -16,7 +16,6 @@ function Footer(props) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  console.log(isFixed);
   return (
     <footer 
       className={`${styles.footer} ${isFixed ? styles.fixed : ''}`}

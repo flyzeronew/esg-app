@@ -55,7 +55,7 @@ export default function Genres(props) {
                 <meta name="application-name" content="TVBS" />
                 <meta name="URL" content={`${appUrl}${genrePageDetails.pathname}`} />
                 <meta name="medium" content="mult" />
-                <meta name="robots" content="INDEX,FOLLOW"/>
+                <meta name="robots" content="index,follow"/>
                 <meta property="og:image" content={ogImg} /> 
                 <link rel="canonical" href={`${appUrl}${genrePageDetails.pathname}`} /> 
             </Head>

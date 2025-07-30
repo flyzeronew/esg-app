@@ -186,7 +186,7 @@ export default function ViewArticle(props) {
           content={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`}
         />
         <meta name="medium" content="mult" />
-        <meta name="robots" content="INDEX,FOLLOW" />
+        <meta name="robots" content="index,follow" />
         <meta property="og:image" content={ogImg} />
         <meta property="og:title" content={`${getArticleData.title} - TVBS ESG專區`} />
         <meta property="og:description" content={getArticleData.description} />

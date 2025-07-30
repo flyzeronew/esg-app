@@ -37,7 +37,7 @@ export default function Responsibility(props) {
         <meta name="application-name" content="TVBS" />
         <meta name="URL" content={`${appUrl}${reportsPageDetails.pathname}`} />
         <meta name="medium" content="mult" />
-        <meta name="robots" content="INDEX,FOLLOW" />
+        <meta name="robots" content="index,follow" />
         <meta property="og:image" content={ogImg} />
         <link rel="canonical" href={`${appUrl}${reportsPageDetails.pathname}`} />
       </Head>
@@ -145,16 +145,16 @@ export default function Responsibility(props) {
                     <div className={cx("reportContent")}>
                         <div className={cx("content")}>
                             <div className={cx("mainTitle")}>
-                                <span>2024 年度永續影響力報告</span>
+                                <span>2025 1-4 月永續影響力報告</span>
                             </div>
-                            <div className={cx("subTitle")}>
+                            {/* <div className={cx("subTitle")}>
                                 <span>
-                                  成就永續未來：TVBS年度影響力回顧
+
                                 </span>
-                            </div>
+                            </div> */}
                         </div>
                         <div className={cx("downloadArea")} >
-                            <a href={`${appUrl}/responsibility/reports/annual/2024annual`} target="_blank">
+                            <a href={staticPath+"/reports/quaterly/2025/2025_Jan_Apr_Report.pdf"} target="_blank">
                                 <div className={cx("arraw")}>
                                     <ArrowRight></ArrowRight>
                                 </div>
@@ -169,6 +169,7 @@ export default function Responsibility(props) {
               <div className={cx("reportsTitle")}>
                 <p>歷年永續報告</p>                
                 <div className={cx("list")}>
+                  <a href={`${appUrl}/responsibility/reports/annual/2024annual`} target="_blank" >2024 年度永續影響力報告</a>
                   <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響報告_q2_Desktop.pdf"} target="_blank" >2024 5-8 月永續影響力報告</a>
                   <a className={cx("mobilePdf")} href={staticPath+"/reports/quaterly/2024/永續報告_q2_mobile .pdf"} target="_blank" >2024 5-8 月永續影響力報告</a>
                   <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響力報告 - 桌機版q1_desktop.pdf"} target="_blank" >2024 1-4 月永續影響力報告</a>

@@ -18,7 +18,6 @@ export default function Search(props) {
     const searchType = 'pageSearch';
     const menu = props.menu;
     const page = props.page;
-    const defaultImg = process.env.IMG_DEFAULT
     const appUrl = process.env.APP_URL;
     const pathname = usePathname();
     const url = `${appUrl}${pathname}`;
@@ -29,8 +28,7 @@ export default function Search(props) {
     const [hoverBgSize, setHoverBgSize] = useState();
 
     // 計算文章數量轉頁面數
-    const articleNum = 10;
-    // const articleCount = props.articlesData.article_count-1;
+    const articleNum = props.limit;
     const articleCount = searchData.searchCount;
     const articleMath = Math.floor(articleCount / articleNum);
     const pageCount = articleCount % articleNum != 0 ? articleMath + 1 : articleMath ;
@@ -76,7 +74,7 @@ export default function Search(props) {
             <meta name="copyright" content="TVBS" />
             <meta name="application-name" content="TVBS" />
             <meta name="URL" content={url} />
-            <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta name="robots" content="noindex, nofollow" />
             <link rel="canonical" href={url} />
             <link rel="image_src" type="image/jpeg" href={ogImg} />
         </Head>
@@ -137,6 +135,7 @@ export default function Search(props) {
                                                                 offset={100}
                                                                 placeholder={<img src={`${appUrl}/images/TVBSGOOD_default.webp`} alt="loading..." />}
                                                                 once
+                                                                
                                                             >
                                                                 <img src={item.cover_img} alt="arraw" width={1072} height={603}/>
                                                             </LazyLoad>
@@ -183,10 +182,11 @@ export default function Search(props) {
 export async function getServerSideProps(context) {
     const { query } = context;
     const page = Number(query.page) || 1;
+    const limit = 10;
     const keyword = query.search;
     const focusUrl = new URL('/api/focus-news', process.env.API_URL);
-    const searchUrl = new URL(`/api/search?keyword=${keyword}&page=${page}`, process.env.API_URL);
-
+    const searchUrl = new URL(`/api/search?keyword=${keyword}&page=${page}&limit=${limit}`, process.env.API_URL);
+    
     try {
         const [focusRes, searchRes] = await Promise.all([
             fetch(focusUrl),
@@ -197,7 +197,7 @@ export async function getServerSideProps(context) {
         const searchData = await searchRes.json();
         return {
             props: {
-                page, menu, focus, searchData,
+                page, limit, menu, focus, searchData,
             },
         };
     } catch (error) {

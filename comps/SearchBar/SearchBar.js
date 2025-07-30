@@ -8,7 +8,6 @@ function SearchBar(props) {
     const showSearchBar = props.showSearchBar || '';
     const searchKeyword = props.searchKeyword || '';
     const searchType = props.searchType || '';
-    console.log(searchKeyword);
     return (
         <div className={cx('searchBar', showSearchBar ? 'show' : '')}>
             <div className={cx('searchBox')}>

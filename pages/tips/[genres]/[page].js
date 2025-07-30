@@ -96,7 +96,7 @@ export default function Page(props) {
             <meta name="application-name" content="TVBS" />
             <meta name="URL" content={`${thisPageGenreUri}/${tipsData.id}`} />
             <meta name="medium" content="mult" />
-            <meta name="robots" content="INDEX,FOLLOW"/>
+            <meta name="robots" content="index,follow"/>
             <meta property="og:image" content={ogImg} />
             <link rel="canonical" href={`${thisPageGenreUri}/${tipsData.id}`} />
         </Head>

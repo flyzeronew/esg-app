@@ -38,7 +38,7 @@ export default function Responsibility(props) {
         <meta name="application-name" content="TVBS" />
         <meta name="URL" content={`${appUrl}${guidePageDetails.pathname}`} />
         <meta name="medium" content="mult" />
-        <meta name="robots" content="INDEX,FOLLOW" />
+        <meta name="robots" content="index,follow" />
         <meta property="og:title" content={guidePageDetails.title} />
         <meta property="og:image" content={ogImg} />
         <link rel="canonical" href={`${appUrl}${guidePageDetails.pathname}`} />

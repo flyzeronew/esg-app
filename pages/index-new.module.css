@@ -1,0 +1,305 @@
+/* 新首頁 內容*/
+.indexPage img{
+    width: 100%;
+    height: auto;
+}
+.indexPage{
+    font-family: var(--font-family-noto);
+    margin-bottom: 30px;
+}
+.mainVision .frameBox{
+    width: 1664px;
+    margin: 0 auto;
+}
+@media (max-width:1699px) {
+    .mainVision .frameBox{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1279px) {
+    .mainVision .frameBox{
+        width: 970px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1023px) {
+    .mainVision .frameBox{
+        width: 768px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:767px) {
+    .mainVision .frameBox{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+.mainVision{
+    width: 100%;
+}
+.mainVision .first a{
+    padding: 48px 0;
+    display: flex;
+    align-items: center;
+    column-gap: 128px;
+}
+.mainVision .first a .img img{
+    transition: transform 0.2s ease-out;
+    transform: scale(1);
+}
+.mainVision .first a:hover .img img{
+    transition: transform 0.2s ease-in;
+    transform: scale(1.2);
+}
+.mainVision .first .imgBox{
+    width: 60%;
+    aspect-ratio: 16/9;
+    border-radius: 64px;
+    overflow: hidden;
+    position: relative;
+}
+.mainVision .first .arraw{
+    width: 48px;
+    height: 48px;
+    aspect-ratio: 1/1;
+    border-radius: 60px;
+    background-color: #eee;
+    transition: background-color 0.2s ease-out;
+}
+.mainVision .first a:hover .arraw{
+    background-color: #5BEC3E;
+    transition: background-color 0.2s ease-in;
+}
+.mainVision .first a .arraw img{
+    transition: transform 0.2s ease-out;
+    transform: rotate(0deg);
+}
+.mainVision .first a:hover .arraw img{
+    transition: transform 0.2s ease-in;
+    transform: rotate(-45deg);
+}
+.mainVision .first .imgBox .timeMask{  
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(60deg,  rgba(30,87,153,0) 0%,rgba(37,191,238,0) 50%,rgba(39,212,255,0.1) 65%,rgba(92,239,126,9) 100%); 
+}
+.mainVision .first .imgBox .bottomMask{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    z-index: 3;
+    bottom: 0;
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+}
+.mainVision .first .imgBox .time{  
+    font-family: var(--font-family-roboto);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 48px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+.mainVision .first .imgBox .time .t1{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.32px;
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
+}
+.mainVision .first .imgBox .time .t2{
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.88px;
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
+}
+.mainVision .first .txtBox{
+    width: 40%;
+}
+.mainVision .first .txtBox .title{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 135%;
+    margin-bottom: 16px;
+}
+.mainVision .first .txtBox .txt p{
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0.44px;
+    margin-bottom: 32px;
+}
+.mainVision .list ul{
+    display: flex;
+    column-gap: 36px;
+}
+.mainVision .list li{
+    width: calc(100% / 5);
+}
+.mainVision .list li .img{
+    width: 100%;
+    aspect-ratio: 304/190;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 12px;
+}
+.mainVision .list li .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mainVision .list .txtBox .title{
+    color: #1A242F;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.mainVision .list .txtBox .time{
+    font-family: var(--font-family-noto);
+    color: #CCC;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+.pc{
+    display: block;
+}
+.mo{
+    display: none;
+}
+
+@media (max-width:1699px) {
+    .mainVision .first a{
+        padding: 32px 0;
+        column-gap: 48px;
+    }
+    .mainVision .first .txtBox .title{
+        font-size: 36px;
+    }
+    .mainVision .first .imgBox{
+        border-radius: 48px;
+    }
+    .mainVision .list ul{
+        display: flex;
+        column-gap: 32px;
+    }
+}
+@media (max-width:1023px) {
+    .mainVision .first a{
+        padding: 0;
+        display: block;
+    }
+    .mainVision .first .imgBox{
+        width: 100%;
+        border-radius: 0;
+        overflow: hidden;
+        position: relative;
+    }    
+    .mainVision .first .txtBox{
+        width: 100%;
+        padding: 0 48px;
+    }
+    .mainVision .first .txtBox .title{
+        font-size: 26px;
+        margin-bottom: 8px;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+    }
+    .mainVision .first .txtBox .txt{
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        margin-bottom: 24px;
+    }
+    .mainVision .first .txtBox .txt p{
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.36px;
+    }
+    .mainVision .first .imgBox .bottomMask{
+        display: block;
+    }
+    .mainVision .list{
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .mainVision .list ul{
+        width: max-content;
+        padding-left: 48px;
+        column-gap: 20px;
+    }
+    .mainVision .list li{
+        width: 138px;
+        margin-bottom: 0;
+    }
+    .mainVision .list li .title{
+ 
+    }
+    .mainVision .list li .img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 16px;
+        margin-bottom: 12px;
+    }
+    .mainVision .list .txtBox .title{
+        -webkit-line-clamp: 2;
+    }
+    .mainVision .list .txtBox .time{
+        font-size: 14px;
+    }
+    .pc{
+        display: none;
+    }
+    .mo{
+        display: block;
+    }
+}
+@media (max-width:767px) {
+    .mainVision .first .arraw{
+        width: 40px;
+        height: 40px;
+    }
+    .mainVision .first .txtBox{
+        padding: 0 24px;
+    }
+    .mainVision .first .txtBox .txt{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.36px;
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        margin-bottom: 24px;
+    }
+    .mainVision .list ul{
+        padding-left: 24px;
+        column-gap: 16px;
+    }
+}
+/* 新首頁 內容*/

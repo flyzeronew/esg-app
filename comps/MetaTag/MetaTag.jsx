@@ -12,7 +12,7 @@ export default function MetaTags({ appUrl, currentPage, ogImg, pageInfo }) {
       <meta name="application-name" content={"TVBS"} />
       <meta name="URL" content={`${appUrl}/${currentPage}`} />
       <meta name="medium" content="mult" />
-      <meta name="robots" content="INDEX,FOLLOW" />
+      <meta name="robots" content="index,follow" />
       <meta property="og:image" content={ogImg} />
       <link rel="canonical" href={`${appUrl}/${currentPage}`} />
     </Head>

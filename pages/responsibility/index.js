@@ -164,7 +164,7 @@ export default function Responsibility(props) {
                                     <iframe
                                         width="100%"
                                         height="100%"
-                                        src="https://www.youtube.com/embed/u0qpQoicb4M?autoplay=1&mute=1"
+                                        src="https://www.youtube.com/embed/cdIQQleUB14?autoplay=1&mute=1"
                                         frameborder="0"
                                         allowfullscreen
                                     ></iframe>
@@ -186,9 +186,8 @@ export default function Responsibility(props) {
                                     {/* <div className={cx("t1'>數位永續皆卓越！TVBS總經理劉文硯<br/>再獲APEA「卓越企業領袖」</div> */}
                                 </div>
                                 <div className={cx('video')}>
-                                    {/* <img src='http://img.youtube.com/vi/u0qpQoicb4M/maxresdefault.jpg' alt="img" width={1920} height={1080} loading="lazy"/> */}
                                     <img
-                                        src="/images/responsibility-video-img.png"
+                                        src="http://img.youtube.com/vi/cdIQQleUB14/maxresdefault.jpg"
                                         alt="img"
                                         width={1920}
                                         height={1080}

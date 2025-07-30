@@ -245,12 +245,10 @@ export default function Home(props) {
 
 export async function getServerSideProps() {
   const menu =  await genericPageService.getMenu();
-
   // data
   const dataUrl = new URL('/api/index-other', process.env.APP_URL)
   const dataRes = await fetch(dataUrl)
   const data = await dataRes.json()
-
   // 顏色配對
   const colorMappingUrl = new URL(
     '/api/tips-color-mapping',
@@ -268,7 +266,7 @@ export async function getServerSideProps() {
       menu,
       data,
       indexData,
-      colorMapping,
+      colorMapping
     },
   }
 }
