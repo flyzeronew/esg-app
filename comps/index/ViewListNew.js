@@ -29,12 +29,66 @@ function ViewList(props) {
                                         永續生活
                                     </h4>
                                     <h3 className={cx("title")}>
-                                        一趟環島、一場拳擊賽，一次翻越山脈的挑戰——運動，正悄悄改變孩子的人生
+                                        大雨滂沱也不怕！新北市如何用 AI 科技 打造一座「不怕水」的智慧城市？
                                     </h3>
+                                </div>
+                                <div className={cx("arraw")}>
+                                    <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="##">
+                                <div className={cx('imgBox')}>
+                                    <div className={cx('time')}>
+                                        <div className={cx('t1')}>MAY</div>
+                                        <div className={cx('t2')}>26</div>
+                                    </div>
+                                    <div className={cx("img")}>
+                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" />
+                                    </div>
+                                </div>
+                                <div className={cx("txtBox")}>
+                                    <h4 className={cx("subTitle")}>
+                                        永續生活
+                                    </h4>
+                                    <h3 className={cx("title")}>
+                                        大雨滂沱也不怕！新北市如何用 AI 科技 打造一座「不怕水」的智慧城市？
+                                    </h3>
+                                </div>
+                                <div className={cx("arraw")}>
+                                    <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="##">
+                                <div className={cx('imgBox')}>
+                                    <div className={cx('time')}>
+                                        <div className={cx('t1')}>MAY</div>
+                                        <div className={cx('t2')}>26</div>
+                                    </div>
+                                    <div className={cx("img")}>
+                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" />
+                                    </div>
+                                </div>
+                                <div className={cx("txtBox")}>
+                                    <h4 className={cx("subTitle")}>
+                                        永續生活
+                                    </h4>
+                                    <h3 className={cx("title")}>
+                                        大雨滂沱也不怕！新北市如何用 AI 科技 打造一座「不怕水」的智慧城市？
+                                    </h3>
+                                </div>
+                                <div className={cx("arraw")}>
+                                    <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
                                 </div>
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div className={cx("btnBox")}>
+                    <a href={`${appUrl}/view`}>更多好文</a>
                 </div>
             </div>
         </div> 
