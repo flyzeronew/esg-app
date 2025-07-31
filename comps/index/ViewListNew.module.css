@@ -69,6 +69,8 @@
     aspect-ratio: 16/9;
     border-radius: 40px;
     overflow: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 .view .list .imgBox .img img{
     transition: transform 0.2s ease-out;
