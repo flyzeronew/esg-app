@@ -6,7 +6,6 @@ const cx = classnames.bind(styles);
 function MainVision(props) {
     
     const data = props.data;
-    console.log(data);
     const [current, setCurrent] = useState(props.initialSlide || 0);
     const [fadeIn, setFadeIn] = useState(true);
     const dataLength = data.length;
