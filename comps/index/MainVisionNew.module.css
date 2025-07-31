@@ -1,5 +1,6 @@
 .mainVision{
   margin-bottom: 48px;
+  transition: 0.2s;
 }
 @media (max-width:767px) {
   .mainVision{
@@ -52,13 +53,6 @@
 }
 .mainVision .first .imgBox{
   width: 60%;
-  position: relative;
-  border-radius: 64px;
-  overflow: hidden;
-  position: relative;
-}
-.mainVision .first .imgBox .img{
-  width: 100%;
   aspect-ratio: 16/9;
   border-radius: 64px;
   overflow: hidden;
@@ -213,9 +207,6 @@
   .mainVision .first .imgBox{
       border-radius: 48px;
   }
-  .mainVision .first .imgBox .img{
-    border-radius: 48px;
-  }
   .mainVision .list ul{
       display: flex;
       column-gap: 32px;
@@ -234,10 +225,7 @@
       border-radius: 0;
       overflow: hidden;
       position: relative;
-  }
-  .mainVision .first .imgBox .img{
-    border-radius: 0;
-  }
+  }    
   .mainVision .first .txtBox{
       width: 100%;
       height: 120px;
