@@ -50,15 +50,22 @@
     align-items: center;
     gap: 64px;
     position: relative;
-}
-.view .list .imgBox,.view .list .txtBox{
-    width: 50%;
+    padding-right: 48px;
 }
 .view .list .imgBox{
+    width: 60%;
     display: flex;
     gap: 64px;
+    position: relative;
+}
+.view .list .txtBox{
+    width: 40%;
+}
+.view .list .txtBox .time{
+    display: none;
 }
 .view .list .imgBox .img{
+    width: 90%;
     aspect-ratio: 16/9;
     border-radius: 40px;
     overflow: hidden;
@@ -112,7 +119,6 @@
 .view .list .txtBox .subTitle{
     color: #35D614;
     font-size: 18px;
-    font-style: normal;
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0.72px;
@@ -120,7 +126,6 @@
 }
 .view .list .txtBox .title{
     font-size: 36px;
-    font-style: normal;
     font-weight: 500;
     line-height: 135%;
     letter-spacing: 1.44px;
@@ -145,4 +150,98 @@
 }
 .view .btnBox a:hover{
     background-color: #78f580;
+}
+@media (max-width:1699px) {
+    .view .title{
+        font-size: 36px;
+    }
+    .view .list .txtBox .title{
+        font-size: 28px;
+    }
+}
+@media (max-width:1279px) {
+    .view .list .txtBox .title{
+        font-size: 24px;
+    }
+}
+@media (max-width:1023px) {
+    .view{
+        background-color: #fff;
+        padding: 48px;
+    }
+    .view .list ul li{
+        padding: 24px 0 0;
+    }
+    .view .list ul li a{
+        display: block;
+        padding-right: 0px;
+        background-color: #fff;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        overflow: hidden;
+    }
+    .view .list .imgBox{
+        width: 100%;
+        display: block;
+    }
+    .view .list .imgBox .img{
+        width: 100%;
+        border-radius: 0;
+    }
+    .view .list .imgBox .time{
+        display: none;
+    }
+    .view .list .txtBox{
+        width: 100%;
+        padding: 32px 24px;
+        box-sizing: border-box;
+        display: flex;
+        gap: 24px;
+    }
+    .view .list li a .arraw{
+        display: none;
+    }
+    .view .list .txtBox .time{
+        display: block;
+        text-align: center;
+        font-family: var(--font-family-roboto);
+    }
+    .view .list .txtBox .time .t1{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: -0.18px;
+        color: #1A242F;
+    }
+    .view .list .txtBox .time .t2{
+        text-align: center;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: -0.64px;
+        color: #1A242F;
+    }
+    .view .btnBox{
+        margin-top: 24px;
+    }
+}
+@media (max-width:767px) {
+    .view .title{
+        font-size: 30px;
+    }
+    .view{
+        background-color: #fff;
+        padding: 0 24px 32px;
+    }
+    .view .list .txtBox .subTitle{
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .view .list .txtBox .title{
+        font-size: 20px;
+    }
+    .view .btnBox{
+        margin-top: 32px;
+    }
 }
