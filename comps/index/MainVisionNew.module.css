@@ -57,6 +57,8 @@
   border-radius: 64px;
   overflow: hidden;
   position: relative;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 .mainVision .first a .img img{
   transition: transform 0.2s ease-out;
@@ -166,6 +168,8 @@
   overflow: hidden;
   position: relative;
   margin-bottom: 12px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 .mainVision .list li .img img{
   width: 100%;
@@ -206,6 +210,8 @@
   }
   .mainVision .first .imgBox{
       border-radius: 48px;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
   }
   .mainVision .list ul{
       display: flex;
@@ -284,6 +290,8 @@
       aspect-ratio: 1/1;
       border-radius: 16px;
       margin-bottom: 12px;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
   }
   .mainVision .list .txtBox .title{
       -webkit-line-clamp: 2;
