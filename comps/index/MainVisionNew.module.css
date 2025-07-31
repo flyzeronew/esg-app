@@ -51,11 +51,11 @@
   z-index: 1;
 }
 .mainVision .first a .img img{
-  transition: 0.2s;
+  transition: 0.3s;
   transform: scale(1);
 }
 .mainVision .first a:hover .img img{
-  transition: 0.2s;
+  transition: 0.3s;
   transform: scale(1.2);
 }
 .mainVision .first a .imgBox{
@@ -64,6 +64,7 @@
   border-radius: 64px;
   overflow: hidden;
   position: relative;
+  transition: 0.3s;
 }
 .mainVision .first .arraw{
   width: 48px;
