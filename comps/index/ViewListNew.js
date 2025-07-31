@@ -21,7 +21,7 @@ function ViewList(props) {
                                         <div className={cx('t2')}>26</div>
                                     </div>
                                     <div className={cx("img")}>
-                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" />
+                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" width={560} height={315} />
                                     </div>
                                 </div>
                                 <div className={cx("txtBox")}>
@@ -51,7 +51,7 @@ function ViewList(props) {
                                         <div className={cx('t2')}>26</div>
                                     </div>
                                     <div className={cx("img")}>
-                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" />
+                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" width={560} height={315} />
                                     </div>
                                 </div>
                                 <div className={cx("txtBox")}>
@@ -81,7 +81,7 @@ function ViewList(props) {
                                         <div className={cx('t2')}>26</div>
                                     </div>
                                     <div className={cx("img")}>
-                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" />
+                                        <img src={`${appUrl}/images/esg05.jpg`} alt="img" width={560} height={315} />
                                     </div>
                                 </div>
                                 <div className={cx("txtBox")}>

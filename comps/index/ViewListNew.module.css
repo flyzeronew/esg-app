@@ -158,6 +158,9 @@
     .view .list .txtBox .title{
         font-size: 28px;
     }
+    .view .list .imgBox .img{
+        border-radius: 32px;
+    }
 }
 @media (max-width:1279px) {
     .view .list .txtBox .title{

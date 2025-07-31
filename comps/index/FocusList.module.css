@@ -1,0 +1,312 @@
+
+
+.frameBox{
+    width: 1664px;
+    margin: 0 auto;
+}
+@media (max-width:1699px) {
+    .frameBox{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1279px) {
+    .frameBox{
+        width: 970px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1023px) {
+    .frameBox{
+        width: 768px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:767px) {
+    .frameBox{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+.focus{
+    background-color: #fff;
+    padding: 80px 0;
+}
+.focus .title{
+    color: #1A242F;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 135%;
+    display: flex;
+    align-items: center;
+}
+.focus .title img{
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+}
+.focus .report{
+    display: flex;
+    gap: 48px;
+    padding: 48px 0;
+}
+.focus .report .first{
+    width: 69.3%;
+}
+.focus .report .list{
+    width: 30.7%;
+}
+.focus .report .first a{
+    display: block;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+}
+.focus .report .first .txtBox{
+    padding:32px 40px;
+}
+.focus .report .first .txtBox .subTitle{
+    color: #35D614;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 135%;
+    letter-spacing: 0.88px;
+}
+.focus .report .first .txtBox .title{
+    color: #1A242F;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.64px;
+    margin-bottom: 12px;
+}
+.focus .report .first .txtBox .txt{
+    height: 68px;
+    color: #555;
+    overflow: hidden;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0.44px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+.focus .report .first .imgBox{
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    position: relative;
+}
+.focus .report .first a:hover .imgBox img{
+    transform: scale(1.2);
+}
+.focus .report .first .imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+.focus .report .first a .arraw{
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    background-color: #eeeeee;
+    border-radius: 60px;
+    z-index: 1;
+    transition:0.3s;
+    display: none;
+}
+.focus .report .first a .arraw img{
+    transform: rotate(0deg);
+}
+.focus .report .first a:hover .arraw{
+    transition:0.3s;
+    background-color: #35D614;
+}
+.focus .report .first a:hover .arraw img{
+    transition: all 0.3s ease;
+    transform: rotate(-45deg);
+}
+.focus .report .list a{
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+}
+.focus .report .list a:first-child{
+    margin-bottom: 48px;
+}
+.focus .report .list .txtBox{
+    padding:16px 24px;
+}
+.focus .report .list .txtBox .subTitle{
+    color: #35D614;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 135%;
+    letter-spacing: 0.88px;
+}
+.focus .report .list .txtBox .title{
+    color: #1A242F;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.64px;
+    margin-bottom: 12px;
+}
+.focus .report .list .txtBox .txt{
+    display: none;
+}
+.focus .report .list .imgBox{
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    position: relative;
+}
+.focus .report .list a:hover .imgBox img{
+    transform: scale(1.2);
+}
+.focus .report .list .imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+.focus .report .list a .arraw{
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    background-color: #eeeeee;
+    border-radius: 60px;
+    z-index: 1;
+    transition:0.3s;
+    display: none;
+}
+.focus .report .list a .arraw img{
+    transform: rotate(0deg);
+}
+.focus .report .list a:hover .arraw{
+    transition:0.3s;
+    background-color: #35D614;
+}
+.focus .report .list a:hover .arraw img{
+    transition: all 0.3s ease;
+    transform: rotate(-45deg);
+}
+@media (max-width:1699px) {
+    .focus .report .first{
+        width: 70.4%;
+    }
+    .focus .report .list{
+        width: 29.6%;
+    }
+    .focus .title{
+        font-size: 36px;
+    }
+}
+@media (max-width:1279px) {
+    .focus .report .first{
+        width: 68%;
+    }
+    .focus .report .list{
+        width: 30%;
+    }
+    .focus .report{
+        gap: 30px;
+    }
+    .focus .report .list a:first-child{
+        margin-bottom: 30px;
+    }
+    .focus .report .first .txtBox .subTitle,
+    .focus .report .list .txtBox .subTitle
+    {
+        font-size: 20px;
+    }
+    .focus .report .first .txtBox .title,
+    .focus .report .list .txtBox .title    
+    {
+        font-size: 28px;
+    }
+    .focus .report .first .txtBox .txt,
+    .focus .report .list .txtBox .txt
+    {
+        font-size: 18px;
+    }
+}
+@media (max-width:1023px) {
+    .focus{
+        background-color: #fff;
+        padding: 48px 0;
+    }
+    .focus .title{
+        padding-left: 24px;
+        margin-bottom: 24px;
+    }
+    .focus .report{
+        display: block;
+        padding: 0;
+    }
+    .focus .report .first,.focus .report .list{
+        width: 100%;
+    }
+    .focus .report .first {
+        margin-bottom: 24px;
+    }
+    .focus .report .first a,.focus .report .list a{
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .focus .report .list a:first-child{
+        margin-bottom: 24px;
+    }
+    .focus .report .first .txtBox,.focus .report .list .txtBox{
+        padding:24px;
+    }
+    .focus .report .first .txtBox .title,.focus .report .list .txtBox .title{
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .focus .report .first .txtBox .txt{
+        height: auto;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.36px;
+        -webkit-line-clamp: 5;
+    }
+    .focus .report .list .txtBox .txt{
+        color: #555;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.36px;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 5;
+    }
+    .focus .report .first a .arraw,
+    .focus .report .list a .arraw{
+        display: block;
+        bottom: 24px;
+        right: 24px;
+    }
+}
+@media (max-width:767px) {
+    .focus .title{
+        font-size: 30px;
+    }
+}

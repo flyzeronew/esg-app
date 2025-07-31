@@ -87,7 +87,7 @@ function MainVision(props) {
                                             </div>
                                             <div className={cx('txtBox')}>
                                                 <div className={cx('time', 'mo')}>May 26</div>
-                                                <div className={cx('title')}>{item.title}</div>
+                                                <h3 className={cx('title')}>{item.title}</h3>
                                                 <div className={cx('time', 'pc')}>May 26</div>
                                             </div>
                                         </a>

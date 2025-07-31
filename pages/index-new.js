@@ -4,6 +4,7 @@ import Footer from '../comps/Footer/Footer'
 import MainVisionNew from '../comps/index/MainVisionNew'
 import Marquee from '../comps/index/Marquee'
 import ViewListNew from '../comps/index/ViewListNew'
+import FocusList from '../comps/index/FocusList'
 import SecretList from '../comps/index/SecretList'
 import PartnerList from '../comps/index/PartnerList'
 import { useState } from 'react'
@@ -53,6 +54,7 @@ export default function Home(props) {
           <MainVisionNew data={indexHeadlines} />
           <Marquee />
           <ViewListNew />
+          <FocusList />
         </div>
       </main>
       <Footer />
