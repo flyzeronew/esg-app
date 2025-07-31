@@ -53,15 +53,12 @@
 .mainVision .first a .img img{
   transition: 0.2s;
   transform: scale(1);
-  border-radius: 64px;
-  overflow: hidden;
-  display: block;
 }
 .mainVision .first a:hover .img img{
   transition: 0.2s;
   transform: scale(1.2);
 }
-.mainVision .first .imgBox{
+.mainVision .first a .imgBox{
   width: 60%;
   aspect-ratio: 16/9;
   border-radius: 64px;
@@ -209,10 +206,6 @@
   .mainVision .first .imgBox{
       border-radius: 48px;
   }
-  .mainVision .first a .img img{
-    border-radius: 48px;
-  }
-  
   .mainVision .list ul{
       display: flex;
       column-gap: 32px;
@@ -231,10 +224,7 @@
       border-radius: 0;
       overflow: hidden;
       position: relative;
-  }
-  .mainVision .first a .img img{
-    border-radius: 0;
-  }  
+  }    
   .mainVision .first .txtBox{
       width: 100%;
       height: 120px;
