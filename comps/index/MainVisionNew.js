@@ -48,11 +48,11 @@ function MainVision(props) {
                                     <div className={cx('img')}>
                                         <img src={data[current].cover_img} alt="img" width={1072} height={603} />
                                     </div>
-                                    <div className={cx('time')}>
+                                    {/* <div className={cx('time')}>
                                         <div className={cx('t1')}>MAY</div>
                                         <div className={cx('t2')}>26</div>
                                     </div>
-                                    <div className={cx('timeMask')}></div>
+                                    <div className={cx('timeMask')}></div> */}
                                     <div className={cx('bottomMask')}></div>
                                 </div>
                                 <div className={cx('txtBox')}>
@@ -85,9 +85,9 @@ function MainVision(props) {
                                                 <img src={item.cover_img} alt="img" width={220} height={138} />
                                             </div>
                                             <div className={cx('txtBox')}>
-                                                <div className={cx('time', 'mo')}>May 26</div>
+                                                {/* <div className={cx('time', 'mo')}>May 26</div> */}
                                                 <h3 className={cx('title')}>{item.title}</h3>
-                                                <div className={cx('time', 'pc')}>May 26</div>
+                                                {/* <div className={cx('time', 'pc')}>May 26</div> */}
                                             </div>
                                         </a>
                                     </div>
