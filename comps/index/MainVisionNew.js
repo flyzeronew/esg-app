@@ -11,7 +11,7 @@ function MainVision(props) {
     const dataLength = data.length;
 
     useEffect(() => {
-        if (1 >= dataLength) return;
+        if (dataLength <= 1) return;
         const timer = setInterval(() => {
             setFadeIn(false);
             setTimeout(() => {

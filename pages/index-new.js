@@ -5,9 +5,10 @@ import MainVisionNew from '../comps/index/MainVisionNew'
 import Marquee from '../comps/index/Marquee'
 import ViewListNew from '../comps/index/ViewListNew'
 import FocusList from '../comps/index/FocusList'
-import SecretList from '../comps/index/SecretList'
-import PartnerList from '../comps/index/PartnerList'
-import { useState } from 'react'
+import InfluenceList from '../comps/index/InfluenceList'
+import PartnerListNew from '../comps/index/PartnerListNew'
+import Responsibility from '../comps/index/Responsibility'
+import TipsList from '../comps/index/TipsList'
 import styles from './index-new.module.css';
 import classNames from 'classnames/bind';
 import { genericPageService } from '@/services/cms/apisCMS'
@@ -55,6 +56,10 @@ export default function Home(props) {
           <Marquee />
           <ViewListNew />
           <FocusList />
+          <InfluenceList />
+          <PartnerListNew />
+          <TipsList />
+          <Responsibility />
         </div>
       </main>
       <Footer />

@@ -1,0 +1,176 @@
+.frameBox{
+    width: 1664px;
+    margin: 0 auto;
+}
+@media (max-width:1699px) {
+    .frameBox{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1279px) {
+    .frameBox{
+        width: 970px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1023px) {
+    .frameBox{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+.influence{
+    margin-bottom: 120px;
+}
+.influence .title{
+    color: #1A242F;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 135%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+}
+.influence .list ul{
+    display: flex;
+    align-items: center;
+}
+.influence .list ul li{
+    width: calc(100% / 3);
+}
+.influence .list .imgBox{
+    position: relative;
+}
+.influence .list .imgBox .img{
+    width: 100%;
+    aspect-ratio: 5/8;
+    overflow: hidden;
+}
+.influence .list .imgBox .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.influence .list .imgBox{
+    position: relative;
+}
+.influence .list .imgBox .arraw{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+.influence .list a:hover .arraw{
+    background-color: #35D614;
+    transition: all 0.3s ease;
+    transform: rotate(-45deg);
+}
+.influence .list .img img{
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+.influence .list a:hover  .img img{
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+.influence .list .txtBox{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    padding: 100px 24px 32px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 100%);
+}
+.influence .list .txtBox .title{
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.64px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+}
+.influence .list .txtBox .txt{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0.44px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+@media (max-width:1699px) {
+    .influence{
+        margin-bottom: 80px;
+    }
+    .influence .title{
+        font-size: 36px;
+    }
+}
+@media (max-width:1023px) {
+    .influence .list .imgBox .arraw{
+        top: auto;
+        right: 24px;
+        bottom: 24px;
+    }
+    .influence .title{
+        font-size: 30px;
+    }
+    .influence .list ul{
+        display: block;
+    }
+    .influence .list ul li{
+        width: 100%;
+    }
+    .influence .title{
+        padding-left: 24px;
+        margin-bottom: 24px;
+    }
+    .influence .list .txtBox .title{
+        width: 90%;
+        font-size: 24px;
+        padding-left: 0;
+        margin-bottom: 16px;
+    }
+    .influence .list .txtBox .txt{
+        width: 90%;
+        font-size: 18px;
+        line-height: 28px;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+    }
+}
+@media (max-width:767px) {
+    .influence .list .txtBox .title,.influence .list .txtBox .txt{
+        width: 85%;
+    }
+    .influence .title{
+        font-size: 30px;
+    }
+    .influence .list .txtBox .title{
+        font-size: 24px;
+    }
+}
+@media (max-width:414px) {
+    .influence .list .txtBox .title,.influence .list .txtBox .txt{
+        width: 75%;
+    }
+}

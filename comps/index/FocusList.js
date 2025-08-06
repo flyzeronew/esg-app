@@ -21,7 +21,7 @@ function FocusList(props) {
                                 <div className={cx("arraw")}>
                                     <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
                                 </div>
-                                <div className={cx("imgBox")}>
+                                <div className={cx("img")}>
                                     <img src={`${appUrl}/images/esg05.jpg`} alt="img" width={560} height={315} />
                                 </div>
                             </div>
@@ -44,7 +44,7 @@ function FocusList(props) {
                                 <div className={cx("arraw")}>
                                     <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
                                 </div>
-                                <div className={cx("imgBox")}>
+                                <div className={cx("img")}>
                                     <img src={`${appUrl}/images/esg05.jpg`} alt="img" width={560} height={315} />
                                 </div>
                             </div>

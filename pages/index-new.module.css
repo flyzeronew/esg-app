@@ -4,7 +4,7 @@
     height: auto;
 }
 .indexPage{
-    font-family: var(--font-family-noto);
+    font-family: var(--font-family-roboto),var(--font-family-noto);
     margin-bottom: 30px;
 }
 /* 新首頁 內容*/

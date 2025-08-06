@@ -1,3 +1,26 @@
+
+.frameBox{
+  width: 1664px;
+  margin: 0 auto;
+}
+@media (max-width:1699px) {
+  .frameBox{
+      width: 1216px;
+      margin: 0 auto;
+  }
+}
+@media (max-width:1279px) {
+  .frameBox{
+      width: 970px;
+      margin: 0 auto;
+  }
+}
+@media (max-width:1023px) {
+  .frameBox{
+      width: 100%;
+      margin: 0 auto;
+  }
+}
 .mainVision{
   margin-bottom: 48px;
   transition: 0.2s;
@@ -5,34 +28,6 @@
 @media (max-width:767px) {
   .mainVision{
     margin-bottom: 32px;
-  }
-}
-.mainVision .frameBox{
-  width: 1664px;
-  margin: 0 auto;
-}
-@media (max-width:1699px) {
-  .mainVision .frameBox{
-      width: 1216px;
-      margin: 0 auto;
-  }
-}
-@media (max-width:1279px) {
-  .mainVision .frameBox{
-      width: 970px;
-      margin: 0 auto;
-  }
-}
-@media (max-width:1023px) {
-  .mainVision .frameBox{
-      width: 768px;
-      margin: 0 auto;
-  }
-}
-@media (max-width:767px) {
-  .mainVision .frameBox{
-      width: 100%;
-      margin: 0 auto;
   }
 }
 .mainVision{

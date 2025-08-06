@@ -1,5 +1,4 @@
 
-
 .frameBox{
     width: 1664px;
     margin: 0 auto;
@@ -18,19 +17,13 @@
 }
 @media (max-width:1023px) {
     .frameBox{
-        width: 768px;
-        margin: 0 auto;
-    }
-}
-@media (max-width:767px) {
-    .frameBox{
         width: 100%;
         margin: 0 auto;
     }
 }
 .focus{
     background-color: #fff;
-    padding: 80px 0;
+    margin-bottom: 180px;
 }
 .focus .title{
     color: #1A242F;
@@ -40,6 +33,7 @@
     line-height: 135%;
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 .focus .title img{
     width: 40px;
@@ -210,6 +204,10 @@
     transform: rotate(-45deg);
 }
 @media (max-width:1699px) {
+    .focus{
+        background-color: #fff;
+        margin-bottom: 160px;
+    }
     .focus .report .first{
         width: 70.4%;
     }
@@ -221,6 +219,10 @@
     }
 }
 @media (max-width:1279px) {
+    .focus{
+        background-color: #fff;
+        margin-bottom: 80px;
+    }
     .focus .report .first{
         width: 68%;
     }
@@ -250,11 +252,8 @@
     }
 }
 @media (max-width:1023px) {
-    .focus{
-        background-color: #fff;
-        padding: 48px 0;
-    }
     .focus .title{
+        font-size: 30px;
         padding-left: 24px;
         margin-bottom: 24px;
     }
@@ -307,10 +306,5 @@
         display: block;
         bottom: 24px;
         right: 24px;
-    }
-}
-@media (max-width:767px) {
-    .focus .title{
-        font-size: 30px;
     }
 }

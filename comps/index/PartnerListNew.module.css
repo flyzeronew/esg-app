@@ -1,0 +1,114 @@
+.frameBox{
+    width: 1664px;
+    margin: 0 auto;
+}
+@media (max-width:1699px) {
+    .frameBox{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1279px) {
+    .frameBox{
+        width: 970px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1023px) {
+    .frameBox{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+.partner{
+    color: #1A242F;
+    margin-bottom: 180px;
+}
+.partner .title{    
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 135%;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+.partner .title img{
+    display: none;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+}
+.partner .txt{
+    font-size: 22px;
+    overflow: hidden;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0.44px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+.partner .txt br{
+    display: block;
+}
+.partner .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding:0 12px;
+}
+.partner .list a{
+    width: 160px;
+    height: 160px;
+    aspect-ratio: 1/1;
+}
+.partner .list a img{
+    width: 100%;
+    height: auto;
+}
+@media (max-width:1699px) {
+    .partner{
+        margin-bottom: 160px;
+    }
+    .partner .title{    
+        font-size: 36px;
+    }
+    .partner .list a{
+        width: 104px;
+        height: 104px;
+    }
+}
+@media (max-width:1023px) {
+    .partner{
+        margin-bottom: 80px;
+    }
+    .partner .title img{
+        display: block;
+    }
+    .partner .txt br{
+        display: none;
+    }
+    .partner .title{ 
+        font-size: 30px;
+        text-align: left;
+        padding:0 24px;
+        justify-content: flex-start;
+    }
+    .partner .txt{    
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 43px;
+        text-align: left;
+        padding:0 24px;
+    }
+    .partner .list{
+        gap: 18px;
+    }
+}
+@media (max-width:374px) {
+    .partner .list a{
+        width: 80px;
+        height: 80px;
+    }
+}
