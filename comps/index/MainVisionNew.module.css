@@ -33,7 +33,8 @@
 .mainVision{
   width: 100%;
 }
-.mainVision .first .box{
+/* 原始樣式已移至疊層效果中 */
+/* .mainVision .first .box{
   padding: 48px 0;
   display: flex;
   align-items: center;
@@ -45,7 +46,7 @@
 .mainVision .first .box.show {
   opacity: 1;
   z-index: 1;
-}
+} */
 .mainVision .first .imgBox{
   width: 60%;
   aspect-ratio: 16/9;
@@ -141,7 +142,8 @@
   letter-spacing: 0.44px;
   margin-bottom: 32px;
 }
-.mainVision .list .box{
+/* 原有樣式已移至疊層效果中 */
+/* .mainVision .list .box{
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -152,9 +154,9 @@
 .mainVision .list ul{
   display: flex;
   column-gap: 36px;
-}
+} */
 .mainVision .list li{
-  width: calc((100% - 36px * 4) / 5);
+  width: calc((100% - 36px * 4) / 5);  
 }
 .mainVision .list li .img{
   width: 100%;
@@ -170,6 +172,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.mainVision .list .txtBox{
+  background-color: #fff;
 }
 .mainVision .list .txtBox .title{
   color: #1A242F;
@@ -289,6 +294,7 @@
       -webkit-transform: translateZ(0);
   }
   .mainVision .list .txtBox .title{
+      height: 48px;
       -webkit-line-clamp: 2;
   }
   .mainVision .list .txtBox .time{
@@ -331,5 +337,233 @@
   .mainVision .list ul{
       padding-left: 24px;
       column-gap: 16px;
+  }
+}
+
+/* 疊層輪播效果 */
+.mainVision .first {
+  position: relative;
+}
+
+/* 下一張圖片背景層 */
+.nextBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.nextBackground .box {
+  padding: 48px 0;
+  display: flex;
+  align-items: center;
+  column-gap: 128px;
+  background-color: #ffffff;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+/* 當前圖片前景層 */
+.currentForeground {
+  position: relative;
+  z-index: 2;
+}
+
+.currentForeground .box {
+  padding: 48px 0;
+  display: flex;
+  align-items: center;
+  column-gap: 128px;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.currentForeground .box.show {
+  opacity: 1;
+}
+
+/* 響應式調整 */
+@media (max-width:1699px) {
+  .nextBackground .box,
+  .currentForeground .box {
+    column-gap: 80px;
+  }
+}
+
+@media (max-width:1279px) {
+  .nextBackground .box,
+  .currentForeground .box {
+    column-gap: 48px;
+  }
+}
+
+@media (max-width:1023px) {
+  .nextBackground .box,
+  .currentForeground .box {
+    flex-direction: column;
+    row-gap: 32px;
+    padding: 32px 0;
+  }
+}
+
+@media (max-width:767px) {
+  .nextBackground .box,
+  .currentForeground .box {
+    padding: 24px 0;
+    row-gap: 24px;
+  }
+}
+
+/* 列表疊層效果 */
+.mainVision .list {
+  position: relative;
+}
+
+/* 列表背景層 */
+.listBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.listBackground ul {
+  display: flex;
+  column-gap: 36px;
+}
+
+.listBackground li {
+  width: calc((100% - 36px * 4) / 5);
+  background-color: #fff;
+}
+
+.listBackground .box {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.listBackground .img {
+  width: 100%;
+  aspect-ratio: 304/190;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 12px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.listBackground .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.listBackground .txtBox {
+  width: 100%;
+}
+
+.listBackground .title {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0.36px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+/* 列表前景層 */
+.listForeground {
+  position: relative;
+  z-index: 2;
+}
+
+.listForeground ul {
+  display: flex;
+  column-gap: 36px;
+}
+
+.listForeground li {
+  width: calc((100% - 36px * 4) / 5);
+}
+
+.listForeground .box {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.listForeground .box.show {
+  opacity: 1;
+}
+
+/* 註釋原有的列表樣式，避免衝突 */
+/* .mainVision .list .box{
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.mainVision .list .box.show {
+  opacity: 1;
+  z-index: 1;
+} */
+
+/* 響應式調整 - 列表 */
+@media (max-width:1699px) {
+  .listBackground ul,
+  .listForeground ul {
+    column-gap: 24px;
+  }
+  .listBackground li,
+  .listForeground li {
+    width: calc((100% - 24px * 4) / 5);
+  }
+}
+
+@media (max-width:1279px) {
+  .listBackground ul,
+  .listForeground ul {
+    column-gap: 16px;
+  }
+  .listBackground li,
+  .listForeground li {
+    width: calc((100% - 16px * 3) / 4);
+  }
+}
+
+@media (max-width:1023px) {
+  .listBackground ul,
+  .listForeground ul {
+    overflow-x: auto;
+    padding-left: 32px;
+    column-gap: 24px;
+  }
+  .listBackground li,
+  .listForeground li {
+    width: 138px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .listBackground .img,
+  .listForeground .img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width:767px) {
+  .listBackground ul,
+  .listForeground ul {
+    padding-left: 24px;
+    column-gap: 16px;
   }
 }
