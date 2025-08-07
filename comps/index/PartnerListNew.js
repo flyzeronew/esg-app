@@ -5,7 +5,8 @@ import CustomSlider from "../CustomSlider/CustomSlider";
 
 const cx = classnames.bind(styles)
 function PartnerList(props) {
-  const partners = props.partners
+  const partners = props.data
+  console.log(partners);
   const appUrl = process.env.APP_URL
   return (
     <div className={cx("partner")}>
@@ -19,33 +20,22 @@ function PartnerList(props) {
           讓城市與企業一同前行，共創可持續的明日。
         </div>
         <div className={cx("list")}>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner01.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner02.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner03.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner04.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner05.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner06.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner07.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner08.png`} alt="partner" />
-          </a>
-          <a href="/partner">
-            <img src={`${appUrl}/images/partner09.png`} alt="partner" />
-          </a>
+
+          { 0 < partners.length ? 
+            partners.map((item, index) => (
+              <a 
+                key={index} 
+                href={
+                    1 === item.has_detail_page ? 
+                    `${appUrl}/partner/` + item.name : item.outer_url
+                }
+                target={1 === item.has_detail_page ? "" : "_blank"}
+              >
+                <img src={item.avatar} alt="img" width={50} height={50} loading='lazy'/>
+              </a>
+            )) : "" 
+          }
+
         </div>
       </div>
     </div>
