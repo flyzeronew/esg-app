@@ -57,8 +57,8 @@ export default function Home(props) {
           <ViewListNew />
           <FocusList />
           <InfluenceList />
-          <PartnerListNew />
-          <TipsList />
+          <PartnerListNew data={partners} />
+          <TipsList data={tips} colorMapping={colorMapping} />
           <Responsibility />
         </div>
       </main>
@@ -69,15 +69,8 @@ export default function Home(props) {
 
 export async function getServerSideProps() {
   const menu =  await genericPageService.getMenu();
-  // data
-  const dataUrl = new URL('/api/index-other', process.env.APP_URL)
-  const dataRes = await fetch(dataUrl)
-  const data = await dataRes.json()
-  // 顏色配對
-  const colorMappingUrl = new URL(
-    '/api/tips-color-mapping',
-    process.env.APP_URL
-  )
+
+  const colorMappingUrl = new URL('/api/tips-color-mapping',process.env.APP_URL)
   const colorMappingRes = await fetch(colorMappingUrl)
   const colorMapping = await colorMappingRes.json()
 
@@ -88,7 +81,6 @@ export async function getServerSideProps() {
   return {
     props: {
       menu,
-      data,
       indexData,
       colorMapping
     },
