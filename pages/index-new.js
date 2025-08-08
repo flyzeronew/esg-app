@@ -26,7 +26,7 @@ export default function Home(props) {
   const thisPage = 'home'
   // 社群分享圖
   const ogImg = process.env.OG_IMG
-  
+
   return (
     <div id="wrapper" >
       <Head>
@@ -54,7 +54,7 @@ export default function Home(props) {
         <div className={cx("indexPage")}>
           <MainVisionNew data={indexHeadlines} />
           <Marquee />
-          <ViewListNew />
+          <ViewListNew data={articles}/>
           <FocusList />
           <InfluenceList />
           <PartnerListNew data={partners} />

@@ -6,7 +6,6 @@ import CustomSlider from "../CustomSlider/CustomSlider";
 const cx = classnames.bind(styles)
 function PartnerList(props) {
   const partners = props.data
-  console.log(partners);
   const appUrl = process.env.APP_URL
   return (
     <div className={cx("partner")}>
@@ -21,19 +20,19 @@ function PartnerList(props) {
         </div>
         <div className={cx("list")}>
 
-          { 0 < partners.length ? 
+          { 0 < partners.length ?
             partners.map((item, index) => (
-              <a 
-                key={index} 
+              <a
+                key={index}
                 href={
-                    1 === item.has_detail_page ? 
+                    1 === item.has_detail_page ?
                     `${appUrl}/partner/` + item.name : item.outer_url
                 }
                 target={1 === item.has_detail_page ? "" : "_blank"}
               >
                 <img src={item.avatar} alt="img" width={50} height={50} loading='lazy'/>
               </a>
-            )) : "" 
+            )) : ""
           }
 
         </div>
