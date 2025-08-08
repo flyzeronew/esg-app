@@ -9,9 +9,9 @@ const appUrl = process.env.APP_URL;
 // 時間格式化函數
 const formatDate = (dateString) => {
     const date = new Date(dateString);
-    const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN','JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const monthName = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date).toUpperCase();
     return {
-        month: monthNames[date.getMonth()],
+        month: monthName,
         day: date.getDate()
     };
 };
