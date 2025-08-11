@@ -126,7 +126,7 @@
     .influence .list .imgBox .arraw{
         top: auto;
         right: 24px;
-        bottom: 24px;
+        bottom: 32px;
     }
     .influence .title{
         font-size: 30px;
@@ -142,13 +142,14 @@
         margin-bottom: 24px;
     }
     .influence .list .txtBox .title{
-        width: 90%;
+        padding-right: 72px;
         font-size: 24px;
         padding-left: 0;
         margin-bottom: 16px;
+        text-align: justify;
     }
     .influence .list .txtBox .txt{
-        width: 90%;
+        padding-right: 72px;
         font-size: 18px;
         line-height: 28px;
         overflow: hidden;
@@ -156,21 +157,14 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 3;
+        text-align: justify;
     }
 }
 @media (max-width:767px) {
-    .influence .list .txtBox .title,.influence .list .txtBox .txt{
-        width: 85%;
-    }
     .influence .title{
         font-size: 30px;
     }
     .influence .list .txtBox .title{
         font-size: 24px;
-    }
-}
-@media (max-width:414px) {
-    .influence .list .txtBox .title,.influence .list .txtBox .txt{
-        width: 75%;
     }
 }

@@ -46,7 +46,7 @@ function Navbar(props) {
       return newActive;
     });
   }
- 
+
   // resize 監聽事件
   useEffect(() => {
     setCurrentPage(location.pathname);
@@ -72,7 +72,7 @@ function Navbar(props) {
         ''
       )}
       <div className={cx('mainMenuBox')}>
-        <nav className={cx('nav', hamBurger ? 'act' : navScroll ? 'act' : '')}>          
+        <nav className={cx('nav', hamBurger ? 'act' : navScroll ? 'act' : '')}>
           <div className={cx('mainMenu')}>
             <div className={cx('logo')}>
               <a href="/">
@@ -193,9 +193,9 @@ function Navbar(props) {
                 </ul>
               </div>
               {/* 主選單 ed */}
-              
-              <div 
-                className={cx('socialMedia')} 
+
+              <div
+                className={cx('socialMedia')}
                 onMouseOver = {childMenuMouseLeave}
               >
                 <div>
@@ -317,8 +317,8 @@ function Navbar(props) {
             ''
           )}
           {/* 手機板導覽列 ed*/}
-          
-          <SearchBar 
+
+          <SearchBar
               showSearchBar = {showSearchBar}
               searchType = {searchType}
               searchKeyword = {searchKeyword}

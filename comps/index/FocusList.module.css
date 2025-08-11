@@ -21,6 +21,12 @@
         margin: 0 auto;
     }
 }
+.pc{
+    display: block;
+}
+.mo{
+    display: none;
+}
 .focus{
     background-color: #fff;
     margin-bottom: 180px;
@@ -241,7 +247,7 @@
         font-size: 20px;
     }
     .focus .report .first .txtBox .title,
-    .focus .report .list .txtBox .title    
+    .focus .report .list .txtBox .title
     {
         font-size: 28px;
     }
@@ -252,6 +258,17 @@
     }
 }
 @media (max-width:1023px) {
+    .pc{
+        display: none;
+    }
+    .mo{
+        display: block;
+    }
+    .focus .report .first .txtBox .subTitle,
+    .focus .report .list .txtBox .subTitle
+    {
+        margin-bottom: 24px;
+    }
     .focus .title{
         font-size: 30px;
         padding-left: 24px;

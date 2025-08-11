@@ -17,15 +17,21 @@ function TipsList(props) {
                     <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} />
                 </h2>
             </div>
-            <ScrollContainer className={cx("list")} vertical={false}>
+            <ScrollContainer
+                className={cx("list")}
+                vertical={false}
+                ignoreElements={'.no-drag'}
+                nativeMobileScroll
+                style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', cursor: 'grab' }}
+            >
                 <div className={cx("frameBox")}>
-                    <ul>
-                        { tips.length > 0 ? 
+                    <ul style={{ scrollBehavior: 'smooth' }}>
+                        { tips.length > 0 ?
                             tips.map((item, index) => (
                                 <li key={index}>
                                     <a href={`${appUrl}/tips/${colorMapping[item.genre - 1].en_name}/${item.id}`}>
                                         <div className={cx("img")}>
-                                            <img src={item.tip_galleries[0].image_url} alt="img" width={560} height={315} />
+                                            <img src={item.tip_galleries[0].image_url} alt="img" width={560} height={315} draggable={false} />
                                         </div>
                                         <div className={cx("txt")}>
                                             <p>

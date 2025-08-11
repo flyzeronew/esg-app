@@ -21,9 +21,10 @@
     margin-bottom: 16px;
 }
 .responsibility .box .txt{
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 34px;
+    letter-spacing: 0.44px;
     margin-bottom: 16px;
 }
 .responsibility .box .btn{
@@ -115,11 +116,19 @@
         font-size: 32px;
     }
     .responsibility .box .txt{
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.36px;
     }
 }
 @media (max-width:767px) {
     .responsibility .box{
         padding: 24px;
+    }
+    .responsibility .box .btn a{
+        gap: 8px;
+        padding: 14px 20px;
+        font-size: 18px;
     }
 }

@@ -173,7 +173,7 @@
         padding: 48px;
     }
     .view .list ul li{
-        padding: 24px 0 0;
+        padding: 32px 0 0;
     }
     .view .list ul li a{
         display: block;
@@ -227,6 +227,11 @@
     }
     .view .btnBox{
         margin-top: 24px;
+    }
+    .view .btnBox a{
+        padding: 12px 20px;
+        font-size: 16px;
+        line-height: normal;
     }
 }
 @media (max-width:767px) {
