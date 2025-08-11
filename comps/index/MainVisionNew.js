@@ -4,7 +4,7 @@ import classnames from 'classnames/bind';
 const cx = classnames.bind(styles);
 
 function MainVision(props) {
-    
+
     const data = props.data;
     const [current, setCurrent] = useState(props.initialSlide || 0);
     const [fadeIn, setFadeIn] = useState(true);
@@ -16,17 +16,17 @@ function MainVision(props) {
         const timer = setInterval(() => {
             // 開始淡出當前圖片
             setFadeIn(false);
-            
+
             setTimeout(() => {
                 // 切換到下一張圖片（前景層）
                 setCurrent(prev => (prev + 1) % dataLength);
                 setFadeIn(true);
-                
+
                 // 延遲更新背景層，確保前景層完全顯示後才更新
                 setTimeout(() => {
                     setNextBg(prev => (prev + 1) % dataLength);
                 }, 500); // 等前景層淡入完成後再更新背景層
-            }, 500); 
+            }, 500);
         }, 5000);
         return () => clearInterval(timer);
     }, [dataLength]);
@@ -81,7 +81,7 @@ function MainVision(props) {
                             </a>
                         </div>
                     )}
-                    
+
                     {/* 當前圖片作為前景層 */}
                     {dataLength > 0 && (
                         <div className={cx('currentForeground')}>
@@ -140,7 +140,7 @@ function MainVision(props) {
                             </ul>
                         </div>
                     )}
-                    
+
                     {/* 列表前景層 */}
                     <div className={cx('listForeground')}>
                         <ul>

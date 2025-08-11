@@ -22,7 +22,6 @@ function TipsList(props) {
                 vertical={false}
                 ignoreElements={'.no-drag'}
                 nativeMobileScroll
-                style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', cursor: 'grab' }}
             >
                 <div className={cx("frameBox")}>
                     <ul style={{ scrollBehavior: 'smooth' }}>

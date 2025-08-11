@@ -245,14 +245,17 @@
       overflow-x: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      cursor: grab;
+  }
+  .mainVision .list html:active{
+    cursor: grabbing;
   }
   .mainVision .list ul{
       width: max-content;
       padding-left: 48px;
       column-gap: 20px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
   }
   .mainVision .list li{
       width: 138px;
