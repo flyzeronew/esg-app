@@ -168,6 +168,9 @@
     }
 }
 @media (max-width:1023px) {
+    .view .list li a:hover .img img{
+        transform: scale(1);
+    }
     .view{
         background-color: #fff;
         padding: 48px;
