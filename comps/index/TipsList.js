@@ -24,7 +24,7 @@ function TipsList(props) {
                 nativeMobileScroll
             >
                 <div className={cx("frameBox")}>
-                    <ul style={{ scrollBehavior: 'smooth' }}>
+                    <ul>
                         { tips.length > 0 ?
                             tips.map((item, index) => (
                                 <li key={index}>

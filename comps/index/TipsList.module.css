@@ -141,6 +141,7 @@
     }
     .tips .list ul{
         gap: 16px;
+        padding-right: 24px;
     }
     .tips .list li{
         width: 215px;

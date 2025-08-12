@@ -22,13 +22,7 @@
   }
 }
 .mainVision{
-  margin-bottom: 48px;
   transition: 0.2s;
-}
-@media (max-width:767px) {
-  .mainVision{
-    margin-bottom: 32px;
-  }
 }
 .mainVision{
   width: 100%;
@@ -195,6 +189,18 @@
   }
 }
 @media (max-width:1023px) {
+  .mainVision .first a .arraw{
+    background-color: #5BEC3E;
+  }
+  .mainVision .first a:hover .arraw{
+    background-color: #5BEC3E;
+  }
+  .mainVision .first a:hover .arraw img{
+    transform: rotate(0deg);
+  }
+  .mainVision .first a:hover .img img{
+    transform: scale(1);
+  }
   .mainVision .first .box{
       padding: 0;
       display: block;
