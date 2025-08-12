@@ -249,6 +249,9 @@
       scroll-behavior: smooth;
       cursor: grab;
   }
+  .mainVision .list::-webkit-scrollbar {
+    width: 0px;
+  }
   .mainVision .list html:active{
     cursor: grabbing;
   }

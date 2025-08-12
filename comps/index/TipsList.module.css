@@ -46,6 +46,9 @@
     scroll-behavior: smooth;
     cursor: grab;
 }
+.tips .list::-webkit-scrollbar {
+    width: 0px;
+}
 .tips .list:active {
     cursor: grabbing;
 }
