@@ -348,7 +348,7 @@
   column-gap: 128px;
   background-color: #ffffff;
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: all 0.8s;
 }
 
 /* 當前圖片前景層 */
@@ -364,7 +364,7 @@
   column-gap: 128px;
   background-color: #ffffff;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.8s;
 }
 
 .currentForeground .box.show {
