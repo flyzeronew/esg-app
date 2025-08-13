@@ -430,7 +430,7 @@
 
 .listBackground .box {
   opacity: 1;
-  transition: all 0.5s ease;
+  transition: all 0.8s;
 }
 
 .listBackground .img {
@@ -484,7 +484,7 @@
 
 .listForeground .box {
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.8s;
 }
 
 .listForeground .box.show {
