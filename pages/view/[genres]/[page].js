@@ -306,7 +306,7 @@ export default function ViewArticle(props) {
       </main>
       <div className={cx('extendedContent')}>
             {/* 延伸閱讀 */}
-            {articleExtended.length > 0 ? (
+            {articleExtended && articleExtended.length > 0 ? (
             <div className={cx("articleExtended")}>
               <div className={cx("box")}>
                 <div className={cx("tagBox")}>
@@ -318,7 +318,7 @@ export default function ViewArticle(props) {
                 <div className={cx("listBox")}>
                   <div className={cx("list")}>
                     <ul>
-                      {articleExtended.length > 0
+                      {articleExtended && articleExtended.length > 0
                         ? articleExtended.map((item, index) => (
                             <li key={index}>
                               <a
