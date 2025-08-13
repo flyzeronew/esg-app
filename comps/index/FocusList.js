@@ -9,7 +9,6 @@ const appUrl = process.env.APP_URL;
 
 function FocusList(props) {
     const focus = props.data;
-    console.log("focus", focus)
     return (
         <div className={cx("focus")}>
             <div className={cx("frameBox")}>
