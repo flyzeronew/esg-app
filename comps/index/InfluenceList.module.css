@@ -36,6 +36,7 @@
 .influence .list ul{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .influence .list ul li{
     width: calc(100% / 3);
