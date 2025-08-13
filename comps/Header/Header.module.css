@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
@@ -56,7 +56,7 @@
     .mainMenu {
         padding: 24px;
     }
-    
+
 }
 @media (max-width:767px) {
     .mainMenuBox{
@@ -123,7 +123,7 @@
     transition: 0s ;
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-md);
-    color: #666666;    
+    color: #666666;
 }
 .header  .list{
     max-width: 1920px;
@@ -334,7 +334,7 @@
     justify-content: center;
     max-height:0;
     background-color:#F2F2F2 ;
-    transition: 0s; 
+    transition: 0s;
     overflow: hidden;
 }
 .header .nav .searchBar.show{
@@ -346,7 +346,7 @@
     width: 872px;
     padding:15px 30px;
 }
-.header .nav .searchBar .box{    
+.header .nav .searchBar .box{
     display: flex;
     align-items:flex-end;
     justify-content: space-between;
@@ -367,7 +367,7 @@
     color: #333;
 }
 .header .nav .searchBar .input input::placeholder {
-    color: #666; 
+    color: #666;
 }
 .header .nav .searchBar .btn{
     width: 25px;
