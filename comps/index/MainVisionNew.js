@@ -25,8 +25,8 @@ function MainVision(props) {
                 // 延遲更新背景層，確保前景層完全顯示後才更新
                 setTimeout(() => {
                     setNextBg(prev => (prev + 1) % dataLength);
-                }, 500); // 等前景層淡入完成後再更新背景層
-            }, 500);
+                }, 350); // 等前景層淡入完成後再更新背景層
+            }, 350);
         }, 5000);
         return () => clearInterval(timer);
     }, [dataLength]);
