@@ -19,9 +19,9 @@ export default function Home(props) {
   const indexHeadlines = props.indexData.indexHeadlines
   const articles = props.indexData.articles
   const partners = props.indexData.partners
+  const marquee = props.indexData.marquee
   const tips = props.indexData.tips
   const colorMapping = props.colorMapping
-
   // 頁面識別
   const thisPage = 'home'
   // 社群分享圖
@@ -53,7 +53,7 @@ export default function Home(props) {
       <main>
         <div className={cx("indexPage")}>
           <MainVisionNew data={indexHeadlines} />
-          <Marquee />
+          <Marquee data={marquee} />
           <ViewListNew data={articles}/>
           <FocusList />
           <InfluenceList />
