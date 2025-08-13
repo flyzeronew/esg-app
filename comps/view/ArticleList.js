@@ -1,4 +1,6 @@
-import styles from "./ArticleList.module.css";
+import styles from "./ArticleList.module.css"
+import LazyLoad from 'react-lazyload'
+const appUrl = process.env.APP_URL
 
 export const Article = ({ articleData, index }) => {
     return (
@@ -6,7 +8,15 @@ export const Article = ({ articleData, index }) => {
             <li key={index}>
                 <a href={`/view/${articleData.article_genres[0].en_name}/${articleData.id}`}>
                     <div className={styles.img}>
-                        <img src={articleData.cover_img ? articleData.cover_img : process.env.IMG_DEFAULT} alt="img" width={559} height={315} loading="lazy" />
+                        <LazyLoad
+                            width={1072}
+                            height={603}
+                            offset={100}
+                            placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                            once
+                        >
+                            <img src={articleData.cover_img ? articleData.cover_img : process.env.IMG_DEFAULT} alt="img" width={559} height={315} loading="lazy" />
+                        </LazyLoad>
                     </div>
                     <h2 className={styles.txt}>{articleData.title}</h2>
                     <div className={styles.name}>

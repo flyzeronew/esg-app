@@ -121,8 +121,8 @@ export async function getServerSideProps(context) {
     const page = Number(query.page) || 1;
 
     const viewSubmenuUrl = new URL(`/api/article-genres`, process.env.API_URL);
-    const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.API_URL);
-
+    // const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.API_URL);
+    const articlesUrl = new URL(`/api/articles?page=${page}&fields=id,title,cover_img,article_genres,author_name,partner`, process.env.API_URL);
     try {
         const [viewSubmenuRes, articlesRes] = await Promise.all([
             fetch(viewSubmenuUrl),

@@ -75,6 +75,15 @@
     line-height: 135%;
     letter-spacing: 0.88px;
 }
+.focus .report .first .txtBox .subTitle.pc,
+.focus .report .list .txtBox .subTitle.pc{
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
 .focus .report .first .txtBox .title{
     color: #1A242F;
     font-size: 32px;
@@ -82,6 +91,11 @@
     line-height: 160%;
     letter-spacing: 0.64px;
     margin-bottom: 12px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 .focus .report .first .txtBox .txt{
     height: 68px;
@@ -165,6 +179,11 @@
     line-height: 160%;
     letter-spacing: 0.64px;
     margin-bottom: 12px;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 .focus .report .list .txtBox .txt{
     display: none;
@@ -279,6 +298,18 @@
     .focus .report .list .txtBox .subTitle
     {
         margin-bottom: 24px;
+    }
+    .focus .report .first .txtBox .subTitle.pc,
+    .focus .report .list .txtBox .subTitle.pc{
+        display: none;
+    }
+    .focus .report .first .txtBox .subTitle.mo,
+    .focus .report .list .txtBox .subTitle.mo{
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
     }
     .focus .title{
         font-size: 30px;

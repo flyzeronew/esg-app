@@ -149,12 +149,11 @@ export default function Responsibility(props) {
                             </div>
                             {/* <div className={cx("subTitle")}>
                                 <span>
-
                                 </span>
                             </div> */}
                         </div>
                         <div className={cx("downloadArea")} >
-                            <a href={staticPath+"/reports/quaterly/2025/2025_Jan_Apr_Report.pdf"} target="_blank">
+                            <a href="https://report.esg.tvbs.com.tw/2025jantoapr" target="_blank">
                                 <div className={cx("arraw")}>
                                     <ArrowRight></ArrowRight>
                                 </div>

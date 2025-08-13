@@ -21,6 +21,7 @@ export default function Home(props) {
   const partners = props.indexData.partners
   const marquee = props.indexData.marquee
   const tips = props.indexData.tips
+  const focus = props.indexData.focusNews
   const colorMapping = props.colorMapping
   // 頁面識別
   const thisPage = 'home'
@@ -55,7 +56,7 @@ export default function Home(props) {
           <MainVisionNew data={indexHeadlines} />
           <Marquee data={marquee} />
           <ViewListNew data={articles}/>
-          <FocusList />
+          <FocusList data={focus} />
           <InfluenceList />
           <PartnerListNew data={partners} />
           <TipsList data={tips} colorMapping={colorMapping} />

@@ -18,7 +18,6 @@ const formatDate = (dateString) => {
 
 function ViewList(props) {
     const articles = props.data;
-    console.log(articles);
     return (
         <div className={cx("view")}>
             <div className={cx("frameBox")}>

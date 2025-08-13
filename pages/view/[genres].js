@@ -2,17 +2,17 @@
 import { useState ,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Submenu from '../../comps/Submenu/Submenu';
+import Submenu from '../../comps/Submenu/Submenu'
 import ArticleList from '../../comps/view/ArticleList'
 import Header from '../../comps/Header/Header'
 import Footer from '../../comps/Footer/Footer'
 import Pagination from '../../comps/pagination/Pagination'
-import classNames from 'classnames/bind';
-import styles from './view.module.css';
+import classNames from 'classnames/bind'
+import styles from './view.module.css'
 import { notFound } from 'next/navigation'
-import SharedBanner from '@/comps/sharedBanner/SharedBanner';
-import { genericPageService } from '@/services/cms/apisCMS';
-import { extractDetailsFromSub } from '@/util/helpers';
+import SharedBanner from '@/comps/sharedBanner/SharedBanner'
+import { genericPageService } from '@/services/cms/apisCMS'
+import { extractDetailsFromSub } from '@/util/helpers'
 
 const cx  = classNames.bind(styles);
 
@@ -35,8 +35,6 @@ export default function Genres(props) {
     const uri =`/view/${genreEnName}`;
     const genreData = props.genreData;
     const genreId = genreData ? genreData.id :'';
-    const genreName = genreData ? genreData.name :'';
-    const genreDescription =genreData ? genreData.description :'';    
     const genrePageDetails = extractDetailsFromSub(props.menu, router.asPath);
 
     useEffect(() => {
@@ -136,9 +134,9 @@ export async function getServerSideProps(context) {
         const viewSubmenuRes = await fetch(viewSubmenuUrl)
         //currently if something goes wrong redirecting to not found 
         if(!viewSubmenuRes.ok){
-          return {
-            notFound: true
-          }
+            return {
+                notFound: true
+            }
         }
         const menu =  await genericPageService.getMenu();
         
@@ -163,7 +161,7 @@ export async function getServerSideProps(context) {
                 articlesData,
                 genreEnName,
                 page,
-                genreData : getGenreData || null
+                genreData : getGenreData || null,
             },
         };
     } catch (error) {

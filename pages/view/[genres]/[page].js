@@ -11,14 +11,12 @@ const cx = classNames.bind(styles);
 export default function ViewArticle(props) {
   const articleId = Number(props.articleId)
   const appUrl = process.env.APP_URL
-  const [bgShow, setBgShow] = useState(true)
   const [paddingTop, setPaddingTop] = useState()
   const getArticleData = props.viewData
   const genreEnName = props.viewData.article_genres[0].en_name
   //取資料 文章、共好夥伴、小撇步、延伸閱讀
   const articleContent = getArticleData.content
   const articlePartner = getArticleData.partner
-  const articleSecret = getArticleData.article_secret
   const articleExtended = getArticleData.extend_articles
   // 日期轉換
   const formattedDate = (date) => {
@@ -158,7 +156,6 @@ export default function ViewArticle(props) {
     const handleResize = (e) => {
       const showBg = window.innerWidth > 767 ? true : false
       const needPaddingTop = window.innerWidth > 1023 ? '30px' : ''
-      setBgShow(showBg)
       setPaddingTop(needPaddingTop)
     }
     handleResize()
