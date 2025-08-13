@@ -156,7 +156,6 @@
         font-size: 24px;
         padding-left: 0;
         margin-bottom: 16px;
-        text-align: justify;
     }
     .influence .list .txtBox .txt{
         padding-right: 72px;
@@ -167,7 +166,6 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 3;
-        text-align: justify;
     }
 }
 @media (max-width:767px) {
