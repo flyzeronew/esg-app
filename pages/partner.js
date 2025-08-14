@@ -121,7 +121,7 @@ export default function Partner(props) {
           </div> */}
           <div className={cx("list")}>
             <ul>
-              {showList.length > 0
+              {showList && showList.length > 0
                 ? showList.map((item, index) => (
                     <li
                       key={index}

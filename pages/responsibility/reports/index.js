@@ -184,7 +184,7 @@ export default function Responsibility(props) {
             </div>
             {/* Report card  Ends*/}
             <div className={cx("brand")} >
-              {moreData.length > 0 ? (
+              {moreData && moreData.length > 0 ? (
                 <div className={cx("practiceMore")} >
                   <div className={cx("title","s1")} >更多TVBS永續實踐力</div>
                   <div className={cx("list")} >

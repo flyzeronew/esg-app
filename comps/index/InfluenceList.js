@@ -9,10 +9,9 @@ const appUrl = process.env.APP_URL;
 
 function InfluenceList(props) {
     const impact = props.data;
-    console.log(impact);
     return (   
         <>
-            {impact.length > 0 ? (
+            { impact && impact.length > 0 ? (
                 <div className={cx("influence")}>
                     <div className={cx("frameBox")}>
                         <h2 className={cx("title")}>

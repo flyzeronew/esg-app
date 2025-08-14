@@ -114,7 +114,7 @@ export default function Page(props) {
                     </div>
 
                     {/* 輪播部分 */}
-                    { practiceData.length > 0 ? 
+                    {practiceData && practiceData.length > 0 ? 
                         <Practice practiceData={practiceData} />
                         :''
                     }
@@ -132,7 +132,7 @@ export default function Page(props) {
                         </div>
                     </div>
 
-                    { otherBrands.length > 0 ? 
+                    {otherBrands && otherBrands.length > 0 ? 
                         <div className={cx("practiceMore")}>
                             <div className={cx("title","s1")}>更多TVBS永續品牌</div>
                             <div className={cx("brandMore")}>

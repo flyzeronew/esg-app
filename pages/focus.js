@@ -69,7 +69,7 @@ export default function Focus({menu, focus}) {
                 <div className={cx("list")}>
                     <ul>
                         {
-                            focus.length > 0 ?
+                            focus && focus.length > 0 ?
                                 focus.map((item, index) => (
                                     <li key={index} style={{ 
                                         background: `url(${item.cover_img}) no-repeat center center`,

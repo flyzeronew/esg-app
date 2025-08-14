@@ -8,16 +8,15 @@ function MarqueeView(props) {
     const marquee = props.data;
     console
     return (
-        <>
-        {marquee? (
-            <div className={cx("marquee")}>
-                <Marquee speed={50} loop={0}>
-                    <a href={marquee.link} target="_blank"> {marquee.text} </a>
-                </Marquee>
-            </div>
-            ) : ""
+        <div className={cx("marquee")}>
+            {marquee ? 
+                (
+                    <Marquee speed={50} loop={0}>
+                        <a href={marquee.link} target="_blank"> {marquee.text} </a>
+                    </Marquee>
+                ) : ""
         }
-        </>
+        </div>
     );
 }
 

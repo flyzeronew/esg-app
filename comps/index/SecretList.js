@@ -23,7 +23,7 @@ function SecretList(props) {
         <div className={cx("secret")}>
             <div  className={cx("list")}>
                 <CustomSlider settings={settings}>
-                    {tips.length > 0 ? 
+                    {tips && tips.length > 0 ? 
                         tips.map((item, index) => (
                             <a key={index} 
                                 href={`${appUrl}/tips/${colorMapping[item.genre - 1].en_name}/${item.id}`}

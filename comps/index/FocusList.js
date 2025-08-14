@@ -16,7 +16,7 @@ function FocusList(props) {
                     專題報導
                     <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} />
                 </h2>
-                { 0 < focus.length? (
+                { focus && focus.length > 0 ? (
                     <div className={cx("report")}>
                         <div className={cx("first")}>
                             <a href={focus[0].url} target={1 === focus[0].is_blank ? "_blank" : ""}>

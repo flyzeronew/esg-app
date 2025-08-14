@@ -25,7 +25,7 @@ function TipsList(props) {
             >
                 <div className={cx("frameBox")}>
                     <ul>
-                        { tips.length > 0 ?
+                        {tips && tips.length > 0 ?
                             tips.map((item, index) => (
                                 <li key={index}>
                                     <a href={`${appUrl}/tips/${colorMapping[item.genre - 1].en_name}/${item.id}`}>

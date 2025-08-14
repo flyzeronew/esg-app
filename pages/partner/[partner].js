@@ -183,7 +183,7 @@ return (
                 </div>
                 :""}
                 {/* 永續觀點的文章頁 */}
-                {otherArticles.length > 0 && otherArticlesSum > 0 ? 
+                {otherArticles && otherArticles.length > 0 && otherArticlesSum > 0 ? 
                     <div className={cx("moreGoodNewsArea")}>
                         <div className={cx("title")}>更多共好消息</div>
                         <div className={cx("list")}>

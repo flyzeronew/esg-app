@@ -20,7 +20,7 @@ function MainVision(props) {
     return (
         <div className={cx("mainVision")}>
             <CustomSlider settings={settings}>
-                { indexHeadlines.length > 0 ?
+                { indexHeadlines && indexHeadlines.length > 0 ?
                     indexHeadlines.map((item, index) => (
                         <a key={index} href={item.url} target={item.is_blank === 1? '_blank' :'' } >
                             <div className={cx("img")}>

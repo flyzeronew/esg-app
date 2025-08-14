@@ -24,7 +24,7 @@ function ViewList(props) {
                 <h2 className={cx("title")}>永續觀點</h2>
                 <div className={cx("list")}>
                     <ul>
-                        {0 < articles.length ?
+                        {articles && articles.length > 0 ?
                             articles.slice(0, 3).map((item, index) => {
                                 const { month, day } = formatDate(item.updated_at);
                                 return (

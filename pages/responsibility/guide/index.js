@@ -142,7 +142,7 @@ export default function Responsibility(props) {
               </p>
             </div>
             {/* Report card */}
-            {guidePdfList.length > 0 ? (
+            {guidePdfList && guidePdfList.length > 0 ? (
                 <>
                   <div className={cx("reportCard")}>
                       <div className={cx("reportArea")} 
@@ -175,7 +175,7 @@ export default function Responsibility(props) {
                   <div className={cx("line")}></div>
                   <div className={cx('content')}>
                     <div className={cx("contxt")}>
-                      { guidePdfList.length > 1 ?
+                      {guidePdfList && guidePdfList.length > 1 ?
                           <div className={cx("reportsTitle")}>
                               <p>更多e指南報告</p>
                               <div className={cx("list")}>
@@ -200,7 +200,7 @@ export default function Responsibility(props) {
             }
             {/* Report card  Ends*/}
             <div className={cx("brand")} >
-              {moreData.length > 0 ? (
+              {moreData && moreData.length > 0 ? (
                 <div className={cx("practiceMore")} >
                   <div className={cx("title","s1")} >更多TVBS永續實踐力</div>
                   <div className={cx("list")} >

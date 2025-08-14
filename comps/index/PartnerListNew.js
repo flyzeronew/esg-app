@@ -20,7 +20,7 @@ function PartnerList(props) {
         </div>
         <div className={cx("list")}>
 
-          { 0 < partners.length ?
+          {partners && partners.length > 0 ?
             partners.map((item, index) => (
               <a
                 key={index}

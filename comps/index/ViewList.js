@@ -21,7 +21,7 @@ function ViewList(props) {
     return (        
         <div className={cx("view")}>
             <CustomSlider settings={settings} customClass={"viewList"}>
-                {articles.length > 0 ?
+                {articles && articles.length > 0 ?
                     articles.map((item, index) => (
                         <a key={index} href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`} >
                             <div className={cx("img")} >

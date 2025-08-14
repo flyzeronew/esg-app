@@ -155,7 +155,7 @@ function Navbar(props) {
                         {currentPage === 'home' ? (
                           <h2>
                             {item.page}
-                            {item.subMenu.length > 0 ? (
+                            {item.subMenu && item.subMenu.length > 0 ? (
                               <img
                                 className={
                                   index === showChildMenu ? cx('act') : ''
@@ -172,7 +172,7 @@ function Navbar(props) {
                         ) : (
                           <>
                             {item.page}
-                            {item.subMenu.length > 0 ? (
+                            {item.subMenu && item.subMenu.length > 0 ? (
                               <img
                                 className={
                                   index === showChildMenu ? cx('act') : ''
@@ -238,7 +238,7 @@ function Navbar(props) {
           {/* pc子選單 */}
           {menu.map((item, index) => (
             <React.Fragment key={index}>
-              {item.subMenu.length > 0 ? (
+              {item.subMenu && item.subMenu.length > 0 ? (
                 <div
                   className={cx('childMenu',index === showChildMenu ? 'act' : '')}
                   onMouseLeave={childMenuMouseLeave}
@@ -276,11 +276,11 @@ function Navbar(props) {
                         className={
                           currentPage?.split('/')[1] ===  item.pathname.split("/")[1] ? cx('selected') : ''
                         }
-                        href={item.subMenu.length > 0 ? '#' :  item.pathname}
+                        href={item.subMenu && item.subMenu.length > 0 ? '#' :  item.pathname}
                         onClick={() => childMoClick(index)}
                       >
                         {item.page}
-                        {item.subMenu.length > 0 ? (
+                        {item.subMenu && item.subMenu.length > 0 ? (
                           <img
                             className={childMo[index] ? cx('act') : ''}
                             src={`/images/icon_arraw01.svg`}
@@ -292,7 +292,7 @@ function Navbar(props) {
                           ''
                         )}
                       </a>
-                      {item.subMenu.length > 0 ? (
+                      {item.subMenu && item.subMenu.length > 0 ? (
                         <div
                           className={cx('child', childMo[index] ? 'act' : '')}
                         >

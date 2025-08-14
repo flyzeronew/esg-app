@@ -39,7 +39,7 @@ function PartnerList(props) {
       </div>
       <div className={cx("list")}>
         <CustomSlider settings={settings}>
-          {partners.length > 0
+          { partners && partners.length > 0
             ? partners
                 .reduce((acc, item, index) => {
                   if (index % 3 === 0) {

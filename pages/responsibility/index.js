@@ -321,7 +321,7 @@ export default function Responsibility(props) {
                             <div className={cx('listBox')}>
                                 <div className={cx('list')}>
                                     <ul aria-label="brandCardsList">
-                                        {brands.length > 0
+                                        {brands && brands.length > 0
                                             ? brands.map((item, index) => (
                                                 <BrandCard key={index} appUrl={appUrl} brand={item} index={index} currentPage={thisPage}></BrandCard>
                                             ))
@@ -344,13 +344,13 @@ export default function Responsibility(props) {
                                 除了對台灣這片土地的關懷，TVBS未來也將跨足國際，發揮媒體影響力，期待在永續議題上，成為臺灣的推手，做世界的通道，為滋養我們的地球，盡心盡力。
                             </p>
                             {/* 輪播部分 */}
-                            {practiceData.length > 0 ? (
+                            {practiceData && practiceData.length > 0 ? (
                                 <Practice practiceData={practiceData} />
                             ) : (
                                 ''
                             )}
                             {/* 輪播部分 ed*/}
-                            {moreData.length > 0 ? (
+                            {moreData && moreData.length > 0 ? (
                                 <div className={cx('practiceMore')}>
                                     <div className={cx('title', 's1')}>更多TVBS永續實踐力</div>
                                     <div className={cx('list')}>

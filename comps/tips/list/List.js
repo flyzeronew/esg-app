@@ -11,7 +11,7 @@ function tipsList(props) {
     return (
             <div className={cx("list")}>
                 <ul>
-                    { listData.length > 0?
+                    {listData && listData.length > 0 ?
                         listData.map((item, index) => (
                             <Fragment key={index}>
                                 { item.genre == props.genreId || props.genreId == null ?
@@ -21,7 +21,7 @@ function tipsList(props) {
                                                 {colorMapping[item.genre-1].genre}
                                             </div>
                                             <div className={cx("img")}>
-                                                {item.tip_galleries.length > 0 ? 
+                                                {item.tip_galleries && item.tip_galleries.length > 0 ? 
                                                     <img src={item.tip_galleries[0].image_url} alt="img" width={360} height={360} loading='lazy'/>
                                                     :
                                                     <img src={imgDefaultSquare} alt="img" width={360} height={360} loading='lazy'/>
