@@ -68,11 +68,11 @@ const nextConfig = {
         destination: '/robots',
       },
       {
-        source: `${process.env.APP_URL}/responsibility/reports/annual/:yearannual`,
+        source: '/responsibility/reports/annual/:yearannual',
         destination: `${process.env.NEXT_PUBLIC_STATIC_FILES}/responsibility/reports/annual/:yearannual`,
       },
       {
-        source: `${process.env.APP_URL}/responsibility/reports/annual/:yearannual/:path*`,
+        source: '/responsibility/reports/annual/:yearannual/:path*',
         destination: `${process.env.NEXT_PUBLIC_STATIC_FILES}/responsibility/reports/annual/:yearannual/:path*`,
       },
     ]
