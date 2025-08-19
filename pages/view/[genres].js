@@ -144,16 +144,19 @@ export async function getServerSideProps(context) {
 
         const getGenreData = viewSubmenuData.find(item => item.en_name === genreEnName) || null;
         let articlesData = null;
-        if(getGenreData?.id){
-            const articlesUrl = new URL(`/api/articles?genre_id=${getGenreData.id}&page=${page}`, process.env.API_URL);
-            const articlesRes = await fetch(articlesUrl);    
-            if (!articlesRes.ok) {
-                if(articlesRes.status){
-                    notFound();
-                }
+        if (!getGenreData?.id) {
+            return {
+                notFound: true
             }
-            articlesData = await articlesRes.json();
         }
+        const articlesUrl = new URL(`/api/articles?genre_id=${getGenreData.id}&page=${page}`, process.env.API_URL);
+        const articlesRes = await fetch(articlesUrl);    
+        if (!articlesRes.ok) {
+            return {
+                notFound: true
+            }
+        }
+        articlesData = await articlesRes.json();
         return {
             props: {
                 menu,

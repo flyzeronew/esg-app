@@ -8,13 +8,14 @@ function Navbar(props) {
   // 變數宣告
   const searchKeyword = props.searchKeyword || '';
   const searchType = 'headerSearch';
-  const menu = props.menuData ? props.menuData : '';
+  const menu = props.menuData ?? [];
   const [hamBurger, setHamBurger] = useState(false);
   const [showChildMenu, setShowChildMenu] = useState(false);
   const [navScroll, setNavScroll] = useState(false);
   const [childMo, setChildMo] = useState(Array(menu.length).fill(false));
   const [currentPage, setCurrentPage] = useState('');
   const [showSearchBar, setShowSearchBar] = useState(false);
+  
   // 變數宣告 ed
   const handleResize = () => {
     setHamBurger(false);
@@ -72,7 +73,7 @@ function Navbar(props) {
         ''
       )}
       <div className={cx('mainMenuBox')}>
-        <nav className={cx('nav', hamBurger ? 'act' : navScroll ? 'act' : '')}>
+        <nav className={cx('nav', (hamBurger || navScroll) && 'act')}>
           <div className={cx('mainMenu')}>
             <div className={cx('logo')}>
               <a href="/">
@@ -144,7 +145,7 @@ function Navbar(props) {
                   {menu.map((item, index) => (
                     <li key={index}>
                       <a
-                        className={cx(currentPage === item.pathname ? 'act' : '')}
+                        className={cx({ act: currentPage === item.pathname })}
                         href={item.pathname}
                         onMouseOver = {() => {
                           childMenuClick(index),
@@ -158,7 +159,7 @@ function Navbar(props) {
                             {item.subMenu && item.subMenu.length > 0 ? (
                               <img
                                 className={
-                                  index === showChildMenu ? cx('act') : ''
+                                  cx({ act: index === showChildMenu })
                                 }
                                 src={`/images/icon_arraw01.svg`}
                                 alt="arraw"
@@ -175,7 +176,7 @@ function Navbar(props) {
                             {item.subMenu && item.subMenu.length > 0 ? (
                               <img
                                 className={
-                                  index === showChildMenu ? cx('act') : ''
+                                  cx({ act: index === showChildMenu })
                                 }
                                 src={`/images/icon_arraw01.svg`}
                                 alt="arraw"
@@ -240,7 +241,7 @@ function Navbar(props) {
             <React.Fragment key={index}>
               {item.subMenu && item.subMenu.length > 0 ? (
                 <div
-                  className={cx('childMenu',index === showChildMenu ? 'act' : '')}
+                  className={cx('childMenu', { act: index === showChildMenu })}
                   onMouseLeave={childMenuMouseLeave}
                 >
                   <div className={cx('list')}>
@@ -282,7 +283,7 @@ function Navbar(props) {
                         {item.page}
                         {item.subMenu && item.subMenu.length > 0 ? (
                           <img
-                            className={childMo[index] ? cx('act') : ''}
+                            className={cx({ act: childMo[index] })}
                             src={`/images/icon_arraw01.svg`}
                             alt="arraw"
                             width={8}
@@ -294,13 +295,12 @@ function Navbar(props) {
                       </a>
                       {item.subMenu && item.subMenu.length > 0 ? (
                         <div
-                          className={cx('child', childMo[index] ? 'act' : '')}
+                          className={cx('child', { act: childMo[index] })}
                         >
                           {childMo[index]
                             ? item.subMenu.map((item2, index2) => (
                                 <a key={index2} href={item2.pathname}>
                                   {item2.page}
-                                  {/* <div className={cx("line")}></div> */}
                                 </a>
                               ))
                             : ''}
