@@ -28,6 +28,12 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      # 從 GitHub repository secrets 中讀取環境變數
+      NODE_ENV: production
+      # 如果有其他環境變數，可以在這裡添加
+      # NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      # DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
