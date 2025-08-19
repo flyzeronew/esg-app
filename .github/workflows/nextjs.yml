@@ -31,9 +31,13 @@ jobs:
     env:
       # 從 GitHub repository secrets 中讀取環境變數
       NODE_ENV: production
-      # 如果有其他環境變數，可以在這裡添加
-      # NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-      # DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      NEXT_PUBLIC_STATIC_FILES: ${{ secrets.NEXT_PUBLIC_STATIC_FILES }}
+      APP_URL: ${{ secrets.APP_URL }}
+      API_URL: ${{ secrets.API_URL }}
+      GTM_ID: ${{ secrets.GTM_ID }}
+      IMG_DEFAULT: ${{ secrets.IMG_DEFAULT }}
+      IMG_DEFAULT_SQUARE: ${{ secrets.IMG_DEFAULT_SQUARE }}
+      OG_IMG: ${{ secrets.OG_IMG }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
