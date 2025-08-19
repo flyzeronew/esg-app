@@ -33,7 +33,7 @@ jobs:
       NODE_ENV: production
       NEXT_PUBLIC_STATIC_FILES: ${{ secrets.NEXT_PUBLIC_STATIC_FILES }}
       APP_URL: ${{ secrets.APP_URL }}
-      API_URL: ${{ secrets.API_URL }}
+      API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
       GTM_ID: ${{ secrets.GTM_ID }}
       IMG_DEFAULT: ${{ secrets.IMG_DEFAULT }}
       IMG_DEFAULT_SQUARE: ${{ secrets.IMG_DEFAULT_SQUARE }}
