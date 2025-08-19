@@ -16,8 +16,7 @@ import { extractDetailsFromSub } from '@/util/helpers';
 const cx = classNames.bind(styles);
 export default function Genres(props) {
     const router = useRouter();
-    const detailsOfPage = props.menu.find((menuItem) => menuItem.pathname === router.pathname);
-
+    
     // 頁面識別
     const thisPage='tips';
     const ogImg = process.env.OG_IMG;
@@ -36,6 +35,12 @@ export default function Genres(props) {
     // 計算文章數量轉頁面數 ed
 
     const genrePageDetails = extractDetailsFromSub(props.menu, router.asPath);
+    if (!genrePageDetails) {
+        if (typeof window !== "undefined") {
+            router.replace('/404');
+        }
+        return null;
+    }
     const uri =`/tips/${genreEnName}`;
     useEffect(() => {
         if (1 < pageCount && props.page > pageCount || genreData === '') {
@@ -85,9 +90,6 @@ export async function getServerSideProps(context) {
     const { query } = context;
     const page = query.page ? query.page : 1;
     const genreEnName = context.query.genres;
-
-    const menuUrl = new URL('/api/menu', process.env.APP_URL);
-    const menuRes = await fetch(menuUrl);
     const menu =  await genericPageService.getMenu();
 
     // 顏色配對
