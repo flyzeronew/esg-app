@@ -58,6 +58,7 @@ const nextConfig = {
     GTM_ID: process.env.GTM_ID,
     IMG_DEFAULT: process.env.IMG_DEFAULT,
     IMG_DEFAULT_SQUARE: process.env.IMG_DEFAULT_SQUARE,
+    OG_IMG: process.env.OG_IMG,
   },
 
   
