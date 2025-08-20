@@ -24,7 +24,7 @@ export const Article = ({ articleData, index }) => {
                             <>
                                 <div className={styles.nameImg}>
                                     <div className={styles.img1} >
-                                        <img src={articleData.partner.avatar} alt="logo" width={50} height={50} loading="lazy" />
+                                        <img src={articleData.partner.avatar} alt={articleData.title} width={50} height={50} loading="lazy" />
                                     </div>
                                 </div>
                                 <p>{articleData.partner.name}</p>

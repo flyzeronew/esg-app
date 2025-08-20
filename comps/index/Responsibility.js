@@ -12,7 +12,7 @@ function Responsibility(props) {
         const checkWidth = () => {
             setShowBg(window.innerWidth > 1024);
         };
-        checkWidth(); // 初始化判斷一次
+        checkWidth();
         window.addEventListener("resize", checkWidth);
         return () => window.removeEventListener("resize", checkWidth);
     }, []);

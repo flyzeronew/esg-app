@@ -29,22 +29,22 @@ export default function Focus({menu, focus}) {
         setImgHover(null);
     };
     // resize 監聽事件
-    useEffect(() => { 
+    useEffect(() => {
         const handleResize = (e) => {
             const newSize = window.innerWidth > 767 ? 100 : 250;
             setBgSize(newSize);
             setHoverBgSize(newSize);
             setImgHover(null);
-        };  
+        };
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []); 
+    }, []);
     // resize 監聽事件 ed
     return (
-    <div id='wrapper'> 
+    <div id='wrapper'>
         <Head>
             <title>{detailsOfPage.title}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -56,8 +56,8 @@ export default function Focus({menu, focus}) {
             <meta name="URL" content={`${appUrl}/${detailsOfPage.pathname}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="index,follow"/>
-            <meta property="og:image" content={ogImg} />  
-            <link rel="canonical" href={`${appUrl}/${detailsOfPage.pathname}`} />      
+            <meta property="og:image" content={ogImg} />
+            <link rel="canonical" href={`${appUrl}/${detailsOfPage.pathname}`} />
         </Head>
         <Header menuData={menu}/>
         <main>
@@ -71,31 +71,31 @@ export default function Focus({menu, focus}) {
                         {
                             focus && focus.length > 0 ?
                                 focus.map((item, index) => (
-                                    <li key={index} style={{ 
+                                    <li key={index} style={{
                                         background: `url(${item.cover_img}) no-repeat center center`,
                                         backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                        <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >                                        
-                                            <div className={cx("titleBox")}>                                        
-                                                <div className={cx("titleDiv")}>                                            
+                                        <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >
+                                            <div className={cx("titleBox")}>
+                                                <div className={cx("titleDiv")}>
                                                     <h2 className={cx("title")}><p>{item.title}</p></h2>
                                                     <div className={cx("txt")}><p>{item.description}</p></div>
                                                 </div>
                                                 <div className={cx('arraw',index === imgHover ? 'act':'')}>
                                                     <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading='lazy'/>
                                                 </div>
-                                            </div>                           
+                                            </div>
                                         </a>
                                     </li>
                                 ))
                             :''
                         }
-                        
+
                     </ul>
-                </div>       
+                </div>
             </div>
-            
+
         </main>
         <div className={cx("footerLine")}>
             <div className={cx("box")}></div>
@@ -116,13 +116,13 @@ export async function getServerSideProps() {
           page_description: 'TVBS GOOD 是 TVBS 倡議 ESG、實踐與地球共好的平台。我們的永續目標接軌聯合國與世界並進，從報導追蹤企業永續發展，到分享日常永續生活撇步，協同多方一起節能減碳，邁向淨零碳排的永續目標。',
           subMenu: []
         },
-      
+
       ]
     // 線上資料
     const focusUrl = new URL('/api/focus-news', process.env.API_URL);
-    const focusRes = await fetch(focusUrl);    
+    const focusRes = await fetch(focusUrl);
     const focus = await focusRes.json();
-    
+
     return {
         props: {
             menu,

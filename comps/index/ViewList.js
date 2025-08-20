@@ -25,7 +25,7 @@ function ViewList(props) {
                     articles.map((item, index) => (
                         <a key={index} href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`} >
                             <div className={cx("img")} >
-                                <img src={item.cover_img} alt="img" width={1920} height={1080} loading='lazy'/>
+                                <img src={item.cover_img} alt={item.title} width={1920} height={1080} loading='lazy'/>
                             </div>
                             <div className={cx("category")}>
                                 <span>永續觀點</span>
