@@ -311,7 +311,7 @@
         -webkit-line-clamp: 1;
         overflow: hidden;
     }
-    .focus .title{
+    .focus .title a{
         font-size: 30px;
         padding-left: 24px;
         margin-bottom: 24px;
