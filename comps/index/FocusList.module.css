@@ -31,7 +31,7 @@
     background-color: #fff;
     margin-bottom: 180px;
 }
-.focus .title{
+.focus .title a{
     color: #1A242F;
     font-size: 48px;
     font-style: normal;
@@ -238,7 +238,7 @@
     .focus .report .list{
         width: 29.6%;
     }
-    .focus .title{
+    .focus .title a{
         font-size: 36px;
     }
 }

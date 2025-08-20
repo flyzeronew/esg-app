@@ -23,7 +23,10 @@ function InfluenceList(props) {
                             <ul>
                                 {impact.map((item, index) => (
                                     <li key={index}>
-                                        <a href={item.link_url} target={item.is_blank === 1 ? "_blank" : ""}>
+                                        <a 
+                                            href={item.link_url} target={item.is_blank === 1 ? "_blank" : undefined} 
+                                            rel={item.is_blank === 1 ? "noopener noreferrer" : undefined}
+                                        >
                                             <div className={cx("imgBox")}>
                                                 <div className={cx("arraw")}>
                                                     <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />

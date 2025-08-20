@@ -6,10 +6,9 @@ const cx = classnames.bind(styles);
 
 function MarqueeView(props) {
     const marquee = props.data;
-    console
     return (
         <div className={cx("marquee")}>
-            {marquee ? 
+            {marquee ?
                 (
                     <Marquee speed={50} loop={0}>
                         <a href={marquee.link} target="_blank"> {marquee.text} </a>

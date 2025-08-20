@@ -4,8 +4,8 @@ import classnames from 'classnames/bind';
 const cx = classnames.bind(styles);
 
 function MainVision(props) {
-
-    const data = props.data;
+    const appUrl = process.env.APP_URL;
+    const data = props.data || [];
     const [current, setCurrent] = useState(props.initialSlide || 0);
     const [fadeIn, setFadeIn] = useState(true);
     const [nextBg, setNextBg] = useState(props.initialSlide ? (props.initialSlide + 1) % data.length : 1);
@@ -54,7 +54,8 @@ function MainVision(props) {
                         <div className={cx('nextBackground')}>
                             <a
                                 href={data[nextBg].url}
-                                target={data[nextBg].is_blank === 1 ? '_blank' : ''}
+                                target={data[nextBg].is_blank === 1 ? '_blank' : undefined}
+                                rel={data[nextBg].is_blank === 1 ? 'noopener noreferrer' : undefined}
                             >
                                 <div className={cx('box')}>
                                     <div className={cx('imgBox')}>
@@ -69,7 +70,7 @@ function MainVision(props) {
                                             <p>{data[nextBg].description}</p>
                                             <div className={cx('arraw')}>
                                                 <img
-                                                    src="/images/icon_arraw_no_bg.svg"
+                                                    src={`${appUrl}/images/icon_arraw_no_bg.svg`}
                                                     alt="img"
                                                     width={48}
                                                     height={48}
@@ -87,7 +88,8 @@ function MainVision(props) {
                         <div className={cx('currentForeground')}>
                             <a
                                 href={data[current].url}
-                                target={data[current].is_blank === 1 ? '_blank' : ''}
+                                target={data[current].is_blank === 1 ? '_blank' : undefined}
+                                rel={data[current].is_blank === 1 ? 'noopener noreferrer' : undefined}
                             >
                                 <div className={cx('box', { show: fadeIn })}>
                                     <div className={cx('imgBox')}>
@@ -102,7 +104,7 @@ function MainVision(props) {
                                             <p>{data[current].description}</p>
                                             <div className={cx('arraw')}>
                                                 <img
-                                                    src="/images/icon_arraw_no_bg.svg"
+                                                    src={`${appUrl}/images/icon_arraw_no_bg.svg`}
                                                     alt="img"
                                                     width={48}
                                                     height={48}
@@ -125,7 +127,11 @@ function MainVision(props) {
                                     return (
                                         <li key={`bg-${dataIdx}`}>
                                             <div className={cx('box')}>
-                                                <a href={item.url} target={item.is_blank === 1 ? '_blank' : ''}>
+                                                <a
+                                                    href={item.url}
+                                                    target={item.is_blank === 1 ? '_blank' : undefined}
+                                                    rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
+                                                >
                                                     <div className={cx('img')}>
                                                         <img src={item.cover_img} alt="bg img" width={220} height={138} />
                                                     </div>
@@ -149,7 +155,11 @@ function MainVision(props) {
                                 return (
                                     <li key={`fg-${dataIdx}`}>
                                         <div className={cx('box', { show: fadeIn })}>
-                                            <a href={item.url} target={item.is_blank === 1 ? '_blank' : ''}>
+                                            <a
+                                                href={item.url}
+                                                target={item.is_blank === 1 ? '_blank' : undefined}
+                                                rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
+                                            >
                                                 <div className={cx('img')}>
                                                     <img src={item.cover_img} alt="img" width={220} height={138} />
                                                 </div>

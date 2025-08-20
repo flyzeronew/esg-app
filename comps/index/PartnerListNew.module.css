@@ -24,7 +24,7 @@
     color: #1A242F;
     margin-bottom: 180px;
 }
-.partner .title{    
+.partner .title a{    
     font-size: 48px;
     font-style: normal;
     font-weight: 500;
@@ -71,7 +71,7 @@
     .partner{
         margin-bottom: 160px;
     }
-    .partner .title{    
+    .partner .title a{    
         font-size: 36px;
     }
     .partner .list a{
@@ -89,7 +89,7 @@
     .partner .txt br{
         display: none;
     }
-    .partner .title{ 
+    .partner .title a{ 
         font-size: 30px;
         text-align: left;
         padding:0 24px;
