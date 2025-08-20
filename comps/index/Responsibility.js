@@ -10,7 +10,7 @@ function Responsibility(props) {
 
     useEffect(() => {
         const checkWidth = () => {
-            setShowBg(window.innerWidth > 1024);
+            setShowBg(window.innerWidth > 1023);
         };
         checkWidth();
         window.addEventListener("resize", checkWidth);
