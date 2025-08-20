@@ -5,7 +5,7 @@ import styles from './Responsibility.module.css';
 const cx = classnames.bind(styles);
 const appUrl = process.env.APP_URL;
 
-function InfluenceList(props) {
+function Responsibility(props) {
     const [showBg, setShowBg] = useState(true);
 
     useEffect(() => {
@@ -35,7 +35,7 @@ function InfluenceList(props) {
                     TVBS持續為閱聽眾帶來更全面，更淺顯易懂的永續體驗，共創關懷環境生態與新聞學的永續殿堂。
                 </h1>
                 <div className={cx("btn")}>
-                    <a href={`${appUrl}/responsibility/reports`}>
+                    <a href={`${appUrl}/responsibility`}>
                         TVBS永續責任
                         <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="arrow_right" width={32} height={32}/>
                     </a>
@@ -55,4 +55,4 @@ function InfluenceList(props) {
     );
 }
 
-export default InfluenceList;
+export default Responsibility;
