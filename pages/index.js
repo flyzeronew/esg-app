@@ -15,6 +15,7 @@ import { genericPageService } from '@/services/cms/apisCMS'
 
 export default function Home(props) {
   
+  
   const cx = classNames.bind(styles);
   const appUrl = process.env.APP_URL
   const indexHeadlines = props.indexData.indexHeadlines
