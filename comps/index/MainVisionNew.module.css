@@ -37,11 +37,14 @@
   -webkit-transform: translateZ(0);
 }
 .mainVision .first a .img img{
-  transition: transform 0.2s ease-out;
   transform: scale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
 }
 .mainVision .first a:hover .img img{
-  transition: transform 0.2s ease-in;
+  transition: all 0.3s ease;
   transform: scale(1.2);
 }
 .mainVision .first .arraw{

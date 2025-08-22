@@ -24,6 +24,15 @@ function TipsList(props) {
                 vertical={false}
                 ignoreElements={'.no-drag'}
                 nativeMobileScroll
+                style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
+                onWheel={e => {
+                    if (window.matchMedia('(pointer: fine)').matches) {
+                        if (e.deltaY !== 0) {
+                            e.preventDefault();
+                            e.currentTarget.scrollLeft += e.deltaY;
+                        }
+                    }
+                }}
             >
                 <div className={cx("frameBox")}>
                     <ul>
