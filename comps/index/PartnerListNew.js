@@ -17,8 +17,7 @@ function PartnerList(props) {
           </a>
         </h2>
         <div className={cx("txt")}>
-          城市街頭盛開綠意，企業在環保徽章下環繞，共同編織著永續的未來。<br />
-          讓城市與企業一同前行，共創可持續的明日。
+            深耕在地、放眼國際，TVBS GOOD 積極發揮媒體影響力，攜手全球永續夥伴，將善意化為行動，共同倡議永續生活。
         </div>
         <div className={cx("list")}>
 
