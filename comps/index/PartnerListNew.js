@@ -17,7 +17,8 @@ function PartnerList(props) {
           </a>
         </h2>
         <div className={cx("txt")}>
-            深耕在地、放眼國際，TVBS GOOD 積極發揮媒體影響力，攜手全球永續夥伴，將善意化為行動，共同倡議永續生活。
+          深耕在地、放眼國際，TVBS GOOD 積極發揮媒體影響力，<br/>
+          攜手全球永續夥伴，將善意化為行動，共同倡議永續生活。
         </div>
         <div className={cx("list")}>
 
