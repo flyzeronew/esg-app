@@ -39,7 +39,7 @@ function FocusList(props) {
                                 </div>
                                 <div className={cx("txtBox")}>
                                     <h4 className={cx("subTitle","pc")}>{focusFirst.sub_title}</h4>
-                                    <h3 className={cx("title")}>{focusFirst.sub_title}</h3>
+                                    <h3 className={cx("title")}>{focusFirst.title}</h3>
                                     <h4 className={cx("subTitle","mo")}>{focusFirst.sub_title}</h4>
                                     <p className={cx("txt")}>{focusFirst.description}</p>
                                 </div>
