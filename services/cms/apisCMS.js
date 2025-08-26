@@ -3,7 +3,7 @@
 import { fetchClient } from "@/util/fetchAPI";
 
 const CONFIG = {
-    BASE_URL: process.env.API_URL || 'https://esg-api-staging.tvbs.com.tw',
+    BASE_URL: process.env.API_URL || 'https://api.esg.tvbs-staging.app',
     TIMEOUT: 5000,
   };
 export const genericPageService = {
