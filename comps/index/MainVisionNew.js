@@ -9,63 +9,27 @@ function MainVision(props) {
     const [current, setCurrent] = useState(props.initialSlide || 0);
     const [fadeIn, setFadeIn] = useState(true);
     const [nextBg, setNextBg] = useState(props.initialSlide ? (props.initialSlide + 1) % data.length : 1);
-    const [imagesLoaded, setImagesLoaded] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
     const dataLength = data.length;
 
-    // 預載入所有圖片
     useEffect(() => {
         if (dataLength <= 1) return;
-
-        const loadImage = (index) => {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => {
-                    setImagesLoaded(prev => ({ ...prev, [index]: true }));
-                    resolve();
-                };
-                img.onerror = () => {
-                    // 即使載入失敗也標記為已處理，避免卡住
-                    setImagesLoaded(prev => ({ ...prev, [index]: true }));
-                    resolve();
-                };
-                img.src = data[index].cover_img;
-            });
-        };
-
-        // 並行載入所有圖片
-        Promise.all(data.map((_, index) => loadImage(index)));
-    }, [dataLength, data]);
-
-    useEffect(() => {
-        if (dataLength <= 1 || Object.keys(imagesLoaded).length < dataLength) return;
-
         const timer = setInterval(() => {
-            // 檢查下一張圖片是否已載入
-            const nextIndex = (current + 1) % dataLength;
+            // 開始淡出當前圖片
+            setFadeIn(false);
 
-            if (imagesLoaded[nextIndex] && !isLoading) {
-                setIsLoading(true);
+            setTimeout(() => {
+                // 切換到下一張圖片（前景層）
+                setCurrent(prev => (prev + 1) % dataLength);
+                setFadeIn(true);
 
-                // 開始淡出當前圖片
-                setFadeIn(false);
-
+                // 延遲更新背景層，確保前景層完全顯示後才更新
                 setTimeout(() => {
-                    // 切換到下一張圖片（前景層）
-                    setCurrent(nextIndex);
-                    setFadeIn(true);
-
-                    // 延遲更新背景層，確保前景層完全顯示後才更新
-                    setTimeout(() => {
-                        setNextBg(prev => (prev + 1) % dataLength);
-                        setIsLoading(false);
-                    }, 800); // 等前景層淡入完成後再更新背景層
-                }, 800);
-            }
+                    setNextBg(prev => (prev + 1) % dataLength);
+                }, 800); // 等前景層淡入完成後再更新背景層
+            }, 800);
         }, 5000);
-
         return () => clearInterval(timer);
-    }, [dataLength, current, imagesLoaded, isLoading]);
+    }, [dataLength]);
 
     const getListOrder = (baseIndex, data) => {
         if (!data || data.length <= 1) return [];

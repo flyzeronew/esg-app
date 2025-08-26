@@ -7,11 +7,10 @@ import Footer from '../../comps/Footer/Footer';
 import Pagination from '../../comps/pagination/Pagination';
 import styles from './search.module.css';
 import classnames from 'classnames/bind';
-import { genericPageService } from '@/services/cms/apisCMS';
 import { usePathname } from 'next/navigation';
-const cx = classnames.bind(styles);
 
 export default function Search(props) {
+    const cx = classnames.bind(styles);
     const searchData = props.searchData;
     const searchArticles = props.searchData.articles;
     const showSearchBar = true;
@@ -44,22 +43,22 @@ export default function Search(props) {
         setImgHover(null);
     };
     // resize 監聽事件
-    useEffect(() => { 
+    useEffect(() => {
         const handleResize = (e) => {
             const newSize = window.innerWidth > 767 ? 100 : 250;
             setBgSize(newSize);
             setHoverBgSize(newSize);
             setImgHover(null);
-        };  
+        };
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []); 
+    }, []);
     // resize 監聽事件 ed
     return (
-    <div id='wrapper'> 
+    <div id='wrapper'>
         <Head>
             <title>{searchKeyword} 搜尋結果第{page}頁 - TVBS ESG專區</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -81,13 +80,13 @@ export default function Search(props) {
         <Header menuData={menu} searchKeyword= {searchKeyword}/>
         <main>
             <div className={cx('searchPage')}>
-                <SearchBar 
+                <SearchBar
                     showSearchBar = {showSearchBar}
                     searchType={searchType}
                     searchKeyword= {searchKeyword}
                 />
 
-                <div className={cx('noResults', 0 === articleCount && 'show')}> 
+                <div className={cx('noResults', 0 === articleCount && 'show')}>
                     <div className={cx('frameBox')}>
                         <div className={cx('txt')}>
                             找不到符合搜尋字詞「 <strong>{searchKeyword}</strong> 」的結果
@@ -107,7 +106,7 @@ export default function Search(props) {
                         <div className={cx('frameBox')}>
                             <div className={cx('related')}>
                                 搜尋結果 <span className={cx('greenTxt')}>{articleCount}</span> 筆
-                            </div>                    
+                            </div>
                         </div>
                     </div>
 
@@ -119,7 +118,7 @@ export default function Search(props) {
                                     <li key={index}>
                                         <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
                                             <div className={cx('txtBox')}>
-                                                <div className={cx('title')} 
+                                                <div className={cx('title')}
                                                     dangerouslySetInnerHTML={{ __html: item.title }}>
                                                 </div>
                                                 <div className={cx('time')}>
@@ -135,7 +134,7 @@ export default function Search(props) {
                                                                 offset={100}
                                                                 placeholder={<img src={`${appUrl}/images/TVBSGOOD_default.webp`} alt="loading..." />}
                                                                 once
-                                                                
+
                                                             >
                                                                 <img src={item.cover_img} alt="arraw" width={1072} height={603}/>
                                                             </LazyLoad>
@@ -160,7 +159,7 @@ export default function Search(props) {
                                         </a>
                                     </li>
                                 ))}
-                                
+
                             </ul>
                         </div>
                     </div>
@@ -170,7 +169,7 @@ export default function Search(props) {
                 {/* 跳頁選單 */}
                 <div style={{display:'be8*^&@' === searchKeyword && 'none' }}>
                     { pageCount > 1 ? <Pagination uri={pathname} pageCount={pageCount} /> :''}
-                </div>                    
+                </div>
                 {/* 跳頁選單 ed */}
             </div>
         </main>
@@ -179,29 +178,36 @@ export default function Search(props) {
     );
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
+
 export async function getServerSideProps(context) {
-    const { query } = context;
-    const page = Number(query.page) || 1;
-    const limit = 10;
-    const keyword = query.search;
-    const focusUrl = new URL('/api/focus-news', process.env.API_URL);
-    const searchUrl = new URL(`/api/search?keyword=${keyword}&page=${page}&limit=${limit}`, process.env.API_URL);
-    
     try {
-        const [focusRes, searchRes] = await Promise.all([
-            fetch(focusUrl),
-            fetch(searchUrl)
-        ])
-        const menu =  await genericPageService.getMenu();
-        const focus = await focusRes.json();
-        const searchData = await searchRes.json();
+        const { query } = context;
+        const page = Number(query.page) || 1;
+        const limit = 10;
+        const keyword = query.search;
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: [
+                '/api/focus-news',
+                `/api/search?keyword=${encodeURIComponent(keyword)}&page=${page}&limit=${limit}`
+            ]
+        });
+        const [focus, searchData] = extraData;
         return {
             props: {
-                page, limit, menu, focus, searchData,
+                page,
+                limit,
+                menu,
+                colorMapping,
+                focus,
+                searchData,
             },
         };
     } catch (error) {
-        console.log("error in search respective page", error)
+        console.error("Error in getServerSideProps (search/[search]):", error);
+        return {
+            notFound: true,
+        };
     }
 }
 

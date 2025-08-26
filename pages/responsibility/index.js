@@ -5,12 +5,11 @@ import Practice from '../../comps/responsibility/Practice';
 import classNames from 'classnames/bind';
 import styles from './responsibility.module.css';
 import MetaTags from '@/comps/MetaTag/MetaTag';
-import { genericPageService } from '@/services/cms/apisCMS';
 import { usePathname } from 'next/navigation';
 const cx = classNames.bind(styles);
 
-
 const BrandCard = ({ appUrl, brand, index, currentPage }) => {
+
     return (
         <li key={index} role="brandCard">
             <a href={`${appUrl}/${currentPage}/brands/${brand.id}`}>
@@ -397,21 +396,17 @@ export default function Responsibility(props) {
         </div>
     );
 }
+import { fetchPageData } from '@/services/cms/fetchPageData';
 
 export async function getServerSideProps() {
-
-    //prepare all URL
-    const responsibilityUrl = new URL(`/api/responsibility-${process.env.APP_ENV === 'production' ? "prd" : "dev"}`, process.env.APP_URL)
-    const brandsUrl = new URL('/api/brands', process.env.API_URL);
-
     try {
-        const [responsibilityRes, brandsRes] = await Promise.all([
-            fetch(responsibilityUrl),
-            fetch(brandsUrl)
-        ])
-        const menu =  await genericPageService.getMenu();
-        const responsibilityData = await responsibilityRes.json();
-        const brands = await brandsRes.json();
+        const { menu, extraData } = await fetchPageData({
+            extraApiPaths: [
+                `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
+                '/api/brands'
+            ]
+        });
+        const [responsibilityData, brands] = extraData;
         return {
             props: {
                 menu,
@@ -420,6 +415,9 @@ export async function getServerSideProps() {
             },
         };
     } catch (error) {
-        console.log("Error Responsibility----------> ", error);
+        console.error("Error Responsibility----------> ", error);
+        return {
+            notFound: true,
+        };
     }
 }

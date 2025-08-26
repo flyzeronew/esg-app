@@ -5,11 +5,10 @@ import Footer from '../comps/Footer/Footer'
 import styles from './action.module.css';
 import classNames from 'classnames/bind';
 import SharedBanner from '@/comps/sharedBanner/SharedBanner';
-import { genericPageService } from '@/services/cms/apisCMS';
-const cx = classNames.bind(styles);
+
 export default function Focus(props) {
-    // 頁面識別
     const thisPage='action';
+    const cx = classNames.bind(styles);
     const ogImg = process.env.OG_IMG;
     const [imgHover, setImgHover] = useState(null);
     const [bgSize, setBgSize] = useState();
@@ -24,28 +23,28 @@ export default function Focus(props) {
         setImgHover(null);
     };
     // resize 監聽事件
-    useEffect(() => { 
+    useEffect(() => {
         const handleResize = (e) => {
             const newSize = window.innerWidth > 767 ? 100 : 250;
             setBgSize(newSize);
             setHoverBgSize(newSize);
             setImgHover(null);
-        };  
+        };
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []); 
+    }, []);
 // resize 監聽事件 ed
     return (
-    <div id='wrapper'> 
+    <div id='wrapper'>
         <Head>
             <title>{"esg | 永續行動"}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="esg,esg2,esg3" />
-            <meta name="description" content="esg description" /> 
-            <meta property="og:image" content={ogImg} />       
+            <meta name="description" content="esg description" />
+            <meta property="og:image" content={ogImg} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
             <main>
@@ -74,14 +73,24 @@ export default function Focus(props) {
     );
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps() {
-    const menu =  await genericPageService.getMenu();
-    // 線上資料
+    try {
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: [''],
+        });
+        return {
+            props: {
+                menu,
+            }
+        };
+    } catch (error) {
+        return {
+            props: {
+                menu: [],
+                error: error.message || '資料取得失敗'
+            },
+        };
+    }
 
-    
-    return {
-        props: {
-            menu
-        },
-    };
 }

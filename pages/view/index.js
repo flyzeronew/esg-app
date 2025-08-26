@@ -10,12 +10,10 @@ import classNames from 'classnames/bind';
 import styles from './view.module.css';
 import MetaTags from '@/comps/MetaTag/MetaTag';
 import SharedBanner from '@/comps/sharedBanner/SharedBanner';
-import { genericPageService } from '@/services/cms/apisCMS';
-
-const cx = classNames.bind(styles);
-
 
 export default function View(props) {
+
+    const cx = classNames.bind(styles);
     const ogImg = process.env.OG_IMG;
     const router = useRouter();
     const detailsOfPage = props.menu.find((menuItem) => menuItem.pathname === router.pathname);
@@ -116,28 +114,30 @@ export default function View(props) {
     );
 }
 
-export async function getServerSideProps(context) {
-    const { query } = context;
-    const page = Number(query.page) || 1;
+import { fetchPageData } from '@/services/cms/fetchPageData';
 
-    const viewSubmenuUrl = new URL(`/api/article-genres`, process.env.API_URL);
-    // const articlesUrl = new URL(`/api/articles?page=${page}`, process.env.API_URL);
-    const articlesUrl = new URL(`/api/articles?page=${page}&fields=id,title,cover_img,article_genres,author_name,partner`, process.env.API_URL);
+export async function getServerSideProps(context) {
     try {
-        const [viewSubmenuRes, articlesRes] = await Promise.all([
-            fetch(viewSubmenuUrl),
-            fetch(articlesUrl)
-        ])
-        const menu =  await genericPageService.getMenu();
-        const viewSubmenuData = await viewSubmenuRes.json();
-        const articlesData = await articlesRes.json();
+        const { query } = context;
+        const page = Number(query.page) || 1;
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: [
+                `/api/article-genres`,
+                `/api/articles?page=${page}&fields=id,title,cover_img,article_genres,author_name,partner`
+            ],
+        });
         return {
             props: {
-                page, menu, viewSubmenuData, articlesData,
+                page,
+                menu,
+                colorMapping,
+                viewSubmenuData: extraData[0],
+                articlesData: extraData[1],
             },
         };
     } catch (error) {
-        console.log("error in view respective page", error)
+        return {
+            notFound: true,
+        };
     }
-
 }

@@ -5,15 +5,13 @@ import Footer from '../comps/Footer/Footer';
 import styles from './focus.module.css';
 import classNames from 'classnames/bind';
 import SharedBanner from '@/comps/sharedBanner/SharedBanner';
-import { genericPageService } from '@/services/cms/apisCMS';
 import { usePathname } from 'next/navigation';
 
-const cx = classNames.bind(styles);
-
 export default function Focus({menu, focus}) {
-    const appUrl = process.env.APP_URL;
-    // 頁面識別
+
+    const cx = classNames.bind(styles);
     const pathname = usePathname();
+    const appUrl = process.env.APP_URL;
     const detailsOfPage = menu.find((menuItem) => menuItem.pathname === pathname);
     const ogImg = process.env.OG_IMG;
     const [imgHover, setImgHover] = useState(null);
@@ -105,29 +103,28 @@ export default function Focus({menu, focus}) {
     );
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps() {
-    const menu =  await genericPageService.getMenu();
-    const test = [
-        {
-          page: '首頁',
-          pathname: '/',
-          title: 'TVBS GOOD - ESG 倡議與永續生活平台',
-          meta_description: 'TVBS GOOD 是 TVBS 倡議 ESG、實踐與地球共好的平台。我們的永續目標接軌聯合國與世界並進，從報導追蹤企業永續發展，到分享日常永續生活撇步，協同多方一起節能減碳，邁向淨零碳排的永續目標。',
-          page_description: 'TVBS GOOD 是 TVBS 倡議 ESG、實踐與地球共好的平台。我們的永續目標接軌聯合國與世界並進，從報導追蹤企業永續發展，到分享日常永續生活撇步，協同多方一起節能減碳，邁向淨零碳排的永續目標。',
-          subMenu: []
-        },
-
-      ]
-    // 線上資料
-    const focusUrl = new URL('/api/focus-news', process.env.API_URL);
-    const focusRes = await fetch(focusUrl);
-    const focus = await focusRes.json();
-
-    return {
-        props: {
-            menu,
-            focus
-        },
-    };
+    try {
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: ['/api/focus-news'],
+        });
+        return {
+            props: {
+                menu,
+                focus: extraData[0],
+                colorMapping
+            }
+        };
+    } catch (error) {
+        return {
+            props: {
+                menu: [],
+                focus: [],
+                colorMapping: {},
+                error: error.message || '資料取得失敗'
+            },
+        };
+    }
 }
 

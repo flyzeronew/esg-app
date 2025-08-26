@@ -3,17 +3,15 @@ import Header from './../../../comps/Header/Header';
 import Footer from './../../../comps/Footer/Footer';
 import styles from './report.module.css';
 import classNames from 'classnames/bind';
-import ArrowRight from '@/comps/svgs/ArrowRight'; 
+import ArrowRight from '@/comps/svgs/ArrowRight';
 import Image from 'next/image';
 import { useRouter } from 'next/router'
-import { genericPageService } from '@/services/cms/apisCMS';
 import { extractDetailsFromSub } from '@/util/helpers';
-
-const cx = classNames.bind(styles);
 
 export default function Responsibility(props) {
   // 頁面識別
   const thisPage = 'responsibility';
+  const cx = classNames.bind(styles);
   const ogImg = process.env.OG_IMG;
   const router = useRouter();
   const staticPath = process.env.NEXT_PUBLIC_STATIC_FILES;
@@ -53,7 +51,7 @@ export default function Responsibility(props) {
                 height={722}
                 loading="lazy"
               />
-              
+
             </div>
             <div className={cx("titleBox")} >
               <div className={cx("title")} >
@@ -158,7 +156,7 @@ export default function Responsibility(props) {
                                     <ArrowRight></ArrowRight>
                                 </div>
                             </a>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,7 +164,7 @@ export default function Responsibility(props) {
             <div className={cx('content')}>
             <div className={cx("contxt")}>
               <div className={cx("reportsTitle")}>
-                <p>歷年永續報告</p>                
+                <p>歷年永續報告</p>
                 <div className={cx("list")}>
                   <a href={`${appUrl}/responsibility/reports/annual/2024annual`} target="_blank" >2024 年度永續影響力報告</a>
                   <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響報告_q2_Desktop.pdf"} target="_blank" >2024 5-8 月永續影響力報告</a>
@@ -232,27 +230,26 @@ export default function Responsibility(props) {
   );
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
+
 export async function getServerSideProps() {
-  const menu =  await genericPageService.getMenu();
-  // 線上資料
-
-  const responsibilityUrl =
-    process.env.APP_ENV === 'production'
-      ? new URL('/api/responsibility-prd', process.env.APP_URL)
-      : new URL('/api/responsibility-dev', process.env.APP_URL);
-
-  const responsibilityRes = await fetch(responsibilityUrl);
-  const responsibilityData = await responsibilityRes.json();
-
-  const brandsUrl = new URL('/api/brands', process.env.API_URL);
-  const brandsRes = await fetch(brandsUrl);
-  const brands = await brandsRes.json();
-
-  return {
-    props: {
-      menu,
-      responsibilityData,
-      brands,
-    },
-  };
+  try {
+    const { menu, extraData } = await fetchPageData({
+      extraApiPaths: [
+        `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
+      ]
+    });
+    const [responsibilityData] = extraData;
+    return {
+      props: {
+        menu,
+        responsibilityData,
+      },
+    };
+  } catch (error) {
+    console.error("Error Responsibility----------> ", error);
+    return {
+      notFound: true,
+    };
+  }
 }

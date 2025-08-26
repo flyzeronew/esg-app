@@ -5,19 +5,17 @@ import Footer from '../../../comps/Footer/Footer'
 import Practice from '../../../comps/responsibility/Practice'
 import classNames from 'classnames/bind';
 import styles from './brands.module.css';
-import { genericPageService } from '@/services/cms/apisCMS';
-
-const cx = classNames.bind(styles);
 
 export default function Page(props) {
     // 頁面識別
     const thisPage='responsibility';
+    const cx = classNames.bind(styles);
     const ogImg = process.env.OG_IMG;
     const appUrl = process.env.APP_URL;
     const [clicked, setClicked] = useState(false);
     const responsibilityData = props.responsibilityData;
     const practiceData = props.brands.brand.more_articles;
-    const otherBrands = props.brands.other_brands;    
+    const otherBrands = props.brands.other_brands;
     const brands = props.brands.brand;
     const handleClick = () => {
         setClicked(!clicked);
@@ -26,24 +24,24 @@ export default function Page(props) {
         event.preventDefault();
     };
     return (
-    <div id='wrapper'> 
+    <div id='wrapper'>
         <Head>
             <title>{`${brands.name} - 永續品牌 - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content="TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題" />
-            <meta name="description" content={brands.description} /> 
+            <meta name="description" content={brands.description} />
             <meta name="author" content="TVBS" />
             <meta name="copyright" content="TVBS" />
             <meta name="application-name" content="TVBS" />
             <meta name="URL" content={`${appUrl}/${thisPage}/brands/${brands.id}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="index,follow"/>
-            <meta property="og:image" content={ogImg} />  
-            <link rel="canonical" href={`${appUrl}/${thisPage}/brands/${brands.id}`}/>       
+            <meta property="og:image" content={ogImg} />
+            <link rel="canonical" href={`${appUrl}/${thisPage}/brands/${brands.id}`}/>
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
-            <div className={cx("brandsPage")}>                
+            <div className={cx("brandsPage")}>
                 <div className={cx("detailMainView")}>
                     <div className={cx("box")}>
                         <div className={cx("img")}>
@@ -81,7 +79,7 @@ export default function Page(props) {
 
                     <div className={cx("mainImage")}>
                         {
-                            clicked ? 
+                            clicked ?
                                 <div className={cx("video")}>
                                     <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${brands.youtube_id}?autoplay=1&mute=1`} frameborder="0" allowfullscreen></iframe>
                                 </div>
@@ -105,8 +103,8 @@ export default function Page(props) {
                             <h2>{brands.second_title}</h2>
                             <div className={cx("line")}></div>
                         </div>
-                        <p className={cx("intro")}>{brands.second_intro}</p>                        
-                        <div className={cx("t1")}>  
+                        <p className={cx("intro")}>{brands.second_intro}</p>
+                        <div className={cx("t1")}>
                             <div className={cx("line")}></div>
                             <p className={cx("intro")}>{brands.conclusion}</p>
                             <div className={cx("line")}></div>
@@ -114,7 +112,7 @@ export default function Page(props) {
                     </div>
 
                     {/* 輪播部分 */}
-                    {practiceData && practiceData.length > 0 ? 
+                    {practiceData && practiceData.length > 0 ?
                         <Practice practiceData={practiceData} />
                         :''
                     }
@@ -128,11 +126,11 @@ export default function Page(props) {
                             <a href={brands.brand_url} target='_blank' >
                                 探索更多{brands.name}
                                 <img src={`${appUrl}/images/icon_arraw09.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
-                            </a>                            
+                            </a>
                         </div>
                     </div>
 
-                    {otherBrands && otherBrands.length > 0 ? 
+                    {otherBrands && otherBrands.length > 0 ?
                         <div className={cx("practiceMore")}>
                             <div className={cx("title","s1")}>更多TVBS永續品牌</div>
                             <div className={cx("brandMore")}>
@@ -143,7 +141,7 @@ export default function Page(props) {
                                                 <div className={cx("imgBox")}>
                                                     <div className={cx("img")}>
                                                         <img src={item.cover_img} alt="img" width={1072} height={603} loading="lazy"/>
-                                                    </div>  
+                                                    </div>
                                                     <div className={cx("logoBox")}>
                                                         <div className={cx("rounded")}>
                                                             <img src={`${appUrl}/images/rounded-04.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
@@ -158,10 +156,10 @@ export default function Page(props) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className={cx("txtBox")}>                                                
+                                                <div className={cx("txtBox")}>
                                                     <div className={cx("txt")}>{item.description}</div>
                                                     <img src={`${appUrl}/images/icon_arraw09.svg`} alt="rounded" width={50} height={50} loading="lazy"/>
-                                                </div> 
+                                                </div>
                                             </a>
                                         </li>
                                     ))}
@@ -181,34 +179,35 @@ export default function Page(props) {
     );
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
+
 export async function getServerSideProps(context) {
-    const page = context.query.page;
-
-    const menu =  await genericPageService.getMenu();
-    // 線上資料
-
-    const responsibilityUrl = process.env.APP_ENV==='production'?
-    new URL('/api/responsibility-prd', process.env.APP_URL):
-    new URL('/api/responsibility-dev', process.env.APP_URL);    
-
-    const responsibilityRes = await fetch(responsibilityUrl);
-    const responsibilityData = await responsibilityRes.json();
-
-    const brandsUrl = new URL(`/api/brands/${page}`, process.env.API_URL);
-    const brandsRes = await fetch(brandsUrl);
-    let brands = '';
-    //判斷撈不到東西直接跳404
-    if(brandsRes.status !== 404){
-        brands = await brandsRes.json();
-       }else{
+    try {
+        const page = context.query.page;
+        const { menu, extraData } = await fetchPageData({
+            extraApiPaths: [
+                `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
+                `/api/brands/${page}`
+            ]
+        });
+        const [responsibilityData, brands] = extraData;
+        if (!brands) {
+            return {
+                notFound: true,
+            };
+        }
+        return {
+            props: {
+                menu,
+                responsibilityData,
+                page,
+                brands
+            },
+        };
+    } catch (error) {
+        console.error("Error in getServerSideProps (brands/[page]):", error);
         return {
             notFound: true,
         };
     }
-
-    return {
-        props: {
-            menu,responsibilityData,page,brands
-        },
-    };
 }

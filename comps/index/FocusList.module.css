@@ -51,10 +51,10 @@
     padding: 48px 0;
 }
 .focus .report .first{
-    width: 67%;
+    width: 69.3%;
 }
 .focus .report .list{
-    width: 30.9%;
+    width: 30.7%;
 }
 .focus .report .first a{
     display: block;
@@ -178,6 +178,7 @@
     font-weight: 500;
     line-height: 160%;
     letter-spacing: 0.64px;
+    margin-bottom: 12px;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -227,20 +228,15 @@
     transform: rotate(-45deg);
 }
 @media (max-width:1699px) {
-    .focus .report .first .txtBox .subTitle,
-    .focus .report .list .txtBox .subTitle
-    {
-        font-size: 18px;
-    }
     .focus{
         background-color: #fff;
         margin-bottom: 160px;
     }
     .focus .report .first{
-        width: 68%;
+        width: 70.4%;
     }
     .focus .report .list{
-        width: 30.7%;
+        width: 29.6%;
     }
     .focus .title a{
         font-size: 36px;
@@ -252,10 +248,10 @@
         margin-bottom: 80px;
     }
     .focus .report .first{
-        width: 67%;
+        width: 68%;
     }
     .focus .report .list{
-        width: 32.7%;
+        width: 30%;
     }
     .focus .report{
         gap: 30px;

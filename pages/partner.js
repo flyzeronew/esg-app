@@ -8,11 +8,10 @@ import SharedBanner from '@/comps/sharedBanner/SharedBanner';
 import { genericPageService } from '@/services/cms/apisCMS';
 import { usePathname } from 'next/navigation';
 
-const cx = classNames.bind(styles);
 export default function Partner(props) {
-  const appUrl = process.env.APP_URL
-  // 頁面識別
   const thisPage = 'partner'
+  const appUrl = process.env.APP_URL
+  const cx = classNames.bind(styles);
   const pathname = usePathname();
   const detailsOfPage = props.menu.find((menuItem) => menuItem.pathname === pathname);
   const ogImg = process.env.OG_IMG
@@ -93,7 +92,7 @@ export default function Partner(props) {
             <SharedBanner
                 title={detailsOfPage.page}
                 description={detailsOfPage.page_description}
-            ></SharedBanner>   
+            ></SharedBanner>
           </div>
           {/* <div className={cx("submenuArea")}>
             <div className={cx("submenu")}>
@@ -192,22 +191,27 @@ export default function Partner(props) {
   )
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps() {
-  const menu =  await genericPageService.getMenu();
-  // submenu
-  const submenuUrl = new URL('/api/partner-genres', process.env.API_URL)
-  const submenuRes = await fetch(submenuUrl)
-  const submenuData = await submenuRes.json()
-  // list
-  const partnerUrl = new URL('/api/partners', process.env.API_URL)
-  const partnerRes = await fetch(partnerUrl)
-  const partnerData = await partnerRes.json()
-
-  return {
-    props: {
-      menu,
-      partnerData,
-      submenuData,
-    },
+  try {
+    const { menu, colorMapping, extraData } = await fetchPageData({
+      extraApiPaths: ['/api/partner-genres', '/api/partners'],
+    });
+    return {
+      props: {
+        menu,
+        submenuData: extraData[0],
+        partnerData: extraData[1],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        menu: [],
+        partnerData: [],
+        submenuData: [],
+        error: error.message || '資料取得失敗'
+      },
+    };
   }
 }

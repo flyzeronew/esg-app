@@ -11,10 +11,10 @@ import Responsibility from '../comps/index/Responsibility'
 import TipsList from '../comps/index/TipsList'
 import styles from './index-new.module.css';
 import classNames from 'classnames/bind';
-import { genericPageService } from '@/services/cms/apisCMS'
+
 
 export default function Home(props) {
-  
+
   const cx = classNames.bind(styles);
   const appUrl = process.env.APP_URL
   const indexHeadlines = props.indexData.indexHeadlines
@@ -70,33 +70,22 @@ export default function Home(props) {
   )
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps() {
-  try {
-    const [menu, colorMappingRes, indexDataRes] = await Promise.all(
-      [
-        genericPageService.getMenu(),
-        fetch(new URL('/api/tips-color-mapping', process.env.APP_URL)),
-        fetch(new URL('/api/index-data', process.env.API_URL)),
-      ]
-    );
-
-    const [colorMapping, indexData] = await Promise.all([
-      colorMappingRes.json(),
-      indexDataRes.json(),
-    ]);
-
-    return {
-      props: {
-        menu,
-        indexData,
-        colorMapping,
-      },
-    };
-  } catch (error) {
-    console.error("Error in getServerSideProps (index):", error);
-    return {
-      notFound: true,
-    };
+    try {
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: ['/api/index-data'],
+        });
+        return {
+            props: {
+                menu,
+                colorMapping,
+                indexData: extraData[0]
+            }
+        };
+    } catch {
+        return {
+            notFound: true
+        };
+    }
   }
-}
-

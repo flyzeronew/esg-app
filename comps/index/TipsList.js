@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { Component } from 'react'
 import styles from './TipsList.module.css';
 import classnames from "classnames/bind";
 import ScrollContainer from 'react-indiana-drag-scroll';
@@ -24,8 +24,6 @@ function TipsList(props) {
                 vertical={false}
                 ignoreElements={'.no-drag'}
                 nativeMobileScroll
-                activationDistance={30}
-                style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch', cursor:"grab" }}
             >
                 <div className={cx("frameBox")}>
                     <ul>

@@ -9,11 +9,10 @@ import List from './../../comps/tips/list/List'
 import JumpPage from './../../comps/pagination/Pagination'
 import styles from './index.module.css';
 import classNames from 'classnames/bind';
-import { genericPageService } from '@/services/cms/apisCMS';
 
-const cx = classNames.bind(styles);
 
 export default function Tips(props) {
+    const cx = classNames.bind(styles);
     const router = useRouter();
     const detailsOfPage = props.menu.find((menuItem) => menuItem.pathname === router.pathname);
     // 頁面識別
@@ -35,20 +34,20 @@ export default function Tips(props) {
         }
     }, []);
     return (
-        <div id='wrapper'> 
+        <div id='wrapper'>
             <Head>
                 <title>{detailsOfPage.title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="Keywords" content="TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐" />
-                <meta name="description" content={detailsOfPage.meta_description} />        
+                <meta name="description" content={detailsOfPage.meta_description} />
                 <meta name="author" content="TVBS" />
                 <meta name="copyright" content="TVBS" />
                 <meta name="application-name" content="TVBS" />
                 <meta name="URL" content={`${appUrl}${router.pathname}`} />
                 <meta name="medium" content="mult" />
                 <meta name="robots" content="INDEX,FOLLOW"/>
-                <meta property="og:image" content={ogImg} /> 
-                <link rel="canonical" href={`${appUrl}${router.pathname}`} />     
+                <meta property="og:image" content={ogImg} />
+                <link rel="canonical" href={`${appUrl}${router.pathname}`} />
             </Head>
             <Header thisPage={thisPage} menuData={props.menu}/>
             <main>
@@ -56,7 +55,7 @@ export default function Tips(props) {
                     <div className={cx("mainArea")}>
                         <SharedBanner title={detailsOfPage.page} description={detailsOfPage.page_description}/>
                         <Submenu submenu={tipsSubmenu} page={"tips"}/>
-                                               
+
                     </div>
                    <div className={cx("listView")}>
                         <List listData={showList} colorMapping={colorMapping} />
@@ -73,28 +72,31 @@ export default function Tips(props) {
         </div>
         );
 }
-
-export async function getServerSideProps(context) {    
-    const { query } = context;    
-    const page = query.page ? query.page : 1;
-    const menu =  await genericPageService.getMenu();
-    // 顏色配對
-    const colorMappingUrl = new URL('/api/tips-color-mapping', process.env.APP_URL);
-    const colorMappingRes = await fetch(colorMappingUrl);
-    const colorMapping = await colorMappingRes.json();
-
-    // submenu
-    const submenuUrl = new URL('/api/tips-genres', process.env.APP_URL);
-    const submenuRes = await fetch(submenuUrl);    
-    const submenuData = await submenuRes.json();
-    // list
-    const tipsUrl = new URL(`/api/tips?page=${page}`, process.env.API_URL);
-    const tipsRes = await fetch(tipsUrl);    
-    const tipsData = await tipsRes.json();
-
-    return {
-        props: {
-            menu,tipsData,submenuData,page,colorMapping,
-        },
-    };
+import { fetchPageData } from '@/services/cms/fetchPageData';
+export async function getServerSideProps(context) {
+    try {
+        const { query } = context;
+        const page = query.page ? query.page : 1;
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: [
+                '/api/tips-genres',
+                `/api/tips?page=${page}`
+            ]
+        });
+        const [submenuData, tipsData] = extraData;
+        return {
+            props: {
+                menu,
+                tipsData,
+                submenuData,
+                page,
+                colorMapping,
+            },
+        };
+    } catch (error) {
+        console.error("Error in getServerSideProps (tips):", error);
+        return {
+            notFound: true,
+        };
+    }
 }

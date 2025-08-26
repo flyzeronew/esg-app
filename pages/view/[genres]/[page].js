@@ -5,10 +5,9 @@ import Header from '../../../comps/Header/Header'
 import Footer from '../../../comps/Footer/Footer'
 import classNames from 'classnames/bind';
 import styles from './page.module.css';
-import { genericPageService } from '@/services/cms/apisCMS';
 
-const cx = classNames.bind(styles);
 export default function ViewArticle(props) {
+  const cx = classNames.bind(styles);
   const articleId = Number(props.articleId)
   const appUrl = process.env.APP_URL
   const [paddingTop, setPaddingTop] = useState()
@@ -126,7 +125,7 @@ export default function ViewArticle(props) {
       if (!editorNew) return
 
       const paragraphs = editorNew.querySelectorAll('p');
-      const positions = [2, 8] 
+      const positions = [2, 8]
 
       positions.forEach((pos, index) => {
         if (paragraphs[pos]) {
@@ -217,7 +216,7 @@ export default function ViewArticle(props) {
               <div className={cx("line")}></div>
               <span>{getArticleData.article_genres[0].name}</span>
             </div>
-            
+
             <h1 className={cx("mainTitle")}>{getArticleData.title}</h1>
             <div className={cx("timeBar")}>
               <span>{formattedDate(getArticleData.updated_at)} 更新</span>
@@ -298,7 +297,7 @@ export default function ViewArticle(props) {
             {/* 小撇步報你知 */}
           </div>
 
-      
+
         </div>
       </main>
       <div className={cx('extendedContent')}>
@@ -358,32 +357,32 @@ export default function ViewArticle(props) {
   )
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
+
 export async function getServerSideProps(context) {
   try {
-    const articleId = context.query.page
-    const menu = await genericPageService.getMenu();
-    const viewUrl = new URL(`/api/articles/${articleId}`, process.env.API_URL)
-    const viewRes = await fetch(viewUrl)
-    if (!viewRes.ok) {
-      if (viewRes.status === 404) {
-        return {
-          notFound: true,
-        }
-      }
+    const articleId = context.query.page;
+    const { menu, colorMapping, extraData } = await fetchPageData({
+      extraApiPaths: [`/api/articles/${articleId}`],
+    });
+    const viewData = extraData[0];
+    if (!viewData) {
+      return {
+        notFound: true,
+      };
     }
-    const viewData = await viewRes.json()
     return {
       props: {
         menu,
         viewData,
         articleId,
       },
-    }
+    };
   } catch (error) {
     return {
       props: {
-        error: error.message,
+        error: error.message || '資料取得失敗',
       },
-    }
+    };
   }
 }

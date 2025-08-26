@@ -9,17 +9,14 @@ import Footer from '../../comps/Footer/Footer'
 import Pagination from '../../comps/pagination/Pagination'
 import classNames from 'classnames/bind'
 import styles from './view.module.css'
-import { notFound } from 'next/navigation'
 import SharedBanner from '@/comps/sharedBanner/SharedBanner'
-import { genericPageService } from '@/services/cms/apisCMS'
 import { extractDetailsFromSub } from '@/util/helpers'
 
-const cx  = classNames.bind(styles);
-
 export default function Genres(props) {
-    const appUrl = process.env.APP_URL;
     // 頁面識別
     const thisPage='view';
+    const cx  = classNames.bind(styles);
+    const appUrl = process.env.APP_URL;
     const ogImg = process.env.OG_IMG;
     // 計算文章數量轉頁面數
     const articleNum = 12;
@@ -28,7 +25,7 @@ export default function Genres(props) {
     const pageCount = articleCount % articleNum != 0 ? articleMath + 1 : articleMath ;
     // 計算文章數量轉頁面數 ed
     const router = useRouter();
-    const viewSubmenu = props.viewSubmenuData;    
+    const viewSubmenu = props.viewSubmenuData;
     const articlesFirst = props.articlesData.articles[0];
     const articleList = props.page > 1 ? props.articlesData.articles : props.articlesData.articles.slice(1);
     const genreEnName=String(props.genreEnName);
@@ -41,10 +38,10 @@ export default function Genres(props) {
         if (1 < pageCount && props.page > pageCount || genreData === '') {
             router.push('/404');
         }
-    }, [pageCount, props.page, genreData, router]);  
+    }, [pageCount, props.page, genreData, router]);
 
     return (
-    <div id='wrapper'> 
+    <div id='wrapper'>
         <Head>
             <title>{`${genrePageDetails.title}`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -104,16 +101,16 @@ export default function Genres(props) {
                     :''
                 }
                 {/* 主視覺 ed*/}
-                
-                {/* 文章列表 */}                
+
+                {/* 文章列表 */}
                     <ArticleList  articleList={articleList}/>
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
                     { pageCount > 1 ? <Pagination uri={uri} pageCount={pageCount} /> :''}
-                    
+
                 {/* 跳頁選單 ed */}
             </div>
-            
+
         </main>
         <div className={cx("footerLine")}>
             <div className={cx("box")}></div>
@@ -123,40 +120,29 @@ export default function Genres(props) {
     );
 }
 
+import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps(context) {
-    const { query } = context;
-    const page = Number(query.page) || 1;    
-    const genreEnName = query.genres;
-    const viewSubmenuUrl = new URL('/api/article-genres', process.env.API_URL);
-    // 線上資料
-    // submenu
     try {
-        const viewSubmenuRes = await fetch(viewSubmenuUrl)
-        //currently if something goes wrong redirecting to not found 
-        if(!viewSubmenuRes.ok){
-            return {
-                notFound: true
-            }
-        }
-        const menu =  await genericPageService.getMenu();
-        
-        const viewSubmenuData = await viewSubmenuRes.json();
+        const { query } = context;
+        const page = query.page ? Number(query.page) : 1;
+        const genreEnName = query.genres;
 
-        const getGenreData = viewSubmenuData.find(item => item.en_name === genreEnName) || null;
-        let articlesData = null;
-        if (!getGenreData?.id) {
-            return {
-                notFound: true
-            }
+        // 拉資料方式參考首頁
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: [
+                `/api/article-genres`,
+                `/api/articles?genre_en_name=${genreEnName}&page=${page}&fields=id,title,cover_img,article_genres,author_name,partner,description`
+            ],
+        });
+
+        const viewSubmenuData = extraData[0];
+        const articlesData = extraData[1];
+        const genreData = viewSubmenuData.find(item => item.en_name === genreEnName) || null;
+
+        if (!genreData?.id) {
+            return { notFound: true };
         }
-        const articlesUrl = new URL(`/api/articles?genre_id=${getGenreData.id}&page=${page}`, process.env.API_URL);
-        const articlesRes = await fetch(articlesUrl);    
-        if (!articlesRes.ok) {
-            return {
-                notFound: true
-            }
-        }
-        articlesData = await articlesRes.json();
+
         return {
             props: {
                 menu,
@@ -164,10 +150,14 @@ export async function getServerSideProps(context) {
                 articlesData,
                 genreEnName,
                 page,
-                genreData : getGenreData || null,
+                genreData,
+                colorMapping,
             },
         };
     } catch (error) {
-        console.log("error View genre -->", error) 
+        console.error("Error in getServerSideProps (view/[genres]):", error);
+        return {
+            notFound: true,
+        };
     }
 }

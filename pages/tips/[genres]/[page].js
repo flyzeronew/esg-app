@@ -6,14 +6,13 @@ import Footer from '../../../comps/Footer/Footer'
 import DetailMainView from './../../../comps/tips/detailedMainView/DetailMainView'
 import styles from './[page].module.css';
 import classNames from 'classnames/bind';
-import { genericPageService } from '@/services/cms/apisCMS';
 
-const cx = classNames.bind(styles);
 export default function Page(props) {
     // 頁面識別
     const thisPage='tips';
+    const cx = classNames.bind(styles);
     const ogImg = process.env.OG_IMG;
-    const isIOS = props.isIOS;   
+    const isIOS = props.isIOS;
     const appUrl = process.env.APP_URL;
     const tipsData = props.tipsData.tip;
     const colorMapping = props.colorMapping;
@@ -22,10 +21,10 @@ export default function Page(props) {
     const thisPageUri =`${appUrl}/${thisPage}`;
     // random 繼續看區塊
     const keepReading = props.tipsData.more;
-    const [selectedOptions, setSelectedOptions] = useState([]);    
+    const [selectedOptions, setSelectedOptions] = useState([]);
     const [scorllStop, setScorllStop] = useState(false);
     //送出答案錨點程式
-    
+
     const themeValues = {
         bgColor: colorMapping[tipsData.genre-1].bgColor,
         color:colorMapping[tipsData.genre-1].txtColor,
@@ -40,14 +39,14 @@ export default function Page(props) {
             });
             return;
         }
-        const answerTop = document.querySelector("." + cx('answer')).offsetTop; 
-        const headerHeight = 100;        
+        const answerTop = document.querySelector("." + cx('answer')).offsetTop;
+        const headerHeight = 100;
         window.scrollTo({
             top: answerTop - headerHeight,
             behavior: 'smooth',
         });
-    }; 
-    
+    };
+
     // 選單
     //選單程式
     const handleCheckboxChange = (e) => {
@@ -67,13 +66,13 @@ export default function Page(props) {
         return formattedDate;
     };
     useEffect(() => {
-        const contentMore = document.querySelector("." + cx('contentMore'));  
+        const contentMore = document.querySelector("." + cx('contentMore'));
         // const headerHeight = document.querySelector("." + cx('header')).offsetHeight;
         const headerHeight = 100;
         const imgBoxHeight = document.querySelector("." +  cx('fixBox')).offsetHeight;
         const handleScroll = () => {
             if (window.scrollY + 100 + imgBoxHeight > contentMore.offsetTop) {
-                setScorllStop(true);             
+                setScorllStop(true);
             } else {
                 setScorllStop(false);
             }
@@ -84,13 +83,13 @@ export default function Page(props) {
         };
     }, []);
     return (
-    <div id='wrapper'>        
-       
+    <div id='wrapper'>
+
         <Head>
             <title>{`${tipsData.title} - TVBS ESG專區`}</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <meta name="Keywords" content='TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題' />
-            <meta name="description" content='ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。' /> 
+            <meta name="description" content='ESG企業永續治理，是企業在環境、社會、公司治理三個層面，採取永續發展的經營方式。ESG企業永續治理的內涵在於企業不僅要追求財務獲利，更要兼顧環境保護、社會責任與公司治理，才能創造永續發展的價值。' />
             <meta name="author" content="TVBS" />
             <meta name="copyright" content="TVBS" />
             <meta name="application-name" content="TVBS" />
@@ -113,7 +112,7 @@ export default function Page(props) {
                         <div className={cx("question")}>
                             <div className={cx("tag")}>{colorMapping[tipsData.genre-1].genre}</div>
                             <h1 className={cx("title")}>{tipsData.title}</h1>
-                            { tipsData? 
+                            { tipsData?
                             <div className={cx("checkbox")}>
                                 { tipsData.answers.map((answer, index) => (
                                     answer !== null && answer.trim() !== ''
@@ -139,11 +138,11 @@ export default function Page(props) {
                                 <span>送出答案</span>
                                 {/* <div className={cx("arraw")} style={{backgroundColor:themeValues.bgColor,color:themeValues.color}}>↓</div> */}
                                 <div className={cx("arraw")}>↓</div>
-                            </div>                   
+                            </div>
                         </div>
                         {/* //this for question with answers */}
                         <div className={cx("answer", 0 === selectedOptions.length  ? "no" : "")}>
-                            {selectedOptions.length > 0 ? 
+                            {selectedOptions.length > 0 ?
                                 <>
                                     <div className={cx("title")}>
                                         <img src={`${appUrl}/images/smirking-face.png`} alt="img" width={50} height={50}/> 你答對了嗎？
@@ -171,7 +170,7 @@ export default function Page(props) {
 
                 <div className={cx("contentMore")}>
                     <div className={cx("title")}>繼續看</div>
-                    <div className={cx("frameBox")}>                        
+                    <div className={cx("frameBox")}>
                         <div className={cx("listBox")}>
                             <div className={cx("list")}>
                                 <ul>
@@ -193,7 +192,7 @@ export default function Page(props) {
                                                             <div className={cx("rounded")}>
                                                                 <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
                                                             </div>
-                                                        </div>                                   
+                                                        </div>
                                                     </div>
                                                 </a>
                                             </li>
@@ -212,43 +211,47 @@ export default function Page(props) {
     </div>
     );
 }
+
+import { fetchPageData } from '@/services/cms/fetchPageData';
+
 export async function getServerSideProps(context) {
-    const { params } = context;
-    const userAgent = context.req.headers['user-agent'];
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent);
-    const { page } = params;
+    try {
+        const { params, req } = context;
+        const userAgent = req.headers['user-agent'];
+        const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+        const { genres, page } = params;
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: [
+                '/api/tips-genres',
+                `/api/tips/${page}`
+            ]
+        });
 
-    const menu =  await genericPageService.getMenu();
+        const [submenuData, tipsData] = extraData;
 
-    // submenu
-    const submenuUrl = new URL('/api/tips-genres', process.env.APP_URL);
-    const submenuRes = await fetch(submenuUrl);
-    const submenuData = await submenuRes.json();
+        let getEnName = '';
+        if (tipsData && tipsData.tip && submenuData && Array.isArray(submenuData)) {
+            const genreItem = submenuData.find(item => item.id == tipsData.tip.genre);
+            getEnName = genreItem ? genreItem.en_name : '';
+        } else {
+            return {
+                notFound: true,
+            };
+        }
 
-    // 顏色配對
-    const colorMappingUrl = new URL('/api/tips-color-mapping', process.env.APP_URL);
-    const colorMappingRes = await fetch(colorMappingUrl);
-    const colorMapping = await colorMappingRes.json();
-    // 小撇步內頁資料
-    const tipsUrl = new URL(`/api/tips/${page}`, process.env.API_URL);
-    const tipsRes = await fetch(tipsUrl);
-
-    let tipsData = '';
-    let getEnName = '';
-      
-    //判斷撈不到東西直接跳404
-    if(tipsRes.status !== 404){
-        tipsData = await tipsRes.json();
-        getEnName = submenuData.filter(item => item.id == tipsData.tip.genre)[0].en_name;
-    }else{
+        return {
+            props: {
+                menu,
+                tipsData,
+                isIOS,
+                colorMapping,
+                submenuData,
+                getEnName
+            },
+        };
+    } catch (error) {
         return {
             notFound: true,
         };
     }
-    
-    return {
-        props: {
-            menu, tipsData, isIOS, colorMapping, submenuData, getEnName
-        },
-    };
 }

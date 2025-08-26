@@ -3,18 +3,16 @@ import Header from './../../../comps/Header/Header';
 import Footer from './../../../comps/Footer/Footer';
 import styles from './guide.module.css';
 import classNames from 'classnames/bind';
-import ArrowRight from '@/comps/svgs/ArrowRight'; 
+import ArrowRight from '@/comps/svgs/ArrowRight';
 import Image from 'next/image';
 import { useRouter } from 'next/router'
-import { genericPageService } from '@/services/cms/apisCMS';
 import { extractDetailsFromSub } from '@/util/helpers';
-
-const cx = classNames.bind(styles);
 
 export default function Responsibility(props) {
   // 頁面識別
-  const thisPage = 'responsibility';  
+  const thisPage = 'responsibility';
   const router = useRouter();
+  const cx = classNames.bind(styles);
   const staticPath = process.env.NEXT_PUBLIC_STATIC_FILES;
   const ogImg = `${staticPath}/esg_pics/TVBSGOOD_og_image.png`;
   const responsibilityData = props.responsibilityData;
@@ -55,7 +53,7 @@ export default function Responsibility(props) {
                 height={722}
                 loading="lazy"
               />
-              
+
             </div>
             <div className={cx("titleBox")} >
               <div className={cx("title")} >
@@ -145,8 +143,8 @@ export default function Responsibility(props) {
             {guidePdfList && guidePdfList.length > 0 ? (
                 <>
                   <div className={cx("reportCard")}>
-                      <div className={cx("reportArea")} 
-                        style={{ 
+                      <div className={cx("reportArea")}
+                        style={{
                           background: `url(${guidePdfList[0].cover_img_url}) no-repeat center center`,
                           backgroundSize: 'cover'
                         }}
@@ -194,7 +192,7 @@ export default function Responsibility(props) {
                         TVBS 陪伴大家走入永續生活，每個人的微小改變，都有助於保護我們的地球，為後代子孫創造一個更美好的世界。
                       </p>
                     </div>
-                  </div>                  
+                  </div>
                 </>
               ) : ''
             }
@@ -247,37 +245,28 @@ export default function Responsibility(props) {
     </div>
   );
 }
+import { fetchPageData } from '@/services/cms/fetchPageData';
 
 export async function getServerSideProps() {
-  const menu =  await genericPageService.getMenu();
-  // 線上資料
-
-  const responsibilityUrl =
-    process.env.APP_ENV === 'production'
-      ? new URL('/api/responsibility-prd', process.env.APP_URL)
-      : new URL('/api/responsibility-dev', process.env.APP_URL);
-  const brandsUrl = new URL('/api/brands', process.env.API_URL);
-
   try {
-    const responsibilityRes = await fetch(responsibilityUrl);
-    const responsibilityData = await responsibilityRes.json();
-
-    const brandsRes = await fetch(brandsUrl);
-    const brands = await brandsRes.json();
-
-    const guidesData = new URL('/api/guides', process.env.API_URL);
-    const guidesRes = await fetch(guidesData);
-    const guides = await guidesRes.json();
-
+    const { menu, extraData } = await fetchPageData({
+      extraApiPaths: [
+        `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
+        '/api/guides'
+      ]
+    });
+    const [responsibilityData, guides] = extraData;
     return {
       props: {
         menu,
         responsibilityData,
-        brands,
         guides
       },
     };
   } catch (error) {
-      console.log("Error Responsibility----------> ", error);
+    console.error("Error Responsibility----------> ", error);
+    return {
+      notFound: true,
+    };
   }
 }

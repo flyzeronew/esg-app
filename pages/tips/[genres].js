@@ -9,16 +9,15 @@ import List from '../../comps/tips/list/List'
 import JumpPage from '../../comps/pagination/Pagination'
 import styles from './index.module.css';
 import classNames from 'classnames/bind';
-import { genericPageService } from '@/services/cms/apisCMS';
 import { extractDetailsFromSub } from '@/util/helpers';
 
 
-const cx = classNames.bind(styles);
 export default function Genres(props) {
-    const router = useRouter();
-    
+
     // 頁面識別
     const thisPage='tips';
+    const router = useRouter();
+    const cx = classNames.bind(styles);
     const ogImg = process.env.OG_IMG;
     const appUrl = process.env.APP_URL;
     const tipsSubmenu = props.submenuData;
@@ -47,22 +46,22 @@ export default function Genres(props) {
             router.push('/404');
         }
     }, [pageCount, props.page, genreData, router]);
-    
+
     return (
-        <div id='wrapper'> 
+        <div id='wrapper'>
             <Head>
                 <title>{genrePageDetails.title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="Keywords" content="TVBS, TVBS GOOD,TVBS NEWS, TVBS ESG, ESG永續趨勢, ESG永續焦點, ESG永續發展, ESG議題, ESG活動, ESG實踐" />
-                <meta name="description" content={genrePageDetails.meta_description} />        
+                <meta name="description" content={genrePageDetails.meta_description} />
                 <meta name="author" content="TVBS" />
                 <meta name="copyright" content="TVBS" />
                 <meta name="application-name" content="TVBS" />
                 <meta name="URL" content={`${appUrl}${genrePageDetails.pathname}`} />
                 <meta name="medium" content="mult" />
                 <meta name="robots" content="index,follow"/>
-                <meta property="og:image" content={ogImg} /> 
-                <link rel="canonical" href={`${appUrl}${genrePageDetails.pathname}`} /> 
+                <meta property="og:image" content={ogImg} />
+                <link rel="canonical" href={`${appUrl}${genrePageDetails.pathname}`} />
             </Head>
             <Header thisPage={thisPage} menuData={props.menu}/>
             <main>
@@ -85,34 +84,42 @@ export default function Genres(props) {
         </div>
         );
 }
-
+import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps(context) {
-    const { query } = context;
-    const page = query.page ? query.page : 1;
-    const genreEnName = context.query.genres;
-    const menu =  await genericPageService.getMenu();
+    try {
+        const { query } = context;
+        const page = query.page ? query.page : 1;
+        const genreEnName = context.query.genres;
 
-    // 顏色配對
-    const colorMappingUrl = new URL('/api/tips-color-mapping', process.env.APP_URL);
-    const colorMappingRes = await fetch(colorMappingUrl);
-    const colorMapping = await colorMappingRes.json();
+        const { menu, colorMapping, extraData } = await fetchPageData({
+            extraApiPaths: [
+                '/api/tips-genres',
+                `/api/tips?genre_en_name=${genreEnName}&page=${page}`
+            ]
+        });
 
-    // submenu
-    const submenuUrl = new URL('/api/tips-genres', process.env.APP_URL);
-    const submenuRes = await fetch(submenuUrl);    
-    const submenuData = await submenuRes.json();
+        const [submenuData, tipsData] = extraData;
+        const getGenreData = submenuData.find(item => item.en_name === genreEnName);
+        const genreData = getGenreData || null;
+        const genreId = getGenreData?.id || null;
 
-    const getGenreData = submenuData.find(item => item.en_name === genreEnName);
-    const genreData = getGenreData ? getGenreData:'';
-    const genreId = getGenreData ? getGenreData.id :'';
-    // list
-    const tipsUrl = new URL(`/api/tips?genre_id=${genreId}&page=${page}`, process.env.API_URL);
-    const tipsRes = await fetch(tipsUrl);    
-    const tipsData = await tipsRes.json();
-    
-    return {
-        props: {
-            menu,tipsData,submenuData,genreData,genreEnName,genreId,page,colorMapping
-        },
-    };
+        return {
+            props: {
+                menu,
+                tipsData,
+                submenuData,
+                genreData,
+                genreEnName,
+                genreId,
+                page,
+                colorMapping
+            },
+        };
+    } catch (error) {
+        console.error("Error in getServerSideProps (tips/[genres]):", error);
+        return {
+            notFound: true,
+        };
+    }
+
 }
