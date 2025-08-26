@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import LazyLoad from 'react-lazyload'
 import styles from './MainVisionNew.module.css';
 import classnames from 'classnames/bind';
 const cx = classnames.bind(styles);
@@ -9,27 +10,63 @@ function MainVision(props) {
     const [current, setCurrent] = useState(props.initialSlide || 0);
     const [fadeIn, setFadeIn] = useState(true);
     const [nextBg, setNextBg] = useState(props.initialSlide ? (props.initialSlide + 1) % data.length : 1);
+    const [imagesLoaded, setImagesLoaded] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
     const dataLength = data.length;
 
+    // 預載入所有圖片
     useEffect(() => {
         if (dataLength <= 1) return;
+
+        const loadImage = (index) => {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => {
+                    setImagesLoaded(prev => ({ ...prev, [index]: true }));
+                    resolve();
+                };
+                img.onerror = () => {
+                    // 即使載入失敗也標記為已處理，避免卡住
+                    setImagesLoaded(prev => ({ ...prev, [index]: true }));
+                    resolve();
+                };
+                img.src = data[index].cover_img;
+            });
+        };
+
+        // 並行載入所有圖片
+        Promise.all(data.map((_, index) => loadImage(index)));
+    }, [dataLength, data]);
+
+    useEffect(() => {
+        if (dataLength <= 1 || Object.keys(imagesLoaded).length < dataLength) return;
+
         const timer = setInterval(() => {
-            // 開始淡出當前圖片
-            setFadeIn(false);
+            // 檢查下一張圖片是否已載入
+            const nextIndex = (current + 1) % dataLength;
 
-            setTimeout(() => {
-                // 切換到下一張圖片（前景層）
-                setCurrent(prev => (prev + 1) % dataLength);
-                setFadeIn(true);
+            if (imagesLoaded[nextIndex] && !isLoading) {
+                setIsLoading(true);
 
-                // 延遲更新背景層，確保前景層完全顯示後才更新
+                // 開始淡出當前圖片
+                setFadeIn(false);
+
                 setTimeout(() => {
-                    setNextBg(prev => (prev + 1) % dataLength);
-                }, 800); // 等前景層淡入完成後再更新背景層
-            }, 800);
+                    // 切換到下一張圖片（前景層）
+                    setCurrent(nextIndex);
+                    setFadeIn(true);
+
+                    // 延遲更新背景層，確保前景層完全顯示後才更新
+                    setTimeout(() => {
+                        setNextBg(prev => (prev + 1) % dataLength);
+                        setIsLoading(false);
+                    }, 800); // 等前景層淡入完成後再更新背景層
+                }, 800);
+            }
         }, 5000);
+
         return () => clearInterval(timer);
-    }, [dataLength]);
+    }, [dataLength, current, imagesLoaded, isLoading]);
 
     const getListOrder = (baseIndex, data) => {
         if (!data || data.length <= 1) return [];
@@ -49,7 +86,7 @@ function MainVision(props) {
         <div className={cx('mainVision')}>
             <div className={cx('frameBox')}>
                 <div className={cx('first')}>
-                    {/* 下一張圖片作為背景層 */}
+                                                        {/* 下一張圖片作為背景層 */}
                     {dataLength > 1 && (
                         <div className={cx('nextBackground')}>
                             <a
@@ -60,7 +97,16 @@ function MainVision(props) {
                                 <div className={cx('box')}>
                                     <div className={cx('imgBox')}>
                                         <div className={cx('img')}>
-                                            <img src={data[nextBg].cover_img} alt="next img" width={1072} height={603} />
+                                            <LazyLoad
+                                                width={1072}
+                                                height={603}
+                                                offset={100}
+                                                style={{width: "100%", aspectRatio: "16/9"}}
+                                                placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                                once
+                                            >
+                                                <img src={data[nextBg].cover_img} alt={data[nextBg].title} width={1072} height={603}  />
+                                            </LazyLoad>
                                         </div>
                                         <div className={cx('bottomMask')}></div>
                                     </div>
@@ -74,6 +120,7 @@ function MainVision(props) {
                                                     alt="img"
                                                     width={48}
                                                     height={48}
+                                                    loading="lazy"
                                                 />
                                             </div>
                                         </div>
@@ -94,7 +141,16 @@ function MainVision(props) {
                                 <div className={cx('box', { show: fadeIn })}>
                                     <div className={cx('imgBox')}>
                                         <div className={cx('img')}>
-                                            <img src={data[current].cover_img} alt="img" width={1072} height={603} />
+                                            <LazyLoad
+                                                width={1072}
+                                                height={603}
+                                                offset={100}
+                                                style={{width: "100%", aspectRatio: "16/9"}}
+                                                placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                                once
+                                            >
+                                                <img src={data[current].cover_img} alt={data[current].title} width={1072} height={603}  />
+                                            </LazyLoad>
                                         </div>
                                         <div className={cx('bottomMask')}></div>
                                     </div>
@@ -108,6 +164,7 @@ function MainVision(props) {
                                                     alt="img"
                                                     width={48}
                                                     height={48}
+                                                    loading="lazy"
                                                 />
                                             </div>
                                         </div>
@@ -133,7 +190,15 @@ function MainVision(props) {
                                                     rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
                                                 >
                                                     <div className={cx('img')}>
-                                                        <img src={item.cover_img} alt="bg img" width={220} height={138} />
+                                                        <LazyLoad
+                                                            width={220}
+                                                            height={138}
+                                                            offset={100}
+                                                            placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                                            once
+                                                        >
+                                                            <img src={item.cover_img} alt={item.title} width={220} height={138} />
+                                                        </LazyLoad>
                                                     </div>
                                                     <div className={cx('txtBox')}>
                                                         <h3 className={cx('title')}>{item.title}</h3>
@@ -161,7 +226,15 @@ function MainVision(props) {
                                                 rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
                                             >
                                                 <div className={cx('img')}>
-                                                    <img src={item.cover_img} alt="img" width={220} height={138} />
+                                                    <LazyLoad
+                                                        width={220}
+                                                        height={138}
+                                                        offset={100}
+                                                        placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                                        once
+                                                    >
+                                                        <img src={item.cover_img} alt={item.title} width={220} height={138} />
+                                                    </LazyLoad>
                                                 </div>
                                                 <div className={cx('txtBox')}>
                                                     <h3 className={cx('title')}>{item.title}</h3>

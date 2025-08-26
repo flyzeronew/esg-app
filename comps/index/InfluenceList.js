@@ -3,7 +3,6 @@ import classnames from "classnames/bind"
 import LazyLoad from 'react-lazyload'
 import styles from './InfluenceList.module.css'
 
-
 const cx = classnames.bind(styles);
 const appUrl = process.env.APP_URL;
 

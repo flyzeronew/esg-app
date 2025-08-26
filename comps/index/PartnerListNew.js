@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import LazyLoad from 'react-lazyload'
 import styles from './PartnerListNew.module.css';
 import classnames from "classnames/bind";
-import CustomSlider from "../CustomSlider/CustomSlider";
 
 const cx = classnames.bind(styles)
 function PartnerList(props) {
@@ -33,7 +33,15 @@ function PartnerList(props) {
                 target={item.has_detail_page === 1 ? undefined : "_blank"}
                 rel={item.has_detail_page === 1 ? undefined : "noopener noreferrer"}
               >
-                <img src={item.avatar} alt="img" width={50} height={50} loading='lazy'/>
+                <LazyLoad
+                  width={50}
+                  height={50}
+                  offset={100}
+                  placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                  once
+                >
+                  <img src={item.avatar} alt="img" width={50} height={50}/>
+                </LazyLoad>
               </a>
             )) : ""
           }

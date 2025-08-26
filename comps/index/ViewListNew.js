@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import LazyLoad from 'react-lazyload'
 import classnames from "classnames/bind"
 import styles from './ViewListNew.module.css';
 
@@ -36,7 +37,15 @@ function ViewList(props) {
                                                     <div className={cx('t2')}>{day}</div>
                                                 </div>
                                                 <div className={cx("img")}>
-                                                    <img src={item.cover_img} alt="img" width={560} height={315} loading='lazy'/>
+                                                    <LazyLoad
+                                                        width={560}
+                                                        height={315}
+                                                        offset={100}
+                                                        placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                                        once
+                                                    >
+                                                        <img src={item.cover_img} alt="img" width={560} height={315}/>
+                                                    </LazyLoad>
                                                 </div>
                                             </div>
                                             <div className={cx("txtBox")}>

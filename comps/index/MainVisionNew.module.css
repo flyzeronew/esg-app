@@ -37,11 +37,14 @@
   -webkit-transform: translateZ(0);
 }
 .mainVision .first a .img img{
-  transition: transform 0.2s ease-out;
   transform: scale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
 }
 .mainVision .first a:hover .img img{
-  transition: transform 0.2s ease-in;
+  transition: all 0.5s ease;
   transform: scale(1.2);
 }
 .mainVision .first .arraw{
@@ -490,6 +493,12 @@
 .listForeground .box.show {
   opacity: 1;
 }
+.listBackground .img :global(.lazyload-wrapper),
+.listForeground .img :global(.lazyload-wrapper) {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 304/190;
+}
 
 /* 響應式調整 - 列表 */
 @media (max-width:1699px) {
@@ -534,6 +543,11 @@
     border-radius: 16px;
     margin-bottom: 12px;
   }
+  .listBackground .img :global(.lazyload-wrapper),
+  .listForeground .img :global(.lazyload-wrapper) {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
 }
 
 @media (max-width:767px) {
@@ -543,3 +557,5 @@
     column-gap: 16px;
   }
 }
+
+/* LazyLoad wrapper 樣式 */

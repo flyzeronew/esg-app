@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import LazyLoad from 'react-lazyload'
 import styles from './TipsList.module.css';
 import classnames from "classnames/bind";
 import ScrollContainer from 'react-indiana-drag-scroll';
@@ -24,6 +24,8 @@ function TipsList(props) {
                 vertical={false}
                 ignoreElements={'.no-drag'}
                 nativeMobileScroll
+                activationDistance={30}
+                style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch', cursor:"grab" }}
             >
                 <div className={cx("frameBox")}>
                     <ul>
@@ -32,7 +34,16 @@ function TipsList(props) {
                                 <li key={index}>
                                     <a href={`${appUrl}/tips/${colorMapping[item.genre - 1].en_name}/${item.id}`}>
                                         <div className={cx("img")}>
-                                            <img src={item.tip_galleries[0].image_url} alt="img" width={560} height={315} draggable={false} />
+                                            <LazyLoad
+                                                width={560}
+                                                height={315}
+                                                offset={100}
+                                                style={{width: "100%", aspectRatio: "5/7"}}
+                                                placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                                once
+                                            >
+                                                <img src={item.tip_galleries[0].image_url} alt={item.title} width={560} height={315} draggable={false} />
+                                            </LazyLoad>
                                         </div>
                                         <div className={cx("txt")}>
                                             <p>
