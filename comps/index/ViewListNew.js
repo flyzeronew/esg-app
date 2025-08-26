@@ -59,7 +59,7 @@ function ViewList(props) {
                                                 </div>
                                             </div>
                                             <div className={cx("arraw")}>
-                                                <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
+                                                <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} loading="lazy" />
                                             </div>
                                         </a>
                                     </li>

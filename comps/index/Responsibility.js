@@ -24,7 +24,7 @@ function Responsibility(props) {
     return (
         <div className={cx("responsibility")} style={bgStyle}>
             <div className={cx("img")}>
-                <img src={`${appUrl}/images/responsibility_bg01.jpg`} alt="responsibility_img01" width={768} height={641}/>
+                <img src={`${appUrl}/images/responsibility_bg01.jpg`} alt="responsibility_img01" width={768} height={641} loading="lazy" />
             </div>
             <div className={cx("box")}>
                 <h2 className={cx("title")}>
@@ -37,17 +37,17 @@ function Responsibility(props) {
                 <div className={cx("btn")}>
                     <a href={`${appUrl}/responsibility`}>
                         TVBS永續責任
-                        <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="arrow_right" width={32} height={32}/>
+                        <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="arrow_right" width={32} height={32} loading="lazy" />
                     </a>
                 </div>
                 <div className={cx("breadcrumbs")}>
                     <a href={`${appUrl}/responsibility/reports`}>
                         永續影響力報告
-                        <img src={`${appUrl}/images/icon_arraw11.svg`} alt="arrow_right" width={12} height={12}/>
+                        <img src={`${appUrl}/images/icon_arraw11.svg`} alt="arrow_right" width={12} height={12} loading="lazy" />
                     </a>
                     <a href={`${appUrl}/responsibility/guide`}>
                         永續e指南
-                        <img src={`${appUrl}/images/icon_arraw11.svg`} alt="arrow_right" width={12} height={12}/>
+                        <img src={`${appUrl}/images/icon_arraw11.svg`} alt="arrow_right" width={12} height={12} loading="lazy" />
                     </a>
                 </div>
             </div>

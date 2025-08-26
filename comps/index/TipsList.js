@@ -15,7 +15,7 @@ function TipsList(props) {
                 <h2 className={cx("title")}>
                     <a href={`${appUrl}/tips`}>
                         永續小撇步
-                        <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} />
+                        <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} loading="lazy" />
                     </a>
                 </h2>
             </div>

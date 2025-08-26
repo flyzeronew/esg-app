@@ -14,7 +14,7 @@ function FocusList(props) {
                 <h2 className={cx("title")}>
                     <a href={`${appUrl}/focus`}>
                         專題報導
-                        <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} />
+                        <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} loading="lazy"/>
                     </a>
                 </h2>
                 { focusFirst ? (
@@ -51,7 +51,7 @@ function FocusList(props) {
                                 <a key={index} href={item.url} target={1 === item.is_blank ? "_blank" : undefined} >
                                     <div className={cx("imgBox")}>
                                         <div className={cx("arraw")}>
-                                            <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
+                                            <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} loading="lazy" />
                                         </div>
                                         <div className={cx("img")}>
                                             <LazyLoad
