@@ -310,7 +310,7 @@
       height: 40px;
   }
   .mainVision .first .txtBox{
-      padding: 0 24px;
+      padding: 24px 24px 0;
       margin-bottom: 24px;
   }
   .mainVision .first .txtBox .txt{

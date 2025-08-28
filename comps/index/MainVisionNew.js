@@ -86,7 +86,7 @@ function MainVision(props) {
         <div className={cx('mainVision')}>
             <div className={cx('frameBox')}>
                 <div className={cx('first')}>
-                                                        {/* 下一張圖片作為背景層 */}
+                    {/* 下一張圖片作為背景層 */}
                     {dataLength > 1 && (
                         <div className={cx('nextBackground')}>
                             <a
@@ -108,7 +108,6 @@ function MainVision(props) {
                                                 <img src={data[nextBg].cover_img} alt={data[nextBg].title} width={1072} height={603}  />
                                             </LazyLoad>
                                         </div>
-                                        <div className={cx('bottomMask')}></div>
                                     </div>
                                     <div className={cx('txtBox')}>
                                         <h3 className={cx('title')}>{data[nextBg].title}</h3>
@@ -152,7 +151,6 @@ function MainVision(props) {
                                                 <img src={data[current].cover_img} alt={data[current].title} width={1072} height={603}  />
                                             </LazyLoad>
                                         </div>
-                                        <div className={cx('bottomMask')}></div>
                                     </div>
                                     <div className={cx('txtBox')}>
                                         <h3 className={cx('title')}>{data[current].title}</h3>
