@@ -100,7 +100,7 @@
     .responsibility{
         aspect-ratio: auto;
         display: block;
-        margin-bottom: 80px;
+        margin-bottom: 0px;
         padding-right: 0px;
     }
     .responsibility .img{
