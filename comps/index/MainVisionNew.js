@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LazyLoad from 'react-lazyload'
 import styles from './MainVisionNew.module.css';
 import classnames from 'classnames/bind';
+import CustomSlider from "../CustomSlider/CustomSlider";
 const cx = classnames.bind(styles);
 
 function MainVision(props) {
@@ -13,6 +14,36 @@ function MainVision(props) {
     const [imagesLoaded, setImagesLoaded] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const dataLength = data.length;
+
+    const settings = {
+        dots: false,
+        fade: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 800,
+        draggable: typeof window !== "undefined" ? window.innerWidth <= 1024 : false,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        beforeChange: (oldIndex, newIndex) => {
+            // 當 CustomSlider 開始切換時，同步更新 list
+            if (dataLength > 1) {
+                setIsLoading(true);
+                setFadeIn(false);
+
+                setTimeout(() => {
+                    setCurrent(newIndex);
+                    setFadeIn(true);
+
+                    setTimeout(() => {
+                        setNextBg((newIndex + 1) % dataLength);
+                        setIsLoading(false);
+                    }, 800);
+                }, 800);
+            }
+        }
+    };
 
     // 預載入所有圖片
     useEffect(() => {
@@ -38,36 +69,6 @@ function MainVision(props) {
         Promise.all(data.map((_, index) => loadImage(index)));
     }, [dataLength, data]);
 
-    useEffect(() => {
-        if (dataLength <= 1 || Object.keys(imagesLoaded).length < dataLength) return;
-
-        const timer = setInterval(() => {
-            // 檢查下一張圖片是否已載入
-            const nextIndex = (current + 1) % dataLength;
-
-            if (imagesLoaded[nextIndex] && !isLoading) {
-                setIsLoading(true);
-
-                // 開始淡出當前圖片
-                setFadeIn(false);
-
-                setTimeout(() => {
-                    // 切換到下一張圖片（前景層）
-                    setCurrent(nextIndex);
-                    setFadeIn(true);
-
-                    // 延遲更新背景層，確保前景層完全顯示後才更新
-                    setTimeout(() => {
-                        setNextBg(prev => (prev + 1) % dataLength);
-                        setIsLoading(false);
-                    }, 800); // 等前景層淡入完成後再更新背景層
-                }, 800);
-            }
-        }, 5000);
-
-        return () => clearInterval(timer);
-    }, [dataLength, current, imagesLoaded, isLoading]);
-
     const getListOrder = (baseIndex, data) => {
         if (!data || data.length <= 1) return [];
         const arr = [];
@@ -86,13 +87,12 @@ function MainVision(props) {
         <div className={cx('mainVision')}>
             <div className={cx('frameBox')}>
                 <div className={cx('first')}>
-                    {/* 下一張圖片作為背景層 */}
-                    {dataLength > 1 && (
-                        <div className={cx('nextBackground')}>
+                    <CustomSlider settings={settings}>
+                        {data.map((item, index) => (
                             <a
-                                href={data[nextBg].url}
-                                target={data[nextBg].is_blank === 1 ? '_blank' : undefined}
-                                rel={data[nextBg].is_blank === 1 ? 'noopener noreferrer' : undefined}
+                                href={item.url}
+                                target={item.is_blank === 1 ? '_blank' : undefined}
+                                rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
                             >
                                 <div className={cx('box')}>
                                     <div className={cx('imgBox')}>
@@ -105,14 +105,14 @@ function MainVision(props) {
                                                 placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
                                                 once
                                             >
-                                                <img src={data[nextBg].cover_img} alt={data[nextBg].title} width={1072} height={603}  />
+                                                <img src={item.cover_img} alt={item.title} width={1072} height={603}  />
                                             </LazyLoad>
                                         </div>
                                     </div>
                                     <div className={cx('txtBox')}>
-                                        <h3 className={cx('title')}>{data[nextBg].title}</h3>
+                                        <h3 className={cx('title')}>{item.title}</h3>
                                         <div className={cx('txt')}>
-                                            <p>{data[nextBg].description}</p>
+                                            <p>{item.description}</p>
                                             <div className={cx('arraw')}>
                                                 <img
                                                     src={`${appUrl}/images/icon_arraw_no_bg.svg`}
@@ -126,51 +126,8 @@ function MainVision(props) {
                                     </div>
                                 </div>
                             </a>
-                        </div>
-                    )}
-
-                    {/* 當前圖片作為前景層 */}
-                    {dataLength > 0 && (
-                        <div className={cx('currentForeground')}>
-                            <a
-                                href={data[current].url}
-                                target={data[current].is_blank === 1 ? '_blank' : undefined}
-                                rel={data[current].is_blank === 1 ? 'noopener noreferrer' : undefined}
-                            >
-                                <div className={cx('box', { show: fadeIn })}>
-                                    <div className={cx('imgBox')}>
-                                        <div className={cx('img')}>
-                                            <LazyLoad
-                                                width={1072}
-                                                height={603}
-                                                offset={100}
-                                                style={{width: "100%", aspectRatio: "16/9"}}
-                                                placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
-                                                once
-                                            >
-                                                <img src={data[current].cover_img} alt={data[current].title} width={1072} height={603}  />
-                                            </LazyLoad>
-                                        </div>
-                                    </div>
-                                    <div className={cx('txtBox')}>
-                                        <h3 className={cx('title')}>{data[current].title}</h3>
-                                        <div className={cx('txt')}>
-                                            <p>{data[current].description}</p>
-                                            <div className={cx('arraw')}>
-                                                <img
-                                                    src={`${appUrl}/images/icon_arraw_no_bg.svg`}
-                                                    alt="img"
-                                                    width={48}
-                                                    height={48}
-                                                    loading="lazy"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    )}
+                        ))}
+                    </CustomSlider>
                 </div>
                 <div className={cx('list')}>
                     {/* 列表背景層 */}
