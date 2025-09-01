@@ -401,6 +401,7 @@
 }
 
 @media (max-width:767px) {
+
     .mainVision .first .imgBox .time {
         padding: 20px;
     }
@@ -437,6 +438,28 @@
     .mainVision .list ul {
         padding-left: 24px;
         column-gap: 16px;
+    }
+}
+@media (max-width:428px) {
+    .mainVision .first :global(.slick-next),
+    .mainVision .first :global(.slick-prev) {
+        top: 32%;
+    }
+}
+
+@media (max-width:413px) {
+    .mainVision .first :global(.slick-next),
+    .mainVision .first :global(.slick-prev) {
+        top: 30%;
+    }
+}
+
+@media (max-width:359px) {
+    .mainVision .first :global(.slick-next),
+    .mainVision .first :global(.slick-prev) {
+        width: 30px;
+        height: 30px;
+        top: 28%;
     }
 }
 
