@@ -13,8 +13,6 @@ function MainVision(props) {
     const [nextBg, setNextBg] = useState(props.initialSlide ? (props.initialSlide + 1) % data.length : 1);
     const [imagesLoaded, setImagesLoaded] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-    const [slideDirection, setSlideDirection] = useState('forward');
-    const [isUserInteracting, setIsUserInteracting] = useState(false);
     const dataLength = data.length;
 
     const settings = {
@@ -27,7 +25,7 @@ function MainVision(props) {
         draggable: false,
         swipe: false,
         touchMove: false,
-        autoplay: !isUserInteracting,
+        autoplay: true,
         autoplaySpeed: 5000,
         pauseOnHover: false,
         arrows: false,
@@ -42,22 +40,11 @@ function MainVision(props) {
                 }
             }
         ],
-                beforeChange: (oldIndex, newIndex) => {
+        beforeChange: () => {
             // 當 CustomSlider 開始切換時，立即開始 list 的淡出效果
             if (dataLength > 1) {
                 setIsLoading(true);
                 setFadeIn(false);
-
-                // 判斷滑動方向，調整動畫時序
-                const isForward = newIndex > oldIndex || (oldIndex === dataLength - 1 && newIndex === 0);
-                const isBackward = newIndex < oldIndex || (oldIndex === 0 && newIndex === dataLength - 1);
-
-                setSlideDirection(isForward ? 'forward' : 'backward');
-
-                // 如果是向後滑動，立即更新背景層
-                if (isBackward) {
-                    setNextBg((newIndex + 1) % dataLength);
-                }
             }
         },
         afterChange: (currentIndex) => {
@@ -65,10 +52,6 @@ function MainVision(props) {
             if (dataLength > 1) {
                 // 立即更新當前索引
                 setCurrent(currentIndex);
-
-                // 根據滑動方向調整動畫時序
-                const delay = slideDirection === 'forward' ? 100 : 50;
-                const bgDelay = slideDirection === 'forward' ? 600 : 300;
 
                 // 短暫延遲後開始淡入效果，讓用戶感受到自然的過渡
                 setTimeout(() => {
@@ -78,24 +61,9 @@ function MainVision(props) {
                     setTimeout(() => {
                         setNextBg((currentIndex + 1) % dataLength);
                         setIsLoading(false);
-
-                        // 如果是用戶互動觸發的滑動，延遲後重新啟用自動播放
-                        if (isUserInteracting) {
-                            setTimeout(() => {
-                                setIsUserInteracting(false);
-                            }, 2000); // 2秒後重新啟用自動播放
-                        }
-                    }, bgDelay); // 根據方向調整延遲時間
-                }, delay);
+                    }, 600); // 配合 CSS 的過渡時間
+                }, 100);
             }
-        },
-        onSwipe: () => {
-            // 當用戶開始滑動時，暫停自動播放
-            setIsUserInteracting(true);
-        },
-        onTouchStart: () => {
-            // 當用戶開始觸控時，暫停自動播放
-            setIsUserInteracting(true);
         }
     };
 
