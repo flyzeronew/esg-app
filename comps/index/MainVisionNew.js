@@ -19,7 +19,7 @@ function MainVision(props) {
 
     const settings = {
         dots: false,
-        // fade: true,
+        fade: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
