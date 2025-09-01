@@ -8,12 +8,11 @@ function MainVision(props) {
     const indexHeadlines = props.indexHeadlines;
     const settings = {
         dots: true,
-        fade: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        swipeToSlide:false,
+        swipeToSlide:true,
         autoplay: true,
         autoplaySpeed:5000, 
     };  

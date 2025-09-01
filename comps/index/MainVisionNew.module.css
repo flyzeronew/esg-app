@@ -32,9 +32,17 @@
     width: 100%;
 }
 
+
+/* 修復 slick carousel 空白問題 */
+.mainVision .first :global(.slick-slide) {
+    visibility: visible;
+}
+.mainVision .first :global(.slick-slide.slick-cloned) {
+    visibility: visible;
+}
+/* 修復 slick carousel 空白問題 ed*/
 .mainVision .first :global(.slick-next),
 .mainVision .first :global(.slick-prev) {
-    display: none !important;
     width: 35px;
     height: 35px;
     top: 35%;
@@ -44,18 +52,15 @@
     border-radius: 60%;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
 .mainVision .first :global(.slick-next:before),
 .mainVision .first :global(.slick-prev:before)
 {
     content: '';
 }
-
 .mainVision .first :global(.slick-prev) {
     left: 5px;
     background: url(/images/icon_arraw04-2.svg) no-repeat center center;
 }
-
 .mainVision .first .imgBox {
     width: 60%;
     aspect-ratio: 16/9;
@@ -266,41 +271,30 @@
 }
 
 @media (max-width:1023px) {
-    .mainVision .first :global(.slick-next),
-    .mainVision .first :global(.slick-prev) {
-        display: block !important;
-    }
-
     .mainVision .first a .arraw {
         display: none;
         background-color: #5BEC3E;
     }
-
     .mainVision .first a:hover .arraw {
         background-color: #5BEC3E;
     }
-
     .mainVision .first a:hover .arraw img {
         transform: rotate(0deg);
     }
-
     .mainVision .first a:hover .img img {
         transform: scale(1);
     }
-
     .mainVision .first .box {
         display: block;
         padding: 0;
         overflow: hidden;
     }
-
     .mainVision .first .imgBox {
         width: 100%;
         border-radius: 0;
         overflow: hidden;
         position: relative;
     }
-
     .mainVision .first .txtBox {
         width: 100%;
         height: 120px;
@@ -309,7 +303,6 @@
         overflow: hidden;
         background-color: #fff;
     }
-
     .mainVision .first .txtBox .title {
         font-size: 26px;
         margin-bottom: 8px;

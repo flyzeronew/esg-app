@@ -22,12 +22,25 @@ function MainVision(props) {
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 800,
-        draggable: typeof window !== "undefined" ? window.innerWidth <= 1024 : false,
+        draggable: false,
+        swipe: false,
+        touchMove: false,
         autoplay: true,
         autoplaySpeed: 5000,
         pauseOnHover: false,
-        arrows: true,
-        beforeChange: (oldIndex, newIndex) => {
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: true,
+                    draggable: true,
+                    swipe: true,
+                    touchMove: true,
+                }
+            }
+        ],
+        beforeChange: () => {
             // 當 CustomSlider 開始切換時，立即開始 list 的淡出效果
             if (dataLength > 1) {
                 setIsLoading(true);
