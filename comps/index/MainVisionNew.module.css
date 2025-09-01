@@ -43,14 +43,16 @@
 /* 修復 slick carousel 空白問題 ed*/
 .mainVision .first :global(.slick-next),
 .mainVision .first :global(.slick-prev) {
-    width: 35px;
-    height: 35px;
+    width: 48px;
+    height: 48px;
     top: 35%;
     z-index: 1;
-    right: 5px;
-    background: url(/images/icon_arraw04.svg) no-repeat center center;
+    right: 24px;
+    background: url(/images/arrow-right.svg) no-repeat center center;
     border-radius: 60%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    /* background-color:rgba(85, 85, 85, 1); */
+    background-color:rgba(85, 85, 85, 0.5);
+    background-size: 60%;
 }
 .mainVision .first :global(.slick-next:before),
 .mainVision .first :global(.slick-prev:before)
@@ -58,8 +60,11 @@
     content: '';
 }
 .mainVision .first :global(.slick-prev) {
-    left: 5px;
-    background: url(/images/icon_arraw04-2.svg) no-repeat center center;
+    left: 24px;
+    background: url(/images/arrow-left.svg) no-repeat center center;
+    /* background-color:rgba(85, 85, 85, 1); */
+    background-color:rgba(85, 85, 85, 0.5);
+    background-size: 60%;
 }
 .mainVision .first .imgBox {
     width: 60%;
@@ -71,7 +76,19 @@
     -webkit-transform: translateZ(0);
     line-height: 0;
 }
-
+@media (max-width:1023px) {
+    .mainVision .first :global(.slick-next),
+    .mainVision .first :global(.slick-prev) {
+        width: 32px;
+        height: 32px;
+    }
+    .mainVision .first :global(.slick-prev) {
+        left: 16px;
+    }
+    .mainVision .first :global(.slick-next) {
+        right: 16px;
+    }
+}
 .mainVision .first a {
     background-color: #ffffff;
 }
