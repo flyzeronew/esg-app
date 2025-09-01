@@ -45,6 +45,7 @@
     opacity: 1;
     transition: all 0.8s;
     padding: 48px 0;
+    overflow: hidden;
 }
 .mainVision .first a .img img{
   transform: scale(1);
@@ -217,6 +218,7 @@
   .mainVision .first .box{
     display: block;
     padding: 0;
+    overflow: hidden;
   }
   .mainVision .first .imgBox{
       width: 100%;
@@ -229,6 +231,8 @@
       height: 120px;
       padding: 48px 48px 0;
       margin-bottom: 64px;
+      overflow: hidden;
+      background-color: #fff;
   }
   .mainVision .first .txtBox .title{
       font-size: 26px;
@@ -257,7 +261,7 @@
       font-weight: 400;
       line-height: 28px;
       letter-spacing: 0.36px;
-      height: 48px;
+      height: 55px;
   }
   .mainVision .first .imgBox .bottomMask{
       display: block;
