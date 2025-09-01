@@ -96,7 +96,6 @@
 }
 
 .mainVision .first .arraw {
-    display: none;
     width: 48px;
     height: 48px;
     aspect-ratio: 1/1;
@@ -273,7 +272,7 @@
     }
 
     .mainVision .first a .arraw {
-        display: block;
+        display: none;
         background-color: #5BEC3E;
     }
 
