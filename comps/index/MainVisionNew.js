@@ -122,7 +122,7 @@ function MainVision(props) {
                                         <h3 className={cx('title')}>{item.title}</h3>
                                         <div className={cx('txt')}>
                                             <p>{item.description}</p>
-                                            {/* <div className={cx('arraw')}>
+                                            <div className={cx('arraw')}>
                                                 <img
                                                     src={`${appUrl}/images/icon_arraw_no_bg.svg`}
                                                     alt="img"
@@ -130,7 +130,7 @@ function MainVision(props) {
                                                     height={48}
                                                     loading="lazy"
                                                 />
-                                            </div> */}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
