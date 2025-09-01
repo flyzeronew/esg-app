@@ -35,13 +35,16 @@
   position: relative;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  line-height: 0;
+}
+.mainVision .first a{
+    background-color: #ffffff;
 }
 .mainVision .first .box{
     width: 100%;
     display: flex;
     align-items: center;
     column-gap: 128px;
-    background-color: #ffffff;
     opacity: 1;
     transition: all 0.8s;
     padding: 48px 0;
@@ -449,7 +452,8 @@
 
 .listBackground .box {
   opacity: 1;
-  transition: all 0.8s;
+  transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
 }
 
 .listBackground .img {
@@ -503,7 +507,8 @@
 
 .listForeground .box {
   opacity: 0;
-  transition: all 0.8s;
+  transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
 }
 
 .listForeground .box.show {
@@ -563,6 +568,23 @@
   .listForeground .img :global(.lazyload-wrapper) {
     width: 100%;
     aspect-ratio: 1/1;
+  }
+
+  /* 手機版優化的過渡效果 */
+  .listForeground .box {
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+  }
+
+  .listForeground .box.show {
+    opacity: 1;
+  }
+
+  .listBackground .box {
+    opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
   }
 }
 
