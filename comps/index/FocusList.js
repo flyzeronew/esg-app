@@ -12,10 +12,7 @@ function FocusList(props) {
         <div className={cx("focus")}>
             <div className={cx("frameBox")}>
                 <h2 className={cx("title")}>
-                    <a href={`${appUrl}/focus`}>
-                        專題報導
-                        <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} loading="lazy"/>
-                    </a>
+                    專題報導
                 </h2>
                 { focusFirst ? (
                     <div className={cx("report")}>
@@ -80,11 +77,11 @@ function FocusList(props) {
                                         </p>
                                     </div>
                                 </a>
-                                ) : ""
+                                ) : undefined
                             ))}
                         </div>
                     </div>
-                ) : ""}
+                ) : undefined }
             </div>
         </div>
     )

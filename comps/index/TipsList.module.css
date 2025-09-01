@@ -24,6 +24,14 @@
     color: #1A242F;
     margin-bottom: 180px;
 }
+.tips .title{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 135%;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+}
 .tips .title a{
     font-size: 48px;
     font-weight: 500;
@@ -105,6 +113,10 @@
         width: 320px;
         border-radius: 80px;
     }
+    .tips .title{
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
     .tips .title a{
         font-size: 36px;
         margin-bottom: 32px;
@@ -125,6 +137,13 @@
     }
     .tips .list .frameBox{
         padding-left: 24px;
+    }
+    .tips .title{
+        font-size: 30px;
+        text-align: left;
+        padding:0 24px;
+        margin-bottom: 24px;
+        justify-content: flex-start;
     }
     .tips .title a{
         font-size: 30px;

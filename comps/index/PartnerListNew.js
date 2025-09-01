@@ -11,10 +11,7 @@ function PartnerList(props) {
     <div className={cx("partner")}>
       <div className={cx("frameBox")}>
         <h2 className={cx("title")}>
-          <a href={`${appUrl}/partner`}>
             共好夥伴
-            <img src={`${appUrl}/images/icon_arraw_no_bg2.svg`} alt="img" width={40} height={40} loading="lazy" />
-          </a>
         </h2>
         <div className={cx("txt")}>
           深耕在地、放眼國際，TVBS GOOD 積極發揮媒體影響力，<br/>

@@ -31,6 +31,15 @@
     background-color: #fff;
     margin-bottom: 180px;
 }
+.focus .title{
+    color: #1A242F;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 135%;
+    display: flex;
+    align-items: center;
+}
 .focus .title a{
     color: #1A242F;
     font-size: 48px;
@@ -242,6 +251,9 @@
     .focus .report .list{
         width: 30.7%;
     }
+    .focus .title{
+        font-size: 36px;
+    }
     .focus .title a{
         font-size: 36px;
     }
@@ -314,6 +326,11 @@
         display: -webkit-box;
         -webkit-line-clamp: 1;
         overflow: hidden;
+    }
+    .focus .title{
+        font-size: 30px;
+        padding-left: 24px;
+        margin-bottom: 24px;
     }
     .focus .title a{
         font-size: 30px;
