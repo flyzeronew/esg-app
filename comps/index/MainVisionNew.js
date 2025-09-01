@@ -26,21 +26,30 @@ function MainVision(props) {
         autoplay: true,
         autoplaySpeed: 5000,
         pauseOnHover: false,
+        arrows: true,
         beforeChange: (oldIndex, newIndex) => {
-            // 當 CustomSlider 開始切換時，同步更新 list
+            // 當 CustomSlider 開始切換時，立即開始 list 的淡出效果
             if (dataLength > 1) {
                 setIsLoading(true);
                 setFadeIn(false);
+            }
+        },
+        afterChange: (currentIndex) => {
+            // 當 CustomSlider 完成切換後，更新 list 內容並開始淡入效果
+            if (dataLength > 1) {
+                // 立即更新當前索引
+                setCurrent(currentIndex);
 
+                // 短暫延遲後開始淡入效果，讓用戶感受到自然的過渡
                 setTimeout(() => {
-                    setCurrent(newIndex);
                     setFadeIn(true);
 
+                    // 延遲更新背景層，確保前景層完全顯示後才更新
                     setTimeout(() => {
-                        setNextBg((newIndex + 1) % dataLength);
+                        setNextBg((currentIndex + 1) % dataLength);
                         setIsLoading(false);
-                    }, 800);
-                }, 800);
+                    }, 600); // 配合 CSS 的過渡時間
+                }, 100);
             }
         }
     };
@@ -113,7 +122,7 @@ function MainVision(props) {
                                         <h3 className={cx('title')}>{item.title}</h3>
                                         <div className={cx('txt')}>
                                             <p>{item.description}</p>
-                                            <div className={cx('arraw')}>
+                                            {/* <div className={cx('arraw')}>
                                                 <img
                                                     src={`${appUrl}/images/icon_arraw_no_bg.svg`}
                                                     alt="img"
@@ -121,7 +130,7 @@ function MainVision(props) {
                                                     height={48}
                                                     loading="lazy"
                                                 />
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
