@@ -10,9 +10,16 @@ function PartnerList(props) {
   return (
     <div className={cx("partner")}>
       <div className={cx("frameBox")}>
-        <h2 className={cx("title")}>
-            共好夥伴
-        </h2>
+        <div className={cx("titleBox")}>
+            <h2 className={cx("title")}>
+              共好夥伴
+            </h2>
+            <div className={cx("more")}>
+                <a href={`${appUrl}/partner`}>
+                    看更多 <img src={`${appUrl}/images/more-arraw.svg`} alt="img" width={12} height={12} loading="lazy" />
+                </a>                        
+            </div>
+        </div>
         <div className={cx("txt")}>
           深耕在地、放眼國際，TVBS GOOD 積極發揮媒體影響力，<br/>
           攜手全球永續夥伴，將善意化為行動，共同倡議永續生活。
@@ -43,6 +50,10 @@ function PartnerList(props) {
             )) : ""
           }
 
+        </div>
+
+        <div className={cx("btnBox")}>
+            <a href={`${appUrl}/partner`}>更多夥伴</a>
         </div>
       </div>
     </div>

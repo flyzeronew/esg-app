@@ -12,9 +12,16 @@ function TipsList(props) {
     return (
         <div className={cx("tips")}>
             <div className={cx("frameBox")}>
-                <h2 className={cx("title")}>
-                     永續小撇步
-                </h2>
+                <div className={cx("titleBox")}>
+                    <h2 className={cx("title")}>
+                        永續小撇步
+                    </h2>
+                    <div className={cx("more")}>
+                        <a href={`${appUrl}/tips`}>
+                            看更多 <img src={`${appUrl}/images/more-arraw.svg`} alt="img" width={12} height={12} loading="lazy" />
+                        </a>                        
+                    </div>
+                </div>
             </div>
             <ScrollContainer
                 className={cx("list")}

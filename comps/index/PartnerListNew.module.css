@@ -24,12 +24,36 @@
     color: #1A242F;
     margin-bottom: 180px;
 }
+.partner .titleBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+.partner .titleBox .more{
+    display: none;
+}
+.partner .titleBox .more a{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.72px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #1A242F;
+}
+.partner .titleBox .more a img{
+    width: 8px;
+    height: 8px;
+}
 .partner .title{
     font-size: 48px;
     font-style: normal;
     font-weight: 500;
     line-height: 135%;
-    margin-bottom: 24px;
+
     display: flex;
     justify-content: center;
 }
@@ -76,6 +100,27 @@
     width: 100%;
     height: auto;
 }
+.partner .btnBox{
+    margin-top: 48px;
+    text-align: center;
+}
+.partner .btnBox a{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.72px;
+    color: #1A242F;
+    border-radius: 100px;
+    background-color: #5BEC3E;
+    padding: 10px 48px;
+    width: max-content;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+.partner .btnBox a:hover{
+    background-color: #78f580;
+}
 @media (max-width:1699px) {
     .partner{
         margin-bottom: 160px;
@@ -92,6 +137,14 @@
     .partner{
         margin-bottom: 80px;
     }
+    .partner .titleBox{
+        justify-content: space-between;
+        margin-bottom: 24px;
+        padding:0 24px;
+    }
+    .partner .titleBox .more{
+        display: block;
+    }
     .partner .title img{
         display: block;
     }
@@ -101,7 +154,6 @@
     .partner .title{
         font-size: 30px;
         text-align: left;
-        padding:0 24px;
         justify-content: flex-start;
     }
     .partner .title a{
@@ -119,6 +171,15 @@
     }
     .partner .list{
         gap: 18px;
+    }
+    .partner .btnBox{
+        display: none;
+        margin-top: 24px;
+    }
+    .partner .btnBox a{
+        padding: 12px 20px;
+        font-size: 16px;
+        line-height: normal;
     }
 }
 @media (max-width:374px) {

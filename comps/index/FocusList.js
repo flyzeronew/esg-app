@@ -15,11 +15,11 @@ function FocusList(props) {
                     <h2 className={cx("title")}>
                         專題報導
                     </h2>
-                    <h2 className={cx("more")}>
+                    <div className={cx("more")}>
                         <a href={`${appUrl}/focus`}>
                             看更多 <img src={`${appUrl}/images/more-arraw.svg`} alt="img" width={12} height={12} loading="lazy" />
                         </a>                        
-                    </h2>
+                    </div>
                 </div>
                 { focusFirst ? (
                     <div className={cx("report")}>
