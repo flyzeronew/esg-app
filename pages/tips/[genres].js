@@ -11,9 +11,7 @@ import styles from './index.module.css';
 import classNames from 'classnames/bind';
 import { extractDetailsFromSub } from '@/util/helpers';
 
-
 export default function Genres(props) {
-
     // 頁面識別
     const thisPage='tips';
     const router = useRouter();
@@ -32,7 +30,6 @@ export default function Genres(props) {
     const articleMath = Math.floor(articleCount / articleNum);
     const pageCount = articleCount % articleNum != 0 ? articleMath + 1 : articleMath;
     // 計算文章數量轉頁面數 ed
-
     const genrePageDetails = extractDetailsFromSub(props.menu, router.asPath);
     if (!genrePageDetails) {
         if (typeof window !== "undefined") {
@@ -46,7 +43,6 @@ export default function Genres(props) {
             router.push('/404');
         }
     }, [pageCount, props.page, genreData, router]);
-
     return (
         <div id='wrapper'>
             <Head>
@@ -90,19 +86,29 @@ export async function getServerSideProps(context) {
         const { query } = context;
         const page = query.page ? query.page : 1;
         const genreEnName = context.query.genres;
-
+        // 先撈 tips-genres
         const { menu, colorMapping, extraData } = await fetchPageData({
             extraApiPaths: [
-                '/api/tips-genres',
-                `/api/tips?genre_en_name=${genreEnName}&page=${page}`
+                '/api/tips-genres'
             ]
         });
-
-        const [submenuData, tipsData] = extraData;
+        const [submenuData] = extraData;
         const getGenreData = submenuData.find(item => item.en_name === genreEnName);
         const genreData = getGenreData || null;
         const genreId = getGenreData?.id || null;
-
+        // 判斷有沒有這個 genreId
+        if (!genreId) {
+            return {
+                notFound: true,
+            };
+        }
+        // 再撈 tips，使用 genre_id
+        const { extraData: tipsExtraData } = await fetchPageData({
+            extraApiPaths: [
+                `/api/tips?genre_id=${genreId}&page=${page}`
+            ]
+        });
+        const [tipsData] = tipsExtraData;
         return {
             props: {
                 menu,
@@ -121,5 +127,4 @@ export async function getServerSideProps(context) {
             notFound: true,
         };
     }
-
 }
