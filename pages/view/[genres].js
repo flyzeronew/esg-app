@@ -126,23 +126,25 @@ export async function getServerSideProps(context) {
         const { query } = context;
         const page = query.page ? Number(query.page) : 1;
         const genreEnName = query.genres;
-
-        // 拉資料方式參考首頁
-        const { menu, colorMapping, extraData } = await fetchPageData({
+        // 第一步：先撈 article-genres 資料
+        const { menu, colorMapping, extraData: genreExtraData } = await fetchPageData({
             extraApiPaths: [
-                `/api/article-genres`,
-                `/api/articles?genre_en_name=${genreEnName}&page=${page}&fields=id,title,cover_img,article_genres,author_name,partner,description`
+                `/api/article-genres`
             ],
         });
-
-        const viewSubmenuData = extraData[0];
-        const articlesData = extraData[1];
+        const viewSubmenuData = genreExtraData[0];
         const genreData = viewSubmenuData.find(item => item.en_name === genreEnName) || null;
-
+        // 第二步：判斷是否有這個ID，沒有則返回404
         if (!genreData?.id) {
             return { notFound: true };
         }
-
+        // 第三步：有ID才撈文章資料
+        const { extraData: articlesExtraData } = await fetchPageData({
+            extraApiPaths: [
+                `/api/articles?genre_id=${genreData.id}&page=${page}`
+            ],
+        });
+        const articlesData = articlesExtraData[0];
         return {
             props: {
                 menu,

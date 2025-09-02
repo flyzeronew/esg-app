@@ -362,7 +362,7 @@ import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps(context) {
   try {
     const articleId = context.query.page;
-    const { menu, colorMapping, extraData } = await fetchPageData({
+    const { menu, extraData } = await fetchPageData({
       extraApiPaths: [`/api/articles/${articleId}`],
     });
     const viewData = extraData[0];

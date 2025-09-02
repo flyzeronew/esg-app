@@ -123,7 +123,7 @@ export async function getServerSideProps(context) {
         const { menu, colorMapping, extraData } = await fetchPageData({
             extraApiPaths: [
                 `/api/article-genres`,
-                `/api/articles?page=${page}&fields=id,title,cover_img,article_genres,author_name,partner`
+                `/api/articles?page=${page}`
             ],
         });
         return {
