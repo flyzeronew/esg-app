@@ -11,16 +11,23 @@ function FocusList(props) {
     return (
         <div className={cx("focus")}>
             <div className={cx("frameBox")}>
-                <h2 className={cx("title")}>
-                    專題報導
-                </h2>
+                <div className={cx("titleBox")}>
+                    <h2 className={cx("title")}>
+                        專題報導
+                    </h2>
+                    <h2 className={cx("more")}>
+                        <a href={`${appUrl}/focus`}>
+                            看更多 <img src={`${appUrl}/images/more-arraw.svg`} alt="img" width={12} height={12} loading="lazy" />
+                        </a>                        
+                    </h2>
+                </div>
                 { focusFirst ? (
                     <div className={cx("report")}>
                         <div className={cx("first")}>
                             <a href={focusFirst.url} target={1 === focusFirst.is_blank ? "_blank" : undefined}>
                                 <div className={cx("imgBox")}>
                                     <div className={cx("arraw")}>
-                                        <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} />
+                                        <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} loading="lazy" />
                                     </div>
                                     <div className={cx("img")}>
                                         <LazyLoad
