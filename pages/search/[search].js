@@ -116,7 +116,7 @@ export default function Search(props) {
                                 { searchArticles.map((item, index) => (
 
                                     <li key={index}>
-                                        <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
+                                        <a href={`${appUrl}/view/${item.article_genres?.[0]?.en_name || 'unknown'}/${item.id}`}>
                                             <div className={cx('txtBox')}>
                                                 <div className={cx('title')}
                                                     dangerouslySetInnerHTML={{ __html: item.title }}>
@@ -182,15 +182,19 @@ import { fetchPageData } from '@/services/cms/fetchPageData';
 
 export async function getServerSideProps(context) {
     try {
-        const { query } = context;
+        const { query, res } = context;
         const page = Number(query.page) || 1;
         const limit = 10;
         const keyword = query.search;
+
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
         const { menu, colorMapping, extraData } = await fetchPageData({
             extraApiPaths: [
                 '/api/focus-news',
                 `/api/search?keyword=${encodeURIComponent(keyword)}&page=${page}&limit=${limit}`
-            ]
+            ],
+            includeColorMapping: true,
         });
         const [focus, searchData] = extraData;
         return {
@@ -204,7 +208,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
-        console.error("Error in getServerSideProps (search/[search]):", error);
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

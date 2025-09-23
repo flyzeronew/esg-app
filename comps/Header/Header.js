@@ -100,7 +100,7 @@ function Navbar(props) {
             {/* 手機板漢堡 */}
             <div className={cx('moMediaSharing')}>
               <div className={cx('socialMedia')}>
-                <a target="_blank" href="https://www.instagram.com/tvbs_good/" >
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tvbs_good/" >
                   <img
                     src={`/images/instagramIcon.svg`}
                     alt="IG Desk Icon"
@@ -108,7 +108,7 @@ function Navbar(props) {
                     height={28}
                   ></img>
                 </a>
-                <a target="_blank" href="https://www.youtube.com/@tvbsgood">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@tvbsgood">
                   <img
                     src={`/images/youtubeIcon.svg`}
                     alt="IG Desk Icon"
@@ -202,6 +202,7 @@ function Navbar(props) {
                 <div>
                   <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.instagram.com/tvbs_good/"
                   >
                     <img
@@ -213,7 +214,7 @@ function Navbar(props) {
                   </a>
                 </div>
                 <div>
-                  <a target="_blank" href="https://www.youtube.com/@tvbsgood">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@tvbsgood">
                     <img
                       src={`/images/youtubeIcon.svg`}
                       alt="Youtube Icon"

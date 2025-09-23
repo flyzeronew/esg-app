@@ -113,8 +113,9 @@ function MainVision(props) {
                         {data.map((item, index) => (
                             <a
                                 href={item.url}
-                                target={item.is_blank === 1 ? '_blank' : undefined}
-                                rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
+                                target={1 === item.is_blank ? '_blank' : undefined}
+                                rel={1 === item.is_blank ? 'noopener noreferrer' : undefined}
+                                key={index}
                             >
                                 <div className={cx('box')}>
                                     <div className={cx('imgBox')}>
@@ -163,8 +164,8 @@ function MainVision(props) {
                                             <div className={cx('box')}>
                                                 <a
                                                     href={item.url}
-                                                    target={item.is_blank === 1 ? '_blank' : undefined}
-                                                    rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
+                                                    target={1=== item.is_blank ? '_blank' : undefined}
+                                                    rel={1 === item.is_blank? 'noopener noreferrer' : undefined}
                                                 >
                                                     <div className={cx('img')}>
                                                         <LazyLoad
@@ -199,8 +200,8 @@ function MainVision(props) {
                                         <div className={cx('box', { show: fadeIn })}>
                                             <a
                                                 href={item.url}
-                                                target={item.is_blank === 1 ? '_blank' : undefined}
-                                                rel={item.is_blank === 1 ? 'noopener noreferrer' : undefined}
+                                                target={1 === item.is_blank ? '_blank' : undefined}
+                                                rel={1 === item.is_blank ? 'noopener noreferrer' : undefined}
                                             >
                                                 <div className={cx('img')}>
                                                     <LazyLoad

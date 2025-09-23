@@ -161,7 +161,7 @@ export default function Responsibility(props) {
                                   </div>
                               </div>
                               <div className={cx("downloadArea")} >
-                                  <a href={guidePdfList[0].pdf_url} target="_blank">
+                                  <a href={guidePdfList[0].pdf_url} target="_blank" rel="noopener noreferrer">
                                       <div className={cx("arraw")}>
                                           <ArrowRight></ArrowRight>
                                       </div>
@@ -179,7 +179,7 @@ export default function Responsibility(props) {
                               <div className={cx("list")}>
                                   {guidePdfList.map((item, index) => (
                                       1 <= index ? (
-                                      <a key={index} href={item.pdf_url} target="_blank" >{item.title}</a>
+                                      <a key={index} href={item.pdf_url} target="_blank" rel="noopener noreferrer">{item.title}</a>
                                       ) : ''
                                     ))
                                   }
@@ -247,8 +247,10 @@ export default function Responsibility(props) {
 }
 import { fetchPageData } from '@/services/cms/fetchPageData';
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   try {
+    const { res } = context;
+    res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
     const { menu, extraData } = await fetchPageData({
       extraApiPaths: [
         `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
@@ -264,9 +266,9 @@ export async function getServerSideProps() {
       },
     };
   } catch (error) {
-    console.error("Error Responsibility----------> ", error);
+    console.error('Error fetching data:', error);
     return {
-      notFound: true,
+        notFound: true,
     };
   }
 }

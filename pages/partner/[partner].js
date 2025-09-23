@@ -201,7 +201,7 @@ return (
                                                 }}
                                                 onMouseOver={() => imgMouseOver(1)} onMouseOut={imgMouseOut}
                                             >
-                                                <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
+                                                <a href={`${appUrl}/view/${item.article_genres?.[0]?.en_name || 'unknown'}/${item.id}`}>
                                                     <div className={cx("articleCard")}>
                                                         <div className={cx("articleTitle")}>{item.title}</div>
                                                         <div className={cx("linkIcon")}>
@@ -231,14 +231,17 @@ import { fetchPageData } from '@/services/cms/fetchPageData';
 
 export async function getServerSideProps(context) {
     try {
-        const { params } = context;
+        const { params, res } = context;
         const { partner } = params;
+        
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
         const { menu, extraData } = await fetchPageData({
             extraApiPaths: ['/api/partners'],
         });
         const partnerData = extraData[0];
         const filteredData = partnerData.filter(item => item.name === partner);
-        if (!filteredData || filteredData.length === 0) {
+        if (!filteredData || 0 === filteredData.length) {
             return { notFound: true };
         }
         const id = filteredData[0].id;
@@ -254,6 +257,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

@@ -8,7 +8,6 @@ import SharedBanner from '@/comps/sharedBanner/SharedBanner';
 import { usePathname } from 'next/navigation';
 
 export default function Focus({menu, focus}) {
-
     const cx = classNames.bind(styles);
     const pathname = usePathname();
     const appUrl = process.env.APP_URL;
@@ -74,13 +73,21 @@ export default function Focus({menu, focus}) {
                                         backgroundSize: index === imgHover ? `${hoverBgSize}%` : `${bgSize}%`,
                                         transition: 'background-size 0.3s',
                                     }} onMouseOver={() => imgMouseOver(index)} onMouseOut={imgMouseOut}>
-                                        <a href={item.url} target={item.is_blank === 1 ? '_blank' :'' } >
+                                        <a
+                                            href={item.url}
+                                            target={1=== item.is_blank ? '_blank' : undefined}
+                                            rel={1=== item.is_blank ? 'noopener noreferrer' : undefined}
+                                        >
                                             <div className={cx("titleBox")}>
                                                 <div className={cx("titleDiv")}>
-                                                    <h2 className={cx("title")}><p>{item.title}</p></h2>
-                                                    <div className={cx("txt")}><p>{item.description}</p></div>
+                                                    <h2 className={cx("title")}>
+                                                        <p>{item.title}</p>
+                                                    </h2>
+                                                    <div className={cx("txt")}>
+                                                        <p>{item.description}</p>
+                                                    </div>
                                                 </div>
-                                                <div className={cx('arraw',index === imgHover ? 'act':'')}>
+                                                <div className={cx('arraw',index === imgHover ? 'act':undefined)}>
                                                     <img src={`${appUrl}/images/icon_arraw04.svg`} alt="arraw" width={42} height={42} loading='lazy'/>
                                                 </div>
                                             </div>
@@ -104,26 +111,23 @@ export default function Focus({menu, focus}) {
 }
 
 import { fetchPageData } from '@/services/cms/fetchPageData';
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
     try {
-        const { menu, colorMapping, extraData } = await fetchPageData({
+        const { res } = context;
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+        const { menu, extraData } = await fetchPageData({
             extraApiPaths: ['/api/focus-news'],
         });
         return {
             props: {
                 menu,
                 focus: extraData[0],
-                colorMapping
-            }
+            },
         };
     } catch (error) {
+        console.error('Error fetching data:', error);
         return {
-            props: {
-                menu: [],
-                focus: [],
-                colorMapping: {},
-                error: error.message || '資料取得失敗'
-            },
+            notFound: true,
         };
     }
 }

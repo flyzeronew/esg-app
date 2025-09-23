@@ -183,14 +183,18 @@ import { fetchPageData } from '@/services/cms/fetchPageData';
 
 export async function getServerSideProps(context) {
     try {
-        const page = context.query.page;
+        const { query, res } = context;
+        const page = query.page;
+
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+
         const { menu, extraData } = await fetchPageData({
             extraApiPaths: [
-                `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
                 `/api/brands/${page}`
             ]
         });
-        const [responsibilityData, brands] = extraData;
+        const [brands] = extraData;
         if (!brands) {
             return {
                 notFound: true,
@@ -199,13 +203,12 @@ export async function getServerSideProps(context) {
         return {
             props: {
                 menu,
-                responsibilityData,
                 page,
                 brands
             },
         };
     } catch (error) {
-        console.error("Error in getServerSideProps (brands/[page]):", error);
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

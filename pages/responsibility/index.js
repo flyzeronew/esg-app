@@ -158,18 +158,18 @@ export default function Responsibility(props) {
                         </div>
 
                         <div className={cx('mainImage')}>
-                            {clicked ? (
+                            {clicked && (
                                 <div className={cx('video')}>
                                     <iframe
                                         width="100%"
                                         height="100%"
                                         src="https://www.youtube.com/embed/cdIQQleUB14?autoplay=1&mute=1"
-                                        frameborder="0"
-                                        allowfullscreen
+                                        frameBorder="0"
+                                        allow="autoplay; fullscreen; picture-in-picture"
+                                        allowFullScreen
+                                        title="TVBS GOOD 永續共好"
                                     ></iframe>
                                 </div>
-                            ) : (
-                                ''
                             )}
                             <div className={cx('img')} onClick={handleClick}>
                                 <div className={cx('playIcon')}>
@@ -181,8 +181,8 @@ export default function Responsibility(props) {
                                         loading="lazy"
                                     />
                                 </div>
-                                <div className={cx('txt')}>
-                                    {/* <div className={cx("t1'>數位永續皆卓越！TVBS總經理劉文硯<br/>再獲APEA「卓越企業領袖」</div> */}
+                                <div className={cx('txt')} style={clicked ? ({position: 'relative'}) : ({position: 'absolute'})}>
+                                    {/* <div className={cx('t1')}>數位永續皆卓越！TVBS總經理劉文硯<br/>再獲APEA「卓越企業領袖」</div> */}
                                 </div>
                                 <div className={cx('video')}>
                                     <img
@@ -398,13 +398,16 @@ export default function Responsibility(props) {
 }
 import { fetchPageData } from '@/services/cms/fetchPageData';
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
     try {
+        // 設定 response headers
+        const { res } = context;
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
         const { menu, extraData } = await fetchPageData({
             extraApiPaths: [
                 `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
-                '/api/brands'
-            ]
+                '/api/brands',
+            ],
         });
         const [responsibilityData, brands] = extraData;
         return {
@@ -415,7 +418,7 @@ export async function getServerSideProps() {
             },
         };
     } catch (error) {
-        console.error("Error Responsibility----------> ", error);
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

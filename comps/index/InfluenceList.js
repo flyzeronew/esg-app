@@ -23,8 +23,9 @@ function InfluenceList(props) {
                                 {impact.map((item, index) => (
                                     <li key={index}>
                                         <a 
-                                            href={item.link_url} target={item.is_blank === 1 ? "_blank" : undefined} 
-                                            rel={item.is_blank === 1 ? "noopener noreferrer" : undefined}
+                                            href={item.link_url} 
+                                            target={1 === item.is_blank ? "_blank" : undefined} 
+                                            rel={1 === item.is_blank ? "noopener noreferrer" : undefined}
                                         >
                                             <div className={cx("imgBox")}>
                                                 <div className={cx("arraw")}>

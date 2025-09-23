@@ -11,7 +11,7 @@ function MarqueeView(props) {
             {marquee ?
                 (
                     <Marquee speed={50} loop={0}>
-                        <a href={marquee.link} target="_blank"> {marquee.text} {marquee.text}</a>
+                        <a href={marquee.link} target="_blank" rel="noopener noreferrer"> {marquee.text} {marquee.text}</a>
                     </Marquee>
                 ) : ""
         }

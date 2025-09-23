@@ -57,9 +57,9 @@ export default function Tips(props) {
                         <Submenu submenu={tipsSubmenu} page={"tips"}/>
 
                     </div>
-                   <div className={cx("listView")}>
-                        <List listData={showList} colorMapping={colorMapping} />
-                   </div>
+                    <div className={cx("listView")}>
+                            <List listData={showList} colorMapping={colorMapping} />
+                    </div>
                 </div>
                 {/* 跳頁選單 */}
                 { pageCount > 1 ? <JumpPage uri={`/${thisPage}`} pageCount={pageCount} /> :''}
@@ -75,13 +75,17 @@ export default function Tips(props) {
 import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps(context) {
     try {
-        const { query } = context;
+        const { query, res } = context;
         const page = query.page ? query.page : 1;
+
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
         const { menu, colorMapping, extraData } = await fetchPageData({
             extraApiPaths: [
                 '/api/tips-genres',
                 `/api/tips?page=${page}`
-            ]
+            ],
+            includeColorMapping: true,
         });
         const [submenuData, tipsData] = extraData;
         return {
@@ -94,7 +98,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
-        console.error("Error in getServerSideProps (tips):", error);
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

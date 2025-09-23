@@ -103,8 +103,8 @@ export default function Page(props) {
         <main>
             <div className={cx("tipsDetailPage")}>
                 <div className={cx("contentBox")}>
-                    <div className={cx('imgBox', scorllStop ? 'act' : '' )}>
-                        <div className={cx('fixBox', scorllStop ? 'act' : '' )}>
+                    <div className={cx('imgBox', scorllStop ? 'act' : undefined )}>
+                        <div className={cx('fixBox', scorllStop ? 'act' : undefined )}>
                                 <DetailMainView data={tipsData} tag={colorMapping[tipsData.genre-1].genre} themeValues={"tagFoodColor"} />
                         </div>
                     </div>
@@ -121,7 +121,7 @@ export default function Page(props) {
                                         {/* <div className={cx(themeValues.classNamesGenre)}></div> */}
                                         <div>
                                             <input
-                                                className={cx(isIOS ? 'ios-only' : '')}
+                                                className={cx(isIOS ? 'ios-only' : undefined)}
                                                 type="checkbox"
                                                 value={index}
                                                 onChange={handleCheckboxChange}
@@ -141,7 +141,7 @@ export default function Page(props) {
                             </div>
                         </div>
                         {/* //this for question with answers */}
-                        <div className={cx("answer", 0 === selectedOptions.length  ? "no" : "")}>
+                        <div className={cx("answer", 0 === selectedOptions.length  ? "no" : undefined)}>
                             {selectedOptions.length > 0 ?
                                 <>
                                     <div className={cx("title")}>
@@ -154,13 +154,13 @@ export default function Page(props) {
                             : ''}
                         </div>
                     </div>}
-                  { tipsData?.answers.length === 0 &&  <div className={cx("txtBox")}>
+                    { tipsData?.answers.length === 0 &&  <div className={cx("txtBox")}>
                         <div className={cx("question")}>
                             <div className={cx("tag")}>{colorMapping[tipsData.genre-1].genre}</div>
                             <h1 className={cx("title")}>{tipsData.title}</h1>
                         </div>
                          {/* wihout any questions Only answers displayed  */}
-                         <div className={cx("onlyanswer")}>
+                        <div className={cx("onlyanswer")}>
                             <div  className={cx("onlyAnswerContent")} dangerouslySetInnerHTML={{ __html: tipsData.content }} />
                             <div className={cx("time")}>{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
                         </div>
@@ -196,7 +196,7 @@ export default function Page(props) {
                                                     </div>
                                                 </a>
                                             </li>
-                                    )) : "" }
+                                    )) : undefined }
                                 </ul>
                             </div>
                         </div>
@@ -216,15 +216,19 @@ import { fetchPageData } from '@/services/cms/fetchPageData';
 
 export async function getServerSideProps(context) {
     try {
-        const { params, req } = context;
+        const { params, req, res } = context;
         const userAgent = req.headers['user-agent'];
         const isIOS = /iPad|iPhone|iPod/.test(userAgent);
         const { genres, page } = params;
+
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
         const { menu, colorMapping, extraData } = await fetchPageData({
             extraApiPaths: [
                 '/api/tips-genres',
                 `/api/tips/${page}`
-            ]
+            ],
+            includeColorMapping: true,
         });
 
         const [submenuData, tipsData] = extraData;
@@ -232,7 +236,7 @@ export async function getServerSideProps(context) {
         let getEnName = '';
         if (tipsData && tipsData.tip && submenuData && Array.isArray(submenuData)) {
             const genreItem = submenuData.find(item => item.id == tipsData.tip.genre);
-            getEnName = genreItem ? genreItem.en_name : '';
+            getEnName = genreItem ? genreItem.en_name : undefined;
         } else {
             return {
                 notFound: true,
@@ -250,6 +254,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

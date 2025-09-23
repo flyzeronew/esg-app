@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-
 import Header from '../../../comps/Header/Header'
 import Footer from '../../../comps/Footer/Footer'
 import classNames from 'classnames/bind';
 import styles from './page.module.css';
 
+const cx = classNames.bind(styles);
 export default function ViewArticle(props) {
-  const cx = classNames.bind(styles);
   const articleId = Number(props.articleId)
   const appUrl = process.env.APP_URL
+  const [bgShow, setBgShow] = useState(true)
   const [paddingTop, setPaddingTop] = useState()
-  const getArticleData = props.viewData
-  const genreEnName = props.viewData.article_genres[0].en_name
+  const getArticleData = props.viewData || {}
+  const genreEnName = props.viewData?.article_genres?.[0]?.en_name
   //取資料 文章、共好夥伴、小撇步、延伸閱讀
-  const articleContent = getArticleData.content
+  const articleContent = getArticleData.content || ''
   const articlePartner = getArticleData.partner
-  const articleExtended = getArticleData.extend_articles
+  const articleSecret = getArticleData.article_secret
+  const articleExtended = getArticleData.extend_articles || []
   // 日期轉換
   const formattedDate = (date) => {
     const originalTime = new Date(date)
@@ -131,7 +132,7 @@ export default function ViewArticle(props) {
         if (paragraphs[pos]) {
           const adBox = document.createElement('div');
           adBox.className = cx('adBox')
-          index === 1 ? adBox.classList.add(cx('mo')) : ''
+          if (1 === index) adBox.classList.add(cx('mo'));
           paragraphs[pos].insertAdjacentElement('afterend', adBox);
         }
       });
@@ -142,7 +143,7 @@ export default function ViewArticle(props) {
       insertAdBoxes()
       //塞入廣告 adType[0] & adType[1] 塞在第1個adBox adType[2] 塞在第2個adBox
       adType.forEach((adData, index) => {
-        if (index === 2) {
+        if (2 === index) {
           insertFlyAd(1, adData)
         } else {
           insertNormalAd(0, adData)
@@ -155,6 +156,7 @@ export default function ViewArticle(props) {
     const handleResize = (e) => {
       const showBg = window.innerWidth > 767 ? true : false
       const needPaddingTop = window.innerWidth > 1023 ? '30px' : ''
+      setBgShow(showBg)
       setPaddingTop(needPaddingTop)
     }
     handleResize()
@@ -214,7 +216,7 @@ export default function ViewArticle(props) {
             <div className={cx("category")}>
               <span>文章 </span>
               <div className={cx("line")}></div>
-              <span>{getArticleData.article_genres[0].name}</span>
+              <span>{getArticleData.article_genres?.[0]?.name || '未知分類'}</span>
             </div>
 
             <h1 className={cx("mainTitle")}>{getArticleData.title}</h1>
@@ -251,7 +253,7 @@ export default function ViewArticle(props) {
                   }
                   style={
                     0 === articlePartner.has_detail_page &&
-                    '' === articlePartner.outer_url
+                    !articlePartner.outer_url
                       ? { pointerEvents: 'none' }
                       : {}
                   }
@@ -302,7 +304,7 @@ export default function ViewArticle(props) {
       </main>
       <div className={cx('extendedContent')}>
             {/* 延伸閱讀 */}
-            {articleExtended && articleExtended.length > 0 ? (
+            {articleExtended.length > 0 ? (
             <div className={cx("articleExtended")}>
               <div className={cx("box")}>
                 <div className={cx("tagBox")}>
@@ -314,11 +316,11 @@ export default function ViewArticle(props) {
                 <div className={cx("listBox")}>
                   <div className={cx("list")}>
                     <ul>
-                      {articleExtended && articleExtended.length > 0
+                      {articleExtended.length > 0
                         ? articleExtended.map((item, index) => (
                             <li key={index}>
                               <a
-                                href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.article_id}`}
+                                href={`${appUrl}/view/${item.article_genres?.[0]?.en_name || 'unknown'}/${item.article_id}`}
                               >
                                 <div className={cx("img")}>
                                   <img
@@ -358,10 +360,12 @@ export default function ViewArticle(props) {
 }
 
 import { fetchPageData } from '@/services/cms/fetchPageData';
-
 export async function getServerSideProps(context) {
   try {
-    const articleId = context.query.page;
+    const { query, res } = context;
+    const articleId = query.page;
+    // 設定 response headers
+    res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
     const { menu, extraData } = await fetchPageData({
       extraApiPaths: [`/api/articles/${articleId}`],
     });
@@ -379,10 +383,9 @@ export async function getServerSideProps(context) {
       },
     };
   } catch (error) {
+    console.error('Error fetching data:', error);
     return {
-      props: {
-        error: error.message || '資料取得失敗',
-      },
+        notFound: true,
     };
   }
 }

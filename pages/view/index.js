@@ -71,7 +71,7 @@ export default function View(props) {
                     {/* 主視覺 */}
                     {articlesFirst && props.page === 1 ?
                         <div className={cx("mainView")}>
-                            <a href={`/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
+                            <a href={`/view/${articlesFirst.article_genres?.[0]?.en_name || 'unknown'}/${articlesFirst.id}`} >
                                 <div className={cx("box")}>
                                     <div className={cx("img")}>
                                         <img src={`${articlesFirst.cover_img ? articlesFirst.cover_img : process.env.IMG_DEFAULT}`} alt="Banner sustainable perspective" width={1072} height={603} loading="lazy" />
@@ -101,7 +101,7 @@ export default function View(props) {
                     <ArticleList articleList={articleList} key={"articleList"} />
                     {/* 文章列表 ed */}
                     {/* 跳頁選單 */}
-                    {pageCount > 1 ? <Pagination uri={`/${thisPage}`} pageCount={pageCount} /> : ''}
+                    {pageCount > 1 ? <Pagination uri={`/${thisPage}`} pageCount={pageCount} /> : undefined}
                     {/* 跳頁選單 ed */}
                 </div>
 
@@ -118,13 +118,18 @@ import { fetchPageData } from '@/services/cms/fetchPageData';
 
 export async function getServerSideProps(context) {
     try {
-        const { query } = context;
+        const { query, res } = context;
         const page = Number(query.page) || 1;
+
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+
         const { menu, colorMapping, extraData } = await fetchPageData({
             extraApiPaths: [
                 `/api/article-genres`,
                 `/api/articles?page=${page}`
             ],
+            includeColorMapping: true,
         });
         return {
             props: {
@@ -136,6 +141,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

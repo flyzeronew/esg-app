@@ -5,7 +5,6 @@ import Footer from '../comps/Footer/Footer'
 import styles from './partner.module.css';
 import classNames from 'classnames/bind';
 import SharedBanner from '@/comps/sharedBanner/SharedBanner';
-import { genericPageService } from '@/services/cms/apisCMS';
 import { usePathname } from 'next/navigation';
 
 export default function Partner(props) {
@@ -192,9 +191,12 @@ export default function Partner(props) {
 }
 
 import { fetchPageData } from '@/services/cms/fetchPageData';
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   try {
-    const { menu, colorMapping, extraData } = await fetchPageData({
+    // 設定 response headers
+    const { res } = context;
+    res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+    const { menu, extraData } = await fetchPageData({
       extraApiPaths: ['/api/partner-genres', '/api/partners'],
     });
     return {
@@ -205,13 +207,9 @@ export async function getServerSideProps() {
       },
     };
   } catch (error) {
+    console.error('Error fetching data:', error);
     return {
-      props: {
-        menu: [],
-        partnerData: [],
-        submenuData: [],
-        error: error.message || '資料取得失敗'
-      },
+      notFound: true,
     };
   }
 }

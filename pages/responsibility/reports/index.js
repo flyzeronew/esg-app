@@ -151,7 +151,7 @@ export default function Responsibility(props) {
                             </div> */}
                         </div>
                         <div className={cx("downloadArea")} >
-                            <a href="https://report.esg.tvbs.com.tw/2025jantoapr" target="_blank">
+                            <a href="https://report.esg.tvbs.com.tw/2025jantoapr" target="_blank" rel="noopener noreferrer">
                                 <div className={cx("arraw")}>
                                     <ArrowRight></ArrowRight>
                                 </div>
@@ -166,11 +166,11 @@ export default function Responsibility(props) {
               <div className={cx("reportsTitle")}>
                 <p>歷年永續報告</p>
                 <div className={cx("list")}>
-                  <a href={`${appUrl}/responsibility/reports/annual/2024annual`} target="_blank" >2024 年度永續影響力報告</a>
-                  <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響報告_q2_Desktop.pdf"} target="_blank" >2024 5-8 月永續影響力報告</a>
-                  <a className={cx("mobilePdf")} href={staticPath+"/reports/quaterly/2024/永續報告_q2_mobile .pdf"} target="_blank" >2024 5-8 月永續影響力報告</a>
-                  <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響力報告 - 桌機版q1_desktop.pdf"} target="_blank" >2024 1-4 月永續影響力報告</a>
-                  <a className={cx("mobilePdf")} href={staticPath+"/reports/quaterly/2024/永續影響力報告 - 手機版q1_mobile.pdf"} target="_blank" >2024 1-4 月永續影響力報告</a>
+                  <a href={`${appUrl}/responsibility/reports/annual/2024annual`} target="_blank" rel="noopener noreferrer">2024 年度永續影響力報告</a>
+                  <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響報告_q2_Desktop.pdf"} target="_blank" rel="noopener noreferrer">2024 5-8 月永續影響力報告</a>
+                  <a className={cx("mobilePdf")} href={staticPath+"/reports/quaterly/2024/永續報告_q2_mobile .pdf"} target="_blank" rel="noopener noreferrer">2024 5-8 月永續影響力報告</a>
+                  <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響力報告 - 桌機版q1_desktop.pdf"} target="_blank" rel="noopener noreferrer">2024 1-4 月永續影響力報告</a>
+                  <a className={cx("mobilePdf")} href={staticPath+"/reports/quaterly/2024/永續影響力報告 - 手機版q1_mobile.pdf"} target="_blank" rel="noopener noreferrer">2024 1-4 月永續影響力報告</a>
                 </div>
                 <div className={cx("line")}></div>
               </div>
@@ -232,8 +232,10 @@ export default function Responsibility(props) {
 
 import { fetchPageData } from '@/services/cms/fetchPageData';
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   try {
+    const { res } = context;
+    res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
     const { menu, extraData } = await fetchPageData({
       extraApiPaths: [
         `/api/responsibility-${process.env.APP_ENV === 'production' ? 'prd' : 'dev'}`,
@@ -247,9 +249,9 @@ export async function getServerSideProps() {
       },
     };
   } catch (error) {
-    console.error("Error Responsibility----------> ", error);
+    console.error('Error fetching data:', error);
     return {
-      notFound: true,
+        notFound: true,
     };
   }
 }

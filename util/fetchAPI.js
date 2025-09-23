@@ -18,7 +18,7 @@ export async function fetchJSON(url, options = {}) {
 
         return res.json();
     } catch (error) {
-        console.error("fetchJSON error:", error);
+        console.error("fetchJSON error", error);
         throw error;
     }
 }

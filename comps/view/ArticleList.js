@@ -6,7 +6,7 @@ export const Article = ({ articleData, index }) => {
     return (
         <>
             <li key={index}>
-                <a href={`/view/${articleData.article_genres[0].en_name}/${articleData.id}`}>
+                <a href={`/view/${articleData.article_genres?.[0]?.en_name || 'unknown'}/${articleData.id}`}>
                     <div className={styles.img}>
                         <LazyLoad
                             width={1072}

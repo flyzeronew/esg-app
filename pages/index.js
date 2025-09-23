@@ -8,14 +8,14 @@ import FocusList from '../comps/index/FocusList'
 import InfluenceList from '../comps/index/InfluenceList'
 import PartnerListNew from '../comps/index/PartnerListNew'
 import Responsibility from '../comps/index/Responsibility'
+import IgPosts from '../comps/index/IgPosts'
 import TipsList from '../comps/index/TipsList'
 import styles from './index-new.module.css';
 import classNames from 'classnames/bind';
 
 
 export default function Home(props) {
-
-  const cx = classNames.bind(styles);
+  const cx = classNames.bind(styles)
   const appUrl = process.env.APP_URL
   const indexHeadlines = props.indexData.indexHeadlines
   const articles = props.indexData.articles
@@ -25,6 +25,7 @@ export default function Home(props) {
   const focus = props.indexData.focusNews
   const impact = props.indexData.impact
   const colorMapping = props.colorMapping
+  const instagramData = props.instagramData
   const ogImg = process.env.OG_IMG
 
   return (
@@ -63,6 +64,7 @@ export default function Home(props) {
           <PartnerListNew data={partners} />
           <TipsList data={tips} colorMapping={colorMapping} />
           <Responsibility />
+          <IgPosts data={props.instagramData} />
         </div>
       </main>
       <Footer />
@@ -71,21 +73,29 @@ export default function Home(props) {
 }
 
 import { fetchPageData } from '@/services/cms/fetchPageData';
-export async function getServerSideProps() {
-    try {
-        const { menu, colorMapping, extraData } = await fetchPageData({
+export async function getServerSideProps(context) {
+  try {
+      const { res } = context;
+      res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+        const { menu, colorMapping, instagramData, extraData } = await fetchPageData({
             extraApiPaths: ['/api/index-data'],
+            includeColorMapping: true,
+            includeInstagram: true,
         });
-        return {
-            props: {
-                menu,
-                colorMapping,
-                indexData: extraData[0]
-            }
-        };
-    } catch {
-        return {
-            notFound: true
-        };
-    }
+
+        console.log(instagramData);
+      return {
+          props: {
+              menu,
+              colorMapping,
+              indexData: extraData[0],
+              instagramData
+          },
+      };
+  } catch (error) {
+      console.error('Error fetching data:', error);
+      return {
+        notFound: true,
+      };
   }
+}

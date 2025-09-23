@@ -1,0 +1,158 @@
+.frameBox{
+    width: 1664px;
+    margin: 0 auto;
+}
+@media (max-width:1699px) {
+    .frameBox{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1279px) {
+    .frameBox{
+        width: 970px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1023px) {
+    .frameBox{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+.igPosts{
+    margin-bottom: 160px;
+}
+
+/* 加載更多區域 */
+.loadMore {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.loadMoreBtn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.loadMoreBtn:hover {
+    background: #0056b3;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #666;
+    font-size: 16px;
+}
+
+.loading::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.noMore {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #999;
+    font-size: 14px;
+}
+.igPosts .logoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.igPosts .object{
+    margin-bottom: 70px;
+}
+.igPosts .followBtn a{
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 16px;
+    padding:6px 16px;
+    background-color:#0095F6;
+    border-radius: 6px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.igPosts .followBtn span{
+    font-size: 14.156px;
+    font-weight: 400;
+    line-height: 22.02px;
+    color: #fff;
+}
+.igPosts .followBtn img{
+    width: 16px;
+    height: 16px;
+}
+.igPosts .logoBox span{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%;
+}
+.igPosts .logoBox img{
+    width: 64px;
+    height: 64px;
+}
+.igPosts .list .img{
+    width: 100%;
+    aspect-ratio:538/673;
+    overflow: hidden;
+    background-color: #ccc;
+    border: 2px solid #fff;
+}
+.igPosts .list .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.igPosts ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.igPosts ul li{
+    width: calc(100% / 3);
+}
+@media (max-width:1699px) {
+    .igPosts{
+        margin-bottom: 160px;
+    }
+}
+@media (max-width:1023px) {
+    .igPosts{
+        margin-bottom: 80px;
+    }
+    .igPosts ul{
+        display: block;
+    }
+    .igPosts ul li{
+        width: 100%;
+    }
+}

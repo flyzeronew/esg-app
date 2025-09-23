@@ -71,7 +71,7 @@ export default function Genres(props) {
                         <List listData={showList} colorMapping={colorMapping} genreId={genreId} />
                     </div>
                 </div>
-                { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :''}
+                { pageCount > 1 ? <JumpPage uri={uri} pageCount={pageCount} /> :undefined}
             </main>
             <div className={cx("footerLine")}>
                 <div className={cx("box")}></div>
@@ -83,14 +83,18 @@ export default function Genres(props) {
 import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps(context) {
     try {
-        const { query } = context;
+        const { query, res } = context;
         const page = query.page ? query.page : 1;
-        const genreEnName = context.query.genres;
+        const genreEnName = query.genres;
+
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
         // 先撈 tips-genres
         const { menu, colorMapping, extraData } = await fetchPageData({
             extraApiPaths: [
                 '/api/tips-genres'
-            ]
+            ],
+            includeColorMapping: true,
         });
         const [submenuData] = extraData;
         const getGenreData = submenuData.find(item => item.en_name === genreEnName);
@@ -106,7 +110,8 @@ export async function getServerSideProps(context) {
         const { extraData: tipsExtraData } = await fetchPageData({
             extraApiPaths: [
                 `/api/tips?genre_id=${genreId}&page=${page}`
-            ]
+            ],
+            includeColorMapping: false,
         });
         const [tipsData] = tipsExtraData;
         return {
@@ -122,7 +127,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
-        console.error("Error in getServerSideProps (tips/[genres]):", error);
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

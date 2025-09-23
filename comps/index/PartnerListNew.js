@@ -31,11 +31,11 @@ function PartnerList(props) {
               <a
                 key={index}
                 href={
-                    1 === item.has_detail_page ?
-                    `${appUrl}/partner/` + item.name : item.outer_url
+                  1 === item.has_detail_page ?
+                  `${appUrl}/partner/` + item.name : item.outer_url
                 }
-                target={item.has_detail_page === 1 ? undefined : "_blank"}
-                rel={item.has_detail_page === 1 ? undefined : "noopener noreferrer"}
+                target={1 === item.has_detail_page ? undefined : "_blank"}
+                rel={1 === item.has_detail_page ? undefined : "noopener noreferrer"}
               >
                 <LazyLoad
                   width={50}

@@ -35,7 +35,7 @@ export default function Genres(props) {
     const genrePageDetails = extractDetailsFromSub(props.menu, router.asPath);
 
     useEffect(() => {
-        if (1 < pageCount && props.page > pageCount || genreData === '') {
+        if (1 < pageCount && props.page > pageCount || !genreData) {
             router.push('/404');
         }
     }, [pageCount, props.page, genreData, router]);
@@ -75,7 +75,7 @@ export default function Genres(props) {
                 {/* 主視覺 */}
                 {articlesFirst && props.page === 1 ?
                     <div className={cx("mainView")}>
-                        <a href={`${appUrl}/view/${articlesFirst.article_genres[0].en_name}/${articlesFirst.id}`} >
+                        <a href={`${appUrl}/view/${articlesFirst.article_genres?.[0]?.en_name || 'unknown'}/${articlesFirst.id}`} >
                             <div className={cx("box")}>
                                 <div className={cx("img")}>
                                     <img src={`${articlesFirst.cover_img ? articlesFirst.cover_img : process.env.IMG_DEFAULT}`} alt="arraw" width={1072} height={603} loading="lazy"/>
@@ -106,7 +106,7 @@ export default function Genres(props) {
                     <ArticleList  articleList={articleList}/>
                 {/* 文章列表 ed */}
                 {/* 跳頁選單 */}
-                    { pageCount > 1 ? <Pagination uri={uri} pageCount={pageCount} /> :''}
+                    { pageCount > 1 ? <Pagination uri={uri} pageCount={pageCount} /> :undefined}
 
                 {/* 跳頁選單 ed */}
             </div>
@@ -123,14 +123,19 @@ export default function Genres(props) {
 import { fetchPageData } from '@/services/cms/fetchPageData';
 export async function getServerSideProps(context) {
     try {
-        const { query } = context;
+        const { query, res } = context;
         const page = query.page ? Number(query.page) : 1;
         const genreEnName = query.genres;
+
+        // 設定 response headers
+        res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+
         // 第一步：先撈 article-genres 資料
         const { menu, colorMapping, extraData: genreExtraData } = await fetchPageData({
             extraApiPaths: [
                 `/api/article-genres`
             ],
+            includeColorMapping: true,
         });
         const viewSubmenuData = genreExtraData[0];
         const genreData = viewSubmenuData.find(item => item.en_name === genreEnName) || null;
@@ -143,6 +148,7 @@ export async function getServerSideProps(context) {
             extraApiPaths: [
                 `/api/articles?genre_id=${genreData.id}&page=${page}`
             ],
+            includeColorMapping: false,
         });
         const articlesData = articlesExtraData[0];
         return {
@@ -157,7 +163,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
-        console.error("Error in getServerSideProps (view/[genres]):", error);
+        console.error('Error fetching data:', error);
         return {
             notFound: true,
         };

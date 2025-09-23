@@ -30,7 +30,7 @@ function ViewList(props) {
                                 const { month, day } = formatDate(item.updated_at);
                                 return (
                                     <li key={index}>
-                                        <a href={`${appUrl}/view/${item.article_genres[0].en_name}/${item.id}`}>
+                                        <a href={`${appUrl}/view/${item.article_genres?.[0]?.en_name || 'unknown'}/${item.id}`}>
                                             <div className={cx('imgBox')}>
                                                 <div className={cx('time')}>
                                                     <div className={cx('t1')}>{month}</div>
@@ -54,7 +54,7 @@ function ViewList(props) {
                                                     <div className={cx('t2')}>{day}</div>
                                                 </div>
                                                 <div>
-                                                    <h4 className={cx("subTitle")}>{item.article_genres[0].name}</h4>
+                                                    <h4 className={cx("subTitle")}>{item.article_genres?.[0]?.name || '未知分類'}</h4>
                                                     <h3 className={cx("title")}>{item.title}</h3>
                                                 </div>
                                             </div>

@@ -24,7 +24,7 @@ function FocusList(props) {
                 { focusFirst ? (
                     <div className={cx("report")}>
                         <div className={cx("first")}>
-                            <a href={focusFirst.url} target={1 === focusFirst.is_blank ? "_blank" : undefined}>
+                            <a href={focusFirst.url} target={1 === focusFirst.is_blank ? "_blank" : undefined} rel={1 === focusFirst.is_blank ? "noopener noreferrer" : undefined}>
                                 <div className={cx("imgBox")}>
                                     <div className={cx("arraw")}>
                                         <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} loading="lazy" />
@@ -52,7 +52,7 @@ function FocusList(props) {
                         <div className={cx("list")}>
                             {focus.map((item, index) => (
                                 index > 0 ? (
-                                <a key={index} href={item.url} target={1 === item.is_blank ? "_blank" : undefined} >
+                                <a key={index} href={item.url} target={1 === item.is_blank ? "_blank" : undefined} rel={1 === item.is_blank ? "noopener noreferrer" : undefined}>
                                     <div className={cx("imgBox")}>
                                         <div className={cx("arraw")}>
                                             <img src={`${appUrl}/images/icon_arraw_no_bg.svg`} alt="img" width={48} height={48} loading="lazy" />
