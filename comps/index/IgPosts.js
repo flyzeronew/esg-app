@@ -82,7 +82,15 @@ function IgPosts(props) {
                             <li key={index}>
                                 <a href={item.permalink} target="_blank" rel="noopener noreferrer">
                                     <div className={cx("img")}>
-                                        <img src={item.thumbnail_url || item.media_url} alt={item.caption} />
+                                        <LazyLoad
+                                            width={360}
+                                            height={360}
+                                            offset={100}
+                                            placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                            once
+                                        >
+                                            <img src={item.thumbnail_url || item.media_url} alt={item.caption} />
+                                        </LazyLoad>
                                     </div>
                                 </a>
                             </li>
