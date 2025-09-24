@@ -120,6 +120,7 @@
     width: 64px;
     height: 64px;
 }
+
 .igPosts .list .img{
     width: 100%;
     aspect-ratio:538/673;
@@ -132,6 +133,33 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    transition: all 0.5s ease;
+}
+
+/* LazyLoad 容器樣式 */
+.igPosts .list .img > div {
+    width: 100%;
+    height: 100%;
+}
+
+/* LazyLoad 內部的 img 樣式 */
+.igPosts .list .img > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: all 0.5s ease;
+}
+
+.igPosts .list a:hover .img img {
+    transition: all 0.5s ease;
+    transform: scale(1.2);
+}
+
+/* LazyLoad 內部圖片的 hover 效果 */
+.igPosts .list a:hover .img > div img {
+    transition: all 0.5s ease;
+    transform: scale(1.2);
 }
 .igPosts ul{
     display: flex;
