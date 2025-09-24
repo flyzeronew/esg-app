@@ -4,7 +4,6 @@ import Head from 'next/head'
 import Header from './../../comps/Header/Header'
 import Footer from './../../comps/Footer/Footer'
 import SharedBanner from './../../comps/sharedBanner/SharedBanner'
-import Submenu from './../../comps/Submenu/Submenu'
 import List from './../../comps/tips/list/List'
 import JumpPage from './../../comps/pagination/Pagination'
 import styles from './index.module.css';
@@ -19,9 +18,7 @@ export default function Tips(props) {
     const thisPage='tips';
     const ogImg = process.env.OG_IMG;
     const appUrl = process.env.APP_URL;
-    const tipsSubmenu = props.submenuData;
     const showList = props.tipsData.tips;
-    const colorMapping = props.colorMapping;
     // 計算文章數量轉頁面數
     const articleNum = 20;
     const articleCount = props.tipsData.tip_count;
@@ -49,16 +46,14 @@ export default function Tips(props) {
                 <meta property="og:image" content={ogImg} />
                 <link rel="canonical" href={`${appUrl}${router.pathname}`} />
             </Head>
-            <Header thisPage={thisPage} menuData={props.menu}/>
+            <Header menuData={props.menu}/>
             <main>
                 <div className={cx("tipsListPage")}>
                     <div className={cx("mainArea")}>
                         <SharedBanner title={detailsOfPage.page} description={detailsOfPage.page_description}/>
-                        <Submenu submenu={tipsSubmenu} page={"tips"}/>
-
                     </div>
                     <div className={cx("listView")}>
-                            <List listData={showList} colorMapping={colorMapping} />
+                        <List listData={showList} />
                     </div>
                 </div>
                 {/* 跳頁選單 */}
@@ -77,24 +72,19 @@ export async function getServerSideProps(context) {
     try {
         const { query, res } = context;
         const page = query.page ? query.page : 1;
-
         // 設定 response headers
         res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
-        const { menu, colorMapping, extraData } = await fetchPageData({
+        const { menu, extraData } = await fetchPageData({
             extraApiPaths: [
-                '/api/tips-genres',
                 `/api/tips?page=${page}`
             ],
-            includeColorMapping: true,
         });
-        const [submenuData, tipsData] = extraData;
+        const [tipsData] = extraData;
         return {
             props: {
                 menu,
                 tipsData,
-                submenuData,
                 page,
-                colorMapping,
             },
         };
     } catch (error) {

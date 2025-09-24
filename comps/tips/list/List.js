@@ -6,7 +6,6 @@ const cx = classNamesbind.bind(styles);
 function tipsList(props) {  
     const listData = props.listData;
     const appUrl = process.env.APP_URL;
-    const colorMapping =props.colorMapping;
     const imgDefaultSquare = process.env.IMG_DEFAULT_SQUARE;
     return (
             <div className={cx("list")}>
@@ -16,10 +15,7 @@ function tipsList(props) {
                             <Fragment key={index}>
                                 { item.genre == props.genreId || props.genreId == null ?
                                     <li>
-                                        <a href={`/tips/${colorMapping[item.genre-1].en_name}/${item.id}`}>
-                                            <div className={cx("genres", colorMapping[item.genre-1].color)}>
-                                                {colorMapping[item.genre-1].genre}
-                                            </div>
+                                        <a href={`/tips/${item.id}`}>
                                             <div className={cx("img")}>
                                                 {item.tip_galleries && item.tip_galleries.length > 0 ? 
                                                     <img src={item.tip_galleries[0].image_url} alt="img" width={360} height={360} loading='lazy'/>

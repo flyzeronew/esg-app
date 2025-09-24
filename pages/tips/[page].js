@@ -1,9 +1,9 @@
 import { useState ,useEffect } from 'react'
 import Swal from 'sweetalert2'
 import Head from 'next/head'
-import Header from '../../../comps/Header/Header'
-import Footer from '../../../comps/Footer/Footer'
-import DetailMainView from './../../../comps/tips/detailedMainView/DetailMainView'
+import Header from './../../comps/Header/Header'
+import Footer from './../../comps/Footer/Footer'
+import DetailMainView from './../../comps/tips/detailedMainView/DetailMainView'
 import styles from './[page].module.css';
 import classNames from 'classnames/bind';
 
@@ -15,21 +15,13 @@ export default function Page(props) {
     const isIOS = props.isIOS;
     const appUrl = process.env.APP_URL;
     const tipsData = props.tipsData.tip;
-    const colorMapping = props.colorMapping;
-    const getEnName =  props.getEnName;
-    const thisPageGenreUri =`${appUrl}/${thisPage}/${getEnName}`;
+    console.log(tipsData);
     const thisPageUri =`${appUrl}/${thisPage}`;
     // random 繼續看區塊
     const keepReading = props.tipsData.more;
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [scorllStop, setScorllStop] = useState(false);
-    //送出答案錨點程式
 
-    const themeValues = {
-        bgColor: colorMapping[tipsData.genre-1].bgColor,
-        color:colorMapping[tipsData.genre-1].txtColor,
-        classNamesGenre:colorMapping[tipsData.genre-1].color
-    }
     const scrollToAnswer = () => {
         if(selectedOptions.length === 0){
             Swal.fire({
@@ -67,7 +59,6 @@ export default function Page(props) {
     };
     useEffect(() => {
         const contentMore = document.querySelector("." + cx('contentMore'));
-        // const headerHeight = document.querySelector("." + cx('header')).offsetHeight;
         const headerHeight = 100;
         const imgBoxHeight = document.querySelector("." +  cx('fixBox')).offsetHeight;
         const handleScroll = () => {
@@ -93,11 +84,11 @@ export default function Page(props) {
             <meta name="author" content="TVBS" />
             <meta name="copyright" content="TVBS" />
             <meta name="application-name" content="TVBS" />
-            <meta name="URL" content={`${thisPageGenreUri}/${tipsData.id}`} />
+            <meta name="URL" content={`${thisPageUri}/${tipsData.id}`} />
             <meta name="medium" content="mult" />
             <meta name="robots" content="index,follow"/>
             <meta property="og:image" content={ogImg} />
-            <link rel="canonical" href={`${thisPageGenreUri}/${tipsData.id}`} />
+            <link rel="canonical" href={`${thisPageUri}/${tipsData.id}`} />
         </Head>
         <Header thisPage={thisPage} menuData={props.menu}/>
         <main>
@@ -105,12 +96,11 @@ export default function Page(props) {
                 <div className={cx("contentBox")}>
                     <div className={cx('imgBox', scorllStop ? 'act' : undefined )}>
                         <div className={cx('fixBox', scorllStop ? 'act' : undefined )}>
-                                <DetailMainView data={tipsData} tag={colorMapping[tipsData.genre-1].genre} themeValues={"tagFoodColor"} />
+                            <DetailMainView data={tipsData} />
                         </div>
                     </div>
                     {(tipsData?.answers.length > 0) && <div className={cx("txtBox")}>
                         <div className={cx("question")}>
-                            <div className={cx("tag")}>{colorMapping[tipsData.genre-1].genre}</div>
                             <h1 className={cx("title")}>{tipsData.title}</h1>
                             { tipsData?
                             <div className={cx("checkbox")}>
@@ -118,7 +108,6 @@ export default function Page(props) {
                                     answer !== null && answer.trim() !== ''
                                     ?
                                     <label key={index}>
-                                        {/* <div className={cx(themeValues.classNamesGenre)}></div> */}
                                         <div>
                                             <input
                                                 className={cx(isIOS ? 'ios-only' : undefined)}
@@ -136,7 +125,6 @@ export default function Page(props) {
                             :''}
                             <div className={cx("btn")} onClick={scrollToAnswer} >
                                 <span>送出答案</span>
-                                {/* <div className={cx("arraw")} style={{backgroundColor:themeValues.bgColor,color:themeValues.color}}>↓</div> */}
                                 <div className={cx("arraw")}>↓</div>
                             </div>
                         </div>
@@ -156,12 +144,11 @@ export default function Page(props) {
                     </div>}
                     { tipsData?.answers.length === 0 &&  <div className={cx("txtBox")}>
                         <div className={cx("question")}>
-                            <div className={cx("tag")}>{colorMapping[tipsData.genre-1].genre}</div>
                             <h1 className={cx("title")}>{tipsData.title}</h1>
                         </div>
                          {/* wihout any questions Only answers displayed  */}
                         <div className={cx("onlyanswer")}>
-                            <div  className={cx("onlyAnswerContent")} dangerouslySetInnerHTML={{ __html: tipsData.content }} />
+                            <div className={cx("onlyAnswerContent")} dangerouslySetInnerHTML={{ __html: tipsData.content }} />
                             <div className={cx("time")}>{formattedDate(tipsData.updated_at)}<span> 更新</span></div>
                         </div>
 
@@ -176,11 +163,10 @@ export default function Page(props) {
                                 <ul>
                                     { keepReading ? keepReading.map((item, index) => (
                                             <li key={index}>
-                                                <a href={`${thisPageUri}/${colorMapping[item.genre-1].en_name}/${item.id}`}>
+                                                <a href={`${thisPageUri}/${item.id}`}>
                                                     <div className={cx("img")}>
                                                         <img src={item.tip_galleries[0].image_url} alt="img" width={300} height={300} loading='lazy'/>
                                                     </div>
-                                                    <div className={`tag ${colorMapping[item.genre-1].color}`}>{colorMapping[item.genre-1].genre}</div>
                                                     <div className={cx("txtBox")}>
                                                         <div className={cx("rounded")}>
                                                             <img src={`${appUrl}/images/rounded-05.svg`} alt="rounded" width={50} height={50} loading='lazy'/>
@@ -219,38 +205,20 @@ export async function getServerSideProps(context) {
         const { params, req, res } = context;
         const userAgent = req.headers['user-agent'];
         const isIOS = /iPad|iPhone|iPod/.test(userAgent);
-        const { genres, page } = params;
-
+        const { page } = params;
         // 設定 response headers
         res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
-        const { menu, colorMapping, extraData } = await fetchPageData({
+        const { menu, extraData } = await fetchPageData({
             extraApiPaths: [
-                '/api/tips-genres',
                 `/api/tips/${page}`
             ],
-            includeColorMapping: true,
         });
-
-        const [submenuData, tipsData] = extraData;
-
-        let getEnName = '';
-        if (tipsData && tipsData.tip && submenuData && Array.isArray(submenuData)) {
-            const genreItem = submenuData.find(item => item.id == tipsData.tip.genre);
-            getEnName = genreItem ? genreItem.en_name : undefined;
-        } else {
-            return {
-                notFound: true,
-            };
-        }
-
+        const [tipsData] = extraData;
         return {
             props: {
                 menu,
                 tipsData,
                 isIOS,
-                colorMapping,
-                submenuData,
-                getEnName
             },
         };
     } catch (error) {
