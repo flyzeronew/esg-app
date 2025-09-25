@@ -86,7 +86,7 @@ function IgPosts(props) {
                                             width={360}
                                             height={360}
                                             offset={100}
-                                            placeholder={<img src={process.env.IMG_DEFAULT} alt="loading..." />}
+                                            placeholder={<img src={`${appUrl}/images/ig-lazy-img.webp`} alt="loading..." />}
                                             once
                                         >
                                             <img src={item.thumbnail_url || item.media_url} alt={item.caption} />
