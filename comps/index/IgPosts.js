@@ -1,4 +1,3 @@
-import { useState, useEffect, useCallback } from 'react'
 import LazyLoad from 'react-lazyload'
 import styles from './IgPosts.module.css';
 import classnames from "classnames/bind";
@@ -6,60 +5,9 @@ import classnames from "classnames/bind";
 const cx = classnames.bind(styles)
 function IgPosts(props) {
     const initialData = props.data.data || []
-    const initialPaging = props.data.paging || null
-    const [data, setData] = useState(initialData)
-    const [loading, setLoading] = useState(false)
-    const [hasMore, setHasMore] = useState(!!initialPaging?.next)
-    const [nextUrl, setNextUrl] = useState(initialPaging?.next || null)
-    const appUrl = process.env.APP_URL
-
-    // 加載更多貼文的函數
-    const loadMore = useCallback(async () => {
-        if (loading || !hasMore || !nextUrl) return
-        
-        setLoading(true)
-        
-        try {
-            // 呼叫後端 API 來獲取下一頁資料
-            const response = await fetch('/api/instagram-next', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ nextUrl })
-            })
-            
-            if (!response.ok) {
-                throw new Error('Failed to fetch next page')
-            }
-            
-            const nextPageData = await response.json()
-            
-            // 更新資料
-            setData(prevData => [...prevData, ...nextPageData.data])
-            setNextUrl(nextPageData.paging?.next || null)
-            setHasMore(!!nextPageData.paging?.next)
-            
-        } catch (error) {
-            console.error('載入下一頁失敗:', error)
-            setHasMore(false)
-        }
-        
-        setLoading(false)
-    }, [loading, hasMore, nextUrl])
-
-    // 滾動監聽
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.innerHeight + document.documentElement.scrollTop 
-                >= document.documentElement.offsetHeight - 1000) {
-                loadMore()
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [loadMore])
+    // 限制資料為6筆
+    const data = initialData.slice(0, 6)
+    const appUrl = process.env.APP_URL || '';
 
     return (
         <div className={cx("igPosts")}>
@@ -79,7 +27,7 @@ function IgPosts(props) {
                 <div className={cx("list")}>
                     <ul>
                         {data.map((item, index) => (
-                            <li key={index}>
+                            <li key={item.id}>
                                 <a href={item.permalink} target="_blank" rel="noopener noreferrer">
                                     <div className={cx("img")}>
                                         <LazyLoad
@@ -89,7 +37,7 @@ function IgPosts(props) {
                                             placeholder={<img src={`${appUrl}/images/ig-lazy-img.webp`} alt="loading..." />}
                                             once
                                         >
-                                            <img src={item.thumbnail_url || item.media_url} alt={item.caption} />
+                                            <img src={item.thumbnail_url || item.media_url || `${appUrl}/images/ig-lazy-img.webp`} alt={item.caption || ''} />
                                         </LazyLoad>
                                     </div>
                                 </a>
@@ -97,30 +45,6 @@ function IgPosts(props) {
                         ))}
                     </ul>
                 </div>
-                
-                {/* 加載更多按鈕或加載指示器 */}
-                {hasMore && (
-                    <div className={cx("loadMore")}>
-                        {loading ? (
-                            <div className={cx("loading")}>
-                                <span>載入中...</span>
-                            </div>
-                        ) : (
-                            <button 
-                                className={cx("loadMoreBtn")} 
-                                onClick={loadMore}
-                            >
-                                載入更多
-                            </button>
-                        )}
-                    </div>
-                )}
-                
-                {!hasMore && data.length > 0 && (
-                    <div className={cx("noMore")}>
-                        <span>已顯示所有貼文</span>
-                    </div>
-                )}
             </div>
         </div>
     )
