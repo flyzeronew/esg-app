@@ -7,7 +7,6 @@ const cx = classnames.bind(styles)
 function TipsList(props) {
     const appUrl = process.env.APP_URL
     const tips = props.data
-    const colorMapping = props.colorMapping
 
     return (
         <div className={cx("tips")}>
@@ -36,7 +35,7 @@ function TipsList(props) {
                         {tips && tips.length > 0 ?
                             tips.map((item, index) => (
                                 <li key={index}>
-                                    <a href={`${appUrl}/tips/${colorMapping[item.genre - 1].en_name}/${item.id}`}>
+                                    <a href={`${appUrl}/tips/${item.id}`}>
                                         <div className={cx("img")}>
                                             <LazyLoad
                                                 width={560}
