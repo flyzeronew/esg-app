@@ -19,7 +19,7 @@ export default function robots() {
             rules: [
                 {
                     userAgent: ['*'],
-                    disallow: ['/'],
+                    allow: ['/'],
                 },
             ]
         }
