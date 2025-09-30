@@ -32,18 +32,10 @@ export default function ViewArticle(props) {
   const ogImg = getArticleData.cover_img
 
 
-  // 假資料
-  const trend = {
-    id: 600,
-    title: "範例：ESG 趨勢解析",
-    summary: "這是一篇範例文章，用來測試 Google Rich Results。",
-    imageUrl: "https://example.com/images/sample.jpg",
-    publishedAt: "2025-09-01T08:00:00+08:00",
-    updatedAt: "2025-09-15T10:00:00+08:00",
-    author: "ESG 編輯團隊",
-  };
-
-  const url = `https://esg-app-alpha.vercel.app/view/trend/${trend.id}`;
+  // 構建文章 URL 和圖片陣列
+  const articleUrl = `${appUrl}/view/${genreEnName}/${articleId}`;
+  const articleImages = getArticleData.cover_img ? [getArticleData.cover_img] : [];
+  const genreUrl = `${appUrl}/view/${genreEnName}`;
 
 
   // resize 監聽事件
@@ -188,23 +180,23 @@ export default function ViewArticle(props) {
 
       {/* Article JSON-LD */}
       <ArticleJsonLd
-        url={url}
-        title={trend.title}
-        images={[trend.imageUrl]}
-        datePublished={trend.publishedAt}
-        dateModified={trend.updatedAt}
-        authorName={trend.author}
-        publisherName="ESG 平台"
-        publisherLogo="https://example.com/images/logo.png"
-        description={trend.summary}
+        url={articleUrl}
+        title={getArticleData.title}
+        images={articleImages}
+        datePublished={formattedDate(getArticleData.created_at) + 'T08:00:00+08:00'}
+        dateModified={formattedDate(getArticleData.updated_at) + 'T09:20:00+08:00'}
+        authorName={getArticleData.author_name || 'TVBS ESG專區'}
+        publisherName="TVBS GOOD"
+        publisherLogo="https://example.com/logo.png"
+        description={getArticleData.description}
       />
 
       {/* Breadcrumb JSON-LD */}
       <BreadcrumbJsonLd
         itemListElements={[
-          { position: 1, name: "首頁", item: "https://esg-app-alpha.vercel.app/" },
-          { position: 2, name: "趨勢觀點", item: "https://esg-app-alpha.vercel.app/view/trend" },
-          { position: 3, name: trend.title, item: url },
+          { position: 1, name: "首頁", item: `${appUrl}/` },
+          { position: 2, name: getArticleData.article_genres?.[0]?.name || '未知分類', item: genreUrl },
+          { position: 3, name: getArticleData.title, item: articleUrl },
         ]}
       />
       
