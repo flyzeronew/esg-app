@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../../../comps/Header/Header'
 import Footer from '../../../comps/Footer/Footer'
-import StructuredData from '../../../comps/StructuredData/StructuredData'
-import classNames from 'classnames/bind';
-import styles from './page.module.css';
+import classNames from 'classnames/bind'
+import styles from './page.module.css'
+import { ArticleJsonLd, BreadcrumbJsonLd } from "next-seo"
 
 const cx = classNames.bind(styles);
 export default function ViewArticle(props) {
@@ -30,6 +30,22 @@ export default function ViewArticle(props) {
   // 頁面識別
   const thisPage = 'view'
   const ogImg = getArticleData.cover_img
+
+
+  // 假資料
+  const trend = {
+    id: 600,
+    title: "範例：ESG 趨勢解析",
+    summary: "這是一篇範例文章，用來測試 Google Rich Results。",
+    imageUrl: "https://example.com/images/sample.jpg",
+    publishedAt: "2025-09-01T08:00:00+08:00",
+    updatedAt: "2025-09-15T10:00:00+08:00",
+    author: "ESG 編輯團隊",
+  };
+
+  const url = `https://esg-app-alpha.vercel.app/view/trend/${trend.id}`;
+
+
   // resize 監聽事件
   useEffect(() => {
     // dfp廣告
@@ -166,43 +182,32 @@ export default function ViewArticle(props) {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-  // 準備結構化資料
-  const structuredDataProps = {
-    title: getArticleData.title,
-    description: getArticleData.description,
-    coverImg: getArticleData.cover_img,
-    authorName: getArticleData.author_name,
-    createdAt: getArticleData.created_at,
-    updatedAt: getArticleData.updated_at,
-    genres: getArticleData.article_genres,
-    articleId: articleId,
-    genreEnName: genreEnName,
-    partner: articlePartner,
-    extendedArticles: articleExtended,
-    content: articleContent
-  }
-
-  // 準備麵包屑導航資料
-  const breadcrumbData = {
-    items: [
-      {
-        name: "首頁",
-        item: `${appUrl}/`
-      },
-      {
-        name: getArticleData.article_genres?.[0]?.name || "ESG",
-        item: `${appUrl}/view/${genreEnName}`
-      },
-      {
-        name: getArticleData.title,
-        item: `${appUrl}/view/${genreEnName}/${articleId}`
-      }
-    ]
-  }
-
   // resize 監聽事件 ed
   return (
     <div id="wrapper">
+
+      {/* Article JSON-LD */}
+      <ArticleJsonLd
+        url={url}
+        title={trend.title}
+        images={[trend.imageUrl]}
+        datePublished={trend.publishedAt}
+        dateModified={trend.updatedAt}
+        authorName={trend.author}
+        publisherName="ESG 平台"
+        publisherLogo="https://example.com/images/logo.png"
+        description={trend.summary}
+      />
+
+      {/* Breadcrumb JSON-LD */}
+      <BreadcrumbJsonLd
+        itemListElements={[
+          { position: 1, name: "首頁", item: "https://esg-app-alpha.vercel.app/" },
+          { position: 2, name: "趨勢觀點", item: "https://esg-app-alpha.vercel.app/view/trend" },
+          { position: 3, name: trend.title, item: url },
+        ]}
+      />
+      
       <Head>
         <title>{`${getArticleData.title} - TVBS ESG專區`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -230,20 +235,6 @@ export default function ViewArticle(props) {
           href={`${appUrl}/${thisPage}/${genreEnName}/${articleId}`}
         />
       </Head>
-      
-      {/* 結構化資料組件 */}
-      <StructuredData 
-        type="NewsArticle"
-        data={structuredDataProps}
-        appUrl={appUrl}
-      />
-      
-      {/* 麵包屑導航結構化資料 */}
-      <StructuredData 
-        type="BreadcrumbList"
-        data={breadcrumbData}
-        appUrl={appUrl}
-      />
       <Header thisPage={thisPage} menuData={props.menu} />
       <main className={cx('mainContent')}>
         <div
