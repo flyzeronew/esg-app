@@ -187,23 +187,15 @@ export default function ViewArticle(props) {
     items: [
       {
         name: "首頁",
-        path: "/",
-        url: `${appUrl}/`
-      },
-      {
-        name: "文章",
-        path: "/view",
-        url: `${appUrl}/view`
+        item: `${appUrl}/`
       },
       {
         name: getArticleData.article_genres?.[0]?.name || "ESG",
-        path: `/view/${genreEnName}`,
-        url: `${appUrl}/view/${genreEnName}`
+        item: `${appUrl}/view/${genreEnName}`
       },
       {
         name: getArticleData.title,
-        path: `/view/${genreEnName}/${articleId}`,
-        url: `${appUrl}/view/${genreEnName}/${articleId}`
+        item: `${appUrl}/view/${genreEnName}/${articleId}`
       }
     ]
   }
@@ -241,7 +233,7 @@ export default function ViewArticle(props) {
       
       {/* 結構化資料組件 */}
       <StructuredData 
-        type="Article"
+        type="NewsArticle"
         data={structuredDataProps}
         appUrl={appUrl}
       />

@@ -19,6 +19,7 @@ export default function StructuredData({ type = 'Article', data, appUrl }) {
     // 根據不同類型生成對應的結構化資料
     switch (type) {
       case 'Article':
+      case 'NewsArticle':
         return generateArticleSchema(baseStructuredData, data, appUrl)
       case 'Organization':
         return generateOrganizationSchema(baseStructuredData, data, appUrl)
@@ -65,49 +66,38 @@ function generateArticleSchema(baseSchema, data, appUrl) {
 
   const articleUrl = `${appUrl}/view/${genreEnName}/${articleId}`
   
-  // 計算文章字數（移除 HTML 標籤）
-  const getWordCount = (htmlContent) => {
-    if (!htmlContent) return 0
-    const textContent = htmlContent.replace(/<[^>]*>/g, '').trim()
-    return textContent.length
+  // 準備圖片陣列
+  const imageArray = []
+  if (coverImg) {
+    imageArray.push(coverImg)
+  }
+  // 如果沒有封面圖，使用預設圖片
+  if (imageArray.length === 0) {
+    imageArray.push(`${appUrl}/images/default-article.jpg`)
   }
   
   const structuredData = {
     ...baseSchema,
+    "@type": "NewsArticle",
     "headline": title,
+    "url": articleUrl,
     "description": description,
-    "image": {
-      "@type": "ImageObject",
-      "url": coverImg || `${appUrl}/images/default-article.jpg`,
-      "width": 1200,
-      "height": 630
-    },
+    "image": imageArray,
+    "datePublished": createdAt,
+    "dateModified": updatedAt,
     "author": {
       "@type": "Person",
-      "name": authorName || "TVBS"
+      "name": authorName || "TVBS新聞網",
+      "url": appUrl
     },
     "publisher": {
       "@type": "Organization",
-      "name": "TVBS",
+      "name": "TVBS GOOD",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cc.tvbs.com.tw/img/upload/2019/11/07/20191107181447-5dc3ddc7.png",
-        "width": 600,
-        "height": 60
+        "url": "https://cc.tvbs.com.tw/img/upload/2019/11/07/20191107181447-5dc3ddc7.png"
       }
-    },
-    "datePublished": createdAt,
-    "dateModified": updatedAt,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": articleUrl
-    },
-    "url": articleUrl,
-    "articleSection": genres?.[0]?.name || "ESG",
-    "keywords": keywords,
-    "inLanguage": "zh-TW",
-    "wordCount": getWordCount(content),
-    "articleBody": description || title
+    }
   }
 
   // 如果有共好夥伴資訊，加入贊助商資料
@@ -198,7 +188,7 @@ function generateBreadcrumbSchema(baseSchema, data, appUrl) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.url || `${appUrl}${item.path || ''}`
+      "item": item.item
     }))
   }
 }
