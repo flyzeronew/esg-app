@@ -59,16 +59,29 @@ function generateArticleSchema(baseSchema, data, appUrl) {
     genreEnName,
     partner,
     extendedArticles,
+    content,
     keywords = "TVBS,TVBS GOOD,TVBS ESG,企業社會責任,ESG永續發展,ESG指標,ESG企業,ESG議題"
   } = data
 
   const articleUrl = `${appUrl}/view/${genreEnName}/${articleId}`
   
+  // 計算文章字數（移除 HTML 標籤）
+  const getWordCount = (htmlContent) => {
+    if (!htmlContent) return 0
+    const textContent = htmlContent.replace(/<[^>]*>/g, '').trim()
+    return textContent.length
+  }
+  
   const structuredData = {
     ...baseSchema,
     "headline": title,
     "description": description,
-    "image": coverImg || `${appUrl}/images/default-article.jpg`,
+    "image": {
+      "@type": "ImageObject",
+      "url": coverImg || `${appUrl}/images/default-article.jpg`,
+      "width": 1200,
+      "height": 630
+    },
     "author": {
       "@type": "Person",
       "name": authorName || "TVBS"
@@ -78,7 +91,9 @@ function generateArticleSchema(baseSchema, data, appUrl) {
       "name": "TVBS",
       "logo": {
         "@type": "ImageObject",
-        "url": `${appUrl}/images/tvbs-logo.png`
+        "url": "https://cc.tvbs.com.tw/img/upload/2019/11/07/20191107181447-5dc3ddc7.png",
+        "width": 600,
+        "height": 60
       }
     },
     "datePublished": createdAt,
@@ -89,7 +104,10 @@ function generateArticleSchema(baseSchema, data, appUrl) {
     },
     "url": articleUrl,
     "articleSection": genres?.[0]?.name || "ESG",
-    "keywords": keywords
+    "keywords": keywords,
+    "inLanguage": "zh-TW",
+    "wordCount": getWordCount(content),
+    "articleBody": description || title
   }
 
   // 如果有共好夥伴資訊，加入贊助商資料

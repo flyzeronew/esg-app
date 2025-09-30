@@ -178,7 +178,8 @@ export default function ViewArticle(props) {
     articleId: articleId,
     genreEnName: genreEnName,
     partner: articlePartner,
-    extendedArticles: articleExtended
+    extendedArticles: articleExtended,
+    content: articleContent
   }
 
   // 準備麵包屑導航資料
