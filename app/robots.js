@@ -19,7 +19,8 @@ export default function robots() {
             rules: [
                 {
                     userAgent: ['*'],
-                    allow: ['/'],
+                    Disallow:['/'], 
+                    allow: ['/view'],
                 },
             ]
         }
