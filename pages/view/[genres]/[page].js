@@ -187,7 +187,7 @@ export default function ViewArticle(props) {
         dateModified={formattedDate(getArticleData.updated_at) + 'T09:20:00+08:00'}
         authorName={getArticleData.author_name || 'TVBS ESG專區'}
         publisherName="TVBS GOOD"
-        publisherLogo="https://example.com/logo.png"
+        publisherLogo={`${appUrl}/images/esg-logo.svg`}
         description={getArticleData.description}
       />
 
