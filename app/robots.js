@@ -20,7 +20,6 @@ export default function robots() {
                 {
                     userAgent: ['*'],
                     Disallow:['/'], 
-                    allow: ['/view'],
                 },
             ]
         }
