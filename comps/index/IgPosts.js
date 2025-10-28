@@ -4,10 +4,15 @@ import classnames from "classnames/bind";
 
 const cx = classnames.bind(styles)
 function IgPosts(props) {
-    const initialData = props.data.data || []
-    // 限制資料為6筆
-    const data = initialData.slice(0, 6)
+    const initialData = props.data?.data || []
+    const MAX_POSTS = 6;
+    const data = initialData.slice(0, MAX_POSTS)
     const appUrl = process.env.APP_URL || '';
+
+    // 如果沒有資料，不顯示此區塊
+    if (!data || data.length === 0) {
+        return null;
+    }
 
     return (
         <div className={cx("igPosts")}>

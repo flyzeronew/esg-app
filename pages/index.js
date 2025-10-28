@@ -8,14 +8,14 @@ import FocusList from '../comps/index/FocusList'
 import InfluenceList from '../comps/index/InfluenceList'
 import PartnerListNew from '../comps/index/PartnerListNew'
 import Responsibility from '../comps/index/Responsibility'
-import IgPosts from '../comps/index/IgPosts'
 import TipsList from '../comps/index/TipsList'
-import styles from './index-new.module.css';
-import classNames from 'classnames/bind';
-
+// import IgPosts from '../comps/index/IgPosts'
+import styles from './index-new.module.css'
+import classNames from 'classnames/bind'
 
 export default function Home(props) {
-  const cx = classNames.bind(styles)
+
+  const cx = classNames.bind(styles);
   const appUrl = process.env.APP_URL
   const indexHeadlines = props.indexData.indexHeadlines
   const articles = props.indexData.articles
@@ -24,9 +24,8 @@ export default function Home(props) {
   const tips = props.indexData.tips
   const focus = props.indexData.focusNews
   const impact = props.indexData.impact
-  const colorMapping = props.colorMapping
-  const instagramData = props.instagramData
   const ogImg = process.env.OG_IMG
+  // const instagramData = props.instagramData
 
   return (
     <div id="wrapper" >
@@ -62,9 +61,9 @@ export default function Home(props) {
           <FocusList data={focus} />
           <InfluenceList data={impact} />
           <PartnerListNew data={partners} />
-          <TipsList data={tips} colorMapping={colorMapping} />
+          <TipsList data={tips} />
           <Responsibility />
-          <IgPosts data={props.instagramData} />
+          {/* <IgPosts data={instagramData} /> */}
         </div>
       </main>
       <Footer />
@@ -77,17 +76,13 @@ export async function getServerSideProps(context) {
   try {
       const { res } = context;
       res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
-        const { menu, colorMapping, instagramData, extraData } = await fetchPageData({
-            extraApiPaths: ['/api/index-data'],
-            includeColorMapping: true,
-            includeInstagram: true,
-        });
-
-        console.log(instagramData);
+      const { menu, instagramData, extraData } = await fetchPageData({
+          extraApiPaths: ['/api/index-data'],
+          includeInstagram: true,
+      });
       return {
           props: {
               menu,
-              colorMapping,
               indexData: extraData[0],
               instagramData
           },
