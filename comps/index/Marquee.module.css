@@ -7,6 +7,13 @@
     line-height: 80px;
     color: #16D571;
 }
+.marquee a .txt{
+    background: linear-gradient(to bottom, #27D4FF, #16D571);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
 @media (max-width:1699px) {
     .marquee{
         padding: 32px 0;
