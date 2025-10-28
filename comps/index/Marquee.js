@@ -36,7 +36,7 @@ function splitEmojiToSpan(str) {
         }
     }
     if (textBuffer) {
-        elements.push(<span key={elements.length} className="txt">{textBuffer}</span>);
+        elements.push(<span key={elements.length} className={cx("txt")}>{textBuffer}</span>);
     }
     return elements;
 }
