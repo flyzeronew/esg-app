@@ -8,7 +8,7 @@
     color: #16D571;
 }
 .marquee a .txt{
-    background: linear-gradient(to right,#27D4FF,#16D571);
+    background: linear-gradient(to right,#16D571,#27D4FF);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
