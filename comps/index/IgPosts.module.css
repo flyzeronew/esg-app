@@ -144,7 +144,7 @@
 
 .igPosts .list .img{
     width: 100%;
-    aspect-ratio:4/5;
+    aspect-ratio:3/4;
     overflow: hidden;
     background-color: #ccc;
     border: 2px solid #fff;
@@ -208,10 +208,6 @@
     }
     .igPosts ul li{
         width: 100%;
-    }
-    .igPosts .list .img{
-        width: 100%;
-        aspect-ratio:1/1;
     }
     .igPosts .logoBox{
         display: block;
