@@ -9,7 +9,7 @@ import InfluenceList from '../comps/index/InfluenceList'
 import PartnerListNew from '../comps/index/PartnerListNew'
 import Responsibility from '../comps/index/Responsibility'
 import TipsList from '../comps/index/TipsList'
-// import IgPosts from '../comps/index/IgPosts'
+import IgPosts from '../comps/index/IgPosts'
 import styles from './index-new.module.css'
 import classNames from 'classnames/bind'
 
@@ -25,7 +25,7 @@ export default function Home(props) {
   const focus = props.indexData.focusNews
   const impact = props.indexData.impact
   const ogImg = process.env.OG_IMG
-  // const instagramData = props.instagramData
+  const instagramData = props.instagramData
 
   return (
     <div id="wrapper" >
@@ -63,7 +63,7 @@ export default function Home(props) {
           <PartnerListNew data={partners} />
           <TipsList data={tips} />
           <Responsibility />
-          {/* <IgPosts data={instagramData} /> */}
+          <IgPosts data={instagramData} />
         </div>
       </main>
       <Footer />
