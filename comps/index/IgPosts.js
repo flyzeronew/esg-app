@@ -10,7 +10,7 @@ function IgPosts(props) {
     const appUrl = process.env.APP_URL || '';
 
     // 如果沒有資料，不顯示此區塊
-    if (!data || data.length === 0) {
+    if (data.length === 0) {
         return null;
     }
 
@@ -19,13 +19,18 @@ function IgPosts(props) {
             <div className={cx("frameBox")}>
                 <div className={cx("object")}>
                     <div className={cx("logoBox")}>
-                        <img src={`${appUrl}/images/small-logo.webp`} alt="logo" />
-                        <span>TVBS GOOD</span>
+                        <div className={cx("img")}>
+                            <img src={`${appUrl}/images/small-logo.webp`} alt="logo" />
+                        </div>
+                        <div className={cx("nameBox")}>
+                            <p className={cx("name")}>TVBS GOOD</p>
+                            <p className={cx("txt")}>永續生活有你一起 每天都是 GOOD Day🌱</p>
+                        </div>
+                        
                     </div>
                     <div className={cx("followBtn")}>
                         <a href="https://www.instagram.com/tvbs_good" target="_blank" rel="noopener noreferrer">
-                            <img src={`${appUrl}/images/small-ig.svg`} alt="logo" />
-                            <span>Follow</span>
+                            <span>追蹤我們</span>
                         </a>
                     </div>
                 </div>

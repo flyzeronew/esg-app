@@ -1,12 +1,6 @@
 .frameBox{
-    width: 1664px;
+    width: 1144px;
     margin: 0 auto;
-}
-@media (max-width:1699px) {
-    .frameBox{
-        width: 1216px;
-        margin: 0 auto;
-    }
 }
 @media (max-width:1279px) {
     .frameBox{
@@ -81,11 +75,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 24px;
 }
 .igPosts .object{
-    margin-bottom: 70px;
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.igPosts .object .img{
+    width: 88px;
+    height: 88px;
+    aspect-ratio: 1/1;
+}
+.igPosts .object .img img{
+    width: 100%;
+    height: auto;
+}
+.igPosts .object .name{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%;
+    margin-bottom: 12px;
+}
+.igPosts .object .txt{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
 }
 .igPosts .followBtn a{
     width: max-content;
@@ -94,17 +112,20 @@
     align-items: center;
     gap: 5px;
     margin-bottom: 16px;
-    padding:6px 16px;
-    background-color:#0095F6;
+    padding: 14px 20px;
+    background-color:#fff;
     border-radius: 6px;
     margin: 0 auto;
     cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid #1A242F;
 }
 .igPosts .followBtn span{
-    font-size: 14.156px;
-    font-weight: 400;
-    line-height: 22.02px;
-    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.32px;
 }
 .igPosts .followBtn img{
     width: 16px;
@@ -123,7 +144,7 @@
 
 .igPosts .list .img{
     width: 100%;
-    aspect-ratio:538/673;
+    aspect-ratio:4/5;
     overflow: hidden;
     background-color: #ccc;
     border: 2px solid #fff;
@@ -174,6 +195,11 @@
     }
 }
 @media (max-width:1023px) {
+    .igPosts .object{
+        display: block;
+        padding:0 20px;
+        margin-bottom: 32px;
+    }
     .igPosts{
         margin-bottom: 80px;
     }
@@ -182,5 +208,27 @@
     }
     .igPosts ul li{
         width: 100%;
+    }
+    .igPosts .list .img{
+        width: 100%;
+        aspect-ratio:1/1;
+    }
+    .igPosts .logoBox{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    .igPosts .logoBox .img{
+        margin: 0 auto 16px;
+    }
+    .igPosts .object .name{
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 135%;
+        margin-bottom: 7px;
+    }
+    .igPosts .object .txt{
+        font-size: 16px;
     }
 }
