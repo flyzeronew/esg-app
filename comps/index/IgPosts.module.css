@@ -87,6 +87,8 @@
     width: 88px;
     height: 88px;
     aspect-ratio: 1/1;
+    border-radius: 100px;
+    overflow: hidden;
 }
 .igPosts .object .img img{
     width: 100%;
@@ -114,7 +116,6 @@
     margin-bottom: 16px;
     padding: 14px 20px;
     background-color:#fff;
-    border-radius: 6px;
     margin: 0 auto;
     cursor: pointer;
     border-radius: 100px;
@@ -126,6 +127,7 @@
     font-weight: 700;
     line-height: 18px;
     letter-spacing: 0.32px;
+    color: #1A242F;
 }
 .igPosts .followBtn img{
     width: 16px;

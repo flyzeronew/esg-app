@@ -20,13 +20,13 @@ function IgPosts(props) {
                 <div className={cx("object")}>
                     <div className={cx("logoBox")}>
                         <div className={cx("img")}>
-                            <img src={`${appUrl}/images/small-logo.webp`} alt="logo" />
+                            <img src={`${appUrl}/images/small-logo02.png`} alt="logo" />
                         </div>
                         <div className={cx("nameBox")}>
                             <p className={cx("name")}>TVBS GOOD</p>
                             <p className={cx("txt")}>永續生活有你一起 每天都是 GOOD Day🌱</p>
                         </div>
-                        
+
                     </div>
                     <div className={cx("followBtn")}>
                         <a href="https://www.instagram.com/tvbs_good" target="_blank" rel="noopener noreferrer">
