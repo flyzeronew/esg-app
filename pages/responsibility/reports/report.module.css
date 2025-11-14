@@ -225,6 +225,7 @@
     border-radius: 10px;
     background: #FFF;
     margin: 8px 0;
+    padding: 0 16px;
 }
 .reportArea .mainTitle span {
     text-align: center;
@@ -276,20 +277,18 @@
     justify-content: flex-end;
     align-items: flex-end;
 }
-
 .content .reportArea .mobileView {
     display: none;
 }
-.downloadArea:hover .arraw {
+.downloadArea:hover .arraw ,
+.content .reportArea a:hover .arraw {
     transform: rotate(-45deg);
     transition: 0.3s;
 }
-
 .downloadArea .arraw {
     transform: rotate(0deg);
     transition: 0.3s;
 }
-
 .content .reportArea .downloadArea .bar {
     display: flex;
     align-items: center;
@@ -298,20 +297,16 @@
     border-radius: 30px;
     padding: 13.5px 16px;
 }
-
 .content .reportArea .downloadArea .bar:hover .arraw {
     transform: rotate(-45deg);
 }
-
 .brand {
     padding: 40px 0 0;
 }
-
 .brand .listBox {
     position: relative;
     margin-bottom: 50px;
 }
-
 .brand .listBox .arraw {
     width: 40px;
     height: 100%;
@@ -322,22 +317,18 @@
     aspect-ratio: 1/1;
     overflow: hidden;
 }
-
 .brand .list {
     padding: 0 15px;
 }
-
 .brand .list ul {
     display: flex;
     flex-wrap: wrap;
     column-gap: 30px;
     row-gap: 50px;
 }
-
 .brand .list ul li {
     width: calc((100% - 90px) / 4);
 }
-
 .brand .list .txt {
     position: relative;
     aspect-ratio: unset;
@@ -351,21 +342,17 @@
     align-items: center;
     column-gap: 10px;
 }
-
 .brand .list .txt img {
     width: 35px;
     height: 35px;
 }
-
 .brand .list .logoBox .rounded {
     width: 20px;
 }
-
 .brand .list .logoBox .logoFlex {
     display: flex;
     align-items: flex-end;
 }
-
 .practiceMore {
     padding: 50px 0;
     background-color: #f2f2f2;
@@ -508,11 +495,6 @@
         background-size: cover;
         border-radius: 20px;
         width: 900px;
-    }
-    .content .reportArea .mainTitle {
-        border-radius: 10px;
-        background: #FFF;
-        padding: 0 16px;
     }
     .reportArea .mainTitle span {
         text-align: center;

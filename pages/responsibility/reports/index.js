@@ -140,26 +140,26 @@ export default function Responsibility(props) {
             {/* Report card */}
             <div className={cx("reportCard")}>
                 <div className={cx("reportArea")}>
-                    <div className={cx("img")}>
-                        <img src={`/images/2025reportCardInfo02.jpg`} alt="2025 5-8 月永續影響力報告" width={1040} height={588} loading="lazy" />
-                    </div>
-                    <div className={cx("reportContent")}>
-                        <div className={cx("content")}>
-                            <div className={cx("mainTitle")}>
-                                <span>2025 5-8 月永續影響力報告</span>
-                            </div>
-                            <div className={cx("subTitle")}>
-                                <span>減塑進行式</span>
-                            </div>
+                    <a href="https://esg.tvbs.com.tw/exhibition/report/2025maytoaug/index.html" target="_blank" rel="noopener noreferrer">
+                        <div className={cx("img")}>
+                            <img src={`/images/2025reportCardInfo02.jpg`} alt="2025 5-8 月永續影響力報告" width={1040} height={588} loading="lazy" />
                         </div>
-                        <div className={cx("downloadArea")} >
-                            <a href="https://esg.tvbs.com.tw/exhibition/report/2025maytoaug/index.html" target="_blank" rel="noopener noreferrer">
+                        <div className={cx("reportContent")}>
+                            <div className={cx("content")}>
+                                <div className={cx("mainTitle")}>
+                                    <span>2025 5-8 月永續影響力報告</span>
+                                </div>
+                                <div className={cx("subTitle")}>
+                                    <span>減塑進行式</span>
+                                </div>
+                            </div>
+                            <div className={cx("downloadArea")} >
                                 <div className={cx("arraw")}>
                                     <ArrowRight></ArrowRight>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div className={cx("line")}></div>
