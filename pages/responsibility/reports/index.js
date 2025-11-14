@@ -139,7 +139,13 @@ export default function Responsibility(props) {
             </div>
             {/* Report card */}
             <div className={cx("reportCard")}>
-                <div className={cx("reportArea")} >
+                <div
+                  className={cx("reportArea")}
+                  style={{
+                    background: 'url(/images/2025reportCardInfo02.jpg) no-repeat',
+                    backgroundSize: 'cover'
+                  }}
+                >
                     <div className={cx("reportContent")}>
                         <div className={cx("content")}>
                             <div className={cx("mainTitle")}>
@@ -151,7 +157,7 @@ export default function Responsibility(props) {
                             </div> */}
                         </div>
                         <div className={cx("downloadArea")} >
-                            <a href="https://report.esg.tvbs.com.tw/2025jantoapr" target="_blank" rel="noopener noreferrer">
+                            <a href="https://esg.tvbs.com.tw/exhibition/report/2025maytoaug/index.html" target="_blank" rel="noopener noreferrer">
                                 <div className={cx("arraw")}>
                                     <ArrowRight></ArrowRight>
                                 </div>
