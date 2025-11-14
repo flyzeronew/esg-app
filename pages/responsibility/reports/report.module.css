@@ -191,15 +191,23 @@
     margin-bottom: 50px;
 }
 .content .reportArea {
-    margin: 74px auto 65px auto;
-    background: url(/images/2025reportCardInfo.png) no-repeat;
-    background-size: cover;
     width: 1040px;
+    margin: 0 auto;
+    position: relative;
+}
+.content .reportArea .img{
+    width: 100%;
+    height: auto;
     aspect-ratio: 16/9;
     border-radius: 20px;
-    padding: 53px 56px;
-    display: flex;
-    align-items: flex-end;
+    background-color: #333333;
+    position: relative;
+    overflow: hidden;
+}
+.content .reportArea .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .content .reportContent {
     width: 100%;
@@ -207,16 +215,17 @@
     justify-content: space-between;
     align-items: center;
     column-gap: 15px;
+    padding: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
-
 .content .reportArea .mainTitle {
     border-radius: 10px;
     background: #FFF;
-    padding: 0px 16px;
     margin: 8px 0;
-    
 }
-
 .reportArea .mainTitle span {
     text-align: center;
     font-size: 48px;
@@ -496,17 +505,15 @@
         padding: 15px 20px;
     }
     .content .reportArea {
-        margin: 54px auto 51px auto;
         background-size: cover;
         border-radius: 20px;
         width: 900px;
-        padding: 53px 56px;
     }
     .content .reportArea .mainTitle {
         border-radius: 10px;
         background: #FFF;
+        padding: 0 16px;
     }
-
     .reportArea .mainTitle span {
         text-align: center;
         font-size: 36px;
@@ -548,7 +555,7 @@
         font-size: 36px;
         font-weight: 600;
         padding: 5px 20px 0;
-        border-radius: 20px 20px 0 0; 
+        border-radius: 20px 20px 0 0;
     }
     .mainView .title p {
         font-size: 36px;
@@ -567,13 +574,7 @@
     }
     .content .reportArea {
         width: 90%;
-        padding: 53px 20px;
     }
-    
-    .reportContent {
-
-    }
-
     .reportArea .mainTitle span {
         font-size: 30px;
         letter-spacing: 1.2px;
@@ -589,14 +590,14 @@
         width: 656px;
         margin: 0 auto;
         margin-bottom: 34px;
-    } 
+    }
     .reportsTitle p {
         font-size: 24px;
         letter-spacing: 0.08em;
         text-align: center;
         margin: 24px 0 0 0;
     }
-    
+
     .reportsTitle a {
         font-size: 18px;
         margin: 35px 0;
@@ -623,8 +624,8 @@
 }
 
 /* Tab styles Ends */
-.mainView .titleBoxMobile {  
-    display: none;   
+.mainView .titleBoxMobile {
+    display: none;
 }
 /* mobile starts */
 @media (max-width: 767px) {
@@ -635,13 +636,13 @@
     .mainView .titleBox {
         display: none;
     }
-    .mainView .title h1 { 
+    .mainView .title h1 {
         font-size: 28px;
         width: max-content;
         padding: 2px 11px;
         letter-spacing:normal;
         border-bottom-right-radius: 11px;
-        
+
     }
     .mainView .title .box:nth-child(2) p {
         border-top-right-radius: 15px;
@@ -698,15 +699,19 @@
     }
     .content .reportArea {
         width: 100%;
-        aspect-ratio: 1/1;
-        padding: 53px 14px;
     }
-    .content .reportArea .mainTitle { 
+    .content .reportArea .img{
+        aspect-ratio: 1/1;
+    }
+    .content .reportArea .mainTitle {
         padding: 4px 6px;
         display: inline-block;
     }
     .reportArea .content {
         padding: 0 2px;
+    }
+    .content .reportContent {
+        padding: 20px;
     }
     .reportArea .mainTitle span {
         font-size: 21px;
@@ -742,10 +747,6 @@
     .content .contxt .reportsTitle {
         margin-bottom: 32px;
     }
-    .content .reportArea {
-        background-position: top;
-
-    }
     .content .title.s1 {
         margin-bottom: 0;
     }
@@ -762,7 +763,7 @@
     .brand {
         padding: 0;
     }
-    
+
 }
 
 /* mobile ends */
