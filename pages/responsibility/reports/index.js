@@ -142,7 +142,7 @@ export default function Responsibility(props) {
                 <div
                   className={cx("reportArea")}
                   style={{
-                    background: 'url(/images/2025reportCardInfo02.jpg) no-repeat',
+                    background: 'url(/images/2025reportCardInfo02.jpg) no-repeat center center',
                     backgroundSize: 'cover'
                   }}
                 >
