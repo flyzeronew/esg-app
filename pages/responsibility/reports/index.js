@@ -168,6 +168,7 @@ export default function Responsibility(props) {
               <div className={cx("reportsTitle")}>
                 <p>歷年永續報告</p>
                 <div className={cx("list")}>
+                  <a href={`https://report.esg.tvbs.com.tw/2025jantoapr`} target="_blank" rel="noopener noreferrer">2025 1-4 月永續影響力報告</a>
                   <a href={`${appUrl}/responsibility/reports/annual/2024annual`} target="_blank" rel="noopener noreferrer">2024 年度永續影響力報告</a>
                   <a className={cx("desktopPdf")} href={staticPath+"/reports/quaterly/2024/永續影響報告_q2_Desktop.pdf"} target="_blank" rel="noopener noreferrer">2024 5-8 月永續影響力報告</a>
                   <a className={cx("mobilePdf")} href={staticPath+"/reports/quaterly/2024/永續報告_q2_mobile .pdf"} target="_blank" rel="noopener noreferrer">2024 5-8 月永續影響力報告</a>
